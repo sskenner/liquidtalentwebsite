@@ -1,0 +1,385 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+/* fonts */
+
+@font-face {
+    font-family: 'nexa';
+    font-weight: 100;
+    src: url('<%= asset_url "nexalight.ttf" %>');
+}
+@font-face {
+    font-family: 'nexa';
+    font-weight: 900;
+    src: url('<%= asset_url "nexabold.ttf" %>');
+}
+
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: none; }
+
+input, textarea, div[contentEditable="true"] { outline: none; }
+div[contentEditable="true"], div[contentEditable="true"] div, div[contentEditable="true"] p {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+div[contentEditable="true"] br { display: none !important; }
+div[contentEditable="true"] div, div[contentEditable="true"] p { display: inline; }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a { cursor: pointer; }
+
+/* general */
+
+body {
+    line-height: 1;
+    background-color: white;
+    color: #111111;
+    font-family: 'nexa', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    min-width: 660px;
+}
+
+#header { background: url(<%= asset_url "presentation/bg.jpg" %>) fixed 0px 50% no-repeat; }
+
+h1 {
+    line-height: 120px;
+    font-weight: 900;
+    text-align: center;
+    font-size: 40px;
+    color: #2ACC44;
+    letter-spacing: 5px;
+    height: 110px;
+    background: #000;
+    min-width: 640px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #2abd43;
+}
+a:hover { color: #000; }
+
+.green-button {
+    background: url(<%= asset_url "main/gradient-green.png" %>);
+    background-size: 1px 100%;
+}
+.green-button:hover, .green-button:focus { background: #2ACC44 !important; }
+
+.container {
+    margin: 10px;
+    box-shadow: 0px 0px 10px 0px #CCC;
+    padding: 10px 0px;
+}
+
+#header .logo {
+    display: block;
+    width: 90%;
+    max-width: 655px;
+    margin: auto;
+    border-top: 30px solid transparent;
+    margin-bottom: 30px;
+}
+
+#header .video-container {
+    width: 640px;
+    margin: auto auto 30px auto;
+    background: url(<%= asset_url "presentation/video-bg.png" %>);
+    height: 360px;
+    border: 2px solid #000;
+}
+
+#header .video-container .play-btn {
+    width: 95px;
+    margin: auto;
+    background: url(<%= asset_url "presentation/play-btn.png" %>) no-repeat 0px center;
+    height: 100%;
+    cursor: pointer;
+}
+
+#register-form {
+    height: 80px;
+    background: #000;
+    width: 100%;
+    min-width: 640px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 6px;
+    margin-bottom: 40px;
+}
+#register-form .field {
+    background-color: #fff;
+    padding: 0px 16px;
+    width: 139px;
+    line-height: 40px;
+    height: 37px;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    margin: 16px 8px 0px 8px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+.field#register-form-send {
+    color: #FFF;
+    font-style: italic;
+    font-weight: 100;
+    text-align: center;
+}
+#privacy {
+    opacity: 0;
+    display: none;
+}
+
+#about, #press, #contact {
+    opacity: 1;
+    display: block;
+}
+
+#social-twitter-container {
+    margin: auto auto 40px auto;
+    width: 751px;
+}
+.twitter-timeline-rendered {
+    border: none;
+    max-width: 100%;
+    min-width: 180px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    width: 520px;
+    height: 205px;
+}
+#footer .appstore-buttons {
+    margin: 30px auto;
+    width: 434px;
+}
+#footer .appstore-buttons .ios,
+#footer .appstore-buttons .android { display: inline-block; }
+#footer .appstore-buttons .android { margin-left: 15px; }
+#header .appstore-buttons {
+    display: inline-block;
+    font-size: 30px;
+    text-align: center;
+    width: 207px;
+}
+#header .appstore-buttons .ios,
+#header .appstore-buttons .android { margin-top: 15px; }
+.appstore-buttons .ios,
+.appstore-buttons .android {
+    width: 206px;
+    height: 72px;
+    background-repeat: no-repeat;
+    background-image: url(<%= asset_url "presentation/buttons-store.png" %>);
+    cursor: pointer;
+}
+.appstore-buttons .ios { background-position: 0px 0px; }
+.appstore-buttons .android { background-position: -208px 0px; }
+.appstore-buttons .ios:hover { background-position: 0px -72px; }
+.appstore-buttons .android:hover { background-position: -208px -72px; }
+
+.navigation p {
+    text-align: center;
+    font-size: 20px;
+    background: #FFF;
+    box-shadow: 0px 0px 10px 0px #CCC;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+.navigation p a.navigation-link {
+    margin: 0px 13px 0px 13px;
+    color: #FFF;
+    padding: 10px 20px 7px 20px;
+    width: 125px;
+    line-height: 40px;
+    display: inline-block;
+}
+a#privacy-toggle.navigation-link {
+    display: block;
+    font-size: 16px;
+    text-decoration: underline;
+    line-height: 1.5;
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.social {
+    width: 320px;
+    margin: auto;
+    height: 41px;
+    margin-bottom: 30px;
+}
+.social .button {
+    cursor: pointer;
+    width: 41px;
+    height: 41px;
+    margin: 0px 4px 0px 4px;
+    background-image: url(<%= asset_url "presentation/icons-social-color.png" %>);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+/* Linked In */
+.social .in { background-position: 0px 0px; }
+.social .in:hover, .social .in:focus { background-position: 0px -41px; }
+/* Twitter */
+.social .tw { background-position: -41px 0px; }
+.social .tw:hover, .social .tw:focus { background-position: -41px -41px; }
+/* Facebook */
+.social .fb { background-position: -82px 0px; }
+.social .fb:hover, .social .fb:focus { background-position: -82px -41px; }
+/* Google + */
+.social .gl { background-position: -123px 0px; }
+.social .gl:hover, .social .gl:focus { background-position: -123px -41px; }
+/* Instagram */
+.social .gr { background-position: -164px 0px; }
+.social .gr:hover, .social .insta:focus { background-position: -164px -41px; }
+/* Mashable */
+.social .ma { background-position: -205px 0px; }
+.social .ma:hover, .social .mthing:focus { background-position: -205px -41px; }
+
+/* about */
+.clear {
+    height: 1px;
+    clear: both;
+}
+
+h3 {
+    font-size: 30px;
+    line-height: 36px;
+    margin: 20px;
+}
+
+.description {
+    margin: auto;
+    max-width: 960px;
+    min-width: 640px;
+    width: 100%
+}
+.description h2,
+.description p {
+    line-height: 30px;
+    font-size: 16px;
+    margin: 20px;
+}
+
+.description p a {
+    color: #2abd43;
+    text-decoration: underline;
+}
+.description p a:hover, .description p a:focus { color: #000000; }
+.description h2 { font-weight: 900; }
+.header { margin: 30px 10px 30px 10px; }
+.header-image,
+.header-text { float: left; }
+
+.header-icon {
+    float: right;
+    width: 320px;
+    margin-top: 30px;
+}
+
+.header-image {
+    width: 119px;
+    height: 126px;
+    background-image: url(<%= asset_url "presentation/avatars-about.png" %>);
+    background-repeat: no-repeat;
+}
+
+.logo-image { background-position: -3px 0px; }
+.scott-image { background-position: -241px 0px; }
+.alex-image { background-position: -122px 0px; }
+.header-text { width: 200px; }
+
+.header-text .text-title {
+    font-size: 30px;
+    margin: 35px 0px 10px 10px;
+}
+
+.header-text .text-tagline {
+    font-size: 13px;
+    margin: 10px 0px 0px 10px;
+    color: #2abd43;
+}
+
+.only-two { width: 120px; }
+
+.left-col {
+    width: 250px;
+    margin-left: 20px;
+    float: left;
+}
+
+.right-col { margin-left: 270px; }
+
+#contact-form {
+    width: 280px;
+    margin: auto;
+    margin-top: 50px;
+}
+#contact-form .field {
+    border: 1px solid #666666;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+#contact-form textarea.field { height: 100px; }
+#contact-form .contact {
+    display: block;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
