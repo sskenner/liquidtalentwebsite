@@ -94,6 +94,9 @@ Website::Application.routes.draw do
   # Documents
   get '/documents/get' => 'website#documents_get'
 
+  #mailchimp
+  post '/mailchimp_subscribe/:id' => 'website#mailchimp_subscribe'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

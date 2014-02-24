@@ -25,6 +25,7 @@ $(window).on('load', function () {
 
     /* Name, email, zip fields and send button. */
 
+    'href': '/mailchimp_subscribe/cbcb329291',
     'n': $('#register-form-name'),
     'e': $('#register-form-email'),
     'z': $('#register-form-zip'),
@@ -60,17 +61,19 @@ $(window).on('load', function () {
   rF.s.prop('href', 'javascript:submitRegisterForm()');
 
   // Contact form.
+
+  cF = $('#contact-form');
   cF = {
 
     /* Name, email, phone number, reason for contact, message fields and contact button. */
 
     'href': 'http://www.bloodandtreasure.com/LiquidTalent/index.php',
-    'n': $('#contact-form .name'),
-    'e': $('#contact-form .email'),
-    'p': $('#contact-form .phone'),
-    'r': $('#contact-form .reason'),
-    'm': $('#contact-form .message'),
-    'c': $('#contact-form .contact'),
+    'n': cF.find('.name'),
+    'e': cF.find('.email'),
+    'p': cF.find('.phone'),
+    'r': cF.find('.reason'),
+    'm': cF.find('.message'),
+    'c': cF.find('.contact'),
 
     /* Name, email and message validation. */
 
@@ -127,7 +130,7 @@ $(window).on('load', function () {
 
   };
 
-  pages.links.each(function () { $(this).prop('href', "Javascript:RevealPage('" + $(this).prop('href').replace(/http\:\/\/.*\//, '') + "');"); });
+  pages.links.each(function () { $(this).prop('href', "Javascript:RevealPage('" + $(this).prop('href').replace(/http[:]\/\/.*\//, '') + "');"); });
 
 });
 
@@ -137,24 +140,27 @@ function submitRegisterForm () {
   rF.nV = (!/[^a-zA-Z ]/.test(rF.n.html()) && rF.n.html() !== '');
 
   rF.e.html(rF.e.html().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
-  rF.eV = (/^[a-zA-Z0-9+.\-\_]+@[a-zA-Z0-9\-]+\.[a-zA-Z]+$/.test(rF.e.html()) && rF.e.html() !== '');
+  rF.eV = (/^([a-zA-Z0-9+.\-]|[_])+@[a-zA-Z0-9\-]+\.[a-zA-Z]+$/.test(rF.e.html()) && rF.e.html() !== '');
 
   rF.z.html(rF.z.html().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
   rF.zV = (/^(\d{5}|(\d{5}\-\d{4}))$/.test(rF.z.html()) && rF.z.html() !== '');
 
   if (rF.nV === false) { alert('The name field contains unconventional characters or is empty.'); }
   else if (rF.eV === false) { alert('The email field contains unconventional characters or is empty.'); }
-  else if (rF.zV === false) { alert('The zip field is not formatted correctly: \n\nStandard: 00000 \nDescriptive: 00000-0000\n\nOr is empty.'); }
+  else if (rF.zV === false) { alert('The zip field is not formatted correctly:\n\nStandard: 00000\nDescriptive: 00000-0000\n\nOr is empty.'); }
   else {
 
     $.ajax({
-      url: 'mailchimp/storeInfo.php',
+      url: rF.href,
       datatype: 'json',
       cache: false,
-      type: 'get',
+      type: 'post',
       data: 'name=' + rF.n.html() + '&email=' + rF.e.html() + '&zip=' + rF.z.html(),
       contentType: "application/json; charset=utf-8",
-      error : function (err) { alert("Could not connect to the registration server. Please try again later."); },
+      error : function (err) {
+        alert("Could not connect to the mail server. Please try again later.");
+        console.log(err);
+      }
     }).done(function (data) { alert(data); });
 
   }
@@ -170,7 +176,7 @@ function submitContactForm () {
   cF.m.val(cF.m.val().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
 
   cF.nV = (!/[^a-zA-Z ]/.test(cF.n.html()) && cF.n.html() !== '');
-  cF.eV = (/^[a-zA-Z0-9+.\-\_]+@[a-zA-Z0-9\-]+\.[a-zA-Z]+$/.test(cF.e.html()) && cF.e.html() !== '');
+  cF.eV = (/^([a-zA-Z0-9+.\-\]|[_])+@[a-zA-Z0-9\-]+\.[a-zA-Z]+$/.test(cF.e.html()) && cF.e.html() !== '');
   cF.mV = (cF.m.val().length > 10);
 
   if (cF.nV === false) { alert('The name field contains unconventional characters or is empty.'); }
@@ -185,7 +191,10 @@ function submitContactForm () {
       type: 'get',
       data: 'name=' + cF.n.html() + '&email=' + cF.e.html() + '&phone=' + cF.p.html() + '&reason=' + cF.r.html() + '&message=' + cF.m.val(),
       contentType: "application/json; charset=utf-8",
-      error : function (err) { alert("Could not connect to the mail server. Please try again later."); },
+      error : function (err) {
+        alert("Could not connect to the mail server. Please try again later.");
+        console.log(err);
+      }
     }).done(function (data) { alert(data); });
 
   }

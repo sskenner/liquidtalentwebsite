@@ -14,7 +14,7 @@ development:
   database: website_development
   pool: 5
   username: root
-  password:
+  password: ÅÍÍ´,DMwyida#49801-1034ÅÍÎÏsjasnmasp1270234ÎÍÏÓÏÅ´›ﬁ‹ﬁ¨Ô˜Ó˝
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -26,7 +26,7 @@ test:
   database: website_test
   pool: 5
   username: root
-  password:
+  password: ÅÍÍ´,DMwyida#49801-1034ÅÍÎÏsjasnmasp1270234ÎÍÏÓÏÅ´›ﬁ‹ﬁ¨Ô˜Ó˝
   host: localhost
 
 production:
@@ -35,5 +35,5 @@ production:
   database: website_production
   pool: 5
   username: root
-  password:
+  password: ÅÍÍ´,DMwyida#49801-1034ÅÍÎÏsjasnmasp1270234ÎÍÏÓÏÅ´›ﬁ‹ﬁ¨Ô˜Ó˝
   host: localhost
