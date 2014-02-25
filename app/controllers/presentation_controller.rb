@@ -1,6 +1,9 @@
 class PresentationController < ApplicationController
 
   def view
+
+    @extend_presentation = true;
+
   end
 
   #Mailchimp Subscribe

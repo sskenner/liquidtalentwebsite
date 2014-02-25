@@ -98,14 +98,17 @@ a:hover { color: #000; }
     background-size: 1px 100%;
     color: #FFF;
 }
-.green-button:hover, .green-button:focus { background: #2ABD43 !important; }
+.green-button:hover, .green-button:focus {
+    background: #2ABD43 !important;
+    color: #FFF;
+}
 
 #wrapper {
-    background: url(<%= asset_url "presentation/bg.jpg" %>) fixed 100% 0px no-repeat;
     height: 700px;
     width: 960px;
     margin: 30px auto;
     position: relative;
+    overflow: hidden;
 }
 #background {
     position: absolute;
@@ -117,12 +120,21 @@ a:hover { color: #000; }
     box-shadow: 0px 0px 10px 0px #CCC;
     background: hsla(0, 0%, 100%, 0.5);
 }
+#background-map {
+    width: 1200px;
+    height: 1200px;
+    position: absolute;
+    opacity: 0.3;
+    bottom: -250px;
+    left: -120px;
+}
 #admin-panel {
     position: relative;
     z-index: 1;
     width: 210px;
     height: 700px;
     background: #000;
+    bottom: 10px;
 }
 #admin-panel .header {
     background: url(<%= asset_url "admin-panel/header-login.jpg" %>);
@@ -144,8 +156,11 @@ a:hover { color: #000; }
 #admin-panel .navigation { margin: 10px; }
 #admin-panel .navigation .link {
     display: block;
-    background: url(/assets/admin-panel/buttons-navigation.jpg);
+    background: url(<%= asset_url "admin-panel/buttons-navigation.jpg" %>);
     height: 56px;
+    width: 190px;
+    position: relative;
+    right: 13px;
 }
 #admin-panel .search.link { background-position: 0px 0px; }
 #admin-panel .search.link:hover { background-position: 0px -56px; }
@@ -173,6 +188,6 @@ a:hover { color: #000; }
 #admin-panel .stats.link-active:hover { background-position: -190px -504px; }
 
 #admin-panel .lti.link { background-position: 0px -560px; }
-#admin-panel .lti.link:hover { background-position: 0px -614px; }
+#admin-panel .lti.link:hover { background-position: 0px -616px; }
 #admin-panel .lti.link-active { background-position: -190px -560px; }
-#admin-panel .lti.link-active:hover { background-position: -190px -614px; }
+#admin-panel .lti.link-active:hover { background-position: -190px -616px; }
