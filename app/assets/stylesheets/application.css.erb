@@ -68,9 +68,9 @@ a { cursor: pointer; }
 
 body {
     line-height: 1;
-    background-color: white;
+    background-color: #EEE;
     color: #111111;
-    font-family: 'nexa', Arial, Helvetica, sans-serif;
+    font-family: 'nexa', Helvetica, sans-serif;
     font-weight: 100;
     font-size: 14px;
     min-width: 660px;
@@ -86,14 +86,22 @@ a:hover { color: #000; }
 /* General */
 
 .t {
-    -webkit-transition: all 0.3;
-    -moz-transition: all 0.3;
-    -o-transition: all 0.3;
-    -ms-transition: all 0.3;
-    -webkit-transition: all 0.3;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.text-field {
+    text-indent: 20px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px 0px #CCC;
+    outline: 0;
 }
 
 .green-button {
+    display: block;
     background: url(<%= asset_url "main/gradient-green.png" %>);
     background-size: 1px 100%;
     color: #FFF;
@@ -106,9 +114,15 @@ a:hover { color: #000; }
 #wrapper {
     height: 700px;
     width: 960px;
-    margin: 30px auto;
+    margin: 30px auto 0px auto;
     position: relative;
     overflow: hidden;
+}
+#newsletter-sign-up {
+    font-size: 24px;
+    text-align: center;
+    line-height: 120px;
+    border-top: 1px solid #000;
 }
 #background {
     position: absolute;
@@ -119,6 +133,7 @@ a:hover { color: #000; }
     border: 1px solid #FFF;
     box-shadow: 0px 0px 10px 0px #CCC;
     background: hsla(0, 0%, 100%, 0.5);
+
 }
 #background-map {
     width: 1200px;
@@ -135,6 +150,7 @@ a:hover { color: #000; }
     height: 700px;
     background: #000;
     bottom: 10px;
+
 }
 #admin-panel .header {
     background: url(<%= asset_url "admin-panel/header-login.jpg" %>);
@@ -156,7 +172,7 @@ a:hover { color: #000; }
 #admin-panel .navigation { margin: 10px; }
 #admin-panel .navigation .link {
     display: block;
-    background: url(<%= asset_url "admin-panel/buttons-navigation.jpg" %>);
+    background: url(<%= asset_url "admin-panel/buttons-navigation.png" %>);
     height: 56px;
     width: 190px;
     position: relative;

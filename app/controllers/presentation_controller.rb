@@ -1,9 +1,6 @@
 class PresentationController < ApplicationController
 
   def view
-
-    @extend_presentation = true;
-
   end
 
   #Mailchimp Subscribe
@@ -12,9 +9,9 @@ class PresentationController < ApplicationController
     list_id = params[:id]
 
     merge_variables = {
-        email: params['email'],
-        name: params['name'],
-        zip: params['zip']
+      email: params['email'],
+      name: params['name'],
+      zip: params['zip']
     }
 
     begin

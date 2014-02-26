@@ -6,8 +6,15 @@
 
   <title>LiquidTalent</title>
 
-  <base href="../website/" target="_blank">
+  <base href="../website/">
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+
+  <%
+
+     view_presentation = ("/" == URI("http://#{ request.host + request.fullpath }").path);
+     view_signup = ("/login" == URI("http://#{ request.host + request.fullpath }").path);
+
+  %>
 
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -19,12 +26,10 @@
 
 <div id="wrapper">
   <iframe id="background-map" src="https://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=40.706279,-74.005966&amp;spn=0.116076,0.180588&amp;t=m&amp;z=13&amp;output=embed"></iframe>
-  <div id="background">
-
+  <div id="background" <% if view_signup === true %> style="top: 0%;right:0%;width: 100%;height: 100%;" <% end %>>
     <%= yield %>
-
   </div>
-  <div id="admin-panel">
+  <div id="admin-panel" <% if view_signup === true %> style="display: none;" <% end %>>
     <div class="header">
       <a class="login green-button" href="/login">Login</a>
     </div>
@@ -39,23 +44,27 @@
   </div>
 </div>
 
-<div style="display: <% if @extend_presentation == true %> block <% end %> <% if @extend_presentation == false %> none <% end %>;">
+<% if view_presentation === true %>
+
+<div id="presentation">
 
 <div id="presentation-header">
 
+  <div id="newsletter-sign-up">Sign up to our LiquidTalent newsletter!</div>
+
   <div id="register-form">
-    <div id="register-form-name" class="field" contentEditable="true">Name</div>
-    <div id="register-form-email" class="field" contentEditable="true">Email</div>
-    <div id="register-form-zip" class="field" contentEditable="true">Zip</div>
-    <a href="#" id="register-form-send" class="field green-button">Send</a>
+    <div id="register-form-name" class="field" contenteditable="true">Name</div>
+    <div id="register-form-email" class="field" contenteditable="true">Email</div>
+    <div id="register-form-zip" class="field" contenteditable="true">Zip</div>
+    <a href="javascript:submitRegisterForm()" id="register-form-send" class="field green-button">Send</a>
   </div>
 
   <div id="social-twitter-container">
 
     <div class="appstore-buttons">
       Get the app!
-      <div class="ios"></div>
-      <div class="android"></div>
+      <div class="ios t"></div>
+      <div class="android t"></div>
     </div>
 
     <a class="twitter-timeline" href="https://twitter.com/LiquidTalent" data-widget-id="437662684415135745" target="_blank">Tweets
@@ -105,12 +114,12 @@
 
         <div class="header-icon">
           <div class="social">
-            <div class="button in"></div>
-            <div class="button tw"></div>
-            <div class="button fb"></div>
-            <div class="button gl"></div>
-            <div class="button gr"></div>
-            <div class="button ma"></div>
+            <a href="http://www.linkedin.com/company/liquidtalent" target="_blank" class="button in t"></a>
+            <a href="https://twitter.com/LiquidTalent" target="_blank" class="button tw t"></a>
+            <a href="https://www.facebook.com/liquidtalent" target="_blank" class="button fb t"></a>
+            <a href="https://plus.google.com/111892577057930602448/posts" target="_blank" class="button gl t"></a>
+            <a href="http://statigr.am/liquidtalent" target="_blank" class="button gr t"></a>
+            <div class="button ma t"></div>
           </div>
         </div>
 
@@ -164,8 +173,8 @@
 
         <div class="header-icon only-two">
           <div class="social only-two">
-            <div class="button in"></div>
-            <div class="button tw"></div>
+            <a href="http://www.linkedin.com/in/alexabelin" target="_blank" class="button in t"></a>
+            <a href="https://twitter.com/alexabelin" target="_blank" class="button tw t"></a>
           </div>
         </div>
 
@@ -211,8 +220,8 @@
 
         <div class="header-icon only-two">
           <div class="social only-two">
-            <div class="button in"></div>
-            <div class="button tw"></div>
+            <a href="http://www.linkedin.com/in/scottannan" target="_blank" class="button in t"></a>
+            <a href="https://twitter.com/AIMbitious" target="_blank" class="button tw t"></a>
           </div>
         </div>
 
@@ -291,12 +300,12 @@
 
   <div class="container">
     <div id="contact-form">
-      <div class="name field" contentEditable="true">Name *</div>
-      <div class="email field" contentEditable="true">Email *</div>
-      <div class="phone field" contentEditable="true">Phone Number</div>
-      <div class="reason field" contentEditable="true">Reason For Contact</div>
+      <div class="name field" contenteditable="true">Name *</div>
+      <div class="email field" contenteditable="true">Email *</div>
+      <div class="phone field" contenteditable="true">Phone Number</div>
+      <div class="reason field" contenteditable="true">Reason For Contact</div>
       <textarea class="message field" value="Message *"></textarea>
-      <a href="#" class="contact green-button">Contact</a>
+      <a href="javascript:submitContactForm()" class="contact green-button">Contact</a>
     </div>
   </div>
 
@@ -467,8 +476,8 @@
 <div id="footer">
 
   <div class="appstore-buttons">
-    <div class="ios"></div>
-    <div class="android"></div>
+    <div class="ios t"></div>
+    <div class="android t"></div>
   </div>
 
   <div class="navigation">
@@ -481,17 +490,19 @@
   </div>
 
   <div class="social">
-    <div class="button in"></div>
-    <div class="button tw"></div>
-    <div class="button fb"></div>
-    <div class="button gl"></div>
-    <div class="button gr"></div>
-    <div class="button ma"></div>
+    <a href="http://www.linkedin.com/company/liquidtalent" target="_blank" class="button in t"></a>
+    <a href="https://twitter.com/LiquidTalent" target="_blank" class="button tw t"></a>
+    <a href="https://www.facebook.com/liquidtalent" target="_blank" class="button fb t"></a>
+    <a href="https://plus.google.com/111892577057930602448/posts" target="_blank" class="button gl t"></a>
+    <a href="http://statigr.am/liquidtalent" target="_blank" class="button gr t"></a>
+    <div class="button ma t"></div>
   </div>
 
 </div>
 
 </div>
+
+<% end %>
 
 </body>
 

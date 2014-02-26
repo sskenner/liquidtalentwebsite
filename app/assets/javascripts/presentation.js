@@ -10,39 +10,12 @@ $(window).on('load', function () {
     /* Name, email, zip fields and send button. */
 
     'href': '/mailchimp_subscribe/cbcb329291',
+
     'n': $('#register-form-name'),
     'e': $('#register-form-email'),
-    'z': $('#register-form-zip'),
-    's': $('#register-form-send'),
-
-    /* Name, email and zip validation. */
-
-    'nV': false,
-    'eV': false,
-    'zV': false
+    'z': $('#register-form-zip')
 
   };
-
-  rF.n.on('mousedown', function () {
-    if (rF.n.html() === 'Name') {
-      rF.n.html('');
-      rF.n.focus();
-    }
-  });
-  rF.e.on('mousedown', function () {
-    if (rF.e.html() === 'Email') {
-      rF.e.html('');
-      rF.e.focus();
-    }
-  });
-  rF.z.on('mousedown', function () {
-    if (rF.z.html() === 'Zip') {
-      rF.z.html('');
-      rF.z.focus();
-    }
-  });
-
-  rF.s.prop('href', 'javascript:submitRegisterForm()');
 
   // Contact form.
 
@@ -52,53 +25,14 @@ $(window).on('load', function () {
     /* Name, email, phone number, reason for contact, message fields and contact button. */
 
     'href': 'http://www.bloodandtreasure.com/LiquidTalent/index.php',
+
     'n': cF.find('.name'),
     'e': cF.find('.email'),
     'p': cF.find('.phone'),
     'r': cF.find('.reason'),
-    'm': cF.find('.message'),
-    'c': cF.find('.contact'),
-
-    /* Name, email and message validation. */
-
-    'nV': false,
-    'eV': false,
-    'mV': false
+    'm': cF.find('.message')
 
   };
-
-  cF.n.on('mousedown', function () {
-    if (cF.n.html() === 'Name *') {
-      cF.n.html('');
-      cF.n.focus();
-    }
-  });
-  cF.e.on('mousedown', function () {
-    if (cF.e.html() === 'Email *') {
-      cF.e.html('');
-      cF.e.focus();
-    }
-  });
-  cF.p.on('mousedown', function () {
-    if (cF.p.html() === 'Phone Number') {
-      cF.p.html('');
-      cF.p.focus();
-    }
-  });
-  cF.r.on('mousedown', function () {
-    if (cF.r.html() === 'Reason For Contact') {
-      cF.r.html('');
-      cF.r.focus();
-    }
-  });
-  cF.m.on('mousedown', function () {
-    if (cF.m.val() === 'Message *') {
-      cF.m.val('');
-      cF.m.focus();
-    }
-  });
-
-  cF.c.prop('href', 'javascript:submitContactForm()');
 
   //Reveal pages.
   pages = {
@@ -120,18 +54,9 @@ $(window).on('load', function () {
 
 function submitRegisterForm () {
 
-  rF.n.html(rF.n.html().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
-  rF.nV = (!/[^a-zA-Z ]/.test(rF.n.html()) && rF.n.html() !== '');
-
-  rF.e.html(rF.e.html().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
-  rF.eV = (/^([a-zA-Z0-9+.\-]|[_])+@[a-zA-Z0-9\-]+\.[a-zA-Z]+$/.test(rF.e.html()) && rF.e.html() !== '');
-
-  rF.z.html(rF.z.html().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
-  rF.zV = (/^(\d{5}|(\d{5}\-\d{4}))$/.test(rF.z.html()) && rF.z.html() !== '');
-
-  if (rF.nV === false) { alert('The name field contains unconventional characters or is empty.'); }
-  else if (rF.eV === false) { alert('The email field contains unconventional characters or is empty.'); }
-  else if (rF.zV === false) { alert('The zip field is not formatted correctly:\n\nStandard: 00000\nDescriptive: 00000-0000\n\nOr is empty.'); }
+  if (editableDivs.validate(rF.n, 'name') !== true) { alert(editableDivs.validate(rF.n, 'name')); }
+  else if (editableDivs.validate(rF.e, 'email') !== true) { alert(editableDivs.validate(rF.e, 'email')); }
+  else if (editableDivs.validate(rF.z, 'zip') !== true) { alert(editableDivs.validate(rF.z, 'zip')); }
   else {
 
     $.ajax({
@@ -153,19 +78,12 @@ function submitRegisterForm () {
 
 function submitContactForm () {
 
-  cF.n.html(cF.n.html().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
-  cF.e.html(cF.e.html().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
-  cF.p.html(cF.p.html().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
-  cF.r.html(cF.r.html().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
-  cF.m.val(cF.m.val().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
+  editableDivs.validate(cF.r, '');
 
-  cF.nV = (!/[^a-zA-Z ]/.test(cF.n.html()) && cF.n.html() !== '');
-  cF.eV = (/^([a-zA-Z0-9+.\-\]|[_])+@[a-zA-Z0-9\-]+\.[a-zA-Z]+$/.test(cF.e.html()) && cF.e.html() !== '');
-  cF.mV = (cF.m.val().length > 10);
-
-  if (cF.nV === false) { alert('The name field contains unconventional characters or is empty.'); }
-  else if (cF.eV === false) { alert('The email field contains unconventional characters or is empty.'); }
-  else if (cF.mV === false) { alert('The message field should be at least 10 characters long.'); }
+  if (editableDivs.validate(cF.n, 'name') !== true) { alert(editableDivs.validate(cF.n, 'name')); }
+  else if (editableDivs.validate(cF.e, 'email') !== true) { alert(editableDivs.validate(cF.e, 'email')); }
+  else if (editableDivs.validate(cF.p, 'phone') !== true) { alert(editableDivs.validate(cF.p, 'phone')); }
+  else if (editableDivs.validate(cF.m, 'message') !== true) { alert(editableDivs.validate(cF.m, 'message')); }
   else {
 
     $.ajax({

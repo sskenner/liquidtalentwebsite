@@ -1,3 +1,5 @@
+#presentation-header { background-color: #FFF; }
+
 h1 {
     line-height: 120px;
     font-weight: 900;
@@ -14,6 +16,7 @@ h1 {
     margin: 10px;
     box-shadow: 0px 0px 10px 0px #CCC;
     padding: 10px 0px;
+    background-color: #FFF;
 }
 
 .logo {
@@ -31,13 +34,17 @@ h1 {
     background: url(<%= asset_url "presentation/video-bg.png" %>);
     height: 360px;
     border: 2px solid #000;
+    text-align: center;
+    font-size: 20px;
+    line-height: 70px;
+    color: #FFF;
 }
 
 .video-container .play-btn {
     width: 95px;
     margin: auto;
-    background: url(<%= asset_url "presentation/play-btn.png" %>) no-repeat 0px center;
-    height: 100%;
+    background: url(<%= asset_url "presentation/play-btn.png" %>) 50% 100% no-repeat;
+    height: 57%;
     cursor: pointer;
 }
 
@@ -106,15 +113,9 @@ h1 {
     margin: 30px auto;
     width: 434px;
 }
-
 #footer .appstore-buttons .ios,
-#footer .appstore-buttons .android {
-    display: inline-block;
-}
-
-#footer .appstore-buttons .android {
-    margin-left: 15px;
-}
+#footer .appstore-buttons .android { display: inline-block; }
+#footer .appstore-buttons .android { margin-left: 15px; }
 
 #presentation-header .appstore-buttons {
     display: inline-block;
@@ -122,11 +123,8 @@ h1 {
     text-align: center;
     width: 207px;
 }
-
 #presentation-header .appstore-buttons .ios,
-#presentation-header .appstore-buttons .android {
-    margin-top: 15px;
-}
+#presentation-header .appstore-buttons .android { margin-top: 15px; }
 
 .appstore-buttons .ios,
 .appstore-buttons .android {
@@ -134,24 +132,15 @@ h1 {
     height: 72px;
     background-repeat: no-repeat;
     background-image: url(<%= asset_url "presentation/buttons-store.png" %>);
-    cursor: pointer;
+    border-radius: 10px;
 }
+.appstore-buttons .ios { cursor: pointer; }
+.appstore-buttons .android { cursor: auto; }
 
-.appstore-buttons .ios {
-    background-position: 0px 0px;
-}
-
-.appstore-buttons .android {
-    background-position: -208px 0px;
-}
-
-.appstore-buttons .ios:hover {
-    background-position: 0px -72px;
-}
-
-.appstore-buttons .android:hover {
-    background-position: -208px -72px;
-}
+.appstore-buttons .ios { background-position: 0px 0px; }
+.appstore-buttons .android { background-position: -208px 0px; }
+.appstore-buttons .ios:hover { background-position: 0px -72px; }
+/*.appstore-buttons .android:hover { background-position: -208px -72px; }*/
 
 .navigation p {
     text-align: center;
@@ -188,70 +177,40 @@ h1 {
 }
 
 .social .button {
-    cursor: pointer;
     width: 41px;
     height: 41px;
     margin: 0px 4px 0px 4px;
     background-image: url(<%= asset_url "presentation/icons-social-color.png" %>);
     background-repeat: no-repeat;
+    border-radius: 10px;
     display: inline-block;
 }
 
-    /* Linked In */
-.social .in {
-    background-position: 0px 0px;
-}
+/* Linked In */
+.social .in { background-position: 0px 0px; }
+.social .in:hover, .social .in:focus { background-position: 0px -41px; }
 
-.social .in:hover, .social .in:focus {
-    background-position: 0px -41px;
-}
+/* Twitter */
+.social .tw { background-position: -41px 0px; }
+.social .tw:hover, .social .tw:focus { background-position: -41px -41px; }
 
-    /* Twitter */
-.social .tw {
-    background-position: -41px 0px;
-}
+/* Facebook */
+.social .fb { background-position: -82px 0px; }
+.social .fb:hover, .social .fb:focus { background-position: -82px -41px; }
 
-.social .tw:hover, .social .tw:focus {
-    background-position: -41px -41px;
-}
+/* Google + */
+.social .gl { background-position: -123px 0px; }
+.social .gl:hover, .social .gl:focus { background-position: -123px -41px; }
 
-    /* Facebook */
-.social .fb {
-    background-position: -82px 0px;
-}
+/* Instagram */
+.social .gr { background-position: -164px 0px; }
+.social .gr:hover, .social .insta:focus { background-position: -164px -41px; }
 
-.social .fb:hover, .social .fb:focus {
-    background-position: -82px -41px;
-}
+/* Mashable */
+.social .ma { background-position: -205px 0px; }
+/*.social .ma:hover, .social .mthing:focus { background-position: -205px -41px; }*/
 
-    /* Google + */
-.social .gl {
-    background-position: -123px 0px;
-}
-
-.social .gl:hover, .social .gl:focus {
-    background-position: -123px -41px;
-}
-
-    /* Instagram */
-.social .gr {
-    background-position: -164px 0px;
-}
-
-.social .gr:hover, .social .insta:focus {
-    background-position: -164px -41px;
-}
-
-    /* Mashable */
-.social .ma {
-    background-position: -205px 0px;
-}
-
-.social .ma:hover, .social .mthing:focus {
-    background-position: -205px -41px;
-}
-
-    /* about */
+/* about */
 .clear {
     height: 1px;
     clear: both;
@@ -282,22 +241,14 @@ h3 {
     text-decoration: underline;
 }
 
-.description p a:hover, .description p a:focus {
-    color: #000000;
-}
+.description p a:hover, .description p a:focus { color: #000000; }
 
-.description h2 {
-    font-weight: 900;
-}
+.description h2 { font-weight: 900; }
 
-.header {
-    margin: 30px 10px 30px 10px;
-}
+.header { margin: 30px 10px 30px 10px; }
 
 .header-image,
-.header-text {
-    float: left;
-}
+.header-text { float: left; }
 
 .header-icon {
     float: right;
@@ -312,21 +263,13 @@ h3 {
     background-repeat: no-repeat;
 }
 
-.logo-image {
-    background-position: -3px 0px;
-}
+.logo-image { background-position: -3px 0px; }
 
-.scott-image {
-    background-position: -241px 0px;
-}
+.scott-image { background-position: -241px 0px; }
 
-.alex-image {
-    background-position: -122px 0px;
-}
+.alex-image { background-position: -122px 0px; }
 
-.header-text {
-    width: 200px;
-}
+.header-text { width: 200px; }
 
 .header-text .text-title {
     font-size: 30px;
@@ -339,9 +282,7 @@ h3 {
     color: #2ABD43;
 }
 
-.only-two {
-    width: 120px;
-}
+.only-two { width: 120px; }
 
 .left-col {
     width: 250px;
@@ -349,9 +290,7 @@ h3 {
     float: left;
 }
 
-.right-col {
-    margin-left: 270px;
-}
+.right-col { margin-left: 270px; }
 
 #contact-form {
     width: 280px;
@@ -370,9 +309,7 @@ h3 {
     padding-left: 10px;
 }
 
-#contact-form textarea.field {
-    height: 100px;
-}
+#contact-form textarea.field { height: 100px; }
 
 #contact-form .contact {
     display: block;
