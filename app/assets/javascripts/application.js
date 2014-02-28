@@ -17,7 +17,6 @@
 var editableDivs; //Editable Div Tags for user input instead of form input tags.
 
 $(window).on('load', function () {
-
   editableDivs = {
 
     'tags': $('div[contenteditable="true"], textarea, input'),

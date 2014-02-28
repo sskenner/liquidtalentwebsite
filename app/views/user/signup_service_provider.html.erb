@@ -4,39 +4,81 @@
 </div>
 
 <div id="sign-up-sp-form" class="login-container">
+  <input type="hidden" name="user_id" id="user_id" value="<%= params[:user_id] %>" />
+  <input type="hidden" name="token" id="token" value="<%= params[:token] %>" />
+
   <p>
     Address information will not be shared.
   </p>
 
   <div id="signup-address">
-    <div contenteditable="true" class="text-field">Street *</div>
-    <div contenteditable="true" class="text-field">City *</div>
-    <div contenteditable="true" class="text-field">State *</div>
-    <div contenteditable="true" class="text-field">Zip *</div>
+    <div contenteditable="true" class="text-field street">Street *</div>
+    <div>
+      <div contenteditable="true" class="text-field cities city">City *</div>
+      <div id="cities"></div>
+    </div>
+
+    <div contenteditable="true" class="text-field state">State *</div>
+    <div contenteditable="true" class="text-field zip">Zip *</div>
     <div class="clear"></div>
   </div>
+
+  <div class="clear"></div>
 
   <p>
     Complete your profile. Profile videos can only be uploaded through the <a href="">app</a>.
   </p>
 
   <div id="signup-left">
-    <div contenteditable="true" class="text-field">Personal Tagline * *</div>
-    <div contenteditable="true" class="text-field">Summary *</div>
+    <div contenteditable="true" class="text-field desc">Personal Tagline * *</div>
+    <div contenteditable="true" class="text-field summary">Summary *</div>
   </div>
 
   <div id="signup-right">
-    <div contenteditable="true" class="text-field" id="signup-skills">Skills *</div>
-    <div contenteditable="true" class="text-field" id="signup-hourly-rate">Hourly rate *</div>
-    <div contenteditable="true" class="text-field">Experience *</div>
+    <div id="signup-skills">
+      <div contenteditable="true" class="text-field skills">Skills *</div>
+      <div id="skills"></div>
+    </div>
+    <div contenteditable="true" class="text-field hourly_rate" id="signup-hourly-rate">Hourly rate *</div>
+    <div contenteditable="true" class="text-field experience">Experience *</div>
     <div contenteditable="true" class="text-field school" onkeyup="searchSchool(this.innerHTML);">Education *</div>
     <div id="schools"></div>
 
+    <input type="hidden" name="category_id" id="category_id" />
+    <input type="hidden" name="city_id" id="city_id" />
     <input type="hidden" name="school_id" id="school_id" />
   </div>
 
   <div class="clear"></div>
 
-  <a href="#" class="green-button signup-form-sp-button">Finish</a>
+  <a href="javascript:SubmitSignupSPForm()" class="green-button signup-form-sp-button">Finish</a>
 
 </div>
+
+<script type="text/javascript">
+    $(window).on('load', function () {
+        $.ajax({
+            url: 'http://backend.liquidtalent.com/get_info',
+            error: function (error) {
+                alert("Problem with connecting to the server");
+                console.log(error);
+            }
+        }).done(function (data) {
+                    data['response']['cities'].forEach(function(item) {
+                        $('#cities').append('<div onclick="setCity(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+                    })
+
+                    data['response']['categories'].forEach(function(item) {
+                        $('#skills').append('<div onclick="setSkills(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+                    })
+                });
+    });
+
+    $('.city').click(function() {
+        $('#cities').show();
+    });
+
+    $('.skills').click(function() {
+        $('#skills').show();
+    });
+</script>
