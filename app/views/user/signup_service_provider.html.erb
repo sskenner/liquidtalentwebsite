@@ -29,7 +29,10 @@
     <div contenteditable="true" class="text-field" id="signup-skills">Skills *</div>
     <div contenteditable="true" class="text-field" id="signup-hourly-rate">Hourly rate *</div>
     <div contenteditable="true" class="text-field">Experience *</div>
-    <div contenteditable="true" class="text-field">Education *</div>
+    <div contenteditable="true" class="text-field school" onkeyup="searchSchool(this.innerHTML);">Education *</div>
+    <div id="schools"></div>
+
+    <input type="hidden" name="school_id" id="school_id" />
   </div>
 
   <div class="clear"></div>
