@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b19591c8-9878-42c6-b7fc-2b137a287070" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user/signup.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/signup.html.erb" afterPath="$PROJECT_DIR$/app/views/user/signup.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/user.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/user.css.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/user_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/user_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/website.iml" afterPath="$PROJECT_DIR$/.idea/website.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/user.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/user.js" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,7 +33,7 @@
     <file path="/application_controller.rb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393439313604" ignored="false" />
     <file path="/view.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393432595151" ignored="false" />
     <file path="/user_controller.rb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393595434986" ignored="false" />
-    <file path="/user.css.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393597752770" ignored="false" />
+    <file path="/user.css.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393600345096" ignored="false" />
     <file path="/application_helper.rb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393419332027" ignored="false" />
     <file path="/login.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393445374644" ignored="false" />
     <file path="/presentation.js" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393549362613" ignored="false" />
@@ -48,9 +41,10 @@
     <file path="/contact.txt.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393528810090" ignored="false" />
     <file path="/contact_controller.rb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393550086198" ignored="false" />
     <file path="/send_message.json.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393533072389" ignored="false" />
-    <file path="/signup.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393597615507" ignored="false" />
+    <file path="/signup.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393599999925" ignored="false" />
     <file path="/service_provider.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393596799881" ignored="false" />
     <file path="/signup_service_provider.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393596780797" ignored="false" />
+    <file path="/user.js" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393599869695" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +67,7 @@
       <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="91" selection-start="373" selection-end="373" vertical-scroll-proportion="-8.75">
+            <state line="306" column="46" selection-start="14627" selection-end="14664" vertical-scroll-proportion="-7.6938777">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -84,7 +78,16 @@
       <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="114" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.0">
+            <state line="48" column="74" selection-start="1806" selection-end="1806" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="presentation.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/presentation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="26" selection-start="1804" selection-end="1821" vertical-scroll-proportion="-13.4">
               <folding />
             </state>
           </provider>
@@ -93,7 +96,7 @@
       <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -111,7 +114,7 @@
       <file leaf-file-name="signup.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/user/signup.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="11" selection-start="582" selection-end="597" vertical-scroll-proportion="-7.5">
+            <state line="11" column="69" selection-start="586" selection-end="586" vertical-scroll-proportion="-6.875">
               <folding />
             </state>
           </provider>
@@ -120,7 +123,7 @@
       <file leaf-file-name="user.css.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/user.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="80" selection-start="2004" selection-end="2004" vertical-scroll-proportion="0.4966443">
+            <state line="54" column="28" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.37810093">
               <folding />
             </state>
           </provider>
@@ -153,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/contact/contact.txt.erb" />
         <option value="$PROJECT_DIR$/app/views/contact/send_message.json.erb" />
         <option value="$PROJECT_DIR$/config/initializers/setup_mail.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
@@ -167,6 +169,7 @@
         <option value="$PROJECT_DIR$/app/controllers/user_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/user.js" />
         <option value="$PROJECT_DIR$/app/views/user/signup.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/user.css.erb" />
       </list>
@@ -275,6 +278,10 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="presentation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -295,6 +302,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LiquidTalent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -805,27 +830,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/mailers/contact.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="14" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/presentation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="18" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/contact_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="26" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="0" selection-start="987" selection-end="987" vertical-scroll-proportion="0.0">
@@ -868,36 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/presentation.css.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="213" column="1" selection-start="4907" selection-end="4907" vertical-scroll-proportion="0.3473054">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="91" selection-start="373" selection-end="373" vertical-scroll-proportion="-8.75">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="114" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="185" vertical-scroll-proportion="-0.0">
@@ -905,16 +879,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/presentation/subscribe.json.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/presentation/view.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/presentation.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="213" column="1" selection-start="4907" selection-end="4907" vertical-scroll-proportion="0.35500428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/presentation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="26" selection-start="1804" selection-end="1821" vertical-scroll-proportion="-13.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="306" column="46" selection-start="14627" selection-end="14664" vertical-scroll-proportion="-7.6938777">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/signup.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="11" selection-start="582" selection-end="597" vertical-scroll-proportion="-7.5">
+        <state line="11" column="69" selection-start="586" selection-end="586" vertical-scroll-proportion="-6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="74" selection-start="1806" selection-end="1806" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/user.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="80" selection-start="2004" selection-end="2004" vertical-scroll-proportion="0.4966443">
+        <state line="54" column="28" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.37810093">
           <folding />
         </state>
       </provider>
