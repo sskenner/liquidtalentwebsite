@@ -5,7 +5,10 @@ LiquidTalent::Application.routes.draw do
     root 'presentation#view'
 
     #Mailchimp
-    post '/presentation/subscribe/:id' => 'presentation#subscribe'
+    post '/presentation/subscribe' => 'presentation#subscribe'
+
+    #Contact
+    post '/send_message' => 'contact#send_message'
 
 
   ####### User

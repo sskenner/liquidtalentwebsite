@@ -9,7 +9,7 @@ $(window).on('load', function () {
 
     /* Name, email, zip fields and send button. */
 
-    'href': '/mailchimp_subscribe/cbcb329291',
+    'href': '/presentation/subscribe',
 
     'n': $('#register-form-name'),
     'e': $('#register-form-email'),
@@ -24,12 +24,12 @@ $(window).on('load', function () {
 
     /* Name, email, phone number, reason for contact, message fields and contact button. */
 
-    'href': 'http://www.bloodandtreasure.com/LiquidTalent/index.php',
+    'href': '/send_message',
 
     'n': cF.find('.name'),
     'e': cF.find('.email'),
     'p': cF.find('.phone'),
-    'r': cF.find('.reason'),
+    's': cF.find('.reason'),
     'm': cF.find('.message')
 
   };
@@ -52,52 +52,59 @@ $(window).on('load', function () {
 
 });
 
-function submitRegisterForm () {
+function SubmitRegisterForm () {
 
-  if (editableDivs.validate(rF.n, 'name') !== true) { alert(editableDivs.validate(rF.n, 'name')); }
-  else if (editableDivs.validate(rF.e, 'email') !== true) { alert(editableDivs.validate(rF.e, 'email')); }
-  else if (editableDivs.validate(rF.z, 'zip') !== true) { alert(editableDivs.validate(rF.z, 'zip')); }
-  else {
+  if (editableDivs.validate(rF.n, 'name') &&
+      editableDivs.validate(rF.e, 'email') &&
+      editableDivs.validate(rF.z, 'zip')) {
 
     $.ajax({
       url: rF.href,
       datatype: 'json',
       cache: false,
       type: 'post',
-      data: 'name=' + rF.n.html() + '&email=' + rF.e.html() + '&zip=' + rF.z.html(),
+      data: '{"NAME":"' + rF.n.html() + '", "EMAIL":"' + rF.e.html() + '", "ZIP":"' + rF.z.html() + '"}',
       contentType: "application/json; charset=utf-8",
-      error : function (err) {
+      error: function (error) {
         alert("Could not connect to the mail server. Please try again later.");
-        console.log(err);
+        console.log(error);
       }
-    }).done(function (data) { alert(data); });
+    }).done(function (data) {
+
+      if (data['error'] != '') { alert(data['error']); }
+      else { alert(data['success']); }
+
+    });
 
   }
 
 }
 
-function submitContactForm () {
+function SubmitContactForm () {
 
-  editableDivs.validate(cF.r, '');
-
-  if (editableDivs.validate(cF.n, 'name') !== true) { alert(editableDivs.validate(cF.n, 'name')); }
-  else if (editableDivs.validate(cF.e, 'email') !== true) { alert(editableDivs.validate(cF.e, 'email')); }
-  else if (editableDivs.validate(cF.p, 'phone') !== true) { alert(editableDivs.validate(cF.p, 'phone')); }
-  else if (editableDivs.validate(cF.m, 'message') !== true) { alert(editableDivs.validate(cF.m, 'message')); }
-  else {
+  if (editableDivs.validate(cF.n, 'name') &&
+      editableDivs.validate(cF.e, 'email') &&
+      editableDivs.validate(cF.p, 'phone') &&
+      editableDivs.validate(cF.m, 'message') &&
+      editableDivs.validate(cF.s, '')) {
 
     $.ajax({
       url: cF.href,
       datatype: 'json',
       cache: false,
-      type: 'get',
-      data: 'name=' + cF.n.html() + '&email=' + cF.e.html() + '&phone=' + cF.p.html() + '&reason=' + cF.r.html() + '&message=' + cF.m.val(),
+      type: 'post',
+      data: '{"name":"' + cF.n.html() + '", "email":"' + cF.e.html() + '", "phone":"' + cF.p.html() + '", "subject":"' + cF.s.html() + '", "message":"' + cF.m.val() + '"}',
       contentType: "application/json; charset=utf-8",
-      error : function (err) {
+      error: function (error) {
         alert("Could not connect to the mail server. Please try again later.");
-        console.log(err);
+        console.log(error);
       }
-    }).done(function (data) { alert(data); });
+    }).done(function (data) {
+
+      if (data['error'] != '') { alert(data['error']); }
+      else { alert(data['success']); }
+
+    });
 
   }
 
@@ -111,7 +118,7 @@ function RevealPage (page) {
     pages.press.animate({ 'opacity': 0 }, 300, 'linear', function () { pages.press.css('display', 'none'); });
     pages.contact.animate({ 'opacity': 0 }, 300, 'linear', function () { pages.contact.css('display', 'none'); });
 
-    pages.privacy.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
+    pages.privacy.css('display', 'block').animate({ 'opacity': 1 }, 100, 'linear', null);
 
   }
   else {

@@ -20,41 +20,58 @@ $(window).on('load', function () {
 
   editableDivs = {
 
-    'tags': $('*[contenteditable="true"]'),
+    'tags': $('div[contenteditable="true"], textarea, input'),
+
+    'error': '',
 
     'validate': function (element, type) {
 
-      element.html(element.html().replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
+      editableDivs.error = '';
+      element.html(element.html().replace(/<[^>]*>/g, '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' '));
 
-      switch (type) {
+      if (element.html() === element.prop('title') && /\*/.test(element.html()))
+        editableDivs.error = 'Please make sure all required fields are filled in.';
+      else {
 
-        case 'name':
-          return (!/[^a-z ]/i.test(element.html())===true || element.html() === ' ')?
-            true :
-            'The name field contains unconventional characters or is empty.';
-        break;
-        case 'email':
-          return (/^([a-z0-9+.\-]|[_])+@[a-z0-9\-]+\.[a-z]+$/i.test(element.html())===true)?
-            true :
-            'The email field contains unconventional characters or is empty.';
+        switch (type) {
+
+          case 'name':
+            if (/[^a-z ]/i.test(element.html()) === true || element.html() === ' ')
+            editableDivs.error = 'The name field contains unconventional characters or is empty.';
           break;
-        case 'zip':
-          return (/^(\d{5}|(\d{5}\-\d{4}))$/.test(element.html())===true)?
-            true :
-            'The zip field is not formatted correctly:\n\nStandard Zip Format: 00000\nDescriptive Zip Format: 00000-0000\n\n* Make sure the zip field is not empty.';
-          break;
-        case 'phone':
-          return (/^\d{10}$/.test(element.html().replace(/[^0-9]]/g, ''))===true || ( element.html()!==' '&&element.html()!==''&&/Phone/.test(element.html()) )===true)?
-            true :
-            'Please enter a 10 digit phone number.';
-          break;
-        case 'message':
-          return (element.html().length > 10)?
-            true :
-            'The message field should be at least 10 characters long.';
-          break;
+
+          case 'email':
+            if (/^([a-z0-9+.\-]|[_])+@[a-z0-9\-]+\.[a-z]+$/i.test(element.html()) === false)
+              editableDivs.error = 'The email field contains unconventional characters or is empty.';
+            break;
+
+          case 'zip':
+            if (/^(\d{5}|(\d{5}\-\d{4}))$/.test(element.html()) === false)
+              editableDivs.error = 'The zip field is not formatted correctly:\n\nStandard Zip Format: 00000\nDescriptive Zip Format: 00000-0000\n\n* Make sure the zip field is not empty.';
+            break;
+
+          case 'phone':
+            element.html(element.html().replace(/[^0-9]]/g, ''));
+            if (/^\d{10}$/.test(element.html()) === false || element.html() === '')
+              editableDivs.error = 'Please enter a 10 digit phone number.';
+            break;
+
+          case 'message':
+            if (element.val().length < 10)
+              editableDivs.error = 'The message field should be at least 10 characters long.';
+            break;
+
+        }
 
       }
+
+      if (editableDivs.error !== '') {
+
+        alert(editableDivs.error);
+        return false;
+
+      }
+      else { return true; }
 
     }
 
@@ -64,6 +81,8 @@ $(window).on('load', function () {
 
     $(this).attr('onmouseout', "if ($(this).html().replace(/\s+/g, '') === '' && !$(this).is(':focus')) { $(this).html('" + $(this).html() + "'); }");
     $(this).attr('onmouseover', "if ($(this).html() === '" + $(this).html() + "') { BlurEditableFields(); $(this).html(''); }");
+
+    $(this).prop('title', $(this).html());
 
   });
 
