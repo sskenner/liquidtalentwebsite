@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b19591c8-9878-42c6-b7fc-2b137a287070" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/signup.html.erb" afterPath="$PROJECT_DIR$/app/views/user/signup.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/user.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/user.css.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/user.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,7 +97,7 @@
       <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="845" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -111,19 +112,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signup.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="signup.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/user/signup.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="69" selection-start="586" selection-end="586" vertical-scroll-proportion="-6.875">
+            <state line="5" column="0" selection-start="181" selection-end="826" vertical-scroll-proportion="0.0641574">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.css.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="user.css.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/user.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="28" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.37810093">
+            <state line="54" column="28" selection-start="1320" selection-end="1320" vertical-scroll-proportion="-18.416666">
               <folding />
             </state>
           </provider>
@@ -169,9 +170,9 @@
         <option value="$PROJECT_DIR$/app/controllers/user_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/user.js" />
-        <option value="$PROJECT_DIR$/app/views/user/signup.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/user.css.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/signup.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/user.js" />
       </list>
     </option>
   </component>
@@ -916,13 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/signup.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="69" selection-start="586" selection-end="586" vertical-scroll-proportion="-6.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="74" selection-start="1806" selection-end="1806" vertical-scroll-proportion="0.0">
@@ -930,16 +924,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user.js">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/user.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
+        <state line="54" column="28" selection-start="1320" selection-end="1320" vertical-scroll-proportion="-18.416666">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/user.css.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="28" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.37810093">
+        <state line="0" column="0" selection-start="0" selection-end="845" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/signup.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="181" selection-end="826" vertical-scroll-proportion="0.0641574">
           <folding />
         </state>
       </provider>

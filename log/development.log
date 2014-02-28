@@ -22730,3 +22730,168 @@ Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-02-28 16:12:
 
 
 Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-02-28 16:12:27 +0100
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+Processing by UserController#signup as HTML
+  Rendered user/signup.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/assets/main/button-image-upload.png" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-02-28 16:13:26 +0100
+
+
+Started GET "/signup/service_provider" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+Processing by UserController#signup_service_provider as HTML
+  Rendered user/signup_service_provider.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-02-28 16:13:39 +0100
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+Processing by UserController#signup as HTML
+  Rendered user/signup.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 40ms (Views: 39.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/assets/main/button-image-upload.png" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-02-28 16:16:28 +0100
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+Processing by UserController#signup as HTML
+  Rendered user/signup.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 37ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+
+
+Started GET "/assets/main/button-image-upload.png" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-02-28 16:16:47 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-02-28 16:16:47 +0100

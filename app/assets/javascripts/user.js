@@ -1,10 +1,7 @@
 function SubmitSignupForm () {
 
     if (editableDivs.validate(cF.n, 'name') &&
-        editableDivs.validate(cF.e, 'email') &&
-        editableDivs.validate(cF.p, 'phone') &&
-        editableDivs.validate(cF.m, 'message') &&
-        editableDivs.validate(cF.s, '')) {
+        editableDivs.validate(cF.e, 'email')) {
 
         $.ajax({
             url: cF.href,
