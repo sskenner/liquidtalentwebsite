@@ -14,7 +14,7 @@ development:
   database: website_development
   pool: 5
   username: root
-  password: ÅÍÍ´,DMwyida#49801-1034ÅÍÎÏsjasnmasp1270234ÎÍÏÓÏÅ´›ﬁ‹ﬁ¨Ô˜Ó˝
+  password:
   host: localhost
 
 # Warning: The database defined as "test" will be erased and

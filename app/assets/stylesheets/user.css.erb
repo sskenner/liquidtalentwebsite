@@ -43,3 +43,127 @@
 .login-container .linkedin-sign-up:hover { background-position: 0px -55px; }
 .login-container .sign-up { background-position: 399px 0px; }
 .login-container .sign-up:hover { background-position: 399px -55px; }
+
+
+#logo-header {
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 5px 10px 0px #CCC;
+}
+
+#logo-header #logo-login {
+    padding: 20px 0;
+}
+
+.btn-back {
+    background: #000;
+    color: #ddd;
+    padding: 12px 30px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    font-size: 1.4em;
+}
+
+.btn-back:hover {
+    color: #fff;
+}
+
+/***********************************************************************************************************************
+/   Sign up form
+/**********************************************************************************************************************/
+#sign-up-form {
+    margin: 0 auto 60px auto;
+    width: 400px;
+    position: static;
+    display: block;
+    vertical-align: top;
+}
+
+.signup-form-button {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.image-upload {
+    float: left;
+    width: 120px;
+    height: 120px;
+    background: url(<%= asset_path "main/button-image-upload.png" %>);
+}
+
+#signup-provider input {
+    margin-right: 15px;
+}
+
+#signup-provider {
+    font-size: 1.5em;
+    padding: 20px 0;
+}
+
+#signup-name, #signup-email {
+    width: 270px;
+    float: right;
+}
+
+
+/***********************************************************************************************************************
+/   Sign up SP
+/**********************************************************************************************************************/
+#sign-up-sp-form {
+    margin: 0 auto 60px auto;
+    width: 850px;
+    position: static;
+    display: block;
+    vertical-align: top;
+}
+
+#signup-address {
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+#signup-address .text-field {
+    width: 200px;
+    float: left;
+    margin-right: 10px;
+}
+
+#sign-up-sp-form p {
+    font-size: 1.4em;
+    padding-bottom: 10px;
+}
+
+#signup-left {
+    width: 400px;
+    float: left;
+}
+
+#signup-left div {
+    height: 88px;
+}
+
+#signup-right {
+    width: 400px;
+    float: right;
+}
+
+#signup-skills {
+    width: 48%;
+    float: left;
+}
+
+#signup-hourly-rate {
+    width: 48%;
+    float: right;
+}
+
+.signup-form-sp-button {
+    width: 50%;
+    margin: 25px auto;
+    padding: 15px 0;
+    font-size: 18px;
+    text-align: center;
+}

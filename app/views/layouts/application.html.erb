@@ -12,8 +12,7 @@
   <%
 
      view_presentation = ("/" == URI("http://#{ request.host + request.fullpath }").path);
-     view_signup = ("/login" == URI("http://#{ request.host + request.fullpath }").path);
-
+     view_signup = ['login', 'signup', 'signup_service_provider'].include?(params[:action])
   %>
 
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
@@ -26,7 +25,7 @@
 
 <div id="wrapper">
   <iframe id="background-map" src="https://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=40.706279,-74.005966&amp;spn=0.116076,0.180588&amp;t=m&amp;z=13&amp;output=embed"></iframe>
-  <div id="background" <% if view_signup === true %> style="top: 0%;right:0%;width: 100%;height: 100%;" <% end %>>
+  <div id="background" <% if view_signup === true %> style="top: 0%;right:0%;width: 100%;height: 100%; overflow: scroll;" <% end %>>
     <%= yield %>
   </div>
   <div id="admin-panel" <% if view_signup === true %> style="display: none;" <% end %>>
