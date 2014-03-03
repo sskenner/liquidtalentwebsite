@@ -22,6 +22,12 @@ $(window).on('load', function () {
     sF.as = true;
   });
 
+  var user = show_user(getURLParameter('user_id'), function(data) {
+      if(data['response']['user']['summary']) $('.summary').html(data['response']['user']['summary']);
+      if(data['response']['user']['experience']) $('.experience').html(data['response']['user']['experience']);
+      if(data['response']['user']['description']) $('.desc').html(data['response']['user']['description']);
+  });
+
 });
 
 function SubmitSignupForm() {
@@ -165,4 +171,16 @@ function setSchool (id, name) {
   $('#school_id').val(id);
 
   $('#schools').html('');
+}
+
+function show_user(user_id, callback) {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/show?user_id=' + user_id,
+        error: function (error) {
+            alert("Problem with connecting to the server.");
+            console.log(error['']);
+        }
+    }).done(function (data) {
+        return callback(data);
+    });
 }

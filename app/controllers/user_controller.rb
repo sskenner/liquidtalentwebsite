@@ -11,4 +11,8 @@ class UserController < ApplicationController
 
   end
 
+  def linkedin
+
+  end
+
 end
