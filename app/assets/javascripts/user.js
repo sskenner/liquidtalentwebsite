@@ -22,11 +22,13 @@ $(window).on('load', function () {
     sF.as = true;
   });
 
-  var user = show_user(getURLParameter('user_id'), function(data) {
-      if(data['response']['user']['summary']) $('.summary').html(data['response']['user']['summary']);
-      if(data['response']['user']['experience']) $('.experience').html(data['response']['user']['experience']);
-      if(data['response']['user']['description']) $('.desc').html(data['response']['user']['description']);
+    /*
+  var user = show_user(getURLParameter('user_id'), function (data) {
+    if (data['response']['user']['summary']) $('.summary').html(data['response']['user']['summary']);
+    if (data['response']['user']['experience']) $('.experience').html(data['response']['user']['experience']);
+    if (data['response']['user']['description']) $('.desc').html(data['response']['user']['description']);
   });
+  */
 
 });
 
@@ -43,10 +45,7 @@ function SubmitSignupForm() {
         data: 'user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'] + '&avatar=' + sF.a.get(0).files[0],
         contentType: false,
         processData: false,
-        error: function (error) {
-          alert("Could not connect to the server, please try again later.");
-          console.log(error);
-        }
+        error: Response
       }).done(function (avatar_data) {
           if (avatar_data['status'] === 'failed') {
             alert(avatar_data['errors'][0]);
@@ -57,17 +56,15 @@ function SubmitSignupForm() {
     $.ajax({
       url: 'http://backend.liquidtalent.com' + sF.href,
       data: 'name=' + sF.n.html() + '&email=' + sF.e.html() + '&password=' + sF.p.html() + '&password_confirmation=' + sF.pc.html(),
-      error: function (error) {
-        alert("Could not connect to the server, please try again later.");
-        console.log(error);
-      }
+      error: Response
     }).done(function (data) {
         if (data['status'] === 'failed') {
           alert(data['errors'][0]);
         }
         else {
           if ($('#is_provider').is(':checked')) {
-            window.location = '/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'];
+            //window.location = '/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'];
+            javascript: loadPage('/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
           }
           else {
             alert("You've been successfully registered. Welcome to LT!")
@@ -80,7 +77,7 @@ function SubmitSignupForm() {
 
 }
 
-function SubmitSignupSPForm () {
+function SubmitSignupSPForm() {
   // Sign up SP form.
   var spF = $('#sign-up-sp-form');
   spF = {
@@ -114,10 +111,7 @@ function SubmitSignupSPForm () {
         '&attr[category_id]=' + $('#category_id').val() +
         '&attr[school_id]=' + $('#school_id').val() +
         '&attr[is_provider]=1',
-      error: function (error) {
-        alert("Problem with connecting to the server.");
-        console.log(error);
-      }
+      error: Response
     }).done(function (data) {
         if (data['status'] === 'failed') {
           alert(data['errors'][0]);
@@ -132,7 +126,7 @@ function SubmitSignupSPForm () {
 
 }
 
-function searchSchool (query) {
+function searchSchool(query) {
   if (query === '') {
     $('#schools').html('');
     return;
@@ -152,21 +146,21 @@ function searchSchool (query) {
     });
 }
 
-function setCity (id, name) {
+function setCity(id, name) {
   $('.city').html(name);
   $('#city_id').val(id);
 
   $('#cities').hide();
 }
 
-function setSkills (id, name) {
+function setSkills(id, name) {
   $('.skills').html(name);
   $('#category_id').val(id);
 
   $('#skills').hide();
 }
 
-function setSchool (id, name) {
+function setSchool(id, name) {
   $('.school').html(name);
   $('#school_id').val(id);
 
@@ -174,14 +168,11 @@ function setSchool (id, name) {
 }
 
 function show_user(user_id, callback) {
-    $.ajax({
-        url: 'http://backend.liquidtalent.com/user/show?user_id=' + user_id,
-        error: function (error) {
-            alert("Problem with connecting to the server.");
-            console.log(error['']);
-        }
-    }).done(function (data) {
-        return callback(data);
+  $.ajax({
+    url: 'http://backend.liquidtalent.com/user/show?user_id=' + user_id,
+    error: Response
+  }).done(function (data) {
+      return callback(data);
     });
 }
 

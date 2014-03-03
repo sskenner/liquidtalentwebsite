@@ -143,6 +143,32 @@ $(window).on('load', function () {
 
 });
 
-function getURLParameter(name) {
-    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+function Response (response) {
+
+  if (response['error'] && response['error'] != '') { alert(response['error']); }
+  else if (response['success']) { alert(response['success']); }
+  else {
+
+    alert("Could not connect to the mail server. Please try again later.");
+    console.log(response);
+
+  }
+
+}
+function getURLParameter (name) {
+    return (decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1]).replace(/\+/g, '%20'))||null;
+}
+
+function loadPage(path) {
+    $.ajax({
+        url: path,
+        error: function (error) {
+            alert("Problem with connecting to the server.");
+            console.log(error['']);
+        }
+    }).done(function (data) {
+            $('#background').html(data);
+    });
+
+    return false;
 }
