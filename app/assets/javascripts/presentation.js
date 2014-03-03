@@ -62,16 +62,8 @@ function SubmitRegisterForm () {
       url: rF.href,
       type: 'post',
       data: 'name=' + rF.n.html() + '&email=' + rF.e.html() + '&zip=' + rF.z.html(),
-      error: function (error) {
-        alert("Could not connect to the mail server. Please try again later.");
-        console.log(error);
-      }
-    }).done(function (data) {
-
-      if (data['error'] != '') { alert(data['error']); }
-      else { alert(data['success']); }
-
-    });
+      error: Response
+    }).done(Response);
 
   }
 
@@ -91,18 +83,8 @@ function SubmitContactForm () {
       url: cF.href,
       type: 'post',
       data: 'name=' + cF.n.html() + '&email=' + cF.e.html() + '&phone=' + cF.p.html() + '&subject=' + cF.s.html() + '&message=' + cF.m.val(),
-      error: function (error) {
-        alert("Could not connect to the mail server. Please try again later.");
-        console.log(error);
-      }
-    }).done(function (data) {
-
-      if (data['error'] != '') { alert(data['error']); }
-      else { alert(data['success']); }
-
-      loaders.toggle('contact', 0);
-
-    });
+      error: Response
+    }).done(Response.done(function () { loaders.toggle('contact', 0); }));
 
   }
 

@@ -13,4 +13,8 @@ class UserController < ApplicationController
   def search_service_provider
   end
 
+  def linkedin
+
+  end
+
 end
