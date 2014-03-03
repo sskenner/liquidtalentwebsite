@@ -55,30 +55,28 @@
 
 </div>
 
-<script type="text/javascript">
-    $(window).on('load', function () {
-        $.ajax({
-            url: 'http://backend.liquidtalent.com/get_info',
-            error: function (error) {
-                alert("Problem with connecting to the server");
-                console.log(error);
-            }
-        }).done(function (data) {
-                    data['response']['cities'].forEach(function(item) {
-                        $('#cities').append('<div onclick="setCity(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
-                    })
+<!--$(window).on('load', function () {-->
+<!--$.ajax({-->
+<!--url: 'http://backend.liquidtalent.com/get_info',-->
+<!--error: function (error) {-->
+<!--alert("Problem with connecting to the server");-->
+<!--console.log(error);-->
+<!--}-->
+<!--}).done(function (data) {-->
+<!--data['response']['cities'].forEach(function(item) {-->
+<!--$('#cities').append('<div onclick="setCity(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')-->
+<!--})-->
 
-                    data['response']['categories'].forEach(function(item) {
-                        $('#skills').append('<div onclick="setSkills(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
-                    })
-                });
-    });
+<!--data['response']['categories'].forEach(function(item) {-->
+<!--$('#skills').append('<div onclick="setSkills(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')-->
+<!--})-->
+<!--});-->
+<!--});-->
 
-    $('.city').click(function() {
-        $('#cities').show();
-    });
+<!--$('.city').click(function() {-->
+<!--$('#cities').show();-->
+<!--});-->
 
-    $('.skills').click(function() {
-        $('#skills').show();
-    });
-</script>
+<!--$('.skills').click(function() {-->
+<!--$('#skills').show();-->
+<!--});-->

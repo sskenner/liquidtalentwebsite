@@ -1,19 +1,16 @@
-Message from LiquidTalent.com
-=============================
+Message from LiquidTalent.com<br><br> <br><br>
 
+<%= @mail[:message] %><br><br>
 
-Message:
-
-<%= @mail[:message] %>
-
-
-Name:
-<%= @mail[:name] %>
+Name:<br>
+<%= @mail[:name] %><br><br>
 
 <% if @mail[:phone].gsub(/\s+/, '') != '' %>
-Phone:
-<%= @mail[:phone] %>
+
+Phone:<br>
+<%= @mail[:phone] %><br><br>
+
 <% end %>
 
-Email:
-<%= @mail[:email] %>
+Email:<br>
+<%= @mail[:email] %><br><br>

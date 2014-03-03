@@ -1,10 +1,10 @@
-#ActionMailer::Base.delivery_method = :smtp
-#ActionMailer::Base.smtp_settings = {
-#    :address => 'smtp.servername.com',
-#    :port => 587,
-#    :domain => 'whatever.org',
-#    :user_name => 'username',
-#    :password => 'password',
-#    :authentication => 'plain',
-#    :enable_starttls_auto => true
-#}
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
+  :address => 'barney.machighway.com',
+  :port => 587,
+  :domain => 'mail.bloodandtreasure.com',
+  :user_name => 'info@bloodandtreasure.com',
+  :password => 'oinPDIeV@y.}',
+  :authentication => :login,
+  :enable_starttls_auto => true
+}

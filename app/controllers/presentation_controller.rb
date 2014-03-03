@@ -1,39 +1,53 @@
 class PresentationController < ApplicationController
 
-  def view
+  def index
+
+    render :layout => 'presentation'
+
   end
 
   #Mailchimp Subscribe
   def subscribe
 
-    list = {
-      id: 'cbcb329291',
-      variables: {
-        email: params[:email],
-        name: params[:name],
-        zip: params[:zip]
-      }
+    @list = {
+      mailchimp: {
+        'id' => 'cbcb329291',
+        'email' => { 'email' => params[:email] },
+        'merge_vars' => {
+            'NAME' => params[:name],
+            'ZIP' => params[:zip]
+        }#,
+        #'email_type' => 'html',
+        #'double_optin' => true,
+        #'update_existing' => false,
+        #'replace_interests' => true,
+        #'send_welcome' => false
+      },
+      'error' => '',
+      'success' => ''
     }
 
     begin
 
-      @mc.lists.subscribe(list[:id], list[:variables])
-      flash[:success] = 'You were successfully subscribed to our newsletter.'
+      @mc.lists.subscribe(@list[:mailchimp]['id'],
+                          @list[:mailchimp]['email'],
+                          @list[:mailchimp]['merge_vars'])
+      @list['success'] = 'You were successfully subscribed to our newsletter.'
 
     rescue Mailchimp::ListAlreadySubscribedError
 
-      flash[:error] = 'Hmm.. We already have you in our list. \n\n(look for the mailchimp confirmation email in your inbox to confirm your subscription.)'
+      @list['error'] = 'Hmm.. We already have you in our list. \n\n(look for the mailchimp confirmation email in your inbox to confirm your subscription.)'
 
     rescue Mailchimp::ListDoesNotExistError
 
-      flash[:error] = 'The mailing list is being updated, please try again later.'
+      @list['error'] = 'The mailing list is being updated, please try again later.'
 
     rescue Mailchimp::Error => ex
 
       if ex.message
-        flash[:error] = ex.message
+        @list['error'] = ex.message
       else
-        flash[:error] = 'An unrecognized error has occurred and has been sent to the LiquidTalent team to be fixed.'
+        @list['error'] = 'An unrecognized error has occurred and has been sent to the LiquidTalent team to be fixed.'
       end
 
     end

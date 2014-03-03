@@ -60,11 +60,8 @@ function SubmitRegisterForm () {
 
     $.ajax({
       url: rF.href,
-      datatype: 'json',
-      cache: false,
       type: 'post',
-      data: '{"NAME":"' + rF.n.html() + '", "EMAIL":"' + rF.e.html() + '", "ZIP":"' + rF.z.html() + '"}',
-      contentType: "application/json; charset=utf-8",
+      data: 'name=' + rF.n.html() + '&email=' + rF.e.html() + '&zip=' + rF.z.html(),
       error: function (error) {
         alert("Could not connect to the mail server. Please try again later.");
         console.log(error);
@@ -88,13 +85,12 @@ function SubmitContactForm () {
       editableDivs.validate(cF.m, 'message') &&
       editableDivs.validate(cF.s, '')) {
 
+    loaders.toggle('contact', 1);
+
     $.ajax({
       url: cF.href,
-      datatype: 'json',
-      cache: false,
       type: 'post',
-      data: '{"name":"' + cF.n.html() + '", "email":"' + cF.e.html() + '", "phone":"' + cF.p.html() + '", "subject":"' + cF.s.html() + '", "message":"' + cF.m.val() + '"}',
-      contentType: "application/json; charset=utf-8",
+      data: 'name=' + cF.n.html() + '&email=' + cF.e.html() + '&phone=' + cF.p.html() + '&subject=' + cF.s.html() + '&message=' + cF.m.val(),
       error: function (error) {
         alert("Could not connect to the mail server. Please try again later.");
         console.log(error);
@@ -103,6 +99,8 @@ function SubmitContactForm () {
 
       if (data['error'] != '') { alert(data['error']); }
       else { alert(data['success']); }
+
+      loaders.toggle('contact', 0);
 
     });
 

@@ -1,4 +1,5 @@
 LiquidTalent::Application.configure do
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -26,4 +27,7 @@ LiquidTalent::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.action_mailer.raise_delivery_errors = true
+
 end

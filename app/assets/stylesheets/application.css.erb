@@ -15,6 +15,11 @@
 /* fonts */
 
 @font-face {
+    font-family: 'password';
+    font-weight: 400;
+    src: url('<%= asset_url "password/p400.ttf" %>');
+}
+@font-face {
     font-family: 'nexa';
     font-weight: 100;
     src: url('<%= asset_url "nexalight.ttf" %>');
@@ -99,6 +104,7 @@ a:hover { color: #000; }
     box-shadow: 0px 0px 10px 0px #CCC;
     outline: 0;
 }
+.text-field.pass-field { font-family: 'password'; }
 
 .green-button {
     display: block;
@@ -111,12 +117,24 @@ a:hover { color: #000; }
     color: #FFF;
 }
 
+.black-button {
+    display: block;
+    background: url(<%= asset_url "main/gradient-black.png" %>);
+    background-size: 1px 100%;
+    color: #FFF;
+}
+.black-button:hover, .black-button:focus {
+    background: #000;
+    color: #FFF;
+}
+
 #wrapper {
     height: 700px;
     width: 960px;
     margin: 30px auto 0px auto;
     position: relative;
     overflow: hidden;
+    background: url(<%= asset_url "main/bg.jpg" %>);
 }
 #newsletter-sign-up {
     font-size: 24px;
@@ -134,14 +152,6 @@ a:hover { color: #000; }
     box-shadow: 0px 0px 10px 0px #CCC;
     background: hsla(0, 0%, 100%, 0.5);
 
-}
-#background-map {
-    width: 1200px;
-    height: 1200px;
-    position: absolute;
-    opacity: 0.3;
-    bottom: -250px;
-    left: -120px;
 }
 #admin-panel {
     position: relative;

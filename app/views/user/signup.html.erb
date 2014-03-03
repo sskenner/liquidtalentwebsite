@@ -1,16 +1,18 @@
 <div id="logo-header">
-  <img src="<%= asset_path "main/logo-text.png" %>" alt="LiquidTalent header Logo with text" id="logo-login">
-  <a href="/" class="btn-back">Back</a>
+  <img src="<%= asset_path "sign-up/logo-small.png" %>" alt="LiquidTalent header Logo with text" id="logo-login">
+  <a href="/" class="black-button">Back</a>
 </div>
 
 <div id="sign-up-form" class="login-container">
 
-  <div class="image-upload"><input type="file" id="avatar" onchange="avatar = true;" /></div>
-  <div contenteditable="true" class="text-field name" id="signup-name">Name *</div>
-  <div contenteditable="true" class="text-field email" id="signup-email">Email *</div>
+  <div class="image-upload"><input type="file" id="avatar" /></div>
+  <div contenteditable="true" class="text-field name">Name *</div>
+  <div contenteditable="true" class="text-field email">Email *</div>
   <div contenteditable="true" class="text-field password">Password *</div>
   <div contenteditable="true" class="text-field password_confirmation">Confirm Password *</div>
-  <div id="signup-provider"><input type="checkbox" name="is_provider" id="is_provider" /> Register as LiquidTalent Professional</div>
-  <a href="javascript:SubmitSignupForm()" class="green-button signup-form-button">Continue</a>
+  <div id="signup-provider">
+    <input type="checkbox" name="is_provider" /> Register as LiquidTalent Professional
+  </div>
+  <a href="javascript:SubmitSignupForm()" class="green-button">Continue</a>
 
 </div>
