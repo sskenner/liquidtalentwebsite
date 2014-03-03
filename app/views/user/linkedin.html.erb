@@ -10,29 +10,7 @@
             }
         }).done(function (data) {
             var access_token = data['access_token'];
-            alert(access_token);
             linkedin_connect(access_token);
         });
     });
-
-    function linkedin_connect(access_token) {
-        $.ajax({
-            url: 'http://backend.liquidtalent.com/user/linkedin_connect/?access_token=' + access_token,
-            error: function (error) {
-                alert("Problem with connecting to the server.");
-                console.log(error['']);
-            }
-        }).done(function (data) {
-            if(data['response']['new_user']) {
-                if (confirm('Do you want to register as a Service Provider?')) {
-                    window.location = '/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'];
-                } else {
-                    alert('User is successfully registered, token: ' + data['response']['user']['token']);
-                }
-            }
-            else {
-                alert('User is already registered, token: ' + data['response']['user']['token']);
-            }
-        });
-    }
 </script>
