@@ -64,21 +64,6 @@ $(window).on('load', function () {
 
         };
 
-        pageSegments = {
-
-          about: $('#about-page'),
-          press: $('#press-page'),
-          contact: $('#contact-page'),
-          privacy: $('#privacy-page'),
-
-          //links to reveal individual pages.
-
-          links: $('.navigation-link')
-
-        };
-
-        pageSegments.links.each(function () { $(this).prop('href', "Javascript:RevealPage('" + $(this).prop('href').replace(/http[:]\/\/.*\//, '') + "');"); });
-
       }
 
     },
@@ -224,26 +209,35 @@ function SubmitContactForm () {
 
 function RevealPage (pageSegment) {
 
+  pageSegments = {
+
+    about: $('#about-page'),
+    press: $('#press-page'),
+    contact: $('#contact-page'),
+    privacy: $('#privacy-page')
+
+  };
+
   if (pageSegment === 'privacy') {
 
-    pageSegments.about.animate({ 'opacity': 0 }, 300, 'linear', function () { pages.about.css('display', 'none'); });
-    pageSegments.press.animate({ 'opacity': 0 }, 300, 'linear', function () { pages.press.css('display', 'none'); });
-    pageSegments.contact.animate({ 'opacity': 0 }, 300, 'linear', function () { pages.contact.css('display', 'none'); });
+    pageSegments.about.animate({ 'opacity': 0 }, 300, 'linear', function () { pageSegments.about.css('display', 'none'); });
+    pageSegments.press.animate({ 'opacity': 0 }, 300, 'linear', function () { pageSegments.press.css('display', 'none'); });
+    pageSegments.contact.animate({ 'opacity': 0 }, 300, 'linear', function () { pageSegments.contact.css('display', 'none'); });
 
-    pageSegments.privacy.css('display', 'block').animate({ 'opacity': 1 }, 100, 'linear', null);
+    pageSegments.privacy.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
 
   }
   else {
+
+    pageSegments.privacy.animate({ 'opacity': 0 }, 300, 'linear', function () { pageSegments.privacy.css('display', 'none'); });
 
     pageSegments.about.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
     pageSegments.press.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
     pageSegments.contact.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
 
-    pageSegments.privacy.animate({ 'opacity': 0 }, 300, 'linear', function () { pages.privacy.css('display', 'none'); });
-
   }
 
-  $('html, body').delay(300).animate({ scrollTop: $(pageSegments[pageSegment]).offset().top }, 1000, 'linear', null);
+  $('html, body').delay(500).animate({ scrollTop: $(pageSegments[pageSegment]).offset().top }, 300, 'linear', null);
 
 }
 
