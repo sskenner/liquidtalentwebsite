@@ -4,11 +4,13 @@ class UserController < ApplicationController
   end
 
   def signup
-
+  end
+  def signup_service_provider
   end
 
-  def signup_service_provider
-
+  def search
+  end
+  def search_service_provider
   end
 
   def linkedin
