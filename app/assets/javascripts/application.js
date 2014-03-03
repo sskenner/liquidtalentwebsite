@@ -142,3 +142,16 @@ $(window).on('load', function () {
   });
 
 });
+
+function Response (response) {
+
+  if (response['error'] && response['error'] != '') { alert(response['error']); }
+  else if (response['success']) { alert(response['success']); }
+  else {
+
+    alert("Could not connect to the mail server. Please try again later.");
+    console.log(response);
+
+  }
+
+}
