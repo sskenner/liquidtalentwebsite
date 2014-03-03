@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    $( document ).ready(function(){
+    $(document).ready(function () {
         var code = getURLParameter('code');
 
         $.ajax({
@@ -9,8 +9,8 @@
                 console.log(error['']);
             }
         }).done(function (data) {
-            var access_token = data['access_token'];
-            linkedin_connect(access_token);
-        });
+                    var access_token = data['access_token'];
+                    linkedin_connect(access_token);
+                });
     });
 </script>

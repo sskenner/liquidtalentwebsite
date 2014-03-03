@@ -23,7 +23,7 @@
   </div>
   <div id="admin-panel">
     <div class="header">
-      <a class="login green-button" href="javascript: loadPage('/login');">Login</a>
+      <a class="login green-button" href="javascript: loadPage('login');">Login</a>
     </div>
     <div class="navigation">
       <a class="search link t" href="/search"></a>
@@ -43,9 +43,9 @@
   <div id="newsletter-sign-up">Sign up to our LiquidTalent newsletter!</div>
 
   <div id="register-form">
-    <div id="register-form-name" class="field" contenteditable="true">Name</div>
-    <div id="register-form-email" class="field" contenteditable="true">Email</div>
-    <div id="register-form-zip" class="field" contenteditable="true">Zip</div>
+    <input type="text" id="register-form-name" class="field" placeholder="Name">
+    <input type="text" id="register-form-email" class="field" placeholder="Email">
+    <input type="text" id="register-form-zip" class="field" placeholder="Zip">
     <a href="javascript:SubmitRegisterForm()" id="register-form-send" class="field green-button">Send</a>
   </div>
 
@@ -290,11 +290,11 @@
 
   <div class="container">
     <div id="contact-form">
-      <div class="name field" contenteditable="true">Name *</div>
-      <div class="email field" contenteditable="true">Email *</div>
-      <div class="phone field" contenteditable="true">Phone Number</div>
-      <div class="reason field" contenteditable="true">Reason For Contact</div>
-      <textarea class="message field" value="Message *">Message *</textarea>
+      <input type="text" class="name field" placeholder="Name *">
+      <input type="text" class="email field" placeholder="Email *">
+      <input type="text" class="phone field" placeholder="Phone Number">
+      <input type="text" class="reason field" placeholder="Reason For Contact">
+      <textarea class="message field" placeholder="Message *"></textarea>
       <a href="javascript:SubmitContactForm()" class="contact green-button">Contact</a>
       <img src="<%= asset_path "main/loader.gif" %>" alt="contact" class="loader">
     </div>

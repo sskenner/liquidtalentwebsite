@@ -4,22 +4,22 @@
 </div>
 
 <div id="sign-up-sp-form" class="login-container">
-  <input type="hidden" name="user_id" id="user_id" value="<%= params[:user_id] %>" />
-  <input type="hidden" name="token" id="token" value="<%= params[:token] %>" />
+  <input type="hidden" name="user_id" id="user_id" value="<%= params[:user_id] %>"/>
+  <input type="hidden" name="token" id="token" value="<%= params[:token] %>"/>
 
   <p>
     Address information will not be shared.
   </p>
 
   <div id="signup-address">
-    <div contenteditable="true" class="text-field street">Street *</div>
+    <input type="text" placeholder="Street *" class="text-field street">
     <div>
-      <div contenteditable="true" class="text-field cities city">City *</div>
+      <input type="text" placeholder="City *" class="text-field cities city">
       <div id="cities"></div>
     </div>
 
-    <div contenteditable="true" class="text-field state">State *</div>
-    <div contenteditable="true" class="text-field zip">Zip *</div>
+    <input type="text" placeholder="State *" class="text-field state">
+    <input type="text" placeholder="Zip *" class="text-field zip">
     <div class="clear"></div>
   </div>
 
@@ -30,23 +30,23 @@
   </p>
 
   <div id="signup-left">
-    <div contenteditable="true" class="text-field desc">Personal Tagline * *</div>
-    <div contenteditable="true" class="text-field summary">Summary *</div>
+    <input type="text" placeholder="Personal Tagline *" class="text-field desc">
+    <input type="text" placeholder="Summary *" class="text-field summary">
   </div>
 
   <div id="signup-right">
     <div id="signup-skills">
-      <div contenteditable="true" class="text-field skills">Skills *</div>
+      <input type="text" placeholder="Skills *" class="text-field skills">
       <div id="skills"></div>
     </div>
-    <div contenteditable="true" class="text-field hourly_rate" id="signup-hourly-rate">Hourly rate *</div>
-    <div contenteditable="true" class="text-field experience">Experience *</div>
-    <div contenteditable="true" class="text-field school" onkeyup="searchSchool(this.innerHTML);">Education *</div>
+    <input type="text" placeholder="Hourly rate *" class="text-field hourly_rate" id="signup-hourly-rate">
+    <input type="text" placeholder="Experience *" class="text-field experience">
+    <input type="text" placeholder="Education *" class="text-field school" onkeyup="searchSchool(this.innerHTML);">
     <div id="schools"></div>
 
-    <input type="hidden" name="category_id" id="category_id" />
-    <input type="hidden" name="city_id" id="city_id" />
-    <input type="hidden" name="school_id" id="school_id" />
+    <input type="text" type="hidden" name="category_id" id="category_id"/>
+    <input type="text" type="hidden" name="city_id" id="city_id"/>
+    <input type="text" type="hidden" name="school_id" id="school_id"/>
   </div>
 
   <div class="clear"></div>
