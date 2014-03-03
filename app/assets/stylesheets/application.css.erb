@@ -151,7 +151,14 @@ a:hover { color: #000; }
     border: 1px solid #FFF;
     box-shadow: 0px 0px 10px 0px #CCC;
     background: hsla(0, 0%, 100%, 0.5);
+    overflow: hidden;
 
+}
+#background.disabled {
+    top: 0%;
+    right:0%;
+    width: 100%;
+    height: 100%;
 }
 #admin-panel {
     position: relative;
@@ -162,6 +169,7 @@ a:hover { color: #000; }
     bottom: 10px;
 
 }
+#admin-panel.disabled { display: none; }
 #admin-panel .header {
     background: url(<%= asset_url "admin-panel/header-login.jpg" %>);
     border-top: 10px solid #000;
@@ -190,30 +198,30 @@ a:hover { color: #000; }
 }
 #admin-panel .search.link { background-position: 0px 0px; }
 #admin-panel .search.link:hover { background-position: 0px -56px; }
-#admin-panel .search.link-active { background-position: -190px 0px; }
-#admin-panel .search.link-active:hover { background-position: -190px -56px; }
+#admin-panel .search.link.active { background-position: -190px 0px; }
+#admin-panel .search.link.active:hover { background-position: -190px -56px; }
 
 #admin-panel .projects.link { background-position: 0px -112px; }
 #admin-panel .projects.link:hover { background-position: 0px -168px; }
-#admin-panel .projects.link-active { background-position: -190px -112px; }
-#admin-panel .projects.link-active:hover { background-position: -190px -168px; }
+#admin-panel .projects.link.active { background-position: -190px -112px; }
+#admin-panel .projects.link.active:hover { background-position: -190px -168px; }
 
 #admin-panel .messages.link { background-position: 0px -224px; }
 #admin-panel .messages.link:hover { background-position: 0px -280px; }
-#admin-panel .messages.link-active { background-position: -190px -224px; }
-#admin-panel .messages.link-active:hover { background-position: -190px -280px; }
+#admin-panel .messages.link.active { background-position: -190px -224px; }
+#admin-panel .messages.link.active:hover { background-position: -190px -280px; }
 
 #admin-panel .favorites.link { background-position: 0px -336px; }
 #admin-panel .favorites.link:hover { background-position: 0px -392px; }
-#admin-panel .favorites.link-active { background-position: -190px -336px; }
-#admin-panel .favorites.link-active:hover { background-position: -190px -392px; }
+#admin-panel .favorites.link.active { background-position: -190px -336px; }
+#admin-panel .favorites.link.active:hover { background-position: -190px -392px; }
 
 #admin-panel .stats.link { background-position: 0px -448px; }
 #admin-panel .stats.link:hover { background-position: 0px -504px; }
-#admin-panel .stats.link-active { background-position: -190px -448px; }
-#admin-panel .stats.link-active:hover { background-position: -190px -504px; }
+#admin-panel .stats.link.active { background-position: -190px -448px; }
+#admin-panel .stats.link.active:hover { background-position: -190px -504px; }
 
 #admin-panel .lti.link { background-position: 0px -560px; }
 #admin-panel .lti.link:hover { background-position: 0px -616px; }
-#admin-panel .lti.link-active { background-position: -190px -560px; }
-#admin-panel .lti.link-active:hover { background-position: -190px -616px; }
+#admin-panel .lti.link.active { background-position: -190px -560px; }
+#admin-panel .lti.link.active:hover { background-position: -190px -616px; }
