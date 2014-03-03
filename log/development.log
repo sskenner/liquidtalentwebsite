@@ -34501,3 +34501,3385 @@ Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:14:35 +0
 
 
 Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-03 18:14:35 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:23:50 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (16.5ms)
+Completed 200 OK in 225ms (Views: 197.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:23:51 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:23:51 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:23:51 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:23:51 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:23:51 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:23:51 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:23:51 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:23:51 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:23:51 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:23:51 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:23:51 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:24:08 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:27:03 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 39ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:27:03 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:27:03 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:27:03 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:27:03 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:27:03 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:27:03 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:27:03 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:27:03 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:27:04 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:27:04 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:27:04 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:27:42 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:29:24 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:30:06 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:30:08 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.6ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393871406314" for 127.0.0.1 at 2014-03-03 18:30:08 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393871406315" for 127.0.0.1 at 2014-03-03 18:30:08 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393871406316" for 127.0.0.1 at 2014-03-03 18:30:08 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393871406317" for 127.0.0.1 at 2014-03-03 18:30:08 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393871406318" for 127.0.0.1 at 2014-03-03 18:30:08 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:31:49 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:31:51 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393871509548" for 127.0.0.1 at 2014-03-03 18:31:51 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393871509549" for 127.0.0.1 at 2014-03-03 18:31:51 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393871509550" for 127.0.0.1 at 2014-03-03 18:31:51 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393871509551" for 127.0.0.1 at 2014-03-03 18:31:51 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393871509552" for 127.0.0.1 at 2014-03-03 18:31:51 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:31:54 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:33:29 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 255ms (Views: 254.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393871514235" for 127.0.0.1 at 2014-03-03 18:33:30 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393871514236" for 127.0.0.1 at 2014-03-03 18:33:30 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393871514237" for 127.0.0.1 at 2014-03-03 18:33:30 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393871514238" for 127.0.0.1 at 2014-03-03 18:33:30 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393871514239" for 127.0.0.1 at 2014-03-03 18:33:30 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:30 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:30 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:33:30 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:33:30 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:30 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:33:30 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393871610299" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393871610300" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393871610301" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393871610302" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393871610303" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:33:43 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393871623676" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393871623677" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393871623678" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393871623679" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393871623680" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:33:45 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:33:48 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:33:49 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393871628209" for 127.0.0.1 at 2014-03-03 18:33:49 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393871628210" for 127.0.0.1 at 2014-03-03 18:33:49 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393871628211" for 127.0.0.1 at 2014-03-03 18:33:49 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393871628212" for 127.0.0.1 at 2014-03-03 18:33:49 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393871628213" for 127.0.0.1 at 2014-03-03 18:33:49 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:34:59 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:35:00 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393871699444" for 127.0.0.1 at 2014-03-03 18:35:00 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393871699445" for 127.0.0.1 at 2014-03-03 18:35:00 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393871699446" for 127.0.0.1 at 2014-03-03 18:35:00 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393871699447" for 127.0.0.1 at 2014-03-03 18:35:00 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393871699448" for 127.0.0.1 at 2014-03-03 18:35:00 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 222ms (Views: 221.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:36:10 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:36:12 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393871770549" for 127.0.0.1 at 2014-03-03 18:36:12 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393871770550" for 127.0.0.1 at 2014-03-03 18:36:12 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393871770551" for 127.0.0.1 at 2014-03-03 18:36:12 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393871770552" for 127.0.0.1 at 2014-03-03 18:36:12 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393871770553" for 127.0.0.1 at 2014-03-03 18:36:12 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:36:31 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:36:45 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:43:54 +0000
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-03 18:43:56 +0000
+Processing by UserController#search as HTML
+  Rendered user/search.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:43:58 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:44:22 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:44:22 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:44:22 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:44:22 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:44:22 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:44:22 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:44:22 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:44:22 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:44:22 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:44:23 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:44:23 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:44:23 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393872262922" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393872262923" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393872262924" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393872262925" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393872262926" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:44:28 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:46:53 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:49:22 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:49:29 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:49:35 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:49:53 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:50:05 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:51:46 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:51:46 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:51:46 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:51:46 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:51:46 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:51:46 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:51:46 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:51:46 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:51:47 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:52:29 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:52:44 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:53:23 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:53:24 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:53:46 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:53:47 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:53:58 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:53:59 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:54:00 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:58:33 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 211ms (Views: 210.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:58:34 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:58:45 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:58:45 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:58:45 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:58:45 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:58:45 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:58:46 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 18:59:03 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 18:59:03 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 18:59:03 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:59:03 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 18:59:03 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 18:59:03 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 18:59:03 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 18:59:03 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 18:59:04 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:00:53 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:04:50 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:04:50 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:04:50 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:04:50 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:04:50 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:04:50 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:04:51 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:07:17 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873637518" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873637519" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873637520" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873637521" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873637522" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873643220" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873643221" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873643222" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873643223" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873643224" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873643611" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873643612" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873643613" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873643614" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873643615" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873643716" for 127.0.0.1 at 2014-03-03 19:07:23 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873643717" for 127.0.0.1 at 2014-03-03 19:07:24 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873643718" for 127.0.0.1 at 2014-03-03 19:07:24 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873643719" for 127.0.0.1 at 2014-03-03 19:07:24 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873643720" for 127.0.0.1 at 2014-03-03 19:07:24 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:07:27 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873644029" for 127.0.0.1 at 2014-03-03 19:07:27 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873644030" for 127.0.0.1 at 2014-03-03 19:07:27 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873644031" for 127.0.0.1 at 2014-03-03 19:07:27 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873644032" for 127.0.0.1 at 2014-03-03 19:07:27 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873644033" for 127.0.0.1 at 2014-03-03 19:07:27 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:07:28 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873647899" for 127.0.0.1 at 2014-03-03 19:07:28 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873647900" for 127.0.0.1 at 2014-03-03 19:07:28 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873647901" for 127.0.0.1 at 2014-03-03 19:07:28 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873647902" for 127.0.0.1 at 2014-03-03 19:07:28 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873647903" for 127.0.0.1 at 2014-03-03 19:07:28 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:07:29 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873648701" for 127.0.0.1 at 2014-03-03 19:07:29 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873648702" for 127.0.0.1 at 2014-03-03 19:07:29 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873648703" for 127.0.0.1 at 2014-03-03 19:07:29 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873648704" for 127.0.0.1 at 2014-03-03 19:07:29 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873648705" for 127.0.0.1 at 2014-03-03 19:07:29 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:09:30 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873770256" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873770257" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873770258" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873770259" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873770260" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873773160" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873773161" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873773162" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873773163" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873773164" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:33 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:34 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873773530" for 127.0.0.1 at 2014-03-03 19:09:34 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873773531" for 127.0.0.1 at 2014-03-03 19:09:34 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873773532" for 127.0.0.1 at 2014-03-03 19:09:34 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873773533" for 127.0.0.1 at 2014-03-03 19:09:34 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873773534" for 127.0.0.1 at 2014-03-03 19:09:34 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:34 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:34 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:34 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873774570" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873774571" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873774572" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873774573" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873774574" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873775189" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873775190" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873775191" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873775192" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873775193" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:35 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873775790" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873775791" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873775792" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873775793" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873775794" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873776389" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873776390" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873776391" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873776392" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873776393" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873776693" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873776694" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873776695" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873776696" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873776697" for 127.0.0.1 at 2014-03-03 19:09:36 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873776939" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873776940" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873776941" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873776942" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873776943" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873777188" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873777189" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873777190" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873777191" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873777192" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873777290" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873777291" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873777292" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873777293" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873777294" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873777696" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873777697" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873777698" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873777699" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873777700" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873777819" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873777820" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873777821" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873777822" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873777823" for 127.0.0.1 at 2014-03-03 19:09:37 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873777921" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873777922" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873777923" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873777924" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873777925" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873778315" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873778316" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873778317" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873778318" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873778319" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873778420" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873778421" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873778422" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873778423" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873778424" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:38 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:40 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873778524" for 127.0.0.1 at 2014-03-03 19:09:40 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873778525" for 127.0.0.1 at 2014-03-03 19:09:40 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873778526" for 127.0.0.1 at 2014-03-03 19:09:40 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873778527" for 127.0.0.1 at 2014-03-03 19:09:40 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873778528" for 127.0.0.1 at 2014-03-03 19:09:40 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873780952" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873780953" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873780954" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873780955" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873780956" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:41 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:46 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873781591" for 127.0.0.1 at 2014-03-03 19:09:46 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873781592" for 127.0.0.1 at 2014-03-03 19:09:46 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873781593" for 127.0.0.1 at 2014-03-03 19:09:46 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873781594" for 127.0.0.1 at 2014-03-03 19:09:46 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873781595" for 127.0.0.1 at 2014-03-03 19:09:46 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:46 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:46 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:46 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873786238" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873786239" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873786240" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873786241" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873786242" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1&_=1393873787173" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1393873787174" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/presentation.js?body=1&_=1393873787175" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/user.js?body=1&_=1393873787176" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/application.js?body=1&_=1393873787177" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:47 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:09:56 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-03 19:09:58 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:09:58 +0000
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-03 19:09:58 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:10:40 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-03 19:10:43 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:10:43 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:13:04 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 17ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:13:05 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:13:05 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:13:05 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:13:05 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:13:05 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:13:05 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:13:05 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:13:05 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:13:05 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:13:05 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:13:05 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-03 19:13:07 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:13:07 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:14:03 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:14:03 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:14:03 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:14:03 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:14:03 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:14:03 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:14:03 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:14:03 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:14:03 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:14:04 +0000
+
+
+Started GET "/projects" for 127.0.0.1 at 2014-03-03 19:14:06 +0000
+
+ActionController::RoutingError (No route matches [GET] "/projects"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (36.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (66.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:14:08 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-03 19:14:13 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-03 19:14:13 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:15:39 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-03 19:15:46 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:15:46 +0000
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-03 19:15:46 +0000
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-03-03 19:15:52 +0000
+Processing by UserController#signup as */*
+  Rendered user/signup.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 40ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-03 19:15:52 +0000
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-03 19:15:52 +0000
+
+
+Started GET "/assets/main/button-image-upload.png" for 127.0.0.1 at 2014-03-03 19:15:52 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-03 19:15:56 +0000
+Processing by UserController#login as HTML
+  Rendered user/login.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:15:56 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:15:59 +0000
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-03 19:16:06 +0000
+Processing by UserController#search as HTML
+  Rendered user/search.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 328ms (Views: 327.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:16:09 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:16:09 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:16:09 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:16:09 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:16:09 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-03 19:16:09 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:16:09 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:16:09 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 19:16:10 +0000
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-03 19:16:27 +0000
+Processing by UserController#search as HTML
+  Rendered user/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-03 19:16:30 +0000
+Processing by UserController#search as HTML
+  Rendered user/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/presentation.css?body=1" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/presentation.js?body=1" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-03 19:16:31 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-03 19:16:31 +0000

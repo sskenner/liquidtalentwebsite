@@ -24,12 +24,15 @@ $(window).on('load', function () {
 
   pages = {
 
+    'active': '',
+
     'home': {
 
+      'href': '',
       'load': function () {
 
-        $('#presention').css('opacity', 0);
-        $('#presention').animate({ opacity: 1 }, 1000, 'linear');
+        $('#presentation').css({ opacity: 0, display: 'block' });
+        $('#presentation').animate({ opacity: 1 }, 1000, 'linear');
 
         if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
         if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
@@ -76,46 +79,47 @@ $(window).on('load', function () {
 
         pageSegments.links.each(function () { $(this).prop('href', "Javascript:RevealPage('" + $(this).prop('href').replace(/http[:]\/\/.*\//, '') + "');"); });
 
-      },
+      }
 
-      'login': {
+    },
 
-        'href': '/login',
-        'load': function () {
+    'login': {
 
-          $('#presention').animate({ opacity: 0 }, 1000, 'linear');
+      'href': '/login',
+      'load': function () {
 
-          if ($('#background.disabled')) { $('#background').addClass('disabled'); }
-          if ($('#admin-panel.disabled')) { $('#admin-panel').addClass('disabled'); }
+        $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () { $('#presentation').css({ display: 'none' }); });
 
-        }
+        if ($('#background.disabled')) { $('#background').addClass('disabled'); }
+        if ($('#admin-panel.disabled')) { $('#admin-panel').addClass('disabled'); }
 
-      },
+      }
 
-      'signup': {
+    },
 
-        'load': function () {
+    'signup': {
 
-          sF = $('#sign-up-form');
-          sF = {
+      'href': '/signup',
+      'load': function () {
 
-            'href': '/user/signup',
+        sF = $('#sign-up-form');
+        sF = {
 
-            'a': sF.find('.image-upload #avatar'),
-            'aus': false, // Avatar Upload State
+          'href': '/user/signup',
 
-            'n': sF.find('.name'),
-            'e': sF.find('.email'),
-            'p': sF.find('.password'),
-            'pc': sF.find('.password_confirmation')
+          'a': sF.find('.image-upload #avatar'),
+          'aus': false, // Avatar Upload State
 
-          };
+          'n': sF.find('.name'),
+          'e': sF.find('.email'),
+          'p': sF.find('.password'),
+          'pc': sF.find('.password_confirmation')
 
-          sF.a.on('change', function () {
-            sF.as = true;
-          });
+        };
 
-        }
+        sF.a.on('change', function () {
+          sF.as = true;
+        });
 
       }
 
@@ -163,12 +167,17 @@ function Response(response) {
 
 }
 
-function loadPage(path) {
+function loadPage (page) {
+
+  Object.keys(pages).forEach(function (p) { if (pages[p].href === page) { pages.active = pages[p]; } });
 
   $.ajax({
-    url: path,
+    url: pages.active.href,
     error: Response
-  }).done(function (data) { $('#background').html(data); });
+  }).done(function (data) {
+      $('#background').html(data);
+      pages.active.load();
+    });
 
   return false;
 

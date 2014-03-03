@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b19591c8-9878-42c6-b7fc-2b137a287070" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/linkedin.html.erb" afterPath="$PROJECT_DIR$/app/views/user/linkedin.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/presentation.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/presentation.css.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/presentation.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/presentation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/search.html.erb" afterPath="$PROJECT_DIR$/app/views/user/search.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/signup.html.erb" afterPath="$PROJECT_DIR$/app/views/user/signup.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" afterPath="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/user.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/user.css.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/user.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/website.iml" afterPath="$PROJECT_DIR$/.idea/website.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="website.iws" />
@@ -32,7 +21,7 @@
     <file path="/presentation.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393869044078" ignored="false" />
     <file path="/application.rb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393778077660" ignored="false" />
     <file path="/a.css" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393184077920" ignored="false" />
-    <file path="/application.js" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393870735725" ignored="false" />
+    <file path="/application.js" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393874133139" ignored="false" />
     <file path="/mailchimp_subscribe.json.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393192157265" ignored="false" />
     <file path="/../MC/app/assets/javascripts/application.js" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393192368642" ignored="false" />
     <file path="/bootstrap.min.css" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1393192551612" ignored="false" />
@@ -88,7 +77,7 @@
       <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="64" selection-start="579" selection-end="579" vertical-scroll-proportion="-15.625">
+            <state line="20" column="24" selection-start="438" selection-end="438" vertical-scroll-proportion="-12.5">
               <folding>
                 <element signature="tag#div#1;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#2;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
@@ -100,18 +89,18 @@
       <file leaf-file-name="application.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="315" column="25" selection-start="8744" selection-end="8744" vertical-scroll-proportion="0.6595059">
+            <state line="30" column="15" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.29001075">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#1305#1544#0" expanded="false" />
-                <element signature="e#1593#1912#0" expanded="false" />
-                <element signature="e#1938#2186#0" expanded="false" />
-                <element signature="e#2744#3207#0" expanded="false" />
-                <element signature="e#2797#3112#0" expanded="false" />
-                <element signature="e#3243#3531#0" expanded="false" />
+                <element signature="e#1366#1605#0" expanded="false" />
+                <element signature="e#1654#1973#0" expanded="false" />
+                <element signature="e#1999#2247#0" expanded="false" />
+                <element signature="e#2896#3331#0" expanded="false" />
+                <element signature="e#2945#3244#0" expanded="false" />
+                <element signature="e#3358#3646#0" expanded="false" />
                 <element signature="n#!!block;n#Response#0" expanded="false" />
                 <element signature="n#!!block;n#SubmitRegisterForm#0" expanded="false" />
-                <element signature="e#4551#4698#0" expanded="false" />
+                <element signature="e#4823#4970#0" expanded="false" />
                 <element signature="n#!!block;n#SubmitContactForm#0" expanded="false" />
                 <element signature="n#!!block;n#RevealPage#0" expanded="false" />
                 <element signature="n#!!block;n#SubmitSignupForm#0" expanded="false" />
@@ -120,8 +109,8 @@
                 <element signature="n#!!block;n#setSkills#0" expanded="false" />
                 <element signature="n#!!block;n#setSchool#0" expanded="false" />
                 <element signature="n#!!block;n#show_user#0" expanded="false" />
-                <element signature="e#9948#10046#0" expanded="false" />
-                <element signature="e#10069#10105#0" expanded="false" />
+                <element signature="e#10220#10318#0" expanded="false" />
+                <element signature="e#10341#10377#0" expanded="false" />
                 <element signature="n#!!block;n#linkedin_connect#0" expanded="false" />
               </folding>
             </state>
@@ -131,7 +120,7 @@
       <file leaf-file-name="signup.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/user/signup.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="79" selection-start="242" selection-end="242" vertical-scroll-proportion="-3.75">
+            <state line="2" column="12" selection-start="149" selection-end="149" vertical-scroll-proportion="-1.25">
               <folding />
             </state>
           </provider>
@@ -410,6 +399,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LiquidTalent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -982,13 +985,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/user_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="14" selection-start="192" selection-end="192" vertical-scroll-proportion="0.20117351">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/presentation_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1244,16 +1240,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="9" selection-start="313" selection-end="320" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/signup.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="79" selection-start="242" selection-end="242" vertical-scroll-proportion="-3.75">
+        <state line="2" column="12" selection-start="149" selection-end="149" vertical-scroll-proportion="-1.25">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="64" selection-start="579" selection-end="579" vertical-scroll-proportion="-15.625">
+        <state line="20" column="24" selection-start="438" selection-end="438" vertical-scroll-proportion="-12.5">
           <folding>
             <element signature="tag#div#1;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#2;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
@@ -1263,18 +1266,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="315" column="25" selection-start="8744" selection-end="8744" vertical-scroll-proportion="0.6595059">
+        <state line="30" column="15" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.29001075">
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#1305#1544#0" expanded="false" />
-            <element signature="e#1593#1912#0" expanded="false" />
-            <element signature="e#1938#2186#0" expanded="false" />
-            <element signature="e#2744#3207#0" expanded="false" />
-            <element signature="e#2797#3112#0" expanded="false" />
-            <element signature="e#3243#3531#0" expanded="false" />
+            <element signature="e#1366#1605#0" expanded="false" />
+            <element signature="e#1654#1973#0" expanded="false" />
+            <element signature="e#1999#2247#0" expanded="false" />
+            <element signature="e#2896#3331#0" expanded="false" />
+            <element signature="e#2945#3244#0" expanded="false" />
+            <element signature="e#3358#3646#0" expanded="false" />
             <element signature="n#!!block;n#Response#0" expanded="false" />
             <element signature="n#!!block;n#SubmitRegisterForm#0" expanded="false" />
-            <element signature="e#4551#4698#0" expanded="false" />
+            <element signature="e#4823#4970#0" expanded="false" />
             <element signature="n#!!block;n#SubmitContactForm#0" expanded="false" />
             <element signature="n#!!block;n#RevealPage#0" expanded="false" />
             <element signature="n#!!block;n#SubmitSignupForm#0" expanded="false" />
@@ -1283,8 +1286,8 @@
             <element signature="n#!!block;n#setSkills#0" expanded="false" />
             <element signature="n#!!block;n#setSchool#0" expanded="false" />
             <element signature="n#!!block;n#show_user#0" expanded="false" />
-            <element signature="e#9948#10046#0" expanded="false" />
-            <element signature="e#10069#10105#0" expanded="false" />
+            <element signature="e#10220#10318#0" expanded="false" />
+            <element signature="e#10341#10377#0" expanded="false" />
             <element signature="n#!!block;n#linkedin_connect#0" expanded="false" />
           </folding>
         </state>
