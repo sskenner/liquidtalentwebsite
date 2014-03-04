@@ -18,11 +18,64 @@
 /   Main
 /**********************************************************************************************************************/
 
-var loaders, pages;
+var loaders, pages, users, markers = [];
 
 var currentUser = null;
 
 $(window).on('load', function () {
+
+    //users = FilterUserByGEO('latitude_from=-100&latitude_to=100&longitude_from=-100&longitude_to=100');
+    users = [{
+        "id":1,
+        "name":"Martin Pis",
+        "email":"jozef@pis.com",
+        "badge_demander":"silver",
+        "badge_provider":"no",
+        "summary":null,
+        "skills":"Senior Ruby Developer",
+        "category_id":1,
+        "subcategory_id":2,
+        "street":"4 Nicholas Street, Suite 2100",
+        "city_id":1,
+        "state":"New York",
+        "zip":"10001",
+        "latitude":40.75,
+        "longitude":-74.0122,
+        "rate_demander":4.0,
+        "rate_provider":0.0,
+        "hourly_rate":35.0,
+        "birth_date":"1986-12-12",
+        "description":"I program quality websites in Ruby.",
+        "experience":"I have 13 years Ruby experience.",
+        "portfolio":null,
+        "school_id":null,
+        "linkedin_id":null,
+        "linkedin_token":null,
+        "device_token":null,
+        "device_token_updated_at":null,
+        "stripe_customer_id":"cus_37bnLpZaUNP9ZV",
+        "stripe_recipient_id":"rp_33W77TyBxmWW0W",
+        "empty_bank_account_notified":false,
+        "location_mode":"address",
+        "lt":"now",
+        "is_provider":true,
+        "admin":false,
+        "created_at":"2013-11-24T12:52:23.000Z",
+        "title":null,
+        "age":null,
+        "avatar_url":null,
+        "avatar_file_name":null,
+        "avatar_content_type":null,
+        "avatar_file_size":null,
+        "avatar_updated_at":null,
+        "video_url":null,
+        "video_file_name":null,
+        "video_content_type":null,
+        "video_file_size":null,
+        "video_updated_at":null,
+        "city_name":"New York",
+        "school_name":""
+    }];
 
   pages = {
 
@@ -333,7 +386,7 @@ function RevealPage (pageSegment) {
 var sF;
 
 /***********************************************************************************************************************
-/   Login
+/   User
 /**********************************************************************************************************************/
 function login() {
     $.ajax({
@@ -355,6 +408,10 @@ function login() {
 
     });
 }
+
+/****** Search ******/
+
+var sF;
 
 /***********************************************************************************************************************
 /   SignUp
@@ -426,6 +483,7 @@ function SubmitSignupForm() {
     return false;
 
 }
+
 function SubmitSignupSPForm() {
   $.ajax({
     url: 'http://backend.liquidtalent.com' + sF.href,
@@ -500,6 +558,13 @@ function setSchool(id, name) {
   $('#schools').html('');
 }
 
+function FilterUserByGEO(query, callback) {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/filter' + query,
+        error: Response
+    }).done(function (data) { return jQuery.parseJSON(data); });
+}
+
 function show_user(user_id, callback) {
   $.ajax({
     url: 'http://backend.liquidtalent.com/user/show?user_id=' + user_id,
@@ -531,6 +596,10 @@ function linkedin_connect(access_token) {
       }
     });
 }
+
+/****** Search ******/
+
+var map;
 
 function mapSearch(map) {
     $.ajax({
