@@ -15,8 +15,8 @@
 //= require_tree .
 
 /***********************************************************************************************************************
- /   Main
- /**********************************************************************************************************************/
+/ Main
+/**********************************************************************************************************************/
 
 var loaders, pages;
 
@@ -103,10 +103,18 @@ $(window).on('load', function () {
 
         },
 
+
         'signup': {
 
             'href': '/signup',
             'load': function () {
+
+                if ($('#admin-panel')) {
+                    $('#admin-panel').addClass('disabled');
+                }
+                if ($('#background')) {
+                    $('#background').addClass('disabled');
+                }
 
                 sF = $('#sign-up-form');
                 sF = {
@@ -114,21 +122,68 @@ $(window).on('load', function () {
                     'href': '/user/signup',
 
                     'a': sF.find('.image-upload #avatar'),
-                    'aus': false, // Avatar Upload State
 
                     'n': sF.find('.name'),
                     'e': sF.find('.email'),
                     'p': sF.find('.password'),
-                    'pc': sF.find('.password_confirmation')
-
-                };
-
-                sF.a.on('change', function () {
-                    sF.as = true;
-                });
+                    'pc': sF.find('.password_confirmation'),
+                    'as': false
+                }
 
             }
 
+        },
+
+        'signup_service_provider': {
+            'href': '/signup_service_provider',
+            'load': function () {
+                if ($('#admin-panel')) {
+                    $('#admin-panel').addClass('disabled');
+                }
+                if ($('#background')) {
+                    $('#background').addClass('disabled');
+                }
+
+                sF = $('#sign-up-sp-form');
+                sF = {
+
+                    'href': '/user/set_details',
+
+                    'street': sF.find('.street'),
+                    'state': sF.find('.state'),
+                    'zip': sF.find('.zip'),
+                    'description': sF.find('.desc'),
+                    'summary': sF.find('.summary'),
+                    'hourly_rate': sF.find('.hourly_rate'),
+                    'experience': sF.find('.experience')
+
+                };
+
+                $.ajax({
+                    url: 'http://backend.liquidtalent.com/get_info',
+                    error: function (error) {
+                        alert("Problem with connecting to the server");
+                        console.log(error);
+                    }
+                }).done(function (data) {
+                            data['response']['cities'].forEach(function (item) {
+                                $('#cities').append('<div onclick="setCity(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+                            })
+
+                            data['response']['categories'].forEach(function (item) {
+                                $('#skills').append('<div onclick="setSkills(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+                            })
+                        });
+
+
+                $('.city').click(function () {
+                    $('#cities').show();
+                });
+
+                $('.skills').click(function () {
+                    $('#skills').show();
+                });
+            }
         },
 
         'map': {
@@ -136,8 +191,12 @@ $(window).on('load', function () {
             'href': '/map',
             'load': function () {
 
-                if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
-                if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background.disabled')) {
+                    $('#background').removeClass('disabled');
+                }
+                if ($('#admin-panel.disabled')) {
+                    $('#admin-panel').removeClass('disabled');
+                }
 
                 this.canvas = document.getElementById('map');
                 this.options = {
@@ -248,8 +307,8 @@ function getURLParameter(name) {
 }
 
 /***********************************************************************************************************************
- /   Presentation
- /**********************************************************************************************************************/
+/ Presentation
+/**********************************************************************************************************************/
 
 var rF;
 var cF;
@@ -327,8 +386,9 @@ function RevealPage(pageSegment) {
 var sF;
 
 /***********************************************************************************************************************
- /   User
- /**********************************************************************************************************************/
+/ User
+/**********************************************************************************************************************/
+
 function login() {
     $.ajax({
         url: 'http://backend.liquidtalent.com' + sF.href,
@@ -336,13 +396,14 @@ function login() {
                 '&password=' + sF.password.val()
         //error: Response(data)
     }).done(function (data) {
+
                 if (data['status'] === 'failed') {
                     alert(data['errors'][0]);
                 }
                 else {
                     alert("You've successfully been signed in to LiquidTalent.");
                     currentUser = data['response']['user'];
-                    $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                    $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
                     checkUnreadMessages();
                     loadPage('/map');
                 }
@@ -355,25 +416,10 @@ function login() {
 var sF;
 
 /***********************************************************************************************************************
- /   SignUp
- /**********************************************************************************************************************/
+/ SignUp
+/**********************************************************************************************************************/
 
 function SubmitSignupForm() {
-
-    if (sF.aus === true) {
-        $.ajax({
-            url: 'http://backend.liquidtalent.com/user/set_avatar',
-            type: 'POST',
-            data: 'user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'] + '&avatar=' + sF.a.get(0).files[0],
-            contentType: false,
-            processData: false,
-            error: Response(data)
-        }).done(function (avatar_data) {
-                    if (avatar_data['status'] === 'failed') {
-                        alert(avatar_data['errors'][0]);
-                    }
-                });
-    }
 
     $.ajax({
         url: 'http://backend.liquidtalent.com' + sF.href,
@@ -384,15 +430,58 @@ function SubmitSignupForm() {
                     alert(data['errors'][0]);
                 }
                 else {
-                    if ($('#is_provider').is(':checked')) {
-                        loadPage('/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                    if (sF.as === true) {
+                        $.ajax({
+                            url: 'http://backend.liquidtalent.com/user/set_avatar',
+                            type: 'POST',
+                            contentType: false,
+                            processData: false,
+                            data: function () {
+                                var rq_data = new FormData();
+                                rq_data.append("user_id", data['response']['user']['id']);
+                                rq_data.append("token", data['response']['user']['token']);
+                                rq_data.append("avatar", sF.a.get(0).files[0]);
+                                return rq_data;
+                                // Or simply return new FormData(jQuery("form")[0]);
+                            }(),
+                            error: Response
+                        }).done(function (avatar_data) {
+                                    if (avatar_data['status'] === 'failed') {
+                                        alert(avatar_data['errors'][0]);
+                                    }
+                                    else {
+                                        if ($('#is_provider').is(':checked')) {
+                                            loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                                        }
+                                        else {
+                                            alert("You've been successfully registered. Welcome to LT!");
+                                            currentUser = data['response']['user'];
+                                            currentUser['avatar_url'] = avatar_data['response']['url'];
+                                            $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                                            checkUnreadMessages();
+                                            loadPage('/map');
+                                        }
+                                    }
+                                });
+
                     }
                     else {
-                        alert("You've been successfully registered. Welcome to LT!");
+                        if ($('#is_provider').is(':checked')) {
+                            loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                        }
+                        else {
+                            alert("You've been successfully registered. Welcome to LT!");
+                            currentUser = data['response']['user'];
+                            $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                            checkUnreadMessages();
+                            loadPage('/map');
+                        }
                     }
                 }
 
             });
+
+    return false;
 
 }
 
@@ -400,6 +489,7 @@ function SubmitSignupSPForm() {
 
     var spF = $('#sign-up-sp-form');
     spF = {
+
 
         'href': '/user/set_details',
 
@@ -462,21 +552,24 @@ function searchSchool(query) {
 }
 
 function setCity(id, name) {
-    $('.city').html(name);
+
+    $('.city').val(name);
     $('#city_id').val(id);
 
     $('#cities').hide();
 }
 
 function setSkills(id, name) {
-    $('.skills').html(name);
+
+    $('.skills').val(name);
     $('#category_id').val(id);
 
     $('#skills').hide();
 }
 
 function setSchool(id, name) {
-    $('.school').html(name);
+
+    $('.school').val(name);
     $('#school_id').val(id);
 
     $('#schools').html('');
@@ -501,13 +594,21 @@ function linkedin_connect(access_token) {
     }).done(function (data) {
                 if (data['response']['new_user']) {
                     if (confirm('Do you want to register as a Service Provider?')) {
-                        window.location = '/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'];
+                        loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                     } else {
                         alert('User is successfully registered, token: ' + data['response']['user']['token']);
+                        currentUser = data['response']['user'];
+                        $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                        checkUnreadMessages();
+                        loadPage('/map');
                     }
                 }
                 else {
                     alert('User is already registered, token: ' + data['response']['user']['token']);
+                    currentUser = data['response']['user'];
+                    $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                    checkUnreadMessages();
+                    loadPage('/map');
                 }
             });
 }
@@ -529,9 +630,9 @@ function mapSearch(map) {
                     cords = new google.maps.LatLng(user.latitude, user.longitude);
 
                     pin = new google.maps.MarkerImage('<%= asset_path 'search/pin.png' %>',
-                          new google.maps.Size(62, 80),
-                          new google.maps.Point(0, 0),
-                          new google.maps.Point(18, 42)
+                            new google.maps.Size(62, 80),
+                            new google.maps.Point(0, 0),
+                            new google.maps.Point(18, 42)
                     );
 
                     marker = new google.maps.Marker({
@@ -544,7 +645,7 @@ function mapSearch(map) {
                     google.maps.event.addListener(marker, 'click', function () {
 
                         map.popUp.overlay.css('display', 'block').animate({ opacity: 0 }, 1000, 'linear');
-                        map.popUp.image.prop('src', (user.avatar_url === null)? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url);
+                        map.popUp.image.prop('src', (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url);
                         map.popUp.description.html(user.description);
                         map.popUp.name.html(user.name);
 
