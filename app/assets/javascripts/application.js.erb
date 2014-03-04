@@ -584,14 +584,20 @@ function linkedin_connect(access_token) {
   }).done(function (data) {
       if(data['response']['new_user']) {
         if (confirm('Do you want to register as a Service Provider?')) {
-          loadPage('/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+          loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
         } else {
           alert('User is successfully registered, token: ' + data['response']['user']['token']);
-          window.location = ('/map');
+            currentUser = data['response']['user'];
+            $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+            checkUnreadMessages();
+            loadPage('/map');
         }
       }
       else {
         alert('User is already registered, token: ' + data['response']['user']['token']);
+          currentUser = data['response']['user'];
+          $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+          checkUnreadMessages();
           loadPage('/map');
       }
     });

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b19591c8-9878-42c6-b7fc-2b137a287070" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/user_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/user_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,12 +71,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="presentation.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="7" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.36895674">
+            <state line="7" column="44" selection-start="63" selection-end="63" vertical-scroll-proportion="-0.625">
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="584" column="25" selection-start="18432" selection-end="18451" vertical-scroll-proportion="0.5038168">
+              <folding>
+                <marker date="1393953098000" expanded="false" signature="11531:11595" placeholder="..." />
+                <marker date="1393953098000" expanded="false" signature="11609:11653" placeholder="..." />
+                <marker date="1393953098000" expanded="false" signature="14076:14140" placeholder="..." />
+                <marker date="1393953098000" expanded="false" signature="14154:14198" placeholder="..." />
+                <marker date="1393953098000" expanded="false" signature="14988:15052" placeholder="..." />
+                <marker date="1393953098000" expanded="false" signature="15066:15110" placeholder="..." />
+                <marker date="1393953098000" expanded="false" signature="16406:16470" placeholder="..." />
+                <marker date="1393953098000" expanded="false" signature="16484:16528" placeholder="..." />
+                <marker date="1393953098000" expanded="true" signature="18887:18951" placeholder="..." />
+                <marker date="1393953098000" expanded="true" signature="18965:19009" placeholder="..." />
+                <marker date="1393953098000" expanded="true" signature="19439:19503" placeholder="..." />
+                <marker date="1393953098000" expanded="true" signature="19517:19561" placeholder="..." />
+                <marker date="1393953098000" expanded="false" signature="22078:22110" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -119,7 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/user.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/presentation.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/presentation.css.erb" />
@@ -135,6 +156,7 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/controllers/user_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       </list>
     </option>
   </component>
@@ -338,6 +360,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LiquidTalent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1053,9 +1097,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="7" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.36895674">
+        <state line="7" column="44" selection-start="63" selection-end="63" vertical-scroll-proportion="-0.625">
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="584" column="25" selection-start="18432" selection-end="18451" vertical-scroll-proportion="0.5038168">
+          <folding>
+            <marker date="1393953098000" expanded="false" signature="11531:11595" placeholder="..." />
+            <marker date="1393953098000" expanded="false" signature="11609:11653" placeholder="..." />
+            <marker date="1393953098000" expanded="false" signature="14076:14140" placeholder="..." />
+            <marker date="1393953098000" expanded="false" signature="14154:14198" placeholder="..." />
+            <marker date="1393953098000" expanded="false" signature="14988:15052" placeholder="..." />
+            <marker date="1393953098000" expanded="false" signature="15066:15110" placeholder="..." />
+            <marker date="1393953098000" expanded="false" signature="16406:16470" placeholder="..." />
+            <marker date="1393953098000" expanded="false" signature="16484:16528" placeholder="..." />
+            <marker date="1393953098000" expanded="true" signature="18887:18951" placeholder="..." />
+            <marker date="1393953098000" expanded="true" signature="18965:19009" placeholder="..." />
+            <marker date="1393953098000" expanded="true" signature="19439:19503" placeholder="..." />
+            <marker date="1393953098000" expanded="true" signature="19517:19561" placeholder="..." />
+            <marker date="1393953098000" expanded="false" signature="22078:22110" placeholder="..." />
           </folding>
         </state>
       </provider>
