@@ -132,6 +132,7 @@ $(window).on('load', function () {
 
           'href': '/map',
           'load': function () {
+              if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
               if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
               var map_canvas = document.getElementById('map_canvas');
@@ -468,10 +469,57 @@ function mapSearch(map) {
     }).done(function (data) {
         data['response'].forEach(function(user) {
             var myLatlng = new google.maps.LatLng(user.latitude, user.longitude);
-            new google.maps.Marker({
+
+            var pin = new google.maps.MarkerImage('/assets/search/pin.png',
+                new google.maps.Size(62, 80),
+                new google.maps.Point(0,0),
+                new google.maps.Point(18, 42)
+            );
+
+
+            marker = new google.maps.Marker({
                 position: myLatlng,
                 map: map,
-                title: user.name
+                title: user.name,
+                icon: pin
+            });
+
+            var contentString =
+                '<div id="map-overlay">' +
+                '<div class="base">' +
+
+                '<div class="avatar">img src="' + user.avatar_url + '" /></div>' +
+                '<div class="favorite-button t"></div>' +
+                '<div class="play-button t"></div>' +
+
+                '<p class="title">' +
+                '<p class="name">' + user.name + '</p>' +
+
+                '</p>' +
+
+                '<p class="description">' + user.description + '</p>' +
+
+                '<div class="linkedin-icon"></div>' +
+
+                '<div class="distance">' + '4km Away' + '</div>' +
+
+                '<div class="lt-drop"></div>' +
+                '<div class="stars">' +
+                '<div class="star"></div>' +
+                '<div class="star"></div>' +
+                '<div class="star"></div>' +
+                '<div class="star"></div>' +
+                '<div class="star"></div>' +
+                '</div>' +
+                '</div>' +
+            '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(map,marker);
             });
         });
     });
