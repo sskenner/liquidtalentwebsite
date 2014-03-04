@@ -406,7 +406,7 @@ function login() {
             else {
                 alert("You've successfully been signed in to LiquidTalent.");
                 currentUser = data['response']['user'];
-                $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
                 checkUnreadMessages();
                 loadPage('/map');
             }
@@ -461,7 +461,7 @@ function SubmitSignupForm() {
                             alert("You've been successfully registered. Welcome to LT!");
                             currentUser = data['response']['user'];
                             currentUser['avatar_url'] = avatar_data['response']['url'];
-                            $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                            $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
                             checkUnreadMessages();
                             loadPage('/map');
                         }
@@ -476,7 +476,7 @@ function SubmitSignupForm() {
                 else {
                     alert("You've been successfully registered. Welcome to LT!");
                     currentUser = data['response']['user'];
-                    $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                    $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
                     checkUnreadMessages();
                     loadPage('/map');
                 }
@@ -513,7 +513,7 @@ function SubmitSignupSPForm() {
       else {
         alert("You've successfully been registered. Welcome to LT!");
           currentUser = data['response'];
-          $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+          $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
           checkUnreadMessages();
           loadPage('/map');
       }
@@ -593,7 +593,7 @@ function linkedin_connect(access_token) {
         } else {
           alert('User is successfully registered, token: ' + data['response']['user']['token']);
             currentUser = data['response']['user'];
-            $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+            $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
             checkUnreadMessages();
             loadPage('/map');
         }
@@ -601,7 +601,7 @@ function linkedin_connect(access_token) {
       else {
         alert('User is already registered, token: ' + data['response']['user']['token']);
           currentUser = data['response']['user'];
-          $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+          $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
           checkUnreadMessages();
           loadPage('/map');
       }
