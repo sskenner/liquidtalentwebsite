@@ -14,7 +14,7 @@ class UserController < ApplicationController
   end
 
   def linkedin
-    render 'presentation/index', layout: 'presentation'
+    render 'user/login', layout: 'presentation'
   end
 
   def map

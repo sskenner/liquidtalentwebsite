@@ -150,6 +150,8 @@ $(window).on('load', function () {
 
       'href': '/signup',
       'load': function () {
+          if ($('#admin-panel')) { $('#admin-panel').addClass('disabled'); }
+          if ($('#background')) { $('#background').addClass('disabled'); }
 
         sF = $('#sign-up-form');
         sF = {
