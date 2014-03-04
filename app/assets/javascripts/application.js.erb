@@ -177,6 +177,9 @@ $(window).on('load', function () {
     'signup_service_provider': {
         'href': '/signup_service_provider',
         'load': function () {
+            if ($('#admin-panel')) { $('#admin-panel').addClass('disabled'); }
+            if ($('#background')) { $('#background').addClass('disabled'); }
+
             sF = $('#sign-up-sp-form');
             sF = {
 
