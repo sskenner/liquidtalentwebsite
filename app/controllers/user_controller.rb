@@ -14,7 +14,9 @@ class UserController < ApplicationController
   end
 
   def linkedin
+  end
 
+  def map
   end
 
 end

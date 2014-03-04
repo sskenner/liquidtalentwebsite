@@ -20,6 +20,8 @@
 
 var loaders, pages;
 
+var currentUser = null;
+
 $(window).on('load', function () {
 
   pages = {
@@ -72,6 +74,15 @@ $(window).on('load', function () {
 
       'href': '/login',
       'load': function () {
+          sF = $('#sign-in');
+          sF = {
+
+              'href': '/user/signin',
+
+              'email': sF.find('.email'),
+              'password': sF.find('.password')
+
+          };
 
         $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () { $('#presentation').css({ display: 'none' }); });
 
@@ -108,7 +119,33 @@ $(window).on('load', function () {
 
       }
 
-    }
+    },
+      'search': {
+
+          'href': '/search',
+          'load': function () {
+          }
+
+      },
+
+      'map': {
+
+          'href': '/map',
+          'load': function () {
+              if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
+
+              var map_canvas = document.getElementById('map_canvas');
+              var map_options = {
+                  center: new google.maps.LatLng(40.5403, -73.5463),
+                  zoom: 8,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+              }
+              var map = new google.maps.Map(map_canvas, map_options)
+
+              mapSearch(map);
+          }
+
+      }
 
   };
 
@@ -241,11 +278,35 @@ function RevealPage (pageSegment) {
 
 }
 
+var sF;
+
+/***********************************************************************************************************************
+/   Login
+/**********************************************************************************************************************/
+function login() {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com' + sF.href,
+        data: 'email=' + sF.email.val() +
+              '&password=' + sF.password.val()
+        //error: Response(data)
+    }).done(function (data) {
+            if (data['status'] === 'failed') {
+                alert(data['errors'][0]);
+            }
+            else {
+                alert("You've successfully been signed in to LiquidTalent.");
+                currentUser = data['response']['user'];
+                $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                checkUnreadMessages();
+                loadPage('/map');
+            }
+
+    });
+}
+
 /***********************************************************************************************************************
 /   SignUp
 /**********************************************************************************************************************/
-
-var sF;
 
 function SubmitSignupForm() {
 
@@ -398,4 +459,31 @@ function linkedin_connect(access_token) {
         alert('User is already registered, token: ' + data['response']['user']['token']);
       }
     });
+}
+
+function mapSearch(map) {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/users/filter',
+        error: Response
+    }).done(function (data) {
+        data['response'].forEach(function(user) {
+            var myLatlng = new google.maps.LatLng(user.latitude, user.longitude);
+            new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: user.name
+            });
+        });
+    });
+}
+
+function checkUnreadMessages() {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/messages/list?limit=9999&receiver_id=' + currentUser['id'],
+        error: Response
+    }).done(function (data) {
+        $('.navigation .messages').html('<div style="position: absolute; right: 10px;">' + data['response'].length + '</div>');
+    });
+
+    setTimeout('checkUnreadMessages()', 10000);
 }
