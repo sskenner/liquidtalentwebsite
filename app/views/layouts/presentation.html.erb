@@ -18,6 +18,26 @@
 
 <body>
 
+<% if params[:code] %>
+<script>
+    $(document).ready(function () {
+        var code = getURLParameter('code');
+
+        $.ajax({
+            url: 'http://backend.liquidtalent.com/user/linkedin_token/?code=' + code,
+            error: function (error) {
+                alert("Problem with connecting to the server.");
+                console.log(error['']);
+            }
+        }).done(function (data) {
+                    var access_token = data['access_token'];
+                    linkedin_connect(access_token);
+                });
+    });
+</script>
+
+<% end %>
+
 <div id="wrapper">
   <div id="background">
     <%= yield %>
