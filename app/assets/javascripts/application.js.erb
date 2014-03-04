@@ -20,6 +20,8 @@
 
 var loaders, pages, users, markers = [];
 
+var currentUser = null;
+
 $(window).on('load', function () {
 
     //users = FilterUserByGEO('latitude_from=-100&latitude_to=100&longitude_from=-100&longitude_to=100');
@@ -125,6 +127,15 @@ $(window).on('load', function () {
 
       'href': '/login',
       'load': function () {
+          sF = $('#sign-in');
+          sF = {
+
+              'href': '/user/signin',
+
+              'email': sF.find('.email'),
+              'password': sF.find('.password')
+
+          };
 
         $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () { $('#presentation').css({ display: 'none' }); });
 
@@ -162,84 +173,33 @@ $(window).on('load', function () {
       }
 
     },
+      'search': {
 
-    'search': {
-
-      'href': '/search',
-      'load': function () {
-
-        if (!$('#map_script') === false) {
-          $('head').append('<script id="map_script" src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=pages.search.initializeMap"></script>');
-        }
+          'href': '/search',
+          'load': function () {
+          }
 
       },
 
-      'initializeMap' : function () {
+      'map': {
 
-          map = new google.maps.Map(document.getElementById('map'), {
-              'center': new google.maps.LatLng(40.714353, -74.005973),
-              'zoom': 9,
-              'mapTypeId': google.maps.MapTypeId.ROADMAP
-          });
-          map.set('styles', [{
-              featureType: 'poi',
-              elementType: 'geometry',
-              stylers: [{ visibility: 'off' }]
-          }]);
+          'href': '/map',
+          'load': function () {
+              if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
+              if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
-          for (var i = 0, markerPosition, infoWindow; i < users.length; i++) {
+              var map_canvas = document.getElementById('map_canvas');
+              var map_options = {
+                  center: new google.maps.LatLng(40.5403, -73.5463),
+                  zoom: 8,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+              }
+              var map = new google.maps.Map(map_canvas, map_options)
 
-              markerPosition = new google.maps.LatLng(users[i].latitude, users[i].longitude);
-              infoWindow = new google.maps.InfoWindow({
-
-                content: '' +
-                '<div id="map-overlay">' +
-                    '<div class="base">' +
-
-                        '<div class="avatar">Profile Pic</div>' +
-                        '<div class="favorite-button t"></div>' +
-                        '<div class="play-button t"></div>' +
-
-                            '<p class="title">' +
-                            '<p class="name">' + users[i].name + '</p>' +
-
-                        '</p>' +
-
-                        '<p class="description">' + users[i].description + '</p>' +
-
-                        '<div class="linkedin-icon"></div>' +
-
-                        '<div class="distance">' + '4km Away' + '</div>' +
-
-                        '<div class="lt-drop"></div>' +
-                        '<div class="stars">' +
-                            '<div class="star"></div>' +
-                            '<div class="star"></div>' +
-                            '<div class="star"></div>' +
-                            '<div class="star"></div>' +
-                            '<div class="star"></div>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>'
-
-              });
-
-              markers[i] = new google.maps.Marker({
-                  position: markerPosition,
-                  map: map,
-                  title: users[i].name,
-                  icon: '<%= asset_path 'search/pin.png' %>'
-              });
-
-              google.maps.event.addListener(markers[i], 'click', function() {
-                  infoWindow.open(map, markers[i]);
-              });
-
+              mapSearch(map);
           }
 
       }
-
-    }
 
   };
 
@@ -372,13 +332,39 @@ function RevealPage (pageSegment) {
 
 }
 
+var sF;
+
 /***********************************************************************************************************************
 /   User
 /**********************************************************************************************************************/
+function login() {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com' + sF.href,
+        data: 'email=' + sF.email.val() +
+              '&password=' + sF.password.val()
+        //error: Response(data)
+    }).done(function (data) {
+            if (data['status'] === 'failed') {
+                alert(data['errors'][0]);
+            }
+            else {
+                alert("You've successfully been signed in to LiquidTalent.");
+                currentUser = data['response']['user'];
+                $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                checkUnreadMessages();
+                loadPage('/map');
+            }
+
+    });
+}
 
 /****** Search ******/
 
 var sF;
+
+/***********************************************************************************************************************
+/   SignUp
+/**********************************************************************************************************************/
 
 function SubmitSignupForm() {
 
@@ -544,3 +530,77 @@ function linkedin_connect(access_token) {
 /****** Search ******/
 
 var map;
+
+function mapSearch(map) {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/users/filter',
+        error: Response
+    }).done(function (data) {
+        data['response'].forEach(function(user) {
+            var myLatlng = new google.maps.LatLng(user.latitude, user.longitude);
+
+            var pin = new google.maps.MarkerImage('/assets/search/pin.png',
+                new google.maps.Size(62, 80),
+                new google.maps.Point(0,0),
+                new google.maps.Point(18, 42)
+            );
+
+
+            marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: user.name,
+                icon: pin
+            });
+
+            var contentString =
+                '<div id="map-overlay">' +
+                '<div class="base">' +
+
+                '<div class="avatar">img src="' + user.avatar_url + '" /></div>' +
+                '<div class="favorite-button t"></div>' +
+                '<div class="play-button t"></div>' +
+
+                '<p class="title">' +
+                '<p class="name">' + user.name + '</p>' +
+
+                '</p>' +
+
+                '<p class="description">' + user.description + '</p>' +
+
+                '<div class="linkedin-icon"></div>' +
+
+                '<div class="distance">' + '4km Away' + '</div>' +
+
+                '<div class="lt-drop"></div>' +
+                '<div class="stars">' +
+                '<div class="star"></div>' +
+                '<div class="star"></div>' +
+                '<div class="star"></div>' +
+                '<div class="star"></div>' +
+                '<div class="star"></div>' +
+                '</div>' +
+                '</div>' +
+            '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(map,marker);
+            });
+        });
+    });
+}
+
+function checkUnreadMessages() {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/messages/list?limit=9999&receiver_id=' + currentUser['id'],
+        error: Response
+    }).done(function (data) {
+        $('.navigation .messages').html('<div style="position: absolute; right: 10px;">' + data['response'].length + '</div>');
+    });
+
+    setTimeout('checkUnreadMessages()', 10000);
+}

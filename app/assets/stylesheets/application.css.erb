@@ -904,3 +904,108 @@ h3 {
     width: 40px;
     opacity: 0;
 }
+
+/***********************************************************************************************************************
+/   Map
+/**********************************************************************************************************************/
+
+#map_canvas {
+    width: 100%;
+    height: 100%;
+}
+
+#map-overlay {
+    width: 100%;
+    height: 100%;
+    background: hsla(0, 0%, 0%, 0.5);
+    position: absolute;
+    top: 60px;
+}
+#map-overlay .base {
+    width: 640px;
+    height: 150px;
+    background: #FFF;
+    position: relative;
+    left: 45px;
+    top: 100px;
+    box-shadow: 0px 0px 10px 0px #777;
+    border-bottom: 1px solid #000;
+}
+
+#map-overlay .avatar {
+    width: 100px;
+    background: #000;
+    color: #FFF;
+    font-size: 24px;
+    text-align: center;
+    border-top: 26px solid #000;
+    border-bottom: 26px solid #000;
+}
+#map-overlay .favorite-button,
+#map-overlay .play-button {
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+}
+#map-overlay .favorite-button { background: url(<%= asset_path "main/button-favorite-small.png" %>) 0px 0px; }
+#map-overlay .favorite-button:hover { background-position: 50px 0px; }
+#map-overlay .play-button { background: url(<%= asset_path "main/button-play.png" %>) 0px 0px; }
+#map-overlay .play-button:hover { background-position: 50px 0px; }
+
+#map-overlay .title {
+    position: absolute;
+    top: 10px;
+    left: 110px;
+}
+#map-overlay .title .name { font-size: 24px; }
+
+#map-overlay .description {
+    position: absolute;
+    top: 60px;
+    left: 110px;
+    width: 405px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+#map-overlay .linkedin-icon {
+    width: 30px;
+    height: 30px;
+    background: url(<%= asset_path "main/linkedin_icon.png" %>);
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    opacity: 0;
+}
+
+#map-overlay .distance {
+    top: 10px;
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+}
+
+#map-overlay .lt-drop {
+    position: absolute;
+    top: 42%;
+    right: 10px;
+    width: 102px;
+    height: 23px;
+    background: url(<%= asset_path "main/drops.png" %>);
+}
+#map-overlay .stars {
+    width: 75px;
+    height: 14px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+#map-overlay .stars .star {
+    vertical-align: top;
+    display: inline-block;
+    width: 15px;
+    height: 14px;
+    background: url(<%= asset_path "main/stars.png" %>);
+}
+#map-overlay .stars .star.active { background-position: 0px 14px; }

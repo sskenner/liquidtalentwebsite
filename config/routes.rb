@@ -23,4 +23,7 @@ LiquidTalent::Application.routes.draw do
     get '/search' => 'user#search'
     get '/search/service_provider' => 'user#search_service_provider'
 
+    #Map
+    get '/map' => 'user#map'
+
 end
