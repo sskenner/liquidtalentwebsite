@@ -18,9 +18,62 @@
 /   Main
 /**********************************************************************************************************************/
 
-var loaders, pages;
+var loaders, pages, users, markers = [];
 
 $(window).on('load', function () {
+
+    //users = FilterUserByGEO('latitude_from=-100&latitude_to=100&longitude_from=-100&longitude_to=100');
+    users = [{
+        "id":1,
+        "name":"Martin Pis",
+        "email":"jozef@pis.com",
+        "badge_demander":"silver",
+        "badge_provider":"no",
+        "summary":null,
+        "skills":"Senior Ruby Developer",
+        "category_id":1,
+        "subcategory_id":2,
+        "street":"4 Nicholas Street, Suite 2100",
+        "city_id":1,
+        "state":"New York",
+        "zip":"10001",
+        "latitude":40.75,
+        "longitude":-74.0122,
+        "rate_demander":4.0,
+        "rate_provider":0.0,
+        "hourly_rate":35.0,
+        "birth_date":"1986-12-12",
+        "description":"I program quality websites in Ruby.",
+        "experience":"I have 13 years Ruby experience.",
+        "portfolio":null,
+        "school_id":null,
+        "linkedin_id":null,
+        "linkedin_token":null,
+        "device_token":null,
+        "device_token_updated_at":null,
+        "stripe_customer_id":"cus_37bnLpZaUNP9ZV",
+        "stripe_recipient_id":"rp_33W77TyBxmWW0W",
+        "empty_bank_account_notified":false,
+        "location_mode":"address",
+        "lt":"now",
+        "is_provider":true,
+        "admin":false,
+        "created_at":"2013-11-24T12:52:23.000Z",
+        "title":null,
+        "age":null,
+        "avatar_url":null,
+        "avatar_file_name":null,
+        "avatar_content_type":null,
+        "avatar_file_size":null,
+        "avatar_updated_at":null,
+        "video_url":null,
+        "video_file_name":null,
+        "video_content_type":null,
+        "video_file_size":null,
+        "video_updated_at":null,
+        "city_name":"New York",
+        "school_name":""
+    }];
 
   pages = {
 
@@ -108,6 +161,84 @@ $(window).on('load', function () {
 
       }
 
+    },
+
+    'search': {
+
+      'href': '/search',
+      'load': function () {
+
+        if (!$('#map_script') === false) {
+          $('head').append('<script id="map_script" src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=pages.search.initializeMap"></script>');
+        }
+
+      },
+
+      'initializeMap' : function () {
+
+          map = new google.maps.Map(document.getElementById('map'), {
+              'center': new google.maps.LatLng(40.714353, -74.005973),
+              'zoom': 9,
+              'mapTypeId': google.maps.MapTypeId.ROADMAP
+          });
+          map.set('styles', [{
+              featureType: 'poi',
+              elementType: 'geometry',
+              stylers: [{ visibility: 'off' }]
+          }]);
+
+          for (var i = 0, markerPosition, infoWindow; i < users.length; i++) {
+
+              markerPosition = new google.maps.LatLng(users[i].latitude, users[i].longitude);
+              infoWindow = new google.maps.InfoWindow({
+
+                content: '' +
+                '<div id="map-overlay">' +
+                    '<div class="base">' +
+
+                        '<div class="avatar">Profile Pic</div>' +
+                        '<div class="favorite-button t"></div>' +
+                        '<div class="play-button t"></div>' +
+
+                            '<p class="title">' +
+                            '<p class="name">' + users[i].name + '</p>' +
+
+                        '</p>' +
+
+                        '<p class="description">' + users[i].description + '</p>' +
+
+                        '<div class="linkedin-icon"></div>' +
+
+                        '<div class="distance">' + '4km Away' + '</div>' +
+
+                        '<div class="lt-drop"></div>' +
+                        '<div class="stars">' +
+                            '<div class="star"></div>' +
+                            '<div class="star"></div>' +
+                            '<div class="star"></div>' +
+                            '<div class="star"></div>' +
+                            '<div class="star"></div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>'
+
+              });
+
+              markers[i] = new google.maps.Marker({
+                  position: markerPosition,
+                  map: map,
+                  title: users[i].name,
+                  icon: '<%= asset_path 'search/pin.png' %>'
+              });
+
+              google.maps.event.addListener(markers[i], 'click', function() {
+                  infoWindow.open(map, markers[i]);
+              });
+
+          }
+
+      }
+
     }
 
   };
@@ -157,7 +288,7 @@ function loadPage (page) {
   Object.keys(pages).forEach(function (p) { if (pages[p].href === page) { pages.active = pages[p]; } });
 
   $.ajax({
-    url: pages.active.href,
+    url: page,
     error: Response
   }).done(function (data) {
       $('#background').html(data);
@@ -242,8 +373,10 @@ function RevealPage (pageSegment) {
 }
 
 /***********************************************************************************************************************
-/   SignUp
+/   User
 /**********************************************************************************************************************/
+
+/****** Search ******/
 
 var sF;
 
@@ -284,6 +417,7 @@ function SubmitSignupForm() {
       });
 
 }
+
 function SubmitSignupSPForm() {
 
   var spF = $('#sign-up-sp-form');
@@ -370,6 +504,13 @@ function setSchool(id, name) {
   $('#schools').html('');
 }
 
+function FilterUserByGEO(query, callback) {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/filter' + query,
+        error: Response
+    }).done(function (data) { return jQuery.parseJSON(data); });
+}
+
 function show_user(user_id, callback) {
   $.ajax({
     url: 'http://backend.liquidtalent.com/user/show?user_id=' + user_id,
@@ -399,3 +540,7 @@ function linkedin_connect(access_token) {
       }
     });
 }
+
+/****** Search ******/
+
+var map;

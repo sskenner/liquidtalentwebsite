@@ -32,7 +32,7 @@
     src: url('<%= asset_url "nexabold.ttf" %>');
 }
 
-* {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -44,7 +44,7 @@
     box-sizing: border-box;
 }
 
-*:before, *:after {
+html:before, body:before, div:before, span:before, applet:before, object:before, iframe:before, h1:before, h2:before, h3:before, h4:before, h5:before, h6:before, p:before, blockquote:before, pre:before, a:before, abbr:before, acronym:before, address:before, big:before, cite:before, code:before, del:before, dfn:before, em:before, img:before, ins:before, kbd:before, q:before, s:before, samp:before, small:before, strike:before, strong:before, sub:before, sup:before, tt:before, var:before, b:before, u:before, i:before, center:before, dl:before, dt:before, dd:before, ol:before, ul:before, li:before, fieldset:before, form:before, label:before, legend:before, table:before, caption:before, tbody:before, tfoot:before, thead:before, tr:before, th:before, td:before, article:before, aside:before, canvas:before, details:before, embed:before, figure:before, figcaption:before, footer:before, header:before, hgroup:before, menu:before, nav:before, output:before, ruby:before, section:before, summary:before, time:before, mark:before, audio:before, video:before, html:after, body:after, div:after, span:after, applet:after, object:after, iframe:after, h1:after, h2:after, h3:after, h4:after, h5:after, h6:after, p:after, blockquote:after, pre:after, a:after, abbr:after, acronym:after, address:after, big:after, cite:after, code:after, del:after, dfn:after, em:after, img:after, ins:after, kbd:after, q:after, s:after, samp:after, small:after, strike:after, strong:after, sub:after, sup:after, tt:after, var:after, b:after, u:after, i:after, center:after, dl:after, dt:after, dd:after, ol:after, ul:after, li:after, fieldset:after, form:after, label:after, legend:after, table:after, caption:after, tbody:after, tfoot:after, thead:after, tr:after, th:after, td:after, article:after, aside:after, canvas:after, details:after, embed:after, figure:after, figcaption:after, footer:after, header:after, hgroup:after, menu:after, nav:after, output:after, ruby:after, section:after, summary:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -57,9 +57,11 @@ blockquote:before, blockquote:after, q:before, q:after { content: none; }
 
 input, textarea {
     outline: none;
-    -moz-appearance: textfield;
-    -webkit-appearance: textfield;
-    appearance: textfield;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    font-family: 'nexa', Helvetica, sans-serif;
 }
 ::-webkit-input-placeholder { color: #000; }
 :-moz-placeholder { color: #000; }
@@ -152,7 +154,7 @@ a:hover { color: #000; }
     border: 1px solid #FFF;
     box-shadow: 0px 0px 10px 0px #CCC;
     background: hsla(0, 0%, 100%, 0.5);
-    overflow: scroll;
+    overflow: hidden;
 
 }
 #background.disabled {
@@ -431,7 +433,7 @@ a:hover { color: #000; }
     background: #f6f6f6;
 }
 
-    /****** Search ******/
+/****** Search ******/
 
 #search-tool-bar {
     box-shadow: 0px 0px 10px 0px #CCC;
@@ -470,6 +472,107 @@ a:hover { color: #000; }
 .functions .visibility-toggle:hover { background-position: 40px 40px; }
 .functions .visibility-toggle.active { background-position: 0px 0px; }
 .functions .visibility-toggle.active:hover { background-position: 40px 0px; }
+#map {
+    height: 100%;
+    width:115%;
+    background-color: #EEE;
+}
+
+#map-overlay {
+    width: 100%;
+    height: 100%;
+    background: hsla(0, 0%, 0%, 0.5);
+    position: absolute;
+    top: 60px;
+}
+#map-overlay .base {
+    width: 640px;
+    height: 150px;
+    background: #FFF;
+    position: relative;
+    left: 45px;
+    top: 100px;
+    box-shadow: 0px 0px 10px 0px #777;
+    border-bottom: 1px solid #000;
+}
+
+#map-overlay .avatar {
+    width: 100px;
+    background: #000;
+    color: #FFF;
+    font-size: 24px;
+    text-align: center;
+    border-top: 26px solid #000;
+    border-bottom: 26px solid #000;
+}
+#map-overlay .favorite-button,
+#map-overlay .play-button {
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+}
+#map-overlay .favorite-button { background: url(<%= asset_path "main/button-favorite-small.png" %>) 0px 0px; }
+#map-overlay .favorite-button:hover { background-position: 50px 0px; }
+#map-overlay .play-button { background: url(<%= asset_path "main/button-play.png" %>) 0px 0px; }
+#map-overlay .play-button:hover { background-position: 50px 0px; }
+
+#map-overlay .title {
+    position: absolute;
+    top: 10px;
+    left: 110px;
+}
+#map-overlay .title .name { font-size: 24px; }
+
+#map-overlay .description {
+    position: absolute;
+    top: 60px;
+    left: 110px;
+    width: 405px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+#map-overlay .linkedin-icon {
+    width: 30px;
+    height: 30px;
+    background: url(<%= asset_path "main/linkedin_icon.png" %>);
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    opacity: 0;
+}
+
+#map-overlay .distance {
+    top: 10px;
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+}
+
+#map-overlay .lt-drop {
+    position: absolute;
+    top: 42%;
+    right: 10px;
+    width: 102px;
+    height: 23px;
+    background: url(<%= asset_path "main/drops.png" %>);
+}
+#map-overlay .stars {
+    width: 75px;
+    height: 14px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+#map-overlay .stars .star {
+    vertical-align: top;
+    display: inline-block;
+    width: 15px;
+    height: 14px;
+    background: url(<%= asset_path "main/stars.png" %>);
+}
+#map-overlay .stars .star.active { background-position: 0px 14px; }
 
 /***********************************************************************************************************************
 /   Presentation

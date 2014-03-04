@@ -6,7 +6,7 @@
 
   <title>LiquidTalent</title>
 
-  <base href="../website/">
+  <base href="/">
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
 
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
@@ -23,20 +23,20 @@
   </div>
   <div id="admin-panel">
     <div class="header">
-      <a class="login green-button" href="javascript: loadPage('/login');">Login</a>
+      <a class="login green-button" href="javascript:loadPage('/login')">Login</a>
     </div>
     <div class="navigation">
-      <a class="search link t" href="/search"></a>
-      <a class="projects link t" href="/projects"></a>
-      <a class="messages link t" href="/messages"></a>
-      <a class="favorites link t" href="/favorites"></a>
-      <a class="stats link t" href="/stats"></a>
-      <a class="lti link t" href="/liquidtalentinc"></a>
+      <a class="search link t" href="javascript:loadPage('/search')"></a>
+      <a class="projects link t" href="javascript:loadPage('/projects')"></a>
+      <a class="messages link t" href="javascript:loadPage('/messages')"></a>
+      <a class="favorites link t" href="javascript:loadPage('/favorites')"></a>
+      <a class="stats link t" href="javascript:loadPage('/stats')"></a>
+      <a class="lti link t" href="javascript:loadPage('/liquidtalentinc')"></a>
     </div>
   </div>
 </div>
 
-<div id="presentation" style="opacity: 0; display: none;">
+<div id="presentation" style="opacity: 0;display: none;">
 
 <div id="presentation-header">
 
