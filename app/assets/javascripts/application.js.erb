@@ -15,347 +15,339 @@
 //= require_tree .
 
 /***********************************************************************************************************************
-/   Main
-/**********************************************************************************************************************/
+ /   Main
+ /**********************************************************************************************************************/
 
-var loaders, pages, users, markers = [];
+var loaders, pages;
 
 var currentUser = null;
 
 $(window).on('load', function () {
 
-    //users = FilterUserByGEO('latitude_from=-100&latitude_to=100&longitude_from=-100&longitude_to=100');
-    users = [{
-        "id":1,
-        "name":"Martin Pis",
-        "email":"jozef@pis.com",
-        "badge_demander":"silver",
-        "badge_provider":"no",
-        "summary":null,
-        "skills":"Senior Ruby Developer",
-        "category_id":1,
-        "subcategory_id":2,
-        "street":"4 Nicholas Street, Suite 2100",
-        "city_id":1,
-        "state":"New York",
-        "zip":"10001",
-        "latitude":40.75,
-        "longitude":-74.0122,
-        "rate_demander":4.0,
-        "rate_provider":0.0,
-        "hourly_rate":35.0,
-        "birth_date":"1986-12-12",
-        "description":"I program quality websites in Ruby.",
-        "experience":"I have 13 years Ruby experience.",
-        "portfolio":null,
-        "school_id":null,
-        "linkedin_id":null,
-        "linkedin_token":null,
-        "device_token":null,
-        "device_token_updated_at":null,
-        "stripe_customer_id":"cus_37bnLpZaUNP9ZV",
-        "stripe_recipient_id":"rp_33W77TyBxmWW0W",
-        "empty_bank_account_notified":false,
-        "location_mode":"address",
-        "lt":"now",
-        "is_provider":true,
-        "admin":false,
-        "created_at":"2013-11-24T12:52:23.000Z",
-        "title":null,
-        "age":null,
-        "avatar_url":null,
-        "avatar_file_name":null,
-        "avatar_content_type":null,
-        "avatar_file_size":null,
-        "avatar_updated_at":null,
-        "video_url":null,
-        "video_file_name":null,
-        "video_content_type":null,
-        "video_file_size":null,
-        "video_updated_at":null,
-        "city_name":"New York",
-        "school_name":""
-    }];
+    pages = {
 
-  pages = {
+        'active': '',
 
-    'active': '',
+        'home': {
 
-    'home': {
+            'href': '',
+            'load': function () {
 
-      'href': '',
-      'load': function () {
+                $('#presentation').css({ opacity: 0, display: 'block' });
+                $('#presentation').animate({ opacity: 1 }, 1000, 'linear');
 
-        $('#presentation').css({ opacity: 0, display: 'block' });
-        $('#presentation').animate({ opacity: 1 }, 1000, 'linear');
+                if ($('#background.disabled')) {
+                    $('#background').removeClass('disabled');
+                }
+                if ($('#admin-panel.disabled')) {
+                    $('#admin-panel').removeClass('disabled');
+                }
 
-        if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
-        if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
+                rF = {
 
-        rF = {
+                    /* Name, email, zip fields and send button. */
 
-          /* Name, email, zip fields and send button. */
+                    'href': '/presentation/subscribe',
 
-          'href': '/presentation/subscribe',
+                    'n': $('#register-form-name'),
+                    'e': $('#register-form-email'),
+                    'z': $('#register-form-zip')
 
-          'n': $('#register-form-name'),
-          'e': $('#register-form-email'),
-          'z': $('#register-form-zip')
+                };
 
-        };
+                cF = $('#contact-form');
+                cF = {
 
-        cF = $('#contact-form');
-        cF = {
+                    /* Name, email, phone number, reason for contact, message fields and contact button. */
 
-          /* Name, email, phone number, reason for contact, message fields and contact button. */
+                    'href': '/send_message',
 
-          'href': '/send_message',
+                    'n': cF.find('.name'),
+                    'e': cF.find('.email'),
+                    'p': cF.find('.phone'),
+                    's': cF.find('.reason'),
+                    'm': cF.find('.message')
 
-          'n': cF.find('.name'),
-          'e': cF.find('.email'),
-          'p': cF.find('.phone'),
-          's': cF.find('.reason'),
-          'm': cF.find('.message')
+                };
 
-        };
+            }
 
-      }
+        },
 
-    },
+        'login': {
 
-    'login': {
+            'href': '/login',
+            'load': function () {
+                sF = $('#sign-in');
+                sF = {
 
-      'href': '/login',
-      'load': function () {
-          sF = $('#sign-in');
-          sF = {
+                    'href': '/user/signin',
 
-              'href': '/user/signin',
+                    'email': sF.find('.email'),
+                    'password': sF.find('.password')
 
-              'email': sF.find('.email'),
-              'password': sF.find('.password')
+                };
 
-          };
+                $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
+                    $('#presentation').css({ display: 'none' });
+                });
 
-        $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () { $('#presentation').css({ display: 'none' }); });
+                if ($('#background.disabled')) {
+                    $('#background').addClass('disabled');
+                }
+                if ($('#admin-panel.disabled')) {
+                    $('#admin-panel').addClass('disabled');
+                }
 
-        if ($('#background.disabled')) { $('#background').addClass('disabled'); }
-        if ($('#admin-panel.disabled')) { $('#admin-panel').addClass('disabled'); }
+            }
 
-      }
+        },
 
-    },
+        'signup': {
 
-    'signup': {
+            'href': '/signup',
+            'load': function () {
 
-      'href': '/signup',
-      'load': function () {
+                sF = $('#sign-up-form');
+                sF = {
 
-        sF = $('#sign-up-form');
-        sF = {
+                    'href': '/user/signup',
 
-          'href': '/user/signup',
+                    'a': sF.find('.image-upload #avatar'),
+                    'aus': false, // Avatar Upload State
 
-          'a': sF.find('.image-upload #avatar'),
-          'aus': false, // Avatar Upload State
+                    'n': sF.find('.name'),
+                    'e': sF.find('.email'),
+                    'p': sF.find('.password'),
+                    'pc': sF.find('.password_confirmation')
 
-          'n': sF.find('.name'),
-          'e': sF.find('.email'),
-          'p': sF.find('.password'),
-          'pc': sF.find('.password_confirmation')
+                };
 
-        };
+                sF.a.on('change', function () {
+                    sF.as = true;
+                });
 
-        sF.a.on('change', function () {
-          sF.as = true;
-        });
+            }
 
-      }
+        },
 
-    },
-      'search': {
+        'map': {
 
-          'href': '/search',
-          'load': function () {
-          }
+            'href': '/map',
+            'load': function () {
 
-      },
+                if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
+                if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
-      'map': {
+                this.canvas = document.getElementById('map');
+                this.options = {
+                    center: new google.maps.LatLng(40.5403, -73.5463),
+                    zoom: 8,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                this.googleMap = new google.maps.Map(this.canvas, this.options)
 
-          'href': '/map',
-          'load': function () {
-              if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
-              if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
+                this.popUp.overlay = $('#map-overlay');
+                this.popUp.image = this.popUp.overlay.find('.avatar');
+                this.popUp.name = this.popUp.overlay.find('.title .name');
+                this.popUp.description = this.popUp.overlay.find('.description');
+                this.popUp.distance = this.popUp.overlay.find('.distance');
+                this.popUp.linkedIn = this.popUp.overlay.find('.linkedin-icon');
+                this.popUp.title = this.popUp.overlay.find('.base .title');
+                this.popUp.favorite = this.popUp.overlay.find('.favorite-button');
+                this.popUp.play = this.popUp.overlay.find('.play-button');
+                this.popUp.LTDrop = this.popUp.overlay.find('.lt-drop');
+                this.popUp.stars = this.popUp.overlay.find('.stars');
 
-              var map_canvas = document.getElementById('map_canvas');
-              var map_options = {
-                  center: new google.maps.LatLng(40.5403, -73.5463),
-                  zoom: 8,
-                  mapTypeId: google.maps.MapTypeId.ROADMAP
-              }
-              var map = new google.maps.Map(map_canvas, map_options)
+                mapSearch();
 
-              mapSearch(map);
-          }
+            },
+            'canvas': {},
+            'options': {},
+            'googleMap': {},
+            'popUp': {
+                'overlay': {},
+                'image': {},
+                'name': {},
+                'description': {},
+                'distance': {},
+                'linkedIn': {},
+                'title': {},
+                'favorite': {},
+                'play': {},
+                'LTDrop': {},
+                'stars': {}
+            }
 
-      }
-
-  };
-
-  loaders = {
-
-    'tags': $('.loader'),
-
-    'toggle': function (loader, opacity) {
-
-      loader = loaders.tags.each(function () {
-
-        if ($(this).prop('alt') === loader) {
-          return $(this);
         }
 
-      });
-      loader.animate({ 'opacity': opacity }, 1000, 'linear');
+    };
 
-    }
+    loaders = {
 
-  };
+        'tags': $('.loader'),
 
-  pages.home.load();
+        'toggle': function (loader, opacity) {
+
+            loader = loaders.tags.each(function () {
+
+                if ($(this).prop('alt') === loader) {
+                    return $(this);
+                }
+
+            });
+            loader.animate({ 'opacity': opacity }, 1000, 'linear');
+
+        }
+
+    };
+
+    pages.home.load();
 
 });
 
 function Response(response) {
 
-  if (response['error'] && response['error'] != '') {
-    alert(response['error']);
-  }
-  else if (response['success']) {
-    alert(response['success']);
-  }
-  else {
+    if (response['error'] && response['error'] != '') {
+        alert(response['error']);
+    }
+    else if (response['success']) {
+        alert(response['success']);
+    }
+    else {
 
-    alert("Could not connect to the server. Please try again later.");
-    console.log(response);
+        alert("Could not connect to the server. Please try again later.");
+        console.log(response);
 
-  }
+    }
 
 }
 
-function loadPage (page) {
+function loadPage(page) {
 
-  Object.keys(pages).forEach(function (p) { if (pages[p].href === page) { pages.active = pages[p]; } });
-
-  $.ajax({
-    url: page,
-    error: Response
-  }).done(function (data) {
-      $('#background').html(data);
-      pages.active.load();
+    Object.keys(pages).forEach(function (p) {
+        if (pages[p].href === page.replace(/\?.+$/, '')) {
+            pages.active = pages[p];
+        }
     });
 
-  return false;
+    $.ajax({
+        url: page,
+        error: Response
+    }).done(function (data) {
+                $('#background').html(data);
+                pages.active.load();
+            });
+
+    return false;
 
 }
 
 function getURLParameter(name) {
-  return (decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1]).replace(/\+/g, '%20')) || null;
+    return (decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1]).replace(/\+/g, '%20')) || null;
 }
 
 /***********************************************************************************************************************
-/   Presentation
-/**********************************************************************************************************************/
+ /   Presentation
+ /**********************************************************************************************************************/
 
 var rF;
 var cF;
 var pageSegments;
 
-function SubmitRegisterForm () {
+function SubmitRegisterForm() {
 
-  $.ajax({
-    url: rF.href,
-    type: 'post',
-    data: 'name=' + rF.n.val() + '&email=' + rF.e.val() + '&zip=' + rF.z.val(),
-    error: Response(data)
-  }).done(Response(data));
-
-}
-
-function SubmitContactForm () {
-
-  loaders.toggle('contact', 1);
-
-  $.ajax({
-    url: cF.href,
-    type: 'post',
-    data: 'name=' + cF.n.val() + '&email=' + cF.e.val() + '&phone=' + cF.p.val() + '&subject=' + cF.s.val() + '&message=' + cF.m.val(),
-    error: Response(data)
-  }).done(function (data) {
-      Response(data);
-      loaders.toggle('contact', 0);
-    });
+    $.ajax({
+        url: rF.href,
+        type: 'post',
+        data: 'name=' + rF.n.val() + '&email=' + rF.e.val() + '&zip=' + rF.z.val(),
+        error: Response(data)
+    }).done(Response(data));
 
 }
 
-function RevealPage (pageSegment) {
+function SubmitContactForm() {
 
-  pageSegments = {
+    loaders.toggle('contact', 1);
 
-    about: $('#about-page'),
-    press: $('#press-page'),
-    contact: $('#contact-page'),
-    privacy: $('#privacy-page')
+    $.ajax({
+        url: cF.href,
+        type: 'post',
+        data: 'name=' + cF.n.val() + '&email=' + cF.e.val() + '&phone=' + cF.p.val() + '&subject=' + cF.s.val() + '&message=' + cF.m.val(),
+        error: Response(data)
+    }).done(function (data) {
+                Response(data);
+                loaders.toggle('contact', 0);
+            });
 
-  };
+}
 
-  if (pageSegment === 'privacy') {
+function RevealPage(pageSegment) {
 
-    pageSegments.about.animate({ 'opacity': 0 }, 300, 'linear', function () { pageSegments.about.css('display', 'none'); });
-    pageSegments.press.animate({ 'opacity': 0 }, 300, 'linear', function () { pageSegments.press.css('display', 'none'); });
-    pageSegments.contact.animate({ 'opacity': 0 }, 300, 'linear', function () { pageSegments.contact.css('display', 'none'); });
+    pageSegments = {
 
-    pageSegments.privacy.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
+        about: $('#about-page'),
+        press: $('#press-page'),
+        contact: $('#contact-page'),
+        privacy: $('#privacy-page')
 
-  }
-  else {
+    };
 
-    pageSegments.privacy.animate({ 'opacity': 0 }, 300, 'linear', function () { pageSegments.privacy.css('display', 'none'); });
+    if (pageSegment === 'privacy') {
 
-    pageSegments.about.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
-    pageSegments.press.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
-    pageSegments.contact.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
+        pageSegments.about.animate({ 'opacity': 0 }, 300, 'linear', function () {
+            pageSegments.about.css('display', 'none');
+        });
+        pageSegments.press.animate({ 'opacity': 0 }, 300, 'linear', function () {
+            pageSegments.press.css('display', 'none');
+        });
+        pageSegments.contact.animate({ 'opacity': 0 }, 300, 'linear', function () {
+            pageSegments.contact.css('display', 'none');
+        });
 
-  }
+        pageSegments.privacy.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
 
-  $('html, body').delay(500).animate({ scrollTop: $(pageSegments[pageSegment]).offset().top }, 300, 'linear', null);
+    }
+    else {
+
+        pageSegments.privacy.animate({ 'opacity': 0 }, 300, 'linear', function () {
+            pageSegments.privacy.css('display', 'none');
+        });
+
+        pageSegments.about.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
+        pageSegments.press.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
+        pageSegments.contact.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
+
+    }
+
+    $('html, body').delay(500).animate({ scrollTop: $(pageSegments[pageSegment]).offset().top }, 300, 'linear', null);
 
 }
 
 var sF;
 
 /***********************************************************************************************************************
-/   User
-/**********************************************************************************************************************/
+ /   User
+ /**********************************************************************************************************************/
 function login() {
     $.ajax({
         url: 'http://backend.liquidtalent.com' + sF.href,
         data: 'email=' + sF.email.val() +
-              '&password=' + sF.password.val()
+                '&password=' + sF.password.val()
         //error: Response(data)
     }).done(function (data) {
-            if (data['status'] === 'failed') {
-                alert(data['errors'][0]);
-            }
-            else {
-                alert("You've successfully been signed in to LiquidTalent.");
-                currentUser = data['response']['user'];
-                $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
-                checkUnreadMessages();
-                loadPage('/map');
-            }
+                if (data['status'] === 'failed') {
+                    alert(data['errors'][0]);
+                }
+                else {
+                    alert("You've successfully been signed in to LiquidTalent.");
+                    currentUser = data['response']['user'];
+                    $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                    checkUnreadMessages();
+                    loadPage('/map');
+                }
 
-    });
+            });
 }
 
 /****** Search ******/
@@ -363,168 +355,161 @@ function login() {
 var sF;
 
 /***********************************************************************************************************************
-/   SignUp
-/**********************************************************************************************************************/
+ /   SignUp
+ /**********************************************************************************************************************/
 
 function SubmitSignupForm() {
 
     if (sF.aus === true) {
-      $.ajax({
-        url: 'http://backend.liquidtalent.com/user/set_avatar',
-        type: 'POST',
-        data: 'user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'] + '&avatar=' + sF.a.get(0).files[0],
-        contentType: false,
-        processData: false,
-        error: Response(data)
-      }).done(function (avatar_data) {
-          if (avatar_data['status'] === 'failed') {
-            alert(avatar_data['errors'][0]);
-          }
-        });
+        $.ajax({
+            url: 'http://backend.liquidtalent.com/user/set_avatar',
+            type: 'POST',
+            data: 'user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'] + '&avatar=' + sF.a.get(0).files[0],
+            contentType: false,
+            processData: false,
+            error: Response(data)
+        }).done(function (avatar_data) {
+                    if (avatar_data['status'] === 'failed') {
+                        alert(avatar_data['errors'][0]);
+                    }
+                });
     }
 
     $.ajax({
-      url: 'http://backend.liquidtalent.com' + sF.href,
-      data: 'name=' + sF.n.val() + '&email=' + sF.e.val() + '&password=' + sF.p.val() + '&password_confirmation=' + sF.pc.val(),
-      error: Response
+        url: 'http://backend.liquidtalent.com' + sF.href,
+        data: 'name=' + sF.n.val() + '&email=' + sF.e.val() + '&password=' + sF.p.val() + '&password_confirmation=' + sF.pc.val(),
+        error: Response
     }).done(function (data) {
-        if (data['status'] === 'failed') {
-          alert(data['errors'][0]);
-        }
-        else {
-          if ($('#is_provider').is(':checked')) {
-            loadPage('/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
-          }
-          else {
-            alert("You've been successfully registered. Welcome to LT!");
-          }
-        }
+                if (data['status'] === 'failed') {
+                    alert(data['errors'][0]);
+                }
+                else {
+                    if ($('#is_provider').is(':checked')) {
+                        loadPage('/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                    }
+                    else {
+                        alert("You've been successfully registered. Welcome to LT!");
+                    }
+                }
 
-      });
+            });
 
 }
 
 function SubmitSignupSPForm() {
 
-  var spF = $('#sign-up-sp-form');
-  spF = {
+    var spF = $('#sign-up-sp-form');
+    spF = {
 
-    'href': '/user/set_details',
+        'href': '/user/set_details',
 
-    'street': sF.find('.street'),
-    'state': sF.find('.state'),
-    'zip': sF.find('.zip'),
-    'description': sF.find('.desc'),
-    'summary': sF.find('.summary'),
-    'hourly_rate': sF.find('.hourly_rate'),
-    'experience': sF.find('.experience')
+        'street': sF.find('.street'),
+        'state': sF.find('.state'),
+        'zip': sF.find('.zip'),
+        'description': sF.find('.desc'),
+        'summary': sF.find('.summary'),
+        'hourly_rate': sF.find('.hourly_rate'),
+        'experience': sF.find('.experience')
 
-  };
+    };
 
-  $.ajax({
-    url: 'http://backend.liquidtalent.com' + spF.href,
-    data: 'user_id=' + $('#user_id').val() +
-      '&token=' + $('#token').val() +
-      '&attr[street]=' + spF.street.val() +
-      '&attr[city_id]=' + $('#city_id').val() +
-      '&attr[state]=' + spF.state.val() +
-      '&attr[zip]=' + spF.zip.val() +
-      '&attr[description]=' + spF.description.val() +
-      '&attr[summary]=' + spF.summary.val() +
-      '&attr[hourly_rate]=' + spF.hourly_rate.val() +
-      '&attr[experience]=' + spF.experience.val() +
-      '&attr[category_id]=' + $('#category_id').val() +
-      '&attr[school_id]=' + $('#school_id').val() +
-      '&attr[is_provider]=1',
-    error: Response(data)
-  }).done(function (data) {
-      if (data['status'] === 'failed') {
-        alert(data['errors'][0]);
-      }
-      else {
-        alert("You've successfully been registered. Welcome to LT!");
-      }
+    $.ajax({
+        url: 'http://backend.liquidtalent.com' + spF.href,
+        data: 'user_id=' + $('#user_id').val() +
+                '&token=' + $('#token').val() +
+                '&attr[street]=' + spF.street.val() +
+                '&attr[city_id]=' + $('#city_id').val() +
+                '&attr[state]=' + spF.state.val() +
+                '&attr[zip]=' + spF.zip.val() +
+                '&attr[description]=' + spF.description.val() +
+                '&attr[summary]=' + spF.summary.val() +
+                '&attr[hourly_rate]=' + spF.hourly_rate.val() +
+                '&attr[experience]=' + spF.experience.val() +
+                '&attr[category_id]=' + $('#category_id').val() +
+                '&attr[school_id]=' + $('#school_id').val() +
+                '&attr[is_provider]=1',
+        error: Response(data)
+    }).done(function (data) {
+                if (data['status'] === 'failed') {
+                    alert(data['errors'][0]);
+                }
+                else {
+                    alert("You've successfully been registered. Welcome to LT!");
+                }
 
-    });
+            });
 
 }
 
 function searchSchool(query) {
-  if (query === '') {
-    $('#schools').html('');
-    return;
-  }
-
-  $.ajax({
-    url: 'http://backend.liquidtalent.com/schools/search?search=' + query,
-    error: function (error) {
-      alert("Problem with connecting to the server.");
-      console.log(error['']);
+    if (query === '') {
+        $('#schools').html('');
+        return;
     }
-  }).done(function (data) {
-      $('#schools').html('');
-      data['response'].forEach(function (school) {
-        $('#schools').append('<div onclick="setSchool(' + school['_source']['id'] + ', \'' + school['_source']['name'] + '\');">' + school['_source']['name'] + '</div>')
-      })
-    });
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/schools/search?search=' + query,
+        error: function (error) {
+            alert("Problem with connecting to the server.");
+            console.log(error['']);
+        }
+    }).done(function (data) {
+                $('#schools').html('');
+                data['response'].forEach(function (school) {
+                    $('#schools').append('<div onclick="setSchool(' + school['_source']['id'] + ', \'' + school['_source']['name'] + '\');">' + school['_source']['name'] + '</div>')
+                })
+            });
 }
 
 function setCity(id, name) {
-  $('.city').html(name);
-  $('#city_id').val(id);
+    $('.city').html(name);
+    $('#city_id').val(id);
 
-  $('#cities').hide();
+    $('#cities').hide();
 }
 
 function setSkills(id, name) {
-  $('.skills').html(name);
-  $('#category_id').val(id);
+    $('.skills').html(name);
+    $('#category_id').val(id);
 
-  $('#skills').hide();
+    $('#skills').hide();
 }
 
 function setSchool(id, name) {
-  $('.school').html(name);
-  $('#school_id').val(id);
+    $('.school').html(name);
+    $('#school_id').val(id);
 
-  $('#schools').html('');
-}
-
-function FilterUserByGEO(query, callback) {
-    $.ajax({
-        url: 'http://backend.liquidtalent.com/user/filter' + query,
-        error: Response
-    }).done(function (data) { return jQuery.parseJSON(data); });
+    $('#schools').html('');
 }
 
 function show_user(user_id, callback) {
-  $.ajax({
-    url: 'http://backend.liquidtalent.com/user/show?user_id=' + user_id,
-    error: Response
-  }).done(function (data) {
-      return callback(data);
-    });
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/show?user_id=' + user_id,
+        error: Response
+    }).done(function (data) {
+                return callback(data);
+            });
 }
 
 function linkedin_connect(access_token) {
-  $.ajax({
-    url: 'http://backend.liquidtalent.com/user/linkedin_connect/?access_token=' + access_token,
-    error: function (error) {
-      alert("Problem with connecting to the server.");
-      console.log(error['']);
-    }
-  }).done(function (data) {
-      if(data['response']['new_user']) {
-        if (confirm('Do you want to register as a Service Provider?')) {
-          window.location = '/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'];
-        } else {
-          alert('User is successfully registered, token: ' + data['response']['user']['token']);
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/linkedin_connect/?access_token=' + access_token,
+        error: function (error) {
+            alert("Problem with connecting to the server.");
+            console.log(error['']);
         }
-      }
-      else {
-        alert('User is already registered, token: ' + data['response']['user']['token']);
-      }
-    });
+    }).done(function (data) {
+                if (data['response']['new_user']) {
+                    if (confirm('Do you want to register as a Service Provider?')) {
+                        window.location = '/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'];
+                    } else {
+                        alert('User is successfully registered, token: ' + data['response']['user']['token']);
+                    }
+                }
+                else {
+                    alert('User is already registered, token: ' + data['response']['user']['token']);
+                }
+            });
 }
 
 /****** Search ******/
@@ -532,66 +517,42 @@ function linkedin_connect(access_token) {
 var map;
 
 function mapSearch(map) {
+
     $.ajax({
         url: 'http://backend.liquidtalent.com/users/filter',
         error: Response
-    }).done(function (data) {
-        data['response'].forEach(function(user) {
-            var myLatlng = new google.maps.LatLng(user.latitude, user.longitude);
+    }).done(function (users) {
+                users['response'].forEach(function (user) {
 
-            var pin = new google.maps.MarkerImage('/assets/search/pin.png',
-                new google.maps.Size(62, 80),
-                new google.maps.Point(0,0),
-                new google.maps.Point(18, 42)
-            );
+                    var map_overlay, cords, pin, marker;
 
+                    cords = new google.maps.LatLng(user.latitude, user.longitude);
 
-            marker = new google.maps.Marker({
-                position: myLatlng,
-                map: map,
-                title: user.name,
-                icon: pin
+                    pin = new google.maps.MarkerImage('<%= asset_path 'search/pin.png' %>',
+                          new google.maps.Size(62, 80),
+                          new google.maps.Point(0, 0),
+                          new google.maps.Point(18, 42)
+                    );
+
+                    marker = new google.maps.Marker({
+                        position: cords,
+                        map: map,
+                        title: user.name,
+                        icon: pin
+                    });
+
+                    google.maps.event.addListener(marker, 'click', function () {
+
+                        map.popUp.overlay.css('display', 'block').animate({ opacity: 0 }, 1000, 'linear');
+                        map.popUp.image.prop('src', (user.avatar_url === null)? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url);
+                        map.popUp.description.html(user.description);
+                        map.popUp.name.html(user.name);
+
+                    });
+
+                });
             });
 
-            var contentString =
-                '<div id="map-overlay">' +
-                '<div class="base">' +
-
-                '<div class="avatar">img src="' + user.avatar_url + '" /></div>' +
-                '<div class="favorite-button t"></div>' +
-                '<div class="play-button t"></div>' +
-
-                '<p class="title">' +
-                '<p class="name">' + user.name + '</p>' +
-
-                '</p>' +
-
-                '<p class="description">' + user.description + '</p>' +
-
-                '<div class="linkedin-icon"></div>' +
-
-                '<div class="distance">' + '4km Away' + '</div>' +
-
-                '<div class="lt-drop"></div>' +
-                '<div class="stars">' +
-                '<div class="star"></div>' +
-                '<div class="star"></div>' +
-                '<div class="star"></div>' +
-                '<div class="star"></div>' +
-                '<div class="star"></div>' +
-                '</div>' +
-                '</div>' +
-            '</div>';
-
-            var infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
-
-            google.maps.event.addListener(marker, 'click', function() {
-                infowindow.open(map,marker);
-            });
-        });
-    });
 }
 
 function checkUnreadMessages() {
@@ -599,8 +560,8 @@ function checkUnreadMessages() {
         url: 'http://backend.liquidtalent.com/messages/list?limit=9999&receiver_id=' + currentUser['id'],
         error: Response
     }).done(function (data) {
-        $('.navigation .messages').html('<div style="position: absolute; right: 10px;">' + data['response'].length + '</div>');
-    });
+                $('.navigation .messages').html('<div style="position: absolute; right: 10px;">' + data['response'].length + '</div>');
+            });
 
     setTimeout('checkUnreadMessages()', 10000);
 }
