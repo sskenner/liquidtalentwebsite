@@ -1,6 +1,6 @@
 <div id="logo-header">
   <img src="<%= asset_path "main/logo-text.png" %>" alt="LiquidTalent header Logo with text" id="logo-login">
-  <a href="/signup" class="black-button">Back</a>
+  <a href="javascript: loadPage('/signup');" class="black-button">Back</a>
 </div>
 
 <div id="sign-up-sp-form" class="login-container">
@@ -12,14 +12,14 @@
   </p>
 
   <div id="signup-address">
-    <input type="text" placeholder="Street *" class="text-field street">
-    <div>
+    <input type="text" placeholder="Street *" class="text-field street" style="width: 24%; float: left;">
+    <div style="width: 24%; float: left;">
       <input type="text" placeholder="City *" class="text-field cities city">
       <div id="cities"></div>
     </div>
 
-    <input type="text" placeholder="State *" class="text-field state">
-    <input type="text" placeholder="Zip *" class="text-field zip">
+    <input type="text" placeholder="State *" class="text-field state" style="width: 24%; float: left;">
+    <input type="text" placeholder="Zip *" class="text-field zip" style="width: 24%; float: left;">
     <div class="clear"></div>
   </div>
 
@@ -41,12 +41,12 @@
     </div>
     <input type="text" placeholder="Hourly rate *" class="text-field hourly_rate" id="signup-hourly-rate">
     <input type="text" placeholder="Experience *" class="text-field experience">
-    <input type="text" placeholder="Education *" class="text-field school" onkeyup="searchSchool(this.innerHTML);">
+    <input type="text" placeholder="Education *" class="text-field school" onkeyup="searchSchool(this.value);">
     <div id="schools"></div>
 
-    <input type="text" type="hidden" name="category_id" id="category_id"/>
-    <input type="text" type="hidden" name="city_id" id="city_id"/>
-    <input type="text" type="hidden" name="school_id" id="school_id"/>
+    <input type="hidden" name="category_id" id="category_id"/>
+    <input type="hidden" name="city_id" id="city_id"/>
+    <input type="hidden" name="school_id" id="school_id"/>
   </div>
 
   <div class="clear"></div>

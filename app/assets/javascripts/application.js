@@ -104,12 +104,12 @@ $(window).on('load', function () {
           'href': '/user/signup',
 
           'a': sF.find('.image-upload #avatar'),
-          'aus': false, // Avatar Upload State
 
           'n': sF.find('.name'),
           'e': sF.find('.email'),
           'p': sF.find('.password'),
-          'pc': sF.find('.password_confirmation')
+          'pc': sF.find('.password_confirmation'),
+          'as': false
 
         };
 
@@ -119,6 +119,51 @@ $(window).on('load', function () {
 
       }
 
+    },
+
+    'signup_service_provider': {
+        'href': '/signup_service_provider',
+        'load': function () {
+            sF = $('#sign-up-sp-form');
+            sF = {
+
+                'href': '/user/set_details',
+
+                'street': sF.find('.street'),
+                'state': sF.find('.state'),
+                'zip': sF.find('.zip'),
+                'description': sF.find('.desc'),
+                'summary': sF.find('.summary'),
+                'hourly_rate': sF.find('.hourly_rate'),
+                'experience': sF.find('.experience')
+
+            };
+
+            $.ajax({
+            url: 'http://backend.liquidtalent.com/get_info',
+                error: function (error) {
+                    alert("Problem with connecting to the server");
+                    console.log(error);
+                    }
+                    }).done(function (data) {
+                        data['response']['cities'].forEach(function(item) {
+                            $('#cities').append('<div onclick="setCity(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+                        })
+
+                        data['response']['categories'].forEach(function(item) {
+                            $('#skills').append('<div onclick="setSkills(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+                        })
+                    });
+
+
+                            $('.city').click(function() {
+                            $('#cities').show();
+                            });
+
+                            $('.skills').click(function() {
+                            $('#skills').show();
+                            });
+        }
     },
       'search': {
 
@@ -192,10 +237,16 @@ function Response(response) {
 
 function loadPage (page) {
 
-  Object.keys(pages).forEach(function (p) { if (pages[p].href === page) { pages.active = pages[p]; } });
+  //Object.keys(pages).forEach(function (p) { if (pages[p].href === page) { pages.active = pages[p]; } });
+
+    Object.keys(pages).forEach(function (p) {
+        if (pages[p].href === page.replace(/\?.+$/, '')) {
+            pages.active = pages[p];
+        }
+    });
 
   $.ajax({
-    url: pages.active.href,
+    url: page,
     error: Response
   }).done(function (data) {
       $('#background').html(data);
@@ -311,20 +362,6 @@ function login() {
 
 function SubmitSignupForm() {
 
-    if (sF.aus === true) {
-      $.ajax({
-        url: 'http://backend.liquidtalent.com/user/set_avatar',
-        type: 'POST',
-        data: 'user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'] + '&avatar=' + sF.a.get(0).files[0],
-        contentType: false,
-        processData: false,
-        error: Response(data)
-      }).done(function (avatar_data) {
-          if (avatar_data['status'] === 'failed') {
-            alert(avatar_data['errors'][0]);
-          }
-        });
-    }
 
     $.ajax({
       url: 'http://backend.liquidtalent.com' + sF.href,
@@ -335,56 +372,87 @@ function SubmitSignupForm() {
           alert(data['errors'][0]);
         }
         else {
-          if ($('#is_provider').is(':checked')) {
-            loadPage('/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
-          }
-          else {
-            alert("You've been successfully registered. Welcome to LT!");
-          }
+            if (sF.as === true) {
+            $.ajax({
+                url: 'http://backend.liquidtalent.com/user/set_avatar',
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                data: function() {
+                    var rq_data = new FormData();
+                    rq_data.append("user_id", data['response']['user']['id']);
+                    rq_data.append("token", data['response']['user']['token']);
+                    rq_data.append("avatar", sF.a.get(0).files[0]);
+                    return rq_data;
+                    // Or simply return new FormData(jQuery("form")[0]);
+                }(),
+                error: Response
+            }).done(function (avatar_data) {
+                    if (avatar_data['status'] === 'failed') {
+                        alert(avatar_data['errors'][0]);
+                    }
+                    else {
+                        if ($('#is_provider').is(':checked')) {
+                            loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                        }
+                        else {
+                            alert("You've been successfully registered. Welcome to LT!");
+                            currentUser = data['response']['user'];
+                            currentUser['avatar_url'] = avatar_data['response']['url'];
+                            $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                            checkUnreadMessages();
+                            loadPage('/map');
+                        }
+                    }
+                });
+
+            }
+            else {
+                if ($('#is_provider').is(':checked')) {
+                    loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                }
+                else {
+                    alert("You've been successfully registered. Welcome to LT!");
+                    currentUser = data['response']['user'];
+                    $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                    checkUnreadMessages();
+                    loadPage('/map');
+                }
+            }
         }
 
       });
 
+    return false;
+
 }
 function SubmitSignupSPForm() {
-
-  var spF = $('#sign-up-sp-form');
-  spF = {
-
-    'href': '/user/set_details',
-
-    'street': sF.find('.street'),
-    'state': sF.find('.state'),
-    'zip': sF.find('.zip'),
-    'description': sF.find('.desc'),
-    'summary': sF.find('.summary'),
-    'hourly_rate': sF.find('.hourly_rate'),
-    'experience': sF.find('.experience')
-
-  };
-
   $.ajax({
-    url: 'http://backend.liquidtalent.com' + spF.href,
+    url: 'http://backend.liquidtalent.com' + sF.href,
     data: 'user_id=' + $('#user_id').val() +
       '&token=' + $('#token').val() +
-      '&attr[street]=' + spF.street.val() +
+      '&attr[street]=' + sF.street.val() +
       '&attr[city_id]=' + $('#city_id').val() +
-      '&attr[state]=' + spF.state.val() +
-      '&attr[zip]=' + spF.zip.val() +
-      '&attr[description]=' + spF.description.val() +
-      '&attr[summary]=' + spF.summary.val() +
-      '&attr[hourly_rate]=' + spF.hourly_rate.val() +
-      '&attr[experience]=' + spF.experience.val() +
+      '&attr[state]=' + sF.state.val() +
+      '&attr[zip]=' + sF.zip.val() +
+      '&attr[description]=' + sF.description.val() +
+      '&attr[summary]=' + sF.summary.val() +
+      '&attr[hourly_rate]=' + sF.hourly_rate.val() +
+      '&attr[experience]=' + sF.experience.val() +
       '&attr[category_id]=' + $('#category_id').val() +
       '&attr[school_id]=' + $('#school_id').val() +
       '&attr[is_provider]=1',
-    error: Response(data)
+    error: Response
   }).done(function (data) {
       if (data['status'] === 'failed') {
         alert(data['errors'][0]);
       }
       else {
         alert("You've successfully been registered. Welcome to LT!");
+          currentUser = data['response'];
+          $('.header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+          checkUnreadMessages();
+          loadPage('/map');
       }
 
     });
@@ -412,21 +480,21 @@ function searchSchool(query) {
 }
 
 function setCity(id, name) {
-  $('.city').html(name);
+  $('.city').val(name);
   $('#city_id').val(id);
 
   $('#cities').hide();
 }
 
 function setSkills(id, name) {
-  $('.skills').html(name);
+  $('.skills').val(name);
   $('#category_id').val(id);
 
   $('#skills').hide();
 }
 
 function setSchool(id, name) {
-  $('.school').html(name);
+  $('.school').val(name);
   $('#school_id').val(id);
 
   $('#schools').html('');
@@ -451,13 +519,15 @@ function linkedin_connect(access_token) {
   }).done(function (data) {
       if(data['response']['new_user']) {
         if (confirm('Do you want to register as a Service Provider?')) {
-          window.location = '/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token'];
+          loadPage('/signup/service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
         } else {
           alert('User is successfully registered, token: ' + data['response']['user']['token']);
+          window.location = ('/map');
         }
       }
       else {
         alert('User is already registered, token: ' + data['response']['user']['token']);
+          loadPage('/map');
       }
     });
 }
