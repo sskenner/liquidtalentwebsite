@@ -249,6 +249,7 @@ a:hover { color: #000; }
 #admin-panel .lti.link.active { background-position: -190px -560px; }
 #admin-panel .lti.link.active:hover { background-position: -190px -616px; }
 
+#preloader, #content-preloader {display: none;  position: relative; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: hidden; background: rgba(0, 0, 0, 0.8) url('http://files.mimoymima.com/images/loading.gif') no-repeat center center; }
 /***********************************************************************************************************************
 /   User
 /**********************************************************************************************************************/
@@ -846,7 +847,12 @@ h3 {
     top: 60px;
     cursor: pointer;
 }
-#map-overlay .base {
+
+.list-item {
+    margin-bottom: 10px;
+}
+
+#map-overlay .base, .list-item .base {
     width: 640px;
     height: 150px;
     background: #FFF;
@@ -858,32 +864,40 @@ h3 {
     cursor: auto;
 }
 
-#map-overlay .avatar {
+.list-item .base {
+    top: 20px;
+    border-bottom: none;
+}
+
+#map-overlay .avatar, .list-item .avatar {
     display: block;
     width: 100px;
     background: #000;
 }
 #map-overlay .favorite-button,
-#map-overlay .play-button {
+#map-overlay .play-button,
+.list-item .favorite-button,
+.list-item .play-button {
     display: inline-block;
     vertical-align: top;
     width: 50px;
     height: 50px;
     cursor: pointer;
 }
-#map-overlay .favorite-button { background: url(<%= asset_path "main/button-favorite-small.png" %>) 0px 0px; }
-#map-overlay .favorite-button:hover { background-position: 0px -50px; }
-#map-overlay .play-button { background: url(<%= asset_path "main/button-play.png" %>) 0px 0px; }
-#map-overlay .play-button:hover { background-position: 0px -50px; }
+#map-overlay .favorite-button, .list-item .favorite-button { background: url(<%= asset_path "main/button-favorite-small.png" %>) 0px 0px; }
+#map-overlay .favorite-button:hover, .list-item .favorite-button:hover { background-position: 0px -50px; }
+#map-overlay .play-button, .list-item .play-button { background: url(<%= asset_path "main/button-play.png" %>) 0px 0px; }
+#map-overlay .play-button:hover, .list-item .play-button:hover { background-position: 0px -50px; }
 
-#map-overlay .title {
+#map-overlay .title, .list-item .title {
     position: absolute;
     top: 10px;
     left: 110px;
 }
-#map-overlay .title .name { font-size: 24px; }
+#map-overlay .title .name, .list-item .title .name { font-size: 24px; }
 
-#map-overlay .description {
+#map-overlay .description,
+.list-item .description {
     position: absolute;
     top: 60px;
     left: 110px;
@@ -892,7 +906,8 @@ h3 {
     line-height: 24px;
 }
 
-#map-overlay .linkedin-icon {
+#map-overlay .linkedin-icon,
+.list-item .linkedin-icon {
     width: 30px;
     height: 30px;
     background: url(<%= asset_path "main/linkedin_icon.png" %>);
@@ -902,19 +917,22 @@ h3 {
     opacity: 0;
 }
 
-#map-overlay .distance {
+#map-overlay .distance,
+.list-item .distance {
     top: 10px;
     position: absolute;
     right: 10px;
     font-size: 18px;
 }
 
-#map-overlay .lt-drop {
+#map-overlay .lt-drop,
+.list-item .lt-drop {
     position: absolute;
     top: 42%;
     right: 10px;
 }
-#map-overlay .stars {
+#map-overlay .stars,
+.list-item .stars {
     width: 75px;
     height: 14px;
     position: absolute;

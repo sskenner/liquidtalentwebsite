@@ -1,38 +1,42 @@
 <div id="search-tool-bar">
   <div class="title">Search</div>
   <div class="functions">
-    <a href="javascript: loadPage('/map');" class="geo-toggle green-button">Map
-    </a><a href="#" class="geo-toggle black-button">List
-    </a>
+    <a href="javascript: loadPage('/map');" class="geo-toggle green-button">Map</a>
+    <a href="javascript: loadPage('/search');" class="geo-toggle black-button">List</a>
     <div class="visibility-toggle t"></div>
   </div>
 </div>
-<div id="map-overlay">
-  <div class="base"> 
 
-  <div class="avatar"><img src="<%= asset_path 'main/avatar.png' %>" alt="LiquidTalent Professional's Avatar"></div>
-  <div class="favorite-button t"></div> 
-  <div class="play-button t"></div> 
+<div id="content-preloader"></div>
 
-  <p class="title"> 
-  <p class="name"> user.name </p>
+<div id="list-items">
+  <div class="list-item" id="first-item" style="display: none;">
+    <div class="base">
 
-  </p> 
+      <img class="avatar" src="<%= asset_path 'main/avatar.png' %>" alt="LiquidTalent Professional's Avatar">
+      <div class="favorite-button t">
+      </div><div class="play-button t"></div>
 
-  <p class="description"> user.description </p>
+      <div class="title">
+        <p class="name"></p>
+        <span class="city"></span>
+      </div>
 
-  <div class="linkedin-icon"></div> 
+      <p class="description"></p>
 
-  <div class="distance"> '4km Away' </div>
+      <div class="linkedin-icon"></div>
 
-  <div class="lt-drop"></div> 
-  <div class="stars"> 
-  <div class="star"></div> 
-  <div class="star"></div> 
-  <div class="star"></div> 
-  <div class="star"></div> 
-  <div class="star"></div> 
-  </div> 
+      <div class="distance"> 4km Away </div>
+
+      <div class="lt-drop"></div>
+      <div class="stars">
+        <div class="star">
+        </div><div class="star">
+      </div><div class="star">
+      </div><div class="star">
+      </div><div class="star">
+      </div>
+      </div>
+    </div>
   </div>
 </div>
-<div id="map"></div>

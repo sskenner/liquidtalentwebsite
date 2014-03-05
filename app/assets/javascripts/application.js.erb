@@ -184,6 +184,22 @@ $(window).on('load', function () {
             }
         },
 
+        'search': {
+
+            'href': '/search',
+            'load': function () {
+                if ($('#admin-panel')) {
+                    $('#admin-panel').removeClass('disabled');
+                }
+                if ($('#background')) {
+                    $('#background').removeClass('disabled').css('overflow', 'scroll');
+                }
+
+                listSearch();
+            }
+
+        },
+
         'map': {
 
             'href': '/map',
@@ -230,7 +246,7 @@ $(window).on('load', function () {
 
                 mapSearch();
 
-            },
+            }
 
         }
 
@@ -447,25 +463,26 @@ var sF;
 /**********************************************************************************************************************/
 
 function login() {
+    $('#preloader').show();
+
     $.ajax({
         url: 'http://backend.liquidtalent.com' + sF.href,
         data: 'email=' + sF.email.val() +
                 '&password=' + sF.password.val()
-        //error: Response(data)
+        //error: Response
     }).done(function (data) {
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+        }
+        else {
+            currentUser = data['response']['user'];
+            $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+            checkUnreadMessages();
+            loadPage('/search');
+        }
 
-                if (data['status'] === 'failed') {
-                    alert(data['errors'][0]);
-                }
-                else {
-                    alert("You've successfully been signed in to LiquidTalent.");
-                    currentUser = data['response']['user'];
-                    $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
-                    checkUnreadMessages();
-                    loadPage('/map');
-                }
-
-            });
+        $('#preloader').hide();
+    });
 }
 
 /****** Search ******/
@@ -718,6 +735,34 @@ function mapSearch() {
 
             });
 
+        });
+
+    });
+
+}
+
+function listSearch() {
+    $('#content-preloader').show();
+
+    $.ajax({
+
+        url: 'http://backend.liquidtalent.com/users/filter',
+        error: Response
+
+    }).done(function (users) {
+        $('#content-preloader').hide();
+
+        users['response'].forEach(function (user) {
+            if(user.avatar_url != null) {
+                $('#first-item .avatar').attr('src', user.avatar_url);
+            }
+            else {
+                $('#first-item .avatar').attr('src', '/assets/main/avatar.png');
+            }
+            $('#first-item .name').html(user.name);
+            $('#first-item .city').html(user.city_name);
+            $('#first-item .description').html(user.description);
+            $('#list-items').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
         });
 
     });
