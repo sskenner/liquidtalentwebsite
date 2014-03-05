@@ -248,8 +248,8 @@ $(window).on('load', function () {
 
                 };
 
-                map.popUp.overlay.on('mousedown', function () {
-                    if (window.event.trigger.id === 'map-overlay') {
+                map.popUp.overlay.on('mousedown', function (event) {
+                    if (event.trigger.id === 'map-overlay') {
                         map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
                             map.popUp.overlay.css('display', 'none');
                         });
