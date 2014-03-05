@@ -33,8 +33,7 @@ $(window).on('load', function () {
             'href': '',
             'load': function () {
 
-                $('#presentation').css({ opacity: 0, display: 'block' });
-                $('#presentation').animate({ opacity: 1 }, 1000, 'linear');
+                $('#presentation').css({ opacity: 0, display: 'block' }).animate({ opacity: 1 }, 1000, 'linear');
 
                 if ($('#background.disabled')) {
                     $('#background').removeClass('disabled');
@@ -102,7 +101,6 @@ $(window).on('load', function () {
             }
 
         },
-
 
         'signup': {
 
@@ -191,52 +189,48 @@ $(window).on('load', function () {
             'href': '/map',
             'load': function () {
 
-                if ($('#background.disabled')) {
-                    $('#background').removeClass('disabled');
-                }
-                if ($('#admin-panel.disabled')) {
-                    $('#admin-panel').removeClass('disabled');
-                }
+                $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
+                    $('#presentation').css({ display: 'none' });
+                });
 
-                this.canvas = document.getElementById('map');
-                this.options = {
-                    center: new google.maps.LatLng(40.5403, -73.5463),
-                    zoom: 8,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-                this.googleMap = new google.maps.Map(this.canvas, this.options)
+                if (!$('#background.disabled') !== false) { $('#background').removeClass('disabled'); }
+                if (!$('#admin-panel.disabled') !== false) { $('#admin-panel').removeClass('disabled'); }
 
-                this.popUp.overlay = $('#map-overlay');
-                this.popUp.image = this.popUp.overlay.find('.avatar');
-                this.popUp.name = this.popUp.overlay.find('.title .name');
-                this.popUp.description = this.popUp.overlay.find('.description');
-                this.popUp.distance = this.popUp.overlay.find('.distance');
-                this.popUp.linkedIn = this.popUp.overlay.find('.linkedin-icon');
-                this.popUp.title = this.popUp.overlay.find('.base .title');
-                this.popUp.favorite = this.popUp.overlay.find('.favorite-button');
-                this.popUp.play = this.popUp.overlay.find('.play-button');
-                this.popUp.LTDrop = this.popUp.overlay.find('.lt-drop');
-                this.popUp.stars = this.popUp.overlay.find('.stars');
+                map = $('#map-overlay');
+                map = {
+
+                    'markers': [],
+
+                    'googleMap': new google.maps.Map( document.getElementById('map'), {
+                        center: new google.maps.LatLng(40.5403, -73.5463),
+                        zoom: 8,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }),
+
+                    'popUp': {
+                        'overlay': $('#map-overlay'),
+                        'image': map.find('.avatar'),
+                        'description': map.find('.description'),
+                        'distance': map.find('.distance'),
+                        'linkedIn': map.find('.linkedin-icon'),
+                        'title': map.find('.base .title'),
+                        'favorite': map.find('.favorite-button'),
+                        'play': map.find('.play-button'),
+                        'LTDrop': map.find('.lt-drop'),
+                        'stars': map.find('.stars')
+                    }
+
+                };
+
+                map.popUp.overlay.on('mousedown', function () {
+                    map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
+                        map.popUp.overlay.css('display', 'none');
+                    });
+                });
 
                 mapSearch();
 
             },
-            'canvas': {},
-            'options': {},
-            'googleMap': {},
-            'popUp': {
-                'overlay': {},
-                'image': {},
-                'name': {},
-                'description': {},
-                'distance': {},
-                'linkedIn': {},
-                'title': {},
-                'favorite': {},
-                'play': {},
-                'LTDrop': {},
-                'stars': {}
-            }
 
         }
 
@@ -260,6 +254,69 @@ $(window).on('load', function () {
         }
 
     };
+
+    states = {
+        'Alabama': 'AL',
+        'Alaska': 'AK',
+        'Arizona': 'AZ',
+        'Arkansas': 'AR',
+        'California': 'CA',
+        'Colorado': 'CO',
+        'Connecticut': 'CT',
+        'Delaware': 'DE',
+        'District Of Columbia': 'DC',
+        'Florida': 'FL',
+        'Georgia': 'GA',
+        'Hawaii': 'HI',
+        'Idaho': 'ID',
+        'Illinois': 'IL',
+        'Indiana': 'IN',
+        'Iowa': 'IA',
+        'Kansas': 'KS',
+        'Kentucky': 'KY',
+        'Louisiana': 'LA',
+        'Maine': 'ME',
+        'Maryland': 'MD',
+        'Massachusetts': 'MA',
+        'Michigan': 'MI',
+        'Minnesota': 'MN',
+        'Mississippi': 'MS',
+        'Missouri': 'MO',
+        'Montana': 'MT',
+        'Nebraska': 'NE',
+        'Nevada': 'NV',
+        'New Hampshire': 'NH',
+        'New Jersey': 'NJ',
+        'New Mexico': 'NM',
+        'New York': 'NY',
+        'North Carolina': 'NC',
+        'North Dakota': 'ND',
+        'Ohio': 'OH',
+        'Oklahoma': 'OK',
+        'Oregon': 'OR',
+        'Pennsylvania': 'PA',
+        'Rhode Island': 'RI',
+        'South Carolina': 'SC',
+        'South Dakota': 'SD',
+        'Tennessee': 'TN',
+        'Texas': 'TX',
+        'Utah': 'UT',
+        'Vermont': 'VT',
+        'Virginia': 'VA',
+        'Washington': 'WA',
+        'West Virginia': 'WV',
+        'Wisconsin': 'WI',
+        'Wyoming': 'WY',
+        'American Samoa': 'AS',
+        'Guam': 'GU',
+        'Northern Mariana Islands': 'MP',
+        'Puerto Rico': 'PR',
+        'United States Minor Outlying Islands': 'UM',
+        'Virgin Islands': 'VI',
+        'Armed Forces Americas': 'AA',
+        'Armed Forces Pacific': 'AP',
+        'Armed Forces Others': 'AE'
+    }
 
     pages.home.load();
 
@@ -615,44 +672,42 @@ function linkedin_connect(access_token) {
 
 /****** Search ******/
 
-var map;
+var map, states;
 
-function mapSearch(map) {
+function mapSearch() {
 
     $.ajax({
+
         url: 'http://backend.liquidtalent.com/users/filter',
         error: Response
+
     }).done(function (users) {
-                users['response'].forEach(function (user) {
 
-                    var map_overlay, cords, pin, marker;
+        users['response'].forEach(function (user) {
 
-                    cords = new google.maps.LatLng(user.latitude, user.longitude);
+            user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase();
 
-                    pin = new google.maps.MarkerImage('<%= asset_path 'search/pin.png' %>',
-                            new google.maps.Size(62, 80),
-                            new google.maps.Point(0, 0),
-                            new google.maps.Point(18, 42)
-                    );
+            map.markers[user.id] = new google.maps.Marker({
 
-                    marker = new google.maps.Marker({
-                        position: cords,
-                        map: map,
-                        title: user.name,
-                        icon: pin
-                    });
+                position: new google.maps.LatLng(user.latitude, user.longitude),
+                map: map.googleMap,
+                title: user.name,
+                icon: '<%= asset_path 'search/pin.png' %>'
 
-                    google.maps.event.addListener(marker, 'click', function () {
-
-                        map.popUp.overlay.css('display', 'block').animate({ opacity: 0 }, 1000, 'linear');
-                        map.popUp.image.prop('src', (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url);
-                        map.popUp.description.html(user.description);
-                        map.popUp.name.html(user.name);
-
-                    });
-
-                });
             });
+
+            google.maps.event.addListener(map.markers[user.id], 'click', function () {
+
+                map.popUp.overlay.css('display', 'block').animate({ opacity: 1 }, 1000, 'linear');
+                map.popUp.image.prop('src', (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url);
+                map.popUp.description.html(user.description);
+                map.popUp.title.html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+
+            });
+
+        });
+
+    });
 
 }
 
