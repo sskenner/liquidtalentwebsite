@@ -249,7 +249,7 @@ $(window).on('load', function () {
                 };
 
                 map.popUp.overlay.on('mousedown', function () {
-                    if (event.trigger.id === 'map-overlay') {
+                    if (window.event.trigger.id === 'map-overlay') {
                         map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
                             map.popUp.overlay.css('display', 'none');
                         });
@@ -742,6 +742,9 @@ function mapSearch() {
                 if (user.badge_provider === 'no') { map.popUp.LTDrop.addClass('hidden'); }
                 else { map.popUp.LTDrop.addClass(user.badge_provider); }
 
+                if (user.video_url === null) { map.popUp.play.addClass('disabled'); }
+                else { map.popUp.play.removeClass('disabled'); }
+
                 map.popUp.stars.each(function (i, star) {
 
                     if (i < user.rate_provider) { $(star).addClass('active'); }
@@ -754,7 +757,7 @@ function mapSearch() {
                 map.popUp.description.html(user.description);
                 map.popUp.title.html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
 
-                map.popUp.distance.html('$' + user.hourly_rate + '.00');
+                map.popUp.distance.html('Hourly Rate: $' + user.hourly_rate + '.00');
 
             });
 
