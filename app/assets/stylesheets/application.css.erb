@@ -128,7 +128,21 @@ a:hover { color: #000; }
     height: 14px;
     background: url(<%= asset_path "main/stars.png" %>);
 }
-#map-overlay .stars .star.active { background-position: 14px 0px; }
+.star.active { background-position: 14px 0px; }
+
+.favorite-button { background: url(<%= asset_path "main/button-favorite-small.png" %>); }
+.play-button { background: url(<%= asset_path "main/button-play.png" %>); }
+.favorite-button,
+.play-button {
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+.favorite-button:hover,
+.play-button:hover { background-position: 0px -50px; }
+.favorite-button.active,
+.play-button.disabled { background-position: 50px 0px; }
+.favorite-button.active:hover,
+.play-button.disabled:hover { background-position: 50px -50px; }
 
 .green-button {
     display: block;
@@ -864,7 +878,6 @@ h3 {
     position: relative;
     left: 45px;
     top: 220px;
-    box-shadow: 0px 0px 10px 0px #777;
     border-bottom: 1px solid #000;
     cursor: auto;
 }
@@ -872,6 +885,7 @@ h3 {
 .list-item .base {
     top: 20px;
     border-bottom: none;
+    box-shadow: 0px 0px 10px 0px #CCC;
 }
 
 #map-overlay .avatar, .list-item .avatar {
@@ -887,12 +901,7 @@ h3 {
     vertical-align: top;
     width: 50px;
     height: 50px;
-    cursor: pointer;
 }
-#map-overlay .favorite-button, .list-item .favorite-button { background: url(<%= asset_path "main/button-favorite-small.png" %>) 0px 0px; }
-#map-overlay .favorite-button:hover, .list-item .favorite-button:hover { background-position: 0px -50px; }
-#map-overlay .play-button, .list-item .play-button { background: url(<%= asset_path "main/button-play.png" %>) 0px 0px; }
-#map-overlay .play-button:hover, .list-item .play-button:hover { background-position: 0px -50px; }
 
 #map-overlay .title, .list-item .title {
     position: absolute;

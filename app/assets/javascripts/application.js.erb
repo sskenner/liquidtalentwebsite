@@ -249,9 +249,16 @@ $(window).on('load', function () {
                 };
 
                 map.popUp.overlay.on('mousedown', function () {
-                    map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
-                        map.popUp.overlay.css('display', 'none');
-                    });
+                    if (window.event.trigger.id === 'map-overlay') {
+                        map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
+                            map.popUp.overlay.css('display', 'none');
+                        });
+                    }
+                });
+
+                map.popUp.favorite.on('mousedown', function () {
+                    $(this).removeClass('active');
+                    $(this).addClass('active');
                 });
 
                 mapSearch();
@@ -715,9 +722,6 @@ function mapSearch() {
 
         users['response'].forEach(function (user) {
 
-            if (user.state !== null) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
-            else { user.state = 'NA'; }
-
             map.markers[user.id] = new google.maps.Marker({
 
                 position: new google.maps.LatLng(user.latitude, user.longitude),
@@ -729,7 +733,11 @@ function mapSearch() {
 
             google.maps.event.addListener(map.markers[user.id], 'click', function () {
 
+                if (user.state !== null) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+                else { user.state = 'NY'; }
+
                 map.popUp.LTDrop.removeClass('hidden').removeClass('blue').removeClass('bronze').removeClass('silver').removeClass('gold');
+                map.popUp.favorite.removeClass('active');
 
                 if (user.badge_provider === 'no') { map.popUp.LTDrop.addClass('hidden'); }
                 else { map.popUp.LTDrop.addClass(user.badge_provider); }
@@ -745,6 +753,8 @@ function mapSearch() {
                 map.popUp.image.prop('src', (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url);
                 map.popUp.description.html(user.description);
                 map.popUp.title.html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+
+                map.popUp.distance.html('$' + user.rate_provider);
 
             });
 
