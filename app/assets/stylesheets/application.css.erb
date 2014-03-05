@@ -109,6 +109,26 @@ a:hover { color: #000; }
 }
 .text-field.pass-field { font-family: 'password'; }
 
+.lt-drop {
+    width: 102px;
+    height: 23px;
+    background: url(<%= asset_path "main/drops.png" %>);
+}
+.lt-drop.hidden { display: none; }
+.lt-drop.blue { background-position: 102px 0px; }
+.lt-drop.bronze { background-position: 102px 23px; }
+.lt-drop.silver { background-position: 102px 46px; }
+.lt-drop.gold { background-position: 102px 69px; }
+
+.star {
+    vertical-align: top;
+    display: inline-block;
+    width: 15px;
+    height: 14px;
+    background: url(<%= asset_path "main/stars.png" %>);
+}
+#map-overlay .stars .star.active { background-position: 14px 0px; }
+
 .green-button {
     display: block;
     background: url(<%= asset_url "main/gradient-green.png" %>);
@@ -893,9 +913,6 @@ h3 {
     position: absolute;
     top: 42%;
     right: 10px;
-    width: 102px;
-    height: 23px;
-    background: url(<%= asset_path "main/drops.png" %>);
 }
 #map-overlay .stars {
     width: 75px;
@@ -904,11 +921,3 @@ h3 {
     right: 10px;
     bottom: 10px;
 }
-#map-overlay .stars .star {
-    vertical-align: top;
-    display: inline-block;
-    width: 15px;
-    height: 14px;
-    background: url(<%= asset_path "main/stars.png" %>);
-}
-#map-overlay .stars .star.active { background-position: 0px 14px; }
