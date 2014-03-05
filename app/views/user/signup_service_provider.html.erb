@@ -12,14 +12,18 @@
   </p>
 
   <div id="signup-address">
-    <input type="text" placeholder="Street *" class="text-field street" style="width: 24%; float: left;">
-    <div style="width: 24%; float: left;">
-      <input type="text" placeholder="City *" class="text-field cities city">
+    <input type="text" placeholder="Street *" class="text-field street">
+    <div>
+      <input type="text" placeholder="City *" class="text-field cities city" style="width: 100%;">
       <div id="cities"></div>
     </div>
 
-    <input type="text" placeholder="State *" class="text-field state" style="width: 24%; float: left;">
-    <input type="text" placeholder="Zip *" class="text-field zip" style="width: 24%; float: left;">
+    <div>
+      <input type="text" placeholder="State *" class="text-field state" style="width: 100%;">
+      <div id="states"></div>
+    </div>
+
+    <input type="text" placeholder="Zip *" class="text-field zip" style="margin-right: 0;">
     <div class="clear"></div>
   </div>
 
@@ -47,6 +51,7 @@
     <input type="hidden" name="category_id" id="category_id"/>
     <input type="hidden" name="city_id" id="city_id"/>
     <input type="hidden" name="school_id" id="school_id"/>
+    <input type="hidden" name="state_id" id="state_id"/>
   </div>
 
   <div class="clear"></div>

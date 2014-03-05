@@ -128,6 +128,9 @@ $(window).on('load', function () {
                     'as': false
                 }
 
+                sF.a.on('change', function () {
+                    sF.as = true;
+                });
             }
 
         },
@@ -139,7 +142,7 @@ $(window).on('load', function () {
                     $('#admin-panel').addClass('disabled');
                 }
                 if ($('#background')) {
-                    $('#background').addClass('disabled');
+                    $('#background').addClass('disabled').css('overflow-y', 'scroll');;
                 }
 
                 sF = $('#sign-up-sp-form');
@@ -148,7 +151,7 @@ $(window).on('load', function () {
                     'href': '/user/set_details',
 
                     'street': sF.find('.street'),
-                    'state': sF.find('.state'),
+                    'state': sF.find('#state_id'),
                     'zip': sF.find('.zip'),
                     'description': sF.find('.desc'),
                     'summary': sF.find('.summary'),
@@ -173,6 +176,9 @@ $(window).on('load', function () {
                             })
                         });
 
+                Object.keys(states).forEach(function (key) {
+                    $('#states').append('<div onclick="setState(\'' + states[key] + '\', \'' + key + '\');">' + key + '</div>')
+                })
 
                 $('.city').click(function () {
                     $('#cities').show();
@@ -180,6 +186,10 @@ $(window).on('load', function () {
 
                 $('.skills').click(function () {
                     $('#skills').show();
+                });
+
+                $('.state').click(function () {
+                    $('#states').show();
                 });
             }
         },
@@ -192,7 +202,7 @@ $(window).on('load', function () {
                     $('#admin-panel').removeClass('disabled');
                 }
                 if ($('#background')) {
-                    $('#background').removeClass('disabled').css('overflow', 'scroll');
+                    $('#background').removeClass('disabled').css('overflow-y', 'scroll');
                 }
 
                 listSearch();
@@ -209,8 +219,8 @@ $(window).on('load', function () {
                     $('#presentation').css({ display: 'none' });
                 });
 
-                if (!$('#background.disabled') !== false) { $('#background').removeClass('disabled'); }
-                if (!$('#admin-panel.disabled') !== false) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
+                if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
                 map = $('#map-overlay');
                 map = {
@@ -356,6 +366,7 @@ function Response(response) {
 }
 
 function loadPage(page) {
+    $('#preloader').show();
 
     Object.keys(pages).forEach(function (p) {
         if (pages[p].href === page.replace(/\?.+$/, '')) {
@@ -367,9 +378,10 @@ function loadPage(page) {
         url: page,
         error: Response
     }).done(function (data) {
-                $('#background').html(data);
-                pages.active.load();
-            });
+        $('#preloader').hide();
+        $('#background').html(data);
+        pages.active.load();
+    });
 
     return false;
 
@@ -476,7 +488,7 @@ function login() {
         }
         else {
             currentUser = data['response']['user'];
-            $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+            showUserInfo();
             checkUnreadMessages();
             loadPage('/search');
         }
@@ -494,6 +506,7 @@ var sF;
 /**********************************************************************************************************************/
 
 function SubmitSignupForm() {
+    $('#preloader').show();
 
     $.ajax({
         url: 'http://backend.liquidtalent.com' + sF.href,
@@ -516,7 +529,6 @@ function SubmitSignupForm() {
                                 rq_data.append("token", data['response']['user']['token']);
                                 rq_data.append("avatar", sF.a.get(0).files[0]);
                                 return rq_data;
-                                // Or simply return new FormData(jQuery("form")[0]);
                             }(),
                             error: Response
                         }).done(function (avatar_data) {
@@ -524,18 +536,20 @@ function SubmitSignupForm() {
                                         alert(avatar_data['errors'][0]);
                                     }
                                     else {
+                                        currentUser = data['response']['user'];
+                                        currentUser['avatar_url'] = avatar_data['response']['url'];
+
                                         if ($('#is_provider').is(':checked')) {
                                             loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                                         }
                                         else {
-                                            alert("You've been successfully registered. Welcome to LT!");
-                                            currentUser = data['response']['user'];
-                                            currentUser['avatar_url'] = avatar_data['response']['url'];
-                                            $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                                            showUserInfo();
                                             checkUnreadMessages();
                                             loadPage('/map');
                                         }
                                     }
+
+                                    $('#preloader').hide();
                                 });
 
                     }
@@ -544,15 +558,15 @@ function SubmitSignupForm() {
                             loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                         }
                         else {
-                            alert("You've been successfully registered. Welcome to LT!");
                             currentUser = data['response']['user'];
-                            $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                            showUserInfo();
                             checkUnreadMessages();
                             loadPage('/map');
                         }
                     }
                 }
 
+                $('#preloader').hide();
             });
 
     return false;
@@ -560,47 +574,36 @@ function SubmitSignupForm() {
 }
 
 function SubmitSignupSPForm() {
-
-    var spF = $('#sign-up-sp-form');
-    spF = {
-
-
-        'href': '/user/set_details',
-
-        'street': sF.find('.street'),
-        'state': sF.find('.state'),
-        'zip': sF.find('.zip'),
-        'description': sF.find('.desc'),
-        'summary': sF.find('.summary'),
-        'hourly_rate': sF.find('.hourly_rate'),
-        'experience': sF.find('.experience')
-
-    };
+    $('#preloader').show();
 
     $.ajax({
-        url: 'http://backend.liquidtalent.com' + spF.href,
+        url: 'http://backend.liquidtalent.com' + sF.href,
         data: 'user_id=' + $('#user_id').val() +
                 '&token=' + $('#token').val() +
-                '&attr[street]=' + spF.street.val() +
+                '&attr[street]=' + sF.street.val() +
                 '&attr[city_id]=' + $('#city_id').val() +
-                '&attr[state]=' + spF.state.val() +
-                '&attr[zip]=' + spF.zip.val() +
-                '&attr[description]=' + spF.description.val() +
-                '&attr[summary]=' + spF.summary.val() +
-                '&attr[hourly_rate]=' + spF.hourly_rate.val() +
-                '&attr[experience]=' + spF.experience.val() +
+                '&attr[state]=' + sF.state.val() +
+                '&attr[zip]=' + sF.zip.val() +
+                '&attr[description]=' + sF.description.val() +
+                '&attr[summary]=' + sF.summary.val() +
+                '&attr[hourly_rate]=' + sF.hourly_rate.val() +
+                '&attr[experience]=' + sF.experience.val() +
                 '&attr[category_id]=' + $('#category_id').val() +
                 '&attr[school_id]=' + $('#school_id').val() +
                 '&attr[is_provider]=1',
-        error: Response(data)
+        error: Response
     }).done(function (data) {
                 if (data['status'] === 'failed') {
                     alert(data['errors'][0]);
                 }
                 else {
-                    alert("You've successfully been registered. Welcome to LT!");
+                    currentUser = data['response'];
+                    showUserInfo();
+                    checkUnreadMessages();
+                    loadPage('/map');
                 }
 
+                $('#preloader').hide();
             });
 
 }
@@ -641,6 +644,14 @@ function setSkills(id, name) {
     $('#skills').hide();
 }
 
+function setState(id, name) {
+
+    $('.state').val(name);
+    $('#state_id').val(id);
+
+    $('#states').html('');
+}
+
 function setSchool(id, name) {
 
     $('.school').val(name);
@@ -670,17 +681,15 @@ function linkedin_connect(access_token) {
                     if (confirm('Do you want to register as a Service Provider?')) {
                         loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                     } else {
-                        alert('User is successfully registered, token: ' + data['response']['user']['token']);
                         currentUser = data['response']['user'];
-                        $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                        showUserInfo();
                         checkUnreadMessages();
                         loadPage('/map');
                     }
                 }
                 else {
-                    alert('User is already registered, token: ' + data['response']['user']['token']);
                     currentUser = data['response']['user'];
-                    $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + currentUser['avatar_url'] + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+                    showUserInfo();
                     checkUnreadMessages();
                     loadPage('/map');
                 }
@@ -778,4 +787,10 @@ function checkUnreadMessages() {
             });
 
     setTimeout('checkUnreadMessages()', 10000);
+}
+
+function showUserInfo() {
+    var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '/assets/main/avatar.png';
+
+    $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + avatar + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
 }

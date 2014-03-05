@@ -68,6 +68,7 @@ input, textarea {
 ::-moz-placeholder { color: #000; }
 :-ms-input-placeholder { color: #000; }
 
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -427,30 +428,34 @@ a:hover { color: #000; }
     text-align: center;
 }
 
-#cities, #skills, #schools {
+#signup-address > div, #signup-address > input {
+    float: left;
+    width: 200px;
+    margin-right: 14px;
+}
+
+#cities, #skills, #schools, #states {
     width: 100%;
     position: absolute;
 }
-#cities, #skills {
+#cities, #skills, #states {
     width: 210px;
     display: none;
 }
-.cities:hover {
+.cities:hover, .state:hover, .skills:hover {
     cursor: pointer;
 }
 #schools {
     width: 400px;
 }
-.skills:hover {
-    cursor: pointer;
-}
-#cities div, #skills div, #schools div {
+
+#cities div, #skills div, #schools div, #states div {
     background: #fff;
     padding: 15px;
     border-bottom: 1px solid #ccc;
     cursor: pointer;
 }
-#cities div:hover , #skills div:hover , #schools div:hover {
+#cities div:hover , #skills div:hover , #schools div:hover, #states div:hover {
     background: #f6f6f6;
 }
 
