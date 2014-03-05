@@ -686,6 +686,8 @@ function linkedin_connect(access_token) {
                         checkUnreadMessages();
                         loadPage('/map');
                     }
+
+                    $('#preloader').hide();
                 }
                 else {
                     currentUser = data['response']['user'];
@@ -693,6 +695,8 @@ function linkedin_connect(access_token) {
                     checkUnreadMessages();
                     loadPage('/map');
                 }
+
+                $('#preloader').hide();
             });
 }
 

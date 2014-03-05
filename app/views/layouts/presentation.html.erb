@@ -25,6 +25,10 @@
 
         $('#preloader').show();
 
+        $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
+            $('#presentation').css({ display: 'none' });
+        });
+
         $.ajax({
             url: 'http://backend.liquidtalent.com/user/linkedin_token/?code=' + code,
             error: function (error) {
@@ -32,8 +36,6 @@
                 console.log(error['']);
             }
         }).done(function (data) {
-            $('#preloader').hide();
-
             var access_token = data['access_token'];
             linkedin_connect(access_token);
         });
