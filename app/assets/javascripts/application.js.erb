@@ -249,7 +249,7 @@ $(window).on('load', function () {
                 };
 
                 map.popUp.overlay.on('mousedown', function () {
-                    if (window.event.trigger.id === 'map-overlay') {
+                    if (event.trigger.id === 'map-overlay') {
                         map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
                             map.popUp.overlay.css('display', 'none');
                         });
@@ -257,8 +257,8 @@ $(window).on('load', function () {
                 });
 
                 map.popUp.favorite.on('mousedown', function () {
-                    $(this).removeClass('active');
-                    $(this).addClass('active');
+                    if (/active/.test($(this).prop('class'))) { $(this).removeClass('active'); }
+                    else { $(this).addClass('active'); }
                 });
 
                 mapSearch();
@@ -754,7 +754,7 @@ function mapSearch() {
                 map.popUp.description.html(user.description);
                 map.popUp.title.html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
 
-                map.popUp.distance.html('$' + user.rate_provider);
+                map.popUp.distance.html('$' + user.hourly_rate + '.00');
 
             });
 
