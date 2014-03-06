@@ -134,6 +134,17 @@ $(window).on('load', function () {
                 sF.a.on('change', function () {
                     sF.as = true;
                 });
+
+                $('#sp-checkbox').click(function() {
+                    if($('#is_provider').val() == 0) {
+                        $('#is_provider').val(1);
+                        $('#sp-checkbox').css('background-position', '0px -55px');
+                    }
+                    else {
+                        $('#is_provider').val(0);
+                        $('#sp-checkbox').css('background-position', '0px 0px');
+                    }
+                });
             }
 
         },
@@ -552,7 +563,7 @@ function SubmitSignupForm() {
                                         currentUser = data['response']['user'];
                                         currentUser['avatar_url'] = avatar_data['response']['url'];
 
-                                        if ($('#is_provider').is(':checked')) {
+                                        if ($('#is_provider').val() == 1) {
                                             loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                                         }
                                         else {
@@ -567,7 +578,7 @@ function SubmitSignupForm() {
 
                     }
                     else {
-                        if ($('#is_provider').is(':checked')) {
+                        if ($('#is_provider').val() == 1) {
                             loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                         }
                         else {
