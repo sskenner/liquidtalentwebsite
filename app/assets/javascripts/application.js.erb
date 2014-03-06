@@ -803,13 +803,13 @@ function mapSearch(providers) {
 
             google.maps.event.addListener(map.markers[user.id], 'click', function () {
 
-                if (user.state !== null) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+                if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
                 else { user.state = 'NY'; }
 
                 map.popUp.LTDrop.removeClass('hidden').removeClass('blue').removeClass('bronze').removeClass('silver').removeClass('gold');
 
-                if (favorites[user.id] === undefined) { map.popUp.favorite.removeClass('active'); }
-                else { map.popUp.favorite.addClass('active'); }
+                if (typeof (favorites[user.id]) === 'number') { map.popUp.favorite.addClass('active'); }
+                else { map.popUp.favorite.removeClass('active'); }
                 map.popUp.favorite.attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
                 user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
@@ -845,7 +845,7 @@ function listSearch(providers) {
 
     providers.forEach(function (user) {
 
-            if (user.state !== null) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+            if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
             else { user.state = 'NY'; }
 
             user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
@@ -863,8 +863,8 @@ function listSearch(providers) {
 
             $('#first-item .distance').html('$' + user.hourly_rate + '.00');
 
-            if (favorites[user.id] === undefined) { $('#list-items .favorite-button').removeClass('active'); }
-            else { $('#list-items .favorite-button').addClass('active'); }
+            if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite-button').addClass('active'); }
+            else { $('#first-item .favorite-button').removeClass('active'); }
             $('#first-item .favorite-button').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
             $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
@@ -873,6 +873,7 @@ function listSearch(providers) {
 }
 
 function checkUnreadMessages() {
+
     $.ajax({
         url: 'http://backend.liquidtalent.com/messages/list?limit=9999&receiver_id=' + currentUser['id'],
         error: Response
@@ -881,6 +882,7 @@ function checkUnreadMessages() {
             });
 
     setTimeout('checkUnreadMessages()', 10000);
+
 }
 
 function showUserInfo() {
@@ -1069,6 +1071,31 @@ function prepareFilter() {
     $('#rate_to').val(filter_settings.rate_to.value);
 }
 
-function showPlaceholder() {
-    $('#background').html('<div id="placeholder">There is no item yet.</div>');
+function showPlaceholder (page) {
+
+    if (currentUser === null) {
+
+        $('#background').html(
+
+            '<div id="placeholder">' +
+                'Explore all of LiquidTalent.' +
+                '<a href="javascript:loadPage(\'/login\')" class="green-button">Sign Up</a>' +
+            '</div>'
+
+        );
+
+    }
+    else {
+
+        $('#background').html(
+
+            '<div id="placeholder">' +
+                'No ' + page + ' have been added here yet.' +
+                '<a href="javascript:loadPage(\'/map\')" class="green-button">Find ' + page + '</a>' +
+            '</div>'
+
+        );
+
+    }
+
 }
