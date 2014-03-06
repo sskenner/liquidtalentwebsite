@@ -198,12 +198,9 @@ $(window).on('load', function () {
 
             'href': '/search',
             'load': function () {
-                if ($('#admin-panel')) {
-                    $('#admin-panel').removeClass('disabled');
-                }
-                if ($('#background')) {
-                    $('#background').removeClass('disabled').css('overflow-y', 'scroll');
-                }
+
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
 
                 listSearch();
             }
@@ -248,8 +245,8 @@ $(window).on('load', function () {
 
                 };
 
-                map.popUp.overlay.on('mousedown', function (event) {
-                    if (event.trigger.id === 'map-overlay') {
+                map.popUp.overlay.on('click', function (event) {
+                    if ($(event.target).prop('id') === 'map-overlay') {
                         map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
                             map.popUp.overlay.css('display', 'none');
                         });
@@ -709,9 +706,11 @@ function linkedin_connect(access_token) {
 
 /****** Search ******/
 
-var map, states;
+var map, states, list;
 
 function mapSearch() {
+
+    $('#content-preloader').show();
 
     $.ajax({
 
@@ -719,6 +718,8 @@ function mapSearch() {
         error: Response
 
     }).done(function (users) {
+
+                $('#content-preloader').hide();
 
         users['response'].forEach(function (user) {
 
@@ -739,11 +740,13 @@ function mapSearch() {
                 map.popUp.LTDrop.removeClass('hidden').removeClass('blue').removeClass('bronze').removeClass('silver').removeClass('gold');
                 map.popUp.favorite.removeClass('active');
 
+                user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
+
                 if (user.badge_provider === 'no') { map.popUp.LTDrop.addClass('hidden'); }
                 else { map.popUp.LTDrop.addClass(user.badge_provider); }
 
-                if (user.video_url === null) { map.popUp.play.addClass('disabled'); }
-                else { map.popUp.play.removeClass('disabled'); }
+//                if (user.video_url === null) { map.popUp.play.addClass('disabled'); }
+//                else { map.popUp.play.removeClass('disabled'); }
 
                 map.popUp.stars.each(function (i, star) {
 
@@ -753,11 +756,11 @@ function mapSearch() {
                 });
 
                 map.popUp.overlay.css('display', 'block').animate({ opacity: 1 }, 1000, 'linear');
-                map.popUp.image.prop('src', (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url);
+                map.popUp.image.prop('src', user.avatar_url);
                 map.popUp.description.html(user.description);
                 map.popUp.title.html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
 
-                map.popUp.distance.html('Hourly Rate: $' + user.hourly_rate + '.00');
+                map.popUp.distance.html('$' + user.hourly_rate + '.00');
 
             });
 
@@ -768,6 +771,7 @@ function mapSearch() {
 }
 
 function listSearch() {
+
     $('#content-preloader').show();
 
     $.ajax({
@@ -776,19 +780,36 @@ function listSearch() {
         error: Response
 
     }).done(function (users) {
+
         $('#content-preloader').hide();
 
-        users['response'].forEach(function (user) {
-            if(user.avatar_url != null) {
-                $('#first-item .avatar').attr('src', user.avatar_url);
-            }
-            else {
-                $('#first-item .avatar').attr('src', '/assets/main/avatar.png');
-            }
-            $('#first-item .name').html(user.name);
-            $('#first-item .city').html(user.city_name);
+        users.response.forEach(function (user) {
+
+            if (user.state !== null) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+            else { user.state = 'NY'; }
+
+            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
+
+            $('#first-item .avatar').attr('src', user.avatar_url);
+
+            if (user.badge_provider === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+            else { $('#first-item .lt-drop').addClass(user.badge_provider); }
+
+//            if (user.video_url === null) { $('#first-item .play-button').addClass('disabled'); }
+//            else { $('#first-item .play-button').removeClass('disabled'); }
+
+            $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
             $('#first-item .description').html(user.description);
+
+            $('#first-item .distance').html('$' + user.hourly_rate + '.00');
+
+            $('#first-item .favorite-button').on('mousedown', function () {
+                if (/active/.test($(this).prop('class')) === true) { $(this).removeClass('active'); }
+                else { $(this).addClass('active'); }
+            });
+
             $('#list-items').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
+
         });
 
     });

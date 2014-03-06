@@ -144,6 +144,13 @@ a:hover { color: #000; }
 .favorite-button.active:hover,
 .play-button.disabled:hover { background-position: 50px -50px; }
 
+.avatar {
+    display: block;
+    background: #000;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
 .green-button {
     display: block;
     background: url(<%= asset_url "main/gradient-green.png" %>);
@@ -880,6 +887,7 @@ h3 {
     top: 220px;
     border-bottom: 1px solid #000;
     cursor: auto;
+    word-wrap: break-word;
 }
 
 .list-item .base {
@@ -889,9 +897,8 @@ h3 {
 }
 
 #map-overlay .avatar, .list-item .avatar {
-    display: block;
     width: 100px;
-    background: #000;
+    height: 100px;
 }
 #map-overlay .favorite-button,
 #map-overlay .play-button,
