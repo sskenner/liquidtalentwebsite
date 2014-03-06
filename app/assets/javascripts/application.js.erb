@@ -627,7 +627,12 @@ function setCategory(id, name) {
 
     $('#categories').hide();
 
-    $('#subcategories').html('<div onclick="setSubcategory(null, \'Subcategory\');">Categories</div>');
+    $('.subcategory').val('Subcategories');
+    $('#subcategories').html('');
+
+    if(id == null) {
+        $('#subcategory_id').val(null);
+    }
 
     global_info['sub_categories'].forEach(function (item) {
         if(item['parent_id'] == id) {
@@ -934,7 +939,9 @@ function prepareFilter() {
         }
     });
 
-    $('#subcategories').html('<div onclick="setSubcategory(null, \'Subcategory\');">Categories</div>');
+    if(filter_settings.subcategories.length > 0) {
+        $('#subcategories').html('<div onclick="setSubcategory(null, \'All Subcategories\');">All Subcategories</div>');
+    }
 
     filter_settings.subcategories.forEach(function (item) {
         $('#subcategories').append('<div onclick="setSubcategory(' + item.value + ', \'' + item.label + '\');">' + item.label + '</div>');
