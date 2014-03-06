@@ -19,7 +19,8 @@
 /**********************************************************************************************************************/
 
 var loaders, pages;
-var currentUser = null;
+
+var currentUser = null, favorites = [];
 var users = null;
 var global_info = null;
 var filter_settings = {
@@ -46,12 +47,8 @@ $(window).on('load', function () {
             'load': function () {
                 $('#presentation').css({ opacity: 0, display: 'block' }).animate({ opacity: 1 }, 1000, 'linear');
 
-                if ($('#background.disabled')) {
-                    $('#background').removeClass('disabled');
-                }
-                if ($('#admin-panel.disabled')) {
-                    $('#admin-panel').removeClass('disabled');
-                }
+                $('#background').removeClass('disabled');
+                $('#admin-panel').removeClass('disabled');
 
                 rF = {
 
@@ -88,6 +85,7 @@ $(window).on('load', function () {
 
             'href': '/login',
             'load': function () {
+
                 sF = $('#sign-in');
                 sF = {
 
@@ -98,16 +96,10 @@ $(window).on('load', function () {
 
                 };
 
-                $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
-                    $('#presentation').css({ display: 'none' });
-                });
+                $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () { $('#presentation').css({ display: 'none' }); });
 
-                if ($('#background.disabled')) {
-                    $('#background').addClass('disabled');
-                }
-                if ($('#admin-panel.disabled')) {
-                    $('#admin-panel').addClass('disabled');
-                }
+                $('#background').addClass('disabled');
+                $('#admin-panel').addClass('disabled');
 
             }
 
@@ -248,12 +240,42 @@ $(window).on('load', function () {
                 if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
                 if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
-                if(users == null) {
-                    filterUsers(mapSearch);
-                }
-                else {
-                    mapSearch(users);
-                }
+                map = $('#map-overlay');
+                map = {
+
+                    'markers': [],
+
+                    'googleMap': new google.maps.Map( document.getElementById('map'), {
+                        center: new google.maps.LatLng(40.5403, -73.5463),
+                        zoom: 8,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }),
+
+                    'popUp': {
+                        'overlay': $('#map-overlay'),
+                        'image': map.find('.avatar'),
+                        'description': map.find('.description'),
+                        'distance': map.find('.distance'),
+                        'linkedIn': map.find('.linkedin-icon'),
+                        'title': map.find('.base .title'),
+                        'favorite': map.find('.favorite-button'),
+                        'play': map.find('.play-button'),
+                        'LTDrop': map.find('.lt-drop'),
+                        'stars': map.find('.stars .star')
+                    }
+
+                };
+
+                map.popUp.overlay.on('click', function (event) {
+                    if ($(event.target).prop('id') === 'map-overlay') {
+                        map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
+                            map.popUp.overlay.css('display', 'none');
+                        });
+                    }
+                });
+
+                if (users === null) { filterUsers(mapSearch); }
+                else { mapSearch(users); }
 
                 prepareFilter();
             }
@@ -475,17 +497,15 @@ var sF;
 /**********************************************************************************************************************/
 
 function login() {
+
     $('#preloader').show();
 
     $.ajax({
         url: 'http://backend.liquidtalent.com' + sF.href,
-        data: 'email=' + sF.email.val() +
-                '&password=' + sF.password.val()
-        //error: Response
+        data: 'email=' + sF.email.val() + '&password=' + sF.password.val()
     }).done(function (data) {
-        if (data['status'] === 'failed') {
-            alert(data['errors'][0]);
-        }
+
+        if (data['status'] === 'failed') { alert(data['errors'][0]); }
         else {
             currentUser = data['response']['user'];
             showUserInfo();
@@ -494,7 +514,11 @@ function login() {
         }
 
         $('#preloader').hide();
+
+        getFavorites();
+
     });
+
 }
 
 /****** Search ******/
@@ -609,6 +633,7 @@ function SubmitSignupSPForm() {
 }
 
 function searchSchool(query) {
+
     if (query === '') {
         $('#schools').html('');
         return;
@@ -616,10 +641,7 @@ function searchSchool(query) {
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/schools/search?search=' + query,
-        error: function (error) {
-            alert("Problem with connecting to the server.");
-            console.log(error['']);
-        }
+        error: Response
     }).done(function (data) {
                 $('#schools').html('');
                 data['response'].forEach(function (school) {
@@ -777,10 +799,7 @@ function mapSearch(providers) {
         }
     });
 
-    map.popUp.favorite.on('mousedown', function () {
-        if (/active/.test($(this).prop('class'))) { $(this).removeClass('active'); }
-        else { $(this).addClass('active'); }
-    });
+    $('#content-preloader').hide();
 
     providers.forEach(function (user) {
 
@@ -799,7 +818,10 @@ function mapSearch(providers) {
                 else { user.state = 'NY'; }
 
                 map.popUp.LTDrop.removeClass('hidden').removeClass('blue').removeClass('bronze').removeClass('silver').removeClass('gold');
-                map.popUp.favorite.removeClass('active');
+
+                if (favorites[user.id] === undefined) { map.popUp.favorite.removeClass('active'); }
+                else { map.popUp.favorite.addClass('active'); }
+                map.popUp.favorite.attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
                 user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
 
@@ -852,10 +874,9 @@ function listSearch(providers) {
 
             $('#first-item .distance').html('$' + user.hourly_rate + '.00');
 
-            $('#first-item .favorite-button').on('mousedown', function () {
-                if (/active/.test($(this).prop('class')) === true) { $(this).removeClass('active'); }
-                else { $(this).addClass('active'); }
-            });
+            if (favorites[user.id] === undefined) { $('#list-items .favorite-button').removeClass('active'); }
+            else { $('#list-items .favorite-button').addClass('active'); }
+            $('#first-item .favorite-button').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
             $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
 
@@ -874,9 +895,66 @@ function checkUnreadMessages() {
 }
 
 function showUserInfo() {
+
     var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '/assets/main/avatar.png';
 
     $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + avatar + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+
+}
+
+function createFavorite(userID, button) {
+
+    if (currentUser.token !== null) {
+
+        if (/active/.test(button.prop('class'))) { destroyFavorite(userID, button); }
+        else {
+
+            button.addClass('active');
+
+            $.ajax({
+                url: 'http://backend.liquidtalent.com/favourite/create?token=' + currentUser.token + '&demander_id=' + currentUser.id + '&provider_id=' + userID,
+                error: Response
+            }).done(function (user) {
+
+                if (user.status === 'ok') { favorites[user.provider_id] = user.id; }
+
+            });
+
+        }
+
+    }
+
+}
+function destroyFavorite(userID, button) {
+
+        button.removeClass('active');
+
+        $.ajax({
+            url: 'http://backend.liquidtalent.com/favourite/destroy?token=' + currentUser.token + '&favourite_id=' + favorites[userID],
+            error: Response
+        }).done(function (user) {
+
+            if (user.status === 'ok') { favorites.splice(indexOf(favorites[userID]), 1); }
+
+        });
+
+}
+function getFavorites() {
+
+    if (currentUser.token !== null) {
+
+        $.ajax({
+            url: 'http://backend.liquidtalent.com/favourites/list?token=' + currentUser.token + '&demander_id=' + currentUser.id,
+            error: Response
+        }).done(function (users) {
+
+            favorites = [];
+            users.response.forEach(function (user) { favorites[user.provider.id] = user.favourite_id; });
+
+        });
+
+    }
+
 }
 
 function filterUsers(callback) {
