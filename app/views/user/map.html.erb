@@ -1,11 +1,16 @@
+<%= render "user/filter", :listing => 'mapSearch' %>
+
 <div id="search-tool-bar">
   <div class="title">Search</div>
   <div class="functions">
     <a href="javascript: loadPage('/map');" class="geo-toggle green-button">Map</a>
     <a href="javascript: loadPage('/search');" class="geo-toggle black-button">List</a>
-    <div class="visibility-toggle t"></div>
+    <div class="visibility-toggle t" onclick="$('#filter').show();"></div>
   </div>
 </div>
+
+<div id="content-preloader"></div>
+
 <div id="map"></div>
 <div id="map-overlay" style="display: none;opacity: 0;">
   <div class="base">

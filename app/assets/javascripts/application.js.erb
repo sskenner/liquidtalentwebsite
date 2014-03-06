@@ -19,8 +19,20 @@
 /**********************************************************************************************************************/
 
 var loaders, pages;
-
 var currentUser = null;
+var users = null;
+var global_info = null;
+var filter_settings = {
+    category: {label: 'Categories', value: null},
+    subcategory: {label: 'Subcategories', value: null},
+    city: {label: 'City', value: null},
+    college: {label: 'College', value: null},
+    hourly_rate_from: {label: '0', value: 0},
+    hourly_rate_to: {label: '200', value: 200},
+    rate_from: {label: '0', value: 0},
+    rate_to: {label: '5', value: 5},
+    subcategories: []
+}
 
 $(window).on('load', function () {
 
@@ -174,7 +186,7 @@ $(window).on('load', function () {
                             data['response']['categories'].forEach(function (item) {
                                 $('#skills').append('<div onclick="setSkills(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
                             })
-                        });
+                });
 
                 Object.keys(states).forEach(function (key) {
                     $('#states').append('<div onclick="setState(\'' + states[key] + '\', \'' + key + '\');">' + key + '</div>')
@@ -202,7 +214,14 @@ $(window).on('load', function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
 
-                listSearch();
+                if(users == null) {
+                    filterUsers(listSearch);
+                }
+                else {
+                    listSearch(users);
+                }
+
+                prepareFilter();
             }
 
         },
@@ -219,47 +238,14 @@ $(window).on('load', function () {
                 if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
                 if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
-                map = $('#map-overlay');
-                map = {
+                if(users == null) {
+                    filterUsers(mapSearch);
+                }
+                else {
+                    mapSearch(users);
+                }
 
-                    'markers': [],
-
-                    'googleMap': new google.maps.Map( document.getElementById('map'), {
-                        center: new google.maps.LatLng(40.5403, -73.5463),
-                        zoom: 8,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    }),
-
-                    'popUp': {
-                        'overlay': $('#map-overlay'),
-                        'image': map.find('.avatar'),
-                        'description': map.find('.description'),
-                        'distance': map.find('.distance'),
-                        'linkedIn': map.find('.linkedin-icon'),
-                        'title': map.find('.base .title'),
-                        'favorite': map.find('.favorite-button'),
-                        'play': map.find('.play-button'),
-                        'LTDrop': map.find('.lt-drop'),
-                        'stars': map.find('.stars .star')
-                    }
-
-                };
-
-                map.popUp.overlay.on('click', function (event) {
-                    if ($(event.target).prop('id') === 'map-overlay') {
-                        map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
-                            map.popUp.overlay.css('display', 'none');
-                        });
-                    }
-                });
-
-                map.popUp.favorite.on('mousedown', function () {
-                    if (/active/.test($(this).prop('class'))) { $(this).removeClass('active'); }
-                    else { $(this).addClass('active'); }
-                });
-
-                mapSearch();
-
+                prepareFilter();
             }
 
         }
@@ -632,10 +618,41 @@ function searchSchool(query) {
             });
 }
 
-function setCity(id, name) {
+function setCategory(id, name) {
+    $('.category').val(name);
+    $('#category_id').val(id);
 
+    filter_settings.category.label = name;
+    filter_settings.category.value = id;
+
+    $('#categories').hide();
+
+    $('#subcategories').html('<div onclick="setSubcategory(null, \'Subcategory\');">Categories</div>');
+
+    global_info['sub_categories'].forEach(function (item) {
+        if(item['parent_id'] == id) {
+            $('#subcategories').append('<div onclick="setSubcategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>');
+            filter_settings.subcategories.push({label: item['name'], value: item['id']});
+        }
+    });
+}
+
+function setSubcategory(id, name) {
+    $('.subcategory').val(name);
+    $('#subcategory_id').val(id);
+
+    filter_settings.subcategory.label = name;
+    filter_settings.subcategory.value = id;
+
+    $('#subcategories').hide();
+}
+
+function setCity(id, name) {
     $('.city').val(name);
     $('#city_id').val(id);
+
+    filter_settings.city.label = name;
+    filter_settings.city.value = id;
 
     $('#cities').hide();
 }
@@ -657,9 +674,11 @@ function setState(id, name) {
 }
 
 function setSchool(id, name) {
-
     $('.school').val(name);
     $('#school_id').val(id);
+
+    filter_settings.college.label = name;
+    filter_settings.college.value = id;
 
     $('#schools').html('');
 }
@@ -708,20 +727,47 @@ function linkedin_connect(access_token) {
 
 var map, states, list;
 
-function mapSearch() {
+function mapSearch(providers) {
+    map = $('#map-overlay');
+    map = {
 
-    $('#content-preloader').show();
+        'markers': [],
 
-    $.ajax({
+        'googleMap': new google.maps.Map( document.getElementById('map'), {
+            center: new google.maps.LatLng(40.5403, -73.5463),
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }),
 
-        url: 'http://backend.liquidtalent.com/users/filter',
-        error: Response
+        'popUp': {
+            'overlay': $('#map-overlay'),
+            'image': map.find('.avatar'),
+            'description': map.find('.description'),
+            'distance': map.find('.distance'),
+            'linkedIn': map.find('.linkedin-icon'),
+            'title': map.find('.base .title'),
+            'favorite': map.find('.favorite-button'),
+            'play': map.find('.play-button'),
+            'LTDrop': map.find('.lt-drop'),
+            'stars': map.find('.stars .star')
+        }
 
-    }).done(function (users) {
+    };
 
-                $('#content-preloader').hide();
+    map.popUp.overlay.on('click', function (event) {
+        if ($(event.target).prop('id') === 'map-overlay') {
+            map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
+                map.popUp.overlay.css('display', 'none');
+            });
+        }
+    });
 
-        users['response'].forEach(function (user) {
+    map.popUp.favorite.on('mousedown', function () {
+        if (/active/.test($(this).prop('class'))) { $(this).removeClass('active'); }
+        else { $(this).addClass('active'); }
+    });
+
+    providers.forEach(function (user) {
 
             map.markers[user.id] = new google.maps.Marker({
 
@@ -766,24 +812,12 @@ function mapSearch() {
 
         });
 
-    });
-
 }
 
-function listSearch() {
+function listSearch(providers) {
+    $('#providers').html('');
 
-    $('#content-preloader').show();
-
-    $.ajax({
-
-        url: 'http://backend.liquidtalent.com/users/filter',
-        error: Response
-
-    }).done(function (users) {
-
-        $('#content-preloader').hide();
-
-        users.response.forEach(function (user) {
+    providers.forEach(function (user) {
 
             if (user.state !== null) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
             else { user.state = 'NY'; }
@@ -808,12 +842,9 @@ function listSearch() {
                 else { $(this).addClass('active'); }
             });
 
-            $('#list-items').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
+            $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
 
         });
-
-    });
-
 }
 
 function checkUnreadMessages() {
@@ -831,4 +862,125 @@ function showUserInfo() {
     var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '/assets/main/avatar.png';
 
     $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + avatar + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+}
+
+function filterUsers(callback) {
+    $('#filter').hide();
+    $('#content-preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/users/filter',
+        data: 'category_id=' + $('#category_id').val() +
+              '&subcategory_id=' + $('#subcategory_id').val() +
+              '&city_id=' + $('#subcategory_id').val() +
+              '&hourly_rate_from=' + $('#hourly_rate_from').val() +
+              '&hourly_rate_to=' + $('#hourly_rate_to').val() +
+              '&rate_from=' + $('#rate_from').val() +
+              '&rate_to=' + $('#rate_to').val() +
+              '&school_id=' + $('#subcategory_id').val(),
+        error: Response
+    }).done(function (data) {
+        $('#content-preloader').hide();
+        users = data['response'];
+        callback(users);
+    });
+
+    return false;
+}
+
+function prepareFilter() {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/get_info',
+        error: function (error) {
+            alert("Problem with connecting to the server");
+            console.log(error);
+        }
+    }).done(function (data) {
+        global_info = data['response'];
+
+        data['response']['cities'].forEach(function (item) {
+            $('#cities').append('<div onclick="setCity(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+        })
+
+        data['response']['categories'].forEach(function (item) {
+            $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+        })
+    });
+
+    $('.city').click(function () {
+        if($('#cities').is(':visible')) {
+            $('#cities').hide();
+        }
+        else {
+            $('#cities').show();
+        }
+    });
+
+    $('.category').click(function () {
+        if($('#categories').is(':visible')) {
+            $('#categories').hide();
+        }
+        else {
+            $('#categories').show();
+        }
+    });
+
+    $('.subcategory').click(function () {
+        if($('#subcategories').is(':visible')) {
+            $('#subcategories').hide();
+        }
+        else {
+            $('#subcategories').show();
+        }
+    });
+
+    $('#subcategories').html('<div onclick="setSubcategory(null, \'Subcategory\');">Categories</div>');
+
+    filter_settings.subcategories.forEach(function (item) {
+        $('#subcategories').append('<div onclick="setSubcategory(' + item.value + ', \'' + item.label + '\');">' + item.label + '</div>');
+    });
+
+    $( "#hourly_rate" ).slider({range: true, min: 0, max: 200, step: 20, values: [filter_settings.hourly_rate_from.value, filter_settings.hourly_rate_to.value],
+        change: function( event, ui ) {
+            var hourly_rate_values = $( "#hourly_rate" ).slider('values');
+            $('#hourly_rate_from').val(hourly_rate_values[0]);
+            $('#hourly_rate_to').val(hourly_rate_values[1]);
+
+            filter_settings.hourly_rate_from.label = filter_settings.hourly_rate_from.value = hourly_rate_values[0];
+            filter_settings.hourly_rate_to.label = filter_settings.hourly_rate_to.value = hourly_rate_values[1];
+        },
+        slide: function( event, ui ) {
+            $('#hourly_rate_from_label').html(ui.values[0]);
+            $('#hourly_rate_to_label').html(ui.values[1]);
+        }
+    });
+
+    $( "#rate" ).slider({range: true, min: 0, max: 5, step: 1, values: [filter_settings.rate_from.value, filter_settings.rate_to.value],
+        change: function( event, ui ) {
+            var rate_values = $( "#rate" ).slider('values');
+            $('#rate_from').val(rate_values[0]);
+            $('#rate_to').val(rate_values[1]);
+
+            filter_settings.rate_from.label = filter_settings.rate_from.value = rate_values[0];
+            filter_settings.rate_to.label = filter_settings.rate_to.value = rate_values[1];
+    },
+        slide: function( event, ui ) {
+            $('#rate_from_label').html(ui.values[0]);
+            $('#rate_to_label').html(ui.values[1]);
+        }
+    });
+
+    $('.category').val(filter_settings.category.label);
+    $('.subcategory').val(filter_settings.subcategory.label);
+    $('.city').val(filter_settings.city.label);
+    $('.college').val(filter_settings.college.label);
+
+    $('#category_id').val(filter_settings.category.value);
+    $('#subcategory').val(filter_settings.subcategory.value);
+    $('#city').val(filter_settings.city.value);
+    $('#college').val(filter_settings.college.value);
+    $('#hourly_rate_from').val(filter_settings.hourly_rate_from.value);
+    $('#hourly_rate_to').val(filter_settings.hourly_rate_to.value);
+    $('#rate_from').val(filter_settings.rate_from.value);
+    $('#rate_to').val(filter_settings.rate_to.value);
 }
