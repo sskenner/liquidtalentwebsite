@@ -5,7 +5,7 @@
   <div class="functions">
     <a href="javascript: loadPage('/map');" class="geo-toggle green-button">Map</a>
     <a href="javascript: loadPage('/search');" class="geo-toggle black-button">List</a>
-    <div class="visibility-toggle t" onclick="$('#filter').show();"></div>
+    <div class="visibility-toggle t" onclick="$('#filter').show(); $('#filter-inner').animate({right: '0px'}, 1000, function(){ });"></div>
   </div>
 </div>
 
