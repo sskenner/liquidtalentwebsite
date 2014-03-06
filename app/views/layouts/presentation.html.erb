@@ -49,6 +49,7 @@
 <div id="wrapper">
   <div id="preloader"></div>
   <div id="background">
+    <div id="content-preloader"></div>
     <%= yield %>
   </div>
   <div id="admin-panel">
@@ -57,11 +58,11 @@
     </div>
     <div class="navigation">
       <a class="search link t" href="javascript:loadPage('/map')"></a>
-      <a class="projects link t" href="javascript://loadPage('/projects')"></a>
-      <a class="messages link t" href="javascript://loadPage('/messages')"></a>
-      <a class="favorites link t" href="javascript://loadPage('/favorites')"></a>
-      <a class="stats link t" href="javascript://loadPage('/stats')"></a>
-      <a class="lti link t" href="javascript://loadPage('/liquidtalentinc')"></a>
+      <a class="projects link t" href="javascript:showPlaceholder();//loadPage('/projects')"></a>
+      <a class="messages link t" href="javascript:showPlaceholder();//loadPage('/messages')"></a>
+      <a class="favorites link t" href="javascript:showPlaceholder();//loadPage('/favorites')"></a>
+      <a class="stats link t" href="javascript:showPlaceholder();//loadPage('/stats')"></a>
+      <a class="lti link t" href="javascript:showPlaceholder();//loadPage('/liquidtalentinc')"></a>
     </div>
   </div>
 </div>

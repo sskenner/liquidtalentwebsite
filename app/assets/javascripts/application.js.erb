@@ -44,7 +44,6 @@ $(window).on('load', function () {
 
             'href': '',
             'load': function () {
-
                 $('#presentation').css({ opacity: 0, display: 'block' }).animate({ opacity: 1 }, 1000, 'linear');
 
                 if ($('#background.disabled')) {
@@ -356,7 +355,7 @@ function Response(response) {
 }
 
 function loadPage(page) {
-    $('#preloader').show();
+    $('#content-preloader').show();
 
     Object.keys(pages).forEach(function (p) {
         if (pages[p].href === page.replace(/\?.+$/, '')) {
@@ -368,7 +367,7 @@ function loadPage(page) {
         url: page,
         error: Response
     }).done(function (data) {
-        $('#preloader').hide();
+        $('#content-preloader').hide();
         $('#background').html(data);
         pages.active.load();
     });
@@ -990,4 +989,8 @@ function prepareFilter() {
     $('#hourly_rate_to').val(filter_settings.hourly_rate_to.value);
     $('#rate_from').val(filter_settings.rate_from.value);
     $('#rate_to').val(filter_settings.rate_to.value);
+}
+
+function showPlaceholder() {
+    $('#background').html('<div id="placeholder">There is no item yet.</div>');
 }
