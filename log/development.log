@@ -54841,3 +54841,126 @@ Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-06 17:52:20 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-06 20:14:36 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (3.1ms)
+Completed 200 OK in 163ms (Views: 136.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-06 20:14:36 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-06 20:14:36 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-06 20:14:36 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-06 20:14:36 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-06 20:14:42 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-06 20:14:42 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-06 20:14:42 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-06 20:14:42 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-06 20:14:42 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-06 20:14:42 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-06 20:14:42 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-06 20:14:43 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-06 20:14:43 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-06 20:14:43 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-06 20:14:43 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-06 20:15:19 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-06 20:15:19 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-06 20:15:19 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-06 20:15:19 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-06 20:15:19 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-06 20:15:21 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-06 20:15:21 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-06 20:15:25 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-06 20:15:25 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-06 20:15:25 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-06 20:16:01 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-06 20:16:01 +0000
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-06 20:16:24 +0000
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.5ms)
+  Rendered user/search.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-06 20:16:24 +0000
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-06 20:56:55 +0000
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-06 20:56:55 +0000
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-06 20:57:05 +0000
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-06 20:57:49 +0000
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)

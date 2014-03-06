@@ -889,7 +889,11 @@ function checkUnreadMessages() {
         url: 'http://backend.liquidtalent.com/messages/list?limit=9999&receiver_id=' + currentUser['id'],
         error: Response
     }).done(function (data) {
-                $('.navigation .messages').html('<div style="position: absolute; right: 10px;">' + data['response'].length + '</div>');
+                if (data['response'].length !== 0) {
+                    $('.navigation .messages .notification').addClass('active');
+                    $('.navigation .messages .notification').html(data['response'].length);
+                }
+                else { $('.navigation .messages .notification').removeClass('active'); }
             });
 
     setTimeout('checkUnreadMessages()', 10000);
