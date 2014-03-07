@@ -55,6 +55,22 @@
   <div id="admin-panel">
     <div class="header">
       <a class="login green-button" href="javascript:loadPage('/login')">Login</a>
+
+      <div id="user-info">
+        <div>
+          <div>
+            <img src="" width="45" />Welcome<br><span id="user-name"></span>
+          </div>
+          <div id="user-drop-down">
+            <a id="account-btn" href="javascript: userMenu();">Account<div class="t"></div></a>
+            <div id="user-menu">
+              <a href="#">Settings</a>
+              <a href="javascript: logout();">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="navigation">
       <a class="search link t" href="javascript:loadPage('/map')"></a>

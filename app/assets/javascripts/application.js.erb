@@ -760,6 +760,13 @@ function linkedin_connect(access_token) {
             });
 }
 
+function logout() {
+    current_user = false;
+    window.location = '/'
+
+    return false;
+}
+
 /****** Search ******/
 
 var map, states, list;
@@ -904,8 +911,11 @@ function showUserInfo() {
 
     var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '/assets/main/avatar.png';
 
-    $('#admin-panel .header').html('<div style="background: #fff; position: absolute; bottom: 15px; width: 100%;"><div style="padding: 10px 10px 10px 0; line-height: 1.5;"><img src="' + avatar + '" width="45" style="float: left; margin-right: 10px;">Welcome<br>' + currentUser['name'] + '</div></div>');
+    $('#admin-panel .header .login').hide();
+    $('#user-info').show();
 
+    $('#user-info img').attr('src', avatar);
+    $('#user-name').html(currentUser['name']);
 }
 
 function createFavorite(userID, button) {
@@ -1113,4 +1123,15 @@ function showPlaceholder (page) {
 
     }
 
+}
+
+function userMenu() {
+    if($('#user-menu').is(':visible')) {
+        $('#user-menu').hide();
+    }
+    else {
+        $('#user-menu').show();
+    }
+
+    return false;
 }

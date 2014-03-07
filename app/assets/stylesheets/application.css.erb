@@ -552,6 +552,67 @@ a:hover { color: #000; }
     background-color: #EEE;
 }
 
+#user-info {
+    display: none;
+    background: #fff;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+}
+#user-info > div {
+    padding: 10px 10px 10px 0;
+    line-height: 1.5;
+}
+
+#user-info img {
+    float: left;
+    margin-right: 10px;
+}
+
+#user-drop-down {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#user-menu {
+    display: none;
+    width: 170px;
+    position: fixed;
+    margin: 0;
+    z-index: 999999;
+}
+#user-menu a {
+    display: block;
+    padding: 12px 0;
+    text-align: center;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+#account-btn {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 6px 0 0 27px;
+    color: #fff;
+    font-size: 20px;
+    height: 40px;
+    background: url(/assets/main/gradient-green.png);
+}
+
+#account-btn div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: url(<%= asset_path 'admin-panel/button-drop-down.jpg' %>);
+    background-position: 0px 0px;
+}
+
+#account-btn:hover div {
+    background-position: 0px -40px;
+}
+
 /***********************************************************************************************************************
 /   Presentation
 /**********************************************************************************************************************/
