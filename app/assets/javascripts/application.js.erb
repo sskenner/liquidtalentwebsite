@@ -920,7 +920,7 @@ function showUserInfo() {
 
 function createFavorite(userID, button) {
 
-    if (currentUser.token !== null) {
+    if (currentUser !== null) {
 
         if (/active/.test(button.prop('class'))) { destroyFavorite(userID, button); }
         else {
@@ -937,6 +937,11 @@ function createFavorite(userID, button) {
             });
 
         }
+
+    }
+    else {
+
+        loadPage('/login');
 
     }
 
