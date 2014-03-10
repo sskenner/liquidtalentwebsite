@@ -45,7 +45,6 @@ $(window).on('load', function () {
 
             'href': '',
             'load': function () {
-                $('#presentation').css({ opacity: 0, display: 'block' }).animate({ opacity: 1 }, 1000, 'linear');
 
                 $('#background').removeClass('disabled');
                 $('#admin-panel').removeClass('disabled');
@@ -95,8 +94,6 @@ $(window).on('load', function () {
                     'password': sF.find('.password')
 
                 };
-
-                $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () { $('#presentation').css({ display: 'none' }); });
 
                 $('#background').addClass('disabled');
                 $('#admin-panel').addClass('disabled');
@@ -233,10 +230,6 @@ $(window).on('load', function () {
             'href': '/map',
             'load': function () {
 
-                $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
-                    $('#presentation').css({ display: 'none' });
-                });
-
                 if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
                 if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
@@ -366,7 +359,7 @@ $(window).on('load', function () {
         'Armed Forces Others': 'AE'
     }
 
-    pages.home.load();
+    $('#presentation').css({ opacity: 0, display: 'block' }).animate({ opacity: 1 }, 1000, 'linear');
 
 });
 
@@ -388,6 +381,16 @@ function Response(response) {
 }
 
 function loadPage(page) {
+
+    if (currentUser !== null) {
+        $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
+            $('#presentation').css({ display: 'none' });
+        });
+    }
+    else if ($('#presentation').css('display') === 'none') {
+        $('#presentation').css({ opacity: 0, display: 'block' }).animate({ opacity: 1 }, 1000, 'linear');
+    }
+
     $('#content-preloader').show();
 
     Object.keys(pages).forEach(function (p) {
@@ -396,14 +399,46 @@ function loadPage(page) {
         }
     });
 
-    $.ajax({
-        url: page,
-        error: Response
-    }).done(function (data) {
-        $('#content-preloader').hide();
-        $('#background').html(data);
-        pages.active.load();
-    });
+    if (pages.active === '') {
+
+        if (currentUser === null) {
+
+            $('#background').html(
+
+                '<div id="placeholder">' +
+                    'Explore all of LiquidTalent.' +
+                    '<a href="javascript:loadPage(\'/login\')" class="green-button">Sign Up</a>' +
+                '</div>'
+
+            );
+
+        }
+        else {
+
+            $('#background').html(
+
+                '<div id="placeholder">' +
+                    'No ' + page + ' have been added here yet.' +
+                    '<a href="javascript:loadPage(\'/map\')" class="green-button">Find ' + page + '</a>' +
+                '</div>'
+
+            );
+
+        }
+
+    }
+    else {
+
+        $.ajax({
+            url: page,
+            error: Response
+        }).done(function (data) {
+            $('#content-preloader').hide();
+            $('#background').html(data);
+            pages.active.load();
+        });
+
+    }
 
     return false;
 
@@ -1099,35 +1134,6 @@ function prepareFilter() {
     $('#hourly_rate_to').val(filter_settings.hourly_rate_to.value);
     $('#rate_from').val(filter_settings.rate_from.value);
     $('#rate_to').val(filter_settings.rate_to.value);
-}
-
-function showPlaceholder (page) {
-
-    if (currentUser === null) {
-
-        $('#background').html(
-
-            '<div id="placeholder">' +
-                'Explore all of LiquidTalent.' +
-                '<a href="javascript:loadPage(\'/login\')" class="green-button">Sign Up</a>' +
-            '</div>'
-
-        );
-
-    }
-    else {
-
-        $('#background').html(
-
-            '<div id="placeholder">' +
-                'No ' + page + ' have been added here yet.' +
-                '<a href="javascript:loadPage(\'/map\')" class="green-button">Find ' + page + '</a>' +
-            '</div>'
-
-        );
-
-    }
-
 }
 
 function userMenu() {
