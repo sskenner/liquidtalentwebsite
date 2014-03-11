@@ -20,7 +20,7 @@
 
 var loaders, pages;
 
-var currentUser = null, favorites = [], messages;
+var currentUser = null, favorites = [], messages = [];
 var users = null;
 var global_info = null;
 var filter_settings = {
@@ -381,8 +381,6 @@ $(window).on('load', function () {
         'Armed Forces Others': 'AE'
     }
 
-    messages = { 'senders': [] };
-
     pages.active = '';
     loadPage('/');
 
@@ -390,18 +388,8 @@ $(window).on('load', function () {
 
 function Response(response) {
 
-    if (response['error'] && response['error'] != '') {
-        alert(response['error']);
-    }
-    else if (response['success']) {
-        alert(response['success']);
-    }
-    else {
-
-        alert("Could not connect to the server. Please try again later.");
-        console.log(response);
-
-    }
+    alert("Could not connect to the server. Please try again later.");
+    console.log(response);
 
 }
 
@@ -1171,7 +1159,7 @@ function checkUnreadMessages() {
             $('.navigation .messages .notification').addClass('active');
             $('.navigation .messages .notification').html(data['response'].length);
 
-            for (var i = 0; i < data['response'].length; i++) { messages.senders[i] = data['response'][i]; }
+            for (var i = 0; i < data['response'].length; i++) { messages[i] = data['response'][i]; }
 
         }
         else { $('.navigation .messages .notification').removeClass('active'); }
@@ -1184,31 +1172,30 @@ function checkUnreadMessages() {
 
 function loadMessages() {
 
-    if (messages.senders.length === 0) { showPlaceholder('Messages'); }
+    if (messages.length === 0) { showPlaceholder('Messages'); }
     else {
 
         $('#background').html(
             '<div id="title">' +
                 'Messages' +
-                '<a class="black-button"href="#">Edit</a>' +
+                '<a class="black-button" href="#">Edit</a>' +
             '</div>'
         );
 
-        for (var i = 0; i < messages.senders.length; i++) {
+        for (var i = 0; i < messages.length; i++) {
 
             $('#background').html($('#background').html() +
-                '<div class="message-user">' +
-                    '<div class="green-button' + ((messages.senders[i].unread_messages > 0) ? ' active' : '') + '">' + messages.senders[i].unread_messages + '</div>' +
-                    '<a href="javascript:RemoveConversation(this.title);" class="black-button t" title="' + messages.senders[i].sender.id + '">x</a>' +
-                    '<img class="avatar" src="' + ((messages.senders[i].avatar_url === undefined) ? '<%= asset_path "main/avatar.png" %>' : messages.senders[i].sender.avatar_url) + '" alt="User Avatar">' +
-                    '<div class="name">' + messages.senders[i].sender.name + '</div>' +
+                '<div id="' + messages[i].sender.id + '" class="message-user">' +
+                    '<div class="green-button' + ((messages[i].unread_messages > 0) ? ' active' : '') + '">' + messages[i].unread_messages + '</div>' +
+                    '<a href="javascript:blockUser(' + messages[i].sender.id + ');" class="black-button t">x</a>' +
+                    '<img class="avatar" src="' + ((messages[i].avatar_url === undefined) ? '<%= asset_path "main/avatar.png" %>' : messages[i].sender.avatar_url) + '" alt="User Avatar">' +
+                    '<div class="name">' + messages[i].sender.name + '</div>' +
                 '</div>'
             );
 
         }
 
     }
-
     $('#background #title .black-button').on('mouseup', function () {
 
         $('.message-user .black-button').each(function (i, e) {
@@ -1217,6 +1204,35 @@ function loadMessages() {
             else { $(e).addClass('active'); }
 
         });
+
+    });
+
+}
+
+function loadChat(user_id) {
+
+    $('.message-user').each(function () { $(this).remove(); });
+
+    $('#background #title .black-button').html('Back').on('mouseup', function () { loadMessages(); });
+
+
+
+}
+
+function blockUser(user_id) {
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/messages/block_user?user_id=' + currentUser.id + '&blocked_user_id=' + user_id,
+        error: Response
+    }).done(function (data) {
+
+        messages = $.grep(messages, function (value) {
+
+            return value.sender.id != user_id;
+
+        });
+
+        $('#' + user_id).remove();
 
     });
 
