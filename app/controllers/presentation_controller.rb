@@ -11,7 +11,7 @@ class PresentationController < ApplicationController
 
     @list = {
       mailchimp: {
-        'id' => 'cbcb329291',
+        'id' => '2f97fd461f',
         'email' => { 'email' => params[:email] },
         'merge_vars' => {
             'NAME' => params[:name],

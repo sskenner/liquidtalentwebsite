@@ -4,7 +4,7 @@ require 'uri'
 class ApplicationController < ActionController::Base
 
   before_action do
-    @mc = Mailchimp::API.new('ab88c79f75aed7fbec1a6972e030a15b-us3')
+    @mc = Mailchimp::API.new('3f8c7d7adcaaa6e28c8b542c69cb3ad4-us3')
   end
 
   # Prevent CSRF attacks by raising an exception.
