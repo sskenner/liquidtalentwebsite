@@ -1273,11 +1273,12 @@ function loadFavorites() {
 
         });
 
-        $('#list-items').on('click', '.removeFavorite', function() {
+        $('.list-item .base .removeFavorite').on('click', function() {
             if(confirm('Do you really want to remove this favorited provider?')) {
-                removeFavorite($(this).attr('id'));
+                removeFavorite($(this).prop('id'));
             }
         });
+
     });
 
     return false;
