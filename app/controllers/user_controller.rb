@@ -20,4 +20,8 @@ class UserController < ApplicationController
   def map
   end
 
+  def favorites
+
+  end
+
 end

@@ -273,6 +273,28 @@ $(window).on('load', function () {
                 prepareFilter();
             }
 
+        },
+
+        'favorites': {
+
+            'href': '/favorites',
+            'load': function () {
+
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                loadFavorites();
+
+                $('.black-button').click(function() {
+                    if($('.removeFavorite').first().is(':visible')) {
+                        $('.removeFavorite').hide();
+                    }
+                    else {
+                        $('.removeFavorite').show();
+                    }
+                });
+            }
+
         }
 
     };
@@ -1198,4 +1220,81 @@ function loadMessages() {
 
     });
 
+}
+
+/***** Favorites *****/
+
+function loadFavorites() {
+    if(currentUser == null) {
+        showPlaceholder('Favorites');
+        return false;
+    }
+
+    $('#content-preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/favourites/list',
+        data: 'demander_id=' + currentUser['id'] +
+                '&token=' + currentUser['token'] +
+                '&offset=0' +
+                '&limit=999',
+        error: Response
+    }).done(function (data) {
+        $('#content-preloader').hide();
+
+        data['response'].forEach(function (item) {
+            user = item['provider'];
+
+            if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+            else { user.state = 'NY'; }
+
+            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
+
+            $('#first-item .avatar').attr('src', user.avatar_url);
+
+            if (user.badge_provider === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+            else { $('#first-item .lt-drop').addClass(user.badge_provider); }
+
+//            if (user.video_url === null) { $('#first-item .play-button').addClass('disabled'); }
+//            else { $('#first-item .play-button').removeClass('disabled'); }
+
+            $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+            $('#first-item .description').html(user.description);
+
+            $('#first-item .distance').html('$' + user.hourly_rate + '.00');
+
+            if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite-button').addClass('active'); }
+            else { $('#first-item .favorite-button').removeClass('active'); }
+            $('#first-item .favorite-button').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
+
+            $('#first-item .removeFavorite').attr('id', item['favourite_id']);
+
+            $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
+
+        });
+
+        $('#list-items').on('click', '.removeFavorite', function() {
+            if(confirm('Do you really want to remove this favorited provider?')) {
+                removeFavorite($(this).attr('id'));
+            }
+        });
+    });
+
+    return false;
+}
+
+function removeFavorite(favourite_id) {
+    $('#content-preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/favourite/destroy?token=' + currentUser.token + '&favourite_id=' + favourite_id,
+        error: Response
+    }).done(function (user) {
+        $('#content-preloader').hide();
+
+        if (user.status === 'ok') {
+            $('#' + favourite_id).parents('.list-item').remove();
+        }
+
+    });
 }
