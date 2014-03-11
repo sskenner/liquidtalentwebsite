@@ -20,7 +20,7 @@
 
 var loaders, pages;
 
-var currentUser = null, favorites = [];
+var currentUser = null, favorites = [], messages;
 var users = null;
 var global_info = null;
 var filter_settings = {
@@ -359,7 +359,10 @@ $(window).on('load', function () {
         'Armed Forces Others': 'AE'
     }
 
-    $('#presentation').css({ opacity: 0, display: 'block' }).animate({ opacity: 1 }, 1000, 'linear');
+    messages = { 'senders': [] };
+
+    pages.active = '';
+    loadPage('/');
 
 });
 
@@ -399,35 +402,7 @@ function loadPage(page) {
         }
     });
 
-    if (pages.active === '') {
-
-        if (currentUser === null) {
-
-            $('#background').html(
-
-                '<div id="placeholder">' +
-                    'Explore all of LiquidTalent.' +
-                    '<a href="javascript:loadPage(\'/login\')" class="green-button">Sign Up</a>' +
-                '</div>'
-
-            );
-
-        }
-        else {
-
-            $('#background').html(
-
-                '<div id="placeholder">' +
-                    'No ' + page + ' have been added here yet.' +
-                    '<a href="javascript:loadPage(\'/map\')" class="green-button">Find ' + page + '</a>' +
-                '</div>'
-
-            );
-
-        }
-
-    }
-    else {
+    if (pages.active !== '') {
 
         $.ajax({
             url: page,
@@ -925,23 +900,6 @@ function listSearch(providers) {
         });
 }
 
-function checkUnreadMessages() {
-
-    $.ajax({
-        url: 'http://backend.liquidtalent.com/messages/list?limit=9999&receiver_id=' + currentUser['id'],
-        error: Response
-    }).done(function (data) {
-                if (data['response'].length !== 0) {
-                    $('.navigation .messages .notification').addClass('active');
-                    $('.navigation .messages .notification').html(data['response'].length);
-                }
-                else { $('.navigation .messages .notification').removeClass('active'); }
-            });
-
-    setTimeout('checkUnreadMessages()', 10000);
-
-}
-
 function showUserInfo() {
 
     var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '/assets/main/avatar.png';
@@ -1136,6 +1094,35 @@ function prepareFilter() {
     $('#rate_to').val(filter_settings.rate_to.value);
 }
 
+function showPlaceholder (page) {
+
+    if (currentUser === null) {
+
+        $('#background').html(
+
+            '<div id="placeholder">' +
+                'Explore all of LiquidTalent.' +
+                '<a href="javascript:loadPage(\'/login\')" class="green-button">Sign Up</a>' +
+            '</div>'
+
+        );
+
+    }
+    else {
+
+        $('#background').html(
+
+            '<div id="placeholder">' +
+                'No ' + page + ' have been added here yet.' +
+                '<a href="javascript:loadPage(\'/map\')" class="green-button">Find ' + page + '</a>' +
+            '</div>'
+
+        );
+
+    }
+
+}
+
 function userMenu() {
     if($('#user-menu').is(':visible')) {
         $('#user-menu').hide();
@@ -1145,4 +1132,70 @@ function userMenu() {
     }
 
     return false;
+}
+
+/***** Messages *****/
+
+function checkUnreadMessages() {
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/messages/list?user_id=' + currentUser['id'],
+        error: Response
+    }).done(function (data) {
+
+        if (typeof (data['response']) !== 'undefined' &&
+            typeof (data['response'][0]) !== 'undefined') {
+
+            $('.navigation .messages .notification').addClass('active');
+            $('.navigation .messages .notification').html(data['response'].length);
+
+            for (var i = 0; i < data['response'].length; i++) { messages.senders[i] = data['response'][i]; }
+
+        }
+        else { $('.navigation .messages .notification').removeClass('active'); }
+
+    });
+
+    setTimeout(checkUnreadMessages, 10000);
+
+}
+
+function loadMessages() {
+
+    if (messages.senders.length === 0) { showPlaceholder('Messages'); }
+    else {
+
+        $('#background').html(
+            '<div id="title">' +
+                'Messages' +
+                '<a class="black-button"href="#">Edit</a>' +
+            '</div>'
+        );
+
+        for (var i = 0; i < messages.senders.length; i++) {
+
+            $('#background').html($('#background').html() +
+                '<div class="message-user">' +
+                    '<div class="green-button' + ((messages.senders[i].unread_messages > 0) ? ' active' : '') + '">' + messages.senders[i].unread_messages + '</div>' +
+                    '<a href="javascript:RemoveConversation(this.title);" class="black-button t" title="' + messages.senders[i].sender.id + '">x</a>' +
+                    '<img class="avatar" src="' + ((messages.senders[i].avatar_url === undefined) ? '<%= asset_path "main/avatar.png" %>' : messages.senders[i].sender.avatar_url) + '" alt="User Avatar">' +
+                    '<div class="name">' + messages.senders[i].sender.name + '</div>' +
+                '</div>'
+            );
+
+        }
+
+    }
+
+    $('#background #title .black-button').on('mouseup', function () {
+
+        $('.message-user .black-button').each(function (i, e) {
+
+            if (/active/.test($(e).prop('class'))) { $(e).removeClass('active'); }
+            else { $(e).addClass('active'); }
+
+        });
+
+    });
+
 }

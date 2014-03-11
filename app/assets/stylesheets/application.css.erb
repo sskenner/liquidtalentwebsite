@@ -169,7 +169,7 @@ a:hover { color: #000; }
 
 .green-button {
     display: block;
-    background: url(<%= asset_url "main/gradient-green.png" %>);
+    background: #2ABD43 url(<%= asset_url "main/gradient-green.png" %>);
     background-size: 1px 100%;
     color: #FFF;
 }
@@ -180,12 +180,12 @@ a:hover { color: #000; }
 
 .black-button {
     display: block;
-    background: url(<%= asset_url "main/gradient-black.png" %>);
+    background: #000 url(<%= asset_url "main/gradient-black.png" %>);
     background-size: 1px 100%;
     color: #FFF;
 }
 .black-button:hover, .black-button:focus {
-    background: #000;
+    background: #000 !important;
     color: #FFF;
 }
 
@@ -707,7 +707,6 @@ a:hover { color: #000; }
     margin-left: 20px;
     position: relative;
     box-shadow: 0px 0px 10px 0px #CCC;
-    opacity: 0;
 }
 .message-user .green-button {
     position: absolute;
@@ -718,6 +717,7 @@ a:hover { color: #000; }
     border-left: 1px solid #FFF;
     border-bottom: 1px solid #FFF;
     opacity: 0;
+    z-index: 1000;
 }
 .message-user .black-button {
     position: absolute;
@@ -728,7 +728,10 @@ a:hover { color: #000; }
     border-left: 1px solid #FFF;
     border-bottom: 1px solid #FFF;
     opacity: 0;
+    z-index: 1000;
 }
+.message-user .green-button.active,
+.message-user .black-button.active { opacity: 1; }
 .message-user .avatar {
     width: 125px;
     margin: auto;

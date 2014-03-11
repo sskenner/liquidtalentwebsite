@@ -20,7 +20,4 @@ class UserController < ApplicationController
   def map
   end
 
-  def messages
-  end
-
 end
