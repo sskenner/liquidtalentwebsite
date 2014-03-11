@@ -1293,7 +1293,7 @@ function removeFavorite(favourite_id) {
         $('#content-preloader').hide();
 
         if (user.status === 'ok') {
-            $('#' + favourite_id).parents('.list-item').remove();
+            $('#' + favourite_id).parents('.list-item').html('');
         }
 
     });
