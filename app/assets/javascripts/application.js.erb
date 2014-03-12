@@ -483,8 +483,6 @@ function loadPage(page) {
         $('#presentation').css({ opacity: 0, display: 'block' }).animate({ opacity: 1 }, 1000, 'linear');
     }
 
-    $('#content-preloader').show();
-
     Object.keys(pages).forEach(function (p) {
         if (pages[p].href === page.replace(/\?.+$/, '')) {
             pages.active = pages[p];
@@ -492,6 +490,8 @@ function loadPage(page) {
     });
 
     if (pages.active !== '') {
+
+        $('#content-preloader').show();
 
         $.ajax({
             url: page,
@@ -512,6 +512,17 @@ function getURLParameter(name) {
     return (decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1]).replace(/\+/g, '%20')) || null;
 }
 
+function createUser (data) {
+
+    currentUser = data['response']['user'];
+    showUserInfo();
+    checkUnreadMessages();
+    loadPage('/map');
+
+    if (currentUser.avatar_url === null) { currentUser.avatar_url = <%= asset_path "main/avatar.png" %>; }
+
+}
+
 /***********************************************************************************************************************
 / Presentation
 /**********************************************************************************************************************/
@@ -526,8 +537,8 @@ function SubmitRegisterForm() {
         url: rF.href,
         type: 'post',
         data: 'name=' + rF.n.val() + '&email=' + rF.e.val() + '&zip=' + rF.z.val(),
-        error: Response(data)
-    }).done(Response(data));
+        error: Response
+    });
 
 }
 
@@ -539,11 +550,8 @@ function SubmitContactForm() {
         url: cF.href,
         type: 'post',
         data: 'name=' + cF.n.val() + '&email=' + cF.e.val() + '&phone=' + cF.p.val() + '&subject=' + cF.s.val() + '&message=' + cF.m.val(),
-        error: Response(data)
-    }).done(function (data) {
-                Response(data);
-                loaders.toggle('contact', 0);
-            });
+        error: Response
+    }).done(function () { loaders.toggle('contact', 0); });
 
 }
 
@@ -665,11 +673,7 @@ function SubmitSignupForm() {
                                         if ($('#is_provider').val() == 1) {
                                             loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                                         }
-                                        else {
-                                            showUserInfo();
-                                            checkUnreadMessages();
-                                            loadPage('/map');
-                                        }
+                                        else { createUser(data); }
                                     }
 
                                     $('#preloader').hide();
@@ -680,12 +684,7 @@ function SubmitSignupForm() {
                         if ($('#is_provider').val() == 1) {
                             loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                         }
-                        else {
-                            currentUser = data['response']['user'];
-                            showUserInfo();
-                            checkUnreadMessages();
-                            loadPage('/map');
-                        }
+                        else { createUser(data); }
                     }
                 }
 
@@ -719,12 +718,7 @@ function SubmitSignupSPForm() {
                 if (data['status'] === 'failed') {
                     alert(data['errors'][0]);
                 }
-                else {
-                    currentUser = data['response'];
-                    showUserInfo();
-                    checkUnreadMessages();
-                    loadPage('/map');
-                }
+                else { createUser(data); }
 
                 $('#preloader').hide();
             });
@@ -831,29 +825,16 @@ function show_user(user_id, callback) {
 function linkedin_connect(access_token) {
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/linkedin_connect/?access_token=' + access_token,
-        error: function (error) {
-            alert("Problem with connecting to the server.");
-            console.log(error['']);
-        }
+        error: Response
     }).done(function (data) {
                 if (data['response']['new_user']) {
                     if (confirm('Do you want to register as a Service Provider?')) {
                         loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
-                    } else {
-                        currentUser = data['response']['user'];
-                        showUserInfo();
-                        checkUnreadMessages();
-                        loadPage('/map');
-                    }
+                    } else { createUser(data); }
 
                     $('#preloader').hide();
                 }
-                else {
-                    currentUser = data['response']['user'];
-                    showUserInfo();
-                    checkUnreadMessages();
-                    loadPage('/map');
-                }
+                else { createUser(data); }
 
                 $('#preloader').hide();
             });
@@ -1227,6 +1208,8 @@ function userMenu() {
 
 function checkUnreadMessages() {
 
+    var notification = $('.navigation .messages .notification');
+
     $.ajax({
         url: 'http://backend.liquidtalent.com/messages/list?user_id=' + currentUser['id'],
         error: Response
@@ -1235,13 +1218,23 @@ function checkUnreadMessages() {
         if (typeof (data['response']) !== 'undefined' &&
             typeof (data['response'][0]) !== 'undefined') {
 
-            $('.navigation .messages .notification').addClass('active');
-            $('.navigation .messages .notification').html(data['response'].length);
+            notification.addClass('active');
+            notification.html('0');
 
-            for (var i = 0; i < data['response'].length; i++) { messages[i] = data['response'][i]; }
+            for (var i = 0; i < data['response'].length; i++) {
+
+                messages[i] = data['response'][i];
+
+                if (data['response'][i].unread_messages > 0) {
+                    notification.html(parseInt(notification.html(), 0) + data['response'][i].unread_messages);
+                }
+
+            }
+
+            if (parseInt(notification.html(), 0) === 0) { notification.removeClass('active'); }
 
         }
-        else { $('.navigation .messages .notification').removeClass('active'); }
+        else { notification.removeClass('active'); }
 
     });
 
@@ -1315,22 +1308,37 @@ function blockUser(user_id) {
 
 function loadChat(user_id) {
 
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/nda/show?user_id_1=' + currentUser.id + '&user_id_2=' + user_id,
+        error: Response
+    }).done(function (nda) {
+
+        nda = nda.response;
+
+        $('#background').html(
+            '<div id="title">' +
+                    ((nda.length === 0) ?
+                        '<a href="javascript:sendNDA();" class="green-button t">Send NDA</a>'
+                        :
+                        '<b>NDA</b>'
+                    ) +
+                'Messages' +
+                '<a class="black-button" href="#">Back</a>' +
+            '</div>'
+        );
+
+    });
+
     $('#background').html(
-        '<div id="title">' +
-            '<a href="javascript:sendNDA();" class="green-button t">Send NDA</a>' +
-            'Messages' +
-            '<a class="black-button" href="#">Back</a>' +
-        '</div>' +
         '<div id="chat"></div>' +
         '<textarea placeholder="Message" id="chat-box"></textarea>' +
-        '<a href="javascript:createChat();" class="green-button" id="create-chat">Create</a>'
+        '<a href="javascript:createChat(' + user_id + ');" class="green-button" id="create-chat">Create</a>'
     );
 
     $('.message-user').each(function () { $(this).remove(); });
 
     $('#background #title .black-button').on('mouseup', function () { loadMessages(); });
     $('#background #title .green-button').addClass('active');
-
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/messages/conversation?user_id_1=' + currentUser.id + '&user_id_2=' + user_id,
@@ -1341,18 +1349,61 @@ function loadChat(user_id) {
 
         for (var i = 0, date; i < chat.length; i++) {
 
+            $.ajax({
+                url: 'http://backend.liquidtalent.com/messages/viewed?sender_id=' + chat[i].message.sender_id + '&receiver_id=' + chat[i].message.receiver_id + '&ts=' + chat[i].message.ts,
+                error: Response
+            }).done(function(){});
+
             //date = new Date(chat[i].message.ts).toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$2/$3/$1 $4');
-            date = chat[i].message.created_at.toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$2/$3/$1 $4');
+            date = chat[i].message.created_at.replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$2/$3/$1 $4');
 
             $('#chat').html($('#chat').html() +
 
                 '<div class="chat-box">' +
                     '<div class="title">' +
-                        '<img src="' + ((chat[i].sender.avatar_url === undefined) ? '<%= asset_path "main/avatar.png" %>' : chat[i].sender.avatar_url) + '" alt="User Avatar" class="avatar">' +
+                        '<img src="' + ((chat[i].sender.avatar_url === null) ? '<%= asset_path "main/avatar.png" %>' : chat[i].sender.avatar_url) + '" alt="User Avatar" class="avatar">' +
                         '<div class="date">' + date + '</div>' +
                         '<div class="name">' + chat[i].sender.name + '</div>' +
                     '</div>' +
                     '<div class="chat">' + chat[i].message.contents + '</div>' +
+                '</div>'
+
+            );
+
+        }
+
+    });
+
+}
+
+function createChat (user_id) {
+
+    var date = new Date();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/message/create?' +
+                'token=' + currentUser.token +
+                '&sender_id=' + currentUser.id +
+                '&receiver_id=' + user_id +
+                '&contents=' + $('#chat-box').val() +
+                '&created_at=' + Math.floor(date / 1000),
+        error: Response
+    }).done(function (chat) {
+
+        if(chat.status === 'failed') { alert(errors[0]); }
+        else {
+
+            date = date.toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$2/$3/$1 $4');
+
+            $('#chat').html($('#chat').html() +
+
+                '<div class="chat-box">' +
+                    '<div class="title">' +
+                        '<img src="' + currentUser.avatar_url + '" alt="User Avatar" class="avatar">' +
+                        '<div class="date">' + date + '</div>' +
+                        '<div class="name">' + currentUser.name + '</div>' +
+                    '</div>' +
+                    '<div class="chat">' + $('#chat-box').val() + '</div>' +
                 '</div>'
 
             );
