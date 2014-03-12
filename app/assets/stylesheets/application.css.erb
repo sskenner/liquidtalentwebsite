@@ -1352,6 +1352,7 @@ h3 {
     cursor: pointer;
     max-height: 400px;
     overflow: auto;
+    z-index: 999999;
 }
 
 #term-selector-options div {
@@ -1400,31 +1401,79 @@ h3 {
 
 .drop {
     float: left;
+    width: 102px;
+    height: 23px;
+    position: relative;
 }
 
-.drop div {
+.drop > div.dropimg-demander, .drop > div.dropimg-provider {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 102px;
     height: 23px;
     background: url(<%= asset_path "analytics/drops.png" %>);
+    z-index: 99999;
+}
+
+.drop > div.bar {
+    position: absolute;
+    top: 2px;
+    left: 12px;
+    width: 89px;
+    height: 19px;
+    background: url(<%= asset_path "analytics/drop-bars.png" %>) top right no-repeat;
+    z-index: 9999;
 }
 
 #drop1, #drop2, #drop3 {
     margin-right: 25px;
 }
 
-#drop1 div{
+#drop1 > div.dropimg-demander {
     background-position: 0px 0px;
 }
 
-#drop2 div {
+#drop2 > div.dropimg-demander  {
     background-position: 0px -23px;
 }
 
-#drop3 div {
+#drop3 > div.dropimg-demander  {
     background-position: 0px -46px;
 }
 
-#drop4 div {
+#drop4 > div.dropimg-demander  {
     background-position: 0px -69px;
 }
 
+#drop1 > div.dropimg-provider {
+    background-position: 102px 0px;
+}
+
+#drop2 > div.dropimg-provider  {
+    background-position: 102px -23px;
+}
+
+#drop3 > div.dropimg-provider  {
+    background-position: 102px -46px;
+}
+
+#drop4 > div.dropimg-provider  {
+    background-position: 102px -69px;
+}
+
+#drop1 > div.bar {
+    background-position: 89px 0px;
+}
+
+#drop2 > div.bar  {
+    background-position: 89px -19px;
+}
+
+#drop3 > div.bar  {
+    background-position: 89px -38px;
+}
+
+#drop4 > div.bar  {
+    background-position: 89px -57px;
+}

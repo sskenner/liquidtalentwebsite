@@ -369,7 +369,12 @@ $(window).on('load', function () {
                 loadStats(7);
 
                 $('#term-selector').click(function () {
-                    $('#term-selector-options').show();
+                    if($('#term-selector-options').is(':visible')) {
+                        $('#term-selector-options').hide();
+                    }
+                    else {
+                        $('#term-selector-options').show();
+                    }
                 });
 
             }
@@ -1460,12 +1465,15 @@ function loadStats(term) {
             $('#total-earnings').html('$' + total);
 
             if(currentUser.is_provider) {
+                $('.drp').addClass('dropimg-provider');
                 $('#current-projects').html(user['response']['provided_bookings_current']);
                 $('#completed-projects').html(user['response']['provided_bookings_completed']);
             }
             else {
+                $('.drp').addClass('dropimg-demander');
                 $('#current-projects').html(user['response']['demanded_bookings_current']);
                 $('#completed-projects').html(user['response']['demanded_bookings_completed']);
+                $('#earnings-chart').siblings('.title').html('Payments');
             }
 
 
@@ -1475,18 +1483,28 @@ function loadStats(term) {
             if(total < 1000) {
                 drop_total = 1000 - total;
                 drop_name = 'blue';
+                $('#drop1 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 1000)) - 89) + 'px 0px');
             }
             else if(total < 5000) {
                 drop_total = 5000 - total;
                 drop_name = 'bronze';
+                $('#drop1 > div.bar ').css('backgroundPosition', '90px 0px');
+                $('#drop2 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 5000)) - 89) + 'px -19px');
             }
             else if(total < 10000) {
                 drop_total = 10000 - total;
                 drop_name = 'silver';
+                $('#drop1 > div.bar ').css('backgroundPosition', '0px 0px');
+                $('#drop2 > div.bar ').css('backgroundPosition', '0px -19px');
+                $('#drop3 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 10000)) - 89) + 'px -38px');
             }
             else if(total < 25000) {
                 drop_total = 25000 - total;
                 drop_name = 'gold';
+                $('#drop1 > div.bar ').css('backgroundPosition', '0px 0px');
+                $('#drop2 > div.bar ').css('backgroundPosition', '0px -19px');
+                $('#drop3 > div.bar ').css('backgroundPosition', '0px -38px');
+                $('#drop4 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 25000)) - 89) + 'px -57px');
             }
             else {
                 drop_total = null;
@@ -1547,7 +1565,7 @@ function loadStats(term) {
 }
 
 function setStatsTerm(term, name) {
-    $('#term-selector').val(name);
+    $('#term-selector').html(name);
     $('#term-selector-options').hide();
 
     loadStats(term);
