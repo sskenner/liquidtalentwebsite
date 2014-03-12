@@ -1,0 +1,85 @@
+<div id="title">
+  Stats
+</div>
+
+<div id="stats-info" class="stats-box">
+    <div class="item">
+      <div class="name">Current Balance</div>
+      <div class="value" id="current-balance">$0.00</div>
+      <div class="clear"></div>
+    </div>
+
+  <div class="item">
+    <div class="name">Total Earnings</div>
+    <div class="value" id="total-earnings">$0.00</div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="item">
+    <div class="name">Current Projects</div>
+    <div class="value" id="current-projects">0</div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="item">
+    <div class="name">Completed Projects</div>
+    <div class="value" id="completed-projects">0</div>
+    <div class="clear"></div>
+  </div>
+
+  <div id="term-selector-wrapper">
+    <input type="text" name="" id="term-selector" value="Last week" />
+    <div id="term-selector-options">
+      <div onclick="setStatsTerm(7, 'Last week');">Last week</div>
+      <div onclick="setStatsTerm(28, 'Last month');">Last month</div>
+      <div onclick="setStatsTerm(90, 'Last quarter');">Last quarter</div>
+      <div onclick="setStatsTerm(365, 'Last year');">Last year</div>
+    </div>
+  </div>
+</div>
+
+<div id="dew-drops">
+  <div id="dew-drops-title">$<span id="drop-total"></span> more for a <span id="drop-name"></span> LiquidDrop!</div>
+  <div id="drops">
+    <div id="drop1" class="drop"><div></div></div>
+    <div id="drop2" class="drop"><div></div></div>
+    <div id="drop3" class="drop"><div></div></div>
+    <div id="drop4" class="drop"><div></div></div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div id="stats-info" class="stats-box">
+  <div class="stats-box-inner">
+    <div class="title">Bookings</div>
+    <div id="bookings-chart" class="chart"></div>
+  </div>
+</div>
+
+<div id="stats-info" class="stats-box">
+  <div class="stats-box-inner">
+    <div class="title">Earnings</div>
+    <div id="earnings-chart" class="chart"></div>
+  </div>
+</div>
+
+<div id="stats-info" class="stats-box">
+  <div class="stats-box-inner">
+    <div class="title">Profile Views</div>
+    <div id="profile-views-chart" class="chart"></div>
+  </div>
+</div>
+
+<div id="stats-info" class="stats-box">
+  <div class="stats-box-inner">
+    <div class="title">Video Views</div>
+    <div id="video-views-chart" class="chart"></div>
+  </div>
+</div>
+
+<div id="stats-info" class="stats-box">
+  <div class="stats-box-inner">
+    <div class="title">Favorites</div>
+    <div id="favourites-chart" class="chart"></div>
+  </div>
+</div>

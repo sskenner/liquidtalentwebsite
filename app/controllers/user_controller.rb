@@ -21,7 +21,8 @@ class UserController < ApplicationController
   end
 
   def favorites
-
   end
 
+  def stats
+  end
 end

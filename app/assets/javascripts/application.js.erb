@@ -35,6 +35,67 @@ var filter_settings = {
     subcategories: []
 }
 
+var chart_options = {
+    chart: {
+        type: 'areaspline',
+        renderTo: 'bookings-chart',
+        margin: 0,
+        backgroundColor: 'transparent'
+    },
+    credits: {
+        enabled: false
+    },
+    title: {
+        text: '',
+    },
+    xAxis: {
+        type: 'datetime',
+        lineColor: '#333'
+    },
+    yAxis: {
+        title: {
+            enabled: false
+        },
+        plotLines: [{
+            value: 0,
+            width: 1,
+            color: '#000'
+        }],
+        labels: {
+            style: {
+                color: '#ddd'
+            }
+        },
+        min: 0,
+        gridLineColor: '#eee',
+        gridLineDashStyle: 'longdash'
+    },
+    legend: {
+        layout: 'horizontal',
+        align: 'center',
+        verticalAlign: 'bottom',
+        borderWidth: 0,
+        enabled: false
+    },
+    plotOptions: {
+        areaspline: {
+            lineWidth: 3,
+            fillOpacity: 0.1,
+            marker: {
+                symbol: 'circle',
+                fillColor: '#ffffff',
+                lineWidth: 2,
+                lineColor: null,
+                radius: 3
+            }
+        }
+    },
+    series: [{
+        color: '#75b9dc',
+        data: []
+    }]
+};
+
 $(window).on('load', function () {
 
     pages = {
@@ -293,6 +354,24 @@ $(window).on('load', function () {
                         $('.removeFavorite').show();
                     }
                 });
+            }
+
+        },
+
+        'stats': {
+
+            'href': '/stats',
+            'load': function () {
+
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                loadStats(7);
+
+                $('#term-selector').click(function () {
+                    $('#term-selector-options').show();
+                });
+
             }
 
         }
@@ -1360,4 +1439,116 @@ function removeFavorite(favourite_id) {
         }
 
     });
+}
+
+function loadStats(term) {
+    if(currentUser == null) {
+        showPlaceholder('Stats');
+        return false;
+    }
+
+    $('#content-preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/stats/show?user_id=' + currentUser.id + '&token=' + currentUser.token + '&timeframe=' + term,
+        error: Response
+    }).done(function (user) {
+        if (user.status === 'ok') {
+            var total = user['response']['paid'] + user['response']['unpaid'];
+
+            $('#current-balance').html('$' + (total - user['response']['paid']));
+            $('#total-earnings').html('$' + total);
+
+            if(currentUser.is_provider) {
+                $('#current-projects').html(user['response']['provided_bookings_current']);
+                $('#completed-projects').html(user['response']['provided_bookings_completed']);
+            }
+            else {
+                $('#current-projects').html(user['response']['demanded_bookings_current']);
+                $('#completed-projects').html(user['response']['demanded_bookings_completed']);
+            }
+
+
+            var drop_total = 0;
+            var drop_name = '';
+
+            if(total < 1000) {
+                drop_total = 1000 - total;
+                drop_name = 'blue';
+            }
+            else if(total < 5000) {
+                drop_total = 5000 - total;
+                drop_name = 'bronze';
+            }
+            else if(total < 10000) {
+                drop_total = 10000 - total;
+                drop_name = 'silver';
+            }
+            else if(total < 25000) {
+                drop_total = 25000 - total;
+                drop_name = 'gold';
+            }
+            else {
+                drop_total = null;
+            }
+
+            if(drop_total == null) {
+                $('#dew-drops').hide();
+            }
+            else {
+                $('#drop-total').html(drop_total);
+                $('#drop-name').html(drop_name);
+            }
+
+            var bookings = [];
+            var earnings = [];
+            var favourites = [];
+            var profile_views = [];
+            var video_views = [];
+
+            user['response']['stats'].forEach(function(item) {
+                if(currentUser.is_provider) {
+                    bookings.push([item['date'] * 1000, item['provided_bookings']]);
+                    earnings.push([item['date'] * 1000, item['earnings']]);
+                    favourites.push([item['date'] * 1000, item['favourited_by_demanders']]);
+                }
+                else {
+                    bookings.push([item['date'] * 1000, item['demanded_bookings']]);
+                    earnings.push([item['date'] * 1000, item['payments']]);
+                    favourites.push([item['date'] * 1000, item['favourited_providers']]);
+                }
+                profile_views.push([item['date'] * 1000, item['profile_views']]);
+                video_views.push([item['date'] * 1000, item['video_views']]);
+            });
+
+            chart_options.series[0].data = bookings;
+            new Highcharts.Chart(chart_options);
+
+            chart_options.chart.renderTo = 'earnings-chart';
+            chart_options.series[0].data = earnings;
+            new Highcharts.Chart(chart_options);
+
+            chart_options.chart.renderTo = 'favourites-chart';
+            chart_options.series[0].data = favourites;
+            new Highcharts.Chart(chart_options);
+
+            chart_options.chart.renderTo = 'profile-views-chart';
+            chart_options.series[0].data = profile_views;
+            new Highcharts.Chart(chart_options);
+
+            chart_options.chart.renderTo = 'video-views-chart';
+            chart_options.series[0].data = video_views;
+            new Highcharts.Chart(chart_options);
+
+            $('#content-preloader').hide();
+        }
+
+    });
+}
+
+function setStatsTerm(term, name) {
+    $('#term-selector').val(name);
+    $('#term-selector-options').hide();
+
+    loadStats(term);
 }

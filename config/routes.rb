@@ -28,5 +28,6 @@ LiquidTalent::Application.routes.draw do
     get '/map' => 'user#map'
 
     get '/favorites' => 'user#favorites'
+    get '/stats' => 'user#stats'
 
 end

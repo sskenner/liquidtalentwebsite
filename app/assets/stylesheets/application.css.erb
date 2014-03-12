@@ -1306,3 +1306,125 @@ h3 {
     padding: 10px 20px;
     cursor: pointer;
 }
+
+
+/***********************************************************************************************************************
+/   Stats
+/**********************************************************************************************************************/
+#stats-info .item {
+    width: 60%;
+    margin: 0 auto 20px auto;
+    font-size: 1.5em;
+}
+
+#stats-info .name {
+    width: 50%;
+    float: left;
+    color: #555;
+}
+
+#stats-info .value {
+    width: 50%;
+    float: left;
+    color: green;
+}
+
+#term-selector-wrapper {
+    width: 60%;
+    margin: 0 auto 20px auto;
+}
+
+#term-selector {
+    width: 100%;
+    display: block;
+    padding: 12px 12px;
+    font-size: 1.3em;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#term-selector-options {
+    width: 400px;
+    position: absolute;
+    margin-top: -10px;
+    box-shadow: 0px 0px 10px 0px #CCC;
+    display: none;
+    cursor: pointer;
+    max-height: 400px;
+    overflow: auto;
+}
+
+#term-selector-options div {
+    background: #fff;
+    padding: 12px 12px;
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+    margin-top: -1px;
+}
+
+#dew-drops-title {
+    color: #555;
+    text-align: center;
+}
+
+.stats-box {
+    width: 90%;
+    margin: 0 auto 35px auto;
+    padding: 20px 0;
+    background: #fff;
+    box-shadow: 0px 0px 15px 0px #CCC;
+}
+
+.stats-box-inner {
+    padding: 0 30px;
+}
+
+.stats-box-inner .title {
+    font-size: 1.5em;
+    color: #50728e;
+}
+
+.chart {
+    height: 250px;
+}
+
+#dew-drops-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+#drops {
+    width: 483px;
+    margin: 0 auto 30px auto;
+}
+
+.drop {
+    float: left;
+}
+
+.drop div {
+    width: 102px;
+    height: 23px;
+    background: url(<%= asset_path "analytics/drops.png" %>);
+}
+
+#drop1, #drop2, #drop3 {
+    margin-right: 25px;
+}
+
+#drop1 div{
+    background-position: 0px 0px;
+}
+
+#drop2 div {
+    background-position: 0px -23px;
+}
+
+#drop3 div {
+    background-position: 0px -46px;
+}
+
+#drop4 div {
+    background-position: 0px -69px;
+}
+
