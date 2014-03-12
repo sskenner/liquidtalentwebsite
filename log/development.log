@@ -58061,3 +58061,706 @@ Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 14:20:04 +0000
 
 
 Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 16:49:03 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-11 17:05:40 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (3.2ms)
+Completed 200 OK in 94ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-11 17:05:41 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-11 17:05:41 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-11 17:05:41 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-11 17:05:41 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-11 17:05:41 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-11 17:05:41 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-11 17:05:41 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-11 17:05:41 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-11 17:06:02 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-11 17:06:34 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-11 17:06:34 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-11 17:06:34 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-11 17:06:34 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-11 17:06:34 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-11 17:06:35 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-11 17:06:39 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-11 17:06:39 +0000
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-11 17:06:39 +0000
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-11 17:06:39 +0000
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-11 17:06:55 +0000
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.5ms)
+  Rendered user/search.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 17:06:55 +0000
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-11 17:06:55 +0000
+
+
+Started GET "/assets/admin-panel/button-drop-down.jpg" for 127.0.0.1 at 2014-03-11 17:06:55 +0000
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-11 17:06:57 +0000
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-11 17:06:57 +0000
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-11 17:06:57 +0000
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-11 17:06:57 +0000
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-11 17:06:57 +0000
+
+
+Started GET "/favorites" for 127.0.0.1 at 2014-03-11 17:07:01 +0000
+Processing by UserController#favorites as */*
+  Rendered user/favorites.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/favorites/play.png" for 127.0.0.1 at 2014-03-11 17:07:01 +0000
+
+
+Started GET "/favorites/button-hire.png" for 127.0.0.1 at 2014-03-11 17:07:01 +0000
+
+ActionController::RoutingError (No route matches [GET] "/favorites/button-hire.png"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (21.3ms)
+
+
+Started GET "/favorites/button-message.png" for 127.0.0.1 at 2014-03-11 17:07:01 +0000
+
+ActionController::RoutingError (No route matches [GET] "/favorites/button-message.png"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (16.6ms)
+
+
+Started GET "/favorites" for 127.0.0.1 at 2014-03-11 17:07:26 +0000
+Processing by UserController#favorites as */*
+  Rendered user/favorites.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favorites" for 127.0.0.1 at 2014-03-11 17:07:34 +0000
+Processing by UserController#favorites as */*
+  Rendered user/favorites.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 17:26:15 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-11 18:56:24 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 55ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-11 18:56:24 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-11 18:56:24 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-11 18:56:24 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-11 18:56:24 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-11 20:09:51 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 171ms (Views: 170.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-11 20:09:52 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-11 20:09:52 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-11 20:09:52 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-11 20:09:52 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-11 20:09:53 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-11 20:09:55 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-11 20:09:55 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-11 20:09:55 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-11 20:09:55 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-11 20:09:55 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-11 20:09:55 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-11 20:09:55 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-11 20:09:55 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-11 20:09:55 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-11 20:09:55 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-11 20:09:55 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-11 20:10:45 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-11 20:10:45 +0000
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-11 20:10:45 +0000
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-11 20:10:45 +0000
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-11 20:10:55 +0000
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/search.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-11 20:10:55 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 20:10:55 +0000
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-11 20:10:55 +0000
+
+
+Started GET "/assets/admin-panel/button-drop-down.jpg" for 127.0.0.1 at 2014-03-11 20:10:55 +0000
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-11 20:10:58 +0000
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-11 20:10:58 +0000
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-11 20:10:58 +0000
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-11 20:10:58 +0000
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-11 20:10:58 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 20:12:34 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-11 20:12:39 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 123ms (Views: 122.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-11 20:12:40 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-11 20:12:40 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-11 20:12:40 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-11 20:12:40 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-11 20:12:41 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-11 20:12:44 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-11 20:12:44 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-11 20:12:44 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-11 20:12:44 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-11 20:12:44 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-11 20:12:44 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-11 20:12:44 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-11 20:12:44 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-11 20:12:44 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-11 20:12:44 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-11 20:12:44 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-11 20:12:52 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-11 20:12:53 +0000
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-11 20:13:04 +0000
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/search.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-11 20:13:05 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 20:13:05 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 20:14:47 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 20:15:53 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 20:24:41 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 21:49:45 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 21:50:06 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 21:50:15 +0000
+
+
+Started GET "/projects" for 127.0.0.1 at 2014-03-11 21:50:20 +0000
+
+ActionController::RoutingError (No route matches [GET] "/projects"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (18.9ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-11 21:50:24 +0000
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-11 21:50:26 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-11 22:10:26 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 183ms (Views: 182.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-11 22:10:27 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-11 22:10:27 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-11 22:10:27 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-11 22:10:27 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-11 22:10:30 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-11 22:10:40 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-11 22:10:40 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-11 22:10:40 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-11 22:10:40 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-11 22:10:40 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-11 22:10:40 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-11 22:10:40 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-11 22:10:40 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-11 22:10:40 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-11 22:10:40 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-11 22:10:40 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-11 22:11:09 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-11 22:11:09 +0000
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-11 22:14:11 +0000
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/search.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-11 22:14:11 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 22:14:11 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-11 22:46:07 +0000
+
+
+Started GET "/null" for 127.0.0.1 at 2014-03-11 22:46:09 +0000
+
+ActionController::RoutingError (No route matches [GET] "/null"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (17.1ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-12 03:23:07 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-12 03:24:12 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-12 03:24:52 +0000
+
+
+Started GET "/null" for 127.0.0.1 at 2014-03-12 03:24:54 +0000
+
+ActionController::RoutingError (No route matches [GET] "/null"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (31.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (285.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (406.2ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-12 03:32:19 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-12 03:33:47 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-12 03:37:00 +0000

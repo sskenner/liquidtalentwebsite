@@ -1207,15 +1207,11 @@ function loadMessages() {
 
     });
 
-}
+    $('.message-user').each(function (i, e) {
 
-function loadChat(user_id) {
+        $(this).on('mouseup', function () { loadChat($(this).prop('id')); });
 
-    $('.message-user').each(function () { $(this).remove(); });
-
-    $('#background #title .black-button').html('Back').on('mouseup', function () { loadMessages(); });
-
-
+    });
 
 }
 
@@ -1233,6 +1229,56 @@ function blockUser(user_id) {
         });
 
         $('#' + user_id).remove();
+
+    });
+
+}
+
+function loadChat(user_id) {
+
+    $('#background').html(
+        '<div id="title">' +
+            '<a href="javascript:sendNDA();" class="green-button t">Send NDA</a>' +
+            'Messages' +
+            '<a class="black-button" href="#">Back</a>' +
+        '</div>' +
+        '<div id="chat"></div>' +
+        '<textarea placeholder="Message" id="chat-box"></textarea>' +
+        '<a href="javascript:createChat();" class="green-button" id="create-chat">Create</a>'
+    );
+
+    $('.message-user').each(function () { $(this).remove(); });
+
+    $('#background #title .black-button').on('mouseup', function () { loadMessages(); });
+    $('#background #title .green-button').addClass('active');
+
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/messages/conversation?user_id_1=' + currentUser.id + '&user_id_2=' + user_id,
+        error: Response
+    }).done(function (chat) {
+
+        chat = chat.response;
+
+        for (var i = 0, date; i < chat.length; i++) {
+
+            //date = new Date(chat[i].message.ts).toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$2/$3/$1 $4');
+            date = chat[i].message.created_at.toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$2/$3/$1 $4');
+
+            $('#chat').html($('#chat').html() +
+
+                '<div class="chat-box">' +
+                    '<div class="title">' +
+                        '<img src="' + ((chat[i].sender.avatar_url === undefined) ? '<%= asset_path "main/avatar.png" %>' : chat[i].sender.avatar_url) + '" alt="User Avatar" class="avatar">' +
+                        '<div class="date">' + date + '</div>' +
+                        '<div class="name">' + chat[i].sender.name + '</div>' +
+                    '</div>' +
+                    '<div class="chat">' + chat[i].message.contents + '</div>' +
+                '</div>'
+
+            );
+
+        }
 
     });
 
