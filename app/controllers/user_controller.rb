@@ -25,4 +25,8 @@ class UserController < ApplicationController
 
   def stats
   end
+
+  def nda_agreement
+  end
+
 end
