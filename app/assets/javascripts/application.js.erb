@@ -20,7 +20,7 @@
 
 var loaders, pages;
 
-var currentUser = null, favorites = [], messages = [];
+var currentUser = null, profileId = null, favorites = [], messages = [];
 var users = null;
 var global_info = null;
 var filter_settings = {
@@ -379,6 +379,16 @@ $(window).on('load', function () {
 
             }
 
+        },
+
+        'profile': {
+            'href': '/profile',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                loadProfile()
+            }
         }
 
     };
@@ -915,10 +925,13 @@ function mapSearch(providers) {
                 else { map.popUp.favorite.removeClass('active'); }
                 map.popUp.favorite.attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
+                map.popUp.image.attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
+                map.popUp.title.attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
+
                 user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
 
-                if (user.badge_provider === 'no') { map.popUp.LTDrop.addClass('hidden'); }
-                else { map.popUp.LTDrop.addClass(user.badge_provider); }
+                if (user.badge === 'no') { map.popUp.LTDrop.addClass('hidden'); }
+                else { map.popUp.LTDrop.addClass(user.badge); }
 
 //                if (user.video_url === null) { map.popUp.play.addClass('disabled'); }
 //                else { map.popUp.play.removeClass('disabled'); }
@@ -955,8 +968,11 @@ function listSearch(providers) {
 
             $('#first-item .avatar').attr('src', user.avatar_url);
 
-            if (user.badge_provider === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
-            else { $('#first-item .lt-drop').addClass(user.badge_provider); }
+            $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
+            $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
+
+            if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+            else { $('#first-item .lt-drop').addClass(user.badge); }
 
 //            if (user.video_url === null) { $('#first-item .play-button').addClass('disabled'); }
 //            else { $('#first-item .play-button').removeClass('disabled'); }
@@ -1449,8 +1465,11 @@ function loadFavorites() {
 
             $('#first-item .avatar').attr('src', user.avatar_url);
 
-            if (user.badge_provider === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
-            else { $('#first-item .lt-drop').addClass(user.badge_provider); }
+            $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
+            $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
+
+            if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+            else { $('#first-item .lt-drop').addClass(user.badge); }
 
 //            if (user.video_url === null) { $('#first-item .play-button').addClass('disabled'); }
 //            else { $('#first-item .play-button').removeClass('disabled'); }
@@ -1620,4 +1639,49 @@ function setStatsTerm(term, name) {
     $('#term-selector-options').hide();
 
     loadStats(term);
+}
+
+function loadProfile() {
+    $('#content-preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/show?user_id=' + profileId,
+        error: Response
+    }).done(function (user) {
+        user = user['response']['user'];
+
+        $('#content-preloader').hide();
+
+        if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+        else { user.state = 'NY'; }
+
+        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
+
+        $('#first-item .avatar').attr('src', user.avatar_url);
+
+        if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+        else { $('#first-item .lt-drop').addClass(user.badge); }
+
+    //            if (user.video_url === null) { $('#first-item .play-button').addClass('disabled'); }
+    //            else { $('#first-item .play-button').removeClass('disabled'); }
+
+        $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+        $('#first-item .description').html(user.description);
+
+        $('#first-item .distance').html('$' + user.hourly_rate + '.00');
+
+        if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite-button').addClass('active'); }
+        else { $('#first-item .favorite-button').removeClass('active'); }
+        $('#first-item .favorite-button').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
+
+        if(user.is_provider) {
+            $('#profile-provider').show();
+            $('#profile-demander').hide();
+
+            $('#profile-skills').html(user.skills);
+            $('#profile-summary').html(user.summary);
+            $('#profile-experience').html(user.experience);
+            $('#profile-education').html(user.school_name);
+        }
+    });
 }
