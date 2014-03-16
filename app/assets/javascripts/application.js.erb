@@ -1320,7 +1320,7 @@ function loadChat(user_id) {
                     ((nda.length === 0) ?
                         '<a href="javascript:sendNDA();" class="green-button t">Send NDA</a>'
                         :
-                        '<b>NDA</b>'
+                        '<b>NDA</b> sent on ' + nda.created_at.toJSON().replace(/\d{2}(\d{2})-(\d{2})-\d{2}T\d{2}\:\d{2}\:\d{2}.\d{3}Z/, '$2/$3/$1')
                     ) +
                 'Messages' +
                 '<a class="black-button" href="#">Back</a>' +
@@ -1329,7 +1329,7 @@ function loadChat(user_id) {
 
     });
 
-    $('#background').html(
+    $('#background').html($('#background').html() +
         '<div id="chat"></div>' +
         '<textarea placeholder="Message" id="chat-box"></textarea>' +
         '<a href="javascript:createChat(' + user_id + ');" class="green-button" id="create-chat">Create</a>'
@@ -1357,7 +1357,7 @@ function loadChat(user_id) {
             //date = new Date(chat[i].message.ts).toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$2/$3/$1 $4');
             date = chat[i].message.created_at.replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$2/$3/$1 $4');
 
-            $('#chat').html($('#chat').html() +
+            $('#chat').prepend(
 
                 '<div class="chat-box">' +
                     '<div class="title">' +
@@ -1411,6 +1411,12 @@ function createChat (user_id) {
         }
 
     });
+
+}
+
+function sendNDA () {
+
+    $('#title .green-button').remove();
 
 }
 

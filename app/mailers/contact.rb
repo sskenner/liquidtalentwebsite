@@ -1,11 +1,11 @@
 class Contact < ActionMailer::Base
 
-  default from: 'info@bloodandtreasure.com'
+  default from: 'ahoy@bloodandtreasure.com'
 
   def contact (mail)
 
     @mail = mail
-    mail(from: @mail[:email], to: 'info@bloodandtreasure.com', subject: 'Message from LiquidTalent.com: ' + @mail[:subject])
+    mail(from: @mail[:email], to: 'ahoy@bloodandtreasure.com', subject: 'Message from LiquidTalent.com: ' + @mail[:subject])
 
   end
 
