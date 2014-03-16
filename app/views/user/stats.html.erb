@@ -2,6 +2,8 @@
   Stats
 </div>
 
+<div id="content-preloader"></div>
+
 <div id="stats-info" class="stats-box">
     <div class="item">
       <div class="name">Current Balance</div>
@@ -28,7 +30,7 @@
   </div>
 
   <div id="term-selector-wrapper">
-    <input type="text" name="" id="term-selector" value="Last week" />
+    <div id="term-selector">Last week</div>
     <div id="term-selector-options">
       <div onclick="setStatsTerm(7, 'Last week');">Last week</div>
       <div onclick="setStatsTerm(28, 'Last month');">Last month</div>
@@ -41,10 +43,10 @@
 <div id="dew-drops">
   <div id="dew-drops-title">$<span id="drop-total"></span> more for a <span id="drop-name"></span> LiquidDrop!</div>
   <div id="drops">
-    <div id="drop1" class="drop"><div></div></div>
-    <div id="drop2" class="drop"><div></div></div>
-    <div id="drop3" class="drop"><div></div></div>
-    <div id="drop4" class="drop"><div></div></div>
+    <div id="drop1" class="drop"><div class="bar"></div><div class="drp"></div></div>
+    <div id="drop2" class="drop"><div class="bar"></div><div class="drp"></div></div>
+    <div id="drop3" class="drop"><div class="bar"></div><div class="drp"></div></div>
+    <div id="drop4" class="drop"><div class="bar"></div><div class="drp"></div></div>
     <div class="clear"></div>
   </div>
 </div>
