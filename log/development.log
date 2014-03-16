@@ -59336,3 +59336,278 @@ Processing by UserController#search as */*
   Rendered user/_filter.html.erb (0.1ms)
   Rendered user/search.html.erb within layouts/application (3.1ms)
 Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-16 12:25:03 +0000
+
+Mysql2::Error (Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)):
+  mysql2 (0.3.15) lib/mysql2/client.rb:67:in `connect'
+  mysql2 (0.3.15) lib/mysql2/client.rb:67:in `initialize'
+  activerecord (4.0.1) lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `new'
+  activerecord (4.0.1) lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `mysql2_connection'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:440:in `new_connection'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:450:in `checkout_new_connection'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `acquire_connection'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:356:in `block in checkout'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `checkout'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:546:in `retrieve_connection'
+  activerecord (4.0.1) lib/active_record/connection_handling.rb:79:in `retrieve_connection'
+  activerecord (4.0.1) lib/active_record/connection_handling.rb:53:in `connection'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:51:in `restore_query_cache_settings'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:43:in `rescue in call'
+  activerecord (4.0.1) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.1) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:373:in `_run__3818580359634990608__call__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-16 12:25:26 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (33.9ms)
+Completed 200 OK in 648ms (Views: 601.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-16 12:25:27 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-16 12:25:27 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-16 12:25:27 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-16 12:25:27 +0000
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-16 12:25:28 +0000
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-16 12:25:28 +0000
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-16 12:25:28 +0000
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-16 12:25:28 +0000
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-16 12:25:28 +0000
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-16 12:25:28 +0000
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-16 12:25:28 +0000
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-16 12:25:28 +0000
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-16 12:25:28 +0000
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-16 12:25:28 +0000
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-16 12:25:28 +0000
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-16 12:25:29 +0000
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-16 12:25:29 +0000
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-16 12:25:29 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-16 12:25:51 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-16 12:25:51 +0000
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-16 12:25:51 +0000
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-16 12:25:51 +0000
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-16 12:26:03 +0000
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.5ms)
+  Rendered user/search.html.erb within layouts/application (81.0ms)
+Completed 200 OK in 112ms (Views: 111.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-16 12:26:03 +0000
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-16 12:26:03 +0000
+
+
+Started GET "/assets/admin-panel/button-drop-down.jpg" for 127.0.0.1 at 2014-03-16 12:26:03 +0000
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-16 12:26:05 +0000
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-16 12:26:05 +0000
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-16 12:26:05 +0000
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-16 12:26:05 +0000
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-16 12:26:05 +0000
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-16 12:26:18 +0000
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/search.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 53ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-16 12:26:20 +0000
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-16 12:26:22 +0000
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-16 12:27:13 +0000
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 60ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2014-03-16 12:27:15 +0000
+
+ActionController::RoutingError (No route matches [GET] "/projects"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (20.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (32.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (70.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-16 12:28:03 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 42ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-16 12:28:03 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-16 12:28:03 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-16 12:31:53 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-16 12:49:06 +0000
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (141.1ms)
+Completed 200 OK in 436ms (Views: 395.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-16 12:49:07 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-16 12:49:07 +0000
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-16 12:49:14 +0000
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 56ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-16 12:49:29 +0000
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.5ms)
+  Rendered user/search.html.erb within layouts/application (53.4ms)
+Completed 200 OK in 89ms (Views: 88.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-16 12:49:31 +0000
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
