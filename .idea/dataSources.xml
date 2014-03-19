@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="363593827">
+    <data-source source="LOCAL" name="Rails website: test" uuid="2a73be85-25e3-486c-ad77-7841b2d41c4a">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/website_test</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df95dff4df95df95dff4df95df95dff4df95df68df1edf86dfeedfe7dfdddfd3dfc3dfcedfcbdf89df9edf93df92df9adf9bdf87df9bdf9adf99df9edf95dff4df95df95dff4df95df95dff4df95df95dff4df95dfd9dfc0dfcbdfd9dfc4dfc7dfcbdfd9dfdadf9bdf98df9ddf9adf98df99df9edf95dff4df95df95dff4df95df95dff4df95df95dff4df95df95dff4df95df95dff4df95df68df1edf95dff4df95df95df95dff4df95df95dff4df95df95df95dff4df95df68df02df95dff4df95df95dff4df95df95dff4df95df95dff4df95</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-java-5.1.26-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Rails website: production" uuid="734b6868-157c-4b0c-86b6-112752e54e8d">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/website_production</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df95dff4df95df95dff4df95df95dff4df95df68df1edf86dfeedfe7dfdddfd3dfc3dfcedfcbdf89df9edf93df92df9adf9bdf87df9bdf9adf99df9edf95dff4df95df95dff4df95df95dff4df95df95dff4df95dfd9dfc0dfcbdfd9dfc4dfc7dfcbdfd9dfdadf9bdf98df9ddf9adf98df99df9edf95dff4df95df95dff4df95df95dff4df95df95dff4df95df95dff4df95df95dff4df95df68df1edf95dff4df95df95df95dff4df95df95dff4df95df95df95dff4df95df68df02df95dff4df95df95dff4df95df95dff4df95df95dff4df95</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-java-5.1.26-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Rails website: development" uuid="3b013a56-b42f-4428-be53-e664a14081be">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://54.204.5.73/liquidtalent_development</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfc6dfc3dfdbdfdfdfc3dfcedfdedfcbdfc6dfcfdfc4dfde</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-java-5.1.26-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+

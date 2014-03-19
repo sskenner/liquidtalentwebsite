@@ -20,7 +20,7 @@
 
 var loaders, pages;
 
-var currentUser = null, profileId = null, favorites = [], messages = [];
+var currentUser = null, profileId = null, back = null, favorites = [], messages = [];
 var users = null;
 var global_info = null;
 var filter_settings = {
@@ -925,8 +925,8 @@ function mapSearch(providers) {
                 else { map.popUp.favorite.removeClass('active'); }
                 map.popUp.favorite.attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
-                map.popUp.image.attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
-                map.popUp.title.attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
+                map.popUp.image.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
+                map.popUp.title.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
 
                 user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
 
@@ -968,8 +968,8 @@ function listSearch(providers) {
 
             $('#first-item .avatar').attr('src', user.avatar_url);
 
-            $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
-            $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
+            $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
+            $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
 
             if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
             else { $('#first-item .lt-drop').addClass(user.badge); }
@@ -1471,8 +1471,8 @@ function loadFavorites() {
 
             $('#first-item .avatar').attr('src', user.avatar_url);
 
-            $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
-            $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; loadPage("/profile");');
+            $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
+            $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
 
             if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
             else { $('#first-item .lt-drop').addClass(user.badge); }
