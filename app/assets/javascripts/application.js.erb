@@ -389,6 +389,14 @@ $(window).on('load', function () {
 
                 loadProfile()
             }
+        },
+
+        'video_upload': {
+            'href': '/video_upload',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+            }
         }
 
     };
@@ -1689,5 +1697,36 @@ function loadProfile() {
             $('#profile-experience').html(user.experience);
             $('#profile-education').html(user.school_name);
         }
+    });
+}
+
+/***** Video *****/
+
+function uploadVideo() {
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/set_video',
+        type: 'POST',
+        contentType: false,
+        processData: false,
+        data: function () {
+            var rq_data = new FormData();
+            rq_data.append("user_id", currentUser.id);
+            rq_data.append("token", currentUser.token);
+            rq_data.append("video", $('#video').get(0).files[0]);
+            return rq_data;
+        }(),
+        error: Response
+    }).done(function (data) {
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+        }
+        else {
+            currentUser['video_url'] = data['response']['url'];
+            alert('The video has been successfully uplaoded!');
+        }
+
+        $('#preloader').hide();
     });
 }

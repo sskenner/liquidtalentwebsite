@@ -31,5 +31,6 @@ LiquidTalent::Application.routes.draw do
     get '/favorites' => 'user#favorites'
     get '/stats' => 'user#stats'
     get '/profile' => 'user#profile'
+    get '/video_upload' => 'user#video_upload'
 
 end
