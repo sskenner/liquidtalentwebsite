@@ -33,4 +33,9 @@ LiquidTalent::Application.routes.draw do
     get '/profile' => 'user#profile'
     get '/video_upload' => 'user#video_upload'
     get '/video' => 'user#video'
+
+
+  ####### Bookings
+
+    get '/hire' => 'bookings#create'
 end

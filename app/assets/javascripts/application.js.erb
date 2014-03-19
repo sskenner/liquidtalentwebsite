@@ -20,7 +20,7 @@
 
 var loaders, pages;
 
-var currentUser = null, profileId = null, back = null, favorites = [], messages = [];
+var currentUser = null, profileId = null, providerId = null, back = null, favorites = [], messages = [];
 var users = null;
 var global_info = null;
 var filter_settings = {
@@ -396,6 +396,16 @@ $(window).on('load', function () {
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+            }
+        },
+
+        'hire': {
+            'href': '/hire',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                loadHire()
             }
         }
 
@@ -977,6 +987,7 @@ function listSearch(providers) {
             user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
 
             $('#first-item .avatar').attr('src', user.avatar_url);
+            $('#first-item .play-button').attr('onclick', 'playVideo();');
 
             $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
             $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
@@ -1698,6 +1709,8 @@ function loadProfile() {
             $('#profile-summary').html(user.summary);
             $('#profile-experience').html(user.experience);
             $('#profile-education').html(user.school_name);
+
+            $('.hire-button-profile').attr('onclick', 'back="profile"; providerId=' + user.id + '; loadPage("/hire");');
         }
     });
 }
@@ -1753,6 +1766,52 @@ function playVideo() {
             controlbar: 'bottom'
 
         });
+
+        $('#preloader').hide();
+    });
+}
+
+/***** Hire *****/
+
+function loadHire() {
+    if(currentUser == null) {
+        showPlaceholder('Job');
+        return false;
+    }
+
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/show?user_id=' + providerId,
+        error: Response
+    }).done(function (user) {
+        $('#avatar').attr('src', user['response']['user']['avatar_url']);
+        $('#hire-title').html(user['response']['user']['name']);
+
+        $('#preloader').hide();
+    });
+}
+
+function submitBooking() {
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/booking/create?' +
+                'token=' + current_user.token +
+                '&demander_id=' + currentUser.id +
+                '&provider_id=' + providerId +
+                '&budget=' + $('#budget').val() +
+                '&due_date=' + $('#due-date').val() +
+                '&description=' + $('#description').val() +
+                '&ica_sent=0',
+                error: Response
+    }).done(function (data) {
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+        }
+        else {
+            alert('Booking has been successfully created')
+        }
 
         $('#preloader').hide();
     });

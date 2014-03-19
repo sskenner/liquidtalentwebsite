@@ -61646,3 +61646,3616 @@ Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-
 
 
 Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 12:15:40 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 12:41:20 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (9.6ms)
+Completed 200 OK in 89ms (Views: 73.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 12:41:23 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 12:43:57 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 12:44:28 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (2.3ms)
+Completed 200 OK in 59ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 12:44:29 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 12:44:30 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 12:44:30 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 12:45:26 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 12:45:27 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 12:45:27 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 12:46:13 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 12:46:13 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 12:46:13 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 12:46:13 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 12:46:46 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 12:46:46 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 12:46:46 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 12:46:46 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 12:46:47 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 12:46:47 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 12:46:47 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 12:46:47 +0100
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-19 12:48:11 +0100
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-19 12:48:12 +0100
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-19 12:48:22 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 12:48:23 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 12:53:57 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.4ms)
+  Rendered user/search.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 12:53:57 +0100
+
+
+Started GET "/assets/admin-panel/button-drop-down.jpg" for 127.0.0.1 at 2014-03-19 12:53:58 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 12:54:04 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 12:54:04 +0100
+
+
+Started GET "/favorites" for 127.0.0.1 at 2014-03-19 12:55:00 +0100
+Processing by UserController#favorites as */*
+  Rendered user/favorites.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 12:55:01 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 12:57:27 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 12:59:34 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 13:08:55 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 13:08:56 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 13:08:56 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 13:08:56 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 13:08:56 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 13:08:56 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 13:08:57 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 13:08:57 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 13:08:57 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 13:08:57 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 13:08:57 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 13:08:58 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 13:08:58 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 13:08:58 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 13:08:58 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 13:08:58 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 13:08:58 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 13:08:59 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 13:08:59 +0100
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-19 13:09:00 +0100
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-19 13:09:00 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 13:09:01 +0100
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-19 13:09:01 +0100
+
+
+Started GET "/home" for 127.0.0.1 at 2014-03-19 13:09:04 +0100
+Processing by PresentationController#index as */*
+  Rendered presentation/index.html.erb within layouts/presentation (0.5ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 13:09:05 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 13:09:05 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 13:09:05 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 13:09:05 +0100
+
+
+Started GET "/assets/jquery.js?body=1&_=1395230936797" for 127.0.0.1 at 2014-03-19 13:09:05 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1&_=1395230936798" for 127.0.0.1 at 2014-03-19 13:09:05 +0100
+
+
+Started GET "/assets/application.js?body=1&_=1395230936799" for 127.0.0.1 at 2014-03-19 13:09:06 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 13:09:06 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 13:09:07 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 13:09:07 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 13:09:07 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 13:09:07 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 13:09:07 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 13:09:08 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 13:09:08 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 13:09:08 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:09:08 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 13:09:08 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:09:08 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 13:09:08 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 13:09:09 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 13:09:09 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 13:09:09 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 13:09:09 +0100
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-19 13:09:20 +0100
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-19 13:09:21 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 13:09:35 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:09:35 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 13:09:36 +0100
+
+
+Started GET "/assets/admin-panel/button-drop-down.jpg" for 127.0.0.1 at 2014-03-19 13:09:36 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 13:09:52 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:09:52 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 13:09:58 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:09:58 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 13:10:01 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:10:02 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 13:10:11 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:10:11 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 13:10:25 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:10:26 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 13:11:01 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 13:11:01 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 13:11:01 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 13:11:01 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 13:11:02 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 13:11:02 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 13:11:02 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 13:11:02 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 13:11:02 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 13:11:02 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 13:11:02 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 13:11:03 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 13:11:03 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 13:11:03 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 13:11:04 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 13:11:04 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 13:11:04 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 13:11:04 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 13:11:04 +0100
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-19 13:11:06 +0100
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-19 13:11:06 +0100
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-19 13:11:07 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 13:11:07 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 13:11:19 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/search.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:11:19 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 13:11:19 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 13:11:19 +0100
+
+
+Started GET "/assets/admin-panel/button-drop-down.jpg" for 127.0.0.1 at 2014-03-19 13:11:20 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:11:21 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 13:11:21 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 13:11:21 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 13:11:21 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 13:11:21 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 13:11:22 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 13:12:21 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 59ms (Views: 58.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 13:12:21 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 13:12:21 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 13:12:21 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 13:12:22 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 13:12:22 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 13:12:22 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 13:12:22 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 13:12:22 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 13:12:22 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 13:12:23 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 13:12:23 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 13:12:23 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 13:12:23 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 13:12:23 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 13:12:23 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 13:12:23 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 13:12:24 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 13:12:24 +0100
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-19 13:12:35 +0100
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-19 13:12:35 +0100
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-19 13:12:35 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 13:12:35 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 13:12:48 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:12:49 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 13:12:49 +0100
+
+
+Started GET "/assets/admin-panel/button-drop-down.jpg" for 127.0.0.1 at 2014-03-19 13:12:49 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 13:12:49 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 13:12:51 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 13:12:51 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 13:12:52 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 13:12:52 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 13:12:52 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 13:12:52 +0100
+
+
+Started GET "/video" for 127.0.0.1 at 2014-03-19 13:13:02 +0100
+Processing by UserController#video as */*
+  Rendered user/video.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:06:36 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:06:37 +0100
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 18:06:37 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:06:39 +0100
+
+
+Started GET "/video" for 127.0.0.1 at 2014-03-19 18:07:15 +0100
+Processing by UserController#video as */*
+  Rendered user/video.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:18:23 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 162ms (Views: 161.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:18:23 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:18:24 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:18:24 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:18:24 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:18:44 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:18:44 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:18:44 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:18:44 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:18:44 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:18:44 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:18:45 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:18:53 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:18:53 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:18:54 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 18:18:54 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 18:18:54 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 18:18:54 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 18:18:54 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:18:57 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:18:57 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 18:18:57 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 18:18:57 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 18:19:12 +0100
+
+ActionController::RoutingError (No route matches [GET] "/hire"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (300.9ms)
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (340.3ms)
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 18:19:42 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 18:19:48 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 18:19:48 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 18:19:49 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 18:19:49 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 18:19:49 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:19:49 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:20:23 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:20:23 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:20:25 +0100
+
+
+Started GET "/video" for 127.0.0.1 at 2014-03-19 18:20:27 +0100
+Processing by UserController#video as */*
+  Rendered user/video.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:20:34 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:20:34 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:20:34 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:20:35 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:20:35 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:20:36 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:20:36 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:20:37 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:20:37 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:20:37 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:20:37 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:20:37 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:20:37 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:20:38 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:20:38 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 18:20:38 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 18:20:38 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 18:20:38 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 18:20:38 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:20:39 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:20:39 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 18:20:39 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 18:20:40 +0100
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 18:20:41 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:20:43 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:20:44 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 18:20:44 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 18:20:45 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 18:20:45 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 18:20:45 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 18:20:45 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 18:20:51 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:20:51 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 18:20:51 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 18:20:51 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:22:23 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 62ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:22:25 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:22:25 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:22:25 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:22:25 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:22:25 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:22:26 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:22:26 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:22:26 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:22:26 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:22:26 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:22:26 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:22:27 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:22:27 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:22:27 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 18:22:27 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 18:22:27 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 18:22:27 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 18:22:28 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:22:28 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:22:28 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 18:22:28 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 18:22:29 +0100
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 18:22:30 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 18:22:31 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 18:22:31 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 18:22:32 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 18:22:32 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 18:22:32 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:22:32 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 18:22:33 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:22:33 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 18:22:33 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 18:22:33 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:22:33 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:23:13 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 60ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:23:13 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:23:13 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:23:13 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:23:14 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:23:14 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:23:14 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:23:14 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:23:14 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:23:14 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:23:15 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:23:15 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:23:15 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:23:15 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:23:15 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 18:23:15 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 18:23:16 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 18:23:16 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 18:23:16 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:23:17 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:23:17 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 18:23:17 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 18:23:17 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:23:18 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:23:18 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:23:18 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 18:23:18 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 18:23:19 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 18:23:19 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 18:23:19 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 18:23:19 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 18:23:20 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:23:20 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 18:23:20 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 18:23:20 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 18:23:22 +0100
+
+ActionController::RoutingError (No route matches [GET] "/hire"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (45.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:24:00 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:24:00 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:24:00 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:24:01 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:24:01 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:24:02 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:24:02 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:24:03 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:24:03 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:24:03 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:24:03 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:24:03 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:24:03 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:24:04 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:24:04 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 18:24:04 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 18:24:04 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 18:24:04 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 18:24:04 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:24:06 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:24:06 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 18:24:07 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 18:24:07 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:24:07 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:24:07 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:24:08 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 18:24:08 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 18:24:08 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 18:24:08 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 18:24:08 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 18:24:08 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 18:24:09 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:24:09 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 18:24:10 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 18:24:10 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 18:24:11 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:29:36 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 223ms (Views: 221.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:29:36 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:29:36 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:29:37 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:29:37 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:29:37 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:29:37 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:29:37 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:29:37 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:29:38 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:29:38 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:29:38 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:29:38 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:29:38 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:29:38 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 18:29:38 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 18:29:39 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 18:29:39 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 18:29:39 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:29:39 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:29:40 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 18:29:40 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 18:29:40 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:29:40 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:29:41 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:29:49 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:29:49 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:30:58 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:30:58 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:36:51 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:36:52 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:39:00 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:39:00 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:39:01 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:39:01 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:39:47 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:39:47 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:39:48 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:39:48 +0100
+
+
+Started GET "/projects" for 127.0.0.1 at 2014-03-19 18:39:51 +0100
+
+ActionController::RoutingError (No route matches [GET] "/projects"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/peterhrbacik/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (21.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:39:54 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:39:54 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:39:55 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:39:55 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:39:55 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:39:55 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:39:55 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:39:55 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:39:56 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:39:57 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:39:57 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:39:57 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:39:58 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:39:58 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:39:58 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 18:39:58 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 18:39:59 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 18:39:59 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 18:39:59 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:39:59 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:40:00 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 18:40:00 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 18:40:02 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:40:07 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:40:08 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:40:51 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:40:52 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:40:52 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:40:52 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:40:56 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:40:56 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:40:56 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:40:56 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:40:58 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:40:58 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:40:58 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:40:58 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:40:58 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:40:59 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:40:59 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:40:59 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:40:59 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:40:59 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:40:59 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 18:41:00 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 18:41:00 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 18:41:00 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 18:41:00 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:44:50 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:44:50 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 18:44:51 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 18:44:51 +0100
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 18:44:52 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:44:52 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:44:53 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 18:44:53 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 18:44:53 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 18:44:53 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 18:44:54 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 18:44:54 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 18:44:54 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:44:54 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 18:44:55 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 18:44:55 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 18:44:56 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:51:17 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 175ms (Views: 174.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:51:17 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:51:18 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:51:18 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:51:18 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:51:18 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:51:18 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:51:18 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:51:18 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:51:19 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:51:19 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:51:19 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:51:19 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:51:19 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:51:19 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 18:51:20 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 18:51:20 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 18:51:20 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 18:51:20 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:51:21 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:51:21 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 18:51:21 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 18:51:21 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 18:51:22 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:51:22 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 18:51:22 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 18:51:22 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 18:51:23 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 18:51:23 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 18:51:23 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 18:51:23 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:51:24 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 18:51:25 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 18:51:25 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:52:15 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:52:15 +0100
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 18:52:16 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:52:17 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 18:52:18 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:52:18 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:52:19 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 18:52:20 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:52:43 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:52:43 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:52:43 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:52:44 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:52:44 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:52:44 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:52:44 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:52:44 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:52:44 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:52:45 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:52:45 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:52:45 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:52:45 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:52:45 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:52:45 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 18:52:46 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 18:52:46 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 18:52:46 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 18:52:46 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 18:52:46 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:52:47 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 18:52:47 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 18:52:47 +0100
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 18:52:48 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 18:52:49 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 18:52:50 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 18:52:50 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 18:52:50 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:52:50 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 18:52:50 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 18:52:50 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:52:51 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 18:52:51 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 18:52:51 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 18:52:51 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 18:52:52 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:56:15 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 90ms (Views: 89.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:56:15 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:56:16 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:56:16 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:56:16 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:56:16 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:56:16 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:56:16 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:56:17 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:56:17 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:56:17 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:56:17 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:56:17 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:56:17 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:56:17 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 18:56:23 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 18:56:23 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 18:56:24 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 18:56:25 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 18:56:25 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 18:56:25 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 18:56:25 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 18:56:25 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 18:56:25 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 18:56:25 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 18:56:26 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 18:56:26 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 18:56:26 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 18:56:26 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 18:56:26 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:01:59 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:01:59 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:01:59 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:01:59 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:01:59 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:01:59 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:02:00 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:02:00 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:02:00 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:02:00 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:02:00 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:02:01 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:02:01 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:02:01 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:02:01 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:02:07 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:02:08 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:08 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:08 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:08 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:02:08 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:02:10 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:02:10 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:02:10 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:02:10 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:02:11 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:02:11 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:02:11 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:02:11 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:02:12 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:02:21 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 62ms (Views: 61.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:02:22 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:22 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:23 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:23 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:02:23 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:02:23 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:02:23 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:02:23 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:02:24 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:02:24 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:02:24 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:02:24 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:02:24 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:02:24 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 19:02:25 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 19:02:25 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 19:02:25 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 19:02:25 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:02:25 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:02:26 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 19:02:27 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 19:02:27 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:02:29 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:02:30 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:02:30 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:02:30 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:02:34 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:02:35 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:02:36 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:02:37 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:02:37 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:02:38 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:38 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:42 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:02:42 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:02:42 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:42 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:02:42 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:02:42 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:02:43 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:02:43 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:02:43 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:02:43 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:02:43 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:02:43 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:02:44 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:02:45 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:02:45 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:45 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:45 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:02:46 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:02:46 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:02:46 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:02:46 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:02:47 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:02:47 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:02:47 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:02:47 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:02:47 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 19:02:47 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 19:02:48 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 19:02:48 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 19:02:49 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:02:49 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:02:49 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 19:02:49 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 19:02:49 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:02:51 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/search.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:02:51 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:04:42 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:04:43 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:06:49 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:06:50 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:06:51 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:06:51 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:06:54 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:06:55 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:09:03 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:09:03 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:09:03 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:09:04 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:09:04 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:09:04 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:09:04 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:09:04 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:09:05 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:09:06 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:09:06 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:09:06 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:09:07 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:09:07 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:09:07 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 19:09:08 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 19:09:08 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 19:09:08 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 19:09:08 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:09:09 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:09:09 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 19:09:10 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 19:09:10 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:09:12 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:09:12 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 19:09:12 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 19:09:13 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 19:09:13 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 19:09:13 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 19:09:13 +0100
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 19:09:13 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 19:09:14 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:09:14 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 19:09:14 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 19:09:14 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 19:09:15 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 19:09:24 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:09:25 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 19:09:30 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:12:01 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.3ms)
+Completed 200 OK in 156ms (Views: 154.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:12:02 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:12:02 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:12:02 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:12:02 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:12:02 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:12:02 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:12:03 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:12:03 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:12:03 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:12:03 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:12:03 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:12:03 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:12:04 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:12:05 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 19:12:05 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 19:12:05 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 19:12:05 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 19:12:06 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:12:06 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:12:06 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 19:12:06 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 19:12:07 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:12:09 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/search.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:12:28 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:12:30 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:12:30 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:12:30 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:12:30 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:12:31 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:12:31 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:12:32 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:12:32 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:12:32 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:12:33 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:12:33 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:12:33 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:12:33 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:12:33 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:12:33 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 19:12:33 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 19:12:34 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 19:12:36 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 19:12:36 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:12:36 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:12:36 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 19:12:36 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 19:12:38 +0100
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 19:12:38 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 19:12:40 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 19:12:40 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 19:12:40 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 19:12:40 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 19:12:40 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:12:41 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:12:44 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:12:45 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 19:12:47 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:12:48 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 19:12:48 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 19:12:48 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 19:12:49 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:14:22 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 79ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:14:22 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:14:22 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:14:22 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:14:23 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:14:23 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:14:23 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:14:24 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:14:24 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:14:24 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:14:25 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:14:25 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:14:25 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:14:25 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:14:25 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 19:14:25 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 19:14:26 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 19:14:26 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 19:14:26 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:14:29 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:14:29 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 19:14:29 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 19:14:29 +0100
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 19:14:30 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:14:31 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:14:31 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 19:14:31 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 19:14:31 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 19:14:31 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 19:14:31 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 19:14:31 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 19:14:33 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:14:33 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 19:14:33 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 19:14:33 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 19:14:34 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:17:36 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 60ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:17:36 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:17:36 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:17:36 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:17:37 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:17:37 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:17:37 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:17:37 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:17:37 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:17:37 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:17:38 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:17:38 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:17:38 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:17:38 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:17:39 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 19:17:39 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 19:17:40 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 19:17:40 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 19:17:40 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:17:41 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:17:41 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 19:17:42 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 19:17:42 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:17:43 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 19:17:43 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:17:44 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 19:17:44 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 19:17:44 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 19:17:44 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 19:17:44 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 19:17:44 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 19:17:45 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:17:45 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 19:17:45 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 19:17:45 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 19:17:46 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:18:43 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.2ms)
+Completed 200 OK in 65ms (Views: 64.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:18:43 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:18:43 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:18:44 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:18:44 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:18:44 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:18:44 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:18:44 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:18:44 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:18:45 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:18:45 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:18:45 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:18:45 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:18:45 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:18:45 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 19:18:46 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 19:18:46 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 19:18:46 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 19:18:47 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:18:47 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/map.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:18:47 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 19:18:47 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 19:18:48 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:18:49 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 19:18:49 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:18:49 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 19:18:49 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 19:18:49 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 19:18:50 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 19:18:50 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 19:18:50 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 19:18:50 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:18:51 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 19:18:51 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 19:18:51 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 19:18:52 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 19:18:57 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:18:57 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 19:18:58 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:23:41 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 97ms (Views: 96.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:23:41 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:23:41 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:23:42 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:23:42 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:23:44 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:23:44 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:23:44 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:23:45 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:23:46 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:23:46 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:23:46 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:23:46 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:23:47 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:23:49 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 19:23:49 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 19:23:49 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 19:23:49 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 19:23:50 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:25:26 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:25:27 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 19:25:27 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 19:25:27 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:25:28 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:25:28 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:25:29 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 19:25:29 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 19:25:29 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 19:25:30 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 19:25:30 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 19:25:30 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 19:25:30 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:25:31 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 19:25:32 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 19:25:32 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 19:25:34 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:32:07 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 126ms (Views: 125.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:32:07 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:32:09 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:32:09 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:32:09 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:32:09 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:32:09 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:32:10 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:32:10 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:32:10 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:32:10 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:32:10 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:32:10 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:32:12 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:32:12 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 19:32:13 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 19:32:13 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 19:32:13 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 19:32:13 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:32:14 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:32:14 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 19:32:14 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 19:32:14 +0100
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-19 19:32:17 +0100
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-19 19:32:17 +0100
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-19 19:32:17 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:32:31 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:32:32 +0100
+
+
+Started GET "/assets/admin-panel/button-drop-down.jpg" for 127.0.0.1 at 2014-03-19 19:32:32 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:32:32 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:33:12 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 19:33:12 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 19:33:12 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 19:33:12 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 19:33:12 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 19:33:12 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-19 19:33:42 +0100
+Processing by PresentationController#index as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.1ms)
+Completed 200 OK in 63ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-19 19:33:43 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-19 19:33:43 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-19 19:33:43 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-19 19:33:43 +0100
+
+
+Started GET "/assets/main/logo-text.png" for 127.0.0.1 at 2014-03-19 19:33:43 +0100
+
+
+Started GET "/assets/presentation/press.jpg" for 127.0.0.1 at 2014-03-19 19:33:44 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-03-19 19:33:44 +0100
+
+
+Started GET "/assets/admin-panel/header-login.jpg" for 127.0.0.1 at 2014-03-19 19:33:44 +0100
+
+
+Started GET "/assets/nexalight.ttf" for 127.0.0.1 at 2014-03-19 19:33:44 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-03-19 19:33:44 +0100
+
+
+Started GET "/assets/presentation/play-btn.png" for 127.0.0.1 at 2014-03-19 19:33:45 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:33:45 +0100
+
+
+Started GET "/assets/main/bg.jpg" for 127.0.0.1 at 2014-03-19 19:33:45 +0100
+
+
+Started GET "/assets/admin-panel/buttons-navigation.png" for 127.0.0.1 at 2014-03-19 19:33:46 +0100
+
+
+Started GET "/assets/presentation/buttons-store.png" for 127.0.0.1 at 2014-03-19 19:33:46 +0100
+
+
+Started GET "/assets/presentation/avatars-about.png" for 127.0.0.1 at 2014-03-19 19:33:47 +0100
+
+
+Started GET "/assets/presentation/icons-social-color.png" for 127.0.0.1 at 2014-03-19 19:33:47 +0100
+
+
+Started GET "/assets/nexabold.ttf" for 127.0.0.1 at 2014-03-19 19:33:48 +0100
+
+
+Started GET "/map" for 127.0.0.1 at 2014-03-19 19:33:48 +0100
+Processing by UserController#map as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/map.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:33:48 +0100
+
+
+Started GET "/assets/main/gradient-black.png" for 127.0.0.1 at 2014-03-19 19:33:48 +0100
+
+
+Started GET "/assets/search/visibility-toggle.png" for 127.0.0.1 at 2014-03-19 19:33:49 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:33:51 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.0ms)
+  Rendered user/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/search/pin.png" for 127.0.0.1 at 2014-03-19 19:33:51 +0100
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:33:51 +0100
+
+
+Started GET "/assets/main/button-favorite-small.png" for 127.0.0.1 at 2014-03-19 19:33:51 +0100
+
+
+Started GET "/assets/main/button-play.png" for 127.0.0.1 at 2014-03-19 19:33:51 +0100
+
+
+Started GET "/assets/main/linkedin_icon.png" for 127.0.0.1 at 2014-03-19 19:33:51 +0100
+
+
+Started GET "/assets/main/drops.png" for 127.0.0.1 at 2014-03-19 19:33:52 +0100
+
+
+Started GET "/assets/main/stars.png" for 127.0.0.1 at 2014-03-19 19:33:52 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 19:33:52 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:33:53 +0100
+
+
+Started GET "/assets/profiles/button-message.png" for 127.0.0.1 at 2014-03-19 19:33:53 +0100
+
+
+Started GET "/assets/profiles/button-hire.png" for 127.0.0.1 at 2014-03-19 19:33:54 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 19:33:55 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-03-19 19:33:57 +0100
+Processing by UserController#login as */*
+  Rendered user/login.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sign-up/logo-small.png" for 127.0.0.1 at 2014-03-19 19:33:57 +0100
+
+
+Started GET "/assets/sign-up/buttons-linkedin-signup.png" for 127.0.0.1 at 2014-03-19 19:33:58 +0100
+
+
+Started GET "/search" for 127.0.0.1 at 2014-03-19 19:34:10 +0100
+Processing by UserController#search as */*
+  Rendered user/_filter.html.erb (0.1ms)
+  Rendered user/search.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:34:10 +0100
+
+
+Started GET "/assets/main/gradient-green.png" for 127.0.0.1 at 2014-03-19 19:34:10 +0100
+
+
+Started GET "/assets/admin-panel/button-drop-down.jpg" for 127.0.0.1 at 2014-03-19 19:34:10 +0100
+
+
+Started GET "/profile" for 127.0.0.1 at 2014-03-19 19:34:12 +0100
+Processing by UserController#profile as */*
+  Rendered user/profile.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main/avatar.png" for 127.0.0.1 at 2014-03-19 19:34:13 +0100
+
+
+Started GET "/hire" for 127.0.0.1 at 2014-03-19 19:34:15 +0100
+Processing by BookingsController#create as */*
+  Rendered bookings/create.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
