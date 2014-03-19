@@ -32,6 +32,9 @@ class UserController < ApplicationController
   def video_upload
   end
 
+  def video
+  end
+
   def nda_agreement
   end
 

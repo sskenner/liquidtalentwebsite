@@ -936,6 +936,8 @@ function mapSearch(providers) {
                 map.popUp.image.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
                 map.popUp.title.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
 
+                map.popUp.play.attr('onclick', 'playVideo();');
+
                 user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
 
                 if (user.badge === 'no') { map.popUp.LTDrop.addClass('hidden'); }
@@ -1726,6 +1728,31 @@ function uploadVideo() {
             currentUser['video_url'] = data['response']['url'];
             alert('The video has been successfully uplaoded!');
         }
+
+        $('#preloader').hide();
+    });
+}
+
+function playVideo() {
+    $('#preloader').show();
+
+    $.ajax({
+        url: '/video',
+        error: Response
+    }).done(function (data) {
+        $('#background').append(data);
+
+        jwplayer("player").setup({
+            wmode: "transparent",
+            file: currentUser.video_url,
+            provider:'http',
+            autostart: true,
+            height: 510,
+            skin: 'roundster',
+            width: 660,
+            controlbar: 'bottom'
+
+        });
 
         $('#preloader').hide();
     });
