@@ -407,6 +407,14 @@ $(window).on('load', function () {
 
                 loadHire()
             }
+        },
+
+        'hire_confirm': {
+            'href': '/hire_confirm',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+            }
         }
 
     };
@@ -1792,17 +1800,17 @@ function loadHire() {
     });
 }
 
-function submitBooking() {
+function submitBooking() {      alert('dfhdshsdfhdfh');
     $('#preloader').show();
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/booking/create?' +
-                'token=' + current_user.token +
+                'token=' + currentUser.token +
                 '&demander_id=' + currentUser.id +
                 '&provider_id=' + providerId +
-                '&budget=' + $('#budget').val() +
-                '&due_date=' + $('#due-date').val() +
-                '&description=' + $('#description').val() +
+                '&budget=' + $('.budget').val() +
+                '&due_date=' + $('.due-date').val() +
+                '&description=' + $('.description').val() +
                 '&ica_sent=0',
                 error: Response
     }).done(function (data) {

@@ -1,0 +1,59 @@
+<script type="text/javascript">
+    Stripe.setPublishableKey('pk_04W9qdZjQwc3UQ9DKkJbvpcr4LYpi');
+
+    jQuery(function($) {
+        $('#cc-form').submit(function(event) {
+            var $form = $(this);
+
+            $('.alert').remove();
+
+            // Disable the submit button to prevent repeated clicks
+            $form.find('button').prop('disabled', true);
+
+            Stripe.card.createToken($form, stripeResponseHandler);
+
+            // Prevent the form from submitting with the default action
+            return false;
+        });
+    });
+
+    var stripeResponseHandler = function(status, response) {
+        var $form = $('#cc-form');
+
+        if (response.error) {
+            // Show the errors on the form
+            $('form').before('<div class="alert alert-danger payment-errors" style="margin-top: 25px;">' + response.error.message + '</div>');
+            $form.find('button').prop('disabled', false);
+        } else {
+            // token contains id, last4, and card type
+            var token = response.id;
+            // Insert the token into the form so it gets submitted to the server
+            $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+            // and submit
+            $form.get(0).submit();
+        }
+    };
+</script>
+
+<div id="title">
+  Confirm Project
+  <a class="black-button" href="javascript: loadPage('/hire');">Back</a>
+</div>
+
+<div id="hire">
+  <div id="hire-title">Please Confirm this Project</div>
+
+  <p>
+    If accepted by the provider, you wil be notified and your card will be charged the total job amount of $<span id="total-amount"></span>. This payment is stored and is released to the service provider when you mark this job as completed.
+  </p>
+
+  <form method="post" id="cc-form">
+    <input type="text" placeholder="CREDIT CARD NUMBER" class="text-field cc-number">
+    <input type="text" placeholder="EXPIRY DATE (MM/YY)" class="text-field exp-date">
+    <input type="text" placeholder="CVC NUMBER" class="text-field cvc">
+
+    <div class="clear"></div>
+
+    <button href="javascript:submitBooking(); return false;" class="green-button signup-form-sp-button">Confirm</button>
+  </form>
+</div>

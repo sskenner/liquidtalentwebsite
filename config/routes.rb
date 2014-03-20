@@ -38,4 +38,5 @@ LiquidTalent::Application.routes.draw do
   ####### Bookings
 
     get '/hire' => 'bookings#create'
+    get '/hire_confirm' => 'bookings#confirm'
 end
