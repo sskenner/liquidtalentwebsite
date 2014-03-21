@@ -22,7 +22,10 @@
 
         if (response.error) {
             // Show the errors on the form
-            $('form').before('<div class="alert alert-danger payment-errors" style="margin-top: 25px;">' + response.error.message + '</div>');
+            //$('form').before('<div class="alert alert-danger payment-errors" style="margin-top: 25px;">' + response.error.message + '</div>');
+
+            alert(response.error.message);
+
             $form.find('button').prop('disabled', false);
         } else {
             // token contains id, last4, and card type
@@ -48,9 +51,10 @@
   </p>
 
   <form method="post" id="cc-form">
-    <input type="text" placeholder="CREDIT CARD NUMBER" class="text-field cc-number">
-    <input type="text" placeholder="EXPIRY DATE (MM/YY)" class="text-field exp-date">
-    <input type="text" placeholder="CVC NUMBER" class="text-field cvc">
+    <input type="text" placeholder="CREDIT CARD NUMBER" class="text-field cc-number" data-stripe="number">
+    <input type="text" placeholder="EXP MONTH" class="text-field exp-month" data-stripe="exp-month">
+    <input type="text" placeholder="EXP YEAR" class="text-field exp-year" data-stripe="exp-year">
+    <input type="text" placeholder="CVC NUMBER" class="text-field cvc" data-stripe="cvc">
 
     <div class="clear"></div>
 
