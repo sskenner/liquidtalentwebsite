@@ -432,6 +432,25 @@ $(window).on('load', function () {
             }
         },
 
+        'hire_accept': {
+            'href': '/hire_accept',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                $('#total-amount').html(booking.budget);
+
+                if(currentUser.stripe_recipient_id == null) {
+                    $('#bank-form').show();
+                    $('#booking-form').hide();
+                }
+                else {
+                    $('#bank-form').hide();
+                    $('#booking-form').show();
+                }
+            }
+        },
+
         'projects': {
             'href': '/projects',
             'load': function () {
@@ -1918,6 +1937,7 @@ function loadProjects() {
                     else {
                         if(item.booking.status == 'confirmed') {
                             $('#first-project .status-btn').attr('class', 'status-btn accept');
+                            $('#first-project .status-btn').attr('onclick', 'loadPage("/hire_accept");');
                         }
                         else if(item.booking.status == 'rejected') {
                             $('#first-project .status-btn').attr('class', 'status-btn decline');

@@ -1,0 +1,26 @@
+<div id="title">
+  Accept Project
+  <a class="black-button" href="javascript: loadPage('/projects');">Back</a>
+</div>
+
+<div id="hire">
+  <div id="hire-title">Please accept this Project</div>
+
+  <p>
+    Once this project is completed, you will be notified and a transfer of $<span id="total-amount"></span> will be sent to your bank account.
+  </p>
+
+  <form method="post" id="bank-form">
+    <input type="text" placeholder="Bank Number *" class="text-field cc-number" data-stripe="number">
+    <input type="text" placeholder="Routing Number *" class="text-field exp-month" data-stripe="exp-month">
+    <input type="text" placeholder="Account Type *" class="text-field exp-year" data-stripe="exp-year">
+
+    <div class="clear"></div>
+
+    <button type="submit" class="green-button signup-form-sp-button">Accept</button>
+  </form>
+
+  <form method="post" id="booking-form">
+    <button onclick="javascript:acceptBooking(); return false;" class="green-button signup-form-sp-button">Accept</button>
+  </form>
+</div>
