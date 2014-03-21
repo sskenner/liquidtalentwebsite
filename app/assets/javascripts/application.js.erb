@@ -34,7 +34,11 @@ var filter_settings = {
     rate_to: {label: '5', value: 5},
     subcategories: []
 }
-
+var booking = {
+    budget: null,
+    due_date: null,
+    description: null
+}
 var chart_options = {
     chart: {
         type: 'areaspline',
@@ -414,6 +418,27 @@ $(window).on('load', function () {
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                $('#total-amount').html(booking.budget);
+
+                if(currentUser.stripe_customer_id == null) {
+                    $('#cc-form').show();
+                    $('#booking-form').hide();
+                }
+                else {
+                    $('#cc-form').hide();
+                    $('#booking-form').show();
+                }
+            }
+        },
+
+        'projects': {
+            'href': '/projects',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                loadProjects();
             }
         }
 
@@ -1800,7 +1825,15 @@ function loadHire() {
     });
 }
 
-function submitBooking() {      alert('dfhdshsdfhdfh');
+function submitBooking() {
+    booking.budget   = $('.budget').val();
+    booking.due_date = $('.due-date').val();
+    booking.description = $('.description').val();
+
+    loadPage('/hire_confirm');
+}
+
+function confirmBooking() {
     $('#preloader').show();
 
     $.ajax({
@@ -1808,17 +1841,101 @@ function submitBooking() {      alert('dfhdshsdfhdfh');
                 'token=' + currentUser.token +
                 '&demander_id=' + currentUser.id +
                 '&provider_id=' + providerId +
-                '&budget=' + $('.budget').val() +
-                '&due_date=' + $('.due-date').val() +
-                '&description=' + $('.description').val() +
+                '&budget=' + booking.budget +
+                '&due_date=' + booking.due_date +
+                '&description=' + booking.description +
                 '&ica_sent=0',
-                error: Response
+        error: Response
+    }).done(function (data) {
+                if (data['status'] === 'failed') {
+                    alert(data['errors'][0]);
+                }
+                else {
+                    alert('Booking has been successfully created')
+                }
+
+                $('#preloader').hide();
+            });
+}
+
+function loadProjects() {
+    if(currentUser == null) {
+        showPlaceholder('Projects');
+        return false;
+    }
+
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/bookings/list_all_bookings?' +
+            'token=' + currentUser.token +
+            '&user_id=' + currentUser.id,
+        error: Response
     }).done(function (data) {
         if (data['status'] === 'failed') {
             alert(data['errors'][0]);
         }
         else {
-            alert('Booking has been successfully created')
+            var user = null, userType = null;
+
+            data.response.forEach(function(item) {
+                if(item.booking.status != 'rejected') {
+                    if(item.demander.id == currentUser.id) {
+                        user = item.provider;
+                        userType = 'demander';
+                    }
+                    else {
+                        user = item.demander;
+                        userType = 'provider'
+                    }
+
+                    $('#first-project .avatar').attr('src', user.avatar_url ? user.avatar_url : '<%= asset_path "main/avatar.png" %>');
+                    $('#first-project .name').html(user.name);
+
+                    dueDate = new Date(item.booking.due_date * 1000);
+
+                    $('#first-project .due-date').html((dueDate.getMonth() + 1) + '/' + dueDate.getDate() + '/' + dueDate.getFullYear());
+                    $('#first-project .description').html(item.booking.description);
+                    $('#first-project .total-amount').html(item.booking.budget);
+
+                    if(userType == 'demander') {
+                        if(item.booking.status == 'confirmed') {
+                            $('#first-project .status-btn').attr('class', 'status-btn pending');
+                        }
+                        else if(item.booking.status == 'rejected') {
+                            $('#first-project .status-btn').attr('class', 'status-btn decline');
+                        }
+                        else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
+                            $('#first-project .status-btn').attr('class', 'status-btn in-progress');
+                        }
+                        else if(item.booking.status == 'completed') {
+                            $('#first-project .status-btn').attr('class', 'status-btn complete');
+                        }
+                        else if(item.booking.status == 'pending') {
+                            $('#first-project .status-btn').attr('class', 'status-btn pending');
+                        }
+                    }
+                    else {
+                        if(item.booking.status == 'confirmed') {
+                            $('#first-project .status-btn').attr('class', 'status-btn accept');
+                        }
+                        else if(item.booking.status == 'rejected') {
+                            $('#first-project .status-btn').attr('class', 'status-btn decline');
+                        }
+                        else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
+                            $('#first-project .status-btn').attr('class', 'status-btn complete');
+                        }
+                        else if(item.booking.status == 'completed') {
+                            $('#first-project .status-btn').attr('class', 'status-btn complete');
+                        }
+                        else if(item.booking.status == 'pending') {
+                            $('#first-project .status-btn').attr('class', 'status-btn pending');
+                        }
+                    }
+
+                    $('#projects').append('<div class="project">' + $('#first-project').clone().html() + '</div>');
+                }
+            });
         }
 
         $('#preloader').hide();

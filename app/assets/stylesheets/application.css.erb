@@ -1554,7 +1554,7 @@ h3 {
 
 
 /***********************************************************************************************************************
-/   Hire
+/   Hiring
 /**********************************************************************************************************************/
 #hire {
     padding: 0 30px;
@@ -1615,9 +1615,89 @@ h3 {
     height: 150px;
 }
 
+#cc-form, #booking-form {
+    display: none;
+}
+
 #cc-form .cc-number, #cc-form .exp-month, #cc-form .exp-year, #cc-form .cvc {
     width: 150px;
     float: left;
     margin-right: 20px;
 }
 
+
+
+/***********************************************************************************************************************
+/   Projects
+/**********************************************************************************************************************/
+.project {
+    padding: 10px;
+    margin: 10px;
+    background: #fff;
+}
+
+.project .avatar {
+    float: left;
+    margin-right: 15px;
+}
+
+.project .name {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.project .due-date {
+    display: inline-block;
+    float: right;
+    padding-top: 5px;
+    text-align: right;
+}
+
+.project .description {
+    font-size: 1.1em;
+}
+
+.project .budget {
+    width: 25%;
+    float: left;
+    padding-top: 10px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.project .budget-title {
+    font-size: 0.9em;
+}
+
+.project .message-btn {
+    display: inline-block;
+    float: right;
+    width: 156px;
+    height: 54px;
+    background: url(<%= asset_path "projects/message.png" %>);
+}
+
+.project .status-btn {
+    display: inline-block;
+    float: right;
+    width: 156px;
+    height: 54px;
+}
+
+.project .status-btn.accept {
+    background: url(<%= asset_path "projects/accept.png" %>);
+}
+.project .status-btn.complete {
+    background: url(<%= asset_path "projects/complete.png" %>);
+}
+.project .status-btn.decline {
+    background: url(<%= asset_path "projects/decline.png" %>);
+}
+.project .status-btn.in-progress {
+    background: url(<%= asset_path "projects/in-progress.png" %>);
+}
+.project .status-btn.pending {
+    background: url(<%= asset_path "projects/pending.png" %>);
+}

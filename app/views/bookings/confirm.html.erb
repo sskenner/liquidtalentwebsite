@@ -31,9 +31,12 @@
             // token contains id, last4, and card type
             var token = response.id;
             // Insert the token into the form so it gets submitted to the server
-            $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+            $form.append($('<input type="hidden" name="stripeToken" id="stripeToken" />').val(token));
             // and submit
-            $form.get(0).submit();
+            //$form.get(0).submit();
+
+            confirmBooking();
+            return false;
         }
     };
 </script>
@@ -58,6 +61,10 @@
 
     <div class="clear"></div>
 
-    <button href="javascript:submitBooking(); return false;" class="green-button signup-form-sp-button">Confirm</button>
+    <button type="submit" class="green-button signup-form-sp-button">Confirm</button>
+  </form>
+
+  <form method="post" id="booking-form">
+    <button onclick="javascript:confirmBooking(); return false;" class="green-button signup-form-sp-button">Confirm</button>
   </form>
 </div>

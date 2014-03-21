@@ -5,4 +5,6 @@ class BookingsController < ApplicationController
   def confirm
   end
 
+  def index
+  end
 end
