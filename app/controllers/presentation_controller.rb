@@ -12,11 +12,11 @@ class PresentationController < ApplicationController
     @list = {
       mailchimp: {
         'id' => '2f97fd461f',
-        'email' => { 'email' => params[:email] },
-        'merge_vars' => {
-            'NAME' => params[:name],
-            'ZIP' => params[:zip]
-        }#,
+        'email' => { 'email' => params[:email] }#,
+        #'merge_vars' => {
+        #    'NAME' => params[:name],
+        #    'ZIP' => params[:zip]
+        #}#,
         #'email_type' => 'html',
         #'double_optin' => true,
         #'update_existing' => false,
@@ -29,9 +29,7 @@ class PresentationController < ApplicationController
 
     begin
 
-      @mc.lists.subscribe(@list[:mailchimp]['id'],
-                          @list[:mailchimp]['email'],
-                          @list[:mailchimp]['merge_vars'])
+      @mc.lists.subscribe(@list[:mailchimp]['id'], @list[:mailchimp]['email'])
       @list['success'] = 'You were successfully subscribed to our newsletter.'
 
     rescue Mailchimp::ListAlreadySubscribedError

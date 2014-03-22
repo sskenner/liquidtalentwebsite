@@ -38,7 +38,7 @@
             url: 'http://backend.liquidtalent.com/user/linkedin_token/?code=' + code,
             error: function (error) {
                 alert("Problem with connecting to the server.");
-                console.log(error['']);
+                console.log(error);
             }
         }).done(function (data) {
             var access_token = data['access_token'];
@@ -91,9 +91,7 @@
   <div id="newsletter-sign-up">Sign up to our LiquidTalent newsletter!</div>
 
   <div id="register-form">
-    <input type="text" id="register-form-name" class="field" placeholder="Name">
     <input type="text" id="register-form-email" class="field" placeholder="Email">
-    <input type="text" id="register-form-zip" class="field" placeholder="Zip">
     <a href="javascript:SubmitRegisterForm()" id="register-form-send" class="field green-button">Send</a>
   </div>
 

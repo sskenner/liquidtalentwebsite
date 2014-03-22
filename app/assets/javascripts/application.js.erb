@@ -602,7 +602,7 @@ function SubmitRegisterForm() {
     $.ajax({
         url: rF.href,
         type: 'post',
-        data: 'name=' + rF.n.val() + '&email=' + rF.e.val() + '&zip=' + rF.z.val(),
+        data: 'email=' + rF.e.val(),
         error: Response
     });
 
