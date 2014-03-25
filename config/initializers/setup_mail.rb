@@ -1,6 +1,6 @@
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  :address => 'barney.machighway.com',
+  :address => 'mail.bloodandtreasure.com',
   :port => 587,
   :domain => 'mail.bloodandtreasure.com',
   :user_name => 'ahoy@bloodandtreasure.com',
