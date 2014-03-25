@@ -120,9 +120,7 @@ $(window).on('load', function () {
 
                     'href': '/presentation/subscribe',
 
-                    'n': $('#register-form-name'),
                     'e': $('#register-form-email'),
-                    'z': $('#register-form-zip')
 
                 };
 
@@ -135,8 +133,6 @@ $(window).on('load', function () {
 
                     'n': cF.find('.name'),
                     'e': cF.find('.email'),
-                    'p': cF.find('.phone'),
-                    's': cF.find('.reason'),
                     'm': cF.find('.message')
 
                 };
@@ -545,10 +541,26 @@ $(window).on('load', function () {
         'Armed Forces Others': 'AE'
     }
 
-    pages.active = '';
-    loadPage('/');
+    $('#admin-panel .navigation .link').each(function (i, e) {
+
+        $(e).on('mouseover', function (e) { ToggleNavigationHover(e); });
+        $(e).on('mouseout', function (e) { ToggleNavigationHover(e); });
+
+    });
+
+    loadPage('home');
 
 });
+
+function ToggleNavigationHover (e) {
+
+    if (!e) { e = $(window.event.currentTarget).find('.icon'); }
+    else { e = $(e.currentTarget).find('.icon'); }
+
+    if (/hover/.test($(e).prop('class'))) { $(e).removeClass('hover'); }
+    else { $(e).addClass('hover'); }
+
+}
 
 function Response(response) {
 
@@ -573,6 +585,11 @@ function loadPage(page) {
             pages.active = pages[p];
         }
     });
+
+    if (page === 'home') {
+        pages.home.load();
+        return;
+    }
 
     if (pages.active !== '') {
 
@@ -623,6 +640,11 @@ function SubmitRegisterForm() {
         type: 'post',
         data: 'email=' + rF.e.val(),
         error: Response
+    }).done(function (response) {
+
+        if (response.success !== '') { alert(response.success); }
+        else { alert(response.error); }
+
     });
 
 }
@@ -634,33 +656,39 @@ function SubmitContactForm() {
     $.ajax({
         url: cF.href,
         type: 'post',
-        data: 'name=' + cF.n.val() + '&email=' + cF.e.val() + '&phone=' + cF.p.val() + '&subject=' + cF.s.val() + '&message=' + cF.m.val(),
+        data: 'name=' + cF.n.val() + '&email=' + cF.e.val() + '&message=' + cF.m.val(),
         error: Response
-    }).done(function () { loaders.toggle('contact', 0); });
+    }).done(function () {
+
+        loaders.toggle('contact', 0);
+
+    }).done(function (response) {
+
+        if (response.success !== '') { alert(response.success); }
+        else { alert(response.error); }
+
+    });
 
 }
 
 function RevealPage(pageSegment) {
 
-    pageSegments = {
+    pageSegments = {};
+    $('.page-segment').each(function (i, e) {
 
-        about: $('#about-page'),
-        press: $('#press-page'),
-        contact: $('#contact-page'),
-        privacy: $('#privacy-page')
+        pageSegments[$(e).prop('title')] = $(e);
 
-    };
+    });
 
     if (pageSegment === 'privacy') {
 
-        pageSegments.about.animate({ 'opacity': 0 }, 300, 'linear', function () {
-            pageSegments.about.css('display', 'none');
-        });
-        pageSegments.press.animate({ 'opacity': 0 }, 300, 'linear', function () {
-            pageSegments.press.css('display', 'none');
-        });
-        pageSegments.contact.animate({ 'opacity': 0 }, 300, 'linear', function () {
-            pageSegments.contact.css('display', 'none');
+        Object.keys(pageSegments).forEach(function (page) {
+
+            pageSegments[page].css({
+                display: 'none',
+                opacity: 0
+            });
+
         });
 
         pageSegments.privacy.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
@@ -668,13 +696,18 @@ function RevealPage(pageSegment) {
     }
     else {
 
+        Object.keys(pageSegments).forEach(function (page) {
+
+            pageSegments[page].css({
+                display: 'block',
+                opacity: 1
+            });
+
+        });
+
         pageSegments.privacy.animate({ 'opacity': 0 }, 300, 'linear', function () {
             pageSegments.privacy.css('display', 'none');
         });
-
-        pageSegments.about.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
-        pageSegments.press.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
-        pageSegments.contact.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
 
     }
 

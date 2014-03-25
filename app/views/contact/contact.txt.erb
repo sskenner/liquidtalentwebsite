@@ -1,14 +1,8 @@
 Message from LiquidTalent.com
-
 <%= @mail[:message] %>
 
 Name:
 <%= @mail[:name] %>
-
-<% if @mail[:phone].gsub(/\s+/, '') != '' %>
-Phone:
-<%= @mail[:phone] %>
-<% end %>
 
 Email:
 <%= @mail[:email] %>

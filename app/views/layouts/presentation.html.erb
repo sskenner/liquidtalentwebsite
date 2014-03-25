@@ -24,28 +24,28 @@
 <body>
 
 <% if params[:code] %>
-<script>
-    $(document).ready(function () {
-        var code = getURLParameter('code');
+    <script>
+        $(document).ready(function () {
+            var code = getURLParameter('code');
 
-        $('#preloader').show();
+            $('#preloader').show();
 
-        $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
-            $('#presentation').css({ display: 'none' });
+            $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
+                $('#presentation').css({ display: 'none' });
+            });
+
+            $.ajax({
+                url: 'http://backend.liquidtalent.com/user/linkedin_token/?code=' + code,
+                error: function (error) {
+                    alert("Problem with connecting to the server.");
+                    console.log(error);
+                }
+            }).done(function (data) {
+                        var access_token = data['access_token'];
+                        linkedin_connect(access_token);
+                    });
         });
-
-        $.ajax({
-            url: 'http://backend.liquidtalent.com/user/linkedin_token/?code=' + code,
-            error: function (error) {
-                alert("Problem with connecting to the server.");
-                console.log(error);
-            }
-        }).done(function (data) {
-            var access_token = data['access_token'];
-            linkedin_connect(access_token);
-        });
-    });
-</script>
+    </script>
 
 <% end %>
 
@@ -58,13 +58,17 @@
   <div id="admin-panel">
     <div class="header">
       <a class="login green-button" href="javascript:loadPage('/login')">Login</a>
+
       <div id="user-info">
         <div>
           <div>
             <img src="" width="45" height="45"/>Welcome<br><span id="user-name"></span>
           </div>
           <div id="user-drop-down">
-            <a id="account-btn" href="javascript: userMenu();">Account<div class="t"></div></a>
+            <a id="account-btn" href="javascript: userMenu();">Account
+              <div class="t"></div>
+            </a>
+
             <div id="user-menu">
               <a href="#">Settings</a>
               <a href="javascript: logout();">Logout</a>
@@ -74,13 +78,34 @@
       </div>
     </div>
     <div class="navigation">
-      <a class="search link t" href="javascript:loadPage('/map')"></a>
-      <a class="projects link t" href="javascript:loadPage('/projects');"><div class="notification t">0</div></a>
-      <a class="messages link t" href="javascript:loadMessages('/messages');"><div class="notification t">0</div></a>
-      <a class="favorites link t" href="javascript:loadPage('/favorites');"></a>
-      <a class="stats link t" href="javascript:loadPage('/stats');"></a>
-      <a class="lti link t" href="javascript:showPlaceholder('LTI');"></a>
+      <a class="search link" href="javascript:loadPage('/map')">
+        <span class="icon"></span>
+        Search
+      </a>
+      <a class="projects link" href="javascript:loadPage('/projects');">
+        <span class="icon"></span>
+        Projects
+        <div class="notification">0</div>
+      </a>
+      <a class="messages link" href="javascript:loadMessages('/messages');">
+        <span class="icon"></span>
+        Messages
+        <div class="notification">0</div>
+      </a>
+      <a class="favorites link" href="javascript:loadPage('/favorites');">
+        <span class="icon"></span>
+        Favorites
+      </a>
+      <a class="stats link" href="javascript:loadPage('/stats');">
+        <span class="icon"></span>
+        Stats
+      </a>
+      <a class="settings link" href="javascript:showPlaceholder('Settings');">
+        <span class="icon"></span>
+        Settings
+      </a>
     </div>
+    <div class="logo-small"></div>
   </div>
 </div>
 
@@ -88,19 +113,18 @@
 
 <div id="presentation-header">
 
-  <div id="newsletter-sign-up">Sign up to our LiquidTalent newsletter!</div>
-
-  <div id="register-form">
-    <input type="text" id="register-form-email" class="field" placeholder="Email">
-    <a href="javascript:SubmitRegisterForm()" id="register-form-send" class="field green-button">Send</a>
+  <div id="newsletter-sign-up">
+    Sign up to our LiquidTalent newsletter!
+    <input type="text" id="register-form-email" class="field" placeholder="Enter Your Email">
+    <a href="javascript:SubmitRegisterForm()" id="register-form-send" class="green-button">Join</a>
   </div>
 
   <div id="social-twitter-container">
 
     <div class="appstore-buttons">
-      Get the app!
-      <div class="ios t"></div>
-      <div class="android t"></div>
+      Download the LiquidTalent Mobile App
+      <div class="ios"></div>
+      <div class="android"></div>
     </div>
 
     <a class="twitter-timeline" href="https://twitter.com/LiquidTalent" data-widget-id="437662684415135745" target="_blank">Tweets
@@ -117,17 +141,16 @@
 
   </div>
 
-  <div class="navigation">
-    <p>
-      <a href="javascript:RevealPage('about');" class="link green-button">About
-      </a><a href="javascript:RevealPage('press');" class="link green-button">Press
-    </a><a href="javascript:RevealPage('contact');" class="link green-button">Contact</a>
-    </p>
-  </div>
+  <p class="navigation">
+    <a href="javascript:RevealPage('about');" class="link green-button">About
+    </a><a href="javascript:RevealPage('team');" class="link green-button">Team
+  </a><a href="javascript:RevealPage('hiw');" class="link green-button">How it Works
+  </a><a href="javascript:RevealPage('contact');" class="link green-button">Contact</a>
+  </p>
 
 </div>
 
-<div id="about-page">
+<div class="page-segment t" title="about">
 
   <h1>About</h1>
 
@@ -150,12 +173,12 @@
 
         <div class="header-icon">
           <div class="social">
-            <a href="http://www.linkedin.com/company/liquidtalent" target="_blank" class="button in t"></a>
-            <a href="https://twitter.com/LiquidTalent" target="_blank" class="button tw t"></a>
-            <a href="https://www.facebook.com/liquidtalent" target="_blank" class="button fb t"></a>
-            <a href="https://plus.google.com/111892577057930602448/posts" target="_blank" class="button gl t"></a>
-            <a href="http://statigr.am/liquidtalent" target="_blank" class="button gr t"></a>
-            <div class="button ma t"></div>
+            <a href="http://www.linkedin.com/company/liquidtalent" target="_blank" class="button in"></a>
+            <a href="https://twitter.com/LiquidTalent" target="_blank" class="button tw"></a>
+            <a href="https://www.facebook.com/liquidtalent" target="_blank" class="button fb"></a>
+            <a href="https://plus.google.com/111892577057930602448/posts" target="_blank" class="button gl"></a>
+            <a href="http://statigr.am/liquidtalent" target="_blank" class="button gr"></a>
+            <div class="button ma"></div>
           </div>
         </div>
 
@@ -175,7 +198,8 @@
       <p>Through a mobile application, LiquidTalent helps organizations, small-businesses, and individuals discover
         talent based on relevant search criteria including skills, experience, education, hourly rate, reviews and
         ratings. Talent is hired on a per project basis and search results are displayed in the format of both a List
-        and a Map. The List showcases talent through a 22 second video and a personal presentation-description of up to 160
+        and a Map. The List showcases talent through a 22 second video and a personal presentation-description of up to
+        160
         characters. The Map displays the physical location of talent in relation to the user. LiquidTalent is your
         career in your pocket, a never before seen on-the-go professional platform that increases earning potential.
         LiquidTalent is establishing a new paradigm of professional connection and project execution.</p>
@@ -191,166 +215,374 @@
         seamless process for billing and executing legal contracts. The product will also feature LiquidPitch, a
         22-second elevator pitch explaining the what and why behind each user. With the proliferation of online video,
         professionals are becoming increasingly accustomed to marketing themselves through this rich format.</p>
-    </div>
 
-    <div class="presentation-description">
-      <div class="header">
-        <div class="header-image alex-image"></div>
-
-        <div class="header-text">
-          <div class="text-title">
-            Alex Abelin
-          </div>
-
-          <div class="text-tagline">
-            Co-Founder + CEO
-          </div>
-        </div>
-
-        <div class="header-icon only-two">
-          <div class="social only-two">
-            <a href="http://www.linkedin.com/in/alexabelin" target="_blank" class="button in t"></a>
-            <a href="https://twitter.com/alexabelin" target="_blank" class="button tw t"></a>
-          </div>
-        </div>
-
-        <div class="clear"></div>
-      </div>
-
-      <p>Alex Abelin, Co-Founder and CEO of LiquidTalent, comes from a background rooted in internet policy, external
-        relations and community affairs, and digital sales and marketing. Alex excels in his ability to develop, and
-        maintain, authentic relationships with a large number and variety of people. His intuitive nature and ability to
-        inspire and draw the best out in others makes him uniquely positioned to build LiquidTalent.</p>
-
-      <p>Prior to starting LiquidTalent, Alex worked for Google for over 7 years, from 2005 to 2013. His career was
-        divided between the Sales and Policy departments. In Sales, Alex worked with Fortune 500 companies under the
-        Financial Services vertical. In Policy, Alex held the sought-after position of External Affairs Manager. His
-        duties included building relationships with government officials, managing an investment fund for nonprofit
-        entities, acting as the intermediary between external membership organizations and schools, and producing Google
-        focused seminars and events for key stakeholders. Alex served as the chief architect in developing eight Google
-        sponsored outdoor WiFi networks; the most notable being the
-        <a href="http://chelseaimprovement.com/neighborhood/free_wifi.html">Chelsea CIC WiFi network</a>, the largest
-        contiguous NYC WiFi network ever created.</p>
-
-      <p>Alex is a proud member of the World Economic Forum Shapers, Dot2Dot, Summit Series, Nexus Summit and
-        StartingBloc. Alex loves traveling and exploring the world; he studied abroad in Florence, Italy and worked
-        abroad for Google in Dublin, Ireland. He founded GoogleCaresSF to provide philanthropic opportunities for Google
-        employees to serve the local Bay Area community. He's an avid fundraiser and supporter of Paul Newman's Hole in
-        the Wall charity and leads teams of runners. He is a proud alumni of UC Berkeley and the Haas School of
-        Business. Alex was born San Diego, and currently lives in New York City.</p>
-    </div>
-
-    <div class="presentation-description">
-      <div class="header">
-        <div class="header-image scott-image"></div>
-
-        <div class="header-text">
-          <div class="text-title">
-            Scott Annan
-          </div>
-
-          <div class="text-tagline">
-            Co-Founder + COO
-          </div>
-        </div>
-
-        <div class="header-icon only-two">
-          <div class="social only-two">
-            <a href="http://www.linkedin.com/in/scottannan" target="_blank" class="button in t"></a>
-            <a href="https://twitter.com/AIMbitious" target="_blank" class="button tw t"></a>
-          </div>
-        </div>
-
-        <div class="clear"></div>
-      </div>
-
-      <p>Scott Annan, Co-founder and COO, brings a strong background in finance and entrepreneurship to Liquid Talent.
-        Having begun his career as a financial analyst, Scott swiftly transitioned to the start-up world having
-        co-founded three companies and authored the personal-development book, AIMbitious, which has enjoyed great
-        success among college students and entrepreneurs. Scott also writes for the strategy section of Business
-        Insider.</p>
-
-      <p>Scott has a deep interest in mobile technology†and the development of mobile applications to make professional
-        and social interactions more frequent and valuable. Through his experience as a student, artist, author, and
-        finance professional, he has developed a keen sense for the ways to integrate design, technology, marketing and
-        financial viability to establish and grow compelling brands. And his passion for social entrepreneurship ensures
-        that all the endeavors of which he is a part give back to community.</p>
-
-      <p>Through AIMbitious, Scott is endorsed by <a href="http://www.zappos.com">Zappos.com</a> and their CEO, Tony
-        Hsieh, and by Chip Conley, best-selling author of the books PEAK and Emotional Equations and Head of Global
-        Hospitality at Airbnb. Scott is recognized by companies such as Zappos and Genentech for his ideas on creating
-        fulfillment in the workplace, and has also acted as a speech-writing consultant for presenters at TED Talks.<br>
-        Scott grew up outside of Boston and graduated from Colgate University in 2005 with a BA in History. He founded
-        <a href="http://AIMbitious.com">AIMbitious.com</a>, a dynamic news site and social network that features video
-        interviews, articles, and a social goal-setting application; MyCube, a personal safe that you can lock with your
-        iPhone, and Snoxx Socks, a snap-button athletic sock that he co-founded with Olympic Silver Medalist figure
-        skater Sasha Cohen. He currently resides in New York City.</p>
     </div>
 
   </div>
 
 </div>
+<div class="page-segment t" title="team">
 
-<div id="press-page">
+<h1>Team</h1>
 
-  <h1>Press</h1>
+<div class="title">Founders</div>
+<div class="teams">
+
+  <div class="team-description">
+
+    <div class="header">
+
+      <div class="header-image alex-image"></div>
+
+      <div class="header-text">
+        <div class="text-title">Alex Abelin</div>
+        <div class="text-tagline">Co-Founder + CEO</div>
+      </div>
+
+      <div class="header-icon social team">
+        <a href="https://twitter.com/alexabelin" target="_blank" class="button tw"></a>
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+    <p>
+
+      Alex comes from a background rooted in internet policy, external relations, community affairs and digital
+      marketing. Prior to running LiquidTalent, Alex worked for Google from 2005 to 2013. His career at Google was
+      divided between the Sales and Policy departments. As External Affairs Manager, his duties included building
+      relationships with government officials, managing an investment fund for nonprofit entities, and serving as
+      the chief architect in developing eight Google sponsored outdoor WiFi networks; the most notable being the
+      <a href="http://chelseaimprovement.com/neighborhood/free_wifi.html">Chelsea CIC WiFi network</a>, the largest
+      contiguous NYC WiFi network ever created. He is a proud alumni of UC Berkeley and the Haas School of Business.
+      Alex was born in San Diego, and currently lives in New York City. Alex is a committed optimist, a global
+      citizen and a tough ping pong player.
+
+    </p>
+
+  </div>
+  <div class="team-description">
+
+    <div class="header">
+
+      <div class="header-image scott-image"></div>
+
+      <div class="header-text">
+        <div class="text-title">Scott Annan</div>
+        <div class="text-tagline">Co-Founder + COO</div>
+      </div>
+
+      <div class="header-icon team social">
+        <a href="https://twitter.com/AIMbitious" target="_blank" class="button tw"></a>
+
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+    <p>
+
+      Scott brings a strong background in finance and entrepreneurship to LiquidTalent. He began his career as an
+      analyst and has started and co-founded four businesses. In 2010 Scott published the book,
+      <a href="http://AIMbitious.com">AIMbitious.com</a>, a self-development book for young professionals. Scott has
+      a deep interest in mobile technology and the development of mobile applications to make professional and
+      social interactions more frequent and valuable. Scott grew up outside of Boston and graduated from Colgate
+      University in 2005 with a BA in History. He currently lives in New York City.
+
+    </p>
+  </div>
+</div>
+
+<div class="title">Developers</div>
+<div class="teams">
+
+  <div class="team-description">
+
+    <div class="header">
+
+      <div class="header-image noel-image"></div>
+
+      <div class="header-text">
+        <div class="text-title">Noel Guinane</div>
+      </div>
+
+      <div class="header-icon social team">
+        <a href="https://twitter.com/bloodntreasure" target="_blank" class="button tw"></a>
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+    <p>
+
+      Trained at the Big Nerd Ranch in Atlanta, GA, Noel has been building iOS apps since 2008. His team at Blood &
+      Treasure wrote the code for LiquidTalent. If even the smallest bug made it into the beautiful creation that is
+      LiquidTalent, Noel is guilty as charged. Don't hesitate to fry him.
+
+    </p>
+
+  </div>
+  <div class="team-description">
+
+    <div class="header">
+
+      <div class="header-image yao-image"></div>
+
+      <div class="header-text">
+        <div class="text-title">Yao Jhongjing</div>
+      </div>
+
+      <div class="header-icon team social">
+        <a href="https://twitter.com/YaoYaozhongjing" target="_blank" class="button tw"></a>
+
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+    <p>
+
+      Yao is a web developer, designer and business analyst. He is the Founder of yaosome.com and has worked for Estex
+      and MyCube Safe. Yao graduated with a near perfect academic record from NYU-Poly with a Masters of Science in
+      Electrical Engineering. He specializes in project management, backend development, site architecting, and is
+      proficient in a series of programming languages.
+
+    </p>
+  </div>
+
+</div>
+
+<div class="title">Advisors</div>
+<div class="teams">
+
+  <div class="team-description">
+
+    <div class="header">
+
+      <div class="header-image paul-image"></div>
+
+      <div class="header-text">
+        <div class="text-title">Paul Pariser</div>
+      </div>
+
+      <div class="header-icon social team">
+        <a href="https://twitter.com/PaulPariser" target="_blank" class="button tw"></a>
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+    <p>
+
+      Paul is Co-Founder and Co-CEO of Taconic Investment Partners, an active developer and operator of commercial and
+      residential real estate property in New York City. He has been active in the Real Estate industry for over 36
+      years. He sits on various philanthropic and civic boards, and is the proud Founder of both the Meatpacking
+      District Improvement Associates and the Chelsea Improvement Company. Paul serves as a member of the Board of
+      Trustees of the Aspen Art Museum.
+
+    </p>
+
+  </div>
+  <div class="team-description">
+
+    <div class="header">
+
+      <div class="header-image jerry-image"></div>
+
+      <div class="header-text">
+        <div class="text-title">Jerry Colonna</div>
+      </div>
+
+      <div class="header-icon social team">
+        <a href="https://twitter.com/jerrycolonna" target="_blank" class="button tw"></a>
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+    <p>
+
+      Jerry is an executive coach who uses the skills he learned as a venture capitalist to help entrepreneurs. He draws
+      on his wide variety of experiences to help clients design a more conscious life and make needed changes to their
+      career to improve their performance and satisfaction. Previously he was a partner with JPMorgan Partners (JPMP),
+      the private­ equity arm of JP Morgan Chase. He joined JPMP from Flatiron Partners, which he launched 1996 with
+      partner, Fred Wilson. Flatiron became one of the most successful, early­ stage investment programs in the New York
+      City area. At Flatiron, Jerry was responsible for a wide range of the firm’s investments including Geocities Inc.,
+      Gamesville Inc., Vertical One Inc., and The New York Times Digital.
+
+    </p>
+
+  </div>
+
+  <div class="team-description">
+
+    <div class="header">
+
+      <div class="header-image barbara-image"></div>
+
+      <div class="header-text">
+        <div class="text-title">Barbara Chang</div>
+      </div>
+
+      <div class="header-icon social team">
+        <a href="https://twitter.com/barbchang" target="_blank" class="button tw"></a>
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+    <p>
+
+      Barbara is currently drawing upon her more than 25 years of nonprofit management experience to launch a new
+      venture involving skills-based assessment and training for non-degreed job candidates. Prior to this work, Barbara
+      served as Executive Vice President of Per Scholas, the largest IT workforce development organization in New York
+      City, where she managed the fundraising and training programs. She also has held executive positions in NPower
+      National and NPower New York, a federation of 12 nonprofits dedicated to helping other nonprofits use technology
+      effectively in their communities. Barbara holds a master’s degree in administration from the University of North
+      Carolina–Chapel Hill and a bachelor’s degree from Johns Hopkins University.
+
+    </p>
+
+  </div>
+  <div class="team-description">
+
+    <div class="header">
+
+      <div class="header-image michael-image"></div>
+
+      <div class="header-text">
+        <div class="text-title">Michael Skolnik</div>
+      </div>
+
+      <div class="header-icon social team">
+        <a href="https://twitter.com/michaelskolnik" target="_blank" class="button tw"></a>
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+    <p>
+
+      Michael is a 21st century civil rights leader. As the Political Director to hip-hop pioneer Russell Simmons and
+      President of GlobalGrind.com, an online destination founded by Simmons with over 6.5 million viewers per month,
+      Michael is a leading voice for young America. A trailblazer of social media with 120,000 followers on twitter,
+      Michael has led national conversations about the death of Trayvon Martin and the subsequent trial of George
+      Zimmerman, the Boston Marathon bombings, the rise of violence in Chicago, America’s relationship with race and the
+      Obama presidency, amongst many other topics. Michael regularly discusses the aforementioned topics, current
+      events, and how they affect his generation on CNN, MSNBC, Fox News, NPR and HLN, to name a few media outlets.
+      Michael serves on the Board of Directors for The Trayvon Martin Foundation and the Drug Policy Alliance. He is a
+      graduate of UCLA and the proud father of Mateo Ali.
+
+    </p>
+
+  </div>
+
+  <div class="team-description">
+
+    <div class="header">
+
+      <div class="header-image prem-image"></div>
+
+      <div class="header-text">
+        <div class="text-title">Prem Ramaswami</div>
+      </div>
+
+      <div class="header-icon social team">
+        <a href="https://twitter.com/premr" target="_blank" class="button tw"></a>
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+    <p>
+
+      Prem has been a Product Manager at Google since 2006 working on a wide array of projects from Google Checkout, the
+      Internet Bus Project in India, Network Infrastructure and the Make the Web Faster Project, Google.org's Crisis
+      Response team, and most recently, Google Search. Prior to Google, Prem was a system's engineer at MIT Lincoln
+      Laboratory. Prem is a graduate of Carnegie Mellon with a degree in Computer and Biomedical Engineering and
+      received an MBA from the Harvard Business School.
+
+    </p>
+
+  </div>
+  <div class="team-description">
+
+    <div class="header">
+
+      <div class="header-image jason-image"></div>
+
+      <div class="header-text">
+        <div class="text-title">Jason Pollock</div>
+      </div>
+
+      <div class="header-icon social team">
+        <a href="https://twitter.com/jason_pollock" target="_blank" class="button tw"></a>
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+    <p>
+
+      Jason is a filmmaker, writer and digital producer & consultant for brands and organizations. He is the
+      writer/producer/director of the award winning documentary, The Youngest Candidate, which follows four teens
+      running for public office in America. Pollock has built an online audience of 100,000 Twitter followers and was
+      recently listed as one of the top 140 most influential people on twitter in a report that was picked up by The New
+      York Times, the BBC, Newsweek, and The Guardian. PC Magazine also featured Pollock in their list of the ‘100
+      People To Follow On Twitter’. Prior to making The Youngest Candidate, Pollock was Michael Moore’s executive
+      assistant for three years. He worked with him from 2003-2006 and aided Moore with Dude Where’s My Country,
+      Fahrenheit 9/11, and Slacker Uprising. Pollock is now writing and developing film and television projects in Los
+      Angeles with his dog Rosa and consults a roster of major brands and clients on digital media strategy.
+
+    </p>
+
+  </div>
+
+</div>
+
+</div>
+<div class="page-segment t" title="hiw">
+
+  <h1>How it Works</h1>
 
   <div class="container">
-    <div class="presentation-description">
-      <h3>Press Article Title</h3>
-
-      <p>February 11, 2014</p>
-
-      <div>
-        <div class="left-col">
-          <img src="<%= asset_path "presentation/press.jpg" %>" alt="Press Image">
-        </div>
-
-        <div class="right-col">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium dapibus adipiscing. Vivamus
-            blandit aliquet odio, id tincidunt leo laoreet at. Suspendisse pharetra ullamcorper mollis. Integer eu
-            fermentum ante. Quisque vel accumsan lectus. Maecenas bibendum nunc ac urna ultricies, et molestie nisl
-            posuere. Quisque vitae tincidunt mauris. Vivamus lacinia convallis malesuada. In mollis ornare orci non
-            feugiat. Vivamus pretium vitae dolor vel euismod. Mauris venenatis neque sit amet sem placerat, id rhoncus
-            metus lobortis. Mauris placerat porta nulla eu mattis. Curabitur a purus ut sapien facilisis gravida. Nulla
-            ipsum erat, tincidunt at suscipit sit amet, placerat ac turpis. Proin posuere metus felis, in sollicitudin
-            erat euismod nec.</p>
-
-          <p>Sed interdum diam libero, tincidunt eleifend purus scelerisque sit amet. Aliquam laoreet blandit odio eu
-            facilisis. Donec id ullamcorper velit, id pellentesque metus. Praesent et libero lorem. Maecenas velit mi,
-            pulvinar in arcu id, faucibus luctus dui. Mauris malesuada ipsum a fermentum rutrum. Phasellus sem purus,
-            sodales non lectus non, convallis tempor nibh. Phasellus nibh dolor, gravida ac volutpat ac, tristique non
-            metus.</p>
-        </div>
-
-        <div class="clear"></div>
-      </div>
+    <br><br>
+    <div class="video-container">
+      <div class="play-btn"></div>
+      How LiquidTalent works.
     </div>
   </div>
 
 </div>
-
-<div id="contact-page">
+<div class="page-segment t" title="contact">
 
   <h1>Contact</h1>
 
-  <div class="container">
+  <div class="contact-container">
     <div id="contact-form">
-      <input type="text" class="name field" placeholder="Name *">
-      <input type="text" class="email field" placeholder="Email *">
-      <input type="text" class="phone field" placeholder="Phone Number">
-      <input type="text" class="reason field" placeholder="Reason For Contact">
-      <textarea class="message field" placeholder="Message *"></textarea>
+      <div class="name-email">
+        <input type="text" class="name field" placeholder="Name">
+        <input type="text" class="email field" placeholder="Email">
+      </div>
+      <textarea class="message field" placeholder="Message"></textarea>
       <a href="javascript:SubmitContactForm()" class="contact green-button">Contact</a>
       <img src="<%= asset_path "main/loader.gif" %>" alt="contact" class="loader">
     </div>
   </div>
 
 </div>
-
-<div id="privacy-page">
+<div class="page-segment t" title="privacy">
   <h1>Privacy</h1>
-
   <div class="container">
     <div class="presentation-description">
       <p>
@@ -513,26 +745,30 @@
 <div id="footer">
 
   <div class="appstore-buttons">
-    <div class="ios t"></div>
-    <div class="android t"></div>
+    <div class="ios"></div>
+    <div class="android"></div>
   </div>
 
-  <div class="navigation">
-    <p>
-      <a href="javascript:RevealPage('about');" class="link green-button">About
-      </a><a href="javascript:RevealPage('press');" class="link green-button">Press
-    </a><a href="javascript:RevealPage('contact');" class="link green-button">Contact</a>
-    </p>
-    <a href="javascript:RevealPage('privacy');" class="link" id="privacy-toggle">Privacy</a>
-  </div>
+  <p class="navigation">
+    <a href="javascript:RevealPage('about');" class="link green-button">About
+    </a><a href="javascript:RevealPage('team');" class="link green-button">Team
+  </a><a href="javascript:RevealPage('hiw');" class="link green-button">How it Works
+  </a><a href="javascript:RevealPage('contact');" class="link green-button">Contact</a>
+  </p>
 
   <div class="social">
-    <a href="http://www.linkedin.com/company/liquidtalent" target="_blank" class="button in t"></a>
-    <a href="https://twitter.com/LiquidTalent" target="_blank" class="button tw t"></a>
-    <a href="https://www.facebook.com/liquidtalent" target="_blank" class="button fb t"></a>
-    <a href="https://plus.google.com/111892577057930602448/posts" target="_blank" class="button gl t"></a>
-    <a href="http://statigr.am/liquidtalent" target="_blank" class="button gr t"></a>
-    <div class="button ma t"></div>
+    <a href="http://www.linkedin.com/company/liquidtalent" target="_blank" class="button in"></a>
+    <a href="https://twitter.com/LiquidTalent" target="_blank" class="button tw"></a>
+    <a href="https://www.facebook.com/liquidtalent" target="_blank" class="button fb"></a>
+    <a href="https://plus.google.com/111892577057930602448/posts" target="_blank" class="button gl"></a>
+    <a href="http://statigr.am/liquidtalent" target="_blank" class="button gr"></a>
+    <div class="button ma"></div>
+  </div>
+
+  <div class="copy">
+    &copy;2014 LiquidTalent -
+    <a href="javascript:RevealPage('privacy');" class="link" id="privacy-toggle">Privacy</a> |
+    <a href="javascript:RevealPage('privacy');" class="link" id="privacy-toggle">Terms</a>
   </div>
 
 </div>

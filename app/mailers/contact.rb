@@ -5,7 +5,7 @@ class Contact < ActionMailer::Base
   def contact (mail)
 
     @mail = mail
-    mail(from: @mail[:email], to: 'ahoy@bloodandtreasure.com', subject: 'Message from LiquidTalent.com: ' + @mail[:subject])
+    mail(from: @mail[:email], to: 'ahoy@bloodandtreasure.com', subject: 'Message from LiquidTalent.com')
 
   end
 
