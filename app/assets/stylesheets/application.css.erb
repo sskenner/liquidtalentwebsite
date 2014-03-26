@@ -62,7 +62,6 @@ input, textarea {
     appearance: none;
     border: 0;
     font-family: 'main', Helvetica, sans-serif;
-    text-transform: uppercase;
 }
 ::-webkit-input-placeholder { color: #000; }
 :-moz-placeholder { color: #000; }
@@ -106,7 +105,7 @@ a:hover { color: #000; }
     text-align: center;
     line-height: 60px;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 400;
     margin-bottom: 20px;
     background: hsla(0, 0%, 100%, 0.6);
     border-bottom: 1px solid #FFF;
@@ -127,7 +126,7 @@ a:hover { color: #000; }
     height: 40px;
     line-height: 43px;
     padding: 0px 20px;
-    margin-top: 10px;
+    margin: 10px 0px 0px 10px;
     font-weight: 100;
     float:left;
     opacity: 0;
@@ -137,11 +136,10 @@ a:hover { color: #000; }
 .text-field {
     display: block;
     text-indent: 20px;
-    background-color: #FFF;
-    box-shadow: 0px 0px 10px 0px #CCC;
+    background-color: hsla(0, 0%, 100%, 0.3);
+    border: 1px solid #FFF;
     outline: 0;
 }
-.text-field.pass-field { font-family: 'password'; }
 
 .lt-drop {
     width: 21px;
@@ -180,7 +178,9 @@ a:hover { color: #000; }
 .avatar {
     display: block;
     cursor: pointer;
-    border-radius: 0px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    box-shadow: -1px 1px 3px 0px #AAA;
 }
 
 .green-button {
@@ -253,8 +253,10 @@ a:hover { color: #000; }
     bottom: 34%;
     position: absolute;
     text-align: center;
-    padding: 18px;
+    padding: 14px 18px;
     font-size: 20px;
+    border: 6px double #FFF;
+    font-weight: 400;
 }
 #admin-panel .navigation .link {
     display: block;
@@ -337,24 +339,23 @@ a:hover { color: #000; }
 }
 
 .login-container {
-    width: 400px;
+    width: 335px;
     position: relative;
     display: inline-block;
     vertical-align: top;
-    margin-top: 100px;
+    margin-top: 30px;
 }
-#sign-in.login-container { margin-left: 65px; }
+#sign-in.login-container,
 #sign-up.login-container { margin-left: 30px; }
 
 .login-container .title {
     font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
 }
 .login-container .text-field {
-    width: 400px;
-    height: 55px;
+    width: 335px;
+    height: 57px;
     line-height: 58px;
     font-size: 20px;
     margin-bottom: 10px;
@@ -366,34 +367,14 @@ a:hover { color: #000; }
 }
 .login-container .signup-button {
     display: block;
-    width: 399px;
-    height: 55px;
-    background: url(<%= asset_path "sign-up/buttons-linkedin-signup.png" %>);
+    width: 335px;
+    height: 61px;
     margin-bottom: 10px;
 }
-.login-container .linkedin-sign-up { background-position: 0px 0px; }
-.login-container .linkedin-sign-up:hover { background-position: 0px -55px; }
-.login-container .sign-up { background-position: 399px 0px; }
-.login-container .sign-up:hover { background-position: 399px -55px; }
-
-
-#logo-header {
-    position: relative;
-    background: rgba(255, 255, 255, 0.6);
-    box-shadow: 0px 5px 10px 0px #CCC;
-}
-#logo-header #logo-login {
-    margin: 0 auto 40px auto;
-    padding: 18px 0;
-    width: 493px;
-}
-#logo-header .black-button {
-    padding: 12px 30px;
-    position: absolute;
-    right: 0;
-    top: 20px;
-    font-size: 18px;
-}
+.login-container .linkedin-sign-up { background: url(<%= asset_path 'new/signup/linkedin-login.png' %>); }
+.login-container .sign-up { background: url(<%= asset_path 'new/signup/signup.png' %>); }
+.login-container .linkedin-sign-up:hover,
+.login-container .sign-up:hover { background-position: 0px -61px; }
 
 /****** Sign Up Form ******/
 
@@ -677,9 +658,6 @@ a:hover { color: #000; }
     height: 75px;
     display: block;
     margin: 40px auto 10px auto;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    box-shadow: -1px 1px 3px 0px #AAA;
 }
 
 /***********************************************************************************************************************
@@ -851,7 +829,7 @@ h1 {
     display: inline-block;
     text-align: left;
     border: 1px solid #1f9966;
-    text-transform: uppercase;
+    color: #1b915f;
     vertical-align: middle;
 }
 #newsletter-sign-up #register-form-send {
@@ -865,6 +843,10 @@ h1 {
     position: relative;
     top: 2px;
 }
+#newsletter-sign-up #register-form-send::-webkit-input-placeholder { color: #1b915f !important; }
+#newsletter-sign-up #register-form-send:-moz-placeholder { color: #1b915f !important; }
+#newsletter-sign-up #register-form-send::-moz-placeholder { color: #1b915f !important; }
+#newsletter-sign-up #register-form-send:-ms-input-placeholder { color: #1b915f !important; }
 
 #about-page, #press-page, #contact-page {
     opacity: 1;
@@ -918,16 +900,8 @@ h1 {
     background-repeat: no-repeat;
     background-image: url(<%= asset_url "new/presentation/app-stores-large.png" %>);
 }
-.appstore-buttons .ios {
-    cursor: pointer;
-    background-position: 0px 0px;
-    margin-top: 45px !important;
-}
-.appstore-buttons .ios:hover { background-position: 0px -91px; }
-.appstore-buttons .android {
-    cursor: auto;
-    background-position: -226px 0px;
-}
+.appstore-buttons .ios { margin-top: 45px !important; }
+.appstore-buttons .android { background-position: -226px 0px; }
 
 #presentation .navigation {
     text-align: center;
@@ -1201,8 +1175,8 @@ h3 {
 
 .list-item .lt-drop {
     position: absolute;
-    top: 42%;
-    right: 10px;
+    top: 16px;
+    right: 165px;
 }
 .list-item .stars {
     width: 75px;
@@ -1241,6 +1215,7 @@ h3 {
     color: #FFF;
     padding: 16px 20px;
     cursor: pointer;
+    display: none;
 }
 
 /***********************************************************************************************************************
@@ -1495,8 +1470,10 @@ h3 {
     text-align: center;
 }
 
-#hire #avatar {
-    max-width: 150px;
+#hire .avatar {
+    margin: 60px auto auto auto;
+    width: 100px;
+    height: 100px;
 }
 
 #hire-title {

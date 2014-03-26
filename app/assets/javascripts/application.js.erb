@@ -156,9 +156,6 @@ $(window).on('load', function () {
 
                 };
 
-                $('#background').addClass('disabled');
-                $('#admin-panel').addClass('disabled');
-
             }
 
         },
@@ -571,12 +568,8 @@ function Response(response) {
 
 function loadPage(page) {
 
-    if (currentUser === null) {
-        $('.hiw').css({ display: 'none', opacity: 0 });
-    }
-    else {
-        $('.hiw').removeProp('style');
-    }
+    if (currentUser === null) { $('.hiw').css({ display: 'none', opacity: 0 }); }
+    else { $('.hiw').each(function (i, e) { $(e).removeAttr('style'); }); }
 
     Object.keys(pages).forEach(function (p) {
         if (pages[p].href === page.replace(/\?.+$/, '')) {
@@ -584,9 +577,13 @@ function loadPage(page) {
         }
     });
 
-    if (page === 'home') {
-        pages.home.load();
-        return true;
+    if (page === '/login') {
+        currentUser = prompt('Please enter your invitation code to proceed.', 'Invitation code');
+        if (currentUser !== '01owmbau-wnr098bwi-3298571ns') {
+            currentUser = null;
+            setTimeout(function () { alert('The invitation code is either invalid or out of date.');}, 1200);
+            return true;
+        }
     }
 
     if (pages.active !== '') {
@@ -743,10 +740,6 @@ function login() {
     });
 
 }
-
-/****** Search ******/
-
-var sF;
 
 /***********************************************************************************************************************
 / SignUp
@@ -1064,35 +1057,37 @@ function listSearch(providers) {
 
     providers.forEach(function (user) {
 
-            if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
-            else { user.state = 'NY'; }
+        user.hourly_rate = calculateCost(user.hourly_rate);
 
-            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
+        if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+        else { user.state = 'NY'; }
 
-            $('#first-item .avatar').attr('src', user.avatar_url);
-            $('#first-item .play-button').attr('onclick', 'playVideo();');
+        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
 
-            $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
-            $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
+        $('#first-item .avatar').attr('src', user.avatar_url);
+        $('#first-item .play-button').attr('onclick', 'playVideo();');
 
-            if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
-            else { $('#first-item .lt-drop').addClass(user.badge); }
+        $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
+        $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
+
+        if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+        else { $('#first-item .lt-drop').addClass(user.badge); }
 
 //            if (user.video_url === null) { $('#first-item .play-button').addClass('disabled'); }
 //            else { $('#first-item .play-button').removeClass('disabled'); }
 
-            $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
-            $('#first-item .description').html(user.description);
+        $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+        $('#first-item .description').html(user.description);
 
-            $('#first-item .distance').html('$' + user.hourly_rate + '.00');
+        $('#first-item .distance').html(user.hourly_rate);
 
-            if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite-button').addClass('active'); }
-            else { $('#first-item .favorite-button').removeClass('active'); }
-            $('#first-item .favorite-button').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
+        if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite-button').addClass('active'); }
+        else { $('#first-item .favorite-button').removeClass('active'); }
+        $('#first-item .favorite-button').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
-            $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
+        $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
 
-        });
+    });
 }
 
 function showUserInfo() {
@@ -1559,7 +1554,7 @@ function checkState (state) {
 }
 
 function loadFavorites() {
-    if(currentUser == null) {
+    if(currentUser === null) {
         showPlaceholder('Favorites');
         return false;
     }
@@ -1579,6 +1574,7 @@ function loadFavorites() {
         data['response'].forEach(function (item) {
             user = item['provider'];
 
+            user.hourly_rate = calculateCost(user.hourly_rate);
             user.state = checkState(user.state);
 
             user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
@@ -1591,19 +1587,22 @@ function loadFavorites() {
             if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
             else { $('#first-item .lt-drop').addClass(user.badge); }
 
-//            if (user.video_url === null) { $('#first-item .play-button').addClass('disabled'); }
-//            else { $('#first-item .play-button').removeClass('disabled'); }
+//          if (user.video_url === null) { $('#first-item .play-button').addClass('disabled'); }
+//          else { $('#first-item .play-button').removeClass('disabled'); }
 
             $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
             $('#first-item .description').html(user.description);
 
-            $('#first-item .distance').html('$' + user.hourly_rate + '.00');
+            $('#first-item .distance').html(user.hourly_rate);
 
             if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite-button').addClass('active'); }
             else { $('#first-item .favorite-button').removeClass('active'); }
             $('#first-item .favorite-button').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
             $('#first-item .removeFavorite').attr('id', item['favourite_id']);
+
+            $('#first-item .message').attr('onclick', 'back="favorites"; loadChat(' + user.id + ');');
+            $('#first-item .hire').attr('onclick', 'back="favorites"; providerId=' + user.id + '; loadPage("/hire");');
 
             $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
 
@@ -1634,6 +1633,12 @@ function removeFavorite(favourite_id) {
         }
 
     });
+}
+
+function ToggleFavoriteDelete () {
+
+    $('.removeFavorite').css('display', $('.removeFavorite').css('display') === 'block' ? 'none' : 'block');
+
 }
 
 function loadStats(term) {
@@ -1806,6 +1811,28 @@ function loadProfile() {
             $('.hire-button-profile').attr('onclick', 'back="profile"; providerId=' + user.id + '; loadPage("/hire");');
         }
     });
+}
+
+function calculateCost (rate) {
+
+    if (rate > 1) { rate = 1; }
+    if (rate > 15) { rate = 2; }
+    if (rate > 25) { rate = 3; }
+    if (rate > 75) { rate = 4; }
+    if (rate > 200) { rate = 5; }
+
+    switch (rate) {
+
+        case 1: rate = '$'; break;
+        case 2: rate = '$$'; break;
+        case 3: rate = '$$$'; break;
+        case 4: rate = '$$$$'; break;
+        case 5: rate = '$$$$$'; break;
+
+    }
+
+    return rate;
+
 }
 
 /***** Video *****/
