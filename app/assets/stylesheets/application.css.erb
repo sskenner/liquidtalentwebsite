@@ -1156,6 +1156,7 @@ h3 {
     height: 320px;
     position: relative;
     bottom: 100px;
+    cursor: pointer;
 }
 
 .list-item .title {
@@ -1170,6 +1171,7 @@ h3 {
     font-size: 22px;
     font-weight: 700;
     text-transform: none;
+    cursor: pointer;
 }
 
 .list-item .description {
@@ -1608,7 +1610,13 @@ h3 {
     float: right;
     width: 156px;
     height: 54px;
+    margin-top: 5px;
     background: url(<%= asset_path "projects/message.png" %>);
+}
+
+.project .status {
+    display: inline-block;
+    margin-top: 5px;
 }
 
 .project .status-btn {
@@ -1618,6 +1626,9 @@ h3 {
     height: 54px;
 }
 
+.project .accept-decline {
+    float: right;
+}
 .project .status-btn.accept {
     background: url(<%= asset_path "projects/accept.png" %>);
 }
@@ -1632,4 +1643,83 @@ h3 {
 }
 .project .status-btn.pending {
     background: url(<%= asset_path "projects/pending.png" %>);
+}
+.project .completed-demander, .project .completed-provider {
+    width: 550px;
+    height: 54px;
+    color: #fff;
+    background: #000;
+    font-size: 1.1em;
+    text-align: center;
+}
+.project .completed-demander > div, .project .completed-provider > div {
+    padding-top: 20px;
+}
+
+
+
+/***********************************************************************************************************************
+/   Rates
+/**********************************************************************************************************************/
+#rate {
+    display: none;
+    margin: 15px;
+    background: transparent;
+    border: 1px solid #fff;
+}
+
+#rate-left-column {
+    width: 150px;
+    height: 316px;
+    float: left;
+    background: #fff;
+}
+
+#rate .avatar {
+    margin: 15px;
+}
+
+#rate .budget {
+    margin: 15px;
+    padding-top: 10px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+#rate .budget-title {
+    font-size: 0.9em;
+}
+
+#rate-right-column {
+    float: right;
+    width: 555px;
+    background: transparent;
+}
+
+#rate .rate-title {
+    margin-top: 15px;
+    font-size: 1.3em;
+}
+
+#rate .rate-stars {
+    width: 288px;
+    height: 52px;
+    margin: 15px 0;
+    background: url(<%= asset_path "new/projects/stars.png" %>);
+}
+
+#rate .rate-star {
+    width: 57.6px;
+    height: 52px;
+    float: left;
+    cursor: pointer;
+}
+
+#review {
+    width: 98%;
+    height: 100px;
+    padding: 15px;
+    font-size: 1.1em;
+    background: #fff;
+    box-sizing: border-box;
 }

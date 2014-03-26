@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    Stripe.setPublishableKey('pk_04W9qdZjQwc3UQ9DKkJbvpcr4LYpi');
+    Stripe.setPublishableKey('pk_test_UvrWBFBIHsOsHo7ahgGm0va4');
 
     jQuery(function($) {
         $('#cc-form').submit(function(event) {
@@ -64,7 +64,7 @@
     <button type="submit" class="green-button signup-form-sp-button">Confirm</button>
   </form>
 
-  <form method="post" id="booking-form">
-    <button onclick="javascript:confirmBooking(); return false;" class="green-button signup-form-sp-button">Confirm</button>
-  </form>
+  <div id="booking-form">
+    <a href="#" onclick="confirmBooking(); return false;" class="green-button signup-form-sp-button">Confirm</a>
+  </div>
 </div>
