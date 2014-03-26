@@ -108,6 +108,10 @@ a:hover { color: #000; }
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
+    background: hsla(0, 0%, 100%, 0.6);
+    border-bottom: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+    padding-right: 10px;
 }
 #title .black-button {
     float: right;
@@ -140,15 +144,15 @@ a:hover { color: #000; }
 .text-field.pass-field { font-family: 'password'; }
 
 .lt-drop {
-    width: 102px;
-    height: 23px;
-    background: url(<%= asset_path "main/drops.png" %>);
+    width: 21px;
+    height: 28px;
+    background: url(<%= asset_path "new/main/drops.png" %>);
 }
 .lt-drop.hidden { display: none; }
-.lt-drop.blue { background-position: 102px 0px; }
-.lt-drop.bronze { background-position: 102px 23px; }
-.lt-drop.silver { background-position: 102px 46px; }
-.lt-drop.gold { background-position: 102px 69px; }
+.lt-drop.blue { background-position: 0px 0px; }
+.lt-drop.bronze { background-position: -23px 0px; }
+.lt-drop.silver { background-position: -45px 0px; }
+.lt-drop.gold { background-position: -66px 0px; }
 
 .star {
     vertical-align: top;
@@ -175,7 +179,6 @@ a:hover { color: #000; }
 
 .avatar {
     display: block;
-    background: #000;
     cursor: pointer;
     border-radius: 0px;
 }
@@ -224,17 +227,10 @@ a:hover { color: #000; }
 }
 #background {
     position: absolute;
-    height: 680px;
-    width: 740px;
-    top: 10px;
-    right: 10px;
+    height: 700px;
+    width: 750px;
+    right: 0px;
     overflow: hidden;
-}
-#background.disabled {
-    top: 0%;
-    right:0%;
-    width: 100%;
-    height: 100%;
 }
 #admin-panel {
     position: relative;
@@ -245,10 +241,9 @@ a:hover { color: #000; }
     border: 1px solid #FFF;
     bottom: 10px;
 }
-#admin-panel.disabled { display: none; }
 #admin-panel .header {
     padding: 10px;
-    height: 180px;
+    min-height: 180px;
     position: relative;
 }
 
@@ -662,63 +657,29 @@ a:hover { color: #000; }
 
 #user-info {
     display: none;
-    background: #fff;
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
-}
-#user-info > div {
-    padding: 10px 10px 10px 0;
-    line-height: 1.5;
-}
-
-#user-info img {
-    float: left;
-    margin-right: 10px;
-}
-
-#user-drop-down {
-    margin-top: 15px;
-    margin-left: 10px;
-}
-
-#user-menu {
-    display: none;
-    width: 170px;
-    position: absolute;
-    margin: 0;
-    z-index: 999999;
-}
-#user-menu a {
-    display: block;
-    padding: 12px 0;
+    width: 150px;
+    margin: 40px auto 30px auto;
     text-align: center;
-    background: #fff;
-    margin-bottom: 1px;
 }
-#account-btn {
-    position: relative;
+#user-info .name,
+#user-info .location {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 16px;
+}
+#user-info .location {
+    font-size: 14px;
+    color: #888;
+}
+
+#user-info .avatar {
+    width: 75px;
+    height: 75px;
     display: block;
-    margin: 0;
-    padding: 6px 0 0 27px;
-    color: #fff;
-    font-size: 20px;
-    height: 40px;
-    background: url(/assets/main/gradient-green.png);
-}
-
-#account-btn div {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 40px;
-    height: 40px;
-    background: url(<%= asset_path 'admin-panel/button-drop-down.jpg' %>);
-    background-position: 0px 0px;
-}
-
-#account-btn:hover div {
-    background-position: 0px -40px;
+    margin: 40px auto 10px auto;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    box-shadow: -1px 1px 3px 0px #AAA;
 }
 
 /***********************************************************************************************************************
@@ -1169,7 +1130,6 @@ h3 {
     width: 100%;
     height: 100%;
 }
-
 #map-overlay {
     width: 100%;
     height: 100%;
@@ -1180,59 +1140,47 @@ h3 {
 }
 
 .list-item {
-    margin-bottom: 10px;
-}
-
-#map-overlay .base, .list-item .base {
-    width: 640px;
-    height: 150px;
+    top: 20px;
+    width: 750px;
+    border-bottom: 1px solid #FFF;
+    overflow: hidden;
+    height: 164px;
     background: #FFF;
-    position: relative;
-    left: 45px;
-    top: 220px;
-    border-bottom: 1px solid #000;
     cursor: auto;
     word-wrap: break-word;
+    position: relative;
+    margin-bottom: 1px;
+}
+.list-item .avatar {
+    width: 320px;
+    height: 320px;
+    position: relative;
+    bottom: 100px;
 }
 
-.list-item .base {
-    top: 20px;
-    border-bottom: none;
-    box-shadow: 0px 0px 10px 0px #CCC;
-}
-
-#map-overlay .avatar, .list-item .avatar {
-    width: 100px;
-    height: 100px;
-}
-#map-overlay .favorite-button,
-#map-overlay .play-button,
-.list-item .favorite-button,
-.list-item .play-button {
-    display: inline-block;
-    vertical-align: top;
-    width: 50px;
-    height: 50px;
-}
-
-#map-overlay .title, .list-item .title {
+.list-item .title {
     position: absolute;
-    top: 10px;
-    left: 110px;
+    top: 20px;
+    left: 340px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
 }
-#map-overlay .title .name, .list-item .title .name { font-size: 24px; }
+.list-item .title .name {
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: none;
+}
 
-#map-overlay .description,
 .list-item .description {
     position: absolute;
-    top: 60px;
-    left: 110px;
-    width: 405px;
+    top: 80px;
+    left: 340px;
+    width: 340px;
     font-size: 18px;
     line-height: 24px;
 }
 
-#map-overlay .linkedin-icon,
 .list-item .linkedin-icon {
     width: 30px;
     height: 30px;
@@ -1243,77 +1191,57 @@ h3 {
     opacity: 0;
 }
 
-#map-overlay .distance,
 .list-item .distance {
-    top: 10px;
+    top: 20px;
     position: absolute;
-    right: 10px;
+    right: 95px;
     font-size: 18px;
+    font-weight: 700;
 }
 
-#map-overlay .lt-drop,
 .list-item .lt-drop {
     position: absolute;
     top: 42%;
     right: 10px;
 }
-#map-overlay .stars,
 .list-item .stars {
     width: 75px;
     height: 14px;
     position: absolute;
     right: 10px;
     bottom: 10px;
-}
-
-.list-item .play-button-favorite {
-    display: inline-block;
-    vertical-align: top;
-    width: 100px;
-    height: 50px;
-    background: url(<%= asset_path "favorites/play.png" %>);
-}
-
-.list-item .message-button-favorite {
-    display: inline-block;
-    vertical-align: top;
-    width: 200px;
-    height: 50px;
-    margin-left: -3px;
-    background: #000 url(<%= asset_path "favorites/button-message.png" %>) top center no-repeat;
-}
-.list-item .message-button-favorite:hover {
-    background-position: 0px -50px;
-    cursor: pointer;
-}
-
-.list-item .hire-button-favorite {
-    display: inline-block;
-    vertical-align: top;
-    width: 200px;
-    height: 50px;
-    margin-left: -4px;
-    background: url(<%= asset_path "favorites/button-hire.png" %>);
-}
-.list-item .hire-button-favorite:hover {
-    background-position: 0px -50px;
-    cursor: pointer;
-}
-
-/***********************************************************************************************************************
-/   Favorites
-/**********************************************************************************************************************/
-.removeFavorite {
     display: none;
+}
+
+.list-item .message,
+.list-item .hire {
+    background: url(<%= asset_path 'new/favorites/buttons.png' %>);
+    width: 68px;
+    height: 81px;
     position: absolute;
-    right: 0;
+    cursor: pointer;
+}
+.list-item .message {
+    right: 0px;
+    top: 0px;
+}
+.list-item .message:hover { background-position: 0px -81px; }
+.list-item .hire {
+    right: 0px;
+    top: 82px;
+    background-position: -68px 0px;
+}
+.list-item .hire:hover { background-position: -68px -81px; }
+
+.list-item .removeFavorite {
+    position: absolute;
+    left: 0;
     top: 0;
     background: #000;
     color: #FFF;
-    padding: 10px 20px;
+    padding: 16px 20px;
     cursor: pointer;
 }
-
 
 /***********************************************************************************************************************
 /   Stats
@@ -1485,7 +1413,6 @@ h3 {
     background-position: 89px -57px;
 }
 
-
 /***********************************************************************************************************************
 /   Profile
 /**********************************************************************************************************************/
@@ -1631,8 +1558,6 @@ h3 {
     float: left;
     margin-right: 20px;
 }
-
-
 
 /***********************************************************************************************************************
 /   Projects

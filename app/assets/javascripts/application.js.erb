@@ -571,13 +571,11 @@ function Response(response) {
 
 function loadPage(page) {
 
-    if (currentUser !== null) {
-        $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
-            $('#presentation').css({ display: 'none' });
-        });
+    if (currentUser === null) {
+        $('.hiw').css({ display: 'none', opacity: 0 });
     }
-    else if ($('#presentation').css('display') === 'none') {
-        $('#presentation').css({ opacity: 0, display: 'block' }).animate({ opacity: 1 }, 1000, 'linear');
+    else {
+        $('.hiw').removeProp('style');
     }
 
     Object.keys(pages).forEach(function (p) {
@@ -588,7 +586,7 @@ function loadPage(page) {
 
     if (page === 'home') {
         pages.home.load();
-        return;
+        return true;
     }
 
     if (pages.active !== '') {
@@ -621,7 +619,7 @@ function createUser (data) {
     checkUnreadMessages();
     loadPage('/map');
 
-    if (currentUser.avatar_url === null) { currentUser.avatar_url = <%= asset_path "main/avatar.png" %>; }
+    if (currentUser.avatar_url === null) { currentUser.avatar_url = <%= asset_path "new/main/avatar.png" %>; }
 
 }
 
@@ -1033,7 +1031,7 @@ function mapSearch(providers) {
 
                 map.popUp.play.attr('onclick', 'playVideo();');
 
-                user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
+                user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
 
                 if (user.badge === 'no') { map.popUp.LTDrop.addClass('hidden'); }
                 else { map.popUp.LTDrop.addClass(user.badge); }
@@ -1069,7 +1067,7 @@ function listSearch(providers) {
             if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
             else { user.state = 'NY'; }
 
-            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
+            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
 
             $('#first-item .avatar').attr('src', user.avatar_url);
             $('#first-item .play-button').attr('onclick', 'playVideo();');
@@ -1099,13 +1097,17 @@ function listSearch(providers) {
 
 function showUserInfo() {
 
-    var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '/assets/main/avatar.png';
+    currentUser['state'] = checkState(currentUser['state']);
+    currentUser['city_name'] = (!currentUser['city_name'])? 'New York' : currentUser['city_name'];
+
+    var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : <%= asset_path '/assets/new/main/avatar.png' %>;
 
     $('#admin-panel .header .login').hide();
     $('#user-info').show();
 
-    $('#user-info img').attr('src', avatar);
-    $('#user-name').html(currentUser['name']);
+    $('#user-info .avatar').attr('src', avatar);
+    $('#user-info .name').html(currentUser['name']);
+    $('#user-info .location').html(currentUser['city_name'] + ', ' + currentUser['state']);
 }
 
 function createFavorite(userID, button) {
@@ -1387,7 +1389,7 @@ function loadMessages() {
                 '<div id="' + messages[i].sender.id + '" class="message-user">' +
                     '<div class="green-button' + ((messages[i].unread_messages > 0) ? ' active' : '') + '">' + messages[i].unread_messages + '</div>' +
                     '<a href="javascript:blockUser(' + messages[i].sender.id + ');" class="black-button t">x</a>' +
-                    '<img class="avatar" src="' + ((messages[i].avatar_url === undefined) ? '<%= asset_path "main/avatar.png" %>' : messages[i].sender.avatar_url) + '" alt="User Avatar">' +
+                    '<img class="avatar" src="' + ((messages[i].avatar_url === undefined) ? '<%= asset_path "new/main/avatar.png" %>' : messages[i].sender.avatar_url) + '" alt="User Avatar">' +
                     '<div class="name">' + messages[i].sender.name + '</div>' +
                 '</div>'
             );
@@ -1488,7 +1490,7 @@ function loadChat(user_id) {
 
                 '<div class="chat-box">' +
                     '<div class="title">' +
-                        '<img src="' + ((chat[i].sender.avatar_url === null) ? '<%= asset_path "main/avatar.png" %>' : chat[i].sender.avatar_url) + '" alt="User Avatar" class="avatar">' +
+                        '<img src="' + ((chat[i].sender.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : chat[i].sender.avatar_url) + '" alt="User Avatar" class="avatar">' +
                         '<div class="date">' + date + '</div>' +
                         '<div class="name">' + chat[i].sender.name + '</div>' +
                     '</div>' +
@@ -1549,6 +1551,13 @@ function sendNDA () {
 
 /***** Favorites *****/
 
+function checkState (state) {
+    if (state) { state = (state.length > 2)? states[state] : state.toUpperCase(); }
+    else { state = 'NY'; }
+
+    return state;
+}
+
 function loadFavorites() {
     if(currentUser == null) {
         showPlaceholder('Favorites');
@@ -1570,10 +1579,9 @@ function loadFavorites() {
         data['response'].forEach(function (item) {
             user = item['provider'];
 
-            if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
-            else { user.state = 'NY'; }
+            user.state = checkState(user.state);
 
-            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
+            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
 
             $('#first-item .avatar').attr('src', user.avatar_url);
 
@@ -1767,7 +1775,7 @@ function loadProfile() {
         if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
         else { user.state = 'NY'; }
 
-        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'main/avatar.png' %>' : user.avatar_url;
+        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
 
         $('#first-item .avatar').attr('src', user.avatar_url);
 
@@ -1941,7 +1949,7 @@ function loadProjects() {
                         userType = 'provider'
                     }
 
-                    $('#first-project .avatar').attr('src', user.avatar_url ? user.avatar_url : '<%= asset_path "main/avatar.png" %>');
+                    $('#first-project .avatar').attr('src', user.avatar_url ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
                     $('#first-project .name').html(user.name);
 
                     dueDate = new Date(item.booking.due_date * 1000);

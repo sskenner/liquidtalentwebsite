@@ -1,10 +1,10 @@
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  :address => 'mail.bloodandtreasure.com',
+  :address => 'smtp.gmail.com',
   :port => 587,
-  :domain => 'mail.bloodandtreasure.com',
-  :user_name => 'ahoy@bloodandtreasure.com',
-  :password => 'oinPDIeV@y.}',
-  :authentication => :login,
+  :domain => 'gmail.com',
+  :user_name => 'alex@liquidtalent.com',
+  :password => 'aba62583',
+  :authentication => 'plain',
   :enable_starttls_auto => true
 }
