@@ -20,7 +20,7 @@
 
 var loaders, pages;
 
-var currentUser = null, profileId = null, providerId = null, back = null, favorites = [], messages = [];
+var currentUser = null, profileId = null, providerId = null, bookingId = null, rate = 0, back = null, favorites = [], messages = [];
 var users = null;
 var global_info = null;
 var filter_settings = {
@@ -34,6 +34,7 @@ var filter_settings = {
     rate_to: {label: '5', value: 5},
     subcategories: []
 }
+var bookings = {};
 var booking = {
     budget: null,
     due_date: null,
@@ -402,7 +403,10 @@ $(window).on('load', function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
 
-                loadHire()
+                loadHire();
+
+                $( ".due-date" ).datepicker();
+                $( ".due-date" ).datepicker("option", "dateFormat", "yy-mm-dd");
             }
         },
 
@@ -431,7 +435,7 @@ $(window).on('load', function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
 
-                $('#total-amount').html(booking.budget);
+                $('#total-amount').html(bookings[bookingId].booking.budget);
 
                 if(currentUser.stripe_recipient_id == null) {
                     $('#bank-form').show();
@@ -451,6 +455,16 @@ $(window).on('load', function () {
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
 
                 loadProjects();
+            }
+        },
+
+        'rate': {
+            'href': '/rate',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                loadRate();
             }
         }
 
@@ -1095,7 +1109,7 @@ function showUserInfo() {
     currentUser['state'] = checkState(currentUser['state']);
     currentUser['city_name'] = (!currentUser['city_name'])? 'New York' : currentUser['city_name'];
 
-    var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : <%= asset_path '/assets/new/main/avatar.png' %>;
+    var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '<%= asset_path '/assets/new/main/avatar.png' %>';
 
     $('#admin-panel .header .login').hide();
     $('#user-info').show();
@@ -1929,19 +1943,22 @@ function confirmBooking() {
                 '&demander_id=' + currentUser.id +
                 '&provider_id=' + providerId +
                 '&budget=' + booking.budget +
-                '&due_date=' + booking.due_date +
+                '&due_date=' + (new Date(Date.parse(booking.due_date)).getTime() / 1000) +
                 '&description=' + booking.description +
+                '&stripe_token=' + $('#stripeToken').val() +
                 '&ica_sent=0',
         error: Response
     }).done(function (data) {
-                if (data['status'] === 'failed') {
+                if (data['status'] == 'failed') {
                     alert(data['errors'][0]);
+                    $('#preloader').hide();
                 }
                 else {
-                    alert('Booking has been successfully created')
+                    alert('The new project has been successfully created');
+                    loadPage('/projects');
                 }
 
-                $('#preloader').hide();
+
             });
 }
 
@@ -1966,6 +1983,8 @@ function loadProjects() {
             var user = null, userType = null;
 
             data.response.forEach(function(item) {
+                bookings[item.booking.id] = item;
+
                 if(item.booking.status != 'rejected') {
                     if(item.demander.id == currentUser.id) {
                         user = item.provider;
@@ -1985,39 +2004,41 @@ function loadProjects() {
                     $('#first-project .description').html(item.booking.description);
                     $('#first-project .total-amount').html(item.booking.budget);
 
+                    $('#first-project .budget').show();
+                    $('#first-project .status').hide();
+
                     if(userType == 'demander') {
                         if(item.booking.status == 'confirmed') {
-                            $('#first-project .status-btn').attr('class', 'status-btn pending');
-                        }
-                        else if(item.booking.status == 'rejected') {
-                            $('#first-project .status-btn').attr('class', 'status-btn decline');
+                            $('#first-project .status.pending').show();
                         }
                         else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
-                            $('#first-project .status-btn').attr('class', 'status-btn in-progress');
+                            $('#first-project .status.complete').show();
+                            $('#first-project .status.complete').attr('onclick', 'bookingId=' + item.booking.id + '; loadPage("/rate");');
                         }
                         else if(item.booking.status == 'completed') {
-                            $('#first-project .status-btn').attr('class', 'status-btn complete');
+                            $('#first-project .budget').hide();
+                            $('#first-project .status.completed-demander').show();
                         }
                         else if(item.booking.status == 'pending') {
-                            $('#first-project .status-btn').attr('class', 'status-btn pending');
+                            $('#first-project .status.pending').show();
                         }
                     }
                     else {
                         if(item.booking.status == 'confirmed') {
-                            $('#first-project .status-btn').attr('class', 'status-btn accept');
-                            $('#first-project .status-btn').attr('onclick', 'loadPage("/hire_accept");');
-                        }
-                        else if(item.booking.status == 'rejected') {
-                            $('#first-project .status-btn').attr('class', 'status-btn decline');
+                            $('#first-project .status.accept-decline').show();
+                            $('#first-project .status-btn.accept').attr('onclick', 'bookingId=' + item.booking.id + '; loadPage("/hire_accept");');
+                            $('#first-project .status-btn.decline').attr('onclick', 'bookingId=' + item.booking.id + '; if(confirm("Do you really want to reject this projects?")) rejectBooking();');
                         }
                         else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
-                            $('#first-project .status-btn').attr('class', 'status-btn complete');
+                            $('#first-project .status.in-progress').show();
                         }
                         else if(item.booking.status == 'completed') {
-                            $('#first-project .status-btn').attr('class', 'status-btn complete');
+                            $('#first-project .budget').hide();
+                            $('#first-project .status.completed-provider').show();
+
                         }
                         else if(item.booking.status == 'pending') {
-                            $('#first-project .status-btn').attr('class', 'status-btn pending');
+                            $('#first-project .status.pending').show();
                         }
                     }
 
@@ -2027,5 +2048,121 @@ function loadProjects() {
         }
 
         $('#preloader').hide();
+    });
+}
+
+function loadRate() {
+    $('#rate').hide();
+    $('#preloader').show();
+
+    if(bookings[bookingId].demander.id == currentUser.id) {
+        user = bookings[bookingId].provider;
+    }
+    else {
+        user = bookings[bookingId].demander;
+    }
+
+    $('#rate .avatar').attr('src', user.avatar_url ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
+    $('#rate .name').html(user.name);
+
+    $('.total-amount').html(bookings[bookingId].booking.budget);
+
+    $('#preloader').hide();
+    $('#rate').show();
+}
+
+function setRate(r) {
+    rate = r;
+    $('.rate-stars').css('backgroundPosition', '0px -' + (52 * r) + 'px');
+
+    return false;
+}
+
+function rateBooking() {
+    $('#preloader').show();
+
+    var userType = null;
+
+    if(bookings[bookingId].demander.id == currentUser.id) {
+        userType = 'provider';
+    }
+    else {
+        userType = 'demander';
+    }
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/booking/rate_' + userType + '?' +
+                'token=' + currentUser.token +
+                '&booking_id=' + bookingId +
+                '&rate=' + rate +
+                '&review=' + $('#review').val(),
+        error: Response
+    }).done(function (data) {
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+        }
+        else {
+            completeBooking(function() {
+                loadPage('/projects');
+            });
+        }
+
+        $('#preloader').hide();
+    });
+}
+
+function acceptBooking() {
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/booking/accept?' +
+                'token=' + currentUser.token +
+                '&booking_id=' + bookingId,
+        error: Response
+    }).done(function (data) {
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+            $('#preloader').hide();
+        }
+        else {
+            alert('You have successfully accepted this project.');
+            loadPage('/projects');
+        }
+    });
+}
+
+function rejectBooking() {
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/booking/reject?' +
+                'token=' + currentUser.token +
+                '&booking_id=' + bookingId,
+        error: Response
+    }).done(function (data) {
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+            $('#preloader').hide();
+        }
+        else {
+            alert('You have successfully rejected this project.');
+            loadPage('/projects');
+        }
+    });
+}
+
+function completeBooking(callback) {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/booking/complete?' +
+                'token=' + currentUser.token +
+                '&booking_id=' + bookingId,
+        error: Response
+    }).done(function (data) {
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+        }
+        else {
+            callback();
+        }
     });
 }
