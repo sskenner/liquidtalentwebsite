@@ -467,6 +467,39 @@ $(window).on('load', function () {
 
                 loadRate();
             }
+        },
+
+        'settings': {
+            'href': '/settings',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                /*
+                if(currentUser === null) {
+                    showPlaceholder('Settings');
+                    return false;
+                }
+                */
+
+                cF = $('#settings-contact');
+                cF = {
+                    /* Name, email, phone number, reason for contact, message fields and contact button. */
+                    'href': '/send_message',
+
+                    'n': cF.find('.name'),
+                    'e': cF.find('.email'),
+                    'm': cF.find('.message')
+                };
+            }
+        },
+
+        'terms': {
+            'href': '/terms',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+            }
         }
 
     };
@@ -783,6 +816,22 @@ function login() {
 
     });
 
+}
+
+function logout() {
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/logout',
+        data: 'user_id=' + currentUser.id + '&token=' + currentUser.token
+    }).done(function (data) {
+                if (data['status'] === 'failed') { alert(data['errors'][0]); }
+                else {
+                    currentUser = null;
+                    loadPage('/home');
+                    $('#preloader').hide();
+                }
+            });
 }
 
 /***********************************************************************************************************************
@@ -2171,4 +2220,25 @@ function completeBooking(callback) {
             callback();
         }
     });
+}
+
+function submitSettingsContactForm() {
+    $('#preloader').show();
+
+    $.ajax({
+        url: cF.href,
+        type: 'post',
+        data: 'name=' + cF.n.val() + '&email=' + cF.e.val() + '&message=' + cF.m.val(),
+        error: Response
+    }).done(function () {
+        $('#preloader').hide();
+
+        }).done(function (response) {
+            if (response.success !== '') { alert(response.success); }
+            else { alert(response.error); }
+
+            cF.n.val('');
+            cF.e.val('');
+            cF.m.val('');
+        });
 }

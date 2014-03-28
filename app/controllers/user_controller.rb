@@ -8,6 +8,9 @@ class UserController < ApplicationController
   def signup_service_provider
   end
 
+  def settings
+  end
+
   def search
   end
   def search_service_provider
@@ -38,4 +41,6 @@ class UserController < ApplicationController
   def nda_agreement
   end
 
+  def terms
+  end
 end
