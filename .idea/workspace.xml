@@ -24,7 +24,7 @@
     <file path="/application.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1396025255068" ignored="false" />
     <file path="/routes.rb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1396013224053" ignored="false" />
     <file path="/user_controller.rb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1396013189574" ignored="false" />
-    <file path="/application.js.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1396027574575" ignored="false" />
+    <file path="/application.js.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1396028043776" ignored="false" />
     <file path="/presentation.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1395925922426" ignored="false" />
     <file path="/settings.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1396013444279" ignored="false" />
     <file path="/application.css.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1396023951047" ignored="false" />
@@ -32,6 +32,7 @@
     <file path="/update_demander.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1396026696858" ignored="false" />
     <file path="/update_provider.html.erb" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1396017148060" ignored="false" />
     <file path="/api.txt" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1396020831538" ignored="false" />
+    <file path="$PROJECT_DIR$/log/development.log" changelist="b19591c8-9878-42c6-b7fc-2b137a287070" time="1396028010208" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +55,7 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2401" column="26" selection-start="78380" selection-end="78380" vertical-scroll-proportion="0.7236842">
+            <state line="2444" column="52" selection-start="79956" selection-end="79956" vertical-scroll-proportion="0.82894737">
               <folding />
             </state>
           </provider>
@@ -1097,7 +1098,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2401" column="26" selection-start="78380" selection-end="78380" vertical-scroll-proportion="0.7236842">
+        <state line="2444" column="52" selection-start="79956" selection-end="79956" vertical-scroll-proportion="0.82894737">
           <folding />
         </state>
       </provider>

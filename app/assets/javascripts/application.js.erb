@@ -2445,6 +2445,8 @@ function updateDemanderData() {
                     currentUser = data.response;
                     currentUser.token = token;
 
+                    $('#user-info .name').html(currentUser.name);
+
                     alert('You have successfully updated your profile.');
                 }
 
