@@ -309,7 +309,7 @@ a:hover { color: #000; }
     background: url(<%= asset_path "new/main/logo-small.png" %>);
 }
 
-#preloader, #content-preloader {display: none;  position: relative; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: hidden; background: rgba(255, 255, 255, 0.9) url('/assets/main/loader.gif') no-repeat center center; }
+#preloader, #content-preloader {display: none;  position: relative; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: hidden; background: rgba(255, 255, 255, 0.9) url('<%= asset_path 'main/loader.gif' %>') no-repeat center center; }
 
 /***********************************************************************************************************************
 /   User
@@ -484,7 +484,10 @@ a:hover { color: #000; }
     margin-right: 14px;
 }
 
-#search-options { margin-top: -12px; }
+#search-options {
+    margin-top: -12px;
+    margin-bottom: 10px;
+}
 #search-options .search-field {
     margin-left: 10px;
     line-height: 50px;
@@ -544,7 +547,7 @@ a:hover { color: #000; }
 .search-option .sort-by.distance { background-position: 340px 55px; }
 .search-option .sort-by.distance:hover,
 .search-option .sort-by.distance.active { background-position: 340px 0px; }
-#providers { margin-top: -12px; }
+#favorites { margin-top: -19px; }
 
 #map {
     margin-top: 7px;
@@ -581,6 +584,7 @@ a:hover { color: #000; }
 /   Messages
 /**********************************************************************************************************************/
 
+#messages {  }
 .message-box {
     min-height: 115px;
     vertical-align: top;
@@ -656,10 +660,10 @@ a:hover { color: #000; }
 }
 
 #chat {
-    height: 510px;
+    height: 539px;
     margin-top: -19px;
-    margin-bottom: 30px;
-    overflow: scroll
+    margin-bottom: 1px;
+    overflow: auto;
 }
 #chat-area {
     background: hsla(0, 0%, 100%, 0.3);
@@ -1031,23 +1035,23 @@ h3 {
 }
 #map-overlay {
     width: 100%;
-    height: 100%;
-    background: hsla(0, 0%, 0%, 0.5);
+    height: 638px;
+    background: hsla(0, 0%, 100%, 0.5);
     position: absolute;
-    top: 60px;
+    top: 62px;
     cursor: pointer;
 }
 
 .list-item {
-    top: 20px;
     width: 750px;
     overflow: hidden;
-    height: 164px;
+    height: 163px;
     background: #FFF;
     cursor: auto;
     word-wrap: break-word;
     position: relative;
     margin-bottom: 1px;
+    background: #FFF;
 }
 .list-item .avatar {
     width: 320px;
@@ -1166,6 +1170,7 @@ h3 {
     cursor: pointer;
     display: none;
 }
+.list-item .removeFavorite:hover { background: #239060; }
 
 /***********************************************************************************************************************
 /   Stats

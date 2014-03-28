@@ -52,7 +52,7 @@ var chart_options = {
         enabled: false
     },
     title: {
-        text: '',
+        text: ''
     },
     xAxis: {
         type: 'datetime',
@@ -122,7 +122,7 @@ $(window).on('load', function () {
 
                     'href': '/presentation/subscribe',
 
-                    'e': $('#register-form-email'),
+                    'e': $('#register-form-email')
 
                 };
 
@@ -606,14 +606,12 @@ function ToggleNavigationHover (e) {
     else { $(e).addClass('hover'); }
 
 }
-
 function Response(response) {
 
     alert("Could not connect to the server. Please try again later.");
     console.log(response);
 
 }
-
 function loadPage(page) {
 
     if (currentUser === null) { $('.hiw').css({ display: 'none', opacity: 0 }); }
@@ -652,11 +650,9 @@ function loadPage(page) {
     return false;
 
 }
-
 function getURLParameter(name) {
     return (decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1]).replace(/\+/g, '%20')) || null;
 }
-
 function createUser (data) {
 
     currentUser = data['response']['user'];
@@ -664,7 +660,7 @@ function createUser (data) {
     checkUnreadMessages();
     loadPage('/map');
 
-    if (currentUser.avatar_url === null) { currentUser.avatar_url = <%= asset_path "new/main/avatar.png" %>; }
+    currentUser.avatar_url = (currentUser.avatar_url !== null) ? currentUser.avatar_url : <%= asset_path "new/main/avatar.png" %>;
 
 }
 
@@ -691,7 +687,6 @@ function SubmitRegisterForm() {
     });
 
 }
-
 function SubmitContactForm() {
 
     loaders.toggle('contact', 1);
@@ -713,7 +708,6 @@ function SubmitContactForm() {
     });
 
 }
-
 function RevealPage(pageSegment) {
 
     pageSegments = {};
@@ -757,7 +751,6 @@ function RevealPage(pageSegment) {
     $('html, body').delay(500).animate({ scrollTop: $(pageSegments[pageSegment]).offset().top }, 300, 'linear', null);
 
 }
-
 function showPlaceholder (page) {
 
     if (currentUser === null) {
@@ -817,7 +810,6 @@ function login() {
     });
 
 }
-
 function logout() {
     $('#preloader').show();
 
@@ -1129,7 +1121,7 @@ function mapSearch(providers) {
 
             map.popUp.play.attr('onclick', 'playVideo();');
 
-            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
+            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
 
             if (user.badge === 'no') { map.popUp.LTDrop.addClass('hidden'); }
             else { map.popUp.LTDrop.addClass(user.badge); }
@@ -1167,9 +1159,9 @@ function listSearch(providers) {
         if (user.state) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
         else { user.state = 'NY'; }
 
-        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
+        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
 
-        $('#first-item').attr('title', user.years_in_industry);
+        $('#first-item').prop('title', user.years_in_industry);
 
         $('#first-item .avatar').attr('src', user.avatar_url);
         $('#first-item .play').attr('onclick', 'playVideo();');
@@ -1376,6 +1368,96 @@ function getFavorites() {
     }
 
 }
+function loadFavorites() {
+
+    if(currentUser === null) {
+        showPlaceholder('Favorites');
+        return false;
+    }
+
+    $('#content-preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/favourites/list',
+        data: 'demander_id=' + currentUser['id'] +
+                '&token=' + currentUser['token'] +
+                '&offset=0' +
+                '&limit=999',
+        error: Response
+    }).done(function (data) {
+
+        $('#content-preloader').hide();
+
+        data['response'].forEach(function (item) {
+
+            user = item['provider'];
+
+            user.hourly_rate = calculateCost(user.hourly_rate);
+            user.state = checkState(user.state);
+
+            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
+
+            $('#first-item .avatar').attr('src', user.avatar_url);
+
+            $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
+            $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
+
+            if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+            else { $('#first-item .lt-drop').addClass(user.badge); }
+
+//            if (user.video_url === null) { $('#first-item .play').addClass('disabled'); }
+//            else { $('#first-item .play').removeClass('disabled'); }
+
+            $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+            $('#first-item .description').html(user.description);
+
+            $('#first-item .distance').html(user.hourly_rate);
+
+            if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite').addClass('active'); }
+            else { $('#first-item .favorite').removeClass('active'); }
+            $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
+
+            $('#first-item .removeFavorite').attr('id', item['favourite_id']);
+
+            $('#first-item .message').attr('onclick', 'back="favorites"; loadChat(' + user.id + ');');
+            $('#first-item .hire').attr('onclick', 'back="favorites"; providerId=' + user.id + '; loadPage("/hire");');
+
+            $('#favorites').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
+
+        });
+
+        $('.list-item .removeFavorite').on('click', function() {
+
+            removeFavorite($(this).prop('id'));
+
+            $('.removeFavorite').each(function (i, e) {
+
+                $(e).css('display', ($(e).css('display') === 'block' ? 'none' : 'block'));
+
+            });
+
+        });
+
+    });
+
+    return false;
+
+}
+function removeFavorite(favourite_id) {
+    $('#content-preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/favourite/destroy?token=' + currentUser.token + '&favourite_id=' + favourite_id,
+        error: Response
+    }).done(function (user) {
+        $('#content-preloader').hide();
+
+        if (user.status === 'ok') {
+            $('#' + favourite_id).parents('.list-item').remove();
+        }
+
+    });
+}
 
 /***** Messages *****/
 
@@ -1385,7 +1467,6 @@ function checkUnreadMessages() {
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/messages/list?user_id=' + currentUser['id'],
-        error: Response
     }).done(function (data) {
 
         if (typeof (data['response']) !== 'undefined' &&
@@ -1414,7 +1495,6 @@ function checkUnreadMessages() {
     setTimeout(checkUnreadMessages, 10000);
 
 }
-
 function loadMessages() {
 
     if (messages.length === 0) { showPlaceholder('Messages'); }
@@ -1424,16 +1504,17 @@ function loadMessages() {
             '<div id="title">' +
                 'Messages' +
                 '<a class="black-button" href="javascript:ToggleMessageDelete();">Edit</a>' +
-            '</div>'
+            '</div>' +
+            '<div id="messages"></div>'
         );
 
         for (var i = 0; i < messages.length; i++) {
 
-            $('#background').html($('#background').html() +
-                '<div id="' + messages[i].sender.id + '" class="message-box">' +
+            $('#messages').html($('#messages').html() +
+                '<div id="' + messages[i].sender.id + ':' + messages[i].sender.name + '" class="message-box">' +
                     '<a href="javascript:blockUser(' + messages[i].sender.id + ');" class="black-button t">x</a>' +
                     '<div class="avatar-container">' +
-                        '<img src="' + ((messages[i].avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : messages[i].sender.avatar_url) + '" alt="User Avatar">' +
+                        '<img src="' + ((messages[i].sender.avatar_url !== null) ? messages[i].sender.avatar_url : '<%= asset_path "new/main/avatar.png" %>') + '" alt="User Avatar">' +
                     '</div>' +
                     '<div class="name">' +
                         messages[i].sender.name +
@@ -1458,7 +1539,7 @@ function loadMessages() {
 
     });
 
-    $('.message-box').each(function (i, e) { $(this).on('mouseup', function () { loadChat($(this).prop('id')); }); });
+    $('.message-box').each(function (i, e) { $(e).on('mouseup', function () { loadChat($(this).prop('id')); }); });
 
 }
 function ToggleMessageDelete () {
@@ -1466,7 +1547,6 @@ function ToggleMessageDelete () {
     $('.message-box .black-button').css('display', $('.message-box .black-button').css('display') === 'block' ? 'none' : 'block');
 
 }
-
 function blockUser(user_id) {
 
     $.ajax({
@@ -1486,10 +1566,12 @@ function blockUser(user_id) {
 
 }
 
-function loadChat(user_id) {
+function loadChat(user) {
+
+    user = user.split(':');
 
     $.ajax({
-        url: 'http://backend.liquidtalent.com/nda/show?user_id_1=' + currentUser.id + '&user_id_2=' + user_id,
+        url: 'http://backend.liquidtalent.com/nda/show?user_id_1=' + currentUser.id + '&user_id_2=' + user[0],
         error: Response
     }).done(function (nda) {
 
@@ -1498,24 +1580,24 @@ function loadChat(user_id) {
         $('#background').html(
             '<div id="title">' +
                 ((nda.length === 0) ?
-                    '<a href="javascript:sendNDA();" class="green-button">Send NDA</a>'
+                    '<a href="javascript:sendNDA(' + user[0] + ', \'' + user[1] + '\');" class="green-button">Send NDA</a>'
                     :
-                    '<b>NDA</b> sent on ' + nda.created_at.toJSON().replace(/\d{2}(\d{2})-(\d{2})-\d{2}T.*$/, '$2/$3/$1')
-                    ) +
+                    '<b>NDA</b> sent on ' + nda.createdAt.toJSON().created_at.replace(/\d{2}(\d{2})-(\d{2})-\d{2}T.*$/, '$2/$3/$1')
+                ) +
                 'Messages' +
-                '<a class="black-button" href="javascript:loadPage('/' + back);">Back</a>' +
+                '<a class="black-button" href="javascript:loadMessages();">Back</a>' +
             '</div>' +
             '<div id="chat"></div>' +
             '<div id="chat-area">' +
                 '<textarea placeholder="Message" id="chat-box">' +
-                '</textarea><a href="javascript:createChat(' + user_id + ');" class="green-button" id="post-chat">Post</a>' +
+                '</textarea><a href="javascript:createChat(' + user[0] + ');" class="green-button" id="post-chat">Post</a>' +
             '</div>'
         );
 
     });
 
     $.ajax({
-        url: 'http://backend.liquidtalent.com/messages/conversation?user_id_1=' + currentUser.id + '&user_id_2=' + user_id,
+        url: 'http://backend.liquidtalent.com/messages/conversation?user_id_1=' + currentUser.id + '&user_id_2=' + user[0],
         error: Response
     }).done(function (chat) {
 
@@ -1526,7 +1608,7 @@ function loadChat(user_id) {
             $.ajax({
                 url: 'http://backend.liquidtalent.com/messages/viewed?sender_id=' + chat[i].message.sender_id + '&receiver_id=' + chat[i].message.receiver_id + '&ts=' + chat[i].message.ts,
                 error: Response
-            }).done(function(){});
+            });
 
             date = chat[i].message.created_at.replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T.*$/, '$2/$3/$1');
             time = chat[i].message.created_at.replace(/^.*(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$1');
@@ -1535,7 +1617,7 @@ function loadChat(user_id) {
 
                 '<div class="message-box">' +
                     '<div class="avatar-container">' +
-                        '<img src="' + ((chat[i].sender.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : chat[i].sender.avatar_url) + '" alt="User Avatar">' +
+                        '<img src="' + ((chat[i].sender.avatar_url !== null) ? chat[i].sender.avatar_url : '<%= asset_path "new/main/avatar.png" %>') + '" alt="User Avatar">' +
                     '</div>' +
                     '<div class="name">' +
                         chat[i].sender.name +
@@ -1594,9 +1676,25 @@ function createChat (user_id) {
     }
 
 }
-function sendNDA () {
+function sendNDA (user_id, user_name) {
 
-    $('#title .green-button').remove();
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/nda/create?' +
+                'user_id_1=' + currentUser.id +
+                '&token=' + currentUser.token +
+                '&user_id_2=' + user_id +
+                '&user_name_1=' + currentUser.name +
+                '&user_name_2=' + user_name,
+        error: Response
+    }).done(function () {
+
+        $('#title .green-button').remove();
+
+        $('#title').prepend(
+            '<b>NDA</b> sent on ' + (new Date().toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T.*$/, '$2/$3/$1'))
+        );
+
+    });
 
 }
 function time12Hour (time) {
@@ -1620,94 +1718,6 @@ function checkState (state) {
     else { state = 'NY'; }
 
     return state;
-}
-
-function loadFavorites() {
-    if(currentUser === null) {
-        showPlaceholder('Favorites');
-        return false;
-    }
-
-    $('#content-preloader').show();
-
-    $.ajax({
-        url: 'http://backend.liquidtalent.com/favourites/list',
-        data: 'demander_id=' + currentUser['id'] +
-                '&token=' + currentUser['token'] +
-                '&offset=0' +
-                '&limit=999',
-        error: Response
-    }).done(function (data) {
-        $('#content-preloader').hide();
-
-        data['response'].forEach(function (item) {
-            user = item['provider'];
-
-            user.hourly_rate = calculateCost(user.hourly_rate);
-            user.state = checkState(user.state);
-
-            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
-
-            $('#first-item .avatar').attr('src', user.avatar_url);
-
-            $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
-            $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
-
-            if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
-            else { $('#first-item .lt-drop').addClass(user.badge); }
-
-//          if (user.video_url === null) { $('#first-item .play').addClass('disabled'); }
-//          else { $('#first-item .play').removeClass('disabled'); }
-
-            $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
-            $('#first-item .description').html(user.description);
-
-            $('#first-item .distance').html(user.hourly_rate);
-
-            if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite').addClass('active'); }
-            else { $('#first-item .favorite').removeClass('active'); }
-            $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
-
-            $('#first-item .removeFavorite').attr('id', item['favourite_id']);
-
-            $('#first-item .message').attr('onclick', 'back="favorites"; loadChat(' + user.id + ');');
-            $('#first-item .hire').attr('onclick', 'back="favorites"; providerId=' + user.id + '; loadPage("/hire");');
-
-            $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
-
-        });
-
-        $('.list-item .base .removeFavorite').on('click', function() {
-            if(confirm('Do you really want to remove this favorited provider?')) {
-                removeFavorite($(this).prop('id'));
-            }
-        });
-
-    });
-
-    return false;
-}
-
-function removeFavorite(favourite_id) {
-    $('#content-preloader').show();
-
-    $.ajax({
-        url: 'http://backend.liquidtalent.com/favourite/destroy?token=' + currentUser.token + '&favourite_id=' + favourite_id,
-        error: Response
-    }).done(function (user) {
-        $('#content-preloader').hide();
-
-        if (user.status === 'ok') {
-            $('#' + favourite_id).parents('.list-item').html('');
-        }
-
-    });
-}
-
-function ToggleFavoriteDelete () {
-
-    $('.removeFavorite').css('display', $('.removeFavorite').css('display') === 'block' ? 'none' : 'block');
-
 }
 
 function loadStats(term) {
@@ -1836,12 +1846,14 @@ function setStatsTerm(term, name) {
 }
 
 function loadProfile() {
+
     $('#content-preloader').show();
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/show?user_id=' + profileId,
         error: Response
     }).done(function (user) {
+
         user = user['response']['user'];
 
         $('#content-preloader').hide();
@@ -1849,15 +1861,15 @@ function loadProfile() {
         if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
         else { user.state = 'NY'; }
 
-        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
+        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
 
         $('#first-item .avatar').attr('src', user.avatar_url);
 
         if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
         else { $('#first-item .lt-drop').addClass(user.badge); }
 
-    //            if (user.video_url === null) { $('#first-item .play').addClass('disabled'); }
-    //            else { $('#first-item .play').removeClass('disabled'); }
+//        if (user.video_url === null) { $('#first-item .play').addClass('disabled'); }
+//        else { $('#first-item .play').removeClass('disabled'); }
 
         $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
         $('#first-item .description').html(user.description);
@@ -1869,6 +1881,7 @@ function loadProfile() {
         $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
         if(user.is_provider) {
+
             $('#profile-provider').show();
             $('#profile-demander').hide();
 
@@ -1878,8 +1891,11 @@ function loadProfile() {
             $('#profile-education').html(user.school_name);
 
             $('.hire-button-profile').attr('onclick', 'back="profile"; providerId=' + user.id + '; loadPage("/hire");');
+
         }
+
     });
+
 }
 
 function calculateCost (rate) {
@@ -2053,7 +2069,7 @@ function loadProjects() {
                         userType = 'provider'
                     }
 
-                    $('#first-project .avatar').attr('src', user.avatar_url ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
+                    $('#first-project .avatar').attr('src', (user.avatar_url !== null) ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
                     $('#first-project .name').html(user.name);
 
                     dueDate = new Date(item.booking.due_date * 1000);
@@ -2120,7 +2136,7 @@ function loadRate() {
         user = bookings[bookingId].demander;
     }
 
-    $('#rate .avatar').attr('src', user.avatar_url ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
+    $('#rate .avatar').attr('src', (user.avatar_url !== null) ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
     $('#rate .name').html(user.name);
 
     $('.total-amount').html(bookings[bookingId].booking.budget);
