@@ -1,0 +1,54 @@
+<div id="title">
+  Settings
+</div>
+
+<div class="settings-col">
+  <div class="settings-title">
+    Account
+  </div>
+
+  <a href="#" class="black-button">Delete</a>
+  <a href="javascript: logout(); return false;" class="black-button">Logout</a>
+  <a href="#" class="green-button">Edit Profile</a>
+  <div class="clear"></div>
+</div>
+
+<div class="settings-col">
+  <div class="settings-title">
+    Other
+  </div>
+
+  <a href="javascript: loadPage('/terms'); return false;" class="green-button">Terms</a>
+  <a href="#" class="green-button">FAQ</a>
+  <a href="#" class="green-button">Report User</a>
+  <div class="clear"></div>
+</div>
+
+<div class="settings-col">
+  <p>
+    Contact <a href="http://liquidtalent.com">LiquidTalent</a> with comments or concerns.
+  </p>
+
+  <div id="settings-contact">
+    <input type="text" placeholder="Name *"  class="text-field name" />
+    <textarea placeholder="Message *" class="message"></textarea>
+    <input type="text" placeholder="Email *"  class="text-field email" />
+    <div class="clear"></div>
+
+    <a href="javascript: submitSettingsContactForm(); return false;" class="green-button">Send</a>
+  </div>
+</div>
+
+<div class="settings-col">
+  <p>
+    Share LiquidTalent with your professional network!
+  </p>
+
+  <div id="share-buttons">
+    <div class="share-btn"><a href="https://www.facebook.com/liquidtalent" class="share-btn" id="fb"></a></div>
+    <div class="share-btn"><a href="https://twitter.com/LiquidTalent" class="share-btn" id="twitter"></a></div>
+    <div class="share-btn"><a href="#" class="share-btn" id="sms"></a></div>
+    <div class="share-btn last"><a href="#" class="share-btn" id="email"></a></div>
+    <div class="clear"></div>
+  </div>
+</div>
