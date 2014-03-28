@@ -1875,11 +1875,20 @@ a.share-btn {
     float: right;
 }
 
-#demander-form #avatar {
+#demander-form #image-upload {
+    display: inline-block;
     width: 205px;
     height: 203px;
     background: url(<%= asset_path "new/signup/add-avatar.png" %>);
     cursor: pointer;
+}
+
+#demander-form #avatar {
+    width: 205px;
+    height: 203px;
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    opacity: 0;
 }
 
 #demander-form p {
