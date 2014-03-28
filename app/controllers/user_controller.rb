@@ -11,6 +11,12 @@ class UserController < ApplicationController
   def settings
   end
 
+  def update_provider
+  end
+
+  def update_demander
+  end
+
   def search
   end
   def search_service_provider

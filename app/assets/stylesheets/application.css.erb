@@ -1819,6 +1819,74 @@ a.share-btn {
 }
 
 /***********************************************************************************************************************
+/   User Profile
+/**********************************************************************************************************************/
+#provider-form, #demander-form {
+    margin: 30px 15px;
+}
+
+#provider-form .text-field, #demander-form .text-field {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px 10px;
+    font-size: 1.1em;
+    border: 1px solid #fff;
+    background-color: hsla(0, 0%, 100%, 0.3);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#provider-form .text-field.category {
+    cursor: pointer;
+}
+
+#complete-linkedin {
+    display: block;
+    width: 378px;
+    height: 61px;
+    margin: 0 auto 30px auto;
+    background: url(<%= asset_path "signup/linkedin-complete.png" %>);
+    background-position: 0px 0px;
+}
+
+#complete-linkedin:hover {
+    background-position: 0px -61px;
+}
+
+#provider-form-left {
+    width: 49%;
+    float: left;
+}
+
+#provider-form-right {
+    width: 49%;
+    float: right;
+}
+
+#demander-form-left {
+    width: 39%;
+    float: left;
+    text-align: right;
+}
+
+#demander-form-right {
+    width: 59%;
+    float: right;
+}
+
+#demander-form #avatar {
+    width: 205px;
+    height: 203px;
+    background: url(<%= asset_path "new/signup/add-avatar.png" %>);
+    cursor: pointer;
+}
+
+#demander-form p {
+    padding: 10px 0 5px 5px;
+}
+
+/***********************************************************************************************************************
 /   Terms
 /**********************************************************************************************************************/
 #terms {
