@@ -41,6 +41,7 @@ var booking = {
     due_date: null,
     description: null
 }
+var avatar_change = false;
 var chart_options = {
     chart: {
         type: 'areaspline',
@@ -494,6 +495,102 @@ $(window).on('load', function () {
             }
         },
 
+        'update_demander': {
+            'href': '/update_demander',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                $.ajax({
+                    url: 'http://backend.liquidtalent.com/get_info',
+                    error: function (error) {
+                        alert("Problem with connecting to the server");
+                    }
+                }).done(function (data) {
+                            data['response']['categories'].forEach(function (item) {
+                                $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+
+                                if(currentUser.category_id * 1 == item['id'] * 1) {
+                                    $('.category').val(item['name']);
+                                }
+                            })
+                        });
+
+                $('.category').click(function () {
+                    if($('#categories').is(':visible')) {
+                        $('#categories').hide();
+                    }
+                    else {
+                        $('#categories').show();
+                    }
+                });
+
+                $('#category_id').val(currentUser.category_id);
+
+                $('.name').val(currentUser.name);
+                $('.email').val(currentUser.email);
+                $('.zip').val(currentUser.zip);
+
+                $('.company_name').val(currentUser.company_name);
+                $('.title').val(currentUser.title);
+
+                $('#avatar').change(function() {
+                    avatar_change = true;
+                });
+            }
+        },
+
+        'update_provider': {
+            'href': '/update_provider',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                $.ajax({
+                    url: 'http://backend.liquidtalent.com/get_info',
+                    error: function (error) {
+                        alert("Problem with connecting to the server");
+                    }
+                }).done(function (data) {
+                    data['response']['categories'].forEach(function (item) {
+                        $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+
+                        if(currentUser.category_id * 1 == item['id'] * 1) {
+                            $('.category').val(item['name']);
+                        }
+                    })
+                });
+
+                $('.category').click(function () {
+                    if($('#categories').is(':visible')) {
+                        $('#categories').hide();
+                    }
+                    else {
+                        $('#categories').show();
+                    }
+                });
+
+                $('.name').val(currentUser.name);
+                $('.email').val(currentUser.email);
+                $('.zip').val(currentUser.zip);
+                $('.years_in_industry').val(currentUser.years_in_industry);
+                $('.description').val(currentUser.description);
+                $('.skills').val(currentUser.skills);
+                $('.hourly_rate').val(currentUser.hourly_rate);
+                $('.portfolio').val(currentUser.portfolio);
+                $('.experience').val(currentUser.experience);
+                $('.summary').val(currentUser.summary);
+                $('.school').val(currentUser.school_name);
+
+                $('#category_id').val(currentUser.category_id);
+                $('#school_id').val(currentUser.school_id);
+
+                $('#avatar').change(function() {
+                    avatar_change = true;
+                });
+            }
+        },
+
         'terms': {
             'href': '/terms',
             'load': function () {
@@ -623,6 +720,7 @@ function loadPage(page) {
         }
     });
 
+    /*
     if (page === '/login') {
         currentUser = prompt('Please enter your invitation code to proceed.', 'Invitation code');
         if (currentUser !== 'liquidtalent') {
@@ -631,6 +729,7 @@ function loadPage(page) {
             return true;
         }
     }
+    */
 
     if (pages.active !== '') {
 
@@ -930,7 +1029,9 @@ function searchSchool(query) {
         url: 'http://backend.liquidtalent.com/schools/search?search=' + query,
         error: Response
     }).done(function (data) {
+                $('#schools').show();
                 $('#schools').html('');
+
                 data['response'].forEach(function (school) {
                     $('#schools').append('<div class="option" onclick="setSchool(' + school['_source']['id'] + ', \'' + school['_source']['name'] + '\');filterUsers(listSearch);">' + school['_source']['name'] + '</div>')
                 })
@@ -2257,4 +2358,157 @@ function submitSettingsContactForm() {
             cF.e.val('');
             cF.m.val('');
         });
+}
+
+function editProfile() {
+    $('#preloader').show();
+
+    if(currentUser.is_provider == 1) {
+        loadPage('/update_provider');
+    }
+    else {
+        loadPage('/update_demander');
+    }
+
+    $('#preloader').hide();
+}
+
+function updateProvider() {
+    uploadAvatar(function() {
+        updateProviderData();
+    });
+}
+
+function updateProviderData() {
+    //  Validate password
+    if($('.password').val() != $('.password_confirmation').val()) {
+        alert('Passwords are not the same.');
+        $('#preloader').hide();
+        return false;
+    }
+    if($('.password').val().length > 0 && $('.password').val().length < 5) {
+        alert('Your password is too short.');
+        $('#preloader').hide();
+        return false;
+    }
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/set_details?' +
+                'user_id=' + currentUser.id +
+                '&token=' + currentUser.token +
+                '&attr[name]=' + $('.name').val() +
+                '&attr[email]=' + $('.email').val() +
+                '&attr[zip]=' + $('.zip').val() +
+                '&attr[category_id]=' + $('#category_id').val() +
+                '&attr[school_id]=' + $('#school_id').val() +
+                '&attr[description]=' + $('.description').val() +
+                '&attr[summary]=' + $('.summary').val() +
+                '&attr[hourly_rate]=' + $('.hourly_rate').val() +
+                '&attr[skills]=' + $('.skills').val() +
+                '&attr[portfolio]=' + $('.portfolio').val() +
+                '&attr[experience]=' + $('.experience').val() +
+                '&attr[years_in_industry]=' + $('.years_in_industry').val() +
+                ( ($('.password').val().length > 0) ? ('&attr[password]=' + $('.password').val()) : null ),
+        error: Response
+    }).done(function (data) {
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+        }
+        else {
+            token = currentUser.token;
+            currentUser = data.response;
+            currentUser.token = token;
+
+            $('#user-info .name').html(currentUser.name);
+
+            alert('You have successfully updated your profile.');
+        }
+
+        $('#preloader').hide();
+    });
+}
+
+
+function updateDemander() {
+    uploadAvatar(function() {
+        updateDemanderData();
+    });
+}
+
+function updateDemanderData() {
+    //  Validate password
+    if($('.password').val() != $('.password_confirmation').val()) {
+        alert('Passwords are not the same.');
+        $('#preloader').hide();
+        return false;
+    }
+    if($('.password').val().length > 0 && $('.password').val().length < 5) {
+        alert('Your password is too short.');
+        $('#preloader').hide();
+        return false;
+    }
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/set_details?' +
+                'user_id=' + currentUser.id +
+                '&token=' + currentUser.token +
+                '&attr[name]=' + $('.name').val() +
+                '&attr[email]=' + $('.email').val() +
+                '&attr[zip]=' + $('.zip').val() +
+                '&attr[company_name]=' + $('.company_name').val() +
+                '&attr[title]=' + $('.title').val() +
+                '&attr[category_id]=' + $('#category_id').val() +
+                ( ($('.password').val().length > 0) ? ('&attr[password]=' + $('.password').val()) : null ),
+        error: Response
+    }).done(function (data) {
+                if (data['status'] === 'failed') {
+                    alert(data['errors'][0]);
+                }
+                else {
+                    token = currentUser.token;
+                    currentUser = data.response;
+                    currentUser.token = token;
+
+                    $('#user-info .name').html(currentUser.name);
+
+                    alert('You have successfully updated your profile.');
+                }
+
+                $('#preloader').hide();
+            });
+}
+
+function uploadAvatar(callback) {
+    $('#preloader').show();
+
+    if(avatar_change) {
+        $.ajax({
+            url: 'http://backend.liquidtalent.com/user/set_avatar',
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            data: function () {
+                var rq_data = new FormData();
+                rq_data.append("user_id", currentUser.id);
+                rq_data.append("token", currentUser.token);
+                rq_data.append("avatar", $('#avatar').get(0).files[0]);
+                return rq_data;
+            }(),
+            error: Response
+        }).done(function (avatar_data) {
+                    if (avatar_data['status'] === 'failed') {
+                        alert(avatar_data['errors'][0]);
+                    }
+                    else {
+                        currentUser['avatar_url'] = avatar_data['response']['url'];
+
+                        $('#user-info .avatar').attr('src', currentUser['avatar_url']);
+
+                        callback();
+                    }
+                });
+    }
+    else {
+        callback();
+    }
 }

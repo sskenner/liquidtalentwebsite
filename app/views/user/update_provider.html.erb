@@ -1,0 +1,53 @@
+<div id="title">
+  Edit Profile
+  <a class="black-button" href="javascript: loadPage('/settings');">Back</a>
+</div>
+
+<div id="demander-form">
+  <div id="demander-form-left">
+    <div id="image-upload"><input type="file" id="avatar" /></div>
+  </div>
+
+  <div id="demander-form-right">
+    <input type="text" placeholder="Full name" class="text-field name">
+    <input type="text" placeholder="Email" class="text-field email">
+    <input type="text" placeholder="Zip" class="text-field zip">
+
+    <p>Leave the next fields blank if you do not want to change your password</p>
+
+    <input type="password" placeholder="Password" class="text-field password">
+    <input type="password" placeholder="Confirm Password" class="text-field password_confirmation">
+
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div id="provider-form">
+  <!--
+  <a href="#" id="complete-linkedin"></a>
+  -->
+
+  <div id="provider-form-left">
+    <input type="text" placeholder="Industry" class="text-field category">
+    <div id="categories"></div>
+
+    <input type="text" placeholder="Skills" class="text-field skills">
+
+    <input type="text" placeholder="Hourly rate" class="text-field hourly_rate">
+    <input type="text" placeholder="Experience" class="text-field experience">
+    <input type="text" placeholder="Years of experience" class="text-field years_in_industry">
+  </div>
+  <div id="provider-form-right">
+    <input type="text" placeholder="Tagline" class="text-field description">
+    <input type="text" placeholder="Education" class="text-field school" onkeyup="searchSchool(this.value);">
+    <div id="schools"></div>
+    <input type="text" placeholder="Portfolio link" class="text-field portfolio">
+    <input type="text" placeholder="Summary" class="text-field summary">
+  </div>
+  <div class="clear"></div>
+
+  <input type="hidden" name="category_id" id="category_id"/>
+  <input type="hidden" name="school_id" id="school_id"/>
+
+  <a href="javascript:updateProvider(); return false;" class="green-button signup-form-sp-button">Update Profile</a>
+</div>
