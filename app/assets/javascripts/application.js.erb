@@ -15,8 +15,8 @@
 //= require_tree .
 
 /***********************************************************************************************************************
- / Main
- /**********************************************************************************************************************/
+/ Main
+/**********************************************************************************************************************/
 
 var loaders, pages;
 
@@ -24,6 +24,7 @@ var currentUser = null, profileId = null, providerId = null, bookingId = null, r
 var users = null;
 var global_info = null;
 var filter_settings = {
+    query: '',
     category: {label: 'Categories', value: null},
     subcategory: {label: 'Subcategories', value: null},
     city: {label: 'City', value: null},
@@ -52,7 +53,7 @@ var chart_options = {
         enabled: false
     },
     title: {
-        text: '',
+        text: ''
     },
     xAxis: {
         type: 'datetime',
@@ -122,7 +123,7 @@ $(window).on('load', function () {
 
                     'href': '/presentation/subscribe',
 
-                    'e': $('#register-form-email'),
+                    'e': $('#register-form-email')
 
                 };
 
@@ -245,7 +246,7 @@ $(window).on('load', function () {
                             data['response']['categories'].forEach(function (item) {
                                 $('#skills').append('<div onclick="setSkills(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
                             })
-                        });
+                });
 
                 Object.keys(states).forEach(function (key) {
                     $('#states').append('<div onclick="setState(\'' + states[key] + '\', \'' + key + '\');">' + key + '</div>')
@@ -310,9 +311,9 @@ $(window).on('load', function () {
                         'description': map.find('.description'),
                         'distance': map.find('.distance'),
                         'linkedIn': map.find('.linkedin-icon'),
-                        'title': map.find('.base .title'),
-                        'favorite': map.find('.favorite-button'),
-                        'play': map.find('.play-button'),
+                        'title': map.find('.title'),
+                        'favorite': map.find('.favorite'),
+                        'play': map.find('.play'),
                         'LTDrop': map.find('.lt-drop'),
                         'stars': map.find('.stars .star')
                     }
@@ -551,14 +552,14 @@ $(window).on('load', function () {
                         alert("Problem with connecting to the server");
                     }
                 }).done(function (data) {
-                            data['response']['categories'].forEach(function (item) {
-                                $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+                    data['response']['categories'].forEach(function (item) {
+                        $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
 
-                                if(currentUser.category_id * 1 == item['id'] * 1) {
-                                    $('.category').val(item['name']);
-                                }
-                            })
-                        });
+                        if(currentUser.category_id * 1 == item['id'] * 1) {
+                            $('.category').val(item['name']);
+                        }
+                    })
+                });
 
                 $('.category').click(function () {
                     if($('#categories').is(':visible')) {
@@ -702,14 +703,12 @@ function ToggleNavigationHover (e) {
     else { $(e).addClass('hover'); }
 
 }
-
 function Response(response) {
 
     alert("Could not connect to the server. Please try again later.");
     console.log(response);
 
 }
-
 function loadPage(page) {
 
     if (currentUser === null) { $('.hiw').css({ display: 'none', opacity: 0 }); }
@@ -757,11 +756,9 @@ function loadPageAjax(page) {
 
     }
 }
-
 function getURLParameter(name) {
     return (decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1]).replace(/\+/g, '%20')) || null;
 }
-
 function createUser (data) {
 
     currentUser = data['response']['user'];
@@ -769,13 +766,13 @@ function createUser (data) {
     checkUnreadMessages();
     loadPage('/map');
 
-    if (currentUser.avatar_url === null) { currentUser.avatar_url = <%= asset_path "new/main/avatar.png" %>; }
+    currentUser.avatar_url = (currentUser.avatar_url !== null) ? currentUser.avatar_url : <%= asset_path "new/main/avatar.png" %>;
 
 }
 
 /***********************************************************************************************************************
- / Presentation
- /**********************************************************************************************************************/
+/ Presentation
+/**********************************************************************************************************************/
 
 var rF;
 var cF;
@@ -790,13 +787,12 @@ function SubmitRegisterForm() {
         error: Response
     }).done(function (response) {
 
-                if (response.success !== '') { alert(response.success); }
-                else { alert(response.error); }
+        if (response.success !== '') { alert(response.success); }
+        else { alert(response.error); }
 
-            });
+    });
 
 }
-
 function SubmitContactForm() {
 
     loaders.toggle('contact', 1);
@@ -808,17 +804,16 @@ function SubmitContactForm() {
         error: Response
     }).done(function () {
 
-                loaders.toggle('contact', 0);
+        loaders.toggle('contact', 0);
 
-            }).done(function (response) {
+    }).done(function (response) {
 
-                if (response.success !== '') { alert(response.success); }
-                else { alert(response.error); }
+        if (response.success !== '') { alert(response.success); }
+        else { alert(response.error); }
 
-            });
+    });
 
 }
-
 function RevealPage(pageSegment) {
 
     pageSegments = {};
@@ -862,12 +857,40 @@ function RevealPage(pageSegment) {
     $('html, body').delay(500).animate({ scrollTop: $(pageSegments[pageSegment]).offset().top }, 300, 'linear', null);
 
 }
+function showPlaceholder (page) {
+
+    if (currentUser === null) {
+
+        $('#background').html(
+
+            '<div id="placeholder">' +
+                'Explore all of LiquidTalent.' +
+                '<a href="javascript:loadPage(\'/login\')" class="green-button">Sign Up</a>' +
+            '</div>'
+
+        );
+
+    }
+    else {
+
+        $('#background').html(
+
+            '<div id="placeholder">' +
+                'No ' + page + ' have been added here yet.' +
+                '<a href="javascript:loadPage(\'/map\')" class="green-button">Search</a>' +
+            '</div>'
+
+        );
+
+    }
+
+}
 
 var sF;
 
 /***********************************************************************************************************************
- / User
- /**********************************************************************************************************************/
+/ User
+/**********************************************************************************************************************/
 
 function login() {
 
@@ -878,22 +901,21 @@ function login() {
         data: 'email=' + sF.email.val() + '&password=' + sF.password.val()
     }).done(function (data) {
 
-                if (data['status'] === 'failed') { alert(data['errors'][0]); }
-                else {
-                    currentUser = data['response']['user'];
-                    showUserInfo();
-                    checkUnreadMessages();
-                    loadPage('/search');
-                }
+        if (data['status'] === 'failed') { alert(data['errors'][0]); }
+        else {
+            currentUser = data['response']['user'];
+            showUserInfo();
+            checkUnreadMessages();
+            loadPage('/search');
+        }
 
-                $('#preloader').hide();
+        $('#preloader').hide();
 
-                getFavorites();
+        getFavorites();
 
-            });
+    });
 
 }
-
 function logout() {
     $('#preloader').show();
 
@@ -911,8 +933,8 @@ function logout() {
 }
 
 /***********************************************************************************************************************
- / SignUp
- /**********************************************************************************************************************/
+/ SignUp
+/**********************************************************************************************************************/
 
 function SubmitSignupForm() {
     $('#preloader').show();
@@ -1018,33 +1040,30 @@ function searchSchool(query) {
                 $('#schools').html('');
 
                 data['response'].forEach(function (school) {
-                    $('#schools').append('<div onclick="setSchool(' + school['_source']['id'] + ', \'' + school['_source']['name'] + '\');">' + school['_source']['name'] + '</div>')
+                    $('#schools').append('<div class="option" onclick="setSchool(' + school['_source']['id'] + ', \'' + school['_source']['name'] + '\');filterUsers(listSearch);">' + school['_source']['name'] + '</div>')
                 })
             });
 }
 
+function setQuery(query) {
+
+    $('.search-field').val(query);
+    $('#query').val(query);
+
+    filter_settings.query = query;
+
+    filterUsers(listSearch);
+
+}
+
 function setCategory(id, name) {
-    $('.category').val(name);
+    $('#industries').parent().find('.text-field').val(name);
     $('#category_id').val(id);
 
     filter_settings.category.label = name;
     filter_settings.category.value = id;
 
-    $('#categories').hide();
-
-    $('.subcategory').val('Subcategories');
-    $('#subcategories').html('');
-
-    if(id == null) {
-        $('#subcategory_id').val(null);
-    }
-
-    global_info['sub_categories'].forEach(function (item) {
-        if(item['parent_id'] == id) {
-            $('#subcategories').append('<div onclick="setSubcategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>');
-            filter_settings.subcategories.push({label: item['name'], value: item['id']});
-        }
-    });
+    $('#industries').hide();
 }
 
 function setSubcategory(id, name) {
@@ -1084,7 +1103,7 @@ function setState(id, name) {
 }
 
 function setSchool(id, name) {
-    $('.school').val(name);
+    $('#schools').parent().find('.text-field').val(name);
     $('#school_id').val(id);
 
     filter_settings.college.label = name;
@@ -1131,6 +1150,21 @@ function logout() {
 
 var map, states, list;
 
+function showUserInfo() {
+
+    currentUser['state'] = checkState(currentUser['state']);
+    currentUser['city_name'] = (!currentUser['city_name'])? 'New York' : currentUser['city_name'];
+
+    var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '<%= asset_path '/assets/new/main/avatar.png' %>';
+
+    $('#admin-panel .header .login').hide();
+    $('#user-info').show();
+
+    $('#user-info .avatar').attr('src', avatar);
+    $('#user-info .name').html(currentUser['name']);
+    $('#user-info .location').html(currentUser['city_name'] + ', ' + currentUser['state']);
+}
+
 function mapSearch(providers) {
     map = $('#map-overlay');
     map = {
@@ -1149,9 +1183,9 @@ function mapSearch(providers) {
             'description': map.find('.description'),
             'distance': map.find('.distance'),
             'linkedIn': map.find('.linkedin-icon'),
-            'title': map.find('.base .title'),
-            'favorite': map.find('.favorite-button'),
-            'play': map.find('.play-button'),
+            'title': map.find('.title'),
+            'favorite': map.find('.favorite'),
+            'play': map.find('.play'),
             'LTDrop': map.find('.lt-drop'),
             'stars': map.find('.stars .star')
         }
@@ -1175,7 +1209,7 @@ function mapSearch(providers) {
             position: new google.maps.LatLng(user.latitude, user.longitude),
             map: map.googleMap,
             title: user.name,
-            icon: '<%= asset_path 'search/pin.png' %>'
+            icon: '<%= asset_path 'new/search/map-pin-green.png' %>'
 
         });
 
@@ -1195,7 +1229,7 @@ function mapSearch(providers) {
 
             map.popUp.play.attr('onclick', 'playVideo();');
 
-            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
+            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
 
             if (user.badge === 'no') { map.popUp.LTDrop.addClass('hidden'); }
             else { map.popUp.LTDrop.addClass(user.badge); }
@@ -1215,28 +1249,30 @@ function mapSearch(providers) {
             map.popUp.description.html(user.description);
             map.popUp.title.html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
 
-            map.popUp.distance.html('$' + user.hourly_rate + '.00');
+            map.popUp.distance.html(user.hourly_rate);
 
         });
 
     });
 
 }
-
 function listSearch(providers) {
+
     $('#providers').html('');
 
     providers.forEach(function (user) {
 
         user.hourly_rate = calculateCost(user.hourly_rate);
 
-        if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+        if (user.state) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
         else { user.state = 'NY'; }
 
-        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
+        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
+
+        $('#first-item').prop('title', user.years_in_industry);
 
         $('#first-item .avatar').attr('src', user.avatar_url);
-        $('#first-item .play-button').attr('onclick', 'playVideo();');
+        $('#first-item .play').attr('onclick', 'playVideo();');
 
         $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
         $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
@@ -1244,37 +1280,142 @@ function listSearch(providers) {
         if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
         else { $('#first-item .lt-drop').addClass(user.badge); }
 
-//            if (user.video_url === null) { $('#first-item .play-button').addClass('disabled'); }
-//            else { $('#first-item .play-button').removeClass('disabled'); }
-
         $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
         $('#first-item .description').html(user.description);
 
         $('#first-item .distance').html(user.hourly_rate);
 
-        if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite-button').addClass('active'); }
-        else { $('#first-item .favorite-button').removeClass('active'); }
-        $('#first-item .favorite-button').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
+        if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite').addClass('active'); }
+        else { $('#first-item .favorite').removeClass('active'); }
+        $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
         $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
 
     });
+
+    sortUsers('cost');
+
+}
+function filterUsers(callback) {
+    $('#filter').hide();
+    $('#content-preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/users/search_users',
+        data: 'query=' + $('#query').val() +
+              '&category_id=' + $('#category_id').val() +
+              '&school_id=' + $('#school_id').val(),
+        error: Response
+    }).done(function (data) {
+        $('#content-preloader').hide();
+        users = data['response'];
+        callback(users);
+    });
+
+    return false;
+}
+function hideSearchOption (e) {
+    if(e.is(':visible')) { e.hide(); }
+    else { e.show(); }
+}
+function prepareFilter() {
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/get_info',
+        error: function (error) { Response(error); }
+    }).done(function (data) {
+
+        global_info = data['response'];
+
+        $('#industries').html('<div class="option" onclick="setCategory(null, \'\');filterUsers(listSearch);">All Industries</div>');
+
+        data['response']['categories'].forEach(function (item) {
+            $('#industries').append('<div class="option" onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');filterUsers(listSearch);">' + item['name'] + '</div>')
+        })
+
+    });
+
+    $('#industries').parent().mouseenter(function () { if (!$('#industries').is(':visible')) { hideSearchOption($('#industries')); } });
+    $('#industries').parent().mouseleave(function () { hideSearchOption($('#industries')); });
+
+    $('#schools').parent().mouseenter(function () { if (!$('#schools').is(':visible')) { hideSearchOption($('#schools')); } });
+    $('#schools').parent().mouseleave(function () { hideSearchOption($('#schools')); });
+
+    $($('.sort-by')[0]).parent().mouseenter(function () {
+        $('.sort-by').each(function (i, e) { $(e).css('display', 'block'); });
+    });
+    $($('.sort-by')[0]).parent().mouseleave(function () {
+        $('.sort-by').each(function (i, e) { $(e).removeAttr('style'); });
+    });
+    $('.sort-by').each(function (i, e) {
+
+        $(e).mouseup(function () {
+
+            $('.sort-by').each(function (i, e) { $(e).removeClass('active'); });
+            $(this).parent().prepend($(this));
+            $(this).addClass('active');
+
+            if ($('#providers')) { sortUsers(this.title); }
+
+        });
+
+    });
+
+    $('#industries').parent().find('.text-field').val(filter_settings.category.label);
+    $('#schools').parent().find('.text-field').val(filter_settings.college.label);
+    $('.search-field').val(filter_settings.query);
+    $('#query').val(filter_settings.query);
+    $('#category_id').val(filter_settings.category.value);
+
+}
+function sortUsers (sortBy) {
+
+    if (sortBy === 'cost') {
+
+        $('#providers').html(
+
+            $('#providers .list-item').sort(function (a, b) {
+
+                a = parseInt($(a).find('.distance').html().length, 10);
+                b = parseInt($(b).find('.distance').html().length, 10);
+
+                if (a < b) { return 1; }
+                if (a > b) { return -1; }
+
+                return 0;
+
+            })
+
+        );
+
+    }
+    if (sortBy === 'experience') {
+
+        $('#providers').html(
+
+            $('#providers .list-item').sort(function (a, b) {
+
+                if ($(a).prop('title') === 'null' || $(b).prop('title') === 'null') {
+                    return 0;
+                }
+
+                a = parseInt($(a).prop('title'), 10);
+                b = parseInt($(b).prop('title'), 10);
+
+                if (a < b) { return 1; }
+                if (a > b) { return -1; }
+
+                return 0;
+
+            })
+
+        );
+
+    }
+
 }
 
-function showUserInfo() {
-
-    currentUser['state'] = checkState(currentUser['state']);
-    currentUser['city_name'] = (!currentUser['city_name'])? 'New York' : currentUser['city_name'];
-
-    var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '<%= asset_path '/assets/new/main/avatar.png' %>';
-
-    $('#admin-panel .header .login').hide();
-    $('#user-info').show();
-
-    $('#user-info .avatar').attr('src', avatar);
-    $('#user-info .name').html(currentUser['name']);
-    $('#user-info .location').html(currentUser['city_name'] + ', ' + currentUser['state']);
-}
+/***** Favorite *****/
 
 function createFavorite(userID, button) {
 
@@ -1335,168 +1476,95 @@ function getFavorites() {
     }
 
 }
+function loadFavorites() {
 
-function filterUsers(callback) {
-    $('#filter').hide();
+    if(currentUser === null) {
+        showPlaceholder('Favorites');
+        return false;
+    }
+
     $('#content-preloader').show();
 
     $.ajax({
-        url: 'http://backend.liquidtalent.com/users/filter',
-        data: 'category_id=' + $('#category_id').val() +
-                '&subcategory_id=' + $('#subcategory_id').val() +
-                '&city_id=' + $('#subcategory_id').val() +
-                '&hourly_rate_from=' + $('#hourly_rate_from').val() +
-                '&hourly_rate_to=' + $('#hourly_rate_to').val() +
-                '&rate_from=' + $('#rate_from').val() +
-                '&rate_to=' + $('#rate_to').val() +
-                '&school_id=' + $('#subcategory_id').val(),
+        url: 'http://backend.liquidtalent.com/favourites/list',
+        data: 'demander_id=' + currentUser['id'] +
+                '&token=' + currentUser['token'] +
+                '&offset=0' +
+                '&limit=999',
         error: Response
     }).done(function (data) {
-                $('#content-preloader').hide();
-                users = data['response'];
-                callback(users);
+
+        $('#content-preloader').hide();
+
+        data['response'].forEach(function (item) {
+
+            user = item['provider'];
+
+            user.hourly_rate = calculateCost(user.hourly_rate);
+            user.state = checkState(user.state);
+
+            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
+
+            $('#first-item .avatar').attr('src', user.avatar_url);
+
+            $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
+            $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
+
+            if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+            else { $('#first-item .lt-drop').addClass(user.badge); }
+
+//            if (user.video_url === null) { $('#first-item .play').addClass('disabled'); }
+//            else { $('#first-item .play').removeClass('disabled'); }
+
+            $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+            $('#first-item .description').html(user.description);
+
+            $('#first-item .distance').html(user.hourly_rate);
+
+            if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite').addClass('active'); }
+            else { $('#first-item .favorite').removeClass('active'); }
+            $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
+
+            $('#first-item .removeFavorite').attr('id', item['favourite_id']);
+
+            $('#first-item .message').attr('onclick', 'back="favorites"; loadChat(\'' + user.id + ':' + user.name + '\');');
+            $('#first-item .hire').attr('onclick', 'back="favorites"; providerId=' + user.id + '; loadPage("/hire");');
+
+            $('#favorites').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
+
+        });
+
+        $('.list-item .removeFavorite').on('click', function() {
+
+            removeFavorite($(this).prop('id'));
+
+            $('.removeFavorite').each(function (i, e) {
+
+                $(e).css('display', ($(e).css('display') === 'block' ? 'none' : 'block'));
+
             });
 
-    return false;
-}
+        });
 
-function prepareFilter() {
+    });
+
+    return false;
+
+}
+function removeFavorite(favourite_id) {
+    $('#content-preloader').show();
+
     $.ajax({
-        url: 'http://backend.liquidtalent.com/get_info',
-        error: function (error) {
-            alert("Problem with connecting to the server");
-            console.log(error);
-        }
-    }).done(function (data) {
-                global_info = data['response'];
+        url: 'http://backend.liquidtalent.com/favourite/destroy?token=' + currentUser.token + '&favourite_id=' + favourite_id,
+        error: Response
+    }).done(function (user) {
+        $('#content-preloader').hide();
 
-                data['response']['cities'].forEach(function (item) {
-                    $('#cities').append('<div onclick="setCity(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
-                })
-
-                data['response']['categories'].forEach(function (item) {
-                    $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
-                })
-            });
-
-    $('.city').click(function () {
-        if($('#cities').is(':visible')) {
-            $('#cities').hide();
+        if (user.status === 'ok') {
+            $('#' + favourite_id).parents('.list-item').remove();
         }
-        else {
-            $('#cities').show();
-        }
+
     });
-
-    $('.category').click(function () {
-        if($('#categories').is(':visible')) {
-            $('#categories').hide();
-        }
-        else {
-            $('#categories').show();
-        }
-    });
-
-    $('.subcategory').click(function () {
-        if($('#subcategories').is(':visible')) {
-            $('#subcategories').hide();
-        }
-        else {
-            $('#subcategories').show();
-        }
-    });
-
-    if(filter_settings.subcategories.length > 0) {
-        $('#subcategories').html('<div onclick="setSubcategory(null, \'All Subcategories\');">All Subcategories</div>');
-    }
-
-    filter_settings.subcategories.forEach(function (item) {
-        $('#subcategories').append('<div onclick="setSubcategory(' + item.value + ', \'' + item.label + '\');">' + item.label + '</div>');
-    });
-
-    $( "#hourly_rate" ).slider({range: true, min: 0, max: 200, step: 20, values: [filter_settings.hourly_rate_from.value, filter_settings.hourly_rate_to.value],
-        change: function( event, ui ) {
-            var hourly_rate_values = $( "#hourly_rate" ).slider('values');
-            $('#hourly_rate_from').val(hourly_rate_values[0]);
-            $('#hourly_rate_to').val(hourly_rate_values[1]);
-
-            filter_settings.hourly_rate_from.label = filter_settings.hourly_rate_from.value = hourly_rate_values[0];
-            filter_settings.hourly_rate_to.label = filter_settings.hourly_rate_to.value = hourly_rate_values[1];
-        },
-        slide: function( event, ui ) {
-            $('#hourly_rate_from_label').html(ui.values[0]);
-            $('#hourly_rate_to_label').html(ui.values[1]);
-        }
-    });
-
-    $( "#rate" ).slider({range: true, min: 0, max: 5, step: 1, values: [filter_settings.rate_from.value, filter_settings.rate_to.value],
-        change: function( event, ui ) {
-            var rate_values = $( "#rate" ).slider('values');
-            $('#rate_from').val(rate_values[0]);
-            $('#rate_to').val(rate_values[1]);
-
-            filter_settings.rate_from.label = filter_settings.rate_from.value = rate_values[0];
-            filter_settings.rate_to.label = filter_settings.rate_to.value = rate_values[1];
-        },
-        slide: function( event, ui ) {
-            $('#rate_from_label').html(ui.values[0]);
-            $('#rate_to_label').html(ui.values[1]);
-        }
-    });
-
-    $('.category').val(filter_settings.category.label);
-    $('.subcategory').val(filter_settings.subcategory.label);
-    $('.city').val(filter_settings.city.label);
-    $('.college').val(filter_settings.college.label);
-
-    $('#category_id').val(filter_settings.category.value);
-    $('#subcategory').val(filter_settings.subcategory.value);
-    $('#city').val(filter_settings.city.value);
-    $('#college').val(filter_settings.college.value);
-    $('#hourly_rate_from').val(filter_settings.hourly_rate_from.value);
-    $('#hourly_rate_to').val(filter_settings.hourly_rate_to.value);
-    $('#rate_from').val(filter_settings.rate_from.value);
-    $('#rate_to').val(filter_settings.rate_to.value);
-}
-
-function showPlaceholder (page) {
-
-    if (currentUser === null) {
-
-        $('#background').html(
-
-                '<div id="placeholder">' +
-                        'Explore all of LiquidTalent.' +
-                        '<a href="javascript:loadPage(\'/login\')" class="green-button">Sign Up</a>' +
-                        '</div>'
-
-        );
-
-    }
-    else {
-
-        $('#background').html(
-
-                '<div id="placeholder">' +
-                        'No ' + page + ' have been added here yet.' +
-                        '<a href="javascript:loadPage(\'/map\')" class="green-button">Find ' + page + '</a>' +
-                        '</div>'
-
-        );
-
-    }
-
-}
-
-function userMenu() {
-    if($('#user-menu').is(':visible')) {
-        $('#user-menu').hide();
-    }
-    else {
-        $('#user-menu').show();
-    }
-
-    return false;
 }
 
 /***** Messages *****/
@@ -1506,58 +1574,74 @@ function checkUnreadMessages() {
     var notification = $('.navigation .messages .notification');
 
     $.ajax({
-        url: 'http://backend.liquidtalent.com/messages/list?user_id=' + currentUser['id'],
-        error: Response
+        url: 'http://backend.liquidtalent.com/messages/list?user_id=' + currentUser['id']
     }).done(function (data) {
 
-                if (typeof (data['response']) !== 'undefined' &&
-                        typeof (data['response'][0]) !== 'undefined') {
+        if (typeof (data['response']) !== 'undefined' &&
+            typeof (data['response'][0]) !== 'undefined') {
 
-                    notification.addClass('active');
-                    notification.html('0');
+            notification.addClass('active');
+            notification.html('0');
 
-                    for (var i = 0; i < data['response'].length; i++) {
+            for (var i = 0; i < data['response'].length; i++) {
 
-                        messages[i] = data['response'][i];
+                messages[i] = data['response'][i];
 
-                        if (data['response'][i].unread_messages > 0) {
-                            notification.html(parseInt(notification.html(), 0) + data['response'][i].unread_messages);
-                        }
-
-                    }
-
-                    if (parseInt(notification.html(), 0) === 0) { notification.removeClass('active'); }
-
+                if (data['response'][i].unread_messages > 0) {
+                    notification.html(parseInt(notification.html(), 0) + data['response'][i].unread_messages);
                 }
-                else { notification.removeClass('active'); }
 
-            });
+            }
+
+            if (parseInt(notification.html(), 0) === 0) { notification.removeClass('active'); }
+
+        }
+        else { notification.removeClass('active'); }
+
+    });
 
     setTimeout(checkUnreadMessages, 10000);
 
 }
-
 function loadMessages() {
 
     if (messages.length === 0) { showPlaceholder('Messages'); }
     else {
 
         $('#background').html(
-                '<div id="title">' +
-                        'Messages' +
-                        '<a class="black-button" href="#">Edit</a>' +
-                        '</div>'
+            '<div id="title">' +
+                'Messages' +
+                '<a class="black-button" href="javascript:ToggleMessageDelete();">Edit</a>' +
+            '</div>' +
+            '<div id="messages"></div>'
         );
 
         for (var i = 0; i < messages.length; i++) {
 
-            $('#background').html($('#background').html() +
-                    '<div id="' + messages[i].sender.id + '" class="message-user">' +
-                    '<div class="green-button' + ((messages[i].unread_messages > 0) ? ' active' : '') + '">' + messages[i].unread_messages + '</div>' +
+            if (messages[i].last_message === null) {
+
+                messages[i].last_message = {
+
+                    contents: messages[i].sender.description,
+                    created_at: new Date().toJSON()
+
+                };
+
+            }
+
+            $('#messages').html($('#messages').html() +
+                '<div id="' + messages[i].sender.id + ':' + messages[i].sender.name + '" class="message-box">' +
                     '<a href="javascript:blockUser(' + messages[i].sender.id + ');" class="black-button t">x</a>' +
-                    '<img class="avatar" src="' + ((messages[i].avatar_url === undefined) ? '<%= asset_path "new/main/avatar.png" %>' : messages[i].sender.avatar_url) + '" alt="User Avatar">' +
-                    '<div class="name">' + messages[i].sender.name + '</div>' +
-                    '</div>'
+                    '<div class="avatar-container">' +
+                        '<img src="' + ((messages[i].sender.avatar_url !== null) ? messages[i].sender.avatar_url : '<%= asset_path "new/main/avatar.png" %>') + '" alt="User Avatar">' +
+                    '</div>' +
+                    '<div class="name">' +
+                        messages[i].sender.name +
+                        '<div class="green-button' + ((messages[i].unread_messages > 0) ? ' active' : '') + '"></div>' +
+                    '</div>' +
+                    '<div class="content">' + messages[i].last_message.contents + '</div>' +
+                    '<div class="time">' + time12Hour(messages[i].last_message.created_at.replace(/^.*T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$1')) + '</div>' +
+                '</div>'
             );
 
         }
@@ -1574,14 +1658,21 @@ function loadMessages() {
 
     });
 
-    $('.message-user').each(function (i, e) {
-
-        $(this).on('mouseup', function () { loadChat($(this).prop('id')); });
-
+    $('.message-box .content, .message-box .name').each(function (i, e) {
+        $(e).on('mouseup', function () {
+            loadChat($(this).prop('id'));
+        });
     });
 
 }
+function ToggleMessageDelete () {
 
+    $('.message-box .black-button').css('display',
+        $('.message-box .black-button').css('display') === 'block' ? 'none' : 'block'
+    );
+    return false;
+
+}
 function blockUser(user_id) {
 
     $.ajax({
@@ -1589,129 +1680,166 @@ function blockUser(user_id) {
         error: Response
     }).done(function (data) {
 
-                messages = $.grep(messages, function (value) {
+        messages = $.grep(messages, function (value) {
 
-                    return value.sender.id != user_id;
+            return value.sender.id != user_id;
 
-                });
+        });
 
-                $('#' + user_id).remove();
+        $('#' + user_id).remove();
 
-            });
+    });
 
 }
 
-function loadChat(user_id) {
+function loadChat(user) {
+
+    user = user.split(':');
 
     $.ajax({
-        url: 'http://backend.liquidtalent.com/nda/show?user_id_1=' + currentUser.id + '&user_id_2=' + user_id,
+        url: 'http://backend.liquidtalent.com/nda/show?user_id_1=' + currentUser.id + '&user_id_2=' + user[0],
         error: Response
     }).done(function (nda) {
 
-                nda = nda.response;
+        nda = nda.response[0];
 
-                $('#background').html(
-                        '<div id="title">' +
-                                ((nda.length === 0) ?
-                                        '<a href="javascript:sendNDA();" class="green-button t">Send NDA</a>'
-                                        :
-                                        '<b>NDA</b> sent on ' + nda.created_at.toJSON().replace(/\d{2}(\d{2})-(\d{2})-\d{2}T\d{2}\:\d{2}\:\d{2}.\d{3}Z/, '$2/$3/$1')
-                                        ) +
-                                'Messages' +
-                                '<a class="black-button" href="#">Back</a>' +
-                                '</div>'
-                );
-
-            });
-
-    $('#background').html($('#background').html() +
+        $('#background').html(
+            '<div id="title">' +
+                ((nda === undefined) ?
+                    '<a href="javascript:sendNDA(' + user[0] + ', \'' + user[1] + '\');" class="green-button">Send NDA</a>'
+                    :
+                    '<div id="nda-sent">' +
+                        '<b>NDA</b> sent on ' + new Date(parseInt(nda.created_at, 10)).toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T.*$/, '$2/$3/$1') +
+                    '</div>'
+                ) +
+                'Messages' +
+                '<a class="black-button" href="javascript:loadMessages();">Back</a>' +
+            '</div>' +
             '<div id="chat"></div>' +
-            '<textarea placeholder="Message" id="chat-box"></textarea>' +
-            '<a href="javascript:createChat(' + user_id + ');" class="green-button" id="create-chat">Create</a>'
-    );
+            '<div id="chat-area">' +
+                '<textarea placeholder="Message" id="chat-box">' +
+                '</textarea><a href="javascript:createChat(' + user[0] + ');" class="green-button" id="post-chat">Post</a>' +
+            '</div>'
+        );
 
-    $('.message-user').each(function () { $(this).remove(); });
-
-    $('#background #title .black-button').on('mouseup', function () { loadMessages(); });
-    $('#background #title .green-button').addClass('active');
+    });
 
     $.ajax({
-        url: 'http://backend.liquidtalent.com/messages/conversation?user_id_1=' + currentUser.id + '&user_id_2=' + user_id,
+        url: 'http://backend.liquidtalent.com/messages/conversation?user_id_1=' + currentUser.id + '&user_id_2=' + user[0],
         error: Response
     }).done(function (chat) {
 
-                chat = chat.response;
+        chat = chat.response;
 
-                for (var i = 0, date; i < chat.length; i++) {
+        for (var i = 0, date, time; i < chat.length; i++) {
 
-                    $.ajax({
-                        url: 'http://backend.liquidtalent.com/messages/viewed?sender_id=' + chat[i].message.sender_id + '&receiver_id=' + chat[i].message.receiver_id + '&ts=' + chat[i].message.ts,
-                        error: Response
-                    }).done(function(){});
-
-                    //date = new Date(chat[i].message.ts).toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$2/$3/$1 $4');
-                    date = chat[i].message.created_at.replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$2/$3/$1 $4');
-
-                    $('#chat').prepend(
-
-                            '<div class="chat-box">' +
-                                    '<div class="title">' +
-                                    '<img src="' + ((chat[i].sender.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : chat[i].sender.avatar_url) + '" alt="User Avatar" class="avatar">' +
-                                    '<div class="date">' + date + '</div>' +
-                                    '<div class="name">' + chat[i].sender.name + '</div>' +
-                                    '</div>' +
-                                    '<div class="chat">' + chat[i].message.contents + '</div>' +
-                                    '</div>'
-
-                    );
-
-                }
-
+            $.ajax({
+                url: 'http://backend.liquidtalent.com/messages/viewed?sender_id=' + chat[i].message.sender_id + '&receiver_id=' + chat[i].message.receiver_id + '&ts=' + chat[i].message.ts,
+                error: Response
             });
 
-}
+            date = chat[i].message.created_at.replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T.*$/, '$2/$3/$1');
+            time = chat[i].message.created_at.replace(/^.*(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$1');
 
+            $('#chat').prepend(
+
+                '<div class="message-box">' +
+                    '<div class="avatar-container">' +
+                        '<img src="' + ((chat[i].sender.avatar_url !== null) ? chat[i].sender.avatar_url : '<%= asset_path "new/main/avatar.png" %>') + '" alt="User Avatar">' +
+                    '</div>' +
+                    '<div class="name">' +
+                        chat[i].sender.name +
+                    '</div>' +
+                    '<div class="content">' + chat[i].message.contents + '</div>' +
+                    '<div class="time">' + time12Hour(time) + '</div>' +
+                '</div>'
+
+            );
+
+        }
+
+    });
+
+}
 function createChat (user_id) {
 
     var date = new Date();
 
-    $.ajax({
-        url: 'http://backend.liquidtalent.com/message/create?' +
-                'token=' + currentUser.token +
-                '&sender_id=' + currentUser.id +
-                '&receiver_id=' + user_id +
-                '&contents=' + $('#chat-box').val() +
-                '&created_at=' + Math.floor(date / 1000),
-        error: Response
-    }).done(function (chat) {
+    if ($('#chat-box').val().replace(/\s+/, '').length > 0) {
 
-                if(chat.status === 'failed') { alert(errors[0]); }
-                else {
+        $.ajax({
+            url: 'http://backend.liquidtalent.com/message/create?' +
+                    'token=' + currentUser.token +
+                    '&sender_id=' + currentUser.id +
+                    '&receiver_id=' + user_id +
+                    '&contents=' + $('#chat-box').val() +
+                    '&created_at=' + Math.floor(date / 1000),
+            error: Response
+        }).done(function (chat) {
 
-                    date = date.toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$2/$3/$1 $4');
+            if(chat.status === 'failed') { alert(errors[0]); }
+            else {
 
-                    $('#chat').html($('#chat').html() +
+                time = date.toJSON().replace(/^.*T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$1');
 
-                            '<div class="chat-box">' +
-                            '<div class="title">' +
-                            '<img src="' + currentUser.avatar_url + '" alt="User Avatar" class="avatar">' +
-                            '<div class="date">' + date + '</div>' +
-                            '<div class="name">' + currentUser.name + '</div>' +
-                            '</div>' +
-                            '<div class="chat">' + $('#chat-box').val() + '</div>' +
-                            '</div>'
+                $('#chat').html($('#chat').html() +
 
-                    );
+                    '<div class="message-box">' +
+                        '<div class="avatar-container">' +
+                            '<img src="' + currentUser.avatar_url + '" alt="User Avatar">' +
+                        '</div>' +
+                        '<div class="name">' +
+                            currentUser.name +
+                        '</div>' +
+                        '<div class="content">' + $('#chat-box').val() + '</div>' +
+                        '<div class="time">' + time12Hour(time) + '</div>' +
+                    '</div>'
 
-                }
+                );
 
-            });
+                $('#chat').animate({ scrollTop: $('#chat :last').offset().top }, 300, 'linear', null);
+
+            }
+
+        });
+
+    }
 
 }
+function sendNDA (user_id, user_name) {
 
-function sendNDA () {
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/nda/create?' +
+                'user_id_1=' + currentUser.id +
+                '&token=' + currentUser.token +
+                '&user_id_2=' + user_id +
+                '&user_name_1=' + currentUser.name +
+                '&user_name_2=' + user_name,
+        error: Response
+    }).done(function () {
 
-    $('#title .green-button').remove();
+        $('#title .green-button').remove();
+
+        $('#title').prepend(
+            '<div id="nda-sent">' +
+                '<b>NDA</b> sent on ' + new Date().toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T.*$/, '$2/$3/$1') +
+            '</div>'
+        );
+
+    });
+
+}
+function time12Hour (time) {
+
+    var hours = parseInt(time.replace(/\:\d{2}/, ''), 10);
+    var minutes = time.replace(/\d{2}\:/, '');
+
+    var suffex = (hours >= 12)? 'pm' : 'am';
+
+    hours = (hours > 12)? hours -12 : hours;
+    hours = (hours == '00')? 12 : hours;
+
+    return hours + ':' + minutes + suffex;
 
 }
 
@@ -1722,94 +1850,6 @@ function checkState (state) {
     else { state = 'NY'; }
 
     return state;
-}
-
-function loadFavorites() {
-    if(currentUser === null) {
-        showPlaceholder('Favorites');
-        return false;
-    }
-
-    $('#content-preloader').show();
-
-    $.ajax({
-        url: 'http://backend.liquidtalent.com/favourites/list',
-        data: 'demander_id=' + currentUser['id'] +
-                '&token=' + currentUser['token'] +
-                '&offset=0' +
-                '&limit=999',
-        error: Response
-    }).done(function (data) {
-                $('#content-preloader').hide();
-
-                data['response'].forEach(function (item) {
-                    user = item['provider'];
-
-                    user.hourly_rate = calculateCost(user.hourly_rate);
-                    user.state = checkState(user.state);
-
-                    user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
-
-                    $('#first-item .avatar').attr('src', user.avatar_url);
-
-                    $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
-                    $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
-
-                    if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
-                    else { $('#first-item .lt-drop').addClass(user.badge); }
-
-//          if (user.video_url === null) { $('#first-item .play-button').addClass('disabled'); }
-//          else { $('#first-item .play-button').removeClass('disabled'); }
-
-                    $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
-                    $('#first-item .description').html(user.description);
-
-                    $('#first-item .distance').html(user.hourly_rate);
-
-                    if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite-button').addClass('active'); }
-                    else { $('#first-item .favorite-button').removeClass('active'); }
-                    $('#first-item .favorite-button').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
-
-                    $('#first-item .removeFavorite').attr('id', item['favourite_id']);
-
-                    $('#first-item .message').attr('onclick', 'back="favorites"; loadChat(' + user.id + ');');
-                    $('#first-item .hire').attr('onclick', 'back="favorites"; providerId=' + user.id + '; loadPage("/hire");');
-
-                    $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
-
-                });
-
-                $('.list-item .base .removeFavorite').on('click', function() {
-                    if(confirm('Do you really want to remove this favorited provider?')) {
-                        removeFavorite($(this).prop('id'));
-                    }
-                });
-
-            });
-
-    return false;
-}
-
-function removeFavorite(favourite_id) {
-    $('#content-preloader').show();
-
-    $.ajax({
-        url: 'http://backend.liquidtalent.com/favourite/destroy?token=' + currentUser.token + '&favourite_id=' + favourite_id,
-        error: Response
-    }).done(function (user) {
-                $('#content-preloader').hide();
-
-                if (user.status === 'ok') {
-                    $('#' + favourite_id).parents('.list-item').html('');
-                }
-
-            });
-}
-
-function ToggleFavoriteDelete () {
-
-    $('.removeFavorite').css('display', $('.removeFavorite').css('display') === 'block' ? 'none' : 'block');
-
 }
 
 function loadStats(term) {
@@ -1824,110 +1864,110 @@ function loadStats(term) {
         url: 'http://backend.liquidtalent.com/stats/show?user_id=' + currentUser.id + '&token=' + currentUser.token + '&timeframe=' + term,
         error: Response
     }).done(function (user) {
-                if (user.status === 'ok') {
-                    var total = user['response']['paid'] + user['response']['unpaid'];
+        if (user.status === 'ok') {
+            var total = user['response']['paid'] + user['response']['unpaid'];
 
-                    $('#current-balance').html('$' + (total - user['response']['paid']));
-                    $('#total-earnings').html('$' + total);
+            $('#current-balance').html('$' + (total - user['response']['paid']));
+            $('#total-earnings').html('$' + total);
 
-                    if(currentUser.is_provider) {
-                        $('.drp').addClass('dropimg-provider');
-                        $('#current-projects').html(user['response']['provided_bookings_current']);
-                        $('#completed-projects').html(user['response']['provided_bookings_completed']);
-                    }
-                    else {
-                        $('.drp').addClass('dropimg-demander');
-                        $('#current-projects').html(user['response']['demanded_bookings_current']);
-                        $('#completed-projects').html(user['response']['demanded_bookings_completed']);
-                        $('#earnings-chart').siblings('.title').html('Payments');
-                    }
+            if(currentUser.is_provider) {
+                $('.drp').addClass('dropimg-provider');
+                $('#current-projects').html(user['response']['provided_bookings_current']);
+                $('#completed-projects').html(user['response']['provided_bookings_completed']);
+            }
+            else {
+                $('.drp').addClass('dropimg-demander');
+                $('#current-projects').html(user['response']['demanded_bookings_current']);
+                $('#completed-projects').html(user['response']['demanded_bookings_completed']);
+                $('#earnings-chart').siblings('.title').html('Payments');
+            }
 
 
-                    var drop_total = 0;
-                    var drop_name = '';
+            var drop_total = 0;
+            var drop_name = '';
 
-                    if(total < 1000) {
-                        drop_total = 1000 - total;
-                        drop_name = 'blue';
-                        $('#drop1 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 1000)) - 89) + 'px 0px');
-                    }
-                    else if(total < 5000) {
-                        drop_total = 5000 - total;
-                        drop_name = 'bronze';
-                        $('#drop1 > div.bar ').css('backgroundPosition', '90px 0px');
-                        $('#drop2 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 5000)) - 89) + 'px -19px');
-                    }
-                    else if(total < 10000) {
-                        drop_total = 10000 - total;
-                        drop_name = 'silver';
-                        $('#drop1 > div.bar ').css('backgroundPosition', '0px 0px');
-                        $('#drop2 > div.bar ').css('backgroundPosition', '0px -19px');
-                        $('#drop3 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 10000)) - 89) + 'px -38px');
-                    }
-                    else if(total < 25000) {
-                        drop_total = 25000 - total;
-                        drop_name = 'gold';
-                        $('#drop1 > div.bar ').css('backgroundPosition', '0px 0px');
-                        $('#drop2 > div.bar ').css('backgroundPosition', '0px -19px');
-                        $('#drop3 > div.bar ').css('backgroundPosition', '0px -38px');
-                        $('#drop4 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 25000)) - 89) + 'px -57px');
-                    }
-                    else {
-                        drop_total = null;
-                    }
+            if(total < 1000) {
+                drop_total = 1000 - total;
+                drop_name = 'blue';
+                $('#drop1 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 1000)) - 89) + 'px 0px');
+            }
+            else if(total < 5000) {
+                drop_total = 5000 - total;
+                drop_name = 'bronze';
+                $('#drop1 > div.bar ').css('backgroundPosition', '90px 0px');
+                $('#drop2 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 5000)) - 89) + 'px -19px');
+            }
+            else if(total < 10000) {
+                drop_total = 10000 - total;
+                drop_name = 'silver';
+                $('#drop1 > div.bar ').css('backgroundPosition', '0px 0px');
+                $('#drop2 > div.bar ').css('backgroundPosition', '0px -19px');
+                $('#drop3 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 10000)) - 89) + 'px -38px');
+            }
+            else if(total < 25000) {
+                drop_total = 25000 - total;
+                drop_name = 'gold';
+                $('#drop1 > div.bar ').css('backgroundPosition', '0px 0px');
+                $('#drop2 > div.bar ').css('backgroundPosition', '0px -19px');
+                $('#drop3 > div.bar ').css('backgroundPosition', '0px -38px');
+                $('#drop4 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 25000)) - 89) + 'px -57px');
+            }
+            else {
+                drop_total = null;
+            }
 
-                    if(drop_total == null) {
-                        $('#dew-drops').hide();
-                    }
-                    else {
-                        $('#drop-total').html(drop_total);
-                        $('#drop-name').html(drop_name);
-                    }
+            if(drop_total == null) {
+                $('#dew-drops').hide();
+            }
+            else {
+                $('#drop-total').html(drop_total);
+                $('#drop-name').html(drop_name);
+            }
 
-                    var bookings = [];
-                    var earnings = [];
-                    var favourites = [];
-                    var profile_views = [];
-                    var video_views = [];
+            var bookings = [];
+            var earnings = [];
+            var favourites = [];
+            var profile_views = [];
+            var video_views = [];
 
-                    user['response']['stats'].forEach(function(item) {
-                        if(currentUser.is_provider) {
-                            bookings.push([item['date'] * 1000, item['provided_bookings']]);
-                            earnings.push([item['date'] * 1000, item['earnings']]);
-                            favourites.push([item['date'] * 1000, item['favourited_by_demanders']]);
-                        }
-                        else {
-                            bookings.push([item['date'] * 1000, item['demanded_bookings']]);
-                            earnings.push([item['date'] * 1000, item['payments']]);
-                            favourites.push([item['date'] * 1000, item['favourited_providers']]);
-                        }
-                        profile_views.push([item['date'] * 1000, item['profile_views']]);
-                        video_views.push([item['date'] * 1000, item['video_views']]);
-                    });
-
-                    chart_options.series[0].data = bookings;
-                    new Highcharts.Chart(chart_options);
-
-                    chart_options.chart.renderTo = 'earnings-chart';
-                    chart_options.series[0].data = earnings;
-                    new Highcharts.Chart(chart_options);
-
-                    chart_options.chart.renderTo = 'favourites-chart';
-                    chart_options.series[0].data = favourites;
-                    new Highcharts.Chart(chart_options);
-
-                    chart_options.chart.renderTo = 'profile-views-chart';
-                    chart_options.series[0].data = profile_views;
-                    new Highcharts.Chart(chart_options);
-
-                    chart_options.chart.renderTo = 'video-views-chart';
-                    chart_options.series[0].data = video_views;
-                    new Highcharts.Chart(chart_options);
-
-                    $('#content-preloader').hide();
+            user['response']['stats'].forEach(function(item) {
+                if(currentUser.is_provider) {
+                    bookings.push([item['date'] * 1000, item['provided_bookings']]);
+                    earnings.push([item['date'] * 1000, item['earnings']]);
+                    favourites.push([item['date'] * 1000, item['favourited_by_demanders']]);
                 }
-
+                else {
+                    bookings.push([item['date'] * 1000, item['demanded_bookings']]);
+                    earnings.push([item['date'] * 1000, item['payments']]);
+                    favourites.push([item['date'] * 1000, item['favourited_providers']]);
+                }
+                profile_views.push([item['date'] * 1000, item['profile_views']]);
+                video_views.push([item['date'] * 1000, item['video_views']]);
             });
+
+            chart_options.series[0].data = bookings;
+            new Highcharts.Chart(chart_options);
+
+            chart_options.chart.renderTo = 'earnings-chart';
+            chart_options.series[0].data = earnings;
+            new Highcharts.Chart(chart_options);
+
+            chart_options.chart.renderTo = 'favourites-chart';
+            chart_options.series[0].data = favourites;
+            new Highcharts.Chart(chart_options);
+
+            chart_options.chart.renderTo = 'profile-views-chart';
+            chart_options.series[0].data = profile_views;
+            new Highcharts.Chart(chart_options);
+
+            chart_options.chart.renderTo = 'video-views-chart';
+            chart_options.series[0].data = video_views;
+            new Highcharts.Chart(chart_options);
+
+            $('#content-preloader').hide();
+        }
+
+    });
 }
 
 function setStatsTerm(term, name) {
@@ -1938,71 +1978,85 @@ function setStatsTerm(term, name) {
 }
 
 function loadProfile() {
+
     $('#content-preloader').show();
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/show?user_id=' + profileId,
         error: Response
     }).done(function (user) {
-                user = user['response']['user'];
 
-                $('#content-preloader').hide();
+        user = user['response']['user'];
 
-                if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
-                else { user.state = 'NY'; }
+        $('#content-preloader').hide();
 
-                user.avatar_url = (user.avatar_url === null) ? '<%= asset_path 'new/main/avatar.png' %>' : user.avatar_url;
+        if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+        else { user.state = 'NY'; }
 
-                $('#first-item .avatar').attr('src', user.avatar_url);
+        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
 
-                if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
-                else { $('#first-item .lt-drop').addClass(user.badge); }
+        $('#first-item .avatar').attr('src', user.avatar_url);
 
-                //            if (user.video_url === null) { $('#first-item .play-button').addClass('disabled'); }
-                //            else { $('#first-item .play-button').removeClass('disabled'); }
+        if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+        else { $('#first-item .lt-drop').addClass(user.badge); }
 
-                $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
-                $('#first-item .description').html(user.description);
+//        if (user.video_url === null) { $('#first-item .play').addClass('disabled'); }
+//        else { $('#first-item .play').removeClass('disabled'); }
 
-                $('#first-item .distance').html('$' + user.hourly_rate + '.00');
+        $('#profile-buttons .message-button-profile').attr('onclick',
+            'javascript:loadChat(\'' + user.id + ':' + user.name + '\');'
+        );
 
-                if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite-button').addClass('active'); }
-                else { $('#first-item .favorite-button').removeClass('active'); }
-                $('#first-item .favorite-button').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
+        $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+        $('#first-item .description').html(user.description);
 
-                if(user.is_provider) {
-                    $('#profile-provider').show();
-                    $('#profile-demander').hide();
+        $('#first-item .distance').html('$' + user.hourly_rate + '.00');
 
-                    $('#profile-skills').html(user.skills);
-                    $('#profile-summary').html(user.summary);
-                    $('#profile-experience').html(user.experience);
-                    $('#profile-education').html(user.school_name);
+        if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite').addClass('active'); }
+        else { $('#first-item .favorite').removeClass('active'); }
+        $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
-                    $('.hire-button-profile').attr('onclick', 'back="profile"; providerId=' + user.id + '; loadPage("/hire");');
-                }
-            });
+        if(user.is_provider) {
+
+            $('#profile-provider').show();
+            $('#profile-demander').hide();
+
+            $('#profile-skills').html(user.skills);
+            $('#profile-summary').html(user.summary);
+            $('#profile-experience').html(user.experience);
+            $('#profile-education').html(user.school_name);
+
+            $('.hire-button-profile').attr('onclick', 'back="profile"; providerId=' + user.id + '; loadPage("/hire");');
+
+        }
+
+    });
+
 }
 
 function calculateCost (rate) {
 
-    if (rate > 1) { rate = 1; }
-    if (rate > 15) { rate = 2; }
-    if (rate > 25) { rate = 3; }
-    if (rate > 75) { rate = 4; }
-    if (rate > 200) { rate = 5; }
+    if (typeof(rate) !== 'string') {
 
-    switch (rate) {
+        if (rate > 200) { rate = 5; }
+        else if (rate > 75) { rate = 4; }
+        else if (rate > 25) { rate = 3; }
+        else if (rate > 15) { rate = 2; }
+        else { rate = 1; }
 
-        case 1: rate = '$'; break;
-        case 2: rate = '$$'; break;
-        case 3: rate = '$$$'; break;
-        case 4: rate = '$$$$'; break;
-        case 5: rate = '$$$$$'; break;
+        switch (rate) {
+
+            case 1: rate = '$'; break;
+            case 2: rate = '$$'; break;
+            case 3: rate = '$$$'; break;
+            case 4: rate = '$$$$'; break;
+            case 5: rate = '$$$$$'; break;
+
+        }
+
+        return rate;
 
     }
-
-    return rate;
 
 }
 
@@ -2025,16 +2079,16 @@ function uploadVideo() {
         }(),
         error: Response
     }).done(function (data) {
-                if (data['status'] === 'failed') {
-                    alert(data['errors'][0]);
-                }
-                else {
-                    currentUser['video_url'] = data['response']['url'];
-                    alert('The video has been successfully uplaoded!');
-                }
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+        }
+        else {
+            currentUser['video_url'] = data['response']['url'];
+            alert('The video has been successfully uplaoded!');
+        }
 
-                $('#preloader').hide();
-            });
+        $('#preloader').hide();
+    });
 }
 
 function playVideo() {
@@ -2044,22 +2098,22 @@ function playVideo() {
         url: '/video',
         error: Response
     }).done(function (data) {
-                $('#background').append(data);
+        $('#background').append(data);
 
-                jwplayer("player").setup({
-                    wmode: "transparent",
-                    file: currentUser.video_url,
-                    provider:'http',
-                    autostart: true,
-                    height: 510,
-                    skin: 'roundster',
-                    width: 660,
-                    controlbar: 'bottom'
+        jwplayer("player").setup({
+            wmode: "transparent",
+            file: currentUser.video_url,
+            provider:'http',
+            autostart: true,
+            height: 510,
+            skin: 'roundster',
+            width: 660,
+            controlbar: 'bottom'
 
-                });
+        });
 
-                $('#preloader').hide();
-            });
+        $('#preloader').hide();
+    });
 }
 
 /***** Hire *****/
@@ -2076,11 +2130,11 @@ function loadHire() {
         url: 'http://backend.liquidtalent.com/user/show?user_id=' + providerId,
         error: Response
     }).done(function (user) {
-                $('#avatar').attr('src', user['response']['user']['avatar_url']);
-                $('#hire-title').html(user['response']['user']['name']);
+        $('#avatar').attr('src', user['response']['user']['avatar_url']);
+        $('#hire-title').html(user['response']['user']['name']);
 
-                $('#preloader').hide();
-            });
+        $('#preloader').hide();
+    });
 }
 
 function submitBooking() {
@@ -2090,7 +2144,6 @@ function submitBooking() {
 
     loadPage('/hire_confirm');
 }
-
 function confirmBooking() {
     $('#preloader').show();
 
@@ -2129,83 +2182,83 @@ function loadProjects() {
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/bookings/list_all_bookings?' +
-                'token=' + currentUser.token +
-                '&user_id=' + currentUser.id,
+            'token=' + currentUser.token +
+            '&user_id=' + currentUser.id,
         error: Response
     }).done(function (data) {
-                if (data['status'] === 'failed') {
-                    alert(data['errors'][0]);
-                }
-                else {
-                    var user = null, userType = null;
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+        }
+        else {
+            var user = null, userType = null;
 
-                    data.response.forEach(function(item) {
-                        bookings[item.booking.id] = item;
+            data.response.forEach(function(item) {
+                bookings[item.booking.id] = item;
 
-                        if(item.booking.status != 'rejected') {
-                            if(item.demander.id == currentUser.id) {
-                                user = item.provider;
-                                userType = 'demander';
-                            }
-                            else {
-                                user = item.demander;
-                                userType = 'provider'
-                            }
+                if(item.booking.status != 'rejected') {
+                    if(item.demander.id == currentUser.id) {
+                        user = item.provider;
+                        userType = 'demander';
+                    }
+                    else {
+                        user = item.demander;
+                        userType = 'provider'
+                    }
 
-                            $('#first-project .avatar').attr('src', user.avatar_url ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
-                            $('#first-project .name').html(user.name);
+                    $('#first-project .avatar').attr('src', (user.avatar_url !== null) ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
+                    $('#first-project .name').html(user.name);
 
-                            dueDate = new Date(item.booking.due_date * 1000);
+                    dueDate = new Date(item.booking.due_date * 1000);
 
-                            $('#first-project .due-date').html((dueDate.getMonth() + 1) + '/' + dueDate.getDate() + '/' + dueDate.getFullYear());
-                            $('#first-project .description').html(item.booking.description);
-                            $('#first-project .total-amount').html(item.booking.budget);
+                    $('#first-project .due-date').html((dueDate.getMonth() + 1) + '/' + dueDate.getDate() + '/' + dueDate.getFullYear());
+                    $('#first-project .description').html(item.booking.description);
+                    $('#first-project .total-amount').html(item.booking.budget);
 
-                            $('#first-project .budget').show();
-                            $('#first-project .status').hide();
+                    $('#first-project .budget').show();
+                    $('#first-project .status').hide();
 
-                            if(userType == 'demander') {
-                                if(item.booking.status == 'confirmed') {
-                                    $('#first-project .status.pending').show();
-                                }
-                                else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
-                                    $('#first-project .status.complete').show();
-                                    $('#first-project .status.complete').attr('onclick', 'bookingId=' + item.booking.id + '; loadPage("/rate");');
-                                }
-                                else if(item.booking.status == 'completed') {
-                                    $('#first-project .budget').hide();
-                                    $('#first-project .status.completed-demander').show();
-                                }
-                                else if(item.booking.status == 'pending') {
-                                    $('#first-project .status.pending').show();
-                                }
-                            }
-                            else {
-                                if(item.booking.status == 'confirmed') {
-                                    $('#first-project .status.accept-decline').show();
-                                    $('#first-project .status-btn.accept').attr('onclick', 'bookingId=' + item.booking.id + '; loadPage("/hire_accept");');
-                                    $('#first-project .status-btn.decline').attr('onclick', 'bookingId=' + item.booking.id + '; if(confirm("Do you really want to reject this projects?")) rejectBooking();');
-                                }
-                                else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
-                                    $('#first-project .status.in-progress').show();
-                                }
-                                else if(item.booking.status == 'completed') {
-                                    $('#first-project .budget').hide();
-                                    $('#first-project .status.completed-provider').show();
-
-                                }
-                                else if(item.booking.status == 'pending') {
-                                    $('#first-project .status.pending').show();
-                                }
-                            }
-
-                            $('#projects').append('<div class="project">' + $('#first-project').clone().html() + '</div>');
+                    if(userType == 'demander') {
+                        if(item.booking.status == 'confirmed') {
+                            $('#first-project .status.pending').show();
                         }
-                    });
-                }
+                        else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
+                            $('#first-project .status.complete').show();
+                            $('#first-project .status.complete').attr('onclick', 'bookingId=' + item.booking.id + '; loadPage("/rate");');
+                        }
+                        else if(item.booking.status == 'completed') {
+                            $('#first-project .budget').hide();
+                            $('#first-project .status.completed-demander').show();
+                        }
+                        else if(item.booking.status == 'pending') {
+                            $('#first-project .status.pending').show();
+                        }
+                    }
+                    else {
+                        if(item.booking.status == 'confirmed') {
+                            $('#first-project .status.accept-decline').show();
+                            $('#first-project .status-btn.accept').attr('onclick', 'bookingId=' + item.booking.id + '; loadPage("/hire_accept");');
+                            $('#first-project .status-btn.decline').attr('onclick', 'bookingId=' + item.booking.id + '; if(confirm("Do you really want to reject this projects?")) rejectBooking();');
+                        }
+                        else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
+                            $('#first-project .status.in-progress').show();
+                        }
+                        else if(item.booking.status == 'completed') {
+                            $('#first-project .budget').hide();
+                            $('#first-project .status.completed-provider').show();
 
-                $('#preloader').hide();
+                        }
+                        else if(item.booking.status == 'pending') {
+                            $('#first-project .status.pending').show();
+                        }
+                    }
+
+                    $('#projects').append('<div class="project">' + $('#first-project').clone().html() + '</div>');
+                }
             });
+        }
+
+        $('#preloader').hide();
+    });
 }
 
 function loadRate() {
@@ -2219,7 +2272,7 @@ function loadRate() {
         user = bookings[bookingId].demander;
     }
 
-    $('#rate .avatar').attr('src', user.avatar_url ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
+    $('#rate .avatar').attr('src', (user.avatar_url !== null) ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
     $('#rate .name').html(user.name);
 
     $('.total-amount').html(bookings[bookingId].booking.budget);
@@ -2255,19 +2308,18 @@ function rateBooking() {
                 '&review=' + $('#review').val(),
         error: Response
     }).done(function (data) {
-                if (data['status'] === 'failed') {
-                    alert(data['errors'][0]);
-                }
-                else {
-                    completeBooking(function() {
-                        loadPage('/projects');
-                    });
-                }
-
-                $('#preloader').hide();
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+        }
+        else {
+            completeBooking(function() {
+                loadPage('/projects');
             });
-}
+        }
 
+        $('#preloader').hide();
+    });
+}
 function acceptBooking() {
     $('#preloader').show();
 
@@ -2277,17 +2329,16 @@ function acceptBooking() {
                 '&booking_id=' + bookingId,
         error: Response
     }).done(function (data) {
-                if (data['status'] === 'failed') {
-                    alert(data['errors'][0]);
-                    $('#preloader').hide();
-                }
-                else {
-                    alert('You have successfully accepted this project.');
-                    loadPage('/projects');
-                }
-            });
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+            $('#preloader').hide();
+        }
+        else {
+            alert('You have successfully accepted this project.');
+            loadPage('/projects');
+        }
+    });
 }
-
 function rejectBooking() {
     $('#preloader').show();
 
@@ -2297,17 +2348,16 @@ function rejectBooking() {
                 '&booking_id=' + bookingId,
         error: Response
     }).done(function (data) {
-                if (data['status'] === 'failed') {
-                    alert(data['errors'][0]);
-                    $('#preloader').hide();
-                }
-                else {
-                    alert('You have successfully rejected this project.');
-                    loadPage('/projects');
-                }
-            });
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+            $('#preloader').hide();
+        }
+        else {
+            alert('You have successfully rejected this project.');
+            loadPage('/projects');
+        }
+    });
 }
-
 function completeBooking(callback) {
     $.ajax({
         url: 'http://backend.liquidtalent.com/booking/complete?' +
@@ -2315,13 +2365,13 @@ function completeBooking(callback) {
                 '&booking_id=' + bookingId,
         error: Response
     }).done(function (data) {
-                if (data['status'] === 'failed') {
-                    alert(data['errors'][0]);
-                }
-                else {
-                    callback();
-                }
-            });
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+        }
+        else {
+            callback();
+        }
+    });
 }
 
 function submitSettingsContactForm() {
@@ -2333,16 +2383,16 @@ function submitSettingsContactForm() {
         data: 'name=' + cF.n.val() + '&email=' + cF.e.val() + '&message=' + cF.m.val(),
         error: Response
     }).done(function () {
-                $('#preloader').hide();
+        $('#preloader').hide();
 
-            }).done(function (response) {
-                if (response.success !== '') { alert(response.success); }
-                else { alert(response.error); }
+        }).done(function (response) {
+            if (response.success !== '') { alert(response.success); }
+            else { alert(response.error); }
 
-                cF.n.val('');
-                cF.e.val('');
-                cF.m.val('');
-            });
+            cF.n.val('');
+            cF.e.val('');
+            cF.m.val('');
+        });
 }
 
 function editProfile() {
@@ -2396,21 +2446,21 @@ function updateProviderData() {
                 ( ($('.password').val().length > 0) ? ('&attr[password]=' + $('.password').val()) : null ),
         error: Response
     }).done(function (data) {
-                if (data['status'] === 'failed') {
-                    alert(data['errors'][0]);
-                }
-                else {
-                    token = currentUser.token;
-                    currentUser = data.response;
-                    currentUser.token = token;
+        if (data['status'] === 'failed') {
+            alert(data['errors'][0]);
+        }
+        else {
+            token = currentUser.token;
+            currentUser = data.response;
+            currentUser.token = token;
 
-                    $('#user-info .name').html(currentUser.name);
+            $('#user-info .name').html(currentUser.name);
 
-                    alert('You have successfully updated your profile.');
-                }
+            alert('You have successfully updated your profile.');
+        }
 
-                $('#preloader').hide();
-            });
+        $('#preloader').hide();
+    });
 }
 
 
@@ -2505,14 +2555,14 @@ function checkInviteCode(code, callback) {
         url: 'http://backend.liquidtalent.com/invite_code/check/' + code,
         error: Response
     }).done(function (data) {
-                if (data['status'] == 'failed') {
-                    alert('The invitation code is either invalid or out of date.');
-                    $('#preloader').hide();
-                    callback(false);
-                }
-                else {
-                    $('#preloader').hide();
-                    callback(true);
-                }
-            });
+        if (data['status'] == 'failed') {
+            alert('The invitation code is either invalid or out of date.');
+            $('#preloader').hide();
+            callback(false);
+        }
+        else {
+            $('#preloader').hide();
+            callback(true);
+        }
+    });
 }
