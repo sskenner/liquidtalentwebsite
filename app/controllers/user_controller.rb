@@ -5,6 +5,10 @@ class UserController < ApplicationController
 
   def signup
   end
+
+  def signup_demander
+  end
+
   def signup_service_provider
   end
 

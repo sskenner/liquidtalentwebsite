@@ -1,20 +1,35 @@
-<div id="logo-header">
-  <img src="<%= asset_path "sign-up/logo-small.png" %>" alt="LiquidTalent header Logo with text" id="logo-login">
-  <a href="javascript: loadPage('/login');" class="black-button">Back</a>
+<div id="title">
+  Sign Up
+  <a class="black-button" href="javascript: loadPage('/login');">Back</a>
 </div>
 
-<div id="sign-up-form" class="login-container">
+<div id="demander-form" class="signup">
+  <div id="demander-form-left" class="signup">
+    <div id="image-upload"><input type="file" id="avatar" /></div>
+    <div id="zip-info">
+      <p>
+        Zip Location allows you to be discovered on the map and get directions from your address to someone else.
+      </p>
 
-  <div class="image-upload"><input type="file" id="avatar"/></div>
-  <input type="text" placeholder="Name *" class="text-field name">
-  <input type="text" placeholder="Email *" class="text-field email">
-  <input type="password" placeholder="Password *" class="text-field password">
-  <input type="password" placeholder="Confirm Password *" class="text-field password_confirmation">
-  <input type="hidden" id="is_provider" name="is_provider" value="0" />
-  <div id="signup-provider">
-    <span id="sp-checkbox"></span>
-    <span style="padding-left: 10px;">Register as LiquidTalent Professional</span>
+      <p>
+        This information is never shared outside of LiquidTalent.
+      </p>
+    </div>
   </div>
-  <a href="javascript:SubmitSignupForm()" class="green-button">Continue</a>
 
+  <div id="demander-form-right" class="signup">
+    <input type="text" placeholder="First name" class="text-field first_name">
+    <input type="text" placeholder="Last name" class="text-field last_name">
+    <input type="text" placeholder="Email" class="text-field email">
+
+    <input type="password" placeholder="Password" class="text-field password">
+    <input type="password" placeholder="Confirm Password" class="text-field password_confirmation">
+
+    <input type="text" placeholder="Zip" class="text-field zip">
+
+    <a href="javascript:SubmitSignupForm('demander'); return false;" class="green-button demander">Looking to hire</a>
+    <a href="javascript:SubmitSignupForm('provider'); return false;" class="green-button provider">Looking to work</a>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
 </div>
