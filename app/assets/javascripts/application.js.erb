@@ -311,7 +311,7 @@ $(window).on('load', function () {
                         'description': map.find('.description'),
                         'distance': map.find('.distance'),
                         'linkedIn': map.find('.linkedin-icon'),
-                        'title': map.find('.base .title'),
+                        'title': map.find('.title'),
                         'favorite': map.find('.favorite'),
                         'play': map.find('.play'),
                         'LTDrop': map.find('.lt-drop'),
@@ -856,10 +856,10 @@ function showPlaceholder (page) {
 
         $('#background').html(
 
-                '<div id="placeholder">' +
-                        'Explore all of LiquidTalent.' +
-                        '<a href="javascript:loadPage(\'/login\')" class="green-button">Sign Up</a>' +
-                        '</div>'
+            '<div id="placeholder">' +
+                'Explore all of LiquidTalent.' +
+                '<a href="javascript:loadPage(\'/login\')" class="green-button">Sign Up</a>' +
+            '</div>'
 
         );
 
@@ -868,10 +868,10 @@ function showPlaceholder (page) {
 
         $('#background').html(
 
-                '<div id="placeholder">' +
-                        'No ' + page + ' have been added here yet.' +
-                        '<a href="javascript:loadPage(\'/map\')" class="green-button">Find ' + page + '</a>' +
-                        '</div>'
+            '<div id="placeholder">' +
+                'No ' + page + ' have been added here yet.' +
+                '<a href="javascript:loadPage(\'/map\')" class="green-button">Search</a>' +
+            '</div>'
 
         );
 
@@ -1176,7 +1176,7 @@ function mapSearch(providers) {
             'description': map.find('.description'),
             'distance': map.find('.distance'),
             'linkedIn': map.find('.linkedin-icon'),
-            'title': map.find('.base .title'),
+            'title': map.find('.title'),
             'favorite': map.find('.favorite'),
             'play': map.find('.play'),
             'LTDrop': map.find('.lt-drop'),
@@ -1202,7 +1202,7 @@ function mapSearch(providers) {
             position: new google.maps.LatLng(user.latitude, user.longitude),
             map: map.googleMap,
             title: user.name,
-            icon: '<%= asset_path 'search/pin.png' %>'
+            icon: '<%= asset_path 'new/search/map-pin-green.png' %>'
 
         });
 
@@ -1520,7 +1520,7 @@ function loadFavorites() {
 
             $('#first-item .removeFavorite').attr('id', item['favourite_id']);
 
-            $('#first-item .message').attr('onclick', 'back="favorites"; loadChat(' + user.id + ');');
+            $('#first-item .message').attr('onclick', 'back="favorites"; loadChat(\'' + user.id + ':' + user.name + '\');');
             $('#first-item .hire').attr('onclick', 'back="favorites"; providerId=' + user.id + '; loadPage("/hire");');
 
             $('#favorites').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
@@ -1567,7 +1567,7 @@ function checkUnreadMessages() {
     var notification = $('.navigation .messages .notification');
 
     $.ajax({
-        url: 'http://backend.liquidtalent.com/messages/list?user_id=' + currentUser['id'],
+        url: 'http://backend.liquidtalent.com/messages/list?user_id=' + currentUser['id']
     }).done(function (data) {
 
         if (typeof (data['response']) !== 'undefined' &&
@@ -1611,6 +1611,17 @@ function loadMessages() {
 
         for (var i = 0; i < messages.length; i++) {
 
+            if (messages[i].last_message === null) {
+
+                messages[i].last_message = {
+
+                    contents: messages[i].sender.description,
+                    created_at: new Date().toJSON()
+
+                };
+
+            }
+
             $('#messages').html($('#messages').html() +
                 '<div id="' + messages[i].sender.id + ':' + messages[i].sender.name + '" class="message-box">' +
                     '<a href="javascript:blockUser(' + messages[i].sender.id + ');" class="black-button t">x</a>' +
@@ -1621,8 +1632,8 @@ function loadMessages() {
                         messages[i].sender.name +
                         '<div class="green-button' + ((messages[i].unread_messages > 0) ? ' active' : '') + '"></div>' +
                     '</div>' +
-                    '<div class="content">' + messages[i].sender.description + '</div>' +
-                    '<div class="time"></div>' +
+                    '<div class="content">' + messages[i].last_message.contents + '</div>' +
+                    '<div class="time">' + time12Hour(messages[i].last_message.created_at.replace(/^.*T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$1')) + '</div>' +
                 '</div>'
             );
 
@@ -1640,12 +1651,19 @@ function loadMessages() {
 
     });
 
-    $('.message-box').each(function (i, e) { $(e).on('mouseup', function () { loadChat($(this).prop('id')); }); });
+    $('.message-box .content, .message-box .name').each(function (i, e) {
+        $(e).on('mouseup', function () {
+            loadChat($(this).prop('id'));
+        });
+    });
 
 }
 function ToggleMessageDelete () {
 
-    $('.message-box .black-button').css('display', $('.message-box .black-button').css('display') === 'block' ? 'none' : 'block');
+    $('.message-box .black-button').css('display',
+        $('.message-box .black-button').css('display') === 'block' ? 'none' : 'block'
+    );
+    return false;
 
 }
 function blockUser(user_id) {
@@ -1676,14 +1694,16 @@ function loadChat(user) {
         error: Response
     }).done(function (nda) {
 
-        nda = nda.response;
+        nda = nda.response[0];
 
         $('#background').html(
             '<div id="title">' +
-                ((nda.length === 0) ?
+                ((nda === undefined) ?
                     '<a href="javascript:sendNDA(' + user[0] + ', \'' + user[1] + '\');" class="green-button">Send NDA</a>'
                     :
-                    '<b>NDA</b> sent on ' + nda.createdAt.toJSON().created_at.replace(/\d{2}(\d{2})-(\d{2})-\d{2}T.*$/, '$2/$3/$1')
+                    '<div id="nda-sent">' +
+                        '<b>NDA</b> sent on ' + new Date(parseInt(nda.created_at, 10)).toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T.*$/, '$2/$3/$1') +
+                    '</div>'
                 ) +
                 'Messages' +
                 '<a class="black-button" href="javascript:loadMessages();">Back</a>' +
@@ -1770,6 +1790,8 @@ function createChat (user_id) {
 
                 );
 
+                $('#chat').animate({ scrollTop: $('#chat :last').offset().top }, 300, 'linear', null);
+
             }
 
         });
@@ -1792,7 +1814,9 @@ function sendNDA (user_id, user_name) {
         $('#title .green-button').remove();
 
         $('#title').prepend(
-            '<b>NDA</b> sent on ' + (new Date().toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T.*$/, '$2/$3/$1'))
+            '<div id="nda-sent">' +
+                '<b>NDA</b> sent on ' + new Date().toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T.*$/, '$2/$3/$1') +
+            '</div>'
         );
 
     });
@@ -1971,6 +1995,10 @@ function loadProfile() {
 
 //        if (user.video_url === null) { $('#first-item .play').addClass('disabled'); }
 //        else { $('#first-item .play').removeClass('disabled'); }
+
+        $('#profile-buttons .message-button-profile').attr('onclick',
+            'javascript:loadChat(\'' + user.id + ':' + user.name + '\');'
+        );
 
         $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
         $('#first-item .description').html(user.description);

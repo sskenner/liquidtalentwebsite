@@ -19,17 +19,17 @@
 @font-face {
     font-family: 'main';
     font-weight: 100;
-    src: url('<%= asset_url "light.otf" %>');
+    src: url('<%= asset_url 'light.otf' %>');
 }
 @font-face {
     font-family: 'main';
     font-weight: 400;
-    src: url('<%= asset_url "regular.otf" %>');
+    src: url('<%= asset_url 'regular.otf' %>');
 }
 @font-face {
     font-family: 'main';
     font-weight: 900;
-    src: url('<%= asset_url "bold.otf" %>');
+    src: url('<%= asset_url 'bold.otf' %>');
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -78,7 +78,7 @@ a { cursor: pointer; }
 
 body {
     line-height: 1;
-    background: url(<%= asset_path "new/main/background.png" %>);
+    background: url(<%= asset_path 'new/main/background.png' %>);
     color: #000;
     font-family: 'main', Helvetica, sans-serif;
     font-weight: 100;
@@ -114,19 +114,20 @@ a:hover { color: #000; }
 }
 #title .black-button {
     float: right;
-    font-size: 16px;
+    font-size: 18px;
     height: 40px;
     line-height: 43px;
-    padding: 0px 30px;
+    padding: 0px 40px;
     font-weight: 100;
     margin-top: 10px;
+    margin-left: -40px;
 }
 #title .green-button {
-    font-size: 16px;
+    font-size: 18px;
     height: 40px;
     line-height: 43px;
-    padding: 0px 20px;
-    margin: 10px 0px 0px 10px;
+    padding: 0px 40px;
+    margin: 10px -80px 0px 10px;
     font-weight: 100;
     float:left;
 }
@@ -142,7 +143,7 @@ a:hover { color: #000; }
 .lt-drop {
     width: 21px;
     height: 28px;
-    background: url(<%= asset_path "new/main/drops.png" %>);
+    background: url(<%= asset_path 'new/main/drops.png' %>);
 }
 .lt-drop.hidden { display: none; }
 .lt-drop.blue { background-position: 0px 0px; }
@@ -155,7 +156,7 @@ a:hover { color: #000; }
     display: inline-block;
     width: 15px;
     height: 14px;
-    background: url(<%= asset_path "main/stars.png" %>);
+    background: url(<%= asset_path 'main/stars.png' %>);
 }
 .star.active { background-position: 14px 0px; }
 
@@ -191,13 +192,14 @@ a:hover { color: #000; }
 
 .notification {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: -10px;
+    top: 8px;
     color: #FFF;
-    height: 0px;
-    line-height: 23px;
-    padding: 0px 5px 20px 5px;
-    border-radius: 10px;
+    line-height: 25px;
+    padding: 3px 9px;
+    border-radius: 4px;
+    text-indent: 0px;
+    background-color: #239060;
     opacity: 0;
 }
 .notification.active { opacity: 1; }
@@ -251,6 +253,7 @@ a:hover { color: #000; }
     margin-bottom: 20px;
     word-spacing: 10px;
     color: #000;
+    position: relative;
 }
 #admin-panel .navigation .link:hover { color: #239060; }
 #admin-panel .navigation .link .icon {
@@ -298,15 +301,13 @@ a:hover { color: #000; }
 }
 #admin-panel .navigation .settings.link .icon.hover { background-position: -29px -159px; }
 
-#admin-panel .notification { background-color: #239060; }
-
 #admin-panel .logo-small {
     position: absolute;
     bottom: 40px;
     left: 80px;
     height: 56px;
     width: 41px;
-    background: url(<%= asset_path "new/main/logo-small.png" %>);
+    background: url(<%= asset_path 'new/main/logo-small.png' %>);
 }
 
 #preloader, #content-preloader {display: none;  position: relative; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: hidden; background: rgba(255, 255, 255, 0.9) url('<%= asset_path 'main/loader.gif' %>') no-repeat center center; }
@@ -380,7 +381,7 @@ a:hover { color: #000; }
     float: left;
     width: 120px;
     height: 120px;
-    background: url(<%= asset_path "main/button-image-upload.png" %>);
+    background: url(<%= asset_path 'main/button-image-upload.png' %>);
 }
 .image-upload:hover {
     cursor: pointer;
@@ -438,7 +439,7 @@ a:hover { color: #000; }
     display: inline-block;
     width: 55px;
     height: 55px;
-    background: transparent url(<%= asset_path "main/check-box.png" %>) top left no-repeat;
+    background: transparent url(<%= asset_path 'main/check-box.png' %>) top left no-repeat;
     background-position: 0px 0px;
     cursor: pointer;
     vertical-align: middle;
@@ -584,7 +585,14 @@ a:hover { color: #000; }
 /   Messages
 /**********************************************************************************************************************/
 
-#messages {  }
+#messages { margin-top: -19px; }
+#nda-sent {
+    float: left;
+    margin-left: 15px;
+    font-size: 18px;
+    margin-right: -35px;
+}
+#nda-sent b { font-weight: 700; }
 .message-box {
     min-height: 115px;
     vertical-align: top;
@@ -599,14 +607,6 @@ a:hover { color: #000; }
     margin-bottom: 1px;
     cursor: pointer;
 }
-.message-box .green-button {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 6px;
-    opacity: 0;
-    z-index: 1000;
-}
 .message-box .black-button {
     position: absolute;
     width: 30px;
@@ -614,11 +614,19 @@ a:hover { color: #000; }
     line-height: 30px;
     left: -10px;
     top: -10px;
+    z-index: 1000;
+    display: none;
+}
+.message-box .green-button {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
     opacity: 0;
     z-index: 1000;
+    margin-left: 10px;
 }
-.message-box .green-button.active,
-.message-box .black-button.active { opacity: 1; }
+.message-box .green-button.active { opacity: 1; }
 .message-box .avatar-container {
     display: inline-block;
     height: 95px;
@@ -725,7 +733,7 @@ h1 {
 .video-container {
     width: 640px;
     margin: auto auto 30px auto;
-    background: url(<%= asset_url "presentation/video-bg.png" %>);
+    background: url(<%= asset_url 'presentation/video-bg.png' %>);
     height: 360px;
     border: 2px solid #000;
     text-align: center;
@@ -736,7 +744,7 @@ h1 {
 .video-container .play-btn {
     width: 95px;
     margin: auto;
-    background: url(<%= asset_url "presentation/play-btn.png" %>) 50% 100% no-repeat;
+    background: url(<%= asset_url 'presentation/play-btn.png' %>) 50% 100% no-repeat;
     height: 57%;
     cursor: pointer;
 }
@@ -827,7 +835,7 @@ h1 {
     width: 226px;
     height: 91px;
     background-repeat: no-repeat;
-    background-image: url(<%= asset_url "new/presentation/app-stores-large.png" %>);
+    background-image: url(<%= asset_url 'new/presentation/app-stores-large.png' %>);
 }
 .appstore-buttons .ios { margin-top: 45px !important; }
 .appstore-buttons .android { background-position: -226px 0px; }
@@ -855,7 +863,7 @@ h1 {
     width: 41px;
     height: 41px;
     margin: 0px 4px 0px 4px;
-    background-image: url(<%= asset_url "presentation/icons-social-color.png" %>);
+    background-image: url(<%= asset_url 'presentation/icons-social-color.png' %>);
     background-repeat: no-repeat;
     border-radius: 10px;
     display: inline-block;
@@ -941,7 +949,7 @@ h3 {
 .header-image {
     width: 116px;
     height: 116px;
-    background-image: url(<%= asset_url "new/presentation/team-photos.png" %>);
+    background-image: url(<%= asset_url 'new/presentation/team-photos.png' %>);
     background-repeat: no-repeat;
 }
 .alex-image { background-position: -116px 0px; }
@@ -1045,8 +1053,7 @@ h3 {
 .list-item {
     width: 750px;
     overflow: hidden;
-    height: 163px;
-    background: #FFF;
+    height: 162px;
     cursor: auto;
     word-wrap: break-word;
     position: relative;
@@ -1057,7 +1064,7 @@ h3 {
     width: 320px;
     height: 320px;
     position: relative;
-    bottom: 50px;
+    bottom: 80px;
     cursor: pointer;
 }
 
@@ -1088,7 +1095,7 @@ h3 {
 .list-item .linkedin-icon {
     width: 30px;
     height: 30px;
-    background: url(<%= asset_path "main/linkedin_icon.png" %>);
+    background: url(<%= asset_path 'main/linkedin_icon.png' %>);
     position: absolute;
     top: 10px;
     right: 120px;
@@ -1133,7 +1140,7 @@ h3 {
 .list-item .message:hover { background-position: 0px -81px; }
 .list-item .hire {
     right: 0px;
-    top: 82px;
+    top: 81px;
     background-position: -68px 0px;
 }
 .list-item .hire:hover { background-position: -68px -81px; }
@@ -1276,7 +1283,7 @@ h3 {
     left: 0;
     width: 102px;
     height: 23px;
-    background: url(<%= asset_path "analytics/drops.png" %>);
+    background: url(<%= asset_path 'analytics/drops.png' %>);
     z-index: 99999;
 }
 
@@ -1286,7 +1293,7 @@ h3 {
     left: 12px;
     width: 89px;
     height: 19px;
-    background: url(<%= asset_path "analytics/drop-bars.png" %>) top right no-repeat;
+    background: url(<%= asset_path 'analytics/drop-bars.png' %>) top right no-repeat;
     z-index: 9999;
 }
 
@@ -1380,7 +1387,7 @@ h3 {
     width: 320px;
     height: 50px;
     margin-left: -3px;
-    background: #000 url(<%= asset_path "profiles/button-message.png" %>) top center no-repeat;
+    background: #000 url(<%= asset_path 'profiles/button-message.png' %>) top center no-repeat;
 }
 .message-button-profile:hover {
     background-position: 0px -50px;
@@ -1393,7 +1400,7 @@ h3 {
     width: 320px;
     height: 50px;
     margin-left: -4px;
-    background: url(<%= asset_path "profiles/button-hire.png" %>);
+    background: url(<%= asset_path 'profiles/button-hire.png' %>);
 }
 .hire-button-profile:hover {
     background-position: 0px -50px;
@@ -1461,7 +1468,7 @@ h3 {
     display: block;
     width: 399px;
     height: 55px;
-    background: url(<%= asset_path "sign-up/buttons-linkedin-signup.png" %>);
+    background: url(<%= asset_path 'sign-up/buttons-linkedin-signup.png' %>);
     margin-bottom: 10px;
 }
 
@@ -1540,7 +1547,7 @@ h3 {
     width: 156px;
     height: 54px;
     margin-top: 5px;
-    background: url(<%= asset_path "projects/message.png" %>);
+    background: url(<%= asset_path 'projects/message.png' %>);
 }
 
 .project .status {
@@ -1559,19 +1566,19 @@ h3 {
     float: right;
 }
 .project .status-btn.accept {
-    background: url(<%= asset_path "projects/accept.png" %>);
+    background: url(<%= asset_path 'projects/accept.png' %>);
 }
 .project .status-btn.complete {
-    background: url(<%= asset_path "projects/complete.png" %>);
+    background: url(<%= asset_path 'projects/complete.png' %>);
 }
 .project .status-btn.decline {
-    background: url(<%= asset_path "projects/decline.png" %>);
+    background: url(<%= asset_path 'projects/decline.png' %>);
 }
 .project .status-btn.in-progress {
-    background: url(<%= asset_path "projects/in-progress.png" %>);
+    background: url(<%= asset_path 'projects/in-progress.png' %>);
 }
 .project .status-btn.pending {
-    background: url(<%= asset_path "projects/pending.png" %>);
+    background: url(<%= asset_path 'projects/pending.png' %>);
 }
 .project .completed-demander, .project .completed-provider {
     width: 550px;
@@ -1632,7 +1639,7 @@ h3 {
     width: 288px;
     height: 52px;
     margin: 15px 0;
-    background: url(<%= asset_path "new/projects/stars.png" %>);
+    background: url(<%= asset_path 'new/projects/stars.png' %>);
 }
 
 #rate .rate-star {
@@ -1735,7 +1742,7 @@ h3 {
 a.share-btn {
     display: block;
     height: 54px;
-    background: url(<%= asset_path "new/settings/share.png" %>);
+    background: url(<%= asset_path 'new/settings/share.png' %>);
 }
 
 #fb {
@@ -1796,7 +1803,7 @@ a.share-btn {
     width: 378px;
     height: 61px;
     margin: 0 auto 30px auto;
-    background: url(<%= asset_path "signup/linkedin-complete.png" %>);
+    background: url(<%= asset_path 'signup/linkedin-complete.png' %>);
     background-position: 0px 0px;
 }
 
@@ -1829,7 +1836,7 @@ a.share-btn {
     display: inline-block;
     width: 205px;
     height: 203px;
-    background: url(<%= asset_path "new/signup/add-avatar.png" %>);
+    background: url(<%= asset_path 'new/signup/add-avatar.png' %>);
     cursor: pointer;
 }
 
