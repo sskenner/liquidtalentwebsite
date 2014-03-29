@@ -19,17 +19,17 @@
 @font-face {
     font-family: 'main';
     font-weight: 100;
-    src: url('<%= asset_url "light.otf" %>');
+    src: url('<%= asset_url 'light.otf' %>');
 }
 @font-face {
     font-family: 'main';
     font-weight: 400;
-    src: url('<%= asset_url "regular.otf" %>');
+    src: url('<%= asset_url 'regular.otf' %>');
 }
 @font-face {
     font-family: 'main';
     font-weight: 900;
-    src: url('<%= asset_url "bold.otf" %>');
+    src: url('<%= asset_url 'bold.otf' %>');
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -78,7 +78,7 @@ a { cursor: pointer; }
 
 body {
     line-height: 1;
-    background: url(<%= asset_path "new/main/background.png" %>);
+    background: url(<%= asset_path 'new/main/background.png' %>);
     color: #000;
     font-family: 'main', Helvetica, sans-serif;
     font-weight: 100;
@@ -89,7 +89,7 @@ body {
 a {
     text-decoration: none;
     cursor: pointer;
-    color: #1b915f;
+    color: #239060;
 }
 a:hover { color: #000; }
 
@@ -114,24 +114,23 @@ a:hover { color: #000; }
 }
 #title .black-button {
     float: right;
-    font-size: 16px;
+    font-size: 18px;
     height: 40px;
     line-height: 43px;
-    padding: 0px 30px;
+    padding: 0px 40px;
     font-weight: 100;
     margin-top: 10px;
+    margin-left: -40px;
 }
 #title .green-button {
-    font-size: 16px;
+    font-size: 18px;
     height: 40px;
     line-height: 43px;
-    padding: 0px 20px;
-    margin: 10px 0px 0px 10px;
+    padding: 0px 40px;
+    margin: 10px -80px 0px 10px;
     font-weight: 100;
     float:left;
-    opacity: 0;
 }
-#title .green-button.active { opacity: 1; }
 
 .text-field {
     display: block;
@@ -144,7 +143,7 @@ a:hover { color: #000; }
 .lt-drop {
     width: 21px;
     height: 28px;
-    background: url(<%= asset_path "new/main/drops.png" %>);
+    background: url(<%= asset_path 'new/main/drops.png' %>);
 }
 .lt-drop.hidden { display: none; }
 .lt-drop.blue { background-position: 0px 0px; }
@@ -157,23 +156,9 @@ a:hover { color: #000; }
     display: inline-block;
     width: 15px;
     height: 14px;
-    background: url(<%= asset_path "main/stars.png" %>);
+    background: url(<%= asset_path 'main/stars.png' %>);
 }
 .star.active { background-position: 14px 0px; }
-
-.favorite-button { background: url(<%= asset_path "main/button-favorite-small.png" %>); }
-.play-button { background: url(<%= asset_path "main/button-play.png" %>); }
-.favorite-button,
-.play-button {
-    background-position: 0px 0px;
-    cursor: pointer;
-}
-.favorite-button:hover,
-.play-button:hover { background-position: 0px -50px; }
-.favorite-button.active,
-.play-button.disabled { background-position: 50px 0px; }
-.favorite-button.active:hover,
-.play-button.disabled:hover { background-position: 50px -50px; }
 
 .avatar {
     display: block;
@@ -185,7 +170,7 @@ a:hover { color: #000; }
 
 .green-button {
     display: block;
-    background: #1b915f;
+    background: #239060;
     background-size: 1px 100%;
     color: #FFF;
 }
@@ -201,19 +186,20 @@ a:hover { color: #000; }
     color: #FFF;
 }
 .black-button:hover, .black-button:focus {
-    background: #1b915f !important;
+    background: #239060 !important;
     color: #FFF;
 }
 
 .notification {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: -10px;
+    top: 8px;
     color: #FFF;
-    height: 0px;
-    line-height: 23px;
-    padding: 0px 5px 20px 5px;
-    border-radius: 10px;
+    line-height: 25px;
+    padding: 3px 9px;
+    border-radius: 4px;
+    text-indent: 0px;
+    background-color: #239060;
     opacity: 0;
 }
 .notification.active { opacity: 1; }
@@ -267,8 +253,9 @@ a:hover { color: #000; }
     margin-bottom: 20px;
     word-spacing: 10px;
     color: #000;
+    position: relative;
 }
-#admin-panel .navigation .link:hover { color: #1b915f; }
+#admin-panel .navigation .link:hover { color: #239060; }
 #admin-panel .navigation .link .icon {
     display: inline-block;
     vertical-align: middle;
@@ -314,18 +301,16 @@ a:hover { color: #000; }
 }
 #admin-panel .navigation .settings.link .icon.hover { background-position: -29px -159px; }
 
-#admin-panel .notification { background-color: #1b915f; }
-
 #admin-panel .logo-small {
     position: absolute;
     bottom: 40px;
     left: 80px;
     height: 56px;
     width: 41px;
-    background: url(<%= asset_path "new/main/logo-small.png" %>);
+    background: url(<%= asset_path 'new/main/logo-small.png' %>);
 }
 
-#preloader, #content-preloader {display: none;  position: relative; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: hidden; background: rgba(255, 255, 255, 0.9) url('/assets/main/loader.gif') no-repeat center center; }
+#preloader, #content-preloader {display: none;  position: relative; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: hidden; background: rgba(255, 255, 255, 0.9) url('<%= asset_path 'main/loader.gif' %>') no-repeat center center; }
 
 /***********************************************************************************************************************
 /   User
@@ -339,7 +324,7 @@ a:hover { color: #000; }
 }
 
 .login-container {
-    width: 335px;
+    width: 340px;
     position: relative;
     display: inline-block;
     vertical-align: top;
@@ -396,7 +381,7 @@ a:hover { color: #000; }
     float: left;
     width: 120px;
     height: 120px;
-    background: url(<%= asset_path "main/button-image-upload.png" %>);
+    background: url(<%= asset_path 'main/button-image-upload.png' %>);
 }
 .image-upload:hover {
     cursor: pointer;
@@ -454,7 +439,7 @@ a:hover { color: #000; }
     display: inline-block;
     width: 55px;
     height: 55px;
-    background: transparent url(<%= asset_path "main/check-box.png" %>) top left no-repeat;
+    background: transparent url(<%= asset_path 'main/check-box.png' %>) top left no-repeat;
     background-position: 0px 0px;
     cursor: pointer;
     vertical-align: middle;
@@ -500,139 +485,75 @@ a:hover { color: #000; }
     margin-right: 14px;
 }
 
-#cities, #skills, #schools, #states, #categories, #subcategories {
+#search-options {
+    margin-top: -12px;
+    margin-bottom: 10px;
+}
+#search-options .search-field {
+    margin-left: 10px;
+    line-height: 50px;
+    text-indent: 10px;
+    font-size: 18px;
+}
+.search-option {
+    display: inline-block;
+    width: 174px;
+    margin-left: 3px;
+    position: relative;
+    vertical-align: top;
+}
+.search-option .text-field {
+    line-height: 50px;
+    text-indent: 10px;
+    font-size: 18px;
+    width: 100%;
+}
+.search-option .option-container {
     width: 234px;
     position: absolute;
-    margin-top: -10px;
-    box-shadow: 0px 0px 10px 0px #CCC;
-    display: none;
+    top: 55px;
+    left: 0px;
+    background-color: hsla(0, 0%, 0%, 0.8);
     cursor: pointer;
     max-height: 400px;
     overflow: auto;
-}
-
-#cities div,
-#skills div,
-#schools div,
-#states div,
-#categories div,
-#subcategories div {
-    background: #fff;
-    padding: 12px 12px;
-    border-top: 1px solid #ccc;
-    cursor: pointer;
-    margin-top: -1px;
-}
-
-#cities div:hover,
-#skills div:hover,
-#schools div:hover,
-#states div:hover,
-#categories div:hover,
-#subcategories div:hover { background: #f6f6f6; }
-
-#filter {
-    display: none;
-    position: absolute;
-    left: 0 ;
-    top: 0;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.5);
-}
-#filter .inner {
-    position: absolute;
-    width: 540px;
-    right: -540px;
-    top: 0;
-}
-#filter .toggle {
-    width: 40px;
-    float: left;
-    background: none;
-}
-#filter .toggle .visibility-toggle {
-    margin: 0;
     z-index: 1000;
-}
-#filter .green-button {
-    margin-top: 20px;
-    padding: 11px 10px 9px 10px;
-    text-align: center;
-    font-size: 20px;
-}
-#filter #rate, #hourly-rate { margin-bottom: 26px; }
+    color: #FFF;
 
-#filter .content {
-    width: 500px;
-    float: left;
-    margin: 0;
-    background: #fff;
-    padding: 10px;
-    height: 213px;
 }
-#filter .content .options .text-field {
-    text-indent: 10px;
-    width: 230px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    line-height: 38px;
-}
-#filter .content .options,
-#filter .content .sliders {
-    width: 230px;
-    display: inline-block;
-    vertical-align: top;
-}
-#filter .content .sliders,
-#filter .content .sliders .slider { margin-left: 10px; }
-#filter .content .sliders .title {
-    font-size: 20px;
-    margin: 5px 0 15px 0;
-}
-
-#search-tool-bar {
-    box-shadow: 0px 0px 10px 0px #CCC;
-    background: #FFF;
-}
-#search-tool-bar .title {
-    font-size: 24px;
-    font-weight: 600;
-    text-align: center;
-    line-height: 60px;
-}
-#search-tool-bar .functions {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
-.functions .geo-toggle {
-    display: inline-block;
-    height: 40px;
-    line-height: 45px;
-    padding: 0px 20px;
-    font-size: 20px;
-    vertical-align: top;
-}
-.functions .visibility-toggle {
-    display: inline-block;
-    vertical-align: top;
-    width: 40px;
-    height: 40px;
-    background-color: #000;
-    margin-left: 10px;
-    background: url(<%= asset_path "search/visibility-toggle.png" %>);
-    background-position: 0px 40px;
+.search-option .option-container .option {
+    padding: 12px 12px;
+    border-top: 1px solid #FFF;
     cursor: pointer;
 }
-.functions .visibility-toggle:hover { background-position: 40px 40px; }
-.functions .visibility-toggle.active { background-position: 0px 0px; }
-.functions .visibility-toggle.active:hover { background-position: 40px 0px; }
+.search-option .option-container .option:hover { background: #239060;  }
+.search-option .sort-by {
+    height: 55px;
+    margin-top: 1px;
+    vertical-align: top;
+    font-size: 18px;
+    width: 170px;
+    background: url(<%= asset_path 'new/search/sortby.png' %>);
+    outline: 0;
+    display: none;
+    cursor: pointer;
+}
+.search-option .sort-by.active { display: block; }
+.search-option .sort-by.cost { background-position: 0px 55px; }
+.search-option .sort-by.cost:hover,
+.search-option .sort-by.cost.active { background-position: 0px 0px; }
+.search-option .sort-by.experience { background-position: 170px 55px; }
+.search-option .sort-by.experience:hover,
+.search-option .sort-by.experience.active { background-position: 170px 0px; }
+.search-option .sort-by.distance { background-position: 340px 55px; }
+.search-option .sort-by.distance:hover,
+.search-option .sort-by.distance.active { background-position: 340px 0px; }
+#favorites { margin-top: -19px; }
+
 #map {
+    margin-top: 7px;
     height: 100%;
-    width:115%;
+    width: 115%;
     background-color: #EEE;
 }
 
@@ -646,120 +567,136 @@ a:hover { color: #000; }
 #user-info .location {
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 16px;
-}
-#user-info .location {
     font-size: 14px;
     color: #888;
 }
-
+#user-info .name {
+    font-size: 16px;
+    color: #000;
+}
 #user-info .avatar {
     width: 75px;
     height: 75px;
     display: block;
-    margin: 40px auto 10px auto;
+    margin: 40px auto 30px auto;
 }
 
 /***********************************************************************************************************************
 /   Messages
 /**********************************************************************************************************************/
 
-.message-user {
-    width: 150px;
-    display: inline-block;
+#messages { margin-top: -19px; }
+#nda-sent {
+    float: left;
+    margin-left: 15px;
+    font-size: 18px;
+    margin-right: -35px;
+}
+#nda-sent b { font-weight: 700; }
+.message-box {
+    min-height: 115px;
     vertical-align: top;
-    margin-left: 20px;
     position: relative;
-    box-shadow: 0px 0px 10px 0px #CCC;
+    border: 10px solid #FFF;
+    background: #FFF;
+    margin-bottom: 1px;min-height: 115px;
+    vertical-align: top;
+    position: relative;
+    border: 10px solid #FFF;
+    background: #FFF;
+    margin-bottom: 1px;
+    cursor: pointer;
 }
-.message-user .green-button {
+.message-box .black-button {
     position: absolute;
     width: 30px;
     text-align: center;
     line-height: 30px;
-    right: 0px;
-    border-left: 1px solid #FFF;
-    border-bottom: 1px solid #FFF;
+    left: -10px;
+    top: -10px;
+    z-index: 1000;
+    display: none;
+}
+.message-box .green-button {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
     opacity: 0;
     z-index: 1000;
+    margin-left: 10px;
 }
-.message-user .black-button {
-    position: absolute;
-    width: 30px;
-    text-align: center;
-    line-height: 30px;
-    right: 0px;
-    border-left: 1px solid #FFF;
-    border-bottom: 1px solid #FFF;
-    opacity: 0;
-    z-index: 1000;
+.message-box .green-button.active { opacity: 1; }
+.message-box .avatar-container {
+    display: inline-block;
+    height: 95px;
+    overflow: hidden;
 }
-.message-user .green-button.active,
-.message-user .black-button.active { opacity: 1; }
-.message-user .avatar {
-    width: 125px;
-    margin: auto;
-    display: block;
-    margin-bottom: 20px;
+.message-box .avatar-container img {
+    width: 110px;
+    height: 110px;
+    position: relative;
+    top: -10px;
 }
-.message-user .name {
+.message-box .name {
     text-align: center;
     padding-bottom: 20px;
     word-wrap: break-word;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 22px;
+}
+.message-box .content {
+    position: absolute;
+    top: 45px;
+    left: 120px;
+    font-size: 18px;
+    word-break: break-word;
+    line-height: 22px;
+}
+.message-box .time {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    text-transform: uppercase;
+    color: #777;
+    font-weight: 400;
+    font-size: 13px;
 }
 
 #chat {
-    height: 330px;
-    margin-bottom: 30px;
-    overflow: scroll
+    height: 539px;
+    margin-top: -19px;
+    margin-bottom: 1px;
+    overflow: auto;
 }
-#chat .chat-box {
-    box-shadow: 0px 0px 10px 0px #CCC;
-    background: #FFF;
-    margin-top: 10px;
-    width: 680px;
-    margin: 10px auto 0px auto;
-    text-indent: 50px;
+#chat-area {
+    background: hsla(0, 0%, 100%, 0.3);
+    border: 1px solid #FFF;
+    margin-left: -1px;
+    padding: 10px;
 }
-#chat .chat-box .title {
-    position: relative;
-    background: #CCC;
-    font-size: 18px;
-    color: #FFF;
-}
-#chat .chat-box .title .avatar {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-}
-#chat .chat-box .title .name {
-    color: #FFF;
-    padding: 8px;
-}
-#chat .chat-box .title .date {
-    padding: 8px;
-    float:right;
-}
-#chat .chat-box .chat { padding: 8px; }
 #chat-box {
-    display: block;
+    display: inline-block;
+    vertical-align: top;
     background-color: rgb(255, 255, 255);
-    max-width: 640px;
-    max-height: 100px;
-    width: 100%;
-    height: 100%;
-    margin: 0px auto 30px auto;
-    box-shadow: rgb(204, 204, 204) 0px 0px 10px 0px;
-    padding: 20px;
+    min-width: 580px;
+    max-width: 580px;
+    min-height: 48px;
+    max-height: 48px;
+    padding: 14px;
     font-size: 18px;
+    margin: 0;
 }
-#create-chat {
-    margin: auto;
+#post-chat {
+    display: inline-block;
     width: 120px;
     text-align: center;
-    line-height: 44px;
+    line-height: 75px;
     font-size: 18px;
-    height: 40px;
 }
 
 /***********************************************************************************************************************
@@ -796,7 +733,7 @@ h1 {
 .video-container {
     width: 640px;
     margin: auto auto 30px auto;
-    background: url(<%= asset_url "presentation/video-bg.png" %>);
+    background: url(<%= asset_url 'presentation/video-bg.png' %>);
     height: 360px;
     border: 2px solid #000;
     text-align: center;
@@ -807,7 +744,7 @@ h1 {
 .video-container .play-btn {
     width: 95px;
     margin: auto;
-    background: url(<%= asset_url "presentation/play-btn.png" %>) 50% 100% no-repeat;
+    background: url(<%= asset_url 'presentation/play-btn.png' %>) 50% 100% no-repeat;
     height: 57%;
     cursor: pointer;
 }
@@ -829,12 +766,12 @@ h1 {
     display: inline-block;
     text-align: left;
     border: 1px solid #1f9966;
-    color: #1b915f;
+    color: #239060;
     vertical-align: middle;
 }
 #newsletter-sign-up #register-form-send {
     display: inline-block;
-    background: #1b915f;
+    background: #239060;
     background-size: 1px 100%;
     width: 160px;
     padding: 4px 0px;
@@ -843,10 +780,10 @@ h1 {
     position: relative;
     top: 2px;
 }
-#newsletter-sign-up #register-form-send::-webkit-input-placeholder { color: #1b915f !important; }
-#newsletter-sign-up #register-form-send:-moz-placeholder { color: #1b915f !important; }
-#newsletter-sign-up #register-form-send::-moz-placeholder { color: #1b915f !important; }
-#newsletter-sign-up #register-form-send:-ms-input-placeholder { color: #1b915f !important; }
+#newsletter-sign-up #register-form-send::-webkit-input-placeholder { color: #239060 !important; }
+#newsletter-sign-up #register-form-send:-moz-placeholder { color: #239060 !important; }
+#newsletter-sign-up #register-form-send::-moz-placeholder { color: #239060 !important; }
+#newsletter-sign-up #register-form-send:-ms-input-placeholder { color: #239060 !important; }
 
 #about-page, #press-page, #contact-page {
     opacity: 1;
@@ -898,7 +835,7 @@ h1 {
     width: 226px;
     height: 91px;
     background-repeat: no-repeat;
-    background-image: url(<%= asset_url "new/presentation/app-stores-large.png" %>);
+    background-image: url(<%= asset_url 'new/presentation/app-stores-large.png' %>);
 }
 .appstore-buttons .ios { margin-top: 45px !important; }
 .appstore-buttons .android { background-position: -226px 0px; }
@@ -926,7 +863,7 @@ h1 {
     width: 41px;
     height: 41px;
     margin: 0px 4px 0px 4px;
-    background-image: url(<%= asset_url "presentation/icons-social-color.png" %>);
+    background-image: url(<%= asset_url 'presentation/icons-social-color.png' %>);
     background-repeat: no-repeat;
     border-radius: 10px;
     display: inline-block;
@@ -967,7 +904,7 @@ h3 {
     margin: 20px;
 }
 .presentation-description p a {
-    color: #1b915f;
+    color: #239060;
     text-decoration: underline;
 }
 .presentation-description p a:hover, .presentation-description p a:focus { color: #000000; }
@@ -1012,7 +949,7 @@ h3 {
 .header-image {
     width: 116px;
     height: 116px;
-    background-image: url(<%= asset_url "new/presentation/team-photos.png" %>);
+    background-image: url(<%= asset_url 'new/presentation/team-photos.png' %>);
     background-repeat: no-repeat;
 }
 .alex-image { background-position: -116px 0px; }
@@ -1033,7 +970,7 @@ h3 {
 .header-text .text-tagline {
     font-size: 13px;
     margin: 10px 0px 0px 10px;
-    color: #1b915f;
+    color: #239060;
 }
 .header-icon.team { width: 50px; }
 
@@ -1106,30 +1043,28 @@ h3 {
 }
 #map-overlay {
     width: 100%;
-    height: 100%;
-    background: hsla(0, 0%, 0%, 0.5);
+    height: 638px;
+    background: hsla(0, 0%, 100%, 0.5);
     position: absolute;
-    top: 60px;
+    top: 62px;
     cursor: pointer;
 }
 
 .list-item {
-    top: 20px;
     width: 750px;
-    border-bottom: 1px solid #FFF;
     overflow: hidden;
-    height: 164px;
-    background: #FFF;
+    height: 162px;
     cursor: auto;
     word-wrap: break-word;
     position: relative;
     margin-bottom: 1px;
+    background: #FFF;
 }
 .list-item .avatar {
     width: 320px;
     height: 320px;
     position: relative;
-    bottom: 100px;
+    bottom: 80px;
     cursor: pointer;
 }
 
@@ -1160,7 +1095,7 @@ h3 {
 .list-item .linkedin-icon {
     width: 30px;
     height: 30px;
-    background: url(<%= asset_path "main/linkedin_icon.png" %>);
+    background: url(<%= asset_path 'main/linkedin_icon.png' %>);
     position: absolute;
     top: 10px;
     right: 120px;
@@ -1196,6 +1131,7 @@ h3 {
     height: 81px;
     position: absolute;
     cursor: pointer;
+    border-left: 1px solid #DDD;
 }
 .list-item .message {
     right: 0px;
@@ -1204,10 +1140,32 @@ h3 {
 .list-item .message:hover { background-position: 0px -81px; }
 .list-item .hire {
     right: 0px;
-    top: 82px;
+    top: 81px;
     background-position: -68px 0px;
 }
 .list-item .hire:hover { background-position: -68px -81px; }
+
+.list-item .play,
+.list-item .favorite {
+    background: url(<%= asset_path 'new/search/list-buttons.png' %>);
+    width: 67px;
+    height: 81px;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+    border-left: 1px solid #DDD;
+}
+.list-item .play {
+    top: 0px;
+    border-bottom: 1px solid #DDD;
+}
+.list-item .play:hover { background-position: 0px -81px; }
+.list-item .favorite {
+    background-position: -69px 0px;
+    top: 81px;
+}
+.list-item .favorite.active,
+.list-item .favorite:hover { background-position: -69px -81px !important; }
 
 .list-item .removeFavorite {
     position: absolute;
@@ -1219,6 +1177,7 @@ h3 {
     cursor: pointer;
     display: none;
 }
+.list-item .removeFavorite:hover { background: #239060; }
 
 /***********************************************************************************************************************
 /   Stats
@@ -1238,7 +1197,7 @@ h3 {
 #stats-info .value {
     width: 50%;
     float: left;
-    color: #1b915f;
+    color: #239060;
 }
 
 #term-selector-wrapper {
@@ -1294,7 +1253,7 @@ h3 {
 
 .stats-box-inner .title {
     font-size: 1.5em;
-    color: #1b915f;
+    color: #239060;
 }
 
 .chart {
@@ -1324,7 +1283,7 @@ h3 {
     left: 0;
     width: 102px;
     height: 23px;
-    background: url(<%= asset_path "analytics/drops.png" %>);
+    background: url(<%= asset_path 'analytics/drops.png' %>);
     z-index: 99999;
 }
 
@@ -1334,7 +1293,7 @@ h3 {
     left: 12px;
     width: 89px;
     height: 19px;
-    background: url(<%= asset_path "analytics/drop-bars.png" %>) top right no-repeat;
+    background: url(<%= asset_path 'analytics/drop-bars.png' %>) top right no-repeat;
     z-index: 9999;
 }
 
@@ -1428,7 +1387,7 @@ h3 {
     width: 320px;
     height: 50px;
     margin-left: -3px;
-    background: #000 url(<%= asset_path "profiles/button-message.png" %>) top center no-repeat;
+    background: #000 url(<%= asset_path 'profiles/button-message.png' %>) top center no-repeat;
 }
 .message-button-profile:hover {
     background-position: 0px -50px;
@@ -1441,7 +1400,7 @@ h3 {
     width: 320px;
     height: 50px;
     margin-left: -4px;
-    background: url(<%= asset_path "profiles/button-hire.png" %>);
+    background: url(<%= asset_path 'profiles/button-hire.png' %>);
 }
 .hire-button-profile:hover {
     background-position: 0px -50px;
@@ -1509,7 +1468,7 @@ h3 {
     display: block;
     width: 399px;
     height: 55px;
-    background: url(<%= asset_path "sign-up/buttons-linkedin-signup.png" %>);
+    background: url(<%= asset_path 'sign-up/buttons-linkedin-signup.png' %>);
     margin-bottom: 10px;
 }
 
@@ -1588,7 +1547,7 @@ h3 {
     width: 156px;
     height: 54px;
     margin-top: 5px;
-    background: url(<%= asset_path "projects/message.png" %>);
+    background: url(<%= asset_path 'projects/message.png' %>);
 }
 
 .project .status {
@@ -1607,19 +1566,19 @@ h3 {
     float: right;
 }
 .project .status-btn.accept {
-    background: url(<%= asset_path "projects/accept.png" %>);
+    background: url(<%= asset_path 'projects/accept.png' %>);
 }
 .project .status-btn.complete {
-    background: url(<%= asset_path "projects/complete.png" %>);
+    background: url(<%= asset_path 'projects/complete.png' %>);
 }
 .project .status-btn.decline {
-    background: url(<%= asset_path "projects/decline.png" %>);
+    background: url(<%= asset_path 'projects/decline.png' %>);
 }
 .project .status-btn.in-progress {
-    background: url(<%= asset_path "projects/in-progress.png" %>);
+    background: url(<%= asset_path 'projects/in-progress.png' %>);
 }
 .project .status-btn.pending {
-    background: url(<%= asset_path "projects/pending.png" %>);
+    background: url(<%= asset_path 'projects/pending.png' %>);
 }
 .project .completed-demander, .project .completed-provider {
     width: 550px;
@@ -1632,8 +1591,6 @@ h3 {
 .project .completed-demander > div, .project .completed-provider > div {
     padding-top: 20px;
 }
-
-
 
 /***********************************************************************************************************************
 /   Rates
@@ -1682,7 +1639,7 @@ h3 {
     width: 288px;
     height: 52px;
     margin: 15px 0;
-    background: url(<%= asset_path "new/projects/stars.png" %>);
+    background: url(<%= asset_path 'new/projects/stars.png' %>);
 }
 
 #rate .rate-star {
@@ -1785,7 +1742,7 @@ h3 {
 a.share-btn {
     display: block;
     height: 54px;
-    background: url(<%= asset_path "new/settings/share.png" %>);
+    background: url(<%= asset_path 'new/settings/share.png' %>);
 }
 
 #fb {
@@ -1846,7 +1803,7 @@ a.share-btn {
     width: 378px;
     height: 61px;
     margin: 0 auto 30px auto;
-    background: url(<%= asset_path "signup/linkedin-complete.png" %>);
+    background: url(<%= asset_path 'signup/linkedin-complete.png' %>);
     background-position: 0px 0px;
 }
 
@@ -1933,7 +1890,7 @@ a.share-btn {
     display: inline-block;
     width: 205px;
     height: 203px;
-    background: url(<%= asset_path "new/signup/add-avatar.png" %>);
+    background: url(<%= asset_path 'new/signup/add-avatar.png' %>);
     cursor: pointer;
 }
 
@@ -1948,6 +1905,29 @@ a.share-btn {
 #demander-form p {
     padding: 10px 0 5px 5px;
 }
+
+#schools, #categories {
+    width: 234px;
+    position: absolute;
+    margin-top: -10px;
+    box-shadow: 0px 0px 10px 0px #CCC;
+    display: none;
+    cursor: pointer;
+    max-height: 400px;
+    overflow: auto;
+}
+
+#schools div,
+#categories div {
+    background: #fff;
+    padding: 12px 12px;
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+    margin-top: -1px;
+}
+
+#schools div:hover,
+#categories div:hover { background: #f6f6f6; }
 
 /***********************************************************************************************************************
 /   Terms

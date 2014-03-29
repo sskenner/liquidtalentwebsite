@@ -1,54 +1,24 @@
-<div id="filter" class="functions">
-  <div class="inner">
-    <div class="toggle">
-      <div class="visibility-toggle t active" onclick="$('#filter .inner').animate({right: '-540px'}, 1000, function(){ $('#filter').hide(); });"></div>
-    </div>
-    <div class="content">
+<div id="search-options" title="<%= listing %>">
 
-        <div class="options">
-          <div>
-            <input type="text" placeholder="Category" class="text-field category">
-            <div id="categories">
-              <div onclick="setCategory(null, 'All Categories');">All Categories</div>
-            </div>
-          </div>
+  <input type="text" placeholder="Search" class="text-field search-option search-field" onkeyup="setQuery(this.value);">
 
-          <div>
-            <input type="text" placeholder="Subcategory" class="text-field subcategory">
-            <div id="subcategories"></div>
-          </div>
-
-          <div>
-            <input type="text" placeholder="City" class="text-field city">
-            <div id="cities"></div>
-          </div>
-
-          <div>
-            <input type="text" placeholder="College" class="text-field school" onkeyup="searchSchool(this.value);">
-            <div id="schools"></div>
-          </div>
-
-          <input type="hidden" name="" id="category_id" />
-          <input type="hidden" name="" id="subcategory_id" />
-          <input type="hidden" name="" id="city_id" />
-          <input type="hidden" name="" id="school_id" />
-          <input type="hidden" name="" id="hourly_rate_from" value="0" />
-          <input type="hidden" name="" id="hourly_rate_to" value="200" />
-          <input type="hidden" name="" id="rate_from" value="0" />
-          <input type="hidden" name="" id="rate_to" value="5" />
-
-        </div>
-        <div class="sliders">
-
-          <div class="title">Hourly Rate $<span id="hourly_rate_from_label">0</span>-<span id="hourly_rate_to_label">200</span></div>
-          <div id="hourly_rate" class="slider"></div>
-
-          <div class="title">Rating <span id="rate_from_label">0</span>-<span id="rate_to_label">5</span></div>
-          <div id="rate" class="slider"></div>
-
-          <a href="javascript:filterUsers(<%= listing %>);" class="green-button">Search</a>
-
-        </div>
-      </div>
+  <div class="search-option" style="margin-left: 5px;">
+    <input type="text" placeholder="Industry" class="text-field">
+    <div class="option-container" id="industries" style="display: none;"></div>
   </div>
+
+  <div class="search-option" style="margin-left: 10px;">
+    <input type="text" placeholder="College" class="text-field" onkeyup="searchSchool(this.value);">
+    <div class="option-container" id="schools"></div>
+  </div>
+  <div class="search-option" style="margin-left: 13px;">
+    <div class="sort-by cost active" title="cost"></div>
+    <!--div class="sort-by distance" title="distance"></div-->
+    <div class="sort-by experience" title="experience"></div>
+  </div>
+
+  <input type="hidden" name="" id="query">
+  <input type="hidden" name="" id="category_id">
+  <input type="hidden" name="" id="school_id">
+
 </div>

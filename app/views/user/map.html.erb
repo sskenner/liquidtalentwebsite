@@ -1,39 +1,36 @@
-<%= render "user/filter", :listing => 'mapSearch' %>
-
-<div id="search-tool-bar">
-  <div class="title">Search</div>
-  <div class="functions">
-    <a href="javascript: loadPage('/map');" class="geo-toggle green-button">Map</a>
-    <a href="javascript: loadPage('/search');" class="geo-toggle black-button">List</a>
-    <div class="visibility-toggle t" onclick="$('#filter').show(); $('#filter .inner').animate({right: '0px'}, 1000, function(){ });"></div>
-  </div>
+<div id="title">
+  <a href="javascript: loadPage('/search');" class="geo-toggle green-button">List</a>
+  Search
 </div>
+
+<%= render "user/filter", :listing => 'mapSearch' %>
 
 <div id="content-preloader"></div>
 
 <div id="map"></div>
-<div id="map-overlay" style="display: none;opacity: 0;">
-  <div class="base">
-
+<div id="map-overlay" class="list-item" style="display: none;opacity: 0;">
+  <div class="list-item">
     <img class="avatar" src="<%= asset_path 'main/avatar.png' %>" alt="LiquidTalent Professional's Avatar">
-    <div class="favorite-button t">
-    </div><div class="play-button t"></div>
+    <div class="favorite"></div>
+    <div class="play"></div>
 
-    <p class="title"></p>
+    <div class="title">
+      <p class="name"></p>
+    </div>
 
-    <p class="description"> user.description </p>
+    <p class="description"></p>
 
     <div class="linkedin-icon"></div>
 
-    <div class="distance"> 4km Away </div>
+    <div class="distance"></div>
 
     <div class="lt-drop"></div>
     <div class="stars">
       <div class="star">
       </div><div class="star">
-      </div><div class="star">
-      </div><div class="star">
-      </div><div class="star"></div>
+    </div><div class="star">
+    </div><div class="star">
+    </div><div class="star"></div>
     </div>
   </div>
 </div>
