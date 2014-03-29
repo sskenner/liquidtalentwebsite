@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2144877657">
+    <data-source source="LOCAL" name="Rails liquidtalentwebsite: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="2e7b5fe4-be8f-4080-a416-503dddb93866">
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails liquidtalentwebsite: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="e9821f05-fc65-44d7-830c-153beef984e8">
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails liquidtalentwebsite: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="b4fa7e80-3b47-4b2d-a402-9eca1b8fb8fe">
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

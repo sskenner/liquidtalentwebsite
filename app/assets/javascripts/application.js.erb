@@ -476,12 +476,12 @@ $(window).on('load', function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
 
-                /*
+
                 if(currentUser === null) {
                     showPlaceholder('Settings');
                     return false;
                 }
-                */
+
 
                 cF = $('#settings-contact');
                 cF = {
@@ -720,17 +720,35 @@ function loadPage(page) {
         }
     });
 
-    /*
     if (page === '/login') {
+<<<<<<< HEAD
         currentUser = prompt('Please enter your invitation code to proceed.', 'Invitation code');
         if (currentUser !== 'liquidtalent') {
             currentUser = null;
             setTimeout(function () { alert('The invitation code is either invalid or out of date.');}, 1200);
             return true;
+=======
+        var inviteCode = prompt('Please enter your invitation code to proceed.', 'Invitation code');
+        if(inviteCode) {
+            checkInviteCode(inviteCode, function(status) {
+                if(status) {
+                    loadPageAjax(page);
+                }
+            });
+>>>>>>> 4bf2f3139e55bfd7a4681d284981f131929529e0
+        }
+        else {
+            return;
         }
     }
-    */
+    else {
+        loadPageAjax(page)
+    }
 
+    return false;
+}
+
+function loadPageAjax(page) {
     if (pages.active !== '') {
 
         $('#content-preloader').show();
@@ -739,15 +757,12 @@ function loadPage(page) {
             url: page,
             error: Response
         }).done(function (data) {
-            $('#content-preloader').hide();
-            $('#background').html(data);
-            pages.active.load();
-        });
+                    $('#content-preloader').hide();
+                    $('#background').html(data);
+                    pages.active.load();
+                });
 
     }
-
-    return false;
-
 }
 function getURLParameter(name) {
     return (decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1]).replace(/\+/g, '%20')) || null;
@@ -2539,4 +2554,23 @@ function uploadAvatar(callback) {
     else {
         callback();
     }
+}
+
+function checkInviteCode(code, callback) {
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/invite_code/check/' + code,
+        error: Response
+    }).done(function (data) {
+        if (data['status'] == 'failed') {
+            alert('The invitation code is either invalid or out of date.');
+            $('#preloader').hide();
+            callback(false);
+        }
+        else {
+            $('#preloader').hide();
+            callback(true);
+        }
+    });
 }
