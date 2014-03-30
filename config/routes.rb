@@ -17,6 +17,7 @@ LiquidTalent::Application.routes.draw do
     #Sign Up
     get '/login' => 'user#login'
     get '/signup' => 'user#signup'
+    get '/signup_demander' => 'user#signup_demander'
     get '/signup_service_provider' => 'user#signup_service_provider'
     get '/linkedin' => 'user#linkedin'
     get '/nda' => 'user#nda'
