@@ -294,40 +294,6 @@ $(window).on('load', function () {
                 if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
                 if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
-                map = $('#map-overlay');
-                map = {
-
-                    'markers': [],
-
-                    'googleMap': new google.maps.Map( document.getElementById('map'), {
-                        center: new google.maps.LatLng(40.5403, -73.5463),
-                        zoom: 8,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    }),
-
-                    'popUp': {
-                        'overlay': $('#map-overlay'),
-                        'image': map.find('.avatar'),
-                        'description': map.find('.description'),
-                        'distance': map.find('.distance'),
-                        'linkedIn': map.find('.linkedin-icon'),
-                        'title': map.find('.title'),
-                        'favorite': map.find('.favorite'),
-                        'play': map.find('.play'),
-                        'LTDrop': map.find('.lt-drop'),
-                        'stars': map.find('.stars .star')
-                    }
-
-                };
-
-                map.popUp.overlay.on('click', function (event) {
-                    if ($(event.target).prop('id') === 'map-overlay') {
-                        map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
-                            map.popUp.overlay.css('display', 'none');
-                        });
-                    }
-                });
-
                 if (users === null) { filterUsers(mapSearch); }
                 else { mapSearch(users); }
 
@@ -1166,10 +1132,10 @@ function showUserInfo() {
 }
 
 function mapSearch(providers) {
-    map = $('#map-overlay');
     map = {
 
         'markers': [],
+        'infowWindows': [],
 
         'googleMap': new google.maps.Map( document.getElementById('map'), {
             center: new google.maps.LatLng(40.5403, -73.5463),
@@ -1178,27 +1144,18 @@ function mapSearch(providers) {
         }),
 
         'popUp': {
-            'overlay': $('#map-overlay'),
-            'image': map.find('.avatar'),
-            'description': map.find('.description'),
-            'distance': map.find('.distance'),
-            'linkedIn': map.find('.linkedin-icon'),
-            'title': map.find('.title'),
-            'favorite': map.find('.favorite'),
-            'play': map.find('.play'),
-            'LTDrop': map.find('.lt-drop'),
-            'stars': map.find('.stars .star')
+            'image': $('#map-overlay .avatar'),
+            'description': $('#map-overlay .description'),
+            'distance': $('#map-overlay .distance'),
+            'linkedIn': $('#map-overlay .linkedin-icon'),
+            'title': $('#map-overlay .title'),
+            'favorite': $('#map-overlay .favorite'),
+            'play': $('#map-overlay .play'),
+            'LTDrop': $('#map-overlay .lt-drop'),
+            'stars': $('#map-overlay .stars .star')
         }
 
     };
-
-    map.popUp.overlay.on('click', function (event) {
-        if ($(event.target).prop('id') === 'map-overlay') {
-            map.popUp.overlay.animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
-                map.popUp.overlay.css('display', 'none');
-            });
-        }
-    });
 
     $('#content-preloader').hide();
 
@@ -1209,8 +1166,11 @@ function mapSearch(providers) {
             position: new google.maps.LatLng(user.latitude, user.longitude),
             map: map.googleMap,
             title: user.name,
-            icon: '<%= asset_path 'new/search/map-pin-green.png' %>'
+            icon: (user.is_provider === true ? '<%= asset_path 'new/search/map-pin-green.png' %>' : '<%= asset_path 'new/search/map-pin-black.png' %>')
 
+        });
+        map.infoWindows[user.id] = new google.maps.InfoWindow({
+            content: contentString
         });
 
         google.maps.event.addListener(map.markers[user.id], 'click', function () {
