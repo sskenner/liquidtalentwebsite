@@ -1411,14 +1411,24 @@ h3 {
 /***********************************************************************************************************************
 /   Video
 /**********************************************************************************************************************/
+#video-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1040;
+}
+
 #video-player {
     position: absolute;
-    top: 30px;
+    top: 180px;
     left: 50%;
-    margin-left: -300px;
-    width: 600px;
-    padding: 25px;
+    margin-left: -200px;
+    width: 350px;
     background: #fff;
+    border: 1px solid #fff;
     z-index: 999999;
 }
 
@@ -1900,6 +1910,23 @@ a.share-btn {
     cursor: pointer;
     filter: alpha(opacity=0);
     opacity: 0;
+}
+
+#demander-form #video-upload {
+    display:  none;
+    width: 205px;
+    height: 57px;
+    margin-top:  15px;
+    background: url(<%= asset_path 'new/signup/upload-video.png' %>);
+    cursor: pointer;
+}
+
+#demander-form #video {
+    width: 205px;
+    height: 57px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: pointer;
 }
 
 #demander-form p {

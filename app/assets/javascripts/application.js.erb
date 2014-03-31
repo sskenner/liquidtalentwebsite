@@ -589,6 +589,10 @@ $(window).on('load', function () {
                 $('#avatar').change(function() {
                     avatar_change = true;
                 });
+
+                $('#video').change(function() {
+                    uploadVideo();
+                });
             }
         },
 
@@ -1336,7 +1340,8 @@ function listSearch(providers) {
         $('#first-item').prop('title', user.years_in_industry);
 
         $('#first-item .avatar').attr('src', user.avatar_url);
-        $('#first-item .play').attr('onclick', 'playVideo();');
+
+        $('#first-item .play').attr('onclick', "playVideo(" + (user.video_url ? ("'" + user.video_id + "'") : null) + ");");
 
         $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
         $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
@@ -2131,6 +2136,10 @@ function calculateCost (rate) {
 function uploadVideo() {
     $('#preloader').show();
 
+    var s3_upload = false;
+    var vimeo_upload = false;
+
+    //  Amazon S3 upload
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/set_video',
         type: 'POST',
@@ -2145,19 +2154,61 @@ function uploadVideo() {
         }(),
         error: Response
     }).done(function (data) {
+        s3_upload = true;
+
         if (data['status'] === 'failed') {
             alert(data['errors'][0]);
         }
         else {
             currentUser['video_url'] = data['response']['url'];
-            alert('The video has been successfully uplaoded!');
         }
 
-        $('#preloader').hide();
+        //if(vimeo_upload) {
+            alert('The video has been successfully uplaoded!');
+            $('#preloader').hide();
+        //}
     });
+
+    //  Vimeo upload
+    /*
+    $.ajax({
+        url: '/video/get_ticket',
+        error: Response
+    }).done(function (ticket) {
+                $.ajax({
+                    url: ticket.upload_link,
+                    type: 'POST',
+                    contentType: false,
+                    processData: false,
+                    data: function () {
+                        var rq_data = new FormData();
+                        rq_data.append("file_data", $('#video').get(0).files[0]);
+                        return rq_data;
+                    }(),
+                    complete: function (res, status, xhr) {     alert('/video/get_id?url=' + xhr.getResponseHeader("Location"));
+                            $.ajax({
+                                url: '/video/get_id?url=' + xhr.getResponseHeader("Location"),
+                                error: Response
+                            }).done(function (data) {
+                                        vimeo_upload = true;
+
+                                        //if(s3_upload) {
+                                            alert('The video has been successfully uplaoded!' + data['id']);
+                                            $('#preloader').hide();
+                                        //}
+                            });
+                    }
+                });
+    });
+    */
 }
 
-function playVideo() {
+function playVideo(video_url) {
+    if(video_url == null || video_url == '') {
+        alert('Sorry, this user has no video pitch.');
+        return;
+    }
+
     $('#preloader').show();
 
     $.ajax({
@@ -2166,17 +2217,20 @@ function playVideo() {
     }).done(function (data) {
         $('#background').append(data);
 
+                /*
         jwplayer("player").setup({
             wmode: "transparent",
-            file: currentUser.video_url,
+            file: video_url,
             provider:'http',
             autostart: true,
-            height: 510,
             skin: 'roundster',
-            width: 660,
+            width: 350,
             controlbar: 'bottom'
 
         });
+        */
+
+        $('#video-player').html('<iframe src="//player.vimeo.com/video/' + video_url + '?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="350" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
 
         $('#preloader').hide();
     });
