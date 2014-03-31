@@ -161,7 +161,7 @@ a:hover { color: #000; }
 }
 .lt-drop.hidden { display: none; }
 .lt-drop.blue { background-position: 0px 0px; }
-.lt-drop.bronze { background-position: -23px 0px; }
+.lt-drop.bronze { background-position: -22px 0px; }
 .lt-drop.silver { background-position: -45px 0px; }
 .lt-drop.gold { background-position: -66px 0px; }
 
@@ -1058,24 +1058,23 @@ h3 {
     width: 115%;
     background-color: #EEE;
 }
-
 #map_canvas {
     width: 100%;
     height: 100%;
 }
-
 #map-overlay { display: none; }
-#map-overlay,
+
 .info-window {
     position: relative;
     width: 282px;
-    height: 208px;
+    height: 209px;
     cursor: auto;
     word-wrap: break-word;
-    border: 1px solid #FFF;
-    background: #FFF url(/assets/new/main/avatar.png) 0px -80px no-repeat;
+    border: 1px solid #000;
+    background: #FFF url(<%= asset_path 'new/main/avatar.png' %>) 0px -80px no-repeat;
     background-size: 320px 320px;
     box-shadow: 0px 30px 60px -60px #000 inset;
+    margin: 2px 0px;
 }
 
 .info-window .lt-drop {
@@ -1113,6 +1112,7 @@ h3 {
     margin-bottom: 10px;
 }
 
+.info-window .play { border-right: 1px solid #000; }
 .info-window .play,
 .info-window .favorite {
     background: url(<%= asset_path 'new/search/map-buttons.png' %>);
@@ -1433,7 +1433,8 @@ h3 {
 }
 
 #profile .avatar {
-    width: 301px;
+    width: 320px;
+    height: 320px;
     float: left;
     border: none;
     border-radius: 0;
@@ -1442,7 +1443,7 @@ h3 {
 }
 
 #profile-data {
-    width: 434px;
+    width: 430px;
     float: right;
 }
 
@@ -1456,6 +1457,7 @@ h3 {
     height: 30px;
     background: url(<%= asset_path 'new/profile/icons.png' %>);
     cursor: pointer;
+    vertical-align: top;
 }
 #profile .play {
     float: left;
@@ -1475,8 +1477,9 @@ h3 {
 #profile .title {
     display: inline-block;
     float: left;
-    width: 334px;
+    width: 330px;
     text-align: center;
+    vertical-align: top;
 }
 
 #profile .name {
@@ -1485,9 +1488,9 @@ h3 {
 }
 
 #profile .description {
-    padding-top: 35px;
-    font-size: 1.3em;
-    line-height: 1.5;
+    padding: 30px;
+    font-size: 18px;
+    line-height: 26px;
 }
 
 #profile-provider {
@@ -1521,14 +1524,15 @@ h3 {
     right: 0;
 }
 
-.message-button-profile img, .hire-button-profile img {
+.message-button-profile img,
+.hire-button-profile img {
     display: none;
 }
 
 .message-button-profile {
     display: inline-block;
     vertical-align: top;
-    width: 217px;
+    width: 215px;
     height: 67px;
     margin-left: -3px;
     background: #000 url(<%= asset_path 'new/profile/message.png' %>) top center no-repeat;
@@ -1541,10 +1545,10 @@ h3 {
 .hire-button-profile {
     display: inline-block;
     vertical-align: top;
-    width: 217px;
+    width: 215px;
     height: 67px;
-    margin-left: -4px;
-    background: url(<%= asset_path 'new/profile/hire.png' %>);
+    margin-left: -3px;
+    background: #000 url(<%= asset_path 'new/profile/hire.png' %>);
     cursor: pointer;
 }
 .hire-button-profile:hover img {

@@ -21,14 +21,15 @@
 var loaders, pages;
 
 var currentUser = null,
-        profileId = null,
-        providerId = null,
-        bookingId = null,
-        rate = 0,
-        back = null,
-        favorites = [],
-        messages = [],
-        linkedInConnections = [];
+    profileId = null,
+    providerId = null,
+    bookingId = null,
+    rate = 0,
+    back = null,
+    favorites = [],
+    messages = [],
+    linkedInConnections = [];
+
 var users = null;
 var global_info = null;
 var filter_settings = {
@@ -1259,7 +1260,7 @@ function loadMap(providers) {
         map.iW.title.html('<p class="name">' + user.name + '</p>' + calculateCost(user.hourly_rate));
 
         map.iW.description.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
-        map.iW.description.html(user.description);
+        map.iW.description.html(user.description.substr(0, 24) + '...');
 
         if (user.video_url !== null) { map.iW.play.addClass('disabled'); }
         else { map.iW.play.removeClass('disabled'); }
@@ -1284,13 +1285,13 @@ function loadMap(providers) {
         });
 
 
-        /* Connect markers to info windows */
+        /* Connect marker clicks to info windows */
 
 
         google.maps.event.addListener(map.markers[user.id], 'click', function () {
 
             map.infoWindow.setContent(this.html);
-            map.infoWindow.open(map, this);
+            map.infoWindow.open(map.googleMap, this);
 
         });
 
@@ -1340,6 +1341,7 @@ function listSearch(providers) {
 
 }
 function filterUsers(callback) {
+
     $('#filter').hide();
     $('#content-preloader').show();
 
@@ -2111,7 +2113,7 @@ function loadProfile() {
 
 function calculateCost (rate) {
 
-    if (typeof(rate) !== 'string') {
+    if (typeof(rate) === 'number') {
 
         if (rate > 200) { rate = 5; }
         else if (rate > 75) { rate = 4; }
@@ -2132,6 +2134,7 @@ function calculateCost (rate) {
         return rate;
 
     }
+    else { return rate; }
 
 }
 
