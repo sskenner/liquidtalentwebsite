@@ -20,7 +20,15 @@
 
 var loaders, pages;
 
-var currentUser = null, profileId = null, providerId = null, bookingId = null, rate = 0, back = null, favorites = [], messages = [];
+var currentUser = null,
+        profileId = null,
+        providerId = null,
+        bookingId = null,
+        rate = 0,
+        back = null,
+        favorites = [],
+        messages = [],
+        linkedInConnections = [];
 var users = null;
 var global_info = null;
 var filter_settings = {
@@ -295,8 +303,8 @@ $(window).on('load', function () {
                 if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
                 if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
-                if (users === null) { filterUsers(mapSearch); }
-                else { mapSearch(users); }
+                if (users === null) { filterUsers(loadMap); }
+                else { loadMap(users); }
 
                 prepareFilter();
             }
@@ -1186,6 +1194,15 @@ var map, states, list;
 
 function showUserInfo() {
 
+    if (currentUser.linkedin_token !== null) {
+
+        $.Ajax({
+            url: 'http://backend.liquidtalent.com/user/find_linkedin_connections',
+            data: 'access_token=' + currentUser.token + '&user_id=' + currentUser.linkedin_token
+        }).done(function (data) { linkedInConnections = data.response; });
+
+    }
+
     currentUser['state'] = checkState(currentUser['state']);
     currentUser['city_name'] = (!currentUser['city_name'])? 'New York' : currentUser['city_name'];
 
@@ -1199,28 +1216,26 @@ function showUserInfo() {
     $('#user-info .location').html(currentUser['city_name'] + ', ' + currentUser['state']);
 }
 
-function mapSearch(providers) {
+function loadMap(providers) {
+
     map = {
 
         'markers': [],
-        'infowWindows': [],
+        'infoWindow': new google.maps.InfoWindow({ content: '...' }),
 
-        'googleMap': new google.maps.Map( document.getElementById('map'), {
-            center: new google.maps.LatLng(40.5403, -73.5463),
-            zoom: 8,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+        'googleMap': new google.maps.Map(document.getElementById('map'), {
+            'center': new google.maps.LatLng(40.5403, -73.5463),
+            'zoom': 8,
+            'mapTypeId': google.maps.MapTypeId.ROADMAP
         }),
 
-        'popUp': {
-            'image': $('#map-overlay .avatar'),
-            'description': $('#map-overlay .description'),
-            'distance': $('#map-overlay .distance'),
-            'linkedIn': $('#map-overlay .linkedin-icon'),
-            'title': $('#map-overlay .title'),
-            'favorite': $('#map-overlay .favorite'),
-            'play': $('#map-overlay .play'),
+        'iW': {
             'LTDrop': $('#map-overlay .lt-drop'),
-            'stars': $('#map-overlay .stars .star')
+            'title': $('#map-overlay .title'),
+            'linkedIn': $('#map-overlay .linkedin-icon'),
+            'description': $('#map-overlay .description'),
+            'play': $('#map-overlay .play'),
+            'favorite': $('#map-overlay .favorite'),
         }
 
     };
@@ -1229,57 +1244,56 @@ function mapSearch(providers) {
 
     providers.forEach(function (user) {
 
+
+        /* Info Windows */
+
+
+        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
+        $('#map-overlay').css('background-image', user.avatar_url);
+
+        map.iW.LTDrop.removeClass('hidden').removeClass('blue').removeClass('bronze').removeClass('silver').removeClass('gold');
+        if (user.badge === 'no') { map.iW.LTDrop.addClass('hidden'); }
+        else { map.iW.LTDrop.addClass(user.badge); }
+
+        map.iW.title.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
+        map.iW.title.html('<p class="name">' + user.name + '</p>' + calculateCost(user.hourly_rate));
+
+        map.iW.description.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
+        map.iW.description.html(user.description);
+
+        if (user.video_url !== null) { map.iW.play.addClass('disabled'); }
+        else { map.iW.play.removeClass('disabled'); }
+        map.iW.play.attr('onclick', 'playVideo();');
+
+        if (typeof (favorites[user.id]) === 'number') { map.iW.favorite.addClass('active'); }
+        else { map.iW.favorite.removeClass('active'); }
+        map.iW.favorite.attr('onclick', 'createFavorite(' + user.id + ', $(this));');
+
+
+        /* Markers */
+
+
         map.markers[user.id] = new google.maps.Marker({
 
             position: new google.maps.LatLng(user.latitude, user.longitude),
             map: map.googleMap,
             title: user.name,
-            icon: (user.is_provider === true ? '<%= asset_path 'new/search/map-pin-green.png' %>' : '<%= asset_path 'new/search/map-pin-black.png' %>')
+            icon: (user.is_provider === true ? '<%= asset_path 'new/search/map-pin-green.png' %>' : '<%= asset_path 'new/search/map-pin-black.png' %>'),
+            html: '<div class="info-window">' + $('#map-overlay').html() + '</div>'
 
         });
-        map.infoWindows[user.id] = new google.maps.InfoWindow({
-            content: contentString
-        });
+
+
+        /* Connect markers to info windows */
+
 
         google.maps.event.addListener(map.markers[user.id], 'click', function () {
 
-            if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
-            else { user.state = 'NY'; }
-
-            map.popUp.LTDrop.removeClass('hidden').removeClass('blue').removeClass('bronze').removeClass('silver').removeClass('gold');
-
-            if (typeof (favorites[user.id]) === 'number') { map.popUp.favorite.addClass('active'); }
-            else { map.popUp.favorite.removeClass('active'); }
-            map.popUp.favorite.attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
-
-            map.popUp.image.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
-            map.popUp.title.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
-
-            map.popUp.play.attr('onclick', 'playVideo();');
-
-            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
-
-            if (user.badge === 'no') { map.popUp.LTDrop.addClass('hidden'); }
-            else { map.popUp.LTDrop.addClass(user.badge); }
-
-//                if (user.video_url === null) { map.popUp.play.addClass('disabled'); }
-//                else { map.popUp.play.removeClass('disabled'); }
-
-            map.popUp.stars.each(function (i, star) {
-
-                if (i < user.rate_provider) { $(star).addClass('active'); }
-                else { $(star).removeClass('active'); }
-
-            });
-
-            map.popUp.overlay.css('display', 'block').animate({ opacity: 1 }, 1000, 'linear');
-            map.popUp.image.prop('src', user.avatar_url);
-            map.popUp.description.html(user.description);
-            map.popUp.title.html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
-
-            map.popUp.distance.html(user.hourly_rate);
+            map.infoWindow.setContent(this.html);
+            map.infoWindow.open(map, this);
 
         });
+
 
     });
 
@@ -2542,7 +2556,6 @@ function updateProviderData() {
         $('#preloader').hide();
     });
 }
-
 
 function updateDemander() {
     uploadAvatar(function() {

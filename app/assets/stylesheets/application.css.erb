@@ -140,9 +140,16 @@ a:hover { color: #000; }
     outline: 0;
 }
 
-.lt-drop {
-    width: 21px;
+.linkedin-icon {
+    width: 28px;
     height: 28px;
+    background: url(<%= asset_path 'new/main/linkedin-icon.png' %>);
+    display: none;
+}
+
+.lt-drop {
+    width: 22px;
+    height: 29px;
     background: url(<%= asset_path 'new/main/drops.png' %>);
 }
 .lt-drop.hidden { display: none; }
@@ -1037,18 +1044,82 @@ h3 {
 /   Map
 /**********************************************************************************************************************/
 
+#map {
+    margin-top: -2px;
+    position: absolute !important;
+    height: 100%;
+    width: 115%;
+    background-color: #EEE;
+}
+
 #map_canvas {
     width: 100%;
     height: 100%;
 }
-#map-overlay {
-    width: 100%;
-    height: 638px;
-    background: hsla(0, 0%, 100%, 0.5);
-    position: absolute;
-    top: 62px;
-    cursor: pointer;
+
+#map-overlay { display: none; }
+#map-overlay,
+.info-window {
+    position: relative;
+    width: 282px;
+    height: 208px;
+    cursor: auto;
+    word-wrap: break-word;
+    border: 1px solid #FFF;
+    background: #FFF url(/assets/new/main/avatar.png) 0px -80px no-repeat;
+    background-size: 320px 320px;
+    box-shadow: 0px 30px 60px -60px #000 inset;
 }
+
+.info-window .lt-drop {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+}
+
+.info-window .title {
+    margin: 20px 20px 70px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFF;
+}
+.info-window .title .name {
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: none;
+}
+
+.info-window .linkedin-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.info-window .description {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFF;
+    margin-bottom: 10px;
+}
+
+.info-window .play,
+.info-window .favorite {
+    background: url(<%= asset_path 'new/search/map-buttons.png' %>);
+    width: 140px;
+    height: 48px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+}
+.info-window .play:hover { background-position: 0px -48px; }
+.info-window .favorite { background-position: -141px 0px; }
+.info-window .favorite.active,
+.info-window .favorite:hover { background-position: -141px -48px !important; }
+
 
 .list-item {
     width: 750px;
@@ -1093,13 +1164,9 @@ h3 {
 }
 
 .list-item .linkedin-icon {
-    width: 30px;
-    height: 30px;
-    background: url(<%= asset_path 'main/linkedin_icon.png' %>);
     position: absolute;
     top: 10px;
     right: 120px;
-    opacity: 0;
 }
 
 .list-item .distance {
