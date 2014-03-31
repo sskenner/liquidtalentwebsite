@@ -1263,7 +1263,7 @@ function loadMap(providers) {
 
         if (user.video_url !== null) { map.iW.play.addClass('disabled'); }
         else { map.iW.play.removeClass('disabled'); }
-        map.iW.play.attr('onclick', 'playVideo();');
+        map.iW.play.attr('onclick', "playVideo(" + (user.video_id ? ("'" + user.video_id + "'") : null) + ");");
 
         if (typeof (favorites[user.id]) === 'number') { map.iW.favorite.addClass('active'); }
         else { map.iW.favorite.removeClass('active'); }
@@ -1315,7 +1315,7 @@ function listSearch(providers) {
 
         $('#first-item .avatar').attr('src', user.avatar_url);
 
-        $('#first-item .play').attr('onclick', "playVideo(" + (user.video_url ? ("'" + user.video_id + "'") : null) + ");");
+        $('#first-item .play').attr('onclick', "playVideo(" + (user.video_id ? ("'" + user.video_id + "'") : null) + ");");
 
         $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
         $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
@@ -1934,28 +1934,28 @@ function loadStats(term) {
             if(total < 1000) {
                 drop_total = 1000 - total;
                 drop_name = 'blue';
-                $('#drop1 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 1000)) - 89) + 'px 0px');
+                $('#drop1 > div.bar ').css('width', Math.round((365 * (total / 1000))) + 'px');
             }
             else if(total < 5000) {
                 drop_total = 5000 - total;
                 drop_name = 'bronze';
-                $('#drop1 > div.bar ').css('backgroundPosition', '90px 0px');
-                $('#drop2 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 5000)) - 89) + 'px -19px');
+                $('#drop1 > div.bar ').css('width', '365px');
+                $('#drop2 > div.bar ').css('width', Math.round((365 * (total / 5000))) + 'px');
             }
             else if(total < 10000) {
                 drop_total = 10000 - total;
                 drop_name = 'silver';
-                $('#drop1 > div.bar ').css('backgroundPosition', '0px 0px');
-                $('#drop2 > div.bar ').css('backgroundPosition', '0px -19px');
-                $('#drop3 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 10000)) - 89) + 'px -38px');
+                $('#drop1 > div.bar ').css('width', '365px');
+                $('#drop2 > div.bar ').css('width', '365px');
+                $('#drop3 > div.bar ').css('width', Math.round((3365 * (total / 10000))) + 'px');
             }
             else if(total < 25000) {
                 drop_total = 25000 - total;
                 drop_name = 'gold';
-                $('#drop1 > div.bar ').css('backgroundPosition', '0px 0px');
-                $('#drop2 > div.bar ').css('backgroundPosition', '0px -19px');
-                $('#drop3 > div.bar ').css('backgroundPosition', '0px -38px');
-                $('#drop4 > div.bar ').css('backgroundPosition', Math.round((89 - 89 * (drop_total / 25000)) - 89) + 'px -57px');
+                $('#drop1 > div.bar ').css('width', '365px');
+                $('#drop2 > div.bar ').css('width', '365px');
+                $('#drop3 > div.bar ').css('width', '365px');
+                $('#drop4 > div.bar ').css('width', Math.round((365 * (total / 25000))) + 'px');
             }
             else {
                 drop_total = null;
@@ -2035,41 +2035,71 @@ function loadProfile() {
 
         $('#content-preloader').hide();
 
-        if (user.state !== undefined) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+        if (user.state != null) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
         else { user.state = 'NY'; }
 
-        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
+        $('#profile .avatar').attr('src', (user.avatar_url) ? user.avatar_url : '/assets/new/main/avatar.png');
 
-        $('#first-item .avatar').attr('src', user.avatar_url);
+        //if (user.video_id === null) { $('#profilem .play').addClass('disabled'); }
 
-        if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
-        else { $('#first-item .lt-drop').addClass(user.badge); }
-
-//        if (user.video_url === null) { $('#first-item .play').addClass('disabled'); }
-//        else { $('#first-item .play').removeClass('disabled'); }
+        $('#profile .play').attr('onclick', "playVideo(" + (user.video_id ? ("'" + user.video_id + "'") : null) + ");");
 
         $('#profile-buttons .message-button-profile').attr('onclick',
             'javascript:loadChat(\'' + user.id + ':' + user.name + '\');'
         );
 
-        $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
-        $('#first-item .description').html(user.description);
+        $('#profile .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+        $('#profile .description').html(user.description);
 
-        $('#first-item .distance').html('$' + user.hourly_rate + '.00');
+        if (typeof (favorites[user.id]) === 'number') { $('#profile .favorite').addClass('active'); }
+        else { $('#profile .favorite').removeClass('active'); }
+        $('#profile .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
-        if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite').addClass('active'); }
-        else { $('#first-item .favorite').removeClass('active'); }
-        $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
+        if(user.portfolio) {
+            $('#profile-portfolio').show();
+            $('#profile-portfolio a').attr('href', user.portfolio);
+        }
+        else {
+            $('#profile-portfolio').hide();
+        }
+
 
         if(user.is_provider) {
 
             $('#profile-provider').show();
             $('#profile-demander').hide();
 
-            $('#profile-skills').html(user.skills);
-            $('#profile-summary').html(user.summary);
-            $('#profile-experience').html(user.experience);
-            $('#profile-education').html(user.school_name);
+            if(user.skills != null && user.skills.length > 0) {
+                $('.profile-item.skills').show();
+                $('#profile-skills').html(user.skills);
+            }
+            else {
+                $('.profile-item.skills').hide();
+            }
+
+            if(user.summary != null && user.summary.length != '') {
+                $('.profile-item.summary').show();
+                $('#profile-summary').html(user.summary);
+            }
+            else {
+                $('.profile-item.summary').hide();
+            }
+
+            if(user.experience != null && user.experience.length > 0) {
+                $('.profile-item.experience').show();
+                $('#profile-experience').html(user.experience);
+            }
+            else {
+                $('.profile-item.experience').hide();
+            }
+
+            if(user.school_name != null && user.school_name.length > 0) {
+                $('.profile-item.education').show();
+                $('#profile-education').html(user.school_name);
+            }
+            else {
+                $('.profile-item.education').hide();
+            }
 
             $('.hire-button-profile').attr('onclick', 'back="profile"; providerId=' + user.id + '; loadPage("/hire");');
 
