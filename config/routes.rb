@@ -47,4 +47,10 @@ LiquidTalent::Application.routes.draw do
     get '/hire_confirm' => 'bookings#confirm'
     get '/hire_accept' => 'bookings#accept'
     get '/rate' => 'bookings#rate'
+
+
+    ####### Bookings
+
+    get '/video/get_ticket' => 'videos#get_ticket'
+    get '/video/get_id' => 'videos#get_id'
 end
