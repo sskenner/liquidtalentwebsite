@@ -1,61 +1,57 @@
-<div id="title">
+<div id="title" class="no-margin">
   Profile
   <a class="black-button" href="javascript:loadPage('/' + back);">Back</a>
 </div>
 
 <div id="content-preloader"></div>
 
-<div class="list-item" id="first-item">
-  <div class="base">
+<div id="profile">
+    <img class="avatar" src="<%= asset_path 'new/main/avatar.png' %>" width="301" height="301" alt="LiquidTalent Professional's Avatar">
 
-    <img class="avatar" src="<%= asset_path 'main/avatar.png' %>" alt="LiquidTalent Professional's Avatar">
-    <div class="favorite-button t">
-    </div><div class="play-button t"></div>
+  <div id="profile-data">
+    <div id="profile-data-inner">
+        <div class="play"></div>
 
-    <div class="title">
-      <p class="name"></p>
+        <div class="title">
+          <p class="name"></p>
+        </div>
+
+        <div class="favorite"></div>
+
+        <div class="clear"></div>
+
+        <p class="description"></p>
     </div>
-
-    <p class="description"></p>
-
-    <div class="linkedin-icon"></div>
-
-    <div class="distance"></div>
-
-    <div class="lt-drop"></div>
-    <div class="stars">
-      <div class="star">
-      </div><div class="star">
-    </div><div class="star">
-    </div><div class="star">
-    </div><div class="star">
-    </div>
+    <div id="profile-buttons">
+      <div class="message-button-profile t"><img src="<%= asset_path 'new/profile/tap/message.png' %>" width="217" height="67" alt="" /></div>
+      <div class="hire-button-profile t"><img src="<%= asset_path 'new/profile/tap/hire.png' %>" width="217" height="67" alt="" /></div>
     </div>
   </div>
+
+  <div class="clear"></div>
 </div>
 
-<div id="profile-buttons">
-  <div class="message-button-profile t"></div>
-  <div class="hire-button-profile t"></div>
+<div id="profile-portfolio">
+  <a class="green-button" href="#" target="_blank">View Portfolio</a>
 </div>
 
 <div id="profile-provider">
-  <div class="profile-item">
+  <div class="profile-item skills">
     <div class="profile-item-title">Skills</div>
     <div id="profile-skills"></div>
   </div>
 
-  <div class="profile-item">
+  <div class="profile-item summary">
     <div class="profile-item-title">Summary</div>
     <div id="profile-summary"></div>
   </div>
 
-  <div class="profile-item">
+  <div class="profile-item experience">
     <div class="profile-item-title">Experience</div>
     <div id="profile-experience"></div>
   </div>
 
-  <div class="profile-item">
+  <div class="profile-item education">
     <div class="profile-item-title">Education</div>
     <div id="profile-education"></div>
   </div>
