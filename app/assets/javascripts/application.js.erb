@@ -1180,7 +1180,10 @@ function linkedin_connect(access_token) {
 
                     $('#preloader').hide();
                 }
-                else { createUser(data, 'map'); }
+                else {
+                    currentUser = data['response']['user'];
+                    createUser(data, 'map');
+                }
 
                 $('#preloader').hide();
             });
