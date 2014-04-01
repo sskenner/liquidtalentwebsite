@@ -112,9 +112,6 @@ a:hover { color: #000; }
     border-right: 1px solid #FFF;
     padding-right: 10px;
 }
-#title.no-bg {
-    background: none;
-}
 #title.no-margin {
     margin-bottom: 0;
 }
@@ -1067,7 +1064,7 @@ h3 {
 .info-window {
     position: relative;
     width: 282px;
-    height: 209px;
+    height: 210px;
     cursor: auto;
     word-wrap: break-word;
     border: 1px solid #000;
@@ -1256,6 +1253,7 @@ h3 {
 /***********************************************************************************************************************
 /   Stats
 /**********************************************************************************************************************/
+
 #stats-info .item {
     width: 60%;
     margin: 0 auto 20px auto;
@@ -1284,72 +1282,68 @@ h3 {
     display: block;
     padding: 12px 12px;
     font-size: 1.3em;
-    border: 1px solid #ccc;
+    border: 1px solid #FFF;
+    box-shadow: 0px 0px 30px -20px #000;
     cursor: pointer;
 }
 
 #term-selector-options {
-    width: 400px;
+    width: 448px;
     position: absolute;
-    margin-top: -10px;
-    box-shadow: 0px 0px 10px 0px #CCC;
+    margin-top: 0px;
     display: none;
     cursor: pointer;
     max-height: 400px;
     overflow: auto;
-    z-index: 999999;
+    z-index: 1000;
 }
 
-#term-selector-options div {
-    background: #fff;
-    padding: 12px 12px;
-    border-top: 1px solid #ccc;
+#term-selector-options .option {
+    background: hsla(0, 0%, 0%, 0.8);
+    padding: 12px;
+    border-top: 1px solid #FFF;
     cursor: pointer;
     margin-top: -1px;
+    color: #FFF;
 }
+#term-selector-options .option:hover { background: #239060; }
 
 #dew-drops-title {
+    font-size: 24px;
+    padding: 30px 0;
+    font-weight: 400;
     color: #000;
     text-align: center;
 }
 
 .stats-box, .chart-box {
-    width: 90%;
-    margin: 0 auto 15px auto;
-    padding: 20px 0;
+    margin: 1px 0px;
+    padding: 30px 0 10px 0;
+    background: hsla(0, 0%, 100%, 0.6);
+    border: 1px solid #FFF;
 }
-
 .chart-box {
-    margin: 0 auto 35px auto;
+    margin: 0 auto 14px auto;
     background: #fff;
 }
 
 .stats-box-inner {
     padding: 0 30px;
 }
-
 .stats-box-inner .title {
     font-size: 1.3em;
     color: #75b9dc;
 }
 
-.chart {
-    height: 250px;
-}
-
-#dew-drops-title {
-    font-size: 1.5em;
-    padding: 30px 0;
-    background: rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid #fff;
-}
+.chart { height: 250px; }
 
 #drops {
     padding: 30px 0;
-    background: rgba(0, 0, 0, 0.05);
+    background: hsla(0, 0%, 100%, 0.3);
     border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
 }
-
 #drops-inner {
     width: 405px;
     margin: 0 auto;
@@ -1377,8 +1371,7 @@ h3 {
     position: relative;
     border: 1px solid #fff;
 }
-
-.drop > div.drp, .drop > div.drp {
+.drop .drp {
     position: absolute;
     top: 0;
     left: 0;
@@ -1389,8 +1382,7 @@ h3 {
     text-align: center;
     z-index: 99999;
 }
-
-.drop > div.bar {
+.drop .bar {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -1399,34 +1391,27 @@ h3 {
     z-index: 9999;
     background: url(<%= asset_path 'new/stats/drop-bars.png' %>) top left no-repeat;
 }
-
 #drop1, #drop2, #drop3 {
 }
-
-#drop1 > div.bar {
+#drop1 .bar {
     background-position: 0px 0px;
 }
-
-#drop2 > div.bar {
+#drop2 .bar {
     background-position: 0px -33px;
 }
-
-#drop3 > div.bar {
+#drop3 .bar {
     background-position: 0px -66px;
 }
-
-#drop4 > div.bar {
+#drop4 .bar {
     background-position: 0px -99px;
 }
 
-#stats-charts {
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.1);
-}
+#stats-charts { padding: 14px 14px 0px 14px; }
 
 /***********************************************************************************************************************
 /   Profile
 /**********************************************************************************************************************/
+
 #profile {
     position: relative;
     background: #fff;
@@ -1576,6 +1561,7 @@ h3 {
 /***********************************************************************************************************************
 /   Video
 /**********************************************************************************************************************/
+
 #video-wrapper {
     position: absolute;
     left: 0;
@@ -1597,10 +1583,10 @@ h3 {
     z-index: 999999;
 }
 
-
 /***********************************************************************************************************************
 /   Hiring
 /**********************************************************************************************************************/
+
 #hire {
     padding: 0 30px;
     text-align: center;
@@ -1675,6 +1661,7 @@ h3 {
 /***********************************************************************************************************************
 /   Projects
 /**********************************************************************************************************************/
+
 .project {
     padding: 10px;
     margin: 10px;
@@ -1770,6 +1757,7 @@ h3 {
 /***********************************************************************************************************************
 /   Rates
 /**********************************************************************************************************************/
+
 #rate {
     display: none;
     margin: 15px;
@@ -1837,6 +1825,7 @@ h3 {
 /***********************************************************************************************************************
 /   Settings
 /**********************************************************************************************************************/
+
 .settings-col {
     padding: 15px;
     border-top: 1px solid #fff;
@@ -1953,6 +1942,7 @@ a.share-btn {
 /***********************************************************************************************************************
 /   User Profile
 /**********************************************************************************************************************/
+
 #provider-form, #demander-form {
     margin: 30px 15px;
 }
@@ -2125,6 +2115,7 @@ a.share-btn {
 /***********************************************************************************************************************
 /   Terms
 /**********************************************************************************************************************/
+
 #terms {
     padding: 15px;
     background: rgba(255, 255, 255, 0.5);

@@ -26,7 +26,7 @@ var currentUser = null,
     bookingId = null,
     rate = 0,
     back = null,
-    favorites = [],
+    favorites = {},
     messages = [],
     linkedInConnections = [];
 
@@ -34,7 +34,7 @@ var users = null;
 var global_info = null;
 var filter_settings = {
     query: '',
-    category: {label: 'Categories', value: null},
+    category: {label: 'Industry', value: null},
     subcategory: {label: 'Subcategories', value: null},
     city: {label: 'City', value: null},
     college: {label: 'College', value: null},
@@ -1207,7 +1207,7 @@ function showUserInfo() {
     currentUser['state'] = checkState(currentUser['state']);
     currentUser['city_name'] = (!currentUser['city_name'])? 'New York' : currentUser['city_name'];
 
-    var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '<%= asset_path '/assets/new/main/avatar.png' %>';
+    var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '<%= asset_path "new/main/avatar.png" %>';
 
     $('#admin-panel .header .login').hide();
     $('#user-info').show();
@@ -1257,10 +1257,15 @@ function loadMap(providers) {
         else { map.iW.LTDrop.addClass(user.badge); }
 
         map.iW.title.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
-        map.iW.title.html('<p class="name">' + user.name + '</p>' + calculateCost(user.hourly_rate));
+        map.iW.title.html(
+            '<p class="name">' + user.name + '</p>' +
+            ((user.hourly_rate===null) ? user.title.substr(0, 24) : calculateCost(user.hourly_rate))
+        );
 
         map.iW.description.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
-        map.iW.description.html(user.description.substr(0, 24) + '...');
+        map.iW.description.html(
+            user.description === null ? '' : user.description.substr(0, 24) + '...'
+        );
 
         if (user.video_url !== null) { map.iW.play.addClass('disabled'); }
         else { map.iW.play.removeClass('disabled'); }
@@ -1279,7 +1284,7 @@ function loadMap(providers) {
             position: new google.maps.LatLng(user.latitude, user.longitude),
             map: map.googleMap,
             title: user.name,
-            icon: (user.is_provider === true ? '<%= asset_path 'new/search/map-pin-green.png' %>' : '<%= asset_path 'new/search/map-pin-black.png' %>'),
+            icon: (user.is_provider === true ? '<%= asset_path "new/search/map-pin-green.png" %>' : '<%= asset_path "new/search/map-pin-black.png" %>'),
             html: '<div class="info-window">' + $('#map-overlay').html() + '</div>'
 
         });
@@ -1456,10 +1461,7 @@ function sortUsers (sortBy) {
         );
 
     }
-    /*
-    $('#user-info .avatar').attr('src', avatar);
-    $('#user-info .name').html(currentUser['name']);
-    */
+
 }
 
 /***** Favorite *****/
@@ -1501,26 +1503,22 @@ function destroyFavorite(userID, button) {
         error: Response
     }).done(function (user) {
 
-                if (user.status === 'ok') { favorites.splice(indexOf(favorites[userID]), 1); }
+        if (user.status === 'ok') { favorites[userID] = null; }
 
-            });
+    });
 
 }
 function getFavorites() {
 
-    if (currentUser.token !== null) {
-
-        $.ajax({
+      $.ajax({
             url: 'http://backend.liquidtalent.com/favourites/list?token=' + currentUser.token + '&demander_id=' + currentUser.id,
             error: Response
         }).done(function (users) {
 
-                    favorites = [];
-                    users.response.forEach(function (user) { favorites[user.provider.id] = user.favourite_id; });
+            favorites = {};
+            users.response.forEach(function (user) { favorites[user.provider.id] = user.favourite_id; });
 
-                });
-
-    }
+        });
 
 }
 function loadFavorites() {
@@ -1677,7 +1675,7 @@ function loadMessages() {
             }
 
             $('#messages').html($('#messages').html() +
-                '<div id="' + messages[i].sender.id + ':' + messages[i].sender.name + '" class="message-box">' +
+                '<div onclick="loadChat(\'' + messages[i].sender.id + ':' + messages[i].sender.name + '\');" class="message-box">' +
                     '<a href="javascript:blockUser(' + messages[i].sender.id + ');" class="black-button t">x</a>' +
                     '<div class="avatar-container">' +
                         '<img src="' + ((messages[i].sender.avatar_url !== null) ? messages[i].sender.avatar_url : '<%= asset_path "new/main/avatar.png" %>') + '" alt="User Avatar">' +
@@ -1703,12 +1701,6 @@ function loadMessages() {
 
         });
 
-    });
-
-    $('.message-box .content, .message-box .name').each(function (i, e) {
-        $(e).on('mouseup', function () {
-            loadChat($(this).prop('id'));
-        });
     });
 
 }
@@ -1742,6 +1734,8 @@ function blockUser(user_id) {
 function loadChat(user) {
 
     user = user.split(':');
+
+    console.log(user);
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/nda/show?user_id_1=' + currentUser.id + '&user_id_2=' + user[0],
@@ -1777,6 +1771,9 @@ function loadChat(user) {
     }).done(function (chat) {
 
         chat = chat.response;
+
+        console.log(chat);
+        console.log($('#chat'));
 
         for (var i = 0, date, time; i < chat.length; i++) {
 
@@ -2040,7 +2037,7 @@ function loadProfile() {
         if (user.state != null) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
         else { user.state = 'NY'; }
 
-        $('#profile .avatar').attr('src', (user.avatar_url) ? user.avatar_url : '/assets/new/main/avatar.png');
+        $('#profile .avatar').attr('src', (user.avatar_url) ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
 
         //if (user.video_id === null) { $('#profilem .play').addClass('disabled'); }
 
