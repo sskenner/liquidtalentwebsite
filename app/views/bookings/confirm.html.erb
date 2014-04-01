@@ -3,6 +3,8 @@
 
     jQuery(function($) {
         $('#cc-form').submit(function(event) {
+            $('#preloader').show();
+
             var $form = $(this);
 
             $('.alert').remove();
@@ -18,6 +20,8 @@
     });
 
     var stripeResponseHandler = function(status, response) {
+        $('#preloader').hide();
+
         var $form = $('#cc-form');
 
         if (response.error) {
