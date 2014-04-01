@@ -1195,7 +1195,7 @@ var map, states, list;
 
 function showUserInfo() {
 
-    if (currentUser.linkedin_token !== null) {
+    if ('linkedin_token' in currentUser && currentUser.linkedin_token !== null) {
 
         $.Ajax({
             url: 'http://backend.liquidtalent.com/user/find_linkedin_connections',
