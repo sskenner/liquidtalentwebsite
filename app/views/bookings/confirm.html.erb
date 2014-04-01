@@ -23,7 +23,7 @@
         if (response.error) {
             // Show the errors on the form
             //$('form').before('<div class="alert alert-danger payment-errors" style="margin-top: 25px;">' + response.error.message + '</div>');
-
+            console.log('Error');
             alert(response.error.message);
 
             $form.find('button').prop('disabled', false);
