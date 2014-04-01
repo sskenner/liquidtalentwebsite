@@ -1172,7 +1172,11 @@ function linkedin_connect(access_token) {
                 if (data['response']['new_user']) {
                     if (confirm('Do you want to register as a Service Provider?')) {
                         loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
-                    } else { createUser(data, 'map'); }
+                    }
+                    else {
+                        currentUser = data['response']['user'];
+                        createUser(data, 'map');
+                    }
 
                     $('#preloader').hide();
                 }
