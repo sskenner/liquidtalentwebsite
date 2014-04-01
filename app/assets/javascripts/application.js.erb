@@ -2254,7 +2254,7 @@ function loadHire() {
         url: 'http://backend.liquidtalent.com/user/show?user_id=' + providerId,
         error: Response
     }).done(function (user) {
-        $('#avatar').attr('src', user['response']['user']['avatar_url']);
+        $('.avatar').attr('src', user['response']['user']['avatar_url']);
         $('#hire-title').html(user['response']['user']['name']);
 
         $('#preloader').hide();
