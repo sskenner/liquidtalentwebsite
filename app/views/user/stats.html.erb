@@ -1,4 +1,6 @@
-<div id="title">Stats</div>
+<div id="title">
+  Stats
+</div>
 
 <div id="content-preloader"></div>
 
@@ -30,59 +32,56 @@
   <div id="term-selector-wrapper">
     <div id="term-selector">Last week</div>
     <div id="term-selector-options">
-      <div class="option" onclick="setStatsTerm(7, 'Last week');">Last week</div>
-      <div class="option" onclick="setStatsTerm(28, 'Last month');">Last month</div>
-      <div class="option" onclick="setStatsTerm(90, 'Last quarter');">Last quarter</div>
-      <div class="option" onclick="setStatsTerm(365, 'Last year');">Last year</div>
+      <div onclick="setStatsTerm(7, 'Last week');">Last week</div>
+      <div onclick="setStatsTerm(28, 'Last month');">Last month</div>
+      <div onclick="setStatsTerm(90, 'Last quarter');">Last quarter</div>
+      <div onclick="setStatsTerm(365, 'Last year');">Last year</div>
     </div>
   </div>
 </div>
 
 <div id="dew-drops">
-    <div id="dew-drops-title">$<span id="drop-total"></span> more for a <span id="drop-name"></span> LiquidDrop!</div>
-    <div id="drops">
-      <div id="drops-inner">
-            <div class="dewdrop dewdrop1"></div><div id="drop1" class="drop"><div class="bar"></div><div class="drp">Earn $1K</div></div>
-            <div class="dewdrop dewdrop2"></div><div id="drop2" class="drop"><div class="bar"></div><div class="drp">Earn $5K</div></div>
-            <div class="dewdrop dewdrop3"></div><div id="drop3" class="drop"><div class="bar"></div><div class="drp">Earn $10K</div></div>
-            <div class="dewdrop dewdrop4"></div><div id="drop4" class="drop"><div class="bar"></div><div class="drp">Earn $25K</div></div>
-      </div>
-    </div>
+  <div id="dew-drops-title">$<span id="drop-total"></span> more for a <span id="drop-name"></span> LiquidDrop!</div>
+  <div id="drops">
+    <div id="drop1" class="drop"><div class="bar"></div><div class="drp"></div></div>
+    <div id="drop2" class="drop"><div class="bar"></div><div class="drp"></div></div>
+    <div id="drop3" class="drop"><div class="bar"></div><div class="drp"></div></div>
+    <div id="drop4" class="drop"><div class="bar"></div><div class="drp"></div></div>
+    <div class="clear"></div>
   </div>
+</div>
 
-<div id="stats-charts">
-  <div id="stats-info" class="chart-box">
-    <div class="stats-box-inner">
-      <div class="title">Projects</div>
-      <div id="bookings-chart" class="chart"></div>
-    </div>
+<div id="stats-info" class="stats-box">
+  <div class="stats-box-inner">
+    <div class="title">Bookings</div>
+    <div id="bookings-chart" class="chart"></div>
   </div>
+</div>
 
-  <div id="stats-info" class="chart-box">
-    <div class="stats-box-inner">
-      <div class="title">Earnings</div>
-      <div id="earnings-chart" class="chart"></div>
-    </div>
+<div id="stats-info" class="stats-box">
+  <div class="stats-box-inner">
+    <div class="title">Earnings</div>
+    <div id="earnings-chart" class="chart"></div>
   </div>
+</div>
 
-  <div id="stats-info" class="chart-box">
-    <div class="stats-box-inner">
-      <div class="title">Profile Views</div>
-      <div id="profile-views-chart" class="chart"></div>
-    </div>
+<div id="stats-info" class="stats-box">
+  <div class="stats-box-inner">
+    <div class="title">Profile Views</div>
+    <div id="profile-views-chart" class="chart"></div>
   </div>
+</div>
 
-  <div id="stats-info" class="chart-box">
-    <div class="stats-box-inner">
-      <div class="title">Video Views</div>
-      <div id="video-views-chart" class="chart"></div>
-    </div>
+<div id="stats-info" class="stats-box">
+  <div class="stats-box-inner">
+    <div class="title">Video Views</div>
+    <div id="video-views-chart" class="chart"></div>
   </div>
+</div>
 
-  <div id="stats-info" class="chart-box">
-    <div class="stats-box-inner">
-      <div class="title">Favorites</div>
-      <div id="favourites-chart" class="chart"></div>
-    </div>
+<div id="stats-info" class="stats-box">
+  <div class="stats-box-inner">
+    <div class="title">Favorites</div>
+    <div id="favourites-chart" class="chart"></div>
   </div>
 </div>

@@ -1766,7 +1766,7 @@ function loadChat(user) {
             '<div id="chat"></div>' +
             '<div id="chat-area">' +
                 '<textarea placeholder="Message" id="chat-box">' +
-                '</textarea><a href="javascript:createChat(' + user[0] + ');" class="green-button" id="post-chat">Post</a>' +
+                '</textarea><a href="javascript:createChat(' + user[0] + ');" class="green-button" id="post-chat">Send</a>' +
             '</div>'
         );
 
@@ -2368,7 +2368,7 @@ function loadProjects() {
                         if(item.booking.status == 'confirmed') {
                             $('#first-project .status.accept-decline').show();
                             $('#first-project .status-btn.accept').attr('onclick', 'bookingId=' + item.booking.id + '; loadPage("/hire_accept");');
-                            $('#first-project .status-btn.decline').attr('onclick', 'bookingId=' + item.booking.id + '; if(confirm("Do you really want to reject this projects?")) rejectBooking();');
+                            $('#first-project .status-btn.decline').attr('onclick', 'bookingId=' + item.booking.id + '; if(confirm("Are you sure you want to decline project?")) rejectBooking();');
                         }
                         else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
                             $('#first-project .status.in-progress').show();
@@ -2665,6 +2665,8 @@ function uploadAvatar(callback) {
                         alert(avatar_data['errors'][0]);
                     }
                     else {
+                        alert('Photo successfully uploaded.');
+
                         currentUser['avatar_url'] = avatar_data['response']['url'];
 
                         $('#user-info .avatar').attr('src', currentUser['avatar_url']);
