@@ -1,6 +1,9 @@
 <div id="title">
-  <a href="javascript: loadPage('/search');" class="geo-toggle green-button">List</a>
   Search
+  <span id="title-buttons">
+      <a href="javascript: loadPage('/map');" class="geo-toggle green-button search-title-button">Map</a>
+      <a href="javascript: loadPage('/search');" class="geo-toggle black-button search-title-button">List</a>
+  </span>
 </div>
 
 <%= render "user/filter", :listing => 'loadMap' %>
