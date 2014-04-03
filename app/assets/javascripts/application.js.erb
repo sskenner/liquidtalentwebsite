@@ -1364,22 +1364,15 @@ function filterUsers(callback) {
     }).done(function (data) {
         $('#content-preloader').hide();
 
-        getCurrentLocation(function(loc) {
-            users = data['response'];
-
-            if(loc) {
+                users = data['response'];
                 users.sort(function(a, b) {
-                    if(a['latitude'] == null || a['longitude'] == null) {
-                        return 999999999;
-                    }
-                    else {
-                        return Math.abs(a['latitude'] * 1 - loc.lat * 1) + Math.abs(a['longitude'] * 1 - loc.lng * 1);
-                    }
-                });
-            }
+                    a['hourly_rate'] = a['hourly_rate'] == null ? '' : a['hourly_rate'];
+                    b['hourly_rate'] = b['hourly_rate'] == null ? '' : b['hourly_rate'];
 
-            callback(users);
-        });
+                    return a['hourly_rate'].length - b['hourly_rate'].length;
+                });
+
+                callback(users.reverse());
     });
 
     return false;
@@ -1420,9 +1413,10 @@ function prepareFilter() {
 
         $(e).mouseup(function () {
 
-            $('.sort-by').each(function (i, e) { $(e).removeClass('active'); });
+            $('.sort-by').each(function (i, e) { $(e).removeClass('active'); $(e).html(''); });
             $(this).parent().prepend($(this));
             $(this).addClass('active');
+            $(this).html('<img src="/assets/main/arrow-drop-down.png" id="sort-by-arrow" />');
 
             if ($('#providers')) { sortUsers(this.title); }
 
@@ -1460,10 +1454,11 @@ function sortUsers (sortBy) {
             if(loc) {
                 users.sort(function(a, b) {
                     if(a['latitude'] == null || a['longitude'] == null) {
-                        return 999999999;
+                        return 0;
                     }
                     else {
-                        return Math.round((Math.abs(a['latitude'] * 1 - loc.lat * 1) + Math.abs(a['longitude'] * 1 - loc.lng * 1)) * 1000);
+                        //return Math.round((Math.abs(a['latitude'] * 1 - loc.lat * 1) + Math.abs(a['longitude'] * 1 - loc.lng * 1)) * 1000);
+                        return computeDistance(loc.lat, loc.lng, a['latitude'], a['longitude']);
                     }
                 });
             }
@@ -2726,4 +2721,24 @@ function getCurrentLocation(callback) {
             }
         });
     }
+}
+
+function computeDistance(lat1, lon1, lat2, lon2) {
+    if (typeof(Number.prototype.toRad) === "undefined") {
+        Number.prototype.toRad = function() {
+            return this * Math.PI / 180;
+        }
+    }
+
+    var R = 6371; // km
+    var dLat = (lat2-lat1).toRad();
+    var dLon = (lon2-lon1).toRad();
+    var lat1 = lat1.toRad();
+    var lat2 = lat2.toRad();
+
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+    return d = R * c;
 }
