@@ -122,7 +122,6 @@ $(window).on('load', function () {
 
             'href': '',
             'load': function () {
-
                 $('#background').removeClass('disabled');
                 $('#admin-panel').removeClass('disabled');
 
@@ -280,7 +279,6 @@ $(window).on('load', function () {
 
             'href': '/search',
             'load': function () {
-
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
 
@@ -452,12 +450,12 @@ $(window).on('load', function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
 
-
                 if(currentUser === null) {
                     showPlaceholder('Settings');
                     return false;
                 }
 
+                $('#email').attr('href', 'mailto:hello@liquidtalent.com?subject=LiquidTalent&body=' + currentUser.name + ' recommends LiquidTalent to monetize your craft and allow you to apply')
 
                 cF = $('#settings-contact');
                 cF = {
@@ -778,9 +776,9 @@ function SubmitContactForm() {
     loaders.toggle('contact', 1);
 
     $.ajax({
-        url: cF.href,
+        url: '/send_message',
         type: 'post',
-        data: 'name=' + cF.n.val() + '&email=' + cF.e.val() + '&message=' + cF.m.val(),
+        data: 'name=' + $('#contact-form .name').val() + '&email=' + $('#contact-form .email').val() + '&message=' + $('#contact-form .message').val(),
         error: Response
     }).done(function () {
 
@@ -1001,6 +999,7 @@ function submitDemander() {
                 'user_id=' + currentUser.id +
                 '&token=' + currentUser.token +
                 '&attr[company_name]=' + $('.company_name').val() +
+                '&attr[company_description]=' + $('.company_description').val() +
                 '&attr[title]=' + $('.title').val() +
                 '&attr[category_id]=' + $('#category_id').val(),
         error: Response
@@ -1349,11 +1348,10 @@ function listSearch(providers) {
 
     });
 
-    sortUsers('cost');
+    //sortUsers('cost');
 
 }
 function filterUsers(callback) {
-
     $('#filter').hide();
     $('#content-preloader').show();
 
@@ -1365,8 +1363,23 @@ function filterUsers(callback) {
         error: Response
     }).done(function (data) {
         $('#content-preloader').hide();
-        users = data['response'];
-        callback(users);
+
+        getCurrentLocation(function(loc) {
+            users = data['response'];
+
+            if(loc) {
+                users.sort(function(a, b) {
+                    if(a['latitude'] == null || a['longitude'] == null) {
+                        return 999999999;
+                    }
+                    else {
+                        return Math.abs(a['latitude'] * 1 - loc.lat * 1) + Math.abs(a['longitude'] * 1 - loc.lng * 1);
+                    }
+                });
+            }
+
+            callback(users);
+        });
     });
 
     return false;
@@ -1425,50 +1438,39 @@ function prepareFilter() {
 
 }
 function sortUsers (sortBy) {
-
     if (sortBy === 'cost') {
+        users.sort(function(a, b) {
+            a['hourly_rate'] = a['hourly_rate'] == null ? '' : a['hourly_rate'];
+            b['hourly_rate'] = b['hourly_rate'] == null ? '' : b['hourly_rate'];
 
-        $('#providers').html(
+            return a['hourly_rate'].length - b['hourly_rate'].length;
+        });
 
-            $('#providers .list-item').sort(function (a, b) {
-
-                a = parseInt($(a).find('.distance').html().length, 10);
-                b = parseInt($(b).find('.distance').html().length, 10);
-
-                if (a < b) { return 1; }
-                if (a > b) { return -1; }
-
-                return 0;
-
-            })
-
-        );
-
+        listSearch(users.reverse());
     }
-    if (sortBy === 'experience') {
+    else if (sortBy === 'experience') {
+        users.sort(function(a, b) {
+            return a['years_in_industry'] - b['years_in_industry'];
+        });
 
-        $('#providers').html(
-
-            $('#providers .list-item').sort(function (a, b) {
-
-                if ($(a).prop('title') === 'null' || $(b).prop('title') === 'null') {
-                    return 0;
-                }
-
-                a = parseInt($(a).prop('title'), 10);
-                b = parseInt($(b).prop('title'), 10);
-
-                if (a < b) { return 1; }
-                if (a > b) { return -1; }
-
-                return 0;
-
-            })
-
-        );
-
+        listSearch(users.reverse());
     }
+    else if (sortBy == 'distance') {
+        getCurrentLocation(function(loc) {
+            if(loc) {
+                users.sort(function(a, b) {
+                    if(a['latitude'] == null || a['longitude'] == null) {
+                        return 999999999;
+                    }
+                    else {
+                        return Math.round((Math.abs(a['latitude'] * 1 - loc.lat * 1) + Math.abs(a['longitude'] * 1 - loc.lng * 1)) * 1000);
+                    }
+                });
+            }
 
+            listSearch(users);
+        });
+    }
 }
 
 /***** Favorite *****/
@@ -1634,6 +1636,8 @@ function checkUnreadMessages() {
 
             notification.addClass('active');
             notification.html('0');
+
+            data['response'].reverse();
 
             for (var i = 0; i < data['response'].length; i++) {
 
@@ -2621,6 +2625,7 @@ function updateDemanderData() {
                 '&attr[email]=' + $('.email').val() +
                 '&attr[zip]=' + $('.zip').val() +
                 '&attr[company_name]=' + $('.company_name').val() +
+                '&attr[company_description]=' + $('.company_description').val() +
                 '&attr[title]=' + $('.title').val() +
                 '&attr[category_id]=' + $('#category_id').val() +
                 ( ($('.password').val().length > 0) ? ('&attr[password]=' + $('.password').val()) : null ),
@@ -2697,4 +2702,28 @@ function checkInviteCode(code, callback) {
             callback(true);
         }
     });
+}
+
+function getCurrentLocation(callback) {
+    if(currentUser == null || currentUser.zip == null || currentUser.zip == '') {
+        callback(false);
+    }
+    else {
+        var lat = '';
+        var lng = '';
+        var address = '10001';
+
+        geocoder = new google.maps.Geocoder();
+        geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                lat = results[0].geometry.location.lat();
+                lng = results[0].geometry.location.lng();
+
+                callback({lat: lat, lng: lng});
+
+            } else {
+                callback(false);
+            }
+        });
+    }
 }

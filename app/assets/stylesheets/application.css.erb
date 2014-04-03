@@ -144,6 +144,14 @@ a:hover { color: #000; }
     outline: 0;
 }
 
+.text-field.category, .text-field.due-date {
+    background: url(/assets/main/arrow-drop-down.png) 90% 50% no-repeat;
+}
+
+.text-field.school, .text-field.search-field {
+    background: url(/assets/new/search/icon-search.png) 90% 50% no-repeat;
+}
+
 .linkedin-icon {
     width: 28px;
     height: 28px;
@@ -879,7 +887,7 @@ h1 {
     width: 41px;
     height: 41px;
     margin: 0px 4px 0px 4px;
-    background-image: url(<%= asset_url 'presentation/icons-social-color.png' %>);
+    background-image: url(<%= asset_url 'new/presentation/social.png' %>);
     background-repeat: no-repeat;
     border-radius: 10px;
     display: inline-block;
@@ -893,8 +901,9 @@ h1 {
 .social .gl { background-position: -123px 0px; }
 .social .gl:hover, .social .gl:focus { background-position: -123px -41px; }
 .social .gr { background-position: -164px 0px; }
-.social .gr:hover, .social .insta:focus { background-position: -164px -41px; }
+.social .gr:hover, .social .gr:focus { background-position: -164px -41px; }
 .social .ma { background-position: -205px 0px; }
+.social .ma:hover, .social .ma:focus { background-position: -205px -41px; }
 
 .clear {
     height: 1px;
