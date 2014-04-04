@@ -10,7 +10,7 @@ LiquidTalent::Application.routes.draw do
 
     #Contact
     post '/send_message' => 'contact#send_message'
-
+    get '/send_sms' => 'contact#send_sms'
 
   ####### User
 

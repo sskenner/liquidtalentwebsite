@@ -31,4 +31,16 @@ class ContactController < ApplicationController
 
   end
 
+  def send_sms
+    require 'nexmo'
+
+    nexmo = Nexmo::Client.new('', '')
+    nexmo.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    type = params[:message].ascii_only? ? 'text' : 'unicode'
+
+    nexmo.send_message({:to => params[:to], :from => 'LiquidTalent', :text => params[:message], :type => type})
+
+    render nothing: true
+  end
 end

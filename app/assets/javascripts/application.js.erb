@@ -397,6 +397,31 @@ $(window).on('load', function () {
                 if(currentUser.stripe_customer_id == null) {
                     $('#cc-form').show();
                     $('#booking-form').hide();
+
+                    $( ".exp" ).datepicker( {
+                        changeMonth: true,
+                        changeYear: true,
+                        showButtonPanel: true,
+                        dateFormat: 'mm/yy',
+                        minDate:'m',
+                        onClose: function(dateText, inst) {
+                            var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+                            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                            $(this).datepicker('setDate', new Date(year, month, 1));
+
+                            $('.exp-year').val(year);
+                            $('.exp-month').val(month * 1 + 1);
+                        },
+                        beforeShow : function(input, inst) {
+                            if ((datestr = $(this).val()).length > 0) {
+                                year = datestr.substring(datestr.length-4, datestr.length);
+                                month = jQuery.inArray(datestr.substring(0, datestr.length-5), $(this).datepicker('option', 'monthNames'));
+                                $(this).datepicker('option', 'defaultDate', new Date(year, month, 1));
+                                $(this).datepicker('setDate', new Date(year, month, 1));
+                            }
+                        }
+                    });
+
                 }
                 else {
                     $('#cc-form').hide();
@@ -455,7 +480,7 @@ $(window).on('load', function () {
                     return false;
                 }
 
-                $('#email').attr('href', 'mailto:hello@liquidtalent.com?subject=LiquidTalent&body=' + currentUser.name + ' recommends LiquidTalent to monetize your craft and allow you to apply')
+                $('#email').attr('href', 'mailto:hello@liquidtalent.com?subject=LiquidTalent&body=' + currentUser.name + ' recommends LiquidTalent to monetize your craft and apply for high paying jobs.')
 
                 cF = $('#settings-contact');
                 cF = {
@@ -1365,14 +1390,8 @@ function filterUsers(callback) {
         $('#content-preloader').hide();
 
                 users = data['response'];
-                users.sort(function(a, b) {
-                    a['hourly_rate'] = a['hourly_rate'] == null ? '' : a['hourly_rate'];
-                    b['hourly_rate'] = b['hourly_rate'] == null ? '' : b['hourly_rate'];
 
-                    return a['hourly_rate'].length - b['hourly_rate'].length;
-                });
-
-                callback(users.reverse());
+                callback(users);
     });
 
     return false;
@@ -1404,7 +1423,7 @@ function prepareFilter() {
     $('#schools').parent().mouseleave(function () { hideSearchOption($('#schools')); });
 
     $($('.sort-by')[0]).parent().mouseenter(function () {
-        $('.sort-by').each(function (i, e) { $(e).css('display', 'block'); });
+        $('.sort-by:not(.default)').each(function (i, e) { $(e).css('display', 'block'); });
     });
     $($('.sort-by')[0]).parent().mouseleave(function () {
         $('.sort-by').each(function (i, e) { $(e).removeAttr('style'); });
@@ -1416,7 +1435,8 @@ function prepareFilter() {
             $('.sort-by').each(function (i, e) { $(e).removeClass('active'); $(e).html(''); });
             $(this).parent().prepend($(this));
             $(this).addClass('active');
-            $(this).html('<img src="/assets/main/arrow-drop-down.png" id="sort-by-arrow" />');
+
+            $('.sort-by.default').hide();
 
             if ($('#providers')) { sortUsers(this.title); }
 
@@ -1452,14 +1472,17 @@ function sortUsers (sortBy) {
     else if (sortBy == 'distance') {
         getCurrentLocation(function(loc) {
             if(loc) {
-                users.sort(function(a, b) {
-                    if(a['latitude'] == null || a['longitude'] == null) {
-                        return 0;
+                for(var i = 0; i < users.length; i++) {
+                    if(users[i]['latitude'] == null | users[i]['longitude'] == null) {
+                        users[i].distance = 99999999;
                     }
                     else {
-                        //return Math.round((Math.abs(a['latitude'] * 1 - loc.lat * 1) + Math.abs(a['longitude'] * 1 - loc.lng * 1)) * 1000);
-                        return computeDistance(loc.lat, loc.lng, a['latitude'], a['longitude']);
+                        users[i].distance = computeDistance(loc.lat, loc.lng, users[i]['latitude'], users[i]['longitude']);
                     }
+                }
+
+                users.sort(function(a, b) {
+                    return a.distance - b.distance;
                 });
             }
 
@@ -2741,4 +2764,20 @@ function computeDistance(lat1, lon1, lat2, lon2) {
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
     return d = R * c;
+}
+
+function sendSMS() {
+    to = prompt('Please enter the US phone number to which you want ot send an invitation SMS.', 'US Phone Number');
+
+    if(to) {
+        $('#preloader').show();
+
+        $.ajax({
+            url: '/send_sms/?to=' + to + '&message=' + currentUser.name.split(' ')[0] + ' recommends LiquidTalent to monetize your craft and apply for high paying jobs.',
+            error: Response
+        }).done(function (data) {
+            alert('The SMS has been successfully sent.');
+            $('#preloader').hide();
+        });
+    }
 }

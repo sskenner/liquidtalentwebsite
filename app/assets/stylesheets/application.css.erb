@@ -144,7 +144,7 @@ a:hover { color: #000; }
     outline: 0;
 }
 
-.text-field.category, .text-field.due-date {
+.text-field.category, .text-field.due-date, .text-field.exp {
     background: url(/assets/main/arrow-drop-down.png) 90% 50% no-repeat;
 }
 
@@ -579,13 +579,21 @@ a:hover { color: #000; }
 .search-option .sort-by.distance { background-position: 340px 55px; }
 .search-option .sort-by.distance:hover,
 .search-option .sort-by.distance.active { background-position: 340px 0px; }
+
+.search-option .sort-by.default {
+    padding-top: 18px;
+    padding-left: 12px;
+    background: none;
+    border: 1px solid #fff;
+}
+
 #favorites { margin-top: -19px; }
 
 #sort-by-arrow {
-    position: relative;
+    position: absolute;
     float: right;
     top: 50%;
-    right: 10px;
+    right: 20px;
     margin-top: -5px;
 }
 
@@ -1689,8 +1697,8 @@ h3 {
     display: none;
 }
 
-#cc-form .cc-number, #cc-form .exp-month, #cc-form .exp-year, #cc-form .cvc {
-    width: 150px;
+#cc-form .cc-number, #cc-form .exp, #cc-form .cvc {
+    width: 210px;
     float: left;
     margin-left: 13px;
 }
