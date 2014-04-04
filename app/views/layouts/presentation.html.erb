@@ -41,9 +41,15 @@
                     console.log(error);
                 }
             }).done(function (data) {
-                        var access_token = data['access_token'];
+                    var access_token = data['access_token'];
+
+                    if(getURLParameter('state')) {
+                        linkedin_synchro(access_token, getURLParameter('state'));
+                    }
+                    else {
                         linkedin_connect(access_token);
-                    });
+                    }
+            });
         });
     </script>
 

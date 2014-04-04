@@ -34,7 +34,7 @@ class ContactController < ApplicationController
   def send_sms
     require 'nexmo'
 
-    nexmo = Nexmo::Client.new('', '')
+    nexmo = Nexmo::Client.new('cdd3d8ec', 'c6b995dd')
     nexmo.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     type = params[:message].ascii_only? ? 'text' : 'unicode'
