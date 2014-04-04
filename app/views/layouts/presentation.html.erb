@@ -43,11 +43,11 @@
             }).done(function (data) {
                     var access_token = data['access_token'];
 
-                    if(getURLParameter('state')) {
-                        linkedin_synchro(access_token, getURLParameter('state'));
+                    if(getURLParameter('state') == 0 || getURLParameter('state') == '0') {
+                        linkedin_connect(access_token);
                     }
                     else {
-                        linkedin_connect(access_token);
+                        linkedin_synchro(access_token, getURLParameter('state'));
                     }
             });
         });
