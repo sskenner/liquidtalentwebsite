@@ -502,7 +502,7 @@ $(window).on('load', function () {
                     return false;
                 }
 
-                $('#linkedin-sync')click(function() {
+                $('#linkedin-sync').click(function() {
                     document.cookie = 'redirect=settings';
                     window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://backend.liquidtalent.com:6789/linkedin';
                 });
