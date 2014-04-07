@@ -258,6 +258,17 @@ $(window).on('load', function () {
                     $('#background').addClass('disabled').css('overflow-y', 'scroll');;
                 }
 
+                //  Prefill the fields
+                $('#category_id').val(currentUser.category_id);
+                $('#school_id').val(currentUser.school_id);
+                $('.school').val(currentUser.school_name);
+                $('.summary').val(currentUser.summary);
+                $('.hourly_rate').val(currentUser.hourly_rate);
+                $('.skills').val(currentUser.skills);
+                $('.portfolio').val(currentUser.portfolio);
+                $('.experience').val(currentUser.experience);
+                $('.years_in_industry').val(currentUser.years_in_industry);
+
                 sF = $('#provider-form');
                 sF = {
                     'href': '/user/set_details'
@@ -272,6 +283,10 @@ $(window).on('load', function () {
                 }).done(function (data) {
                             data['response']['categories'].forEach(function (item) {
                                 $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+
+                                if(currentUser.category_id * 1 == item['id'] * 1) {
+                                    $('.category').val(item['name']);
+                                }
                             })
                 });
 
@@ -1056,7 +1071,7 @@ function submitDemander(linkedin) {
     });
 }
 
-function SubmitSignupSPForm() {
+function SubmitSignupSPForm(linkedin) {
     $('#preloader').show();
 
     $.ajax({
@@ -1080,7 +1095,13 @@ function SubmitSignupSPForm() {
                     $('#preloader').hide();
                 }
                 else {
-                    loadPage('/map');
+                    if(linkedin) {
+                        document.cookie = 'redirect=signup_service_provider';
+                        window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://backend.liquidtalent.com:6789/linkedin'
+                    }
+                    else {
+                        loadPage('/map');
+                    }
                 }
             });
 
