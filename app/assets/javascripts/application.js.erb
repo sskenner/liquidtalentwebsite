@@ -1260,7 +1260,7 @@ function linkedin_synchro(access_token, user_id) {
         error: Response
     }).done(function (data) {
         currentUser = data['response'];
-        alert('We have successfully updated your account.');
+        alert('We have successfully updated your account with Linkedin data.');
 
         createUser (currentUser, getCookie('redirect'));
      });
@@ -2835,8 +2835,7 @@ function sendSMS() {
     }
 }
 
-function getCookie(cname)
-{
+function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
     for(var i=0; i<ca.length; i++)
