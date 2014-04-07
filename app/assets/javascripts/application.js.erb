@@ -216,6 +216,12 @@ $(window).on('load', function () {
                     $('#background').addClass('disabled');
                 }
 
+                //  Prefill the fields
+                $('.company_name').val(currentUser.company_name);
+                $('.company_description').val(currentUser.company_description);
+                $('.title').val(currentUser.title);
+                $('#category_id').val(currentUser.category_id);
+
                 $.ajax({
                     url: 'http://backend.liquidtalent.com/get_info',
                     error: function (error) {
@@ -1017,7 +1023,7 @@ function SubmitSignupForm(userType) {
 
 }
 
-function submitDemander() {
+function submitDemander(linkedin = false) {
     $('#preloader').show();
 
     $.ajax({
@@ -1039,7 +1045,13 @@ function submitDemander() {
                     currentUser = data.response;
                     currentUser.token = token;
 
-                    loadPage('/map');
+                    if(linkedin) {
+                        document.cookie = 'redirect=signup_demander';
+                        window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://backend.liquidtalent.com:6789/linkedin'
+                    }
+                    else {
+                        loadPage('/map');
+                    }
                 }
     });
 }
@@ -1220,9 +1232,9 @@ function linkedin_synchro(access_token, user_id) {
         error: Response
     }).done(function (data) {
         currentUser = data['response'];
-        alert('You have successfully updated your account.');
+        alert('We have successfully updated your account.');
 
-        createUser (currentUser, 'settings');
+        createUser (currentUser, getCookie('redirect'));
      });
 }
 
@@ -2793,4 +2805,16 @@ function sendSMS() {
             $('#preloader').hide();
         });
     }
+}
+
+function getCookie(cname)
+{
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++)
+    {
+        var c = ca[i].trim();
+        if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+    }
+    return "";
 }

@@ -6,7 +6,7 @@
 <div id="demander-form" class="signup-demander">
   <div id="demander-form-right" class="signup">
 
-    <a href="#" id="complete-linkedin"></a>
+    <a href="javascript:submitDemander(true); return false;" id="complete-linkedin"></a>
 
     <input type="text" placeholder="Company name" class="text-field company_name">
     <input type="text" placeholder="Company description" class="text-field company_description">
@@ -16,7 +16,7 @@
 
     <input type="hidden" name="category_id" id="category_id"/>
 
-    <a href="javascript:submitDemander(); return false;" class="green-button signup-form-sp-button">Complete Profile</a>
+    <a href="javascript:submitDemander(false); return false;" class="green-button signup-form-sp-button">Complete Profile</a>
     <div class="clear"></div>
   </div>
   <div class="clear"></div>
