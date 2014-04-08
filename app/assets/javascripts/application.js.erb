@@ -113,7 +113,6 @@ var chart_options = {
 };
 
 $(window).on('load', function () {
-
     pages = {
 
         'active': '',
@@ -724,6 +723,14 @@ $(window).on('load', function () {
 
     loadPage('home');
 
+    //  Saving current session
+    if(currentUser == null && getCookie('userId')) {
+        show_user(getCookie('userId'), function(data) {
+            currentUser = data['response']['user'];
+            currentUser.token = getCookie('userToken');
+            createUser (currentUser, 'home');
+        });
+    }
 });
 
 function ToggleNavigationHover (e) {
@@ -798,6 +805,9 @@ function createUser (data, target) {
     showUserInfo();
     checkUnreadMessages();
     loadPage('/' + target);
+
+    document.cookie = 'userId=' + currentUser.id;
+    document.cookie = 'userToken=' + currentUser.token;
 
     currentUser.avatar_url = (currentUser.avatar_url !== null) ? currentUser.avatar_url : <%= asset_path "new/main/avatar.png" %>;
 }
@@ -936,9 +946,8 @@ function login() {
         if (data['status'] === 'failed') { alert(data['errors'][0]); }
         else {
             currentUser = data['response']['user'];
-            showUserInfo();
-            checkUnreadMessages();
-            loadPage('/search');
+
+            createUser(data['response']['user'], 'search');
         }
 
         $('#preloader').hide();
@@ -958,8 +967,11 @@ function logout() {
                 if (data['status'] === 'failed') { alert(data['errors'][0]); }
                 else {
                     currentUser = null;
-                    loadPage('/home');
-                    $('#preloader').hide();
+
+                    document.cookie = 'userId=';
+                    document.cookie = 'userToken=';
+
+                    window.location = '/'
                 }
             });
 }
@@ -1266,12 +1278,17 @@ function linkedin_synchro(access_token, user_id) {
      });
 }
 
+/*
 function logout() {
     current_user = false;
+
+    document.cookie = 'userId=';
+
     window.location = '/'
 
     return false;
 }
+*/
 
 /****** Search ******/
 
