@@ -725,10 +725,14 @@ $(window).on('load', function () {
 
     //  Saving current session
     if(currentUser == null && getCookie('userId')) {
+        $('#preloader').show();
+
         show_user(getCookie('userId'), function(data) {
             currentUser = data['response']['user'];
             currentUser.token = getCookie('userToken');
             createUser (currentUser, 'home');
+
+            $('#preloader').hide();
         });
     }
 });
