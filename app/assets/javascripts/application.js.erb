@@ -964,16 +964,13 @@ function logout() {
         url: 'http://backend.liquidtalent.com/user/logout',
         data: 'user_id=' + currentUser.id + '&token=' + currentUser.token
     }).done(function (data) {
-                if (data['status'] === 'failed') { alert(data['errors'][0]); }
-                else {
                     currentUser = null;
 
                     document.cookie = 'userId=';
                     document.cookie = 'userToken=';
 
                     window.location = '/'
-                }
-            });
+    });
 }
 
 /***********************************************************************************************************************
