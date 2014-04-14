@@ -959,7 +959,6 @@ function login() {
         $('#preloader').hide();
 
         getFavorites();
-
     });
 
 }
@@ -1088,6 +1087,11 @@ function submitDemander(linkedin) {
                     }
                     else {
                         loadPage('/map');
+
+                        var container = $('#wrapper'), scrollTo = $('.hiw');
+                        container.animate({
+                            scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+                        });
                     }
                 }
     });
@@ -1123,6 +1127,11 @@ function SubmitSignupSPForm(linkedin) {
                     }
                     else {
                         loadPage('/map');
+
+                        var container = $('#wrapper'), scrollTo = $('.hiw');
+                        container.animate({
+                            scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+                        });
                     }
                 }
             });
@@ -1519,6 +1528,13 @@ function prepareFilter(filterType) {
         });
 
     });
+
+    if(currentUser != null) {
+        $('.sort-by.distance').show();
+    }
+    else {
+        $('.sort-by.distance').hide();
+    }
 
     $('#industries').parent().find('.text-field').val(filter_settings.category.label);
     $('#schools').parent().find('.text-field').val(filter_settings.college.label);
