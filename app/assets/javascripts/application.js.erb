@@ -714,20 +714,6 @@ $(window).on('load', function () {
 
     };
 
-    console.log('Loading: ' + document.URL);
-    //  Saving current session
-    if(currentUser == null && getCookie('userId')) {
-        $('#preloader').show();
-
-        show_user(getCookie('userId'), function(data) {
-            currentUser = data['response']['user'];
-            currentUser.token = getCookie('userToken');
-            createUser (currentUser, 'home');
-
-            $('#preloader').hide();
-        });
-    }
-
     $('#admin-panel .navigation .link').each(function (i, e) {
 
         $(e).on('mouseover', function (e) { ToggleNavigationHover(e); });

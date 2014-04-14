@@ -25,6 +25,21 @@
 
 <% if params[:code] %>
     <script>
+        //  Saving current session
+        if(currentUser == null && getCookie('userId')) {
+            $('#preloader').show();
+
+            show_user(getCookie('userId'), function(data) {
+                currentUser = data['response']['user'];
+                currentUser.token = getCookie('userToken');
+                createUser (currentUser, 'home');
+
+                $('#preloader').hide();
+            });
+        }
+
+        $('#preloader').show();
+
         $(window).on('load', function () {
             var code = getURLParameter('code');
 
