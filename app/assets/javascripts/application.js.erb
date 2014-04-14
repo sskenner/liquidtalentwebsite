@@ -969,12 +969,12 @@ function logout() {
         url: 'http://backend.liquidtalent.com/user/logout',
         data: 'user_id=' + currentUser.id + '&token=' + currentUser.token
     }).done(function (data) {
-                    currentUser = null;
+        currentUser = null;
 
-                    document.cookie = 'userId=';
-                    document.cookie = 'userToken=';
+        delete_cookie(userId);
+        delete_cookie(userToken);
 
-                    window.location = '/'
+        window.location = '/'
     });
 }
 
@@ -2866,4 +2866,8 @@ function getCookie(cname) {
         if (c.indexOf(name)==0) return c.substring(name.length,c.length);
     }
     return "";
+}
+
+function delete_cookie( name ) {
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
