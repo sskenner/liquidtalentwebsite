@@ -62,50 +62,52 @@
 <% end %>
 
 <div id="wrapper">
-  <div id="preloader"></div>
-  <div id="background">
-    <div id="content-preloader"></div>
-    <%= yield %>
-  </div>
-  <div id="admin-panel">
-    <div class="header">
-      <a class="login green-button" href="javascript:loadPage('/login')">Login</a>
-
-      <div id="user-info">
-        <img src="#" class="avatar" alt="Avatar">
-        <div class="name"></div>
-        <div class="location"></div>
+  <div id="map-background">
+      <div id="preloader"></div>
+      <div id="background">
+        <div id="content-preloader"></div>
+        <%= yield %>
       </div>
-    </div>
-    <div class="navigation">
-      <a class="search link" href="javascript:loadPage('/map')">
-        <span class="icon"></span>
-        Search
-      </a>
-      <a class="projects link" href="javascript:loadPage('/projects');">
-        <span class="icon"></span>
-        Projects
-        <div class="notification">0</div>
-      </a>
-      <a class="messages link" href="javascript:loadMessages('/messages');">
-        <span class="icon"></span>
-        Messages
-        <div class="notification">0</div>
-      </a>
-      <a class="favorites link" href="javascript:loadPage('/favorites');">
-        <span class="icon"></span>
-        Favorites
-      </a>
-      <a class="stats link" href="javascript:loadPage('/stats');">
-        <span class="icon"></span>
-        Stats
-      </a>
-      <a class="settings link" href="javascript:loadPage('/settings');">
-        <span class="icon"></span>
-        Settings
-      </a>
-    </div>
-    <div class="logo-small"></div>
+      <div id="admin-panel">
+        <div class="header">
+          <a class="login green-button" href="javascript:loadPage('/login')">Login</a>
+
+          <div id="user-info">
+            <img src="#" class="avatar" alt="Avatar">
+            <div class="name"></div>
+            <div class="location"></div>
+          </div>
+        </div>
+        <div class="navigation">
+          <a class="search link" href="javascript:loadPage('/map')">
+            <span class="icon"></span>
+            Search
+          </a>
+          <a class="projects link" href="javascript:loadPage('/projects');">
+            <span class="icon"></span>
+            Projects
+            <div class="notification">0</div>
+          </a>
+          <a class="messages link" href="javascript:loadMessages('/messages');">
+            <span class="icon"></span>
+            Messages
+            <div class="notification">0</div>
+          </a>
+          <a class="favorites link" href="javascript:loadPage('/favorites');">
+            <span class="icon"></span>
+            Favorites
+          </a>
+          <a class="stats link" href="javascript:loadPage('/stats');">
+            <span class="icon"></span>
+            Stats
+          </a>
+          <a class="settings link" href="javascript:loadPage('/settings');">
+            <span class="icon"></span>
+            Settings
+          </a>
+        </div>
+        <div class="logo-small"></div>
+      </div>
   </div>
 </div>
 
@@ -115,14 +117,14 @@
 
   <div id="newsletter-sign-up">
     Apply to LiquidTalent
-    <input type="text" id="register-form-email" class="field" placeholder="Enter your email">
-    <a href="javascript:SubmitRegisterForm()" id="register-form-send" class="green-button">Join</a>
+    <input type="text" id="register-form-email" class="field" placeholder="Your email">
+    <a href="javascript:SubmitRegisterForm()" id="register-form-send" class="green-button">Apply</a>
   </div>
 
   <div id="social-twitter-container">
 
     <div class="appstore-buttons">
-      The liquidTalent Mobile app coming soon
+      The LiquidTalent Mobile app is coming soon
       <div class="ios"></div>
       <div class="android"></div>
     </div>
@@ -558,7 +560,7 @@
   <div class="container">
     <br><br>
     <div class="video-container">
-      <iframe src="//player.vimeo.com/video/91855742?title=0&amp;byline=0&amp;portrait=0&amp;color=239061" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <iframe src="//player.vimeo.com/video/91860245?title=0&amp;byline=0&amp;portrait=0&amp;color=239061" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
   </div>
 

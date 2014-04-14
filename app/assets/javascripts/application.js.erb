@@ -1316,6 +1316,9 @@ function showUserInfo() {
     $('#user-info .avatar').attr('src', avatar);
     $('#user-info .name').html(currentUser['name']);
     $('#user-info .location').html(currentUser['city_name'] + ', ' + currentUser['state']);
+
+    $('html, body').delay(500).animate({ scrollTop: $('page-segment.hiw').offset().top }, 300, 'linear', null);
+
 }
 
 function loadMap(providers) {
@@ -2320,17 +2323,17 @@ function playVideo(video_url) {
     }).done(function (data) {
         $('#background').append(data);
 
-                /*
-        jwplayer("player").setup({
-            wmode: "transparent",
-            file: video_url,
-            provider:'http',
-            autostart: true,
-            skin: 'roundster',
-            width: 350,
-            controlbar: 'bottom'
+        /*
+            jwplayer("player").setup({
+                wmode: "transparent",
+                file: video_url,
+                provider:'http',
+                autostart: true,
+                skin: 'roundster',
+                width: 350,
+                controlbar: 'bottom'
 
-        });
+            });
         */
 
         $('#video-player').html('<iframe src="//player.vimeo.com/video/' + video_url + '?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="350" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');

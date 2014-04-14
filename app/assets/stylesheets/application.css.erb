@@ -224,10 +224,14 @@ a:hover { color: #000; }
 
 #wrapper {
     height: 700px;
+    overflow: hidden;
+    background: #239061;
+}
+#map-background {
+    background: url('<%= asset_path 'new/main/background.png' %>');
     width: 960px;
     margin: 0px auto;
     position: relative;
-    overflow: hidden;
 }
 #background {
     position: absolute;
