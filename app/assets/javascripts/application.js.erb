@@ -175,7 +175,7 @@ var states = {
     'Armed Forces Others': 'AE'
 }
 
-$(window).on('load', function () {
+
     pages = {
 
         'active': '',
@@ -714,6 +714,7 @@ $(window).on('load', function () {
 
     };
 
+$(window).on('load', function () {
     $('#admin-panel .navigation .link').each(function (i, e) {
 
         $(e).on('mouseover', function (e) { ToggleNavigationHover(e); });
