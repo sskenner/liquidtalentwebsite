@@ -1243,6 +1243,8 @@ function show_user(user_id, callback) {
 }
 
 function linkedin_connect(access_token) {
+    $('#preloader').show();
+
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/linkedin_connect/?access_token=' + access_token,
         error: Response
@@ -1262,8 +1264,6 @@ function linkedin_connect(access_token) {
                     currentUser = data['response']['user'];
                     createUser(data, 'map');
                 }
-
-                $('#preloader').hide();
             });
 }
 
