@@ -373,7 +373,7 @@ $(window).on('load', function () {
                     listSearch(users);
                 }
 
-                prepareFilter();
+                prepareFilter('listSearch');
             }
 
         },
@@ -386,10 +386,12 @@ $(window).on('load', function () {
                 if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
                 if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
-                if (users === null) { filterUsers(loadMap); }
+                if (users == null) {
+                    filterUsers(loadMap);
+                }
                 else { loadMap(users); }
 
-                prepareFilter();
+                prepareFilter('loadMap');
             }
 
         },
@@ -1474,7 +1476,7 @@ function hideSearchOption (e) {
     if(e.is(':visible')) { e.hide(); }
     else { e.show(); }
 }
-function prepareFilter() {
+function prepareFilter(filterType) {
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/get_info',
@@ -1482,10 +1484,10 @@ function prepareFilter() {
     }).done(function (data) {
         global_info = data['response'];
 
-        $('#industries').html('<div class="option" onclick="setCategory(null, \'\');filterUsers(listSearch);">All Industries</div>');
+        $('#industries').html('<div class="option" onclick="setCategory(null, \'\');filterUsers(' + filterType + ');">All Industries</div>');
 
         data['response']['categories'].forEach(function (item) {
-            $('#industries').append('<div class="option" onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');filterUsers(listSearch);">' + item['name'] + '</div>')
+            $('#industries').append('<div class="option" onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\'); filterUsers(' + filterType + ');">' + item['name'] + '</div>')
         })
 
     });
