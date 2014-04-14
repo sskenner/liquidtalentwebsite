@@ -727,7 +727,7 @@ $(window).on('load', function () {
     //  Saving current session
     if(currentUser == null && getCookie('userId')) {
         $('#preloader').show();
-
+                      alert('jo');
         show_user(getCookie('userId'), function(data) {
             currentUser = data['response']['user'];
             currentUser.token = getCookie('userToken');
