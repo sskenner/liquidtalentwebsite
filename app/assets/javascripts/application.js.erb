@@ -714,6 +714,19 @@ var states = {
 
     };
 
+//  Saving current session
+if(currentUser == null && getCookie('userId')) {
+    $('#preloader').show();
+    alert('jo');
+    show_user(getCookie('userId'), function(data) {
+        currentUser = data['response']['user'];
+        currentUser.token = getCookie('userToken');
+        createUser (currentUser, 'home');
+
+        $('#preloader').hide();
+    });
+}
+
 $(window).on('load', function () {
     $('#admin-panel .navigation .link').each(function (i, e) {
 
@@ -723,19 +736,6 @@ $(window).on('load', function () {
     });
 
     loadPage('home');
-
-    //  Saving current session
-    if(currentUser == null && getCookie('userId')) {
-        $('#preloader').show();
-                      alert('jo');
-        show_user(getCookie('userId'), function(data) {
-            currentUser = data['response']['user'];
-            currentUser.token = getCookie('userToken');
-            createUser (currentUser, 'home');
-
-            $('#preloader').hide();
-        });
-    }
 });
 
 function ToggleNavigationHover (e) {
@@ -971,8 +971,8 @@ function logout() {
     }).done(function (data) {
         currentUser = null;
 
-        delete_cookie(userId);
-        delete_cookie(userToken);
+        delete_cookie('userId');
+        delete_cookie('userToken');
 
         window.location = '/'
     });
