@@ -77,7 +77,7 @@ a { cursor: pointer; }
 
 body {
     line-height: 1;
-    background: url(<%= asset_path 'new/main/background.png' %>);
+    background: none repeat scroll 0% 0% #239061;
     color: #000;
     font-family: 'main', Helvetica, sans-serif;
     font-weight: 100;
@@ -224,8 +224,10 @@ a:hover { color: #000; }
 
 #wrapper {
     height: 700px;
+    width: 960px;
+    margin: auto;
     overflow: hidden;
-    background: #239061;
+    background: url(<%= asset_path 'new/main/background.png' %>);
 }
 #map-background {
     background: url('<%= asset_path 'new/main/background.png' %>');
@@ -752,6 +754,12 @@ a:hover { color: #000; }
 /***********************************************************************************************************************
 /   Presentation
 /**********************************************************************************************************************/
+
+#presentation {
+    width: 960px;
+    margin: auto;
+    background: url(<%= asset_path 'new/main/background.png' %>);
+}
 
 h1 {
     line-height: 120px;
