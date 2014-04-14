@@ -856,7 +856,7 @@ function SubmitContactForm() {
 
     }).done(function (response) {
 
-        if (response.success !== '') { alert(response.success); }
+        if (response.success !== '') { /* alert(response.success); */ }
         else { alert(response.error); }
 
     });
