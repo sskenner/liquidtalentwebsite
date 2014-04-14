@@ -713,11 +713,11 @@ var states = {
         }
 
     };
-alert('load');
+console.log('Loading: ' + document.URL);
 //  Saving current session
 if(currentUser == null && getCookie('userId')) {
     $('#preloader').show();
-    alert('jo');
+
     show_user(getCookie('userId'), function(data) {
         currentUser = data['response']['user'];
         currentUser.token = getCookie('userToken');
