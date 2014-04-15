@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -658,10 +658,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.css.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="818" column="16" selection-start="21161" selection-end="21161" vertical-scroll-proportion="0.25224215">
+            <state line="806" column="80" selection-start="20936" selection-end="20936" vertical-scroll-proportion="-8.125">
               <folding>
                 <element signature="e#810#906#0" expanded="false" />
                 <element signature="e#918#1016#0" expanded="false" />
@@ -812,6 +812,8 @@
                 <element signature="e#20521#20746#0" expanded="false" />
                 <element signature="e#20774#20936#0" expanded="false" />
                 <element signature="e#20958#21073#0" expanded="false" />
+                <element signature="e#21101#21333#0" expanded="false" />
+                <element signature="e#21374#21578#0" expanded="false" />
                 <element signature="e#21620#21659#0" expanded="false" />
                 <element signature="e#21687#21783#0" expanded="false" />
                 <element signature="e#21812#21949#0" expanded="false" />
@@ -1068,10 +1070,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="presentation.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="229" selection-start="3900" selection-end="3900" vertical-scroll-proportion="-10.0">
+            <state line="321" column="6" selection-start="12317" selection-end="12317" vertical-scroll-proportion="0.353139">
               <folding>
                 <element signature="n#style#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1117,8 +1119,8 @@
         <option value="$PROJECT_DIR$/app/views/user/_filter.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/login.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
       </list>
     </option>
   </component>
@@ -2124,24 +2126,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="229" selection-start="3900" selection-end="3900" vertical-scroll-proportion="-10.0">
-          <folding>
-            <element signature="n#style#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="tag#div#0;tag#div#5;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#p#0;n#div#7;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="818" column="16" selection-start="21161" selection-end="21161" vertical-scroll-proportion="0.25224215">
+        <state line="806" column="80" selection-start="20936" selection-end="20936" vertical-scroll-proportion="-8.125">
           <folding>
             <element signature="e#810#906#0" expanded="false" />
             <element signature="e#918#1016#0" expanded="false" />
@@ -2292,6 +2279,8 @@
             <element signature="e#20521#20746#0" expanded="false" />
             <element signature="e#20774#20936#0" expanded="false" />
             <element signature="e#20958#21073#0" expanded="false" />
+            <element signature="e#21101#21333#0" expanded="false" />
+            <element signature="e#21374#21578#0" expanded="false" />
             <element signature="e#21620#21659#0" expanded="false" />
             <element signature="e#21687#21783#0" expanded="false" />
             <element signature="e#21812#21949#0" expanded="false" />
@@ -2543,6 +2532,21 @@
             <element signature="e#49202#49226#0" expanded="false" />
             <element signature="e#49488#49552#0" expanded="false" />
             <element signature="e#49563#49591#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="321" column="6" selection-start="12317" selection-end="12317" vertical-scroll-proportion="0.353139">
+          <folding>
+            <element signature="n#style#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="tag#div#0;tag#div#5;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#p#0;n#div#7;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
