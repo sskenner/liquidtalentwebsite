@@ -386,6 +386,11 @@ $(window).on('load', function () {
                 if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
                 if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
+                if(currentUser == null) {
+                    showPlaceholder('Search');
+                    return false;
+                }
+
                 if (users == null) {
                     filterUsers(loadMap);
                 }
@@ -815,7 +820,7 @@ function createUser (data, target) {
     document.cookie = 'userId=' + currentUser.id;
     document.cookie = 'userToken=' + currentUser.token;
 
-    currentUser.avatar_url = (currentUser.avatar_url !== null) ? currentUser.avatar_url : <%= asset_path "new/main/avatar.png" %>;
+    currentUser.avatar_url = (currentUser.avatar_url != null) ? currentUser.avatar_url : '<%= asset_path "new/main/avatar.png" %>';
 }
 
 /***********************************************************************************************************************
@@ -855,10 +860,8 @@ function SubmitContactForm() {
         loaders.toggle('contact', 0);
 
     }).done(function (response) {
-
         if (response.success !== '') { /* alert(response.success); */ }
         else { alert(response.error); }
-
     });
 
 }
@@ -910,10 +913,12 @@ function showPlaceholder (page) {
     if (currentUser === null) {
 
         $('#background').html(
-
+            '<div id="title" class="no-margin">' +
+                '<a class="black-button" href="javascript: window.location = \'/\';">Back</a>' +
+            '</div>' +
             '<div id="placeholder">' +
                 'Explore all of LiquidTalent.' +
-                '<a href="javascript:loadPage(\'/login\')" class="green-button">Sign Up</a>' +
+                '<a href="javascript: applyForm();" class="green-button">Sign up</a>' +
             '</div>'
 
         );
@@ -1334,6 +1339,10 @@ function showUserInfo() {
 }
 
 function loadMap(providers) {
+    if(currentUser == null) {
+        showPlaceholder('Search');
+        return false;
+    }
 
     map = {
 
@@ -2887,4 +2896,8 @@ function getCookie(cname) {
 
 function delete_cookie( name ) {
     document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+function applyForm() {
+    $('html, body').delay(500).animate({ scrollTop: $('#newsletter-sign-up').offset().top }, 300, 'linear', null);
 }
