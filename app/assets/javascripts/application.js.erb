@@ -840,7 +840,10 @@ function SubmitRegisterForm() {
         error: Response
     }).done(function (response) {
 
-        if (response.success !== '') { alert(response.success); }
+        if (response.success !== '') {
+            alert('Keep your eyes out for an email from LiquidTalent explaining the next approval steps.');
+            rF.e.val('');
+        }
         else { alert(response.error); }
 
     });
