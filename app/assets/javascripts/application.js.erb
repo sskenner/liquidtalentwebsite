@@ -873,38 +873,47 @@ function RevealPage(pageSegment) {
 
     pageSegments = {};
     $('.page-segment').each(function (i, e) {
-
         pageSegments[$(e).prop('title')] = $(e);
-
     });
 
     if (pageSegment === 'privacy') {
 
         Object.keys(pageSegments).forEach(function (page) {
-
             pageSegments[page].css({
                 display: 'none',
                 opacity: 0
             });
-
         });
 
         pageSegments.privacy.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
 
     }
+    else if (pageSegment === 'terms') {
+
+        Object.keys(pageSegments).forEach(function (page) {
+            pageSegments[page].css({
+                display: 'none',
+                opacity: 0
+            });
+        });
+
+        pageSegments.terms.css('display', 'block').animate({ 'opacity': 1 }, 300, 'linear', null);
+
+    }
     else {
 
         Object.keys(pageSegments).forEach(function (page) {
-
             pageSegments[page].css({
                 display: 'block',
                 opacity: 1
             });
-
         });
 
         pageSegments.privacy.animate({ 'opacity': 0 }, 300, 'linear', function () {
             pageSegments.privacy.css('display', 'none');
+        });
+        pageSegments.terms.animate({ 'opacity': 0 }, 300, 'linear', function () {
+            pageSegments.terms.css('display', 'none');
         });
 
     }
