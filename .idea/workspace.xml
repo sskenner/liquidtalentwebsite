@@ -8,7 +8,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396615529201" ignored="false" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396620388037" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397586452733" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397587733652" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396249855091" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -139,7 +139,7 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="844" column="22" selection-start="27290" selection-end="27290" vertical-scroll-proportion="0.47953737">
+            <state line="843" column="46" selection-start="27245" selection-end="27245" vertical-scroll-proportion="0.46619216">
               <folding />
             </state>
           </provider>
@@ -993,7 +993,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="844" column="22" selection-start="27290" selection-end="27290" vertical-scroll-proportion="0.47953737">
+        <state line="843" column="46" selection-start="27245" selection-end="27245" vertical-scroll-proportion="0.46619216">
           <folding />
         </state>
       </provider>

@@ -834,15 +834,16 @@ var pageSegments;
 function SubmitRegisterForm() {
 
     $.ajax({
-        url: rF.href,
+        url: '/presentation/subscribe',
         type: 'post',
-        data: 'email=' + rF.e.val(),
+        data: 'email=' + $('#register-form-email').val(),
         error: Response
     }).done(function (response) {
 
         if (response.success !== '') {
+            $('#register-form-email').val('');
             alert('Keep your eyes out for an email from LiquidTalent explaining the next approval steps.');
-            rF.e.val('');
+
         }
         else { alert(response.error); }
 
