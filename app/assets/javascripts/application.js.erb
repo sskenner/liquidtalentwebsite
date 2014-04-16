@@ -932,6 +932,11 @@ function showPlaceholder (page) {
             '<div id="placeholder">' +
                 'Explore all of LiquidTalent.' +
                 '<a href="javascript: applyForm();" class="green-button">Sign up</a>' +
+            '</div>' +
+            '<div id="newsletter-sign-up">' +
+                'Sign up to LiquidTalent' +
+                '<input type="text" id="register-form-email" class="field" value="Enter your email" onmousedown="javascript:if ($(this).prop(\'value\') === \'Enter your email\') { $(this).prop(\'value\', \'\'); } else { $(this).prop(\'value\', \'Enter your email\'); }">' +
+                '<a href="javascript:SubmitRegisterForm()" id="register-form-send" class="green-button">Sign up</a>' +
             '</div>'
 
         );
@@ -1551,12 +1556,14 @@ function prepareFilter(filterType) {
 
     });
 
+    /*
     if(currentUser != null) {
         $('.sort-by.distance').show();
     }
     else {
         $('.sort-by.distance').hide();
     }
+    */
 
     $('#industries').parent().find('.text-field').val(filter_settings.category.label);
     $('#schools').parent().find('.text-field').val(filter_settings.college.label);
