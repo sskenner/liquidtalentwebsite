@@ -1711,7 +1711,7 @@ function loadFavorites() {
             else { $('#first-item .favorite').removeClass('active'); }
             $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
-            $('#first-item .removeFavorite').attr('id', item['favourite_id']);
+            $('#first-item .removeFavorite').attr('id', item['provider']['id']);
 
             $('#first-item .message').attr('onclick', 'back="favorites"; loadChat(\'' + user.id + ':' + user.name + '\');');
             $('#first-item .hire').attr('onclick', 'back="favorites"; providerId=' + user.id + '; loadPage("/hire");');
@@ -1737,17 +1737,17 @@ function loadFavorites() {
     return false;
 
 }
-function removeFavorite(favourite_id) {
+function removeFavorite(provider_id) {
     $('#content-preloader').show();
 
     $.ajax({
-        url: 'http://backend.liquidtalent.com/favourite/destroy?token=' + currentUser.token + '&favourite_id=' + favourite_id,
+        url: 'http://backend.liquidtalent.com/favourite/destroy?token=' + currentUser.token + '&demander_id=' + currentUser.id + '&provider_id=' + provider_id,
         error: Response
     }).done(function (user) {
         $('#content-preloader').hide();
 
         if (user.status === 'ok') {
-            $('#' + favourite_id).parents('.list-item').remove();
+            $('#' + provider_id).parents('.list-item').remove();
         }
 
     });
