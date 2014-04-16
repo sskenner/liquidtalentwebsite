@@ -297,7 +297,7 @@ $(window).on('load', function () {
                                     $('.category').val(item['name']);
                                 }
                             })
-                        });
+                });
 
                 $('.category').click(function () {
                     if($('#categories').is(':visible')) {
@@ -469,6 +469,30 @@ $(window).on('load', function () {
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                $.ajax({
+                    url: 'http://backend.liquidtalent.com/get_info',
+                    error: function (error) {
+                        alert("Problem with connecting to the server");
+                    }
+                }).done(function (data) {
+                            data['response']['categories'].forEach(function (item) {
+                                $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
+
+                                if(currentUser.category_id * 1 == item['id'] * 1) {
+                                    $('.category').val(item['name']);
+                                }
+                            })
+                        });
+
+                $('.category').click(function () {
+                    if($('#categories').is(':visible')) {
+                        $('#categories').hide();
+                    }
+                    else {
+                        $('#categories').show();
+                    }
+                });
 
                 loadHire();
 
