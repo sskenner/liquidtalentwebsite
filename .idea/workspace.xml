@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/new/projects/hire.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/bookings/applicants.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/bookings/statuses.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/bookings_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/bookings_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookings/create.html.erb" afterPath="$PROJECT_DIR$/app/views/bookings/create.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookings/index.html.erb" afterPath="$PROJECT_DIR$/app/views/bookings/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397733302883" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397736226374" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742958387" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396249855091" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -28,7 +17,7 @@
     <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397027198844" ignored="false" />
     <file path="/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396876675767" ignored="false" />
     <file path="/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742016771" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742016771" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742248356" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/user_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396263284220" ignored="false" />
     <file path="/user_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396263279337" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/public/api.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397575522995" ignored="false" />
@@ -124,17 +113,17 @@
     <file path="$PROJECT_DIR$/../bloodandtreasure/app/assets/stylesheets/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397490267271" ignored="false" />
     <file path="$PROJECT_DIR$/../bloodandtreasure/blog/wp-content/themes/bloodandtreasure/header.php" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397490267271" ignored="false" />
     <file path="$PROJECT_DIR$/../bloodandtreasure/app/views/pages/contact.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397490267271" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/models/booking.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397733584239" ignored="false" />
-    <file path="/booking.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397733580010" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/models/booking.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742463521" ignored="false" />
+    <file path="/booking.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742458437" ignored="false" />
     <file path="/login.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397587376023" ignored="false" />
     <file path="/create.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397722046833" ignored="false" />
     <file path="/index.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397731672993" ignored="false" />
     <file path="/statuses.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397733232450" ignored="false" />
-    <file path="/bookings_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397733831870" ignored="false" />
+    <file path="/bookings_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742184083" ignored="false" />
     <file path="/applicants.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397727997827" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/models/applicant.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397732583894" ignored="false" />
     <file path="/applicant.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397732582142" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/bookings_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397740122750" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/bookings_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742194274" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +146,7 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1723" column="17" selection-start="56777" selection-end="56785" vertical-scroll-proportion="0.046405822">
+            <state line="2571" column="64" selection-start="85001" selection-end="85001" vertical-scroll-proportion="0.5104641">
               <folding />
             </state>
           </provider>
@@ -974,7 +963,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1723" column="17" selection-start="56777" selection-end="56785" vertical-scroll-proportion="0.046405822">
+        <state line="2571" column="64" selection-start="85001" selection-end="85001" vertical-scroll-proportion="0.5104641">
           <folding />
         </state>
       </provider>

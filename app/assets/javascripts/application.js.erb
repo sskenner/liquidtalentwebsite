@@ -2568,7 +2568,13 @@ function loadProjects() {
                         userType = 'provider'
                     }
 
-                    $('#first-project .avatar').attr('src', (user.avatar_url !== null) ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
+                    if(user == null) {
+                        $('#first-project .avatar').attr('src', '<%= asset_path "new/main/avatar.png" %>');
+                    }
+                    else {
+                        $('#first-project .avatar').attr('src', (user.avatar_url !== null) ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
+                    }
+
                     $('#first-project .name').html(item.booking.title);
 
                     dueDate = new Date(item.booking.due_date * 1000);
