@@ -9,8 +9,12 @@
 
   <div id="hire-form">
     <input type="text" placeholder="Project Title *" class="text-field title">
-    <input type="text" placeholder="Industry *" class="text-field category">
-    <div id="categories"></div>
+
+    <div class="category-field">
+      <input type="text" placeholder="Industry *" class="text-field category">
+      <div id="categories"></div>
+    </div>
+
     <input type="text" placeholder="Total Project Amount * ($)" class="text-field budget">
     <input type="text" placeholder="Due Date *" class="text-field due-date">
     <input type="text" placeholder="Skills *" class="text-field skills">
@@ -20,6 +24,8 @@
     <textarea class="text-field description" placeholder="Scope of Work *"></textarea>
 
     <div class="clear"></div>
+
+    <input type="hidden" name="category_id" id="category_id" />
 
     <a href="javascript:submitBooking();" class="green-button signup-form-sp-button">Finish</a>
   </div>

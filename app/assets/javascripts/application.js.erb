@@ -24,6 +24,7 @@ var currentUser = null,
     profileId = null,
     providerId = null,
     bookingId = null,
+    bookingStatus = null,
     rate = 0,
     back = null,
     favorites = {},
@@ -46,8 +47,13 @@ var filter_settings = {
 }
 var bookings = {};
 var booking = {
+    title: null,
+    category: null,
+    category_id: null,
     budget: null,
     due_date: null,
+    skills: null,
+    zip: null,
     description: null
 }
 var avatar_change = false;
@@ -464,6 +470,14 @@ $(window).on('load', function () {
             }
         },
 
+        'statuses': {
+            'href': '/statuses',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+            }
+        },
+
         'hire': {
             'href': '/hire',
             'load': function () {
@@ -571,6 +585,16 @@ $(window).on('load', function () {
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
 
                 loadProjects();
+            }
+        },
+
+        'applicants': {
+            'href': '/applicants',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                loadApplicants();
             }
         },
 
@@ -1427,13 +1451,13 @@ function loadMap(providers) {
         if (user.badge === 'no') { map.iW.LTDrop.addClass('hidden'); }
         else { map.iW.LTDrop.addClass(user.badge); }
 
-        map.iW.title.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
+        map.iW.title.attr('onclick', 'profileId=' + user.id + ';  bookingId=null;  back="map"; loadPage("/profile");');
         map.iW.title.html(
             '<p class="name">' + user.name + '</p>' +
             ((user.hourly_rate===null) ? user.title.substr(0, 24) : calculateCost(user.hourly_rate))
         );
 
-        map.iW.description.attr('onclick', 'profileId=' + user.id + '; back="map"; loadPage("/profile");');
+        map.iW.description.attr('onclick', 'profileId=' + user.id + '; bookingId=null;   back="map"; loadPage("/profile");');
         map.iW.description.html(
             user.description === null ? '' : user.description.substr(0, 24) + '...'
         );
@@ -1494,8 +1518,8 @@ function listSearch(providers) {
 
         $('#first-item .play').attr('onclick', "playVideo(" + (user.video_id ? ("'" + user.video_id + "'") : null) + ");");
 
-        $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
-        $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="search"; loadPage("/profile");');
+        $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; bookingId=null; back="search"; loadPage("/profile");');
+        $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; bookingId=null; back="search"; loadPage("/profile");');
 
         if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
         else { $('#first-item .lt-drop').addClass(user.badge); }
@@ -2278,12 +2302,30 @@ function loadProfile() {
                 $('.profile-item.education').hide();
             }
 
-            $('.hire-button-profile').attr('onclick', 'back="profile"; providerId=' + user.id + '; loadPage("/hire");');
-
+            if(bookingId != null) {
+                $('.hire-button-profile').attr('onclick', 'hireApplicant(' + user.id + ');');
+            }
+            else {
+                $('.hire-button-profile').attr('onclick', 'back="profile"; providerId=' + user.id + '; loadPage("/hire");');
+            }
         }
 
     });
 
+}
+
+function hireApplicant(userId) {
+        $('#content-preloader').show();
+
+        $.ajax({
+            url: 'http://backend.liquidtalent.com/booking/hire_applicant?token=' + currentUser.token + '&booking_id=' + bookingId + '&applicant_id=' + userId,
+            error: Response
+        }).done(function (user) {
+            if (user.status === 'ok') {
+                alert('You have successfully hired this applicant.');
+                loadPage('/' + back);
+            }
+        });
 }
 
 function calculateCost (rate) {
@@ -2428,20 +2470,34 @@ function loadHire() {
 
     $('#preloader').show();
 
-    $.ajax({
-        url: 'http://backend.liquidtalent.com/user/show?user_id=' + providerId,
-        error: Response
-    }).done(function (user) {
-        $('#hire .avatar').attr('src', user['response']['user']['avatar_url']);
-        $('#hire-title').html(user['response']['user']['name']);
+    if(providerId) {
+        $.ajax({
+            url: 'http://backend.liquidtalent.com/user/show?user_id=' + providerId,
+            error: Response
+        }).done(function (user) {
+                    $('#hire .avatar').show();
+                    $('#hire-title').show();
 
-        $('#preloader').hide();
-    });
+                    $('#hire .avatar').attr('src', user['response']['user']['avatar_url']);
+                    $('#hire-title').html(user['response']['user']['name']);
+
+                    $('#preloader').hide();
+        });
+    }
+    else {
+        $('#hire .avatar').hide();
+        $('#hire-title').hide();
+    }
 }
 
 function submitBooking() {
+    booking.title   = $('.title').val();
+    booking.category   = $('.category').val();
+    booking.category_id   = $('#category_id').val();
     booking.budget   = $('.budget').val();
     booking.due_date = $('.due-date').val();
+    booking.skills   = $('.skills').val();
+    booking.zip   = $('.zip').val();
     booking.description = $('.description').val();
 
     loadPage('/hire_confirm');
@@ -2454,8 +2510,12 @@ function confirmBooking() {
                 'token=' + currentUser.token +
                 '&demander_id=' + currentUser.id +
                 '&provider_id=' + providerId +
+                '&title=' + booking.title +
+                '&category_id=' + booking.budget +
                 '&budget=' + booking.budget +
                 '&due_date=' + (new Date(Date.parse(booking.due_date)).getTime() / 1000) +
+                '&skills=' + booking.skills +
+                '&zip=' + booking.zip +
                 '&description=' + booking.description +
                 '&stripe_token=' + $('#stripeToken').val() +
                 '&ica_sent=0',
@@ -2485,7 +2545,8 @@ function loadProjects() {
     $.ajax({
         url: 'http://backend.liquidtalent.com/bookings/list_all_bookings?' +
             'token=' + currentUser.token +
-            '&user_id=' + currentUser.id,
+            '&user_id=' + currentUser.id +
+            '&status=' + bookingStatus,
         error: Response
     }).done(function (data) {
         if (data['status'] === 'failed') {
@@ -2508,7 +2569,7 @@ function loadProjects() {
                     }
 
                     $('#first-project .avatar').attr('src', (user.avatar_url !== null) ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
-                    $('#first-project .name').html(user.name);
+                    $('#first-project .name').html(item.booking.title);
 
                     dueDate = new Date(item.booking.due_date * 1000);
 
@@ -2520,6 +2581,13 @@ function loadProjects() {
                     $('#first-project .status').hide();
 
                     if(userType == 'demander') {
+                        if(item.booking.provider_id != null) {
+                            $('#first-project .status.message-btn').show();
+                        }
+
+                        $('#first-project .status.applicants').show();
+                        $('#first-project .status.applicants').attr('onclick', 'bookingId=' + item.booking.id + '; loadPage("/applicants");');
+
                         if(item.booking.status == 'confirmed') {
                             $('#first-project .status.pending').show();
                         }
@@ -2536,6 +2604,8 @@ function loadProjects() {
                         }
                     }
                     else {
+                        $('#first-project .status.message-btn').show();
+
                         if(item.booking.status == 'confirmed') {
                             $('#first-project .status.accept-decline').show();
                             $('#first-project .status-btn.accept').attr('onclick', 'bookingId=' + item.booking.id + '; loadPage("/hire_accept");');
@@ -2561,6 +2631,98 @@ function loadProjects() {
 
         $('#preloader').hide();
     });
+}
+
+function loadApplicants() {
+    if(currentUser == null) {
+        showPlaceholder('Projects');
+        return false;
+    }
+
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/booking/show?' +
+                'booking_id=' + bookingId,
+        error: Response
+    }).done(function (data) {
+                if (data['status'] === 'failed') {
+                    alert(data['errors'][0]);
+                }
+                else {
+                    //  Booking details
+                    var user = null, userType = null;
+
+                    item = data.response;
+
+                        if(item.booking.status != 'rejected') {
+                            if(item.demander.id == currentUser.id) {
+                                user = item.provider;
+                                userType = 'demander';
+                            }
+                            else {
+                                user = item.demander;
+                                userType = 'provider'
+                            }
+
+                            $('#first-project .avatar').attr('src', (user.avatar_url !== null) ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
+                            $('#first-project .name').html(item.booking.title);
+
+                            dueDate = new Date(item.booking.due_date * 1000);
+
+                            $('#first-project .due-date').html((dueDate.getMonth() + 1) + '/' + dueDate.getDate() + '/' + dueDate.getFullYear());
+                            $('#first-project .description').html(item.booking.description);
+                            $('#first-project .total-amount').html(item.booking.budget);
+
+                            $('#first-project .budget').show();
+                            $('#first-project .status').hide();
+
+
+                            $('#projects').append('<div class="project">' + $('#first-project').clone().html() + '</div>');
+                        }
+
+
+
+                    //  Applicants
+                    $('#providers').html('');
+
+                    data.response['applicants'].forEach(function (user) {
+
+                        user.hourly_rate = calculateCost(user.hourly_rate);
+
+                        if (user.state) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+                        else { user.state = 'NY'; }
+
+                        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
+
+                        $('#first-item').prop('title', user.years_in_industry);
+
+                        $('#first-item .avatar').attr('src', user.avatar_url);
+
+                        $('#first-item .play').attr('onclick', "playVideo(" + (user.video_id ? ("'" + user.video_id + "'") : null) + ");");
+
+                        $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; bookingId=' + item.booking.id + '; back="applicants"; loadPage("/profile");');
+                        $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; bookingId=' + item.booking.id + '; back="applicants"; loadPage("/profile");');
+
+                        if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+                        else { $('#first-item .lt-drop').addClass(user.badge); }
+
+                        $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+                        $('#first-item .description').html(user.description);
+
+                        $('#first-item .distance').html(user.hourly_rate);
+
+                        if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite').addClass('active'); }
+                        else { $('#first-item .favorite').removeClass('active'); }
+                        $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
+
+                        $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
+
+                    });
+                }
+
+                $('#preloader').hide();
+            });
 }
 
 function loadRate() {

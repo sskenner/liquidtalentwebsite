@@ -8,7 +8,13 @@ class BookingsController < ApplicationController
   def accept
   end
 
+  def statuses
+  end
+
   def index
+  end
+
+  def applicants
   end
 
   def rate

@@ -42,11 +42,13 @@ LiquidTalent::Application.routes.draw do
 
   ####### Bookings
 
+    get '/statuses' => 'bookings#statuses'
     get '/projects' => 'bookings#index'
     get '/hire' => 'bookings#create'
     get '/hire_confirm' => 'bookings#confirm'
     get '/hire_accept' => 'bookings#accept'
     get '/rate' => 'bookings#rate'
+    get '/applicants' => 'bookings#applicants'
 
 
     ####### Bookings
