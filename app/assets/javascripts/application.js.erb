@@ -912,7 +912,12 @@ function SubmitContactForm() {
         loaders.toggle('contact', 0);
 
     }).done(function (response) {
-        if (response.success !== '') { /* alert(response.success); */ }
+        if (response.success !== '') {
+            $('#contact-form .name').val('');
+            $('#contact-form .email').val('');
+            $('#contact-form .message').val('');
+
+        }
         else { alert(response.error); }
     });
 
