@@ -33,10 +33,6 @@
 
             $('#preloader').show();
 
-            $('#presentation').animate({ opacity: 0 }, 1000, 'linear').promise().done(function () {
-                $('#presentation').css({ display: 'none' });
-            });
-
             $.ajax({
                 url: 'http://backend.liquidtalent.com/user/linkedin_token/?code=' + code,
                 error: function (error) {
@@ -70,7 +66,7 @@
         <a class="login" href="javascript:loadPage('/login')">Login</a>
 
         <div id="user-info">
-          <img src="#" class="avatar" alt="Avatar">
+          <img src="#" class="avatar" alt="Avatar" onclick="if(currentUser != null) {profileId=currentUser.id; bookingId=null; back='search'; loadPage('/profile');}">
 
           <div class="name"></div>
           <div class="location"></div>
