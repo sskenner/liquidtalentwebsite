@@ -149,6 +149,15 @@
 <div class="page-segment t enterprise-area product-suite-page" title="Product Suite">
   <h1>Product Suite</h1>
   <img src="<%= asset_path "new/presentation/bundle.jpg" %>" width="960" height="454" alt="Product Suite"  />
+  <div class="devices">
+    <img class="lt-logo-small" src="<%= asset_path "new/presentation/logo-small-grey.png" %>" width="20" height="27" alt="LT Logo"  />
+    <div class="device">iOS</div>
+    <div class="device">Android</div>
+    <div class="device">Tablet</div>
+    <div class="device">Desktop</div>
+    <div class="device">Bundle</div>
+    <div class="clear"></div>
+  </div>
 
   <div class="product-suite">
     <p>
@@ -160,11 +169,33 @@
     <p>
       Whether you need to tap into internal talent pools, manage external networks, or build out your human capital resources, LiquidTalent HCM location-based services software has you covered saving time and cost by up to 10X.
     </p>
-    <img src="<%= asset_path "new/presentation/table.jpg" %>" width="100%" height="" alt="Table"  />
+    <img class="table" src="<%= asset_path "new/presentation/table.jpg" %>" width="100%" height="" alt="Table"  />
 
     <p>Pricing available upon request. Contact us to learn more about LiquidTalent Human Capital Management Software Solutions.</p>
   </div>
 </div>
+
+<div class="page-segment t contact-page" title="contact">
+
+  <h1>Contact</h1>
+
+  <div class="contact-container">
+    <div id="contact-form">
+      <div class="name-email">
+        <input type="text" class="name field" placeholder="Name">
+        <input type="text" class="email field" placeholder="Email">
+      </div>
+      <textarea class="message field" placeholder="Message"></textarea>
+      <a href="javascript:SubmitContactForm()" class="contact green-button">Contact</a>
+      <img src="<%= asset_path "main/loader.gif" %>" alt="contact" class="loader">
+    </div>
+    <p>
+      Call 800 590 1592 or email <a href="mailto:hello@liquidtalent.com">hello@liquidtalent.com</a> to get in touch
+    </p>
+  </div>
+
+</div>
+<!-- contact end -->
 
 <div class="page-segment t marketplace-area" title="Community Members">
   <h1>Community Members</h1>
@@ -175,7 +206,7 @@
   <a href="javascript:RevealPage('about');" class="link green-button">About
   </a><a href="javascript:RevealPage('team');" class="link green-button">Team
 </a><a href="javascript:RevealPage('hiw');" class="link green-button hiw" style="display: none;">How it Works
-</a><a href="javascript:RevealPage('contact');" class="link green-button marketplace-area">Contact</a>
+</a><a href="javascript:RevealPage('contact');" class="link green-button marketplace-area hidden">Contact</a>
 </p>
 
 <div class="page-segment t about" title="about">
@@ -598,28 +629,6 @@
 </div>
 </div>
 <!-- Team end -->
-
-<div class="page-segment t contact-page" title="contact">
-
-  <h1>Contact</h1>
-
-  <div class="contact-container">
-    <div id="contact-form">
-      <div class="name-email">
-        <input type="text" class="name field" placeholder="Name">
-        <input type="text" class="email field" placeholder="Email">
-      </div>
-      <textarea class="message field" placeholder="Message"></textarea>
-      <a href="javascript:SubmitContactForm()" class="contact green-button">Contact</a>
-      <img src="<%= asset_path "main/loader.gif" %>" alt="contact" class="loader">
-    </div>
-    <p>
-      Call 800 590 1592 or email <a href="mailto:hello@liquidtalent.com">hello@liquidtalent.com</a> to get in touch
-    </p>
-  </div>
-
-</div>
-<!-- contact end -->
 
 <div class="page-segment t hiw" title="hiw" style="opacity:0;display:none;">
 
@@ -1066,7 +1075,7 @@
     <a href="javascript:RevealPage('about');" class="link green-button">About
     </a><a href="javascript:RevealPage('team');" class="link green-button">Team
   </a><a href="javascript:RevealPage('hiw');" class="link green-button hiw" style="display: none;">How it Works
-  </a><a href="javascript:RevealPage('contact');" class="link green-button marketplace-area">Contact</a>
+  </a><a href="javascript:RevealPage('contact');" class="link green-button marketplace-area hidden">Contact</a>
   </p>
 
   <div class="social">

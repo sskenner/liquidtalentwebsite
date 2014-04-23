@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/new/presentation/community-members.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/new/presentation/table.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/new/main/logo-text.png" afterPath="$PROJECT_DIR$/app/assets/images/new/main/logo-text.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/presentation/index.html.erb" afterPath="$PROJECT_DIR$/app/views/presentation/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/login.html.erb" afterPath="$PROJECT_DIR$/app/views/user/login.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398252347965" ignored="false" />
+    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398272437700" ignored="false" />
     <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398268067346" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396249855091" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
@@ -20,7 +21,7 @@
     <file path="/routes.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397727767526" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396257785192" ignored="false" />
     <file path="/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396972009214" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397836270115" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398269684232" ignored="false" />
     <file path="/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396876675767" ignored="false" />
     <file path="/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742016771" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742248356" ignored="false" />
@@ -64,7 +65,7 @@
     <file path="$PROJECT_DIR$/../reltrek.com/app/controllers/timeframes_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396629887343" ignored="false" />
     <file path="/contact_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396613133950" ignored="false" />
     <file path="/confirm.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396619553690" ignored="false" />
-    <file path="/presentation.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398268377267" ignored="false" />
+    <file path="/presentation.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398272406097" ignored="false" />
     <file path="/signup_service_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396878036374" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397464842107" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/views/layouts/application.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484592519" ignored="false" />
@@ -154,10 +155,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="807" column="45" selection-start="26976" selection-end="26976" vertical-scroll-proportion="0.85301834">
+            <state line="771" column="75" selection-start="25778" selection-end="25778" vertical-scroll-proportion="-18.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user/login.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="215" selection-start="881" selection-end="881" vertical-scroll-proportion="-12.5">
               <folding />
             </state>
           </provider>
@@ -166,7 +176,7 @@
       <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="272" column="42" selection-start="12554" selection-end="12554" vertical-scroll-proportion="-7.591837">
+            <state line="1077" column="98" selection-start="52054" selection-end="52054" vertical-scroll-proportion="-13.632653">
               <folding>
                 <element signature="n#style#0;n#a#2;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#7;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -180,17 +190,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.css.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1077" column="81" selection-start="27225" selection-end="27225" vertical-scroll-proportion="-5.142857">
+            <state line="1054" column="31" selection-start="26671" selection-end="26671" vertical-scroll-proportion="0.3998211">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="presentation-icons.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/presentation-icons.png">
+      <file leaf-file-name="logo-small-grey.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/logo-small-grey.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -199,7 +209,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="51" selection-start="274" selection-end="274" vertical-scroll-proportion="-2.5">
+            <state line="3" column="51" selection-start="185" selection-end="185" vertical-scroll-proportion="-1.875">
               <folding />
             </state>
           </provider>
@@ -228,17 +238,17 @@
         <option value="$PROJECT_DIR$/app/views/user/update_provider.html.erb" />
         <option value="$PROJECT_DIR$/config/initializers/setup_mail.rb" />
         <option value="$PROJECT_DIR$/app/views/user/_filter.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/login.html.erb" />
         <option value="$PROJECT_DIR$/app/views/bookings/create.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/bookings_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/bookings/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/bookings/applicants.html.erb" />
         <option value="$PROJECT_DIR$/app/views/bookings/statuses.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/presentation/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/presentation/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/login.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
       </list>
     </option>
   </component>
@@ -584,6 +594,36 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -630,8 +670,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/assets/images/new/search" />
+      <recent name="$PROJECT_DIR$/app/assets/images/new/main" />
       <recent name="$PROJECT_DIR$/app/assets/images/new/presentation" />
+      <recent name="$PROJECT_DIR$/app/assets/images/new/search" />
       <recent name="$PROJECT_DIR$/app/assets/images/new/signup" />
     </key>
   </component>
@@ -926,16 +967,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/images/presentation/team-photos.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/gradient.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/bundle.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -952,11 +983,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/app-stores.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/logo-small-grey.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -981,28 +1007,40 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="51" selection-start="185" selection-end="185" vertical-scroll-proportion="-1.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/gradient.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/presentation-icons.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/user/login.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="51" selection-start="274" selection-end="274" vertical-scroll-proportion="-2.5">
+        <state line="20" column="215" selection-start="881" selection-end="881" vertical-scroll-proportion="-12.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1077" column="81" selection-start="27225" selection-end="27225" vertical-scroll-proportion="-5.142857">
+        <state line="771" column="75" selection-start="25778" selection-end="25778" vertical-scroll-proportion="-18.125">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="272" column="42" selection-start="12554" selection-end="12554" vertical-scroll-proportion="-7.591837">
+        <state line="1077" column="98" selection-start="52054" selection-end="52054" vertical-scroll-proportion="-13.632653">
           <folding>
             <element signature="n#style#0;n#a#2;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#7;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1015,9 +1053,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/logo-small-grey.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="807" column="45" selection-start="26976" selection-end="26976" vertical-scroll-proportion="0.85301834">
+        <state line="1054" column="31" selection-start="26671" selection-end="26671" vertical-scroll-proportion="0.3998211">
           <folding />
         </state>
       </provider>
