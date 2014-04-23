@@ -265,8 +265,7 @@ a:hover { color: #000; }
     text-align: center;
     padding: 14px 18px;
     font-size: 20px;
-    border: 6px double #FFF;
-    font-weight: 400;
+    font-weight: 100;
 }
 #admin-panel .navigation .link {
     display: block;
@@ -781,11 +780,81 @@ h1 {
 
 .logo {
     display: block;
-    width: 70%;
+    width: 50%;
     max-width: 655px;
     margin: auto;
     border-top: 30px solid transparent;
     margin-bottom: 30px;
+}
+
+#home-buttons {
+    width: 440px;
+    margin: 0 auto 40px auto;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#enterprise-button {
+    display: inline-block;
+    float: left;
+    width: 220px;
+    padding: 10px 0;
+    color: #000;
+}
+#marketplace-button {
+    display: inline-block;
+    float: left;
+    width: 220px;
+    padding: 10px 0;
+    color: #000;
+}
+#enterprise-button .icon, #marketplace-button .icon {
+    display: inline-block;
+    height: 31px;
+    background: url(<%= asset_url 'new/presentation/presentation-icons.png' %>) top left no-repeat;
+    vertical-align: middle;
+}
+#enterprise-button .icon {
+    width: 40px;
+    background-position: 0px 0px;
+}
+#marketplace-button .icon {
+    width: 32px;
+    background-position: -40px 0px;
+}
+#enterprise-button span, #marketplace-button span {
+    padding-left: 10px;
+}
+
+#enterprise-button.active, #enterprise-button.active:hover  {
+    color: #fff;
+    background: #4d555f;
+    border: 2px solid #000;
+}
+#marketplace-button.active, #marketplace-button.active:hover {
+    color: #fff;
+    background: #70B091;
+    border: 2px solid #1E9A66;
+}
+#enterprise-button.active .icon, #enterprise-button.active:hover .icon {
+    width: 40px;
+    background-position: 0px -31px;
+}
+#marketplace-button.active .icon, #marketplace-button.active:hover .icon {
+    width: 32px;
+    background-position: -40px -31px;
+}
+
+.enterprise-area {
+    display: none;
+}
+
+.about ul {
+    padding-left: 50px;
+    list-style-type: circle;
+}
+.about li {
+    padding-bottom: 8px;
 }
 
 .video-container {
@@ -810,10 +879,8 @@ h1 {
     font-size: 20px;
     text-align: center;
     line-height: 80px;
-    margin: 1px 0px;
+    margin: 0px;
     background: #fff;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 #newsletter-sign-up .field {
@@ -847,7 +914,6 @@ h1 {
 
 #newsletter-sign-up-form {
     display: inline-block;
-    float: right;
 }
 
 #about-page, #press-page, #contact-page {
@@ -868,6 +934,16 @@ h1 {
     margin-top: 60px;
     width: 520px;
     height: 255px;
+}
+
+.product-suite {
+    padding: 25px;
+    background: #fff;
+}
+.product-suite p {
+    padding-bottom: 20px;
+    line-height: 20px;
+    font-size: 16px;
 }
 
 #footer .appstore-buttons {
@@ -1048,6 +1124,8 @@ h3 {
     padding: 10px 0px;
     background-color: hsla(0, 0%, 100%, 0.3);
     border: 5px solid #FFF;
+    text-align: center;
+    padding-bottom: 20px;
 }
 #contact-form {
     width: 595px;

@@ -5,9 +5,9 @@
 <head>
 
   <title>LiquidTalent</title>
-
-  <base href="http://liquidtalent.com">
   <!--
+  <base href="http://liquidtalent.com">
+
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
   -->
 
@@ -67,7 +67,7 @@
     </div>
     <div id="admin-panel">
       <div class="header">
-        <a class="login green-button" href="javascript:loadPage('/login')">Login</a>
+        <a class="login" href="javascript:loadPage('/login')">Login</a>
 
         <div id="user-info">
           <img src="#" class="avatar" alt="Avatar">
@@ -110,8 +110,18 @@
 </div>
 
 <div id="presentation">
+<div id="newsletter-sign-up">
+  <div id="newsletter-sign-up-text">
+    <span class="enterprise-area">Request a quote</span>
+    <span class="marketplace-area">Sign up to LiquidTalent</span>
+  </div>
+  <div id="newsletter-sign-up-form">
+    <input type="text" id="register-form-email" class="field" value="Enter your email" onmousedown="javascript:if ($(this).prop('value') === 'Enter your email') { $(this).prop('value', ''); } else { $(this).prop('value', 'Enter your email'); }">
+    <a href="javascript:SubmitRegisterForm()" id="register-form-send" class="green-button">Sign up</a>
+  </div>
+</div>
 
-<div id="presentation-header">
+<div id="presentation-header" class="marketplace-area">
 
   <div id="social-twitter-container">
 
@@ -134,35 +144,41 @@
     }(document, "script", "twitter-wjs");</script>
 
   </div>
-
-  <p class="navigation">
-    <a href="javascript:RevealPage('about');" class="link green-button">About
-    </a><a href="javascript:RevealPage('team');" class="link green-button">Team
-  </a><a href="javascript:RevealPage('hiw');" class="link green-button hiw">How it Works
-  </a><a href="javascript:RevealPage('contact');" class="link green-button">Contact</a>
-  </p>
-
 </div>
 
-<div class="page-segment t" title="contact">
+<div class="page-segment t enterprise-area product-suite-page" title="Product Suite">
+  <h1>Product Suite</h1>
+  <img src="<%= asset_path "new/presentation/bundle.jpg" %>" width="960" height="454" alt="Product Suite"  />
 
-  <h1>Contact</h1>
+  <div class="product-suite">
+    <p>
+      LiquidTalent is the future of human capital management (HCM) software for your workforce in the cloud. Find, hire, and manage talent anytime, anyplace - all with the touch of a button.
+    </p>
+    <p>
+      Our product suite includes iOS and Android applications for smartphones, tablet applications, and flexible SaaS desktop web app - all of which can be delivered a la carte or bundled together. Combined the LiquidTalent platform allows enterprise to find, hire, and manage talent through any device and ensure expedient access to internal and external human capital networks when you need them most.
+    </p>
+    <p>
+      Whether you need to tap into internal talent pools, manage external networks, or build out your human capital resources, LiquidTalent HCM location-based services software has you covered saving time and cost by up to 10X.
+    </p>
+    <img src="<%= asset_path "new/presentation/table.jpg" %>" width="100%" height="" alt="Table"  />
 
-  <div class="contact-container">
-    <div id="contact-form">
-      <div class="name-email">
-        <input type="text" class="name field" placeholder="Name">
-        <input type="text" class="email field" placeholder="Email">
-      </div>
-      <textarea class="message field" placeholder="Message"></textarea>
-      <a href="javascript:SubmitContactForm()" class="contact green-button">Contact</a>
-      <img src="<%= asset_path "main/loader.gif" %>" alt="contact" class="loader">
-    </div>
+    <p>Pricing available upon request. Contact us to learn more about LiquidTalent Human Capital Management Software Solutions.</p>
   </div>
-
 </div>
 
-<div class="page-segment t" title="about">
+<div class="page-segment t marketplace-area" title="Community Members">
+  <h1>Community Members</h1>
+  <img src="<%= asset_path "new/presentation/community-members.jpg" %>" width="960" height="" alt="Community Members"  />
+</div>
+
+<p class="navigation">
+  <a href="javascript:RevealPage('about');" class="link green-button">About
+  </a><a href="javascript:RevealPage('team');" class="link green-button">Team
+</a><a href="javascript:RevealPage('hiw');" class="link green-button hiw" style="display: none;">How it Works
+</a><a href="javascript:RevealPage('contact');" class="link green-button marketplace-area">Contact</a>
+</p>
+
+<div class="page-segment t about" title="about">
 
   <h1>About</h1>
 
@@ -199,42 +215,62 @@
       </div>
 
       <h2>Company Overview</h2>
+      <div class="marketplace-area">
+        <p>The LiquidTalent ("LT") marketplace provides a platform for professionals to connect in real-time, based on
+          location. LiquidTalent users are encouraged to market their skills and abilities, interact with new professional
+          contacts, engage with interested hiring sources, and earn financial capital. LT adds a new dimension to the
+          economy by presenting users with real-time, income-earning opportunities based on skills, availability, and
+          geographic location. Today, online reputations play an integral role in determining professional credibility.
+          LiquidTalent actively demonstrates this credibility through authentic, comprehensive, and professionally-forward
+          profiles.</p>
 
-      <p>The LiquidTalent ("LT") marketplace provides a platform for professionals to connect in real-time, based on
-        location. LiquidTalent users are encouraged to market their skills and abilities, interact with new professional
-        contacts, engage with interested hiring sources, and earn financial capital. LT adds a new dimension to the
-        economy by presenting users with real-time, income-earning opportunities based on skills, availability, and
-        geographic location. Today, online reputations play an integral role in determining professional credibility.
-        LiquidTalent actively demonstrates this credibility through authentic, comprehensive, and professionally-forward
-        profiles.</p>
+        <p>Through a mobile application, LiquidTalent helps organizations, small-businesses, and individuals discover
+          talent based on relevant search criteria including skills, experience, education, hourly rate, reviews and
+          ratings. Talent is hired on a per project basis and search results are displayed in the format of both a List
+          and a Map. The List showcases talent through a 22 second video and a personal presentation-description of up to
+          160
+          characters. The Map displays the physical location of talent in relation to the user. LiquidTalent is your
+          career in your pocket, a never before seen on-the-go professional platform that increases earning potential.
+          LiquidTalent is establishing a new paradigm of professional connection and project execution.</p>
 
-      <p>Through a mobile application, LiquidTalent helps organizations, small-businesses, and individuals discover
-        talent based on relevant search criteria including skills, experience, education, hourly rate, reviews and
-        ratings. Talent is hired on a per project basis and search results are displayed in the format of both a List
-        and a Map. The List showcases talent through a 22 second video and a personal presentation-description of up to
-        160
-        characters. The Map displays the physical location of talent in relation to the user. LiquidTalent is your
-        career in your pocket, a never before seen on-the-go professional platform that increases earning potential.
-        LiquidTalent is establishing a new paradigm of professional connection and project execution.</p>
+        <h2>The LiquidTalent Product</h2>
 
-      <h2>The LiquidTalent Product</h2>
+        <p>LiquidTalent's product acts as a piece of professional digital real estate, creating a space to showcase talent
+          and build a sales pipeline. LT's beta application will initially launch on the iOS7 mobile marketplace. †Future
+          product releases include an Android app and a fully functioning website designed for desktop, tablet and mobile
+          phones. During the account-creation process users can log-in with LinkedIn profiles, thus validating talent and
+          making registration quick and easy. LiquidTalent profiles will display users' skills, experience, education,
+          hourly rate, reviews and ratings. The platform offers internal messaging, a function to save favorite talent, a
+          seamless process for billing and executing legal contracts. The product will also feature LiquidPitch, a
+          22-second elevator pitch explaining the what and why behind each user. With the proliferation of online video,
+          professionals are becoming increasingly accustomed to marketing themselves through this rich format.</p>
+      </div>
 
-      <p>LiquidTalent's product acts as a piece of professional digital real estate, creating a space to showcase talent
-        and build a sales pipeline. LT's beta application will initially launch on the iOS7 mobile marketplace. †Future
-        product releases include an Android app and a fully functioning website designed for desktop, tablet and mobile
-        phones. During the account-creation process users can log-in with LinkedIn profiles, thus validating talent and
-        making registration quick and easy. LiquidTalent profiles will display users' skills, experience, education,
-        hourly rate, reviews and ratings. The platform offers internal messaging, a function to save favorite talent, a
-        seamless process for billing and executing legal contracts. The product will also feature LiquidPitch, a
-        22-second elevator pitch explaining the what and why behind each user. With the proliferation of online video,
-        professionals are becoming increasingly accustomed to marketing themselves through this rich format.</p>
+      <div class="enterprise-area">
+        <p>
+            LiquidTalent is a new technology firm that specializes in mobile phone and web applications with a focus on location-based services. The LiquidTalent proprietary software is built for organizations looking to optimize the process of finding, hiring, and managing internal human resources and external talent networks. LiquidTalent Enterprise is the future of Human Capital Management (HCM) software designed for your in-the-cloud workforce:
+        </p>
+
+        <ul>
+          <li>Find, hire, and manage talent with a flexible and scalable model</li>
+          <li>Synchronized mobile applications and desktop dashboard to an integrated backend</li>
+          <li>Real-time, on-demand scheduling and availablity</li>
+          <li>Responsive and beautiful design</li>
+          <li>Secure, reliable and very fast</li>
+          <li>Access internal and external human capital networks when you need them most</li>
+        </ul>
+
+        <p>
+          LiquidTalent's HCM software is fully customizable to suit your enterprise needs. Through an integrated backend, the software seamlessly syncs to all devices and is very user friendly. Enterprise management teams can now handle all aspects of vetting, presenting, hiring, and retaining talent with payroll and tax reporting options. Ultimately, this cutting edge LiquidTalent software solution saves your company valuable time and money, so you can do more of what you do best.
+        </p>
+      </div>
 
     </div>
 
   </div>
 
 </div>
-<div class="page-segment green t" title="team">
+<div class="page-segment green t team-page" title="team">
 
 <h1>Team</h1>
 
@@ -519,7 +555,7 @@
       Prem has been a Product Manager at Google since 2006 working on a wide array of projects from Google Checkout, the
       Internet Bus Project in India, Network Infrastructure and the Make the Web Faster Project, Google.org's Crisis
       Response team, and most recently, Google Search. Prior to Google, Prem was a system's engineer at MIT Lincoln
-      Laboratory. Prem is a graduate of Carnegie Mellon with a degree in Computer and Biomedical Engineering and
+      Laboratory. Prem is a graduate of Carnegie Mellon with a degree in Computer and Medical Engineering and
       received an MBA from the Harvard Business School.
 
     </p>
@@ -560,8 +596,30 @@
   </div>
 
 </div>
+</div>
+<!-- Team end -->
+
+<div class="page-segment t contact-page" title="contact">
+
+  <h1>Contact</h1>
+
+  <div class="contact-container">
+    <div id="contact-form">
+      <div class="name-email">
+        <input type="text" class="name field" placeholder="Name">
+        <input type="text" class="email field" placeholder="Email">
+      </div>
+      <textarea class="message field" placeholder="Message"></textarea>
+      <a href="javascript:SubmitContactForm()" class="contact green-button">Contact</a>
+      <img src="<%= asset_path "main/loader.gif" %>" alt="contact" class="loader">
+    </div>
+    <p>
+      Call 800 590 1592 or email <a href="mailto:hello@liquidtalent.com">hello@liquidtalent.com</a> to get in touch
+    </p>
+  </div>
 
 </div>
+<!-- contact end -->
 
 <div class="page-segment t hiw" title="hiw" style="opacity:0;display:none;">
 
@@ -1008,7 +1066,7 @@
     <a href="javascript:RevealPage('about');" class="link green-button">About
     </a><a href="javascript:RevealPage('team');" class="link green-button">Team
   </a><a href="javascript:RevealPage('hiw');" class="link green-button hiw" style="display: none;">How it Works
-  </a><a href="javascript:RevealPage('contact');" class="link green-button">Contact</a>
+  </a><a href="javascript:RevealPage('contact');" class="link green-button marketplace-area">Contact</a>
   </p>
 
   <div class="social">

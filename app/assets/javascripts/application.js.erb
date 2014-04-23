@@ -215,7 +215,6 @@ $(window).on('load', function () {
                     'm': cF.find('.message')
 
                 };
-
             }
 
         },
@@ -787,6 +786,26 @@ $(window).on('load', function () {
         $(e).on('mouseover', function (e) { ToggleNavigationHover(e); });
         $(e).on('mouseout', function (e) { ToggleNavigationHover(e); });
 
+    });
+
+    $('#enterprise-button').click(function() {
+        $('body').css('background', '#000');
+        $('.enterprise-area').show();
+        $('.marketplace-area').hide();
+        $('#enterprise-button').addClass('active');
+        $('#marketplace-button').removeClass('active');
+
+        $('.contact-page').insertAfter('.product-suite-page');
+    });
+
+    $('#marketplace-button').click(function() {
+        $('body').css('background', '#239061');
+        $('.enterprise-area').hide();
+        $('.marketplace-area').show();
+        $('#enterprise-button').removeClass('active');
+        $('#marketplace-button').addClass('active');
+
+        $('.contact-page').insertAfter('.team-page');
     });
 
     loadPage('home');
