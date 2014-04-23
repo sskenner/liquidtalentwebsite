@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/presentation/index.html.erb" afterPath="$PROJECT_DIR$/app/views/presentation/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -150,10 +148,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="831" column="10" selection-start="27490" selection-end="27490" vertical-scroll-proportion="0.46131805">
+            <state line="831" column="10" selection-start="27490" selection-end="27490" vertical-scroll-proportion="-3.2857144">
               <folding />
             </state>
           </provider>
@@ -193,10 +191,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="27" selection-start="658" selection-end="658" vertical-scroll-proportion="-6.25">
+            <state line="10" column="98" selection-start="729" selection-end="729" vertical-scroll-proportion="0.40106952">
               <folding />
             </state>
           </provider>
@@ -234,8 +232,8 @@
         <option value="$PROJECT_DIR$/app/views/user/login.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/presentation/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/presentation/index.html.erb" />
       </list>
     </option>
   </component>
@@ -1034,16 +1032,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="658" selection-end="658" vertical-scroll-proportion="-6.25">
+        <state line="831" column="10" selection-start="27490" selection-end="27490" vertical-scroll-proportion="-3.2857144">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="831" column="10" selection-start="27490" selection-end="27490" vertical-scroll-proportion="0.46131805">
+        <state line="10" column="98" selection-start="729" selection-end="729" vertical-scroll-proportion="0.40106952">
           <folding />
         </state>
       </provider>
