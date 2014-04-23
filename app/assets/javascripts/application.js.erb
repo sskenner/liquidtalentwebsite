@@ -1876,6 +1876,9 @@ function checkUnreadMessages() {
 
 }
 function loadMessages() {
+    if (currentUser === null) {
+        return false;
+    }
 
     if (messages.length === 0) { showPlaceholder('Messages'); }
     else {

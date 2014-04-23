@@ -7,7 +7,7 @@
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398272437700" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398274533240" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398274596415" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396249855091" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -151,7 +151,7 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="831" column="20" selection-start="27500" selection-end="27500" vertical-scroll-proportion="0.37298748">
+            <state line="1879" column="21" selection-start="61972" selection-end="61972" vertical-scroll-proportion="0.37397635">
               <folding />
             </state>
           </provider>
@@ -1053,7 +1053,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="831" column="20" selection-start="27500" selection-end="27500" vertical-scroll-proportion="0.37298748">
+        <state line="1879" column="21" selection-start="61972" selection-end="61972" vertical-scroll-proportion="0.37397635">
           <folding />
         </state>
       </provider>
