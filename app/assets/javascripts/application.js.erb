@@ -828,7 +828,10 @@ function Response(response) {
 }
 function loadPage(page) {
 
-    if (currentUser === null) { $('.hiw').css({ display: 'none', opacity: 0 }); }
+    if (currentUser === null) {
+        return false;
+        $('.hiw').css({ display: 'none', opacity: 0 });
+    }
     else { $('.hiw').each(function (i, e) { $(e).removeAttr('style'); }); }
 
     Object.keys(pages).forEach(function (p) {
@@ -996,7 +999,6 @@ function RevealPage(pageSegment) {
 function showPlaceholder (page) {
 
     if (currentUser === null) {
-        /*
         $('#background').html(
             '<div id="title" class="no-margin">' +
                 '<a class="black-button" href="javascript: window.location = \'/\';">Back</a>' +
@@ -1016,8 +1018,6 @@ function showPlaceholder (page) {
                 '</div>'
 
         );
-        */
-
     }
     else {
 
