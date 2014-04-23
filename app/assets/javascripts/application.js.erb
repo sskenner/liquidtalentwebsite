@@ -829,7 +829,7 @@ function Response(response) {
 function loadPage(page) {
 
     if (currentUser === null) {
-        return false;
+        //return false;
         $('.hiw').css({ display: 'none', opacity: 0 });
     }
     else { $('.hiw').each(function (i, e) { $(e).removeAttr('style'); }); }
