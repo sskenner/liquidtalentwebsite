@@ -788,7 +788,12 @@ $(window).on('load', function () {
 
     });
 
-    $('#enterprise-button').click(function() {
+    $('#enterprise-button').click(function(e) {
+        e.preventDefault();
+
+        $('.video-container').html('');
+        $('.video-container').html('<iframe class="enterprise-area" src="//player.vimeo.com/video/92747130?title=0&amp;byline=0&amp;portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+
         $('body').css('background', '#000');
         $('.enterprise-area').show();
         $('.marketplace-area').hide();
@@ -798,7 +803,12 @@ $(window).on('load', function () {
         $('.contact-page').insertAfter('.product-suite-page');
     });
 
-    $('#marketplace-button').click(function() {
+    $('#marketplace-button').click(function(e) {
+        e.preventDefault();
+
+        $('.video-container').html('');
+        $('.video-container').html('<iframe class="marketplace-area" src="//player.vimeo.com/video/91860245?title=0&amp;byline=0&amp;portrait=0&amp;color=239061" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+
         $('body').css('background', '#239061');
         $('.enterprise-area').hide();
         $('.marketplace-area').show();
