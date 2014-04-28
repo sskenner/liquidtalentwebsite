@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/presentation/index.html.erb" afterPath="$PROJECT_DIR$/app/views/presentation/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/new/presentation/bundle.jpg" afterPath="$PROJECT_DIR$/app/assets/images/new/presentation/bundle.jpg" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -13,19 +11,19 @@
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396249855091" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
-    <file path="/routes.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397727767526" ignored="false" />
+    <file path="/routes.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398414355810" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396257785192" ignored="false" />
-    <file path="/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396972009214" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398269684232" ignored="false" />
-    <file path="/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396876675767" ignored="false" />
+    <file path="/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398410987424" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398698646485" ignored="false" />
+    <file path="/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398698642128" ignored="false" />
     <file path="/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742016771" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742248356" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/user_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396263284220" ignored="false" />
     <file path="/user_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396263279337" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/public/api.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397575522995" ignored="false" />
-    <file path="/api.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397575522995" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/public/api.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398700282734" ignored="false" />
+    <file path="/api.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398700262504" ignored="false" />
     <file path="$PROJECT_DIR$/../reltrek.com/app/views/layouts/application.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396629798965" ignored="false" />
-    <file path="/application.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484592519" ignored="false" />
+    <file path="/application.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398414385746" ignored="false" />
     <file path="$PROJECT_DIR$/../reltrek.com/app/assets/javascripts/charts.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396628886110" ignored="false" />
     <file path="/charts.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396628884123" ignored="false" />
     <file path="$PROJECT_DIR$/../reltrek.com/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396512974842" ignored="false" />
@@ -42,7 +40,7 @@
     <file path="/checks.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396428420330" ignored="false" />
     <file path="$PROJECT_DIR$/../reltrek.com/app/controllers/checks_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396440520616" ignored="false" />
     <file path="/checks_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396440519929" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/models/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397732405933" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/models/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398680771019" ignored="false" />
     <file path="/settings.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396622778058" ignored="false" />
     <file path="/_filter.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397495647018" ignored="false" />
     <file path="/map.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396448325035" ignored="false" />
@@ -91,7 +89,7 @@
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
     <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398333511505" ignored="false" />
     <file path="/a.dummy" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397457296437" ignored="false" />
-    <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397732402217" ignored="false" />
+    <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398680771019" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/landing.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484343602" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/views/accounts/_twitter_table.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397464842107" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/static_pages_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397467552652" ignored="false" />
@@ -119,18 +117,42 @@
     <file path="/booking.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397742458437" ignored="false" />
     <file path="/login.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397587376023" ignored="false" />
     <file path="/create.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397722046833" ignored="false" />
-    <file path="/index.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398339687700" ignored="false" />
+    <file path="/index.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398419629884" ignored="false" />
     <file path="/statuses.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397733232450" ignored="false" />
-    <file path="/bookings_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397836428890" ignored="false" />
+    <file path="/bookings_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398700318563" ignored="false" />
     <file path="/applicants.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397727997827" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/models/applicant.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397732583894" ignored="false" />
     <file path="/applicant.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397732582142" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/bookings_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397836430752" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/bookings_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398700330570" ignored="false" />
     <file path="$PROJECT_DIR$/../dnsniffer.com/script/se.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398265817780" ignored="false" />
     <file path="/se.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398265780258" ignored="false" />
     <file path="$PROJECT_DIR$/../dnsniffer.com/script/includes/jquery.min.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398258837424" ignored="false" />
     <file path="$PROJECT_DIR$/../dnsniffer.com/public/sej.html" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398259511047" ignored="false" />
     <file path="/sej.html" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398259506766" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/script/search_estimator.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398341626951" ignored="false" />
+    <file path="/search_estimator.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398341380554" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/app/views/layouts/application.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398414386463" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/app/views/websites/index.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398342937371" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/app/controllers/websites_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398342991744" ignored="false" />
+    <file path="/websites_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398342991744" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/app/views/websites/list.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398342928647" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/config/routes.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398414355810" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/script/cm_checker.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398348172583" ignored="false" />
+    <file path="/cm_checker.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398347764511" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/app/models/domain.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398343426169" ignored="false" />
+    <file path="/domain.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398343391740" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398410987764" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/app/models/website.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398343789600" ignored="false" />
+    <file path="/website.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398343782408" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/app/views/domains/index.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398419629884" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/app/views/domains/list.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398420258816" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/app/controllers/domains_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398418994398" ignored="false" />
+    <file path="/domains_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398418973294" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/script/last_checker.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398416901910" ignored="false" />
+    <file path="/last_checker.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398416901910" ignored="false" />
+    <file path="/list.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398420258816" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/script/ss_parser.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398432527701" ignored="false" />
+    <file path="$PROJECT_DIR$/../dnsniffer.com/script/ss_parser.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398433477355" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +175,7 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="781" column="105" selection-start="26076" selection-end="26076" vertical-scroll-proportion="-167.5">
+            <state line="781" column="5" selection-start="26076" selection-end="26076" vertical-scroll-proportion="-167.5">
               <folding />
             </state>
           </provider>
@@ -162,7 +184,7 @@
       <file leaf-file-name="presentation.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="6" selection-start="110" selection-end="110" vertical-scroll-proportion="0.11558219">
+            <state line="20" column="1" selection-start="793" selection-end="793" vertical-scroll-proportion="0.25684932">
               <folding />
             </state>
           </provider>
@@ -171,7 +193,7 @@
       <file leaf-file-name="application.css.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="798" column="80" selection-start="20649" selection-end="20649" vertical-scroll-proportion="-8.387755">
+            <state line="798" column="16" selection-start="20649" selection-end="20649" vertical-scroll-proportion="-8.387755">
               <folding />
             </state>
           </provider>
@@ -180,8 +202,11 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="34" selection-start="847" selection-end="847" vertical-scroll-proportion="-8.125">
-              <folding />
+            <state line="13" column="0" selection-start="847" selection-end="847" vertical-scroll-proportion="-8.125">
+              <folding>
+                <marker date="1398339687000" expanded="true" signature="132:352" placeholder="..." />
+                <marker date="1398339687000" expanded="true" signature="383:844" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -641,8 +666,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/assets/images/new/main" />
       <recent name="$PROJECT_DIR$/app/assets/images/new/presentation" />
+      <recent name="$PROJECT_DIR$/app/assets/images/new/main" />
       <recent name="$PROJECT_DIR$/app/assets/images/new/search" />
       <recent name="$PROJECT_DIR$/app/assets/images/new/signup" />
     </key>
@@ -854,14 +879,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1602" height="1330" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17930591" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17930591" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -938,11 +963,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/bundle.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/background.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1002,28 +1022,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="798" column="80" selection-start="20649" selection-end="20649" vertical-scroll-proportion="-8.387755">
+        <state line="798" column="16" selection-start="20649" selection-end="20649" vertical-scroll-proportion="-8.387755">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="781" column="105" selection-start="26076" selection-end="26076" vertical-scroll-proportion="-167.5">
+        <state line="781" column="5" selection-start="26076" selection-end="26076" vertical-scroll-proportion="-167.5">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="34" selection-start="847" selection-end="847" vertical-scroll-proportion="-8.125">
-          <folding />
+        <state line="13" column="0" selection-start="847" selection-end="847" vertical-scroll-proportion="-8.125">
+          <folding>
+            <marker date="1398339687000" expanded="true" signature="132:352" placeholder="..." />
+            <marker date="1398339687000" expanded="true" signature="383:844" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="6" selection-start="110" selection-end="110" vertical-scroll-proportion="0.11558219">
+        <state line="20" column="1" selection-start="793" selection-end="793" vertical-scroll-proportion="0.25684932">
           <folding />
         </state>
       </provider>
