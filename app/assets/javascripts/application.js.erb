@@ -61,7 +61,7 @@ var chart_options = {
     chart: {
         type: 'areaspline',
         renderTo: 'bookings-chart',
-        margin: 0,
+        //margin: 0,
         backgroundColor: 'transparent'
     },
     credits: {
@@ -72,7 +72,12 @@ var chart_options = {
     },
     xAxis: {
         type: 'datetime',
-        lineColor: '#333'
+        lineColor: '#eee',
+        labels: {
+            style: {
+                color: '#ddd'
+            }
+        },
     },
     yAxis: {
         title: {
@@ -960,7 +965,7 @@ function SubmitContactForm() {
 function RevealPage(pageSegment) {
 
     pageSegments = {};
-    $('.page-segment').each(function (i, e) {
+    $('.page-segment:not(.page-segment-two)').each(function (i, e) {
         pageSegments[$(e).prop('title')] = $(e);
     });
 

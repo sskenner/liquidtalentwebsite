@@ -5,11 +5,10 @@
 <head>
 
   <title>LiquidTalent</title>
-
-  <base href="http://liquidtalent.com">
   <!--
- <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
- -->
+<base href="http://liquidtalent.com">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+-->
 
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -142,7 +141,7 @@
   </div>
 </div>
 
-<div class="page-segment t enterprise-area product-suite-page" title="Product Suite">
+<div class="page-segment t enterprise-area product-suite-page page-segment-two" title="Product Suite">
   <h1><div>Product Suite</div></h1>
 
   <img src="<%= asset_path "new/presentation/bundle.jpg" %>" width="960" height="490" alt="Product Suite"  />
@@ -172,28 +171,7 @@
   </div>
 </div>
 
-<div class="page-segment t contact-page" title="contact">
-  <h1>Contact</h1>
-
-  <div class="contact-container">
-    <div id="contact-form">
-      <div class="name-email">
-        <input type="text" class="name field" placeholder="Name">
-        <input type="text" class="email field" placeholder="Email">
-      </div>
-      <textarea class="message field" placeholder="Message"></textarea>
-      <a href="javascript:SubmitContactForm()" class="contact green-button">Contact</a>
-      <img src="<%= asset_path "main/loader.gif" %>" alt="contact" class="loader">
-    </div>
-    <p>
-      Call 800 590 1592 or email <a href="mailto:hello@liquidtalent.com">hello@liquidtalent.com</a> to get in touch
-    </p>
-  </div>
-
-</div>
-<!-- contact end -->
-
-<div class="page-segment t marketplace-area community-members-page" title="Community Members">
+<div class="page-segment t marketplace-area community-members-page page-segment-two" title="Community Members">
   <h1><div>Community Members</div></h1>
   <img src="<%= asset_path "new/presentation/community-members.jpg" %>" width="960" height="" alt="Community Members"  />
 </div>
@@ -626,8 +604,7 @@
 </div>
 <!-- Team end -->
 
-<div class="page-segment t hiw" title="hiw" style="opacity:0;display:none;">
-
+<div class="page-segment page-segment-two t hiw" title="hiw" style="opacity:0;display:none;">
   <h1>How it Works</h1>
 
   <div class="container">
@@ -1059,6 +1036,27 @@
     </div>
   </div>
 </div>
+
+<div class="page-segment t contact-page" title="contact">
+  <h1>Contact</h1>
+
+  <div class="contact-container">
+    <div id="contact-form">
+      <div class="name-email">
+        <input type="text" class="name field" placeholder="Name">
+        <input type="text" class="email field" placeholder="Email">
+      </div>
+      <textarea class="message field" placeholder="Message"></textarea>
+      <a href="javascript:SubmitContactForm()" class="contact green-button">Contact</a>
+      <img src="<%= asset_path "main/loader.gif" %>" alt="contact" class="loader">
+    </div>
+    <p>
+      Call 800 590 1592 or email <a href="mailto:hello@liquidtalent.com">hello@liquidtalent.com</a> to get in touch
+    </p>
+  </div>
+
+</div>
+<!-- contact end -->
 
 <div id="footer">
 
