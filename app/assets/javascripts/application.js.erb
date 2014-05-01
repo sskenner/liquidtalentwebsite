@@ -850,7 +850,25 @@ function Response(response) {
 function loadPage(page) {
 
     if(currentUser === null) {
-        if(page != '/login') {
+        if(page != '/login' && page != 'home') {
+            var email = prompt('Sign up to LiquidTalent', 'Email');
+            if(email) {
+                $.ajax({
+                    url: '/presentation/subscribe',
+                    type: 'post',
+                    data: 'email=' + email,
+                    error: Response
+                }).done(function (response) {
+
+                            if (response.success !== '') {
+                                alert('Keep your eyes out for a LiquidTalent email explaining the approval process.');
+
+                            }
+                            else { alert(response.error); }
+
+                        });
+            }
+
             return false;
         }
 
