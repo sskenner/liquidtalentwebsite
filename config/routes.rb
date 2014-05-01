@@ -4,6 +4,7 @@ LiquidTalent::Application.routes.draw do
 
     root 'presentation#index'
     get '/home' => 'presentation#index'
+    get '/home/:show' => 'presentation#index'
 
     #Mailchimp
     post '/presentation/subscribe' => 'presentation#subscribe'

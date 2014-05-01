@@ -50,7 +50,18 @@
                     });
         });
     </script>
-
+<% elsif params[:show] == 'enterprise' %>
+    <script>
+        $(window).on('load', function () {
+            showEnterprise();
+        });
+    </script>
+<% elsif params[:show] == 'marketplace' %>
+    <script>
+        $(window).on('load', function () {
+            showMarketplace();
+        });
+    </script>
 <% end %>
 
 <div id="wrapper">
@@ -99,7 +110,7 @@
           Settings
         </a>
       </div>
-      <div class="logo-small"></div>
+      <a class="logo-small" href="/"></a>
     </div>
   </div>
 </div>
@@ -169,11 +180,6 @@
 
     <p>Pricing available upon request. Contact us to learn more about LiquidTalent Human Capital Management Software Solutions.</p>
   </div>
-</div>
-
-<div class="page-segment t marketplace-area community-members-page page-segment-two" title="Community Members">
-  <h1><div>Community Members</div></h1>
-  <img src="<%= asset_path "new/presentation/community-members.jpg" %>" width="960" height="" alt="Community Members"  />
 </div>
 
 <p class="navigation">
@@ -1057,6 +1063,12 @@
 
 </div>
 <!-- contact end -->
+
+
+<div class="page-segment t marketplace-area community-members-page page-segment-two" title="Community Members">
+  <h1><div>Community Members</div></h1>
+  <img src="<%= asset_path "new/presentation/community-members.jpg" %>" width="960" height="" alt="Community Members"  />
+</div>
 
 <div id="footer">
 
