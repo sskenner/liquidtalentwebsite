@@ -52,16 +52,19 @@
     </script>
 <% elsif params[:show] == 'enterprise' %>
     <script>
-        $(window).on('load', function () {
+        $(document).load(function () {
             showEnterprise();
         });
     </script>
-<% elsif params[:show] == 'marketplace' %>
-    <script>
-        $(window).on('load', function () {
-            showMarketplace();
-        });
-    </script>
+    <style type="text/css">
+      body { background: none repeat scroll 0% 0% #000; }
+      .marketplace-area { display: none; }
+    </style>
+<% else %>
+    <style type="text/css">
+      body { background: none repeat scroll 0% 0% #239061; }
+      .enterprise-area { display: none; }
+    </style>
 <% end %>
 
 <div id="wrapper">

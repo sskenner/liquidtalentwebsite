@@ -3,8 +3,8 @@
 </a>
 
 <div id="home-buttons">
-  <div id="enterprise-button"><div class="icon"></div><span>Enterprise</span></div>
-  <div id="marketplace-button" class="active"><div class="icon"></div><span>Marketplace</span></div>
+  <div id="enterprise-button"<% if params[:show] == 'enterprise' %> class="active"<% end %>><div class="icon"></div><span>Enterprise</span></div>
+  <div id="marketplace-button"<% unless params[:show] == 'enterprise' %> class="active"<% end %>><div class="icon"></div><span>Marketplace</span></div>
   <div class="clear"></div>
 </div>
 
