@@ -1946,6 +1946,7 @@ function loadMessages() {
 
             }
 
+
             $('#messages').html($('#messages').html() +
                 '<div onclick="loadChat(\'' + messages[i].sender.id + ':' + messages[i].sender.name + '\');" class="message-box">' +
                     '<a href="javascript:blockUser(' + messages[i].sender.id + ');" class="black-button t">x</a>' +
@@ -1957,7 +1958,7 @@ function loadMessages() {
                         '<div class="green-button' + ((messages[i].unread_messages > 0) ? ' active' : '') + '"></div>' +
                     '</div>' +
                     '<div class="content">' + messages[i].last_message.contents + '</div>' +
-                    '<div class="time">' + time12Hour(messages[i].last_message.created_at.replace(/^.*T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$1')) + '</div>' +
+                    '<div class="time">' + dateParser(messages[i].last_message.created_at) + ' ' + time12Hour(messages[i].last_message.created_at.replace(/^.*T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$1')) + '</div>' +
                 '</div>'
             );
 
@@ -2145,6 +2146,15 @@ function sendNDA (user_id, user_name) {
     });
 
 }
+
+function dateParser(time) {
+    var year = time.substring(0, 4);
+    var month = time.substring(5, 7);
+    var day = time.substring(8, 10);
+
+    return parseInt(month, 10) + '/' + parseInt(day, 10) + '/' + year;
+}
+
 function time12Hour (time) {
 
     var hours = parseInt(time.replace(/\:\d{2}/, ''), 10);
@@ -2156,7 +2166,6 @@ function time12Hour (time) {
     hours = (hours == '00')? 12 : hours;
 
     return hours + ':' + minutes + suffex;
-
 }
 
 /***** Favorites *****/
