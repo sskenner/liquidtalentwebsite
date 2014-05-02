@@ -1,9 +1,10 @@
 class PresentationController < ApplicationController
+  def marketplace
+    render 'index', :layout => 'presentation'
+  end
 
-  def index
-
-    render :layout => 'presentation'
-
+  def enterprise
+    render 'index', :layout => 'presentation'
   end
 
   #Mailchimp Subscribe
