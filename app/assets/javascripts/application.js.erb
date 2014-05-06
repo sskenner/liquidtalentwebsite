@@ -482,8 +482,8 @@ $(window).on('load', function () {
             }
         },
 
-        'hire': {
-            'href': '/hire',
+        'create_project': {
+            'href': '/create_project',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
@@ -511,6 +511,19 @@ $(window).on('load', function () {
                         $('#categories').show();
                     }
                 });
+
+                loadHire();
+
+                $( ".due-date" ).datepicker();
+                $( ".due-date" ).datepicker("option", "dateFormat", "yy-mm-dd");
+            }
+        },
+
+        'hire': {
+            'href': '/hire',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
 
                 loadHire();
 
@@ -2566,6 +2579,8 @@ function loadHire() {
     else {
         $('#hire .avatar').hide();
         $('#hire-title').hide();
+
+        $('#preloader').hide();
     }
 }
 
@@ -2624,8 +2639,7 @@ function loadProjects() {
     $.ajax({
         url: 'http://backend.liquidtalent.com/bookings/list_all_bookings?' +
             'token=' + currentUser.token +
-            '&user_id=' + currentUser.id +
-            '&status=' + bookingStatus,
+            '&user_id=' + currentUser.id,
         error: Response
     }).done(function (data) {
         if (data['status'] === 'failed') {
@@ -2636,6 +2650,17 @@ function loadProjects() {
 
             data.response.forEach(function(item) {
                 bookings[item.booking.id] = item;
+
+                if(bookingStatus == 'current' && (item.booking.status == 'confirmed' || !(item.booking.status == 'accepted' || (item.booking.status == 'completed' && (item.demander.id == currentUser.id) ? (item.booking.date_reviewed_demander == null) : (item.booking.date_reviewed_provider == null))))) {
+                    console.log('Booking ID: ' + item.booking.id)
+                    return true;
+                }
+                else if(bookingStatus == 'pending' && (item.booking.status != 'confirmed')) {
+                    return true;
+                }
+                else if(bookingStatus == 'completed' && !(item.booking.status == 'completed' && ((item.demander.id == currentUser.id) ? (item.booking.date_reviewed_demander != null) : (item.booking.date_reviewed_provider != null)))) {
+                    return true;
+                }
 
                 if(item.booking.status != 'rejected') {
                     if(item.demander.id == currentUser.id) {
@@ -2674,7 +2699,7 @@ function loadProjects() {
                         $('#first-project .status.applicants').attr('onclick', 'bookingId=' + item.booking.id + '; loadPage("/applicants");');
 
                         if(item.booking.status == 'confirmed') {
-                            $('#first-project .status.pending').show();
+                            //$('#first-project .status.pending').show();
                         }
                         else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
                             $('#first-project .status.complete').show();
@@ -2685,7 +2710,7 @@ function loadProjects() {
                             $('#first-project .status.completed-demander').show();
                         }
                         else if(item.booking.status == 'pending') {
-                            $('#first-project .status.pending').show();
+                            //$('#first-project .status.pending').show();
                         }
                     }
                     else {
@@ -2697,7 +2722,7 @@ function loadProjects() {
                             $('#first-project .status-btn.decline').attr('onclick', 'bookingId=' + item.booking.id + '; if(confirm("Are you sure you want to decline project?")) rejectBooking();');
                         }
                         else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
-                            $('#first-project .status.in-progress').show();
+                            //$('#first-project .status.in-progress').show();
                         }
                         else if(item.booking.status == 'completed') {
                             $('#first-project .budget').hide();
@@ -2705,7 +2730,7 @@ function loadProjects() {
 
                         }
                         else if(item.booking.status == 'pending') {
-                            $('#first-project .status.pending').show();
+                            //$('#first-project .status.pending').show();
                         }
                     }
 
@@ -3195,4 +3220,45 @@ function delete_cookie( name ) {
 
 function applyForm() {
     $('html, body').delay(500).animate({ scrollTop: $('#newsletter-sign-up').offset().top }, 300, 'linear', null);
+}
+
+if (!Object.keys) {
+    Object.keys = (function () {
+        'use strict';
+        var hasOwnProperty = Object.prototype.hasOwnProperty,
+                hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+                dontEnums = [
+                    'toString',
+                    'toLocaleString',
+                    'valueOf',
+                    'hasOwnProperty',
+                    'isPrototypeOf',
+                    'propertyIsEnumerable',
+                    'constructor'
+                ],
+                dontEnumsLength = dontEnums.length;
+
+        return function (obj) {
+            if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+                throw new TypeError('Object.keys called on non-object');
+            }
+
+            var result = [], prop, i;
+
+            for (prop in obj) {
+                if (hasOwnProperty.call(obj, prop)) {
+                    result.push(prop);
+                }
+            }
+
+            if (hasDontEnumBug) {
+                for (i = 0; i < dontEnumsLength; i++) {
+                    if (hasOwnProperty.call(obj, dontEnums[i])) {
+                        result.push(dontEnums[i]);
+                    }
+                }
+            }
+            return result;
+        };
+    }());
 }

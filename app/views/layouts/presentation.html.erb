@@ -76,7 +76,7 @@
     </div>
     <div id="admin-panel">
       <div class="header">
-        <a class="login" href="javascript:loadPage('/login')">Login</a>
+        <a class="login" href="#" onclick="loadPage('/login');">Login</a>
 
         <div id="user-info">
           <img src="#" class="avatar" alt="Avatar" onclick="if(currentUser != null) {profileId=currentUser.id; bookingId=null; back='search'; loadPage('/profile');}">
@@ -86,29 +86,29 @@
         </div>
       </div>
       <div class="navigation">
-        <a class="search link" href="javascript:loadPage('/map')">
+        <a class="search link" href="#" onclick="loadPage('/map');">
           <span class="icon"></span>
           Search
         </a>
-        <a class="projects link" href="javascript:loadPage('/statuses');">
+        <a class="projects link" href="#" onclick="loadPage('/statuses');">
           <span class="icon"></span>
           Projects
           <div class="notification">0</div>
         </a>
-        <a class="messages link" href="javascript:loadMessages('/messages');">
+        <a class="messages link" href="#" onclick="loadMessages('/messages');">
           <span class="icon"></span>
           Messages
           <div class="notification">0</div>
         </a>
-        <a class="favorites link" href="javascript:loadPage('/favorites');">
+        <a class="favorites link" href="#" onclick="loadPage('/favorites');">
           <span class="icon"></span>
           Favorites
         </a>
-        <a class="stats link" href="javascript:loadPage('/stats');">
+        <a class="stats link" href="#" onclick="loadPage('/stats');">
           <span class="icon"></span>
           Stats
         </a>
-        <a class="settings link" href="javascript:loadPage('/settings');">
+        <a class="settings link" href="#" onclick="loadPage('/settings');">
           <span class="icon"></span>
           Settings
         </a>

@@ -2,6 +2,9 @@ class BookingsController < ApplicationController
   def create
   end
 
+  def hire
+  end
+
   def confirm
   end
 
