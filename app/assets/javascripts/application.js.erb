@@ -817,6 +817,8 @@ $(window).on('load', function () {
     });
 
     loadPage('home');
+
+    $('#preloader').hide();
 });
 
 function showEnterprise() {
@@ -863,25 +865,7 @@ function Response(response) {
 function loadPage(page) {
 
     if(currentUser === null) {
-        if(page != '/login' && page != 'home') {
-            var email = prompt('Sign up to LiquidTalent', 'Email');
-            if(email) {
-                $.ajax({
-                    url: '/presentation/subscribe',
-                    type: 'post',
-                    data: 'email=' + email,
-                    error: Response
-                }).done(function (response) {
-
-                            if (response.success !== '') {
-                                alert('Keep your eyes out for a LiquidTalent email explaining the approval process.');
-
-                            }
-                            else { alert(response.error); }
-
-                        });
-            }
-
+        if(showSignupPopup(page)) {
             return false;
         }
 
@@ -910,6 +894,32 @@ function loadPage(page) {
     }
     else {
         loadPageAjax(page)
+    }
+
+    return false;
+}
+
+function showSignupPopup(page) {
+    if(page != '/login' && page != 'home') {
+        var email = prompt('Sign up to LiquidTalent', 'Email');
+        if(email) {
+            $.ajax({
+                url: '/presentation/subscribe',
+                type: 'post',
+                data: 'email=' + email,
+                error: Response
+            }).done(function (response) {
+
+                        if (response.success !== '') {
+                            alert('Keep your eyes out for a LiquidTalent email explaining the approval process.');
+
+                        }
+                        else { alert(response.error); }
+
+                    });
+        }
+
+        return true;
     }
 
     return false;
@@ -1932,6 +1942,7 @@ function checkUnreadMessages() {
 }
 function loadMessages() {
     if (currentUser === null) {
+        showSignupPopup(null);
         return false;
     }
 
@@ -2040,7 +2051,7 @@ function loadChat(user) {
                     '</div>'
                 ) +
                 'Messages' +
-                '<a class="black-button" href="javascript:loadMessages();">Back</a>' +
+                    ((back == 'favorites')? '<a class="black-button" href="javascript:loadPage(\'/favorites\');">Back</a>' : '<a class="black-button" href="javascript:loadMessages();">Back</a>' )+
             '</div>' +
             '<div id="chat"></div>' +
             '<div id="chat-area">' +

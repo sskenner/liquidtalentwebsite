@@ -26,7 +26,6 @@
 
 <% if params[:code] %>
     <script>
-
         $(window).on('load', function () {
             var code = getURLParameter('code');
 
@@ -86,32 +85,32 @@
         </div>
       </div>
       <div class="navigation">
-        <a class="search link" href="#" onclick="loadPage('/map');">
+        <div class="search link" onclick="loadPage('/map'); return false;">
           <span class="icon"></span>
           Search
-        </a>
-        <a class="projects link" href="#" onclick="loadPage('/statuses');">
+        </div>
+        <div class="projects link" onclick="loadPage('/statuses');">
           <span class="icon"></span>
           Projects
           <div class="notification">0</div>
-        </a>
-        <a class="messages link" href="#" onclick="loadMessages('/messages');">
+        </div>
+        <div class="messages link" onclick="loadMessages('/messages');">
           <span class="icon"></span>
           Messages
           <div class="notification">0</div>
-        </a>
-        <a class="favorites link" href="#" onclick="loadPage('/favorites');">
+        </div>
+        <div class="favorites link" onclick="loadPage('/favorites');">
           <span class="icon"></span>
           Favorites
-        </a>
-        <a class="stats link" href="#" onclick="loadPage('/stats');">
+        </div>
+        <div class="stats link" onclick="loadPage('/stats');">
           <span class="icon"></span>
           Stats
-        </a>
-        <a class="settings link" href="#" onclick="loadPage('/settings');">
+        </div>
+        <div class="settings link" onclick="loadPage('/settings');">
           <span class="icon"></span>
           Settings
-        </a>
+        </div>
       </div>
       <a class="logo-small" href="/"></a>
     </div>
@@ -125,8 +124,8 @@
     <span class="marketplace-area">Sign up to LiquidTalent</span>
   </div>
   <div id="newsletter-sign-up-form">
-    <input type="text" id="register-form-email" class="field" value="Enter your email" onmousedown="javascript:if ($(this).prop('value') === 'Enter your email') { $(this).prop('value', ''); } else { $(this).prop('value', 'Enter your email'); }">
-    <a href="javascript:SubmitRegisterForm()" id="register-form-send" class="green-button">Submit</a>
+    <input type="text" id="register-form-email" class="field" value="Enter your email" onmousedown="if ($(this).prop('value') === 'Enter your email') { $(this).prop('value', ''); } else { $(this).prop('value', 'Enter your email'); }">
+    <div onclick="SubmitRegisterForm()" id="register-form-send" class="green-button">Submit</div>
   </div>
 </div>
 
@@ -186,10 +185,10 @@
 </div>
 
 <p class="navigation">
-  <a href="javascript:RevealPage('about');" class="link green-button">About
-  </a><a href="javascript:RevealPage('team');" class="link green-button">Team
-</a><a href="javascript:RevealPage('hiw');" class="link green-button hiw" style="display: none;">How it Works
-</a><a href="javascript:RevealPage('contact');" class="link green-button marketplace-area hidden">Contact</a>
+  <a href="#" onclick="RevealPage('about');" class="link green-button">About</a>
+  <a href="#" onclick="RevealPage('team');" class="link green-button">Team</a>
+  <a href="#" onclick="RevealPage('hiw');" class="link green-button hiw" style="display: none;">How it Works</a>
+  <a href="#" onclick="RevealPage('contact');" class="link green-button marketplace-area hidden">Contact</a>
 </p>
 
 <div class="page-segment t about" title="about">
@@ -639,7 +638,7 @@
         by
         taking a few minutes to read it, you will have a better understanding of what we do with the information you
         provide us and how we endeavor to keep it private and secure. To read our Privacy Policy click
-        <a href="javascript:$('#hidden-privacy').css('display', $('#hidden-privacy').css('display') === 'none' ? 'block' : 'none');">here</a>.
+        <a href="#" onclick="$('#hidden-privacy').css('display', $('#hidden-privacy').css('display') === 'none' ? 'block' : 'none');">here</a>.
       </p>
 
       <div id="hidden-privacy" style="display: none;">
@@ -819,7 +818,7 @@
         These terms and conditions govern your use of the LiquidTalent sites including LiquidTalent.com, the
         LiquidTalent mobile application, Facebook, Twitter, Instagram, Medium, and other website properties of the
         LiquidTalent that may be implemented from time to time. By using this website, you accept these terms and
-        conditions in full. To read our full Terms and Conditions, click <a href="javascript:$('#hidden-terms').css('display', $('#hidden-terms').css('display') === 'none' ? 'block' : 'none');">here</a>.
+        conditions in full. To read our full Terms and Conditions, click <a href="#" onclick="$('#hidden-terms').css('display', $('#hidden-terms').css('display') === 'none' ? 'block' : 'none');">here</a>.
       </p>
 
       <p id="hidden-terms" style="display: none;">
@@ -1056,7 +1055,7 @@
         <input type="text" class="email field" placeholder="Email">
       </div>
       <textarea class="message field" placeholder="Message"></textarea>
-      <a href="javascript:SubmitContactForm()" class="contact green-button">Contact</a>
+      <a href="#" onclick="SubmitContactForm()" class="contact green-button">Contact</a>
       <img src="<%= asset_path "main/loader.gif" %>" alt="contact" class="loader">
     </div>
     <p>
@@ -1081,10 +1080,10 @@
   </div>
 
   <p class="navigation">
-    <a href="javascript:RevealPage('about');" class="link green-button">About
-    </a><a href="javascript:RevealPage('team');" class="link green-button">Team
-  </a><a href="javascript:RevealPage('hiw');" class="link green-button hiw" style="display: none;">How it Works
-  </a><a href="javascript:RevealPage('contact');" class="link green-button marketplace-area hidden">Contact</a>
+    <a href="#" onclick="RevealPage('about');" class="link green-button">About</a>
+    <a href="#" onclick="RevealPage('team');" class="link green-button">Team</a>
+    <a href="#" onclick="RevealPage('hiw');" class="link green-button hiw" style="display: none;">How it Works</a>
+    <a href="#" onclick="RevealPage('contact');" class="link green-button marketplace-area hidden">Contact</a>
   </p>
 
   <div class="social">
@@ -1098,8 +1097,8 @@
 
   <div class="copy">
     &copy;2014 LiquidTalent -
-    <a href="javascript:RevealPage('privacy');" class="link" id="privacy-toggle">Privacy</a> |
-    <a href="javascript:RevealPage('terms');" class="link" id="terms-toggle">Terms</a>
+    <a href="#" onclick="RevealPage('privacy');" class="link" id="privacy-toggle">Privacy</a> |
+    <a href="#" onclick="RevealPage('terms');" class="link" id="terms-toggle">Terms</a>
   </div>
 
 </div>
