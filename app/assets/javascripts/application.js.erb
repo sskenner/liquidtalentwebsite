@@ -640,7 +640,7 @@ $(window).on('load', function () {
                     e.preventDefault();
 
                     document.cookie = 'redirect=settings';
-                    window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://www.liquidtalent.com';
+                    window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://liquidtalent.com/linkedin';
                 });
 
                 $('#email').attr('href', 'mailto:hello@liquidtalent.com?subject=LiquidTalent&body=' + currentUser.name + ' recommends LiquidTalent to monetize your craft and apply for high paying jobs.')
@@ -2604,6 +2604,31 @@ function loadHire() {
 }
 
 function submitBooking() {
+    if($('.title').val().length < 3) {
+        alert("Please, set project's title.");
+        return false;
+    }
+
+    if(!($('.budget').val() > 0)) {
+        alert("Please, set the corrent project's budget.");
+        return false;
+    }
+
+    if($('.due-date').val().length < 3) {
+        alert("Please, set project's due-date.");
+        return false;
+    }
+
+    if($('.zip').val().length < 4) {
+        alert("Please, set project's zip.");
+        return false;
+    }
+
+    if($('.description').val().length < 4) {
+        alert("Please, set project's description.");
+        return false;
+    }
+
     booking.title   = $('.title').val();
     booking.category   = $('.category').val();
     booking.category_id   = $('#category_id').val();

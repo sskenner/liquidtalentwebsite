@@ -68,9 +68,9 @@ input, textarea {
 ::-moz-placeholder { color: #000; }
 :-ms-input-placeholder { color: #000; }
 
-input:focus::-webkit-input-placeholder  {color:transparent;}
-input:focus::-moz-placeholder   {color:transparent;}
-input:-moz-placeholder   {color:transparent;}
+input:focus::-webkit-input-placeholder , textarea:focus::-webkit-input-placeholder  {color:transparent;}
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder   {color:transparent;}
+input:-moz-placeholder, textarea:-moz-placeholder   {color:transparent;}
 
 table {
     border-collapse: collapse;
@@ -151,11 +151,15 @@ a:hover { color: #000; }
 }
 
 .text-field.category, .text-field.due-date, .text-field.exp {
-    background: url(/assets/main/arrow-drop-down.png) 90% 50% no-repeat;
+    background: hsla(0, 0%, 100%, 0.3) url(/assets/main/arrow-drop-down.png) 90% 50% no-repeat;
 }
 
 .text-field.school, .text-field.search-field {
-    background: url(/assets/new/search/icon-search.png) 90% 50% no-repeat;
+    background: hsla(0, 0%, 100%, 0.3) url(/assets/new/search/icon-search.png) 90% 50% no-repeat;
+}
+
+.green-button, .black-button, .link {
+    cursor: pointer;
 }
 
 .linkedin-icon {
@@ -1188,7 +1192,6 @@ h3 {
 }
 #contact-form .field {
     height: 45px;
-    line-height: 40px;
     font-size: 16px;
     width: 100%;
     max-width: 280px;
@@ -1197,7 +1200,13 @@ h3 {
     vertical-align: top;
     display: inline-block;
 }
-#contact-form textarea.field { height: 100px; }
+#contact-form textarea.field {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 104px;
+    padding-top: 15px;
+}
 #contact-form .contact {
     display: block;
     width: 140px;
@@ -1807,7 +1816,7 @@ h3 {
 }
 
 #hire-form {
-    margin-top: 50px;
+    margin-top: 75px;
 }
 
 #hire-form .status {
@@ -1819,8 +1828,7 @@ h3 {
 #hire-form .text-field, #cc-form .text-field {
     width: 400px;
     height: 55px;
-    line-height: 58px;
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 10px;
 }
 #hire-form .login-button {
@@ -1850,9 +1858,18 @@ h3 {
     width: 100%;
 }
 
+#hire-form #categories {
+    width: 333px;
+}
+
 #hire-form .description {
     width: 100%;
     height: 150px;
+    padding: 20px 0;
+}
+
+.hire-confirm {
+    margin-top: 135px;
 }
 
 #cc-form, #booking-form {
@@ -2336,5 +2353,26 @@ a.share-btn {
 }
 
 #terms p {
+    margin-bottom: 15px;
+}
+
+
+/***********************************************************************************************************************
+/   FAQ
+/**********************************************************************************************************************/
+.title-faq {
+    margin-bottom: 0;
+}
+
+#faq {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#faq h2 {
+    font-weight: bold;
+}
+
+#faq p {
     margin-bottom: 15px;
 }
