@@ -2372,7 +2372,7 @@ function loadProfile() {
             $('#profile-portfolio a').attr('href', user.portfolio);
         }
         else {
-            $('#profile-portfolio').hide();
+            //$('#profile-portfolio').hide();
         }
 
 
@@ -2386,7 +2386,7 @@ function loadProfile() {
                 $('#profile-skills').html(user.skills);
             }
             else {
-                $('.profile-item.skills').hide();
+                //$('.profile-item.skills').hide();
             }
 
             if(user.summary != null && user.summary.length != '') {
@@ -2394,7 +2394,7 @@ function loadProfile() {
                 $('#profile-summary').html(user.summary);
             }
             else {
-                $('.profile-item.summary').hide();
+                //$('.profile-item.summary').hide();
             }
 
             if(user.experience != null && user.experience.length > 0) {
@@ -2402,7 +2402,7 @@ function loadProfile() {
                 $('#profile-experience').html(user.experience);
             }
             else {
-                $('.profile-item.experience').hide();
+                //$('.profile-item.experience').hide();
             }
 
             if(user.school_name != null && user.school_name.length > 0) {
@@ -2410,7 +2410,7 @@ function loadProfile() {
                 $('#profile-education').html(user.school_name);
             }
             else {
-                $('.profile-item.education').hide();
+                //$('.profile-item.education').hide();
             }
 
             if(bookingId != null) {
