@@ -27,6 +27,7 @@ LiquidTalent::Application.routes.draw do
     get '/update_demander' => 'user#update_demander'
     get '/update_provider' => 'user#update_provider'
     get '/terms' => 'user#terms'
+    get '/faq' => 'user#faq'
 
     #Search
     get '/search' => 'user#search'

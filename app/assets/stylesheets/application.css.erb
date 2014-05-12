@@ -138,6 +138,10 @@ a:hover { color: #000; }
     float:left;
 }
 
+#title.title-search {
+    padding-left: 220px;
+}
+
 .text-field {
     display: block;
     text-indent: 20px;
@@ -514,7 +518,7 @@ a:hover { color: #000; }
 
 #title-buttons .search-title-button {
     float: right;
-    margin: 10px 0px 0px 10px;
+    margin: 10px 0px 0px 0px;
 }
 
 #search-options {
@@ -522,7 +526,7 @@ a:hover { color: #000; }
     margin-bottom: 10px;
 }
 #search-options .search-field {
-    margin-left: 10px;
+    margin-left: 0px;
     height: 50px;
     text-indent: 10px;
     font-size: 18px;
@@ -533,8 +537,8 @@ a:hover { color: #000; }
 }
 .search-option {
     display: inline-block;
-    width: 176px;
-    margin-left: 3px;
+    width: 184px;
+    margin-left: 0px;
     vertical-align: top;
     z-index: 999999;
 }
@@ -550,9 +554,9 @@ a:hover { color: #000; }
     padding-right: 50px;
 }
 .search-option .option-container {
-    width: 234px;
+    width: 184px;
     position: absolute;
-    top: 55px;
+    top: 118px;
     left: 0px;
     background-color: hsla(0, 0%, 0%, 0.8);
     cursor: pointer;
@@ -572,13 +576,15 @@ a:hover { color: #000; }
 #sort-by {
     position: absolute;
     right: 0;
-    margin-left: 13px;
+    margin-left: 0px;
 }
 
 .search-option .sort-by {
+    width: 186px;
     height: 50px;
     vertical-align: top;
     font-size: 18px;
+    font-weight: 500;
     width: 170px;
     background: url(<%= asset_path 'new/search/sortby.png' %>);
     outline: 0;
@@ -597,7 +603,7 @@ a:hover { color: #000; }
 .search-option .sort-by.distance.active { background-position: 340px 0px; }
 
 .search-option .sort-by.default {
-    padding-top: 18px;
+    padding-top: 16px;
     padding-left: 12px;
     background: none;
     border: 1px solid #fff;
@@ -898,7 +904,7 @@ h1 {
 #newsletter-sign-up .field {
     padding: 0px 16px;
     width: 250px;
-    height: 54px;
+    height: 52px;
     font-size: 18px;
     margin: 0px 8px;
     display: inline-block;
@@ -1806,7 +1812,7 @@ h3 {
 
 #hire-form .status {
     display: block;
-    padding: 40px 30px;
+    padding: 60px 30px;
     font-size: 1.6em;
 }
 

@@ -640,7 +640,7 @@ $(window).on('load', function () {
                     e.preventDefault();
 
                     document.cookie = 'redirect=settings';
-                    window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://backend.liquidtalent.com:6789/linkedin';
+                    window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://www.liquidtalent.com';
                 });
 
                 $('#email').attr('href', 'mailto:hello@liquidtalent.com?subject=LiquidTalent&body=' + currentUser.name + ' recommends LiquidTalent to monetize your craft and apply for high paying jobs.')
@@ -758,6 +758,14 @@ $(window).on('load', function () {
         },
 
         'terms': {
+            'href': '/terms',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+            }
+        },
+
+        'faq': {
             'href': '/terms',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
