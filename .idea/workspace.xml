@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/presentation_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/presentation_controller.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist" afterPath="$PROJECT_DIR$/app/views/presentation/ipa_downloader.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -196,10 +196,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="presentation_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="presentation_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/presentation_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="20" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.2421959">
+            <state line="58" column="20" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#220#1447#0" expanded="false" />
               </folding>
@@ -216,10 +216,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ipa_downloader.plist" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist">
+      <file leaf-file-name="ipa_downloader.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="28" selection-start="407" selection-end="407" vertical-scroll-proportion="-8.125">
+            <state line="12" column="28" selection-start="378" selection-end="378" vertical-scroll-proportion="0.19889502">
               <folding />
             </state>
           </provider>
@@ -889,13 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="28" selection-start="407" selection-end="407" vertical-scroll-proportion="-8.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/presentation/app.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="85" selection-start="220" selection-end="220" vertical-scroll-proportion="-8.125">
@@ -919,10 +912,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/presentation_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="20" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.2421959">
+        <state line="58" column="20" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#220#1447#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="28" selection-start="378" selection-end="378" vertical-scroll-proportion="0.19889502">
+          <folding />
         </state>
       </provider>
     </entry>
