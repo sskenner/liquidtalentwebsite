@@ -57,9 +57,7 @@ class PresentationController < ApplicationController
   def app
   end
   def ipa_downloader
-    respond_to do |format|
-      format.xml
-    end
+    render :xml
   end
   def ipa
 

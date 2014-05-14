@@ -157,7 +157,7 @@
     <file path="/ss_parser.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399031339873" ignored="false" />
     <file path="$PROJECT_DIR$/../dnsniffer.com/script/ss_insert.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399046801151" ignored="false" />
     <file path="/ss_insert.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399046758648" ignored="false" />
-    <file path="/presentation_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400032087033" ignored="false" />
+    <file path="/presentation_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400032350774" ignored="false" />
     <file path="/hire.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459800926" ignored="false" />
     <file path="/accept.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459257799" ignored="false" />
     <file path="/favorites.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459889211" ignored="false" />
@@ -199,7 +199,7 @@
       <file leaf-file-name="presentation_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/presentation_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="29" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.20990312">
+            <state line="58" column="20" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.2421959">
               <folding>
                 <element signature="e#220#1447#0" expanded="false" />
               </folding>
@@ -919,7 +919,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/presentation_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="29" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.20990312">
+        <state line="58" column="20" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.2421959">
           <folding>
             <element signature="e#220#1447#0" expanded="false" />
           </folding>
