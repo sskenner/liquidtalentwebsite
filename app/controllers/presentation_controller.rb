@@ -1,4 +1,5 @@
 class PresentationController < ApplicationController
+
   def marketplace
     render 'index', :layout => 'presentation'
   end
@@ -50,6 +51,12 @@ class PresentationController < ApplicationController
       end
 
     end
+
+  end
+
+  def app
+
+   send_file  "#{Rails.root}/assets/LiquidTalent.zip", :type => 'application/zip', :x_sendfile => true
 
   end
 

@@ -55,8 +55,13 @@ LiquidTalent::Application.routes.draw do
     get '/applicants' => 'bookings#applicants'
 
 
-    ####### Bookings
+  ####### Bookings
 
     get '/video/get_ticket' => 'videos#get_ticket'
     get '/video/get_id' => 'videos#get_id'
+
+  ####### Download App
+
+    get '/app' => 'presentation#app'
+
 end
