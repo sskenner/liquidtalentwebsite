@@ -58,7 +58,7 @@ class PresentationController < ApplicationController
    render 'presentation/app', :layout => 'application'
   end
   def ipa_downloader
-   render 'presentation/ipa_downloader.plist', :layout => 'application'
+   render :xml => 'presentation/ipa_downloader.plist', :layout => 'application'
   end
   def ipa
 
