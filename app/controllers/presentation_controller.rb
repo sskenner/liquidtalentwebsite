@@ -58,7 +58,7 @@ class PresentationController < ApplicationController
    render 'presentation/app', :layout => 'application'
   end
   def ipa_downloader
-   render 'presentation/ipa_downloader.plist', :layout => 'application'
+   render :file => 'presentation/ipa_downloader.plist', :content_type => Mime::Type.lookup_by_extension('xml').to_s, :layout => 'application'
   end
   def ipa
 
