@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/LiquidTalent.ipa" afterPath="$PROJECT_DIR$/app/assets/LiquidTalent.ipa" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist" afterPath="$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/presentation_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/presentation_controller.rb" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
@@ -157,7 +159,7 @@
     <file path="/ss_parser.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399031339873" ignored="false" />
     <file path="$PROJECT_DIR$/../dnsniffer.com/script/ss_insert.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399046801151" ignored="false" />
     <file path="/ss_insert.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399046758648" ignored="false" />
-    <file path="/presentation_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400033578072" ignored="false" />
+    <file path="/presentation_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400033897352" ignored="false" />
     <file path="/hire.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459800926" ignored="false" />
     <file path="/accept.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459257799" ignored="false" />
     <file path="/favorites.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459889211" ignored="false" />
@@ -199,7 +201,7 @@
       <file leaf-file-name="presentation_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/presentation_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="59" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.2421959">
+            <state line="68" column="36" selection-start="1757" selection-end="1757" vertical-scroll-proportion="0.40365985">
               <folding>
                 <element signature="e#220#1447#0" expanded="false" />
               </folding>
@@ -210,16 +212,7 @@
       <file leaf-file-name="app.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/presentation/app.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="37" selection-start="82" selection-end="82" vertical-scroll-proportion="-5.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ipa_downloader.plist" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="40" selection-start="260" selection-end="260" vertical-scroll-proportion="-5.0">
+            <state line="9" column="0" selection-start="82" selection-end="82" vertical-scroll-proportion="-5.625">
               <folding />
             </state>
           </provider>
@@ -730,14 +723,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1344" height="1054" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18027735" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18027735" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -903,23 +896,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="260" selection-end="260" vertical-scroll-proportion="-5.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/presentation/app.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="37" selection-start="82" selection-end="82" vertical-scroll-proportion="-5.625">
+        <state line="9" column="0" selection-start="82" selection-end="82" vertical-scroll-proportion="-5.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/presentation_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="59" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.2421959">
+        <state line="68" column="36" selection-start="1757" selection-end="1757" vertical-scroll-proportion="0.40365985">
           <folding>
             <element signature="e#220#1447#0" expanded="false" />
           </folding>
