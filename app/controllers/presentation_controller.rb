@@ -54,10 +54,12 @@ class PresentationController < ApplicationController
 
   end
 
-  def app
+  def ipa
 
    send_file  "#{Rails.root}/app/assets/LiquidTalent.ipa", :type => 'application/octet-stream', :x_sendfile => true
 
+  end
+  def app
   end
 
 end
