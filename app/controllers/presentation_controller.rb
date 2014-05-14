@@ -57,6 +57,7 @@ class PresentationController < ApplicationController
   def app
   end
   def ipa_downloader
+   render 'presentation/ipa_downloader.plist'
   end
   def ipa
 
