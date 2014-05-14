@@ -55,10 +55,11 @@ class PresentationController < ApplicationController
   end
 
   def app
-   render 'app', :layout => 'application'
   end
   def ipa_downloader
-   render :xml, :layout => 'application'
+    respond_to do |format|
+      format.xml
+    end
   end
   def ipa
 
