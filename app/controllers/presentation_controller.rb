@@ -57,7 +57,6 @@ class PresentationController < ApplicationController
   def app
   end
   def ipa_downloader
-    render :xml
   end
   def ipa
 

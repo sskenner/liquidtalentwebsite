@@ -63,7 +63,7 @@ LiquidTalent::Application.routes.draw do
   ####### Download App
 
     get '/app' => 'presentation#app'
-    get '/ipa_downloader.xml' => 'presentation#ipa_downloader'
+    get '/ipa_downloader' => 'presentation#ipa_downloader'
     get '/ipa' => 'presentation#ipa'
 
 end

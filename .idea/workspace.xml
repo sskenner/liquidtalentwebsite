@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/presentation/ipa_downloader.xml" afterPath="$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/presentation/app.html.erb" afterPath="$PROJECT_DIR$/app/views/presentation/app.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/presentation_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/presentation_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
@@ -191,7 +193,7 @@
       <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="28" selection-start="1846" selection-end="1846" vertical-scroll-proportion="0.0">
+            <state line="65" column="24" selection-start="1842" selection-end="1842" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -200,7 +202,7 @@
       <file leaf-file-name="presentation_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/presentation_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="20" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0">
+            <state line="59" column="0" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#220#1447#0" expanded="false" />
               </folding>
@@ -211,14 +213,14 @@
       <file leaf-file-name="app.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/presentation/app.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="120" selection-start="255" selection-end="255" vertical-scroll-proportion="0.21546961">
+            <state line="13" column="116" selection-start="251" selection-end="251" vertical-scroll-proportion="0.21546961">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ipa_downloader.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.xml">
+      <file leaf-file-name="ipa_downloader.plist" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist">
           <provider selected="true" editor-type-id="text-editor">
             <state line="19" column="10" selection-start="564" selection-end="564" vertical-scroll-proportion="-11.875">
               <folding />
@@ -897,7 +899,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.xml">
+    <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="10" selection-start="564" selection-end="564" vertical-scroll-proportion="-11.875">
           <folding />
@@ -906,14 +908,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="28" selection-start="1846" selection-end="1846" vertical-scroll-proportion="0.0">
+        <state line="65" column="24" selection-start="1842" selection-end="1842" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/presentation_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="20" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0">
+        <state line="59" column="0" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#220#1447#0" expanded="false" />
           </folding>
@@ -922,7 +924,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/presentation/app.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="120" selection-start="255" selection-end="255" vertical-scroll-proportion="0.21546961">
+        <state line="13" column="116" selection-start="251" selection-end="251" vertical-scroll-proportion="0.21546961">
           <folding />
         </state>
       </provider>
