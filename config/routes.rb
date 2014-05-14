@@ -62,6 +62,6 @@ LiquidTalent::Application.routes.draw do
 
   ####### Download App
 
-    get '/app' => 'presentation#app'
+    match '/app' => 'presentation#app'
 
 end
