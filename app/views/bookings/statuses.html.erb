@@ -5,9 +5,9 @@
 
 <div id="hire">
   <div id="hire-form">
-    <a class="status" href="#" onclick="bookingStatus = 'current'; loadPage('/projects');">Current</a>
-    <a class="status" href="#" onclick="bookingStatus = 'pending'; loadPage('/projects');">Pending</a>
-    <a class="status" href="#" onclick="bookingStatus = 'completed'; loadPage('/projects');">Completed</a>
+    <a class="status" href="#" onclick="bookingStatus = 'current'; loadPage('/projects');">Current <span id="badge-current"></span></a>
+    <a class="status" href="#" onclick="bookingStatus = 'pending'; loadPage('/projects');">Pending <span id="badge-pending"></span></a>
+    <a class="status" href="#" onclick="bookingStatus = 'completed'; loadPage('/projects');">Completed <span id="badge-completed"></span></a>
 
     <a href="#" onclick="back = 'statuses'; providerId = null; loadPage('/create_project');" class="green-button signup-form-sp-button">Post</a>
   </div>

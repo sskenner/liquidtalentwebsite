@@ -483,6 +483,8 @@ $(window).on('load', function () {
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+
+                loadProjectBadges();
             }
         },
 
@@ -2724,6 +2726,61 @@ function confirmBooking() {
             });
 }
 
+function loadProjectBadges() {
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/bookings/list_all_bookings?' +
+                'token=' + currentUser.token +
+                '&user_id=' + currentUser.id,
+        error: Response
+    }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
+                if (data['status'] === 'failed') {
+                    alert(data['errors'][0]);
+                    $('#preloader').hide();
+                }
+                else {
+                    var user = null, userType = null;
+
+                    var stats = {current: 0, pending: 0, completed: 0};
+
+                    data.response.forEach(function(item) {
+                        bookings[item.booking.id] = item;
+
+                        if(!(item.booking.status == 'confirmed' || !(item.booking.status == 'accepted' || (item.booking.status == 'completed' && (item.demander.id == currentUser.id) ? (item.booking.date_reviewed_demander == null) : (item.booking.date_reviewed_provider == null))))) {
+                            stats['current']++;
+                        }
+
+                        else if( item.booking.status == 'confirmed' ) {
+                            stats['pending']++;
+                        }
+                        else if((item.booking.status == 'completed' && ((item.demander.id == currentUser.id) ? (item.booking.date_reviewed_demander != null) : (item.booking.date_reviewed_provider != null)))) {
+                            stats['completed']++;
+                        }
+                    });
+
+                    if(stats['current'] > 0) {
+                        $('#badge-current').show();
+                        $('#badge-current').html(stats['current']);
+                    }
+
+                    if(stats['pending'] > 0) {
+                        $('#badge-pending').show();
+                        $('#badge-pending').html(stats['pending']);
+                    }
+
+                    if(stats['completed'] > 0) {
+                        $('#badge-completed').show();
+                        $('#badge-completed').html(stats['completed']);
+                    }
+
+                    $('#preloader').hide();
+                }
+    });
+}
+
 function loadProjects() {
     if(currentUser == null) {
         showPlaceholder('Projects');
@@ -2750,7 +2807,6 @@ function loadProjects() {
                 bookings[item.booking.id] = item;
 
                 if(bookingStatus == 'current' && (item.booking.status == 'confirmed' || !(item.booking.status == 'accepted' || (item.booking.status == 'completed' && (item.demander.id == currentUser.id) ? (item.booking.date_reviewed_demander == null) : (item.booking.date_reviewed_provider == null))))) {
-                    console.log('Booking ID: ' + item.booking.id)
                     return true;
                 }
                 else if(bookingStatus == 'pending' && (item.booking.status != 'confirmed')) {
