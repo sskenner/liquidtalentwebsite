@@ -1444,8 +1444,9 @@ function show_user(user_id, callback) {
         url: 'http://backend.liquidtalent.com/user/show?user_id=' + user_id,
         error: Response
     }).done(function (data) {
-                return callback(data);
-            });
+        data = data[0] == '{' ? JSON.parse(data) : data;
+        return callback(data);
+    });
 }
 
 function linkedin_connect(access_token) {
