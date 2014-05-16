@@ -38,6 +38,8 @@
                     console.log(error);
                 }
             }).done(function (data) {
+                        data = data[0] == '{' ? JSON.parse(data) : data;
+
                         var access_token = data['access_token'];
 
                         if (getURLParameter('state') == 0 || getURLParameter('state') == '0') {

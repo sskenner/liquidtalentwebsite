@@ -300,6 +300,8 @@ $(window).on('load', function () {
                         alert("Problem with connecting to the server");
                     }
                 }).done(function (data) {
+                            data = data[0] == '{' ? JSON.parse(data) : data;
+
                             data['response']['categories'].forEach(function (item) {
                                 $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
 
@@ -354,6 +356,8 @@ $(window).on('load', function () {
                         console.log(error);
                     }
                 }).done(function (data) {
+                            data = data[0] == '{' ? JSON.parse(data) : data;
+
                             data['response']['categories'].forEach(function (item) {
                                 $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
 
@@ -494,6 +498,8 @@ $(window).on('load', function () {
                         alert("Problem with connecting to the server");
                     }
                 }).done(function (data) {
+                            data = data[0] == '{' ? JSON.parse(data) : data;
+
                             data['response']['categories'].forEach(function (item) {
                                 $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
 
@@ -669,6 +675,8 @@ $(window).on('load', function () {
                         alert("Problem with connecting to the server");
                     }
                 }).done(function (data) {
+                            data = data[0] == '{' ? JSON.parse(data) : data;
+
                             data['response']['categories'].forEach(function (item) {
                                 $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
 
@@ -714,6 +722,8 @@ $(window).on('load', function () {
                         alert("Problem with connecting to the server");
                     }
                 }).done(function (data) {
+                    data = data[0] == '{' ? JSON.parse(data) : data;
+
                     data['response']['categories'].forEach(function (item) {
                         $('#categories').append('<div onclick="setCategory(' + item['id'] + ', \'' + item['name'] + '\');">' + item['name'] + '</div>')
 
@@ -908,7 +918,7 @@ function loadPage(page) {
 }
 
 function showSignupPopup(page) {
-    if(page != '/login' && page != 'home') {
+    if(page != '/login' && page != '/signup' && page != 'home') {
         var email = prompt('Sign up to LiquidTalent', 'Email');
         if(email) {
             $.ajax({
@@ -916,13 +926,14 @@ function showSignupPopup(page) {
                 type: 'post',
                 data: 'email=' + email,
                 error: Response
-            }).done(function (response) {
+            }).done(function (data) {
+                        data = data[0] == '{' ? JSON.parse(data) : data;
 
-                        if (response.success !== '') {
+                        if (data.success !== '') {
                             alert('Keep your eyes out for a LiquidTalent email explaining the approval process.');
 
                         }
-                        else { alert(response.error); }
+                        else { alert(data.error); }
 
                     });
         }
@@ -1006,14 +1017,16 @@ function SubmitContactForm() {
 
         loaders.toggle('contact', 0);
 
-    }).done(function (response) {
-        if (response.success !== '') {
+    }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
+        if (data.success !== '') {
             $('#contact-form .name').val('');
             $('#contact-form .email').val('');
             $('#contact-form .message').val('');
 
         }
-        else { alert(response.error); }
+        else { alert(data.error); }
     });
 
 }
@@ -1121,6 +1134,7 @@ function login() {
         url: 'http://backend.liquidtalent.com' + sF.href,
         data: 'email=' + sF.email.val() + '&password=' + sF.password.val()
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
 
         if (data['status'] === 'failed') { alert(data['errors'][0]); }
         else {
@@ -1180,6 +1194,8 @@ function SubmitSignupForm(userType) {
         data: 'name=' + sF.fn.val() + ' ' + sF.ln.val() + '&email=' + sF.e.val() + '&zip=' + sF.z.val() + '&password=' + sF.p.val() + '&password_confirmation=' + sF.pc.val(),
         error: Response
     }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
                 if (data['status'] === 'failed') {
                     alert(data['errors'][0]);
                     $('#preloader').hide();
@@ -1200,6 +1216,8 @@ function SubmitSignupForm(userType) {
                             }(),
                             error: Response
                         }).done(function (avatar_data) {
+                                    avatar_data = avatar_data[0] == '{' ? JSON.parse(avatar_data) : avatar_data;
+
                                     if (avatar_data['status'] === 'failed') {
                                         alert(avatar_data['errors'][0]);
                                         $('#preloader').hide();
@@ -1245,6 +1263,8 @@ function submitDemander(linkedin) {
                 '&attr[category_id]=' + $('#category_id').val(),
         error: Response
     }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
                 if (data['status'] === 'failed') {
                     alert(data['errors'][0]);
                     $('#preloader').hide();
@@ -1289,6 +1309,8 @@ function SubmitSignupSPForm(linkedin) {
                 '&attr[is_provider]=1',
         error: Response
     }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
                 if (data['status'] === 'failed') {
                     alert(data['errors'][0]);
                     $('#preloader').hide();
@@ -1433,6 +1455,8 @@ function linkedin_connect(access_token) {
         url: 'http://backend.liquidtalent.com/user/linkedin_connect/?access_token=' + access_token,
         error: Response
     }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
                 if (data['response']['new_user']) {
                     if (confirm('Do you want to register as a Service Provider?')) {
                         loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
@@ -1456,6 +1480,8 @@ function linkedin_synchro(access_token, user_id) {
         url: 'http://backend.liquidtalent.com/user/linkedin_synchro/?access_token=' + access_token + '&user_id=' + user_id,
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
         currentUser = data['response'];
         alert('We have successfully updated your account with Linkedin data.');
 
@@ -1486,7 +1512,10 @@ function showUserInfo() {
         $.ajax({
             url: 'http://backend.liquidtalent.com/user/find_linkedin_connections',
             data: 'access_token=' + currentUser.token + '&user_id=' + currentUser.linkedin_token
-        }).done(function (data) { linkedInConnections = data.response; });
+        }).done(function (data) {
+                    data = data[0] == '{' ? JSON.parse(data) : data;
+                    linkedInConnections = data.response;
+        });
 
     }
 
@@ -1649,6 +1678,8 @@ function filterUsers(callback) {
               '&school_id=' + $('#school_id').val(),
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
         $('#content-preloader').hide();
 
                 users = data['response'];
@@ -1668,6 +1699,8 @@ function prepareFilter(filterType) {
         url: 'http://backend.liquidtalent.com/get_info',
         error: function (error) { Response(error); }
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
         global_info = data['response'];
 
         $('#industries').html('<div class="option" onclick="setCategory(null, \'\');filterUsers(' + filterType + ');">All Industries</div>');
@@ -1776,11 +1809,11 @@ function createFavorite(userID, button) {
             $.ajax({
                 url: 'http://backend.liquidtalent.com/favourite/create?token=' + currentUser.token + '&demander_id=' + currentUser.id + '&provider_id=' + userID,
                 error: Response
-            }).done(function (user) {
+            }).done(function (data) {
+                        data = data[0] == '{' ? JSON.parse(data) : data;
+                        if (data.status === 'ok') { favorites[data.provider_id] = data.id; }
 
-                        if (user.status === 'ok') { favorites[user.provider_id] = user.id; }
-
-                    });
+            });
 
         }
 
@@ -1799,9 +1832,9 @@ function destroyFavorite(userID, button) {
     $.ajax({
         url: 'http://backend.liquidtalent.com/favourite/destroy?token=' + currentUser.token + '&favourite_id=' + favorites[userID],
         error: Response
-    }).done(function (user) {
-
-        if (user.status === 'ok') { favorites[userID] = null; }
+    }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+        if (data.status === 'ok') { favorites[userID] = null; }
 
     });
 
@@ -1811,10 +1844,10 @@ function getFavorites() {
       $.ajax({
             url: 'http://backend.liquidtalent.com/favourites/list?token=' + currentUser.token + '&demander_id=' + currentUser.id,
             error: Response
-        }).done(function (users) {
-
+        }).done(function (data) {
+            data = data[0] == '{' ? JSON.parse(data) : data;
             favorites = {};
-            users.response.forEach(function (user) { favorites[user.provider.id] = user.favourite_id; });
+            data.response.forEach(function (user) { favorites[user.provider.id] = user.favourite_id; });
 
         });
 
@@ -1836,6 +1869,7 @@ function loadFavorites() {
                 '&limit=999',
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
 
         $('#content-preloader').hide();
 
@@ -1900,10 +1934,11 @@ function removeFavorite(provider_id) {
     $.ajax({
         url: 'http://backend.liquidtalent.com/favourite/destroy?token=' + currentUser.token + '&demander_id=' + currentUser.id + '&provider_id=' + provider_id,
         error: Response
-    }).done(function (user) {
+    }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
         $('#content-preloader').hide();
 
-        if (user.status === 'ok') {
+        if (data.status === 'ok') {
             $('#' + provider_id).parents('.list-item').remove();
         }
 
@@ -1919,6 +1954,7 @@ function checkUnreadMessages() {
     $.ajax({
         url: 'http://backend.liquidtalent.com/messages/list?user_id=' + currentUser['id']
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
 
         if (typeof (data['response']) !== 'undefined' &&
             typeof (data['response'][0]) !== 'undefined') {
@@ -2023,6 +2059,7 @@ function blockUser(user_id) {
         url: 'http://backend.liquidtalent.com/messages/block_user?user_id=' + currentUser.id + '&blocked_user_id=' + user_id,
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
 
         messages = $.grep(messages, function (value) {
 
@@ -2046,6 +2083,7 @@ function loadChat(user) {
         url: 'http://backend.liquidtalent.com/nda/show?user_id_1=' + currentUser.id + '&user_id_2=' + user[0],
         error: Response
     }).done(function (nda) {
+        nda = nda[0] == '{' ? JSON.parse(nda) : nda;
 
         nda = nda.response[0];
 
@@ -2074,6 +2112,7 @@ function loadChat(user) {
         url: 'http://backend.liquidtalent.com/messages/conversation?user_id_1=' + currentUser.id + '&user_id_2=' + user[0],
         error: Response
     }).done(function (chat) {
+        chat = chat[0] == '{' ? JSON.parse(chat) : chat;
 
         chat = chat.response;
 
@@ -2125,6 +2164,7 @@ function createChat (user_id) {
                     '&created_at=' + Math.floor(date / 1000),
             error: Response
         }).done(function (chat) {
+            chat = chat[0] == '{' ? JSON.parse(chat) : chat;
 
             if(chat.status === 'failed') { alert(errors[0]); }
             else {
@@ -2221,6 +2261,8 @@ function loadStats(term) {
         url: 'http://backend.liquidtalent.com/stats/show?user_id=' + currentUser.id + '&token=' + currentUser.token + '&timeframe=' + term,
         error: Response
     }).done(function (user) {
+        user = user[0] == '{' ? JSON.parse(user) : user;
+
         if (user.status === 'ok') {
             var total = user['response']['paid'] + user['response']['unpaid'];
 
@@ -2342,6 +2384,7 @@ function loadProfile() {
         url: 'http://backend.liquidtalent.com/user/show?user_id=' + profileId,
         error: Response
     }).done(function (user) {
+        user = user[0] == '{' ? JSON.parse(user) : user;
 
         user = user['response']['user'];
 
@@ -2432,6 +2475,8 @@ function hireApplicant(userId) {
             url: 'http://backend.liquidtalent.com/booking/hire_applicant?token=' + currentUser.token + '&booking_id=' + bookingId + '&applicant_id=' + userId,
             error: Response
         }).done(function (user) {
+            user = user[0] == '{' ? JSON.parse(user) : user;
+
             if (user.status === 'ok') {
                 alert('You have successfully hired this applicant.');
                 loadPage('/' + back);
@@ -2550,6 +2595,8 @@ function playVideo(video_url) {
         url: '/video',
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
         $('#background').append(data);
 
         /*
@@ -2586,6 +2633,8 @@ function loadHire() {
             url: 'http://backend.liquidtalent.com/user/show?user_id=' + providerId,
             error: Response
         }).done(function (user) {
+                    user = user[0] == '{' ? JSON.parse(user) : user;
+
                     $('#hire .avatar').show();
                     $('#hire-title').show();
 
@@ -2659,6 +2708,8 @@ function confirmBooking() {
                 '&ica_sent=0',
         error: Response
     }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
                 if (data['status'] == 'failed') {
                     alert(data['errors'][0]);
                     $('#preloader').hide();
@@ -2686,6 +2737,8 @@ function loadProjects() {
             '&user_id=' + currentUser.id,
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
         if (data['status'] === 'failed') {
             alert(data['errors'][0]);
         }
@@ -2800,6 +2853,8 @@ function loadApplicants() {
                 'booking_id=' + bookingId,
         error: Response
     }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
                 if (data['status'] === 'failed') {
                     alert(data['errors'][0]);
                 }
@@ -2926,6 +2981,8 @@ function rateBooking() {
                 '&review=' + $('#review').val(),
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
         if (data['status'] === 'failed') {
             alert(data['errors'][0]);
         }
@@ -2947,6 +3004,8 @@ function acceptBooking() {
                 '&booking_id=' + bookingId,
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
         if (data['status'] === 'failed') {
             alert(data['errors'][0]);
             $('#preloader').hide();
@@ -2966,6 +3025,8 @@ function rejectBooking() {
                 '&booking_id=' + bookingId,
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
         if (data['status'] === 'failed') {
             alert(data['errors'][0]);
             $('#preloader').hide();
@@ -2983,6 +3044,8 @@ function completeBooking(callback) {
                 '&booking_id=' + bookingId,
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
         if (data['status'] === 'failed') {
             alert(data['errors'][0]);
         }
@@ -3004,6 +3067,8 @@ function submitSettingsContactForm() {
         $('#preloader').hide();
 
         }).done(function (response) {
+            response = response[0] == '{' ? JSON.parse(response) : response;
+
             if (response.success !== '') { alert(response.success); }
             else { alert(response.error); }
 
@@ -3064,6 +3129,8 @@ function updateProviderData() {
                 ( ($('.password').val().length > 0) ? ('&attr[password]=' + $('.password').val()) : null ),
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
         if (data['status'] === 'failed') {
             alert(data['errors'][0]);
         }
@@ -3114,6 +3181,8 @@ function updateDemanderData() {
                 ( ($('.password').val().length > 0) ? ('&attr[password]=' + $('.password').val()) : null ),
         error: Response
     }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
                 if (data['status'] === 'failed') {
                     alert(data['errors'][0]);
                 }
@@ -3149,6 +3218,8 @@ function uploadAvatar(callback) {
             }(),
             error: Response
         }).done(function (avatar_data) {
+                    avatar_data = avatar_data[0] == '{' ? JSON.parse(avatar_data) : avatar_data;
+
                     if (avatar_data['status'] === 'failed') {
                         alert(avatar_data['errors'][0]);
                     }
@@ -3175,6 +3246,8 @@ function checkInviteCode(code, callback) {
         url: 'http://backend.liquidtalent.com/invite_code/check/' + code,
         error: Response
     }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
+
         if (data['status'] == 'failed') {
             alert('The invitation code is either invalid or out of date.');
             $('#preloader').hide();
