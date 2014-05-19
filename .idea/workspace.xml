@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/presentation/app.html.erb" afterPath="$PROJECT_DIR$/app/views/presentation/app.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/website.iml" afterPath="$PROJECT_DIR$/.idea/website.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -237,7 +235,7 @@
       <file leaf-file-name="app.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/presentation/app.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="129" selection-start="264" selection-end="264" vertical-scroll-proportion="0.21860987">
+            <state line="13" column="128" selection-start="248" selection-end="263" vertical-scroll-proportion="0.21860987">
               <folding />
             </state>
           </provider>
@@ -845,7 +843,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/presentation/app.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="129" selection-start="264" selection-end="264" vertical-scroll-proportion="0.21860987">
+        <state line="13" column="128" selection-start="248" selection-end="263" vertical-scroll-proportion="0.21860987">
           <folding />
         </state>
       </provider>
