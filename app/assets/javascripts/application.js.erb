@@ -380,14 +380,14 @@ $(window).on('load', function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
 
+                prepareFilter('listSearch');
+
                 if(users == null) {
                     filterUsers(listSearch);
                 }
                 else {
                     listSearch(users);
                 }
-
-                prepareFilter('listSearch');
             }
 
         },
@@ -405,12 +405,12 @@ $(window).on('load', function () {
                     return false;
                 }
 
+                prepareFilter('loadMap');
+
                 if (users == null) {
                     filterUsers(loadMap);
                 }
                 else { loadMap(users); }
-
-                prepareFilter('loadMap');
             }
 
         },
@@ -647,8 +647,10 @@ $(window).on('load', function () {
                 $('#linkedin-sync').click(function(e) {
                     e.preventDefault();
 
-                    document.cookie = 'redirect=settings';
-                    window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://liquidtalent.com/linkedin';
+                    if(confirm('LinkedIn Sync will sync your LiquidTalent profile with your latest LinkedIn profile information. Do you really want to proceed?')) {
+                        document.cookie = 'redirect=settings';
+                        window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://liquidtalent.com/linkedin';
+                    }
                 });
 
                 $('#email').attr('href', 'mailto:hello@liquidtalent.com?subject=LiquidTalent&body=' + currentUser.name + ' recommends LiquidTalent to monetize your craft and apply for high paying jobs.')
@@ -812,7 +814,7 @@ $(window).on('load', function () {
 
         show_user(getCookie('userId'), function(data) {
             currentUser = data['response']['user'];
-            currentUser.token = getCookie('userToken');
+            //currentUser.token = getCookie('userToken');
             createUser (currentUser, 'home');
 
             $('#preloader').hide();
@@ -1551,7 +1553,7 @@ function loadMap(providers) {
 
         'googleMap': new google.maps.Map(document.getElementById('map'), {
             'center': new google.maps.LatLng(40.5403, -73.5463),
-            'zoom': 8,
+            'zoom': 9,
             'mapTypeId': google.maps.MapTypeId.ROADMAP
         }),
 
@@ -1654,7 +1656,7 @@ function listSearch(providers) {
         if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
         else { $('#first-item .lt-drop').addClass(user.badge); }
 
-        $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+        $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '') + user.state);
         $('#first-item .description').html(user.description);
 
         $('#first-item .distance').html(user.hourly_rate);
@@ -1896,7 +1898,7 @@ function loadFavorites() {
 //            if (user.video_url === null) { $('#first-item .play').addClass('disabled'); }
 //            else { $('#first-item .play').removeClass('disabled'); }
 
-            $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+            $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '')  + user.state);
             $('#first-item .description').html(user.description);
 
             $('#first-item .distance').html(user.hourly_rate);
@@ -2169,7 +2171,7 @@ function createChat (user_id) {
         }).done(function (chat) {
             chat = chat[0] == '{' ? JSON.parse(chat) : chat;
 
-            if(chat.status === 'failed') { alert(errors[0]); }
+            if(chat.status === 'failed') { alert(chat['errors'][0]); }
             else {
 
                 time = date.toJSON().replace(/^.*T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$1');
@@ -2406,7 +2408,7 @@ function loadProfile() {
             'javascript:loadChat(\'' + user.id + ':' + user.name + '\');'
         );
 
-        $('#profile .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+        $('#profile .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '')  + user.state);
         $('#profile .description').html(user.description);
 
         if (typeof (favorites[user.id]) === 'number') { $('#profile .favorite').addClass('active'); }
@@ -2726,6 +2728,34 @@ function confirmBooking() {
             });
 }
 
+function deleteBooking(booking_id) {
+    if(!confirm('Do you really want to delete this project?')) {
+        return false;
+    }
+
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/booking/destroy?' +
+                'token=' + currentUser.token +
+                '&booking_id=' + booking_id,
+        error: Response
+    }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
+                if (data['status'] == 'failed') {
+                    alert(data['errors'][0]);
+                    $('#preloader').hide();
+                }
+                else {
+                    alert('The project has been successfully deleted');
+                    loadPage('/projects');
+                }
+
+
+            });
+}
+
 function loadProjectBadges() {
     $('#preloader').show();
 
@@ -2853,7 +2883,8 @@ function loadProjects() {
                         $('#first-project .status.applicants').attr('onclick', 'bookingId=' + item.booking.id + '; loadPage("/applicants");');
 
                         if(item.booking.status == 'confirmed') {
-                            //$('#first-project .status.pending').show();
+                            $('#first-project .status.delete').show();
+                            $('#first-project .status.delete').attr('onclick', 'deleteBooking(' + item.booking.id + ');');
                         }
                         else if(item.booking.status == 'in_progress' || item.booking.status == 'accepted') {
                             $('#first-project .status.complete').show();
@@ -2923,11 +2954,11 @@ function loadApplicants() {
 
                         if(item.booking.status != 'rejected') {
                             if(item.demander.id == currentUser.id) {
-                                user = item.provider;
+                                user = item.demander;
                                 userType = 'demander';
                             }
                             else {
-                                user = item.demander;
+                                user = item.provider;
                                 userType = 'provider'
                             }
 
@@ -2973,7 +3004,7 @@ function loadApplicants() {
                         if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
                         else { $('#first-item .lt-drop').addClass(user.badge); }
 
-                        $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ', ' + user.state);
+                        $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '')  + user.state);
                         $('#first-item .description').html(user.description);
 
                         $('#first-item .distance').html(user.hourly_rate);
