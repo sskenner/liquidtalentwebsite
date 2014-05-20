@@ -1091,19 +1091,19 @@ function showPlaceholder (page) {
     if (currentUser === null) {
         $('#background').html(
             '<div id="title" class="no-margin">' +
-                '<a class="black-button" href="javascript: window.location = \'/\';">Back</a>' +
+                '<a class="black-button" href="#" onclick="window.location = \'/\';">Back</a>' +
             '</div>' +
             '<div id="placeholder">' +
                 'Explore all of LiquidTalent.' +
-                '<a href="javascript: applyForm();" class="green-button">Sign up</a>' +
+                '<a href="#" onclick="applyForm();" class="green-button">Sign up</a>' +
             '</div>' +
             '<div id="newsletter-sign-up">' +
                 '<div id="newsletter-sign-up-text">' +
                     'Sign up to LiquidTalent' +
                 '</div>' +
                 '<div id="newsletter-sign-up-form">' +
-                    '<input type="text" id="register-form-email" class="field" value="Enter your email" onmousedown="javascript:if ($(this).prop(\'value\') === \'Enter your email\') { $(this).prop(\'value\', \'\'); } else { $(this).prop(\'value\', \'Enter your email\'); }">' +
-                    '<a href="javascript:SubmitRegisterForm()" id="register-form-send" class="green-button">Sign up</a>' +
+                    '<input type="text" id="register-form-email" class="field" value="Enter your email" onmousedown="if ($(this).prop(\'value\') === \'Enter your email\') { $(this).prop(\'value\', \'\'); } else { $(this).prop(\'value\', \'Enter your email\'); }">' +
+                    '<a href="#" onclick="SubmitRegisterForm()" id="register-form-send" class="green-button">Sign up</a>' +
                 '</div>' +
                 '</div>'
 
@@ -1115,7 +1115,7 @@ function showPlaceholder (page) {
 
             '<div id="placeholder">' +
                 'No ' + page + ' have been added here yet.' +
-                '<a href="javascript:loadPage(\'/map\')" class="green-button">Search</a>' +
+                '<a href="#" onclick="loadPage(\'/map\')" class="green-button">Search</a>' +
             '</div>'
 
         );
@@ -1979,8 +1979,8 @@ function retrieveFavorites(sortBy) {
 
                     $('#first-item .removeFavorite').attr('id', user['id']);
 
-                    $('#first-item .message').attr('onclick', 'back="favorites"; loadChat(\'' + user.id + ':' + user.name + '\');');
-                    $('#first-item .hire').attr('onclick', 'back="favorites"; providerId=' + user.id + '; loadPage("/hire");');
+                    $('#first-item .message').attr('onclick', 'back=\'favorites\'; loadChat(\'' + user.id + ':' + user.name + '\');');
+                    $('#first-item .hire').attr('onclick', 'back=\'favorites\'; providerId=' + user.id + '; loadPage("/hire");');
 
                     $('#favorites').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
 
@@ -2069,7 +2069,7 @@ function loadMessages() {
         $('#background').html(
             '<div id="title">' +
                 'Messages' +
-                '<a class="black-button" href="javascript:ToggleMessageDelete();">Edit</a>' +
+                '<a class="black-button" href="#" onclick="ToggleMessageDelete();">Edit</a>' +
             '</div>' +
             '<div id="messages"></div>'
         );
@@ -2089,8 +2089,8 @@ function loadMessages() {
 
 
             $('#messages').html($('#messages').html() +
-                '<div onclick="loadChat(\'' + messages[i].sender.id + ':' + messages[i].sender.name + '\');" class="message-box">' +
-                    '<a href="javascript:blockUser(' + messages[i].sender.id + ');" class="black-button t">x</a>' +
+                '<div onclick="back=\'messages\'; loadChat(\'' + messages[i].sender.id + ':' + messages[i].sender.name + '\');" class="message-box">' +
+                    '<a href="#" onclick="blockUser(' + messages[i].sender.id + ');" class="black-button t">x</a>' +
                     '<div class="avatar-container">' +
                         '<img src="' + ((messages[i].sender.avatar_url !== null) ? messages[i].sender.avatar_url : '<%= asset_path "new/main/avatar.png" %>') + '" alt="User Avatar">' +
                     '</div>' +
@@ -2160,22 +2160,27 @@ function loadChat(user) {
 
         nda = nda.response[0];
 
+        if (back == 'favorites') backBtn = '<a class="black-button" href="#" onclick="loadPage(\'/favorites\');">Back</a>';
+        else if (back == 'profile') backBtn ='<a class="black-button" href="#" onclick="loadPage(\'/profile\');">Back</a>';
+        else if (back == 'messages') backBtn ='<a class="black-button" href="#" onclick="loadMessages();">Back</a>';
+        else backBtn ='<a class="black-button" href="#" onclick="loadMessages();">Back</a>';
+
         $('#background').html(
             '<div id="title">' +
                 ((nda === undefined) ?
-                    '<a href="javascript:sendNDA(' + user[0] + ', \'' + user[1] + '\');" class="green-button">Send NDA</a>'
+                    '<a href="#" onclick="sendNDA(' + user[0] + ', \'' + user[1] + '\');" class="green-button">Send NDA</a>'
                     :
                     '<div id="nda-sent">' +
                         '<b>NDA</b> sent on ' + new Date(parseInt(nda.created_at, 10)).toJSON().replace(/\d{2}(\d{2})-(\d{2})-(\d{2})T.*$/, '$2/$3/$1') +
                     '</div>'
                 ) +
-                'Messages' +
-                    ((back == 'favorites')? '<a class="black-button" href="javascript:loadPage(\'/favorites\');">Back</a>' : '<a class="black-button" href="javascript:loadMessages();">Back</a>' )+
+                'Messages' +  backBtn +
+
             '</div>' +
             '<div id="chat"></div>' +
             '<div id="chat-area">' +
                 '<textarea placeholder="Message" id="chat-box">' +
-                '</textarea><a href="javascript:createChat(' + user[0] + ');" class="green-button" id="post-chat">Send</a>' +
+                '</textarea><a href="#" onclick="createChat(' + user[0] + ');" class="green-button" id="post-chat">Send</a>' +
             '</div>'
         );
 
@@ -2204,8 +2209,8 @@ function loadChat(user) {
 
             $('#chat').prepend(
 
-                '<div class="message-box">' +
-                    '<div class="avatar-container">' +
+                '<div class="message-box" style="cursor: default;">' +
+                    '<div class="avatar-container" onclick="profileId=' + chat[i].sender.id + '; bookingId=null; back=\'messages\'; loadPage(\'/profile\');"  style="cursor: pointer;">' +
                         '<img src="' + ((chat[i].sender.avatar_url !== null) ? chat[i].sender.avatar_url : '<%= asset_path "new/main/avatar.png" %>') + '" alt="User Avatar">' +
                     '</div>' +
                     '<div class="name">' +
@@ -2473,7 +2478,7 @@ function loadProfile() {
         $('#profile .play').attr('onclick', "playVideo(" + (user.video_id ? ("'" + user.video_id + "'") : null) + ");");
 
         $('#profile-buttons .message-button-profile').attr('onclick',
-            'javascript:loadChat(\'' + user.id + ':' + user.name + '\');'
+            'back=\'profile\'; loadChat(\'' + user.id + ':' + user.name + '\');'
         );
 
         $('#profile .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '')  + user.state);
