@@ -141,6 +141,21 @@ a:hover { color: #000; }
     padding-left: 220px;
 }
 
+#title.favorites .black-button {
+    float: left;
+    margin-left: 10px;
+    margin-right: -200px;
+}
+
+#title.favorites .search-option {
+    margin-top: 5px;
+}
+
+#title.favorites .sort-by.default {
+    padding-left: 0;
+    line-height: 1;
+}
+
 .text-field {
     display: block;
     text-indent: 20px;
@@ -606,6 +621,7 @@ a:hover { color: #000; }
 .search-option .sort-by.distance.active { background-position: 340px 0px; }
 
 .search-option .sort-by.default {
+    position: relative;
     padding-top: 16px;
     padding-left: 12px;
     background: none;
@@ -2073,6 +2089,44 @@ h3 {
     box-sizing: border-box;
 }
 
+#reviews {
+    display: none;
+    padding: 0 15px;
+    padding-bottom: 15px;
+    background-color: hsla(0, 0%, 100%, 0.3);
+}
+
+#reviews .reviews-title {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #239060;
+    margin-bottom: 15px;
+}
+
+.review {
+    margin-bottom: 25px;
+}
+
+.review .name {
+    font-size: 1.3em;
+    margin-bottom: 8px;
+}
+
+.review .review-text {
+    margin-bottom: 8px;
+}
+
+.review .review-stars {
+    float: left;
+    width: 288px;
+    height: 52px;
+    background: url(<%= asset_path 'new/projects/stars.png' %>);
+}
+
+.review .due-date {
+    float: right;
+    margin-top: 25px;
+}
 
 /***********************************************************************************************************************
 /   Settings

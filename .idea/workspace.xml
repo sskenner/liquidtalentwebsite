@@ -2,20 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/presentation/app.html.erb" afterPath="$PROJECT_DIR$/app/views/presentation/app.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/favorites.html.erb" afterPath="$PROJECT_DIR$/app/views/user/favorites.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/profile.html.erb" afterPath="$PROJECT_DIR$/app/views/user/profile.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/website.iml" afterPath="$PROJECT_DIR$/.idea/website.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400511261606" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400511966145" ignored="false" />
+    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400594934788" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400594885234" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396249855091" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
     <file path="/routes.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400035597532" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396257785192" ignored="false" />
     <file path="/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398410987424" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400509725097" ignored="false" />
-    <file path="/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400509706792" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400595653173" ignored="false" />
+    <file path="/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400595636783" ignored="false" />
     <file path="/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399446779966" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399446963435" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/user_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396263284220" ignored="false" />
@@ -40,7 +45,7 @@
     <file path="/checks.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396428420330" ignored="false" />
     <file path="$PROJECT_DIR$/../reltrek.com/app/controllers/checks_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396440520616" ignored="false" />
     <file path="/checks_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396440519929" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/models/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400509647484" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/models/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400586468313" ignored="false" />
     <file path="/settings.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399460103306" ignored="false" />
     <file path="/_filter.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399896959910" ignored="false" />
     <file path="/map.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399899517020" ignored="false" />
@@ -87,7 +92,7 @@
     <file path="$PROJECT_DIR$/../followcheck.com/lib/Twitter.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033056368" ignored="false" />
     <file path="/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400542414343" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400576266045" ignored="false" />
     <file path="/a.dummy" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400257617696" ignored="false" />
     <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400509647484" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/landing.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484343602" ignored="false" />
@@ -113,8 +118,8 @@
     <file path="$PROJECT_DIR$/../bloodandtreasure/app/assets/stylesheets/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397490267271" ignored="false" />
     <file path="$PROJECT_DIR$/../bloodandtreasure/blog/wp-content/themes/bloodandtreasure/header.php" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397490267271" ignored="false" />
     <file path="$PROJECT_DIR$/../bloodandtreasure/app/views/pages/contact.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397490267271" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/models/booking.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399381008123" ignored="false" />
-    <file path="/booking.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399381007740" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/models/booking.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400594372097" ignored="false" />
+    <file path="/booking.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400594372097" ignored="false" />
     <file path="/login.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459934974" ignored="false" />
     <file path="/create.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459776384" ignored="false" />
     <file path="/index.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400511247422" ignored="false" />
@@ -160,8 +165,8 @@
     <file path="/presentation_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400034689908" ignored="false" />
     <file path="/hire.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459800926" ignored="false" />
     <file path="/accept.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459257799" ignored="false" />
-    <file path="/favorites.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459889211" ignored="false" />
-    <file path="/profile.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459999965" ignored="false" />
+    <file path="/favorites.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400579186632" ignored="false" />
+    <file path="/profile.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400592853010" ignored="false" />
     <file path="/signup.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399460158907" ignored="false" />
     <file path="/stats.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399460231629" ignored="false" />
     <file path="/user_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399900976164" ignored="false" />
@@ -190,7 +195,16 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2886" column="72" selection-start="97260" selection-end="97260" vertical-scroll-proportion="-0.625">
+            <state line="2541" column="63" selection-start="86214" selection-end="86214" vertical-scroll-proportion="-3.0735295">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="28" selection-start="1855" selection-end="1867" vertical-scroll-proportion="0.83827263">
               <folding />
             </state>
           </provider>
@@ -199,43 +213,23 @@
       <file leaf-file-name="application.css.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1974" column="20" selection-start="45616" selection-end="45616" vertical-scroll-proportion="-0.625">
+            <state line="2094" column="11" selection-start="48001" selection-end="48001" vertical-scroll-proportion="-9.612245">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ipa_downloader.plist" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="80" selection-start="391" selection-end="410" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
+      <file leaf-file-name="stars.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/images/new/projects/stars.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="40" selection-start="821" selection-end="821" vertical-scroll-proportion="-18.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="35" selection-start="69" selection-end="69" vertical-scroll-proportion="8.125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/presentation/app.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="128" selection-start="248" selection-end="263" vertical-scroll-proportion="0.21860987">
+            <state line="5" column="0" selection-start="113" selection-end="1342" vertical-scroll-proportion="-3.125">
               <folding />
             </state>
           </provider>
@@ -259,8 +253,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/user/map.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/search.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/user_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/user/settings.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/faq.html.erb" />
@@ -271,17 +263,19 @@
         <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/views/bookings/statuses.html.erb" />
         <option value="$PROJECT_DIR$/app/views/bookings/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
         <option value="$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist" />
         <option value="$PROJECT_DIR$/app/views/presentation/app.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/favorites.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/profile.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1342" />
-    <option name="height" value="1054" />
+    <option name="width" value="1390" />
+    <option name="height" value="1330" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -309,33 +303,53 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="liquidtalentwebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="liquidtalentwebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="liquidtalentwebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="liquidtalentwebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -349,11 +363,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="liquidtalentwebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="liquidtalentwebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -365,17 +379,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="presentation" />
+              <option name="myItemId" value="bookings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="liquidtalentwebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="liquidtalentwebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -385,11 +399,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="liquidtalentwebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="liquidtalentwebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -401,8 +415,88 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -413,7 +507,34 @@
   </component>
   <component name="PublishConfig">
     <servers>
-      <server id="d1b0eb5a-5fd9-42de-99b5-b1517f9f62f5">
+      <server id="0926c948-3912-44a2-993e-de19c6f2975d">
+        <serverdata />
+      </server>
+      <server id="132eed31-e1cc-4b61-a762-ae2052b48a91">
+        <serverdata />
+      </server>
+      <server id="2206a832-d560-461b-bfed-a1ff17131572">
+        <serverdata />
+      </server>
+      <server id="31af5306-6c0b-4ef4-9771-59c00627aec9">
+        <serverdata />
+      </server>
+      <server id="80034d86-4e23-4496-be65-909f496b0402">
+        <serverdata />
+      </server>
+      <server id="932550f8-238b-47df-8951-085adbfa2b53">
+        <serverdata />
+      </server>
+      <server id="a93f821e-9ffb-4bdb-b922-8f922235b8fb">
+        <serverdata />
+      </server>
+      <server id="c42c2915-bee0-400c-ae52-fa2105695c8f">
+        <serverdata />
+      </server>
+      <server id="cdbecd83-df12-4dd3-9c23-f5c2a5c8a63d">
+        <serverdata />
+      </server>
+      <server id="d022c88c-4521-4b3c-a474-29907b7f83c4">
         <serverdata />
       </server>
     </servers>
@@ -669,7 +790,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1342" height="1054" extended-state="0" />
+    <frame x="0" y="22" width="1390" height="1330" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -677,7 +798,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20987654" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20535715" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -754,31 +875,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/user/settings.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="37" selection-start="531" selection-end="531" vertical-scroll-proportion="0.3480663" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bookings/confirm.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="34" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.51233184" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/presentation/subscribe.json.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -806,34 +902,6 @@
         <state line="9" column="129" selection-start="553" selection-end="553" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2886" column="72" selection-start="97260" selection-end="97260" vertical-scroll-proportion="-0.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1974" column="20" selection-start="45616" selection-end="45616" vertical-scroll-proportion="-0.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="40" selection-start="821" selection-end="821" vertical-scroll-proportion="-18.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="35" selection-start="69" selection-end="69" vertical-scroll-proportion="8.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="80" selection-start="391" selection-end="410" vertical-scroll-proportion="0.0">
@@ -843,7 +911,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/presentation/app.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="128" selection-start="248" selection-end="263" vertical-scroll-proportion="0.21860987">
+        <state line="18" column="17" selection-start="420" selection-end="420" vertical-scroll-proportion="-11.25">
+          <folding>
+            <marker date="1400576068000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1400576068000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1400576068000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1400576068000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="35" selection-start="69" selection-end="69" vertical-scroll-proportion="-0.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/_filter.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="1202" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/favorites.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="9" selection-start="598" selection-end="608" vertical-scroll-proportion="-8.125">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/profile/icons.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/projects/stars.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="113" selection-end="1342" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2541" column="63" selection-start="86214" selection-end="86214" vertical-scroll-proportion="-3.0735295">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2094" column="11" selection-start="48001" selection-end="48001" vertical-scroll-proportion="-9.612245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="28" selection-start="1855" selection-end="1867" vertical-scroll-proportion="0.83827263">
           <folding />
         </state>
       </provider>

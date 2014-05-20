@@ -1866,6 +1866,36 @@ function loadFavorites() {
 
     $('#content-preloader').show();
 
+    $($('.sort-by')[0]).parent().mouseenter(function () {
+        $('.sort-by:not(.default)').each(function (i, e) { $(e).css('display', 'block'); });
+    });
+    $($('.sort-by')[0]).parent().mouseleave(function () {
+        $('.sort-by').each(function (i, e) { $(e).removeAttr('style'); });
+    });
+    $('.sort-by').each(function (i, e) {
+
+        $(e).mouseup(function () {
+
+            $('.sort-by').each(function (i, e) { $(e).removeClass('active'); $(e).html(''); });
+            $(this).parent().prepend($(this));
+            $(this).addClass('active');
+
+            $('.sort-by.default').hide();
+
+            if ($('#list-items')) { $('#content-preloader').show(); retrieveFavorites(this.title); }
+
+        });
+
+    });
+
+    retrieveFavorites('cost');
+
+    return false;
+}
+
+function retrieveFavorites(sortBy) {
+    $('.list-item:not(#first-item)').remove();
+
     $.ajax({
         url: 'http://backend.liquidtalent.com/favourites/list',
         data: 'demander_id=' + currentUser['id'] +
@@ -1874,65 +1904,103 @@ function loadFavorites() {
                 '&limit=999',
         error: Response
     }).done(function (data) {
-        data = data[0] == '{' ? JSON.parse(data) : data;
+                data = data[0] == '{' ? JSON.parse(data) : data;
 
-        $('#content-preloader').hide();
+                users = [];
+                data['response'].forEach(function (item) {
+                    users.push(item['provider'])
+                });
 
-        data['response'].forEach(function (item) {
+                $('#content-preloader').hide();
 
-            user = item['provider'];
+                if (sortBy === 'cost') {
+                    users.sort(function(a, b) {
+                        a['hourly_rate'] = (a['hourly_rate'] == null) ? '' : a['hourly_rate'];
+                        b['hourly_rate'] = (b['hourly_rate'] == null) ? '' : b['hourly_rate'];
 
-            user.hourly_rate = calculateCost(user.hourly_rate);
-            user.state = checkState(user.state);
+                        return a['hourly_rate'].length - b['hourly_rate'].length;
+                    });
 
-            user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
+                    users = users.reverse();
+                }
+                else if (sortBy === 'experience') {
+                    users.sort(function(a, b) {
+                        return a['years_in_industry'] - b['years_in_industry'];
+                    });
 
-            $('#first-item .avatar').attr('src', user.avatar_url);
+                    users = users.reverse();
+                }
+                else if (sortBy == 'distance') {
+                    getCurrentLocation(function(loc) {
+                        if(loc) {
+                            for(var i = 0; i < users.length; i++) {
+                                if(users[i]['latitude'] == null | users[i]['longitude'] == null) {
+                                    users[i].distance = 99999999;
+                                }
+                                else {
+                                    users[i].distance = computeDistance(loc.lat, loc.lng, users[i]['latitude'], users[i]['longitude']);
+                                }
+                            }
 
-            $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
-            $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
+                            users.sort(function(a, b) {
+                                return a.distance - b.distance;
+                            });
+                        }
+                    });
+                }
 
-            if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
-            else { $('#first-item .lt-drop').addClass(user.badge); }
+                users.forEach(function (item) {
+                    user = item;
+
+                    user.hourly_rate = calculateCost(user.hourly_rate);
+                    user.state = checkState(user.state);
+
+                    user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
+
+                    $('#first-item .avatar').attr('src', user.avatar_url);
+
+                    $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
+                    $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; back="favorites"; loadPage("/profile");');
+
+                    if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+                    else { $('#first-item .lt-drop').addClass(user.badge); }
 
 //            if (user.video_url === null) { $('#first-item .play').addClass('disabled'); }
 //            else { $('#first-item .play').removeClass('disabled'); }
 
-            $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '')  + user.state);
-            $('#first-item .description').html(user.description);
+                    $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '')  + user.state);
+                    $('#first-item .description').html(user.description);
 
-            $('#first-item .distance').html(user.hourly_rate);
+                    $('#first-item .distance').html(user.hourly_rate);
 
-            if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite').addClass('active'); }
-            else { $('#first-item .favorite').removeClass('active'); }
-            $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
+                    if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite').addClass('active'); }
+                    else { $('#first-item .favorite').removeClass('active'); }
+                    $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
-            $('#first-item .removeFavorite').attr('id', item['provider']['id']);
+                    $('#first-item .removeFavorite').attr('id', user['id']);
 
-            $('#first-item .message').attr('onclick', 'back="favorites"; loadChat(\'' + user.id + ':' + user.name + '\');');
-            $('#first-item .hire').attr('onclick', 'back="favorites"; providerId=' + user.id + '; loadPage("/hire");');
+                    $('#first-item .message').attr('onclick', 'back="favorites"; loadChat(\'' + user.id + ':' + user.name + '\');');
+                    $('#first-item .hire').attr('onclick', 'back="favorites"; providerId=' + user.id + '; loadPage("/hire");');
 
-            $('#favorites').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
+                    $('#favorites').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
 
-        });
+                });
 
-        $('.list-item .removeFavorite').on('click', function() {
+                $('.list-item .removeFavorite').on('click', function() {
 
-            removeFavorite($(this).prop('id'));
+                    removeFavorite($(this).prop('id'));
 
-            $('.removeFavorite').each(function (i, e) {
+                    $('.removeFavorite').each(function (i, e) {
 
-                $(e).css('display', ($(e).css('display') === 'block' ? 'none' : 'block'));
+                        $(e).css('display', ($(e).css('display') === 'block' ? 'none' : 'block'));
+
+                    });
+
+                });
 
             });
-
-        });
-
-    });
-
-    return false;
-
 }
+
 function removeFavorite(provider_id) {
     $('#content-preloader').show();
 
@@ -2388,10 +2456,10 @@ function loadProfile() {
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/show?user_id=' + profileId,
         error: Response
-    }).done(function (user) {
-        user = user[0] == '{' ? JSON.parse(user) : user;
+    }).done(function (data) {
+        data = data[0] == '{' ? JSON.parse(data) : data;
 
-        user = user['response']['user'];
+        user = data['response']['user'];
 
         $('#content-preloader').hide();
 
@@ -2417,7 +2485,7 @@ function loadProfile() {
 
         if(user.portfolio) {
             $('#profile-portfolio').show();
-            $('#profile-portfolio a').attr('href', user.portfolio);
+            $('#profile-portfolio a').attr('href', ((user.portfolio.indexOf('http://') > -1) ? user.portfolio : 'http://' +  user.portfolio));
         }
         else {
             //$('#profile-portfolio').hide();
@@ -2425,7 +2493,6 @@ function loadProfile() {
 
 
         if(user.is_provider) {
-
             $('#profile-provider').show();
             $('#profile-demander').hide();
 
@@ -2467,6 +2534,65 @@ function loadProfile() {
             else {
                 $('.hire-button-profile').attr('onclick', 'back="profile"; providerId=' + user.id + '; loadPage("/hire");');
             }
+
+
+            //  Reviews
+            if(data['response']['reviews'].length > 0) {
+                $('#reviews').show();
+            }
+
+            data['response']['reviews'].forEach(function(review) {
+                if((user.id == review['provider_id']) && review['date_reviewed_provider'] != null) {
+                    $('#first-review .name').html(review['demander']);
+                    $('#first-review .due-date').html(review['date_reviewed_provider']);
+                    $('#first-review .review-text').html(review['review_provider']);
+
+                    if(review['rate_provider'] < 0.5) {
+                        $('#first-review .review-stars').css('background-position', '0px 0px');
+                    }
+                    else if(review['rate_provider'] < 1.5) {
+                        $('#first-review .review-stars').css('background-position', '0px -52px');
+                    }
+                    else if(review['rate_provider'] < 2.5) {
+                        $('#first-review .review-stars').css('background-position', '0px -105px');
+                    }
+                    else if(review['rate_provider'] < 3.5) {
+                        $('#first-review .review-stars').css('background-position', '0px -157px');
+                    }
+                    else if(review['rate_provider'] < 4.5) {
+                        $('#first-review .review-stars').css('background-position', '0px -209px');
+                    }
+                    else if(review['rate_provider']>= 4.5) {
+                        $('#first-review .review-stars').css('background-position', '0px -261px');
+                    }
+                }
+                else if ((user.id == review['demander_id']) && review['date_reviewed_demander'] != null) {
+                    $('#first-review .name').html(review['provider']);
+                    $('#first-review .due-date').html(review['date_reviewed_demander']);
+                    $('#first-review .review-text').html(review['review_demander']);
+
+                    if(review['rate_demander'] < 0.5) {
+                        $('#first-review .review-stars').css('background-position', '0px 0px');
+                    }
+                    else if(review['rate_demander'] < 1.5) {
+                        $('#first-review .review-stars').css('background-position', '0px -52px');
+                    }
+                    else if(review['rate_demander'] < 2.5) {
+                        $('#first-review .review-stars').css('background-position', '0px -105px');
+                    }
+                    else if(review['rate_demander'] < 3.5) {
+                        $('#first-review .review-stars').css('background-position', '0px -157px');
+                    }
+                    else if(review['rate_demander'] < 4.5) {
+                        $('#first-review .review-stars').css('background-position', '0px -209px');
+                    }
+                    else if(review['rate_demander']>= 4.5) {
+                        $('#first-review .review-stars').css('background-position', '0px -261px');
+                    }
+                }
+
+                $('#reviews').append('<div class="review">' + $('#first-review').clone().html() + '</div>');
+            });
         }
 
     });
