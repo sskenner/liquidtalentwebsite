@@ -922,7 +922,7 @@ function loadPage(page) {
 }
 
 function showSignupPopup(page) {
-    if(page != '/login' && page != '/signup' && page != 'home') {
+    if(page != '/login' && page != '/signup' && page != 'home' && page != '/forgotten_password' && page != '/reset_password') {
         var email = prompt('Sign up to LiquidTalent', 'Email');
         if(email) {
             $.ajax({
@@ -1131,7 +1131,6 @@ var sF;
 /**********************************************************************************************************************/
 
 function login() {
-
     $('#preloader').show();
 
     $.ajax({
@@ -1153,6 +1152,7 @@ function login() {
     });
 
 }
+
 function logout() {
     $('#preloader').show();
 
@@ -1167,6 +1167,48 @@ function logout() {
 
         window.location = '/'
     });
+}
+
+function forgotten_password() {
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/forgotten_password',
+        data: 'email=' + $('.email').val()
+    }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
+                if (data['status'] === 'failed') {
+                    alert(data['errors'][0]);
+                }
+                else {
+                    alert('The link for changing password has been sent to your email');
+                }
+
+                $('#preloader').hide();
+            });
+
+}
+
+function reset_password() {
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/reset_password',
+        data: 'user_id=' + $('#user_id').val() + '&pswd_hash=' + $('#pswd_hash').val() + '&password=' + $('.password').val() + '&password_confirmation=' + $('.password_confirmation').val()
+    }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
+                if (data['status'] === 'failed') {
+                    alert(data['errors'][0]);
+                }
+                else {
+                    alert('Your password has been successfully updated.');
+                }
+
+                $('#preloader').hide();
+            });
+
 }
 
 /***********************************************************************************************************************
@@ -1280,7 +1322,7 @@ function submitDemander(linkedin) {
 
                     if(linkedin) {
                         document.cookie = 'redirect=signup_demander';
-                        window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://backend.liquidtalent.com:6789/linkedin'
+                        window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://liquidtalent.com/linkedin'
                     }
                     else {
                         loadPage('/map');
@@ -1322,7 +1364,7 @@ function SubmitSignupSPForm(linkedin) {
                 else {
                     if(linkedin) {
                         document.cookie = 'redirect=signup_service_provider';
-                        window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://backend.liquidtalent.com:6789/linkedin'
+                        window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://liquidtalent.com/linkedin'
                     }
                     else {
                         loadPage('/map');
@@ -1571,7 +1613,7 @@ function loadMap(providers) {
     $('#content-preloader').hide();
 
     providers.forEach(function (user) {
-
+        console.log(user.id);
 
         /* Info Windows */
 
@@ -1586,7 +1628,7 @@ function loadMap(providers) {
         map.iW.title.attr('onclick', 'profileId=' + user.id + ';  bookingId=null;  back="map"; loadPage("/profile");');
         map.iW.title.html(
             '<p class="name">' + user.name + '</p>' +
-            ((user.hourly_rate===null) ? user.title.substr(0, 24) : calculateCost(user.hourly_rate))
+            ((user.hourly_rate===null) ? '' : calculateCost(user.hourly_rate))
         );
 
         map.iW.description.attr('onclick', 'profileId=' + user.id + '; bookingId=null;   back="map"; loadPage("/profile");');
@@ -2795,7 +2837,7 @@ function submitBooking() {
     }
 
     if(!($('.budget').val() > 0)) {
-        alert("Please, set the corrent project's budget.");
+        alert("Please, set the correct project's budget.");
         return false;
     }
 
@@ -2804,7 +2846,7 @@ function submitBooking() {
         return false;
     }
 
-    if($('.zip').val().length < 4) {
+    if($('.zip').length && $('.zip').val().length < 4) {
         alert("Please, set project's zip.");
         return false;
     }

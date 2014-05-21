@@ -1,6 +1,13 @@
 class UserController < ApplicationController
-
   def login
+  end
+
+  def forgotten_password
+    render 'forgotten_password', :layout => 'presentation'
+  end
+
+  def reset_password
+    render 'reset_password', :layout => 'presentation'
   end
 
   def signup

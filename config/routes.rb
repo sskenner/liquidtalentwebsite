@@ -18,6 +18,8 @@ LiquidTalent::Application.routes.draw do
 
     #Sign Up
     get '/login' => 'user#login'
+    get '/forgotten_password' => 'user#forgotten_password'
+    get '/reset_password/:user_id/:pswd_hash' => 'user#reset_password'
     get '/signup' => 'user#signup'
     get '/signup_demander' => 'user#signup_demander'
     get '/signup_service_provider' => 'user#signup_service_provider'
