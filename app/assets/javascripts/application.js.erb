@@ -1529,11 +1529,12 @@ function linkedin_connect(access_token) {
                 data = data[0] == '{' ? JSON.parse(data) : data;
 
                 if (data['response']['new_user']) {
+                    currentUser = data['response']['user'];
+
                     if (confirm('Do you want to register as a Service Provider?')) {
                         loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                     }
                     else {
-                        currentUser = data['response']['user'];
                         createUser(data, 'map');
                     }
 
