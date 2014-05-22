@@ -2160,7 +2160,7 @@ function loadMessages() {
             }
 
 
-            $('#messages').html($('#messages').html() +
+            $('#messages').prepend(
                 '<div onclick="back=\'messages\'; loadChat(\'' + messages[i].sender.id + ':' + messages[i].sender.name + '\');" class="message-box">' +
                     '<a href="#" onclick="blockUser(' + messages[i].sender.id + ');" class="black-button t">x</a>' +
                     '<div class="avatar-container">' +

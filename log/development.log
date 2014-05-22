@@ -35127,3 +35127,81 @@ Started GET "/assets/new/search/map-pin-black.png" for 127.0.0.1 at 2014-05-22 2
 
 
 Started GET "/assets/new/search/map-pin-green.png" for 127.0.0.1 at 2014-05-22 23:28:07 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-22 23:33:06 +0100
+Processing by PresentationController#marketplace as HTML
+  Rendered presentation/index.html.erb within layouts/presentation (0.9ms)
+Completed 200 OK in 167ms (Views: 164.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-22 23:33:07 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-22 23:33:07 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-22 23:33:07 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-22 23:33:07 +0100
+
+
+Started GET "/assets/new/presentation/logo-small-grey.png" for 127.0.0.1 at 2014-05-22 23:33:07 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-22 23:33:07 +0100
+Processing by PresentationController#marketplace as */*
+  Rendered presentation/index.html.erb within layouts/presentation (3.0ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/new/main/logo-text.png" for 127.0.0.1 at 2014-05-22 23:33:08 +0100
+
+
+Started GET "/assets/main/loader.gif" for 127.0.0.1 at 2014-05-22 23:33:08 +0100
+
+
+Started GET "/assets/new/presentation/table.jpg" for 127.0.0.1 at 2014-05-22 23:33:08 +0100
+
+
+Started GET "/assets/new/presentation/bundle.jpg" for 127.0.0.1 at 2014-05-22 23:33:09 +0100
+
+
+Started GET "/assets/new/presentation/community-members.jpg" for 127.0.0.1 at 2014-05-22 23:33:09 +0100
+
+
+Started GET "/assets/new/main/background.png" for 127.0.0.1 at 2014-05-22 23:33:09 +0100
+
+
+Started GET "/assets/regular.otf" for 127.0.0.1 at 2014-05-22 23:33:10 +0100
+
+
+Started GET "/assets/light.otf" for 127.0.0.1 at 2014-05-22 23:33:10 +0100
+
+
+Started GET "/assets/bold.otf" for 127.0.0.1 at 2014-05-22 23:33:10 +0100
+
+
+Started GET "/assets/new/presentation/presentation-icons.png" for 127.0.0.1 at 2014-05-22 23:33:10 +0100
+
+
+Started GET "/assets/presentation/video-bg.png" for 127.0.0.1 at 2014-05-22 23:33:10 +0100
+
+
+Started GET "/assets/new/main/icons-navigation.png" for 127.0.0.1 at 2014-05-22 23:33:10 +0100
+
+
+Started GET "/assets/new/main/logo-small.png" for 127.0.0.1 at 2014-05-22 23:33:11 +0100
+
+
+Started GET "/assets/main/background.png" for 127.0.0.1 at 2014-05-22 23:33:11 +0100
+
+
+Started GET "/assets/new/presentation/app-stores-large.png" for 127.0.0.1 at 2014-05-22 23:33:12 +0100
+
+
+Started GET "/assets/new/presentation/team-photos.png" for 127.0.0.1 at 2014-05-22 23:33:12 +0100
+
+
+Started GET "/assets/new/presentation/social.png" for 127.0.0.1 at 2014-05-22 23:33:13 +0100
