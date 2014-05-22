@@ -1643,7 +1643,7 @@ function loadMap(providers) {
     $('#content-preloader').hide();
 
     providers.forEach(function (user) {
-        if(user.latitude == null || user.longitude == null) {
+        if(!user.latitude || !user.longitude) {
             return false;
         }
 

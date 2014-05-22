@@ -1329,9 +1329,12 @@ h3 {
     margin-bottom: 10px;
 }
 
-.info-window .play { border-right: 1px solid #000; }
+.info-window .play { left: 0; border-right: 1px solid #000; }
+.info-window .favorite { right: 0; }
 .info-window .play,
 .info-window .favorite {
+    position: absolute;
+    bottom: 0;
     background: url(<%= asset_path 'new/search/map-buttons.png' %>);
     width: 140px;
     height: 48px;
