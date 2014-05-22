@@ -1638,7 +1638,7 @@ h3 {
 
 #profile {
     position: relative;
-    background: #fff;
+    margin-top: 12px;
 }
 
 #profile .avatar {
@@ -1653,14 +1653,12 @@ h3 {
 }
 
 #profile-data {
-    /*
+    position: relative;
     width: 430px;
-    float: right;
-    */
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    height: 497px;
+    margin: 0 auto;
+    background: url(<%= asset_path 'new/main/avatar.png' %>);
+    background-size: 430px 430px;
 }
 
 #profile-data-inner {
@@ -1676,7 +1674,10 @@ h3 {
     vertical-align: top;
 }
 #profile .play {
-    float: left;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
     background-position: 0px 0px;
 }
 #profile .play:hover {
@@ -1693,7 +1694,9 @@ h3 {
 #profile .title {
     display: inline-block;
     float: left;
-    width: 330px;
+    width: 360px;
+    padding-left: 15px;
+    color: #fff;
     text-align: center;
     vertical-align: top;
 }
@@ -1703,10 +1706,20 @@ h3 {
     font-weight: bold;
 }
 
-#profile .description {
-    padding: 30px;
-    font-size: 18px;
-    line-height: 26px;
+#profile-description {
+    position: absolute;
+    bottom: 67px;
+    width: 100%;
+    padding: 7px;
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.3;
+    text-align: center;
+    background-color: hsla(0, 0%, 100%, 0.2);
+}
+
+#profile-description .description {
+    margin-top: 35px;
 }
 
 #profile-provider {
@@ -1737,8 +1750,8 @@ h3 {
 #profile-buttons {
     position: absolute;
     width: 100%;
-    bottom: 1px;
-    right: 0;
+    bottom: 0px;
+    right: 0px;
 }
 
 .message-button-profile img,
@@ -1748,10 +1761,11 @@ h3 {
 
 .message-button-profile {
     display: inline-block;
+    float: left;
     vertical-align: top;
-    width: 50%;
+    width: 215px;
     height: 67px;
-    margin-left: -3px;
+    margin: 0px;
     background: #000 url(<%= asset_path 'new/profile/message.png' %>) top center no-repeat;
     cursor: pointer;
 }
@@ -1761,10 +1775,11 @@ h3 {
 
 .hire-button-profile {
     display: inline-block;
+    float: right;
     vertical-align: top;
-    width: 50%;
+    width: 215px;
     height: 67px;
-    margin-left: -3px;
+    margin: 0px;
     background: #000 url(<%= asset_path 'new/profile/hire.png' %>);
     cursor: pointer;
 }

@@ -1037,9 +1037,8 @@ function SubmitContactForm() {
 
 }
 function RevealPage(pageSegment) {
-
     pageSegments = {};
-    $('.page-segment').each(function (i, e) {
+    $('.page-segment:not(.page-segment-three)').each(function (i, e) {
         pageSegments[$(e).prop('title')] = $(e);
     });
 
@@ -2539,7 +2538,7 @@ function loadProfile() {
         if (user.state != null) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
         else { user.state = 'NY'; }
 
-        $('#profile .avatar').attr('src', (user.avatar_url) ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>');
+        $('#profile-data').css('background-image', 'url(' + ((user.avatar_url) ? user.avatar_url : '<%= asset_path "new/main/avatar.png" %>') + ')');
 
         //if (user.video_id === null) { $('#profilem .play').addClass('disabled'); }
 
