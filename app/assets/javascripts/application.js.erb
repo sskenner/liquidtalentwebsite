@@ -648,7 +648,7 @@ $(window).on('load', function () {
                     e.preventDefault();
 
                     if(confirm('LinkedIn Sync will sync your LiquidTalent profile with your latest LinkedIn profile information. Do you really want to proceed?')) {
-                        document.cookie = 'redirect=settings';
+                        document.cookie = (currentUser.is_provider == 1) ? 'redirect=updateProvider' : 'redirect=updateDemander';
                         window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://liquidtalent.com/linkedin';
                     }
                 });
@@ -1554,7 +1554,7 @@ function linkedin_synchro(access_token, user_id) {
         data = data[0] == '{' ? JSON.parse(data) : data;
 
         currentUser = data['response'];
-        alert('We have successfully updated your account with Linkedin data.');
+        //alert('We have successfully updated your account with Linkedin data.');
 
         createUser (currentUser, getCookie('redirect'));
      });
@@ -3411,7 +3411,7 @@ function updateProviderData() {
                 '&attr[portfolio]=' + $('.portfolio').val() +
                 '&attr[experience]=' + $('.experience').val() +
                 '&attr[years_in_industry]=' + $('.years_in_industry').val() +
-                ( ($('.password').val().length > 0) ? ('&attr[password]=' + $('.password').val()) : null ),
+                ( ($('.password').val().length > 0) ? ('&attr[password]=' + $('.password').val()) : '' ),
         error: Response
     }).done(function (data) {
         data = data[0] == '{' ? JSON.parse(data) : data;
@@ -3463,7 +3463,7 @@ function updateDemanderData() {
                 '&attr[company_description]=' + $('.company_description').val() +
                 '&attr[title]=' + $('.title').val() +
                 '&attr[category_id]=' + $('#category_id').val() +
-                ( ($('.password').val().length > 0) ? ('&attr[password]=' + $('.password').val()) : null ),
+                ( ($('.password').val().length > 0) ? ('&attr[password]=' + $('.password').val()) : '' ),
         error: Response
     }).done(function (data) {
                 data = data[0] == '{' ? JSON.parse(data) : data;
