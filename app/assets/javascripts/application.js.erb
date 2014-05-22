@@ -648,7 +648,7 @@ $(window).on('load', function () {
                     e.preventDefault();
 
                     if(confirm('LinkedIn Sync will sync your LiquidTalent profile with your latest LinkedIn profile information. Do you really want to proceed?')) {
-                        document.cookie = (currentUser.is_provider == 1) ? 'redirect=updateProvider' : 'redirect=updateDemander';
+                        document.cookie = 'redirect=settings';
                         window.location = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77h2pt4b4liwxo&scope=r_basicprofile+r_fullprofile+r_emailaddress+r_contactinfo&state=' + currentUser.id + '&redirect_uri=http://liquidtalent.com/linkedin';
                     }
                 });
@@ -1548,13 +1548,16 @@ function linkedin_connect(access_token) {
 
 function linkedin_synchro(access_token, user_id) {
     $.ajax({
-        url: 'http://backend.liquidtalent.com/user/linkedin_synchro/?access_token=' + access_token + '&user_id=' + user_id,
+        url: 'http://backend.liquidtalent.com/user/linkedin_synchro/?access_token=' + access_token + '&user_id=' + user_id + '&rewrite=' + (getCookie('redirect') == 'settings'),
         error: Response
     }).done(function (data) {
         data = data[0] == '{' ? JSON.parse(data) : data;
 
         currentUser = data['response'];
-        //alert('We have successfully updated your account with Linkedin data.');
+
+        if(getCookie('redirect') == 'settings') {
+            alert('We have successfully updated your account with Linkedin data.');
+        }
 
         createUser (currentUser, getCookie('redirect'));
      });
@@ -1637,10 +1640,9 @@ function loadMap(providers) {
     $('#content-preloader').hide();
 
     providers.forEach(function (user) {
-        console.log(user.id);
-
-        /* Info Windows */
-
+        if(user.latitude == null || user.longitude == null) {
+            return false;
+        }
 
         user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
         $('#map-overlay').css('background-image', user.avatar_url);
