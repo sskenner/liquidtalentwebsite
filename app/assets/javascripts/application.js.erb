@@ -1557,11 +1557,12 @@ function linkedin_synchro(access_token, user_id) {
 
         currentUser = data['response'];
 
+        createUser (currentUser, getCookie('redirect'));
+
         if(getCookie('redirect') == 'settings') {
             alert('We have successfully updated your account with Linkedin data.');
         }
 
-        createUser (currentUser, getCookie('redirect'));
         $('#preloader').hide();
      });
 }

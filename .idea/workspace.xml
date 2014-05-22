@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -172,14 +171,14 @@
     <file path="/forgotten_password.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400703660665" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/test/mailers/pswd_mailer.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400701401356" ignored="false" />
     <file path="/pswd_mailer.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400701401356" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/views/pswd_mailer/send_pswd.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400759174137" ignored="false" />
-    <file path="/send_pswd.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400701545750" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/views/pswd_mailer/send_pswd.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400776734686" ignored="false" />
+    <file path="/send_pswd.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400776734360" ignored="false" />
     <file path="$PROJECT_DIR$/../emailtosms/config/routes.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400701892339" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/config/initializers/setup_mail.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400702246705" ignored="false" />
     <file path="/reset_password.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400703654575" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/booking_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400759359534" ignored="false" />
     <file path="/booking_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400759359534" ignored="false" />
-    <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400775835683" ignored="false" />
+    <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400776463835" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,9 +201,9 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1564" column="28" selection-start="51682" selection-end="51682" vertical-scroll-proportion="0.7060653">
+            <state line="1565" column="8" selection-start="51663" selection-end="51663" vertical-scroll-proportion="0.7760498">
               <folding>
-                <marker date="1400776331927" expanded="true" signature="76700:76716" placeholder="..." />
+                <marker date="1400776522180" expanded="true" signature="76701:76717" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1029,9 +1028,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1564" column="28" selection-start="51682" selection-end="51682" vertical-scroll-proportion="0.7060653">
+        <state line="1565" column="8" selection-start="51663" selection-end="51663" vertical-scroll-proportion="0.7760498">
           <folding>
-            <marker date="1400776331927" expanded="true" signature="76700:76716" placeholder="..." />
+            <marker date="1400776522180" expanded="true" signature="76701:76717" placeholder="..." />
           </folding>
         </state>
       </provider>
