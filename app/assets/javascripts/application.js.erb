@@ -2569,10 +2569,12 @@ function loadProfile() {
             //$('#profile-portfolio').hide();
         }
 
-
         if(user.is_provider) {
             $('#profile-provider').show();
             $('#profile-demander').hide();
+
+            $('.hire-button-profile').show();
+            $('.message-button-profile').css('width', '215px');
 
             if(user.skills != null && user.skills.length > 0) {
                 $('.profile-item.skills').show();
@@ -2672,7 +2674,11 @@ function loadProfile() {
                 $('#reviews').append('<div class="review">' + $('#first-review').clone().html() + '</div>');
             });
         }
-
+        //  Is demander
+        else {
+            $('.hire-button-profile').hide();
+            $('.message-button-profile').css('width', '100%');
+        }
     });
 
 }
