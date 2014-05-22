@@ -820,6 +820,9 @@ $(window).on('load', function () {
             $('#preloader').hide();
         });
     }
+    else {
+        $('#preloader').hide();
+    }
 
     $('#admin-panel .navigation .link').each(function (i, e) {
 
@@ -840,7 +843,7 @@ $(window).on('load', function () {
 
     loadPage('home');
 
-    $('#preloader').hide();
+    //$('#preloader').hide();
 });
 
 function showEnterprise() {
@@ -1084,7 +1087,7 @@ function RevealPage(pageSegment) {
 
     }
 
-    $('html, body').delay(500).animate({ scrollTop: $(pageSegments[pageSegment]).offset().top }, 300, 'linear', null);
+    $('html, body').delay(500).animate({ scrollbottom: $(pageSegments[pageSegment]).offset().bottom }, 300, 'linear', null);
 
     return false;
 }
@@ -1977,50 +1980,50 @@ function retrieveFavorites(sortBy) {
     }).done(function (data) {
                 data = data[0] == '{' ? JSON.parse(data) : data;
 
-                users = [];
+                favoritedUsers = [];
                 data['response'].forEach(function (item) {
-                    users.push(item['provider'])
+                    favoritedUsers.push(item['provider'])
                 });
 
                 $('#content-preloader').hide();
 
                 if (sortBy === 'cost') {
-                    users.sort(function(a, b) {
+                    favoritedUsers.sort(function(a, b) {
                         a['hourly_rate'] = (a['hourly_rate'] == null) ? '' : a['hourly_rate'];
                         b['hourly_rate'] = (b['hourly_rate'] == null) ? '' : b['hourly_rate'];
 
                         return a['hourly_rate'].length - b['hourly_rate'].length;
                     });
 
-                    users = users.reverse();
+                    favoritedUsers = favoritedUsers.reverse();
                 }
                 else if (sortBy === 'experience') {
-                    users.sort(function(a, b) {
+                    favoritedUsers.sort(function(a, b) {
                         return a['years_in_industry'] - b['years_in_industry'];
                     });
 
-                    users = users.reverse();
+                    favoritedUsers = favoritedUsers.reverse();
                 }
                 else if (sortBy == 'distance') {
                     getCurrentLocation(function(loc) {
                         if(loc) {
-                            for(var i = 0; i < users.length; i++) {
-                                if(users[i]['latitude'] == null | users[i]['longitude'] == null) {
-                                    users[i].distance = 99999999;
+                            for(var i = 0; i < favoritedUsers.length; i++) {
+                                if(favoritedUsers[i]['latitude'] == null | favoritedUsers[i]['longitude'] == null) {
+                                    favoritedUsers[i].distance = 99999999;
                                 }
                                 else {
-                                    users[i].distance = computeDistance(loc.lat, loc.lng, users[i]['latitude'], users[i]['longitude']);
+                                    favoritedUsers[i].distance = computeDistance(loc.lat, loc.lng, favoritedUsers[i]['latitude'], favoritedUsers[i]['longitude']);
                                 }
                             }
 
-                            users.sort(function(a, b) {
+                            favoritedUsers.sort(function(a, b) {
                                 return a.distance - b.distance;
                             });
                         }
                     });
                 }
 
-                users.forEach(function (item) {
+                favoritedUsers.forEach(function (item) {
                     user = item;
 
                     user.hourly_rate = calculateCost(user.hourly_rate);
@@ -2049,6 +2052,7 @@ function retrieveFavorites(sortBy) {
                     $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
 
                     $('#first-item .removeFavorite').attr('id', user['id']);
+                    $('#first-item .removeFavorite').attr('onclick', 'removeFavorite(' + user['id'] + ');');
 
                     $('#first-item .message').attr('onclick', 'back=\'favorites\'; loadChat(\'' + user.id + ':' + user.name + '\');');
                     $('#first-item .hire').attr('onclick', 'back=\'favorites\'; providerId=' + user.id + '; loadPage("/hire");');
@@ -2058,13 +2062,10 @@ function retrieveFavorites(sortBy) {
                 });
 
                 $('.list-item .removeFavorite').on('click', function() {
-
                     removeFavorite($(this).prop('id'));
 
                     $('.removeFavorite').each(function (i, e) {
-
                         $(e).css('display', ($(e).css('display') === 'block' ? 'none' : 'block'));
-
                     });
 
                 });
@@ -2317,7 +2318,6 @@ function createChat (user_id) {
 
             if(chat.status === 'failed') { alert(chat['errors'][0]); }
             else {
-
                 time = date.toJSON().replace(/^.*T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$1');
 
                 $('#chat').html($('#chat').html() +
@@ -2334,6 +2334,8 @@ function createChat (user_id) {
                     '</div>'
 
                 );
+
+                $('#chat-box').val('');
 
                 $('#chat').animate({ scrollTop: $('#chat :last').offset().top }, 300, 'linear', null);
 
