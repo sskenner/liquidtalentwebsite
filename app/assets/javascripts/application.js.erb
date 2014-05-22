@@ -1648,7 +1648,7 @@ function loadMap(providers) {
         }
 
         user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
-        $('#map-overlay').css('background-image', user.avatar_url);
+        //$('#map-overlay').css('background-image', user.avatar_url);
 
         map.iW.LTDrop.removeClass('hidden').removeClass('blue').removeClass('bronze').removeClass('silver').removeClass('gold');
         if (user.badge === 'no') { map.iW.LTDrop.addClass('hidden'); }
@@ -1683,7 +1683,7 @@ function loadMap(providers) {
             map: map.googleMap,
             title: user.name,
             icon: (user.is_provider === true ? '<%= asset_path "new/search/map-pin-green.png" %>' : '<%= asset_path "new/search/map-pin-black.png" %>'),
-            html: '<div class="info-window">' + $('#map-overlay').html() + '</div>'
+            html: '<div class="info-window" style="background-image: url(' + user.avatar_url + ');">' + $('#map-overlay').html() + '</div>'
 
         });
 
