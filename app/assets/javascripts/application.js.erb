@@ -1547,6 +1547,8 @@ function linkedin_connect(access_token) {
 }
 
 function linkedin_synchro(access_token, user_id) {
+    $('#preloader').show();
+
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/linkedin_synchro/?access_token=' + access_token + '&user_id=' + user_id + '&rewrite=' + (getCookie('redirect') == 'settings'),
         error: Response
@@ -1560,6 +1562,7 @@ function linkedin_synchro(access_token, user_id) {
         }
 
         createUser (currentUser, getCookie('redirect'));
+        $('#preloader').hide();
      });
 }
 
