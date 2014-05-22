@@ -854,6 +854,7 @@ function showEnterprise() {
     $('#marketplace-button').removeClass('active');
 
     $('.contact-page').insertAfter('.product-suite-page');
+    $('.logo-small').attr('href', '/enterprise');
 }
 
 function showMarketplace() {
@@ -867,6 +868,7 @@ function showMarketplace() {
     $('#marketplace-button').addClass('active');
 
     $('.contact-page').insertAfter('.team-page');
+    $('.logo-small').attr('href', '/marketplace');
 }
 
 function ToggleNavigationHover (e) {
@@ -1037,7 +1039,7 @@ function SubmitContactForm() {
 function RevealPage(pageSegment) {
 
     pageSegments = {};
-    $('.page-segment:not(.page-segment-two)').each(function (i, e) {
+    $('.page-segment').each(function (i, e) {
         pageSegments[$(e).prop('title')] = $(e);
     });
 
@@ -1085,7 +1087,9 @@ function RevealPage(pageSegment) {
 
     $('html, body').delay(500).animate({ scrollTop: $(pageSegments[pageSegment]).offset().top }, 300, 'linear', null);
 
+    return false;
 }
+
 function showPlaceholder (page) {
 
     if (currentUser === null) {
@@ -1158,6 +1162,26 @@ function logout() {
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/logout',
+        data: 'user_id=' + currentUser.id + '&token=' + currentUser.token
+    }).done(function (data) {
+        currentUser = null;
+
+        delete_cookie('userId');
+        delete_cookie('userToken');
+
+        window.location = '/'
+    });
+}
+
+function deleteAccount() {
+    if(!confirm('Do you really want to delete this account? All data will be lost.')) {
+        return;
+    }
+
+    $('#preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/user/destroy',
         data: 'user_id=' + currentUser.id + '&token=' + currentUser.token
     }).done(function (data) {
         currentUser = null;
