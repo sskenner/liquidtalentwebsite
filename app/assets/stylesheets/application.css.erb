@@ -263,8 +263,8 @@ a:hover { color: #000; }
 #background {
     position: absolute;
     height: 700px;
-    width: 750px;
-    right: 0px;
+    width: 765px;
+    right: -15px;
     overflow: hidden;
 }
 #admin-panel {
@@ -645,6 +645,27 @@ a:hover { color: #000; }
     margin-top: -5px;
 }
 
+#map-toggle-provider {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 35px;
+    height: 40px;
+    background: url(<%= asset_path 'new/search/map-pin-toggle.png' %>);
+    background-position: -19px -14px;
+    cursor: pointer;
+}
+#map-toggle-demander {
+    position: absolute;
+    top: 10px;
+    left: 45px;
+    width: 35px;
+    height: 40px;
+    background: url(<%= asset_path 'new/search/map-pin-toggle.png' %>);
+    background-position: -60px -14px;
+    cursor: pointer;
+}
+
 #map {
     margin-top: 7px;
     height: 100%;
@@ -700,7 +721,6 @@ a:hover { color: #000; }
     border: 10px solid #FFF;
     background: #FFF;
     margin-bottom: 1px;
-    cursor: pointer;
 }
 .message-box .black-button {
     position: absolute;
@@ -723,6 +743,7 @@ a:hover { color: #000; }
 }
 .message-box .green-button.active { opacity: 1; }
 .message-box .avatar-container {
+    float: left;
     display: inline-block;
     height: 95px;
     overflow: hidden;
@@ -732,6 +753,12 @@ a:hover { color: #000; }
     height: 110px;
     position: relative;
     top: -10px;
+}
+.message-box .message-content {
+    float: left;
+    width: 620px;
+    height: 96px;
+    cursor: pointer;
 }
 .message-box .name {
     text-align: center;
@@ -743,6 +770,9 @@ a:hover { color: #000; }
     margin-top: 10px;
     font-weight: 700;
     font-size: 22px;
+    position: absolute;
+    top: 0px;
+    left: 110px;
 }
 .message-box .content {
     position: absolute;
@@ -754,8 +784,8 @@ a:hover { color: #000; }
 }
 .message-box .time {
     position: absolute;
-    top: 10px;
-    right: 0px;
+    top: 15px;
+    right: 15px;
     text-transform: uppercase;
     color: #777;
     font-weight: 400;
@@ -1987,6 +2017,10 @@ h3 {
     line-height: 1.5;
 }
 
+.project .budget-profile {
+    margin-top: 25px;
+}
+
 .project .budget-title {
     font-size: 0.9em;
 }
@@ -2015,7 +2049,7 @@ h3 {
 .project .accept-decline {
     float: right;
 }
-.project .status-btn.applicants {
+.project .status-btn.apply, .project .status-btn.applicants {
     background: #239060;
     color: #fff;
     font-size: 1.3em;
@@ -2023,6 +2057,11 @@ h3 {
     text-align: center;
     cursor: pointer;
 }
+
+.project .status-btn.apply:hover {
+    background: #000;
+}
+
 .project .status-btn.delete {
     background: #000;
     color: #fff;

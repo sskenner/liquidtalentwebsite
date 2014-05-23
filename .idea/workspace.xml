@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/_filter.html.erb" afterPath="$PROJECT_DIR$/app/views/user/_filter.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/jquery-ui.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/tagit.js.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/signup_demander.html.erb" afterPath="$PROJECT_DIR$/app/views/user/signup_demander.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" afterPath="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/update_demander.html.erb" afterPath="$PROJECT_DIR$/app/views/user/update_demander.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/update_provider.html.erb" afterPath="$PROJECT_DIR$/app/views/user/update_provider.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/map.html.erb" afterPath="$PROJECT_DIR$/app/views/user/map.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/profile.html.erb" afterPath="$PROJECT_DIR$/app/views/user/profile.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400795502416" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400800256343" ignored="false" />
+    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400862524567" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400862554760" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400799753890" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -51,7 +51,7 @@
     <file path="$PROJECT_DIR$/../liquidtalent/app/models/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400586468313" ignored="false" />
     <file path="/settings.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400707668096" ignored="false" />
     <file path="/_filter.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400799490964" ignored="false" />
-    <file path="/map.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399899517020" ignored="false" />
+    <file path="/map.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400857718562" ignored="false" />
     <file path="/search.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399899533744" ignored="false" />
     <file path="$PROJECT_DIR$/../reltrek.com/app/assets/javascripts/users.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396517324416" ignored="false" />
     <file path="/users.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396517009793" ignored="false" />
@@ -95,7 +95,7 @@
     <file path="$PROJECT_DIR$/../followcheck.com/lib/Twitter.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033056368" ignored="false" />
     <file path="/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400697161419" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400842152747" ignored="false" />
     <file path="/a.dummy" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400257617696" ignored="false" />
     <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400509647484" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/landing.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484343602" ignored="false" />
@@ -169,7 +169,7 @@
     <file path="/hire.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459800926" ignored="false" />
     <file path="/accept.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459257799" ignored="false" />
     <file path="/favorites.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400797668138" ignored="false" />
-    <file path="/profile.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400771471236" ignored="false" />
+    <file path="/profile.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400844270144" ignored="false" />
     <file path="/signup.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399460158907" ignored="false" />
     <file path="/stats.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399460231629" ignored="false" />
     <file path="/user_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400757080054" ignored="false" />
@@ -186,6 +186,7 @@
     <file path="/reset_password.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400703654575" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/booking_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400759359534" ignored="false" />
     <file path="/booking_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400759359534" ignored="false" />
+    <file path="/tagit.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400840650403" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,34 +206,161 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2679" column="62" selection-start="92613" selection-end="92613" vertical-scroll-proportion="0.5660964">
+            <state line="186" column="56" selection-start="4582" selection-end="4582" vertical-scroll-proportion="-9.375">
               <folding>
-                <marker date="1400800260832" expanded="true" signature="55942:55964" placeholder="..." />
-                <marker date="1400800260832" expanded="true" signature="77041:77057" placeholder="..." />
+                <marker date="1400862554521" expanded="true" signature="4614:28109" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="4628:26813" placeholder="{&quot;active&quot;: ''...}" />
+                <marker date="1400862554521" expanded="true" signature="4670:5465" placeholder="{&quot;href&quot;: ''...}" />
+                <marker date="1400862554521" expanded="true" signature="4729:5454" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="4870:5066" placeholder="{&quot;href&quot;: '/presentation/subscribe'...}" />
+                <marker date="1400862554521" expanded="true" signature="4893:4939" placeholder="/*...*/" />
+                <marker date="1400862554521" expanded="true" signature="5131:5439" placeholder="{&quot;href&quot;: '/send_message'...}" />
+                <marker date="1400862554521" expanded="true" signature="5154:5241" placeholder="/*...*/" />
+                <marker date="1400862554521" expanded="true" signature="5485:5804" placeholder="{&quot;href&quot;: '/login'...}" />
+                <marker date="1400862554521" expanded="true" signature="5550:5793" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="5610:5777" placeholder="{&quot;href&quot;: '/user/signin'...}" />
+                <marker date="1400862554521" expanded="true" signature="5825:6772" placeholder="{&quot;href&quot;: '/signup'...}" />
+                <marker date="1400862554521" expanded="true" signature="5891:6761" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="5933:6012" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="6051:6129" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="6194:6644" placeholder="{&quot;href&quot;: '/user/signup'...}" />
+                <marker date="1400862554521" expanded="true" signature="6692:6745" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="6802:8578" placeholder="{&quot;href&quot;: '/signup_demander'...}" />
+                <marker date="1400862554521" expanded="true" signature="6876:8568" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="6917:6996" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="7035:7113" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="7440:7668" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
+                <marker date="1400862554521" expanded="true" signature="7555:7650" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="7691:8253" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="7854:8234" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="8099:8204" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="8306:8552" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="8364:8436" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="8462:8534" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="8616:10781" placeholder="{&quot;href&quot;: '/signup_service_provider'...}" />
+                <marker date="1400862554521" expanded="true" signature="8698:10771" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="8739:8818" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="8857:8964" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="9688:9755" placeholder="{&quot;href&quot;: '/user/set_details'...}" />
+                <marker date="1400862554521" expanded="true" signature="9781:10053" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
+                <marker date="1400862554521" expanded="true" signature="9896:10035" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="10076:10638" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="10239:10619" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="10484:10589" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="10691:10755" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="10802:11318" placeholder="{&quot;href&quot;: '/search'...}" />
+                <marker date="1400862554521" expanded="true" signature="10868:11307" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="11149:11213" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="11235:11293" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="11336:11938" placeholder="{&quot;href&quot;: '/map'...}" />
+                <marker date="1400862554521" expanded="true" signature="11399:11927" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="11631:11731" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="11811:11872" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="11962:12604" placeholder="{&quot;href&quot;: '/favorites'...}" />
+                <marker date="1400862554521" expanded="true" signature="12031:12593" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="12319:12577" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="12381:12457" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="12483:12559" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="12624:13283" placeholder="{&quot;href&quot;: '/stats'...}" />
+                <marker date="1400862554521" expanded="true" signature="12689:13272" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="12976:13255" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="13045:13128" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="13154:13237" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="13305:13625" placeholder="{&quot;href&quot;: '/profile'...}" />
+                <marker date="1400862554521" expanded="true" signature="13371:13615" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="13652:13946" placeholder="{&quot;href&quot;: '/video_upload'...}" />
+                <marker date="1400862554521" expanded="true" signature="13723:13936" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="13969:14297" placeholder="{&quot;href&quot;: '/statuses'...}" />
+                <marker date="1400862554521" expanded="true" signature="14036:14287" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="14326:15927" placeholder="{&quot;href&quot;: '/create_project'...}" />
+                <marker date="1400862554521" expanded="true" signature="14399:15917" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="14623:14851" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
+                <marker date="1400862554521" expanded="true" signature="14738:14833" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="14874:15444" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="15037:15417" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="15282:15387" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="15497:15743" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="15555:15627" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="15653:15725" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="15946:16390" placeholder="{&quot;href&quot;: '/hire'...}" />
+                <marker date="1400862554521" expanded="true" signature="16009:16380" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="16417:18460" placeholder="{&quot;href&quot;: '/hire_confirm'...}" />
+                <marker date="1400862554521" expanded="true" signature="16488:18450" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="16806:18306" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="16942:18285" placeholder="{&quot;changeMonth&quot;: true...}" />
+                <marker date="1400862554521" expanded="true" signature="17216:17649" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="17710:18263" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="17782:18237" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="18328:18436" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="18486:19161" placeholder="{&quot;href&quot;: '/hire_accept'...}" />
+                <marker date="1400862554521" expanded="true" signature="18556:19151" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="18895:19005" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="19027:19137" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="19184:19507" placeholder="{&quot;href&quot;: '/projects'...}" />
+                <marker date="1400862554521" expanded="true" signature="19251:19497" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="19532:19859" placeholder="{&quot;href&quot;: '/applicants'...}" />
+                <marker date="1400862554521" expanded="true" signature="19601:19849" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="19878:20193" placeholder="{&quot;href&quot;: '/rate'...}" />
+                <marker date="1400862554521" expanded="true" signature="19941:20183" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="20216:21876" placeholder="{&quot;href&quot;: '/settings'...}" />
+                <marker date="1400862554521" expanded="true" signature="20283:21866" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="20525:20627" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="20683:21271" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="20889:21253" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="21546:21851" placeholder="{&quot;href&quot;: '/send_message'...}" />
+                <marker date="1400862554521" expanded="true" signature="21568:21655" placeholder="/*...*/" />
+                <marker date="1400862554521" expanded="true" signature="21906:23797" placeholder="{&quot;href&quot;: '/update_demander'...}" />
+                <marker date="1400862554521" expanded="true" signature="21980:23787" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="22204:22432" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
+                <marker date="1400862554521" expanded="true" signature="22319:22414" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="22455:23025" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="22618:22998" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="22863:22968" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="23078:23324" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="23136:23208" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="23234:23306" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="23710:23771" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="23827:26194" placeholder="{&quot;href&quot;: '/update_provider'...}" />
+                <marker date="1400862554521" expanded="true" signature="23901:26184" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="24125:24353" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
+                <marker date="1400862554521" expanded="true" signature="24240:24335" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="24376:24882" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="24523:24863" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="24752:24841" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="24935:25181" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="24993:25065" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="25091:25163" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="26003:26064" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="26114:26168" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="26214:26501" placeholder="{&quot;href&quot;: '/terms'...}" />
+                <marker date="1400862554521" expanded="true" signature="26278:26491" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="26519:26806" placeholder="{&quot;href&quot;: '/terms'...}" />
+                <marker date="1400862554521" expanded="true" signature="26583:26796" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="26830:27176" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="26909:27169" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="26963:27088" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="27018:27073" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="27261:27562" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="27350:27554" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="27572:27611" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="27674:27829" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="27879:27940" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="27991:28053" placeholder="{...}" />
+                <marker date="1400862554521" expanded="true" signature="57241:57263" placeholder="..." />
+                <marker date="1400862554521" expanded="true" signature="79241:79257" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_provider.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/user/update_provider.html.erb">
+      <file leaf-file-name="application.css.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="95" selection-start="1071" selection-end="1071" vertical-scroll-proportion="-11.875">
+            <state line="361" column="26" selection-start="11558" selection-end="11558" vertical-scroll-proportion="-4.8163266">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="favorites.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/user/favorites.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="60" selection-start="185" selection-end="185" vertical-scroll-proportion="-1.875">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -240,39 +368,23 @@
       <file leaf-file-name="map.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/user/map.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="3" column="80" selection-start="190" selection-end="190" vertical-scroll-proportion="-1.875">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map-pin-toggle.png" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-pin-toggle.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="profile.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="18" selection-start="760" selection-end="779" vertical-scroll-proportion="-13.125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app-stores.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/app-stores.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app-stores-large.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/app-stores-large.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.css.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2303" column="0" selection-start="52304" selection-end="52304" vertical-scroll-proportion="-4.367347">
+            <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-14.375">
               <folding />
             </state>
           </provider>
@@ -281,10 +393,8 @@
       <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="44" selection-start="4266" selection-end="4275" vertical-scroll-proportion="-3.7205882">
-              <folding>
-                <element signature="n#style#0;n#a#2;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="72" column="22" selection-start="2495" selection-end="2504" vertical-scroll-proportion="-4.5102043">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -307,29 +417,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/user/reset_password.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/forgotten_password.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/login.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/settings.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/user_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/user/profile_old.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/profile.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/favorites.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/_filter.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
         <option value="$PROJECT_DIR$/app/views/user/signup_demander.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/update_demander.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/update_provider.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/tagit.js.erb.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/jquery-ui.js.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/profile.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/map.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="24" />
-    <option name="width" value="1390" />
-    <option name="height" value="877" />
+    <option name="width" value="1600" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -560,6 +670,128 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -854,6 +1086,23 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="" />
@@ -863,7 +1112,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1390" height="877" extended-state="4" />
+    <frame x="0" y="24" width="1600" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -871,7 +1120,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20864381" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2113402" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -948,31 +1197,88 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/user_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/user/update_provider.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="30" selection-start="505" selection-end="505" vertical-scroll-proportion="0.7659575">
+        <state line="31" column="95" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.3602941">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/app-stores.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/app-stores-large.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/profile_old.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/tagit.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="6" selection-start="1990" selection-end="1990" vertical-scroll-proportion="0.97532654">
+        <state line="15" column="27" selection-start="7949" selection-end="7949" vertical-scroll-proportion="0.31601125">
+          <folding>
+            <marker date="1400839650076" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1400839650076" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/jquery-ui.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="36" selection-start="75149" selection-end="75149" vertical-scroll-proportion="0.13081396">
+          <folding>
+            <marker date="1400840296823" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1400840296823" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1400840296823" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1400840296823" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1400840296823" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1400840296823" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="20" selection-start="1663" selection-end="1663" vertical-scroll-proportion="-24.208334">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="113" selection-end="1342" vertical-scroll-proportion="0.10699002">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-pin-green.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-pin-black.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/_filter.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="73" selection-start="178" selection-end="198" vertical-scroll-proportion="0.042796005">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-14.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-buttons.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/map.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="80" selection-start="190" selection-end="190" vertical-scroll-proportion="-1.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -981,86 +1287,169 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="44" selection-start="4266" selection-end="4275" vertical-scroll-proportion="-3.7205882">
-          <folding>
-            <element signature="n#style#0;n#a#2;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/favorites.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="60" selection-start="185" selection-end="185" vertical-scroll-proportion="-1.875">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="72" column="22" selection-start="2495" selection-end="2504" vertical-scroll-proportion="-4.5102043">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2303" column="0" selection-start="52304" selection-end="52304" vertical-scroll-proportion="-4.367347">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/settings.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/_filter.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="73" selection-start="178" selection-end="198" vertical-scroll-proportion="0.04405286">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/signup_demander.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="95" selection-start="628" selection-end="628" vertical-scroll-proportion="0.2863436">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="95" selection-start="340" selection-end="340" vertical-scroll-proportion="0.19823788">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/update_demander.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="95" selection-start="835" selection-end="835" vertical-scroll-proportion="0.39647576">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/update_provider.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="95" selection-start="1071" selection-end="1071" vertical-scroll-proportion="-11.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="18" selection-start="760" selection-end="779" vertical-scroll-proportion="-13.125">
+        <state line="361" column="26" selection-start="11558" selection-end="11558" vertical-scroll-proportion="-4.8163266">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2679" column="62" selection-start="92613" selection-end="92613" vertical-scroll-proportion="0.5660964">
+        <state line="186" column="56" selection-start="4582" selection-end="4582" vertical-scroll-proportion="-9.375">
           <folding>
-            <marker date="1400800260832" expanded="true" signature="55942:55964" placeholder="..." />
-            <marker date="1400800260832" expanded="true" signature="77041:77057" placeholder="..." />
+            <marker date="1400862554521" expanded="true" signature="4614:28109" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="4628:26813" placeholder="{&quot;active&quot;: ''...}" />
+            <marker date="1400862554521" expanded="true" signature="4670:5465" placeholder="{&quot;href&quot;: ''...}" />
+            <marker date="1400862554521" expanded="true" signature="4729:5454" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="4870:5066" placeholder="{&quot;href&quot;: '/presentation/subscribe'...}" />
+            <marker date="1400862554521" expanded="true" signature="4893:4939" placeholder="/*...*/" />
+            <marker date="1400862554521" expanded="true" signature="5131:5439" placeholder="{&quot;href&quot;: '/send_message'...}" />
+            <marker date="1400862554521" expanded="true" signature="5154:5241" placeholder="/*...*/" />
+            <marker date="1400862554521" expanded="true" signature="5485:5804" placeholder="{&quot;href&quot;: '/login'...}" />
+            <marker date="1400862554521" expanded="true" signature="5550:5793" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="5610:5777" placeholder="{&quot;href&quot;: '/user/signin'...}" />
+            <marker date="1400862554521" expanded="true" signature="5825:6772" placeholder="{&quot;href&quot;: '/signup'...}" />
+            <marker date="1400862554521" expanded="true" signature="5891:6761" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="5933:6012" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="6051:6129" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="6194:6644" placeholder="{&quot;href&quot;: '/user/signup'...}" />
+            <marker date="1400862554521" expanded="true" signature="6692:6745" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="6802:8578" placeholder="{&quot;href&quot;: '/signup_demander'...}" />
+            <marker date="1400862554521" expanded="true" signature="6876:8568" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="6917:6996" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="7035:7113" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="7440:7668" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
+            <marker date="1400862554521" expanded="true" signature="7555:7650" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="7691:8253" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="7854:8234" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="8099:8204" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="8306:8552" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="8364:8436" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="8462:8534" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="8616:10781" placeholder="{&quot;href&quot;: '/signup_service_provider'...}" />
+            <marker date="1400862554521" expanded="true" signature="8698:10771" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="8739:8818" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="8857:8964" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="9688:9755" placeholder="{&quot;href&quot;: '/user/set_details'...}" />
+            <marker date="1400862554521" expanded="true" signature="9781:10053" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
+            <marker date="1400862554521" expanded="true" signature="9896:10035" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="10076:10638" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="10239:10619" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="10484:10589" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="10691:10755" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="10802:11318" placeholder="{&quot;href&quot;: '/search'...}" />
+            <marker date="1400862554521" expanded="true" signature="10868:11307" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="11149:11213" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="11235:11293" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="11336:11938" placeholder="{&quot;href&quot;: '/map'...}" />
+            <marker date="1400862554521" expanded="true" signature="11399:11927" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="11631:11731" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="11811:11872" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="11962:12604" placeholder="{&quot;href&quot;: '/favorites'...}" />
+            <marker date="1400862554521" expanded="true" signature="12031:12593" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="12319:12577" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="12381:12457" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="12483:12559" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="12624:13283" placeholder="{&quot;href&quot;: '/stats'...}" />
+            <marker date="1400862554521" expanded="true" signature="12689:13272" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="12976:13255" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="13045:13128" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="13154:13237" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="13305:13625" placeholder="{&quot;href&quot;: '/profile'...}" />
+            <marker date="1400862554521" expanded="true" signature="13371:13615" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="13652:13946" placeholder="{&quot;href&quot;: '/video_upload'...}" />
+            <marker date="1400862554521" expanded="true" signature="13723:13936" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="13969:14297" placeholder="{&quot;href&quot;: '/statuses'...}" />
+            <marker date="1400862554521" expanded="true" signature="14036:14287" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="14326:15927" placeholder="{&quot;href&quot;: '/create_project'...}" />
+            <marker date="1400862554521" expanded="true" signature="14399:15917" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="14623:14851" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
+            <marker date="1400862554521" expanded="true" signature="14738:14833" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="14874:15444" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="15037:15417" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="15282:15387" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="15497:15743" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="15555:15627" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="15653:15725" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="15946:16390" placeholder="{&quot;href&quot;: '/hire'...}" />
+            <marker date="1400862554521" expanded="true" signature="16009:16380" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="16417:18460" placeholder="{&quot;href&quot;: '/hire_confirm'...}" />
+            <marker date="1400862554521" expanded="true" signature="16488:18450" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="16806:18306" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="16942:18285" placeholder="{&quot;changeMonth&quot;: true...}" />
+            <marker date="1400862554521" expanded="true" signature="17216:17649" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="17710:18263" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="17782:18237" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="18328:18436" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="18486:19161" placeholder="{&quot;href&quot;: '/hire_accept'...}" />
+            <marker date="1400862554521" expanded="true" signature="18556:19151" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="18895:19005" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="19027:19137" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="19184:19507" placeholder="{&quot;href&quot;: '/projects'...}" />
+            <marker date="1400862554521" expanded="true" signature="19251:19497" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="19532:19859" placeholder="{&quot;href&quot;: '/applicants'...}" />
+            <marker date="1400862554521" expanded="true" signature="19601:19849" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="19878:20193" placeholder="{&quot;href&quot;: '/rate'...}" />
+            <marker date="1400862554521" expanded="true" signature="19941:20183" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="20216:21876" placeholder="{&quot;href&quot;: '/settings'...}" />
+            <marker date="1400862554521" expanded="true" signature="20283:21866" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="20525:20627" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="20683:21271" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="20889:21253" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="21546:21851" placeholder="{&quot;href&quot;: '/send_message'...}" />
+            <marker date="1400862554521" expanded="true" signature="21568:21655" placeholder="/*...*/" />
+            <marker date="1400862554521" expanded="true" signature="21906:23797" placeholder="{&quot;href&quot;: '/update_demander'...}" />
+            <marker date="1400862554521" expanded="true" signature="21980:23787" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="22204:22432" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
+            <marker date="1400862554521" expanded="true" signature="22319:22414" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="22455:23025" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="22618:22998" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="22863:22968" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="23078:23324" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="23136:23208" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="23234:23306" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="23710:23771" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="23827:26194" placeholder="{&quot;href&quot;: '/update_provider'...}" />
+            <marker date="1400862554521" expanded="true" signature="23901:26184" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="24125:24353" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
+            <marker date="1400862554521" expanded="true" signature="24240:24335" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="24376:24882" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="24523:24863" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="24752:24841" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="24935:25181" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="24993:25065" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="25091:25163" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="26003:26064" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="26114:26168" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="26214:26501" placeholder="{&quot;href&quot;: '/terms'...}" />
+            <marker date="1400862554521" expanded="true" signature="26278:26491" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="26519:26806" placeholder="{&quot;href&quot;: '/terms'...}" />
+            <marker date="1400862554521" expanded="true" signature="26583:26796" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="26830:27176" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="26909:27169" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="26963:27088" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="27018:27073" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="27261:27562" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="27350:27554" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="27572:27611" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="27674:27829" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="27879:27940" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="27991:28053" placeholder="{...}" />
+            <marker date="1400862554521" expanded="true" signature="57241:57263" placeholder="..." />
+            <marker date="1400862554521" expanded="true" signature="79241:79257" placeholder="..." />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-pin-toggle.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>

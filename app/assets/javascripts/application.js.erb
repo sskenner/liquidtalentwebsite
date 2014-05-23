@@ -186,7 +186,7 @@ var states = {
     'Armed Forces Others': 'AE'
 }
 
-$(window).on('load', function () {
+$(document).ready(function () {
     pages = {
 
         'active': '',
@@ -825,7 +825,6 @@ $(window).on('load', function () {
     }
 
     $('#admin-panel .navigation .link').each(function (i, e) {
-
         $(e).on('mouseover', function (e) { ToggleNavigationHover(e); });
         $(e).on('mouseout', function (e) { ToggleNavigationHover(e); });
 
@@ -843,7 +842,7 @@ $(window).on('load', function () {
 
     loadPage('home');
 
-    //$('#preloader').hide();
+    $('#preloader').hide();
 });
 
 function showEnterprise() {
@@ -1332,7 +1331,8 @@ function submitDemander(linkedin) {
                 '&attr[company_name]=' + $('.company_name').val() +
                 '&attr[company_description]=' + $('.company_description').val() +
                 '&attr[title]=' + $('.title').val() +
-                '&attr[category_id]=' + $('#category_id').val(),
+                '&attr[category_id]=' + $('#category_id').val() +
+                '&attr[is_provider]=0',
         error: Response
     }).done(function (data) {
                 data = data[0] == '{' ? JSON.parse(data) : data;
@@ -1615,6 +1615,39 @@ function showUserInfo() {
     //$('html, body').delay(2000).animate({ scrollTop: $('.page-segment.hiw').offset().top }, 300, 'linear', null);
 }
 
+function mapToggle(type) {
+    if(type == 'provider') {
+        if(getCookie('map_toggle') == 'demander') {
+            mapToggle('demander');
+        }
+
+        map.markers.forEach(function(item) {
+            if(item['type'] == 'provider') {
+                item['marker'].setVisible(getCookie('map_toggle') == 'provider');
+            }
+        });
+
+        $('#map-toggle-provider').css('background-position', getCookie('map_toggle') == 'provider' ? '-19px -14px' : '-19px -146px');
+
+        document.cookie = 'map_toggle=' + (getCookie('map_toggle') == 'provider' ? '' : 'provider');
+    }
+    else {
+        if(getCookie('map_toggle') == 'provider') {
+            mapToggle('provider');
+        }
+
+        map.markers.forEach(function(item) {
+            if(item['type'] == 'demander') {
+                item['marker'].setVisible(getCookie('map_toggle') == 'demander');
+            }
+        });
+
+        $('#map-toggle-demander').css('background-position', getCookie('map_toggle') == 'demander' ? '-60px -14px' : '-60px -80px');
+
+        document.cookie = 'map_toggle=' + (getCookie('map_toggle') == 'demander' ? '' : 'demander');
+    }
+}
+
 function loadMap(providers) {
     if(currentUser == null) {
         showPlaceholder('Search');
@@ -1627,8 +1660,8 @@ function loadMap(providers) {
         'infoWindow': new google.maps.InfoWindow({ content: '...' }),
 
         'googleMap': new google.maps.Map(document.getElementById('map'), {
-            'center': new google.maps.LatLng(40.5403, -73.5463),
-            'zoom': 9,
+            'center': new google.maps.LatLng(40.693655, -73.946335),
+            'zoom': 11,
             'mapTypeId': google.maps.MapTypeId.ROADMAP
         }),
 
@@ -1678,30 +1711,34 @@ function loadMap(providers) {
 
 
         /* Markers */
-
-
-        map.markers[user.id] = new google.maps.Marker({
-
-            position: new google.maps.LatLng(user.latitude, user.longitude),
-            map: map.googleMap,
-            title: user.name,
-            icon: (user.is_provider === true ? '<%= asset_path "new/search/map-pin-green.png" %>' : '<%= asset_path "new/search/map-pin-black.png" %>'),
-            html: '<div class="info-window" style="background-image: url(' + user.avatar_url + ');">' + $('#map-overlay').html() + '</div>'
-
-        });
-
+        map.markers[user.id] = {
+            type: (user.is_provider === true ? 'provider' : 'demander'),
+            marker: new google.maps.Marker({
+                position: new google.maps.LatLng(user.latitude, user.longitude),
+                map: map.googleMap,
+                title: user.name,
+                icon: (user.is_provider === true ? '<%= asset_path "new/search/map-pin-green.png" %>' : '<%= asset_path "new/search/map-pin-black.png" %>'),
+                html: '<div class="info-window" style="background-image: url(' + user.avatar_url + ');">' + $('#map-overlay').html() + '</div>'
+            })
+        };
 
         /* Connect marker clicks to info windows */
-
-
-        google.maps.event.addListener(map.markers[user.id], 'click', function () {
-
+        google.maps.event.addListener(map.markers[user.id]['marker'], 'click', function () {
             map.infoWindow.setContent(this.html);
             map.infoWindow.open(map.googleMap, this);
 
         });
 
+        if(getCookie('map_toggle') == 'demander' || getCookie('map_toggle') == 'provider') {
+            map.markers.forEach(function(item) {
+                if(item['type'] == getCookie('map_toggle')) {
+                    item['marker'].setVisible(false);
+                }
+            });
 
+            $('#map-toggle-provider').css('background-position', getCookie('map_toggle') == 'provider' ? '-19px -146px' : '-19px -14px');
+            $('#map-toggle-demander').css('background-position', getCookie('map_toggle') == 'demander' ? '-60px -80px' : '-60px -14px');
+        }
     });
 
 }
@@ -1795,6 +1832,8 @@ function prepareFilter(filterType) {
 
     $('#schools').parent().mouseenter(function () { if (!$('#schools').is(':visible')) { hideSearchOption($('#schools')); } });
     $('#schools').parent().mouseleave(function () { hideSearchOption($('#schools')); });
+
+    $('.search-field').tagit({singleField: true});
 
     $($('.sort-by')[0]).parent().mouseenter(function () {
         $('.sort-by:not(.default)').each(function (i, e) { $(e).css('display', 'block'); });
@@ -2161,17 +2200,20 @@ function loadMessages() {
 
 
             $('#messages').prepend(
-                '<div onclick="back=\'messages\'; loadChat(\'' + messages[i].sender.id + ':' + messages[i].sender.name + '\');" class="message-box">' +
+                '<div class="message-box">' +
                     '<a href="#" onclick="blockUser(' + messages[i].sender.id + ');" class="black-button t">x</a>' +
-                    '<div class="avatar-container">' +
+                    '<div class="avatar-container" onclick="profileId=' + messages[i].sender.id + '; back=\'messages\'; loadPage(\'/profile\');">' +
                         '<img src="' + ((messages[i].sender.avatar_url !== null) ? messages[i].sender.avatar_url : '<%= asset_path "new/main/avatar.png" %>') + '" alt="User Avatar">' +
                     '</div>' +
-                    '<div class="name">' +
-                        messages[i].sender.name +
-                        '<div class="green-button' + ((messages[i].unread_messages > 0) ? ' active' : '') + '"></div>' +
+                    '<div class="message-content" onclick="back=\'messages\'; loadChat(\'' + messages[i].sender.id + ':' + messages[i].sender.name + '\');">' +
+                        '<div class="name">' +
+                            messages[i].sender.name +
+                            '<div class="green-button' + ((messages[i].unread_messages > 0) ? ' active' : '') + '"></div>' +
+                        '</div>' +
+                        '<div class="content">' + messages[i].last_message.contents + '</div>' +
+                        '<div class="time">' + dateParser(messages[i].last_message.created_at) + ' ' + time12Hour(messages[i].last_message.created_at.replace(/^.*T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$1')) + '</div>' +
                     '</div>' +
-                    '<div class="content">' + messages[i].last_message.contents + '</div>' +
-                    '<div class="time">' + dateParser(messages[i].last_message.created_at) + ' ' + time12Hour(messages[i].last_message.created_at.replace(/^.*T(\d{2}\:\d{2})\:\d{2}.\d{3}Z/, '$1')) + '</div>' +
+                    '<div class="clear"></div>' +
                 '</div>'
             );
 
@@ -2528,7 +2570,6 @@ function setStatsTerm(term, name) {
 }
 
 function loadProfile() {
-
     $('#content-preloader').show();
 
     $.ajax({
@@ -2569,12 +2610,31 @@ function loadProfile() {
             //$('#profile-portfolio').hide();
         }
 
+        //  Open projects
+        data['response']['bookings'].forEach(function(booking) {
+            if(booking.status == 'confirmed' && booking.provider_id == null) {
+                $('#first-project .name').html(booking.title);
+
+                dueDate = new Date(booking.due_date * 1000);
+
+                $('#first-project .due-date').html((dueDate.getMonth() + 1) + '/' + dueDate.getDate() + '/' + dueDate.getFullYear());
+                $('#first-project .description').html(booking.description);
+                $('#first-project .total-amount').html(booking.budget);
+
+                $('#first-project .status-btn.apply').attr('onclick', 'applyForProject(' + booking.id + ');');
+
+                $('#projects').append('<div class="project">' + $('#first-project').clone().html() + '</div>');
+            }
+        });
+
+
         if(user.is_provider) {
             $('#profile-provider').show();
             $('#profile-demander').hide();
 
             $('.hire-button-profile').show();
             $('.message-button-profile').css('width', '215px');
+            $('.message-button-profile').html('<img src="/assets/new/profile/tap/message.png" width="215" height="67" alt="">');
 
             if(user.skills != null && user.skills.length > 0) {
                 $('.profile-item.skills').show();
@@ -2678,9 +2738,27 @@ function loadProfile() {
         else {
             $('.hire-button-profile').hide();
             $('.message-button-profile').css('width', '100%');
+            $('.message-button-profile').html('<img src="/assets/new/profile/tap/message-big.png" width="430" height="67" alt="">');
         }
     });
 
+}
+
+function applyForProject(bookingId) {
+    $('#content-preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/booking/add_applicant?token=' + currentUser.token + '&booking_id=' + bookingId + '&applicant_id=' + currentUser.id,
+        error: Response
+    }).done(function (user) {
+                user = user[0] == '{' ? JSON.parse(user) : user;
+
+                if (user.status === 'ok') {
+                    alert('You have successfully applied for this project.');
+                }
+
+                $('#content-preloader').hide();
+    });
 }
 
 function hireApplicant(userId) {
@@ -2989,7 +3067,7 @@ function loadProjectBadges() {
                     data.response.forEach(function(item) {
                         bookings[item.booking.id] = item;
 
-                        if(!(item.booking.status == 'confirmed' || !(item.booking.status == 'accepted' || (item.booking.status == 'completed' && (item.demander.id == currentUser.id) ? (item.booking.date_reviewed_demander == null) : (item.booking.date_reviewed_provider == null))))) {
+                        if(!(item.booking.status == 'rejected' || item.booking.status == 'confirmed' || !(item.booking.status == 'accepted' || (item.booking.status == 'completed' && (item.demander.id == currentUser.id) ? (item.booking.date_reviewed_demander == null) : (item.booking.date_reviewed_provider == null))))) {
                             stats['current']++;
                         }
 
@@ -3194,6 +3272,7 @@ function loadApplicants() {
                     $('#providers').html('');
 
                     data.response['applicants'].forEach(function (user) {
+                        user = user.applicant;
 
                         user.hourly_rate = calculateCost(user.hourly_rate);
 
