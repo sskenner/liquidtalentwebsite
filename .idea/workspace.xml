@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/new/profile/stars_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/new/profile/stars_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/new/profile/stars_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/new/profile/stars_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/new/profile/stars_5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400862524567" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400862554760" ignored="false" />
+    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400867337906" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400867126704" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400799753890" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -179,7 +187,6 @@
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/booking_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400759359534" ignored="false" />
     <file path="/booking_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400759359534" ignored="false" />
     <file path="/tagit.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400840650403" ignored="false" />
-    <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400866697371" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,157 +209,19 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="186" column="56" selection-start="4582" selection-end="4582" vertical-scroll-proportion="-9.375">
+            <state line="2732" column="152" selection-start="96593" selection-end="96593" vertical-scroll-proportion="-11.551021">
               <folding>
-                <marker date="1400862554521" expanded="true" signature="4614:28109" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="4628:26813" placeholder="{&quot;active&quot;: ''...}" />
-                <marker date="1400862554521" expanded="true" signature="4670:5465" placeholder="{&quot;href&quot;: ''...}" />
-                <marker date="1400862554521" expanded="true" signature="4729:5454" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="4870:5066" placeholder="{&quot;href&quot;: '/presentation/subscribe'...}" />
-                <marker date="1400862554521" expanded="true" signature="4893:4939" placeholder="/*...*/" />
-                <marker date="1400862554521" expanded="true" signature="5131:5439" placeholder="{&quot;href&quot;: '/send_message'...}" />
-                <marker date="1400862554521" expanded="true" signature="5154:5241" placeholder="/*...*/" />
-                <marker date="1400862554521" expanded="true" signature="5485:5804" placeholder="{&quot;href&quot;: '/login'...}" />
-                <marker date="1400862554521" expanded="true" signature="5550:5793" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="5610:5777" placeholder="{&quot;href&quot;: '/user/signin'...}" />
-                <marker date="1400862554521" expanded="true" signature="5825:6772" placeholder="{&quot;href&quot;: '/signup'...}" />
-                <marker date="1400862554521" expanded="true" signature="5891:6761" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="5933:6012" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="6051:6129" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="6194:6644" placeholder="{&quot;href&quot;: '/user/signup'...}" />
-                <marker date="1400862554521" expanded="true" signature="6692:6745" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="6802:8578" placeholder="{&quot;href&quot;: '/signup_demander'...}" />
-                <marker date="1400862554521" expanded="true" signature="6876:8568" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="6917:6996" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="7035:7113" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="7440:7668" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
-                <marker date="1400862554521" expanded="true" signature="7555:7650" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="7691:8253" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="7854:8234" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="8099:8204" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="8306:8552" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="8364:8436" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="8462:8534" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="8616:10781" placeholder="{&quot;href&quot;: '/signup_service_provider'...}" />
-                <marker date="1400862554521" expanded="true" signature="8698:10771" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="8739:8818" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="8857:8964" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="9688:9755" placeholder="{&quot;href&quot;: '/user/set_details'...}" />
-                <marker date="1400862554521" expanded="true" signature="9781:10053" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
-                <marker date="1400862554521" expanded="true" signature="9896:10035" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="10076:10638" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="10239:10619" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="10484:10589" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="10691:10755" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="10802:11318" placeholder="{&quot;href&quot;: '/search'...}" />
-                <marker date="1400862554521" expanded="true" signature="10868:11307" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="11149:11213" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="11235:11293" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="11336:11938" placeholder="{&quot;href&quot;: '/map'...}" />
-                <marker date="1400862554521" expanded="true" signature="11399:11927" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="11631:11731" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="11811:11872" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="11962:12604" placeholder="{&quot;href&quot;: '/favorites'...}" />
-                <marker date="1400862554521" expanded="true" signature="12031:12593" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="12319:12577" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="12381:12457" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="12483:12559" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="12624:13283" placeholder="{&quot;href&quot;: '/stats'...}" />
-                <marker date="1400862554521" expanded="true" signature="12689:13272" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="12976:13255" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="13045:13128" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="13154:13237" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="13305:13625" placeholder="{&quot;href&quot;: '/profile'...}" />
-                <marker date="1400862554521" expanded="true" signature="13371:13615" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="13652:13946" placeholder="{&quot;href&quot;: '/video_upload'...}" />
-                <marker date="1400862554521" expanded="true" signature="13723:13936" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="13969:14297" placeholder="{&quot;href&quot;: '/statuses'...}" />
-                <marker date="1400862554521" expanded="true" signature="14036:14287" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="14326:15927" placeholder="{&quot;href&quot;: '/create_project'...}" />
-                <marker date="1400862554521" expanded="true" signature="14399:15917" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="14623:14851" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
-                <marker date="1400862554521" expanded="true" signature="14738:14833" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="14874:15444" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="15037:15417" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="15282:15387" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="15497:15743" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="15555:15627" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="15653:15725" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="15946:16390" placeholder="{&quot;href&quot;: '/hire'...}" />
-                <marker date="1400862554521" expanded="true" signature="16009:16380" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="16417:18460" placeholder="{&quot;href&quot;: '/hire_confirm'...}" />
-                <marker date="1400862554521" expanded="true" signature="16488:18450" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="16806:18306" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="16942:18285" placeholder="{&quot;changeMonth&quot;: true...}" />
-                <marker date="1400862554521" expanded="true" signature="17216:17649" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="17710:18263" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="17782:18237" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="18328:18436" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="18486:19161" placeholder="{&quot;href&quot;: '/hire_accept'...}" />
-                <marker date="1400862554521" expanded="true" signature="18556:19151" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="18895:19005" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="19027:19137" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="19184:19507" placeholder="{&quot;href&quot;: '/projects'...}" />
-                <marker date="1400862554521" expanded="true" signature="19251:19497" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="19532:19859" placeholder="{&quot;href&quot;: '/applicants'...}" />
-                <marker date="1400862554521" expanded="true" signature="19601:19849" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="19878:20193" placeholder="{&quot;href&quot;: '/rate'...}" />
-                <marker date="1400862554521" expanded="true" signature="19941:20183" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="20216:21876" placeholder="{&quot;href&quot;: '/settings'...}" />
-                <marker date="1400862554521" expanded="true" signature="20283:21866" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="20525:20627" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="20683:21271" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="20889:21253" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="21546:21851" placeholder="{&quot;href&quot;: '/send_message'...}" />
-                <marker date="1400862554521" expanded="true" signature="21568:21655" placeholder="/*...*/" />
-                <marker date="1400862554521" expanded="true" signature="21906:23797" placeholder="{&quot;href&quot;: '/update_demander'...}" />
-                <marker date="1400862554521" expanded="true" signature="21980:23787" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="22204:22432" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
-                <marker date="1400862554521" expanded="true" signature="22319:22414" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="22455:23025" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="22618:22998" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="22863:22968" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="23078:23324" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="23136:23208" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="23234:23306" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="23710:23771" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="23827:26194" placeholder="{&quot;href&quot;: '/update_provider'...}" />
-                <marker date="1400862554521" expanded="true" signature="23901:26184" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="24125:24353" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
-                <marker date="1400862554521" expanded="true" signature="24240:24335" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="24376:24882" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="24523:24863" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="24752:24841" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="24935:25181" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="24993:25065" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="25091:25163" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="26003:26064" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="26114:26168" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="26214:26501" placeholder="{&quot;href&quot;: '/terms'...}" />
-                <marker date="1400862554521" expanded="true" signature="26278:26491" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="26519:26806" placeholder="{&quot;href&quot;: '/terms'...}" />
-                <marker date="1400862554521" expanded="true" signature="26583:26796" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="26830:27176" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="26909:27169" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="26963:27088" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="27018:27073" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="27261:27562" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="27350:27554" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="27572:27611" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="27674:27829" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="27879:27940" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="27991:28053" placeholder="{...}" />
-                <marker date="1400862554521" expanded="true" signature="57241:57263" placeholder="..." />
-                <marker date="1400862554521" expanded="true" signature="79241:79257" placeholder="..." />
+                <marker date="1400867380833" expanded="true" signature="57241:57263" placeholder="..." />
+                <marker date="1400867380833" expanded="true" signature="79241:79257" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.css.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="361" column="26" selection-start="11558" selection-end="11558" vertical-scroll-proportion="-4.8163266">
+            <state line="2200" column="17" selection-start="50097" selection-end="50097" vertical-scroll-proportion="0.58220214">
               <folding />
             </state>
           </provider>
@@ -377,16 +246,16 @@
       <file leaf-file-name="profile.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-14.375">
+            <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="15.166667">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="presentation.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="43" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.28808448">
+            <state line="79" column="48" selection-start="2704" selection-end="2709" vertical-scroll-proportion="-4.5102043">
               <folding />
             </state>
           </provider>
@@ -423,9 +292,9 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" />
         <option value="$PROJECT_DIR$/app/views/user/profile.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/map.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
       </list>
     </option>
   </component>
@@ -784,7 +653,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="search" />
+              <option name="myItemId" value="profile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1252,13 +1121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-14.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-buttons.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1278,161 +1140,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="361" column="26" selection-start="11558" selection-end="11558" vertical-scroll-proportion="-4.8163266">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="56" selection-start="4582" selection-end="4582" vertical-scroll-proportion="-9.375">
-          <folding>
-            <marker date="1400862554521" expanded="true" signature="4614:28109" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="4628:26813" placeholder="{&quot;active&quot;: ''...}" />
-            <marker date="1400862554521" expanded="true" signature="4670:5465" placeholder="{&quot;href&quot;: ''...}" />
-            <marker date="1400862554521" expanded="true" signature="4729:5454" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="4870:5066" placeholder="{&quot;href&quot;: '/presentation/subscribe'...}" />
-            <marker date="1400862554521" expanded="true" signature="4893:4939" placeholder="/*...*/" />
-            <marker date="1400862554521" expanded="true" signature="5131:5439" placeholder="{&quot;href&quot;: '/send_message'...}" />
-            <marker date="1400862554521" expanded="true" signature="5154:5241" placeholder="/*...*/" />
-            <marker date="1400862554521" expanded="true" signature="5485:5804" placeholder="{&quot;href&quot;: '/login'...}" />
-            <marker date="1400862554521" expanded="true" signature="5550:5793" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="5610:5777" placeholder="{&quot;href&quot;: '/user/signin'...}" />
-            <marker date="1400862554521" expanded="true" signature="5825:6772" placeholder="{&quot;href&quot;: '/signup'...}" />
-            <marker date="1400862554521" expanded="true" signature="5891:6761" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="5933:6012" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="6051:6129" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="6194:6644" placeholder="{&quot;href&quot;: '/user/signup'...}" />
-            <marker date="1400862554521" expanded="true" signature="6692:6745" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="6802:8578" placeholder="{&quot;href&quot;: '/signup_demander'...}" />
-            <marker date="1400862554521" expanded="true" signature="6876:8568" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="6917:6996" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="7035:7113" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="7440:7668" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
-            <marker date="1400862554521" expanded="true" signature="7555:7650" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="7691:8253" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="7854:8234" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="8099:8204" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="8306:8552" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="8364:8436" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="8462:8534" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="8616:10781" placeholder="{&quot;href&quot;: '/signup_service_provider'...}" />
-            <marker date="1400862554521" expanded="true" signature="8698:10771" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="8739:8818" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="8857:8964" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="9688:9755" placeholder="{&quot;href&quot;: '/user/set_details'...}" />
-            <marker date="1400862554521" expanded="true" signature="9781:10053" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
-            <marker date="1400862554521" expanded="true" signature="9896:10035" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="10076:10638" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="10239:10619" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="10484:10589" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="10691:10755" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="10802:11318" placeholder="{&quot;href&quot;: '/search'...}" />
-            <marker date="1400862554521" expanded="true" signature="10868:11307" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="11149:11213" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="11235:11293" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="11336:11938" placeholder="{&quot;href&quot;: '/map'...}" />
-            <marker date="1400862554521" expanded="true" signature="11399:11927" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="11631:11731" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="11811:11872" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="11962:12604" placeholder="{&quot;href&quot;: '/favorites'...}" />
-            <marker date="1400862554521" expanded="true" signature="12031:12593" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="12319:12577" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="12381:12457" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="12483:12559" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="12624:13283" placeholder="{&quot;href&quot;: '/stats'...}" />
-            <marker date="1400862554521" expanded="true" signature="12689:13272" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="12976:13255" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="13045:13128" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="13154:13237" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="13305:13625" placeholder="{&quot;href&quot;: '/profile'...}" />
-            <marker date="1400862554521" expanded="true" signature="13371:13615" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="13652:13946" placeholder="{&quot;href&quot;: '/video_upload'...}" />
-            <marker date="1400862554521" expanded="true" signature="13723:13936" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="13969:14297" placeholder="{&quot;href&quot;: '/statuses'...}" />
-            <marker date="1400862554521" expanded="true" signature="14036:14287" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="14326:15927" placeholder="{&quot;href&quot;: '/create_project'...}" />
-            <marker date="1400862554521" expanded="true" signature="14399:15917" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="14623:14851" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
-            <marker date="1400862554521" expanded="true" signature="14738:14833" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="14874:15444" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="15037:15417" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="15282:15387" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="15497:15743" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="15555:15627" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="15653:15725" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="15946:16390" placeholder="{&quot;href&quot;: '/hire'...}" />
-            <marker date="1400862554521" expanded="true" signature="16009:16380" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="16417:18460" placeholder="{&quot;href&quot;: '/hire_confirm'...}" />
-            <marker date="1400862554521" expanded="true" signature="16488:18450" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="16806:18306" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="16942:18285" placeholder="{&quot;changeMonth&quot;: true...}" />
-            <marker date="1400862554521" expanded="true" signature="17216:17649" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="17710:18263" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="17782:18237" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="18328:18436" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="18486:19161" placeholder="{&quot;href&quot;: '/hire_accept'...}" />
-            <marker date="1400862554521" expanded="true" signature="18556:19151" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="18895:19005" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="19027:19137" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="19184:19507" placeholder="{&quot;href&quot;: '/projects'...}" />
-            <marker date="1400862554521" expanded="true" signature="19251:19497" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="19532:19859" placeholder="{&quot;href&quot;: '/applicants'...}" />
-            <marker date="1400862554521" expanded="true" signature="19601:19849" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="19878:20193" placeholder="{&quot;href&quot;: '/rate'...}" />
-            <marker date="1400862554521" expanded="true" signature="19941:20183" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="20216:21876" placeholder="{&quot;href&quot;: '/settings'...}" />
-            <marker date="1400862554521" expanded="true" signature="20283:21866" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="20525:20627" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="20683:21271" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="20889:21253" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="21546:21851" placeholder="{&quot;href&quot;: '/send_message'...}" />
-            <marker date="1400862554521" expanded="true" signature="21568:21655" placeholder="/*...*/" />
-            <marker date="1400862554521" expanded="true" signature="21906:23797" placeholder="{&quot;href&quot;: '/update_demander'...}" />
-            <marker date="1400862554521" expanded="true" signature="21980:23787" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="22204:22432" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
-            <marker date="1400862554521" expanded="true" signature="22319:22414" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="22455:23025" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="22618:22998" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="22863:22968" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="23078:23324" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="23136:23208" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="23234:23306" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="23710:23771" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="23827:26194" placeholder="{&quot;href&quot;: '/update_provider'...}" />
-            <marker date="1400862554521" expanded="true" signature="23901:26184" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="24125:24353" placeholder="{&quot;url&quot;: 'http://backend.liquidtalent.com/get_info'...}" />
-            <marker date="1400862554521" expanded="true" signature="24240:24335" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="24376:24882" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="24523:24863" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="24752:24841" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="24935:25181" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="24993:25065" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="25091:25163" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="26003:26064" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="26114:26168" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="26214:26501" placeholder="{&quot;href&quot;: '/terms'...}" />
-            <marker date="1400862554521" expanded="true" signature="26278:26491" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="26519:26806" placeholder="{&quot;href&quot;: '/terms'...}" />
-            <marker date="1400862554521" expanded="true" signature="26583:26796" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="26830:27176" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="26909:27169" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="26963:27088" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="27018:27073" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="27261:27562" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="27350:27554" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="27572:27611" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="27674:27829" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="27879:27940" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="27991:28053" placeholder="{...}" />
-            <marker date="1400862554521" expanded="true" signature="57241:57263" placeholder="..." />
-            <marker date="1400862554521" expanded="true" signature="79241:79257" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-pin-toggle.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1440,7 +1147,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="43" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.28808448">
+        <state line="79" column="48" selection-start="2704" selection-end="2709" vertical-scroll-proportion="-4.5102043">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="15.166667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2732" column="152" selection-start="96593" selection-end="96593" vertical-scroll-proportion="-11.551021">
+          <folding>
+            <marker date="1400867380833" expanded="true" signature="57241:57263" placeholder="..." />
+            <marker date="1400867380833" expanded="true" signature="79241:79257" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2200" column="17" selection-start="50097" selection-end="50097" vertical-scroll-proportion="0.58220214">
           <folding />
         </state>
       </provider>

@@ -2687,23 +2687,25 @@ function loadProfile() {
                     $('#first-review .due-date').html(review['date_reviewed_provider']);
                     $('#first-review .review-text').html(review['review_provider']);
 
-                    if(review['rate_provider'] < 0.5) {
-                        $('#first-review .review-stars').css('background-position', '0px 0px');
-                    }
-                    else if(review['rate_provider'] < 1.5) {
-                        $('#first-review .review-stars').css('background-position', '0px -52px');
+                    if(review['rate_provider'] < 1.5) {
+                        $('#first-review .review-stars').html('<img src="<%= asset_path "new/profile/stars_1.png" %>" width="120" height="24" alt="Rate" />');
+                        //$('#first-review .review-stars').css('background-position', '0px -52px');
                     }
                     else if(review['rate_provider'] < 2.5) {
-                        $('#first-review .review-stars').css('background-position', '0px -105px');
+                        $('#first-review .review-stars').html('<img src="<%= asset_path "new/profile/stars_2.png" %>" width="120" height="24" alt="Rate" />');
+                        //$('#first-review .review-stars').css('background-position', '0px -105px');
                     }
                     else if(review['rate_provider'] < 3.5) {
-                        $('#first-review .review-stars').css('background-position', '0px -157px');
+                        $('#first-review .review-stars').html('<img src="<%= asset_path "new/profile/stars_3.png" %>" width="120" height="24" alt="Rate" />');
+                        //$('#first-review .review-stars').css('background-position', '0px -157px');
                     }
                     else if(review['rate_provider'] < 4.5) {
-                        $('#first-review .review-stars').css('background-position', '0px -209px');
+                        $('#first-review .review-stars').html('<img src="<%= asset_path "new/profile/stars_4.png" %>" width="120" height="24" alt="Rate" />');
+                        //$('#first-review .review-stars').css('background-position', '0px -209px');
                     }
                     else if(review['rate_provider']>= 4.5) {
-                        $('#first-review .review-stars').css('background-position', '0px -261px');
+                        $('#first-review .review-stars').html('<img src="<%= asset_path "new/profile/stars_5.png" %>" width="120" height="24" alt="Rate" />');
+                        //$('#first-review .review-stars').css('background-position', '0px -261px');
                     }
                 }
                 else if ((user.id == review['demander_id']) && review['date_reviewed_demander'] != null) {
@@ -2711,23 +2713,25 @@ function loadProfile() {
                     $('#first-review .due-date').html(review['date_reviewed_demander']);
                     $('#first-review .review-text').html(review['review_demander']);
 
-                    if(review['rate_demander'] < 0.5) {
-                        $('#first-review .review-stars').css('background-position', '0px 0px');
-                    }
-                    else if(review['rate_demander'] < 1.5) {
-                        $('#first-review .review-stars').css('background-position', '0px -52px');
+                    if(review['rate_demander'] < 1.5) {
+                        $('#first-review .review-stars').html('<img src="<%= asset_path "new/profile/stars_1.png" %>" width="120" height="24" alt="Rate" />');
+                        //$('#first-review .review-stars').css('background-position', '0px -52px');
                     }
                     else if(review['rate_demander'] < 2.5) {
-                        $('#first-review .review-stars').css('background-position', '0px -105px');
+                        $('#first-review .review-stars').html('<img src="<%= asset_path "new/profile/stars_2.png" %>" width="120" height="24" alt="Rate" />');
+                        //$('#first-review .review-stars').css('background-position', '0px -105px');
                     }
                     else if(review['rate_demander'] < 3.5) {
-                        $('#first-review .review-stars').css('background-position', '0px -157px');
+                        $('#first-review .review-stars').html('<img src="<%= asset_path "new/profile/stars_3.png" %>" width="120" height="24" alt="Rate" />');
+                        //$('#first-review .review-stars').css('background-position', '0px -157px');
                     }
                     else if(review['rate_demander'] < 4.5) {
-                        $('#first-review .review-stars').css('background-position', '0px -209px');
+                        $('#first-review .review-stars').html('<img src="<%= asset_path "new/profile/stars_4.png" %>" width="120" height="24" alt="Rate" />');
+                        //$('#first-review .review-stars').css('background-position', '0px -209px');
                     }
                     else if(review['rate_demander']>= 4.5) {
-                        $('#first-review .review-stars').css('background-position', '0px -261px');
+                        $('#first-review .review-stars').html('<img src="<%= asset_path "new/profile/stars_5.png" %>" width="120" height="24" alt="Rate" />');
+                        //$('#first-review .review-stars').css('background-position', '0px -261px');
                     }
                 }
 
