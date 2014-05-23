@@ -26,7 +26,7 @@
 
 <% if params[:code] %>
     <script>
-        $(window).on('load', function () {
+        $(document).ready(function () {
             var code = getURLParameter('code');
 
             $('#preloader').show();
