@@ -30,6 +30,7 @@ var currentUser = null,
     favorites = {},
     messages = [],
     linkedInConnections = [];
+    global_access_token = null;
 
 var users = null;
 var global_info = null;
@@ -817,6 +818,8 @@ $(document).ready(function () {
             //currentUser.token = getCookie('userToken');
             createUser (currentUser, 'home');
 
+            getFavorites();
+
             $('#preloader').hide();
         });
     }
@@ -974,7 +977,7 @@ function getURLParameter(name) {
     return (decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1]).replace(/\+/g, '%20')) || null;
 }
 
-function createUser (data, target) {
+function createUser(data, target) {
     showUserInfo();
     checkUnreadMessages();
     loadPage('/' + target);
@@ -1324,6 +1327,28 @@ function SubmitSignupForm(userType) {
 function submitDemander(linkedin) {
     $('#preloader').show();
 
+    //  Validate input
+    if($('.company_name').val().length < 2) {
+        alert('Enter your company name, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if($('.company_description').val().length < 2) {
+        alert('Enter your company description, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if($('.title').val().length < 2) {
+        alert('Enter your title, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if(!$('#category_id').val()) {
+        alert('Choose your industry, please.');
+        $('#preloader').hide();
+        return false;
+    }
+
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/set_details?' +
                 'user_id=' + currentUser.id +
@@ -1440,9 +1465,10 @@ function setCategory(id, name) {
     $('.category').val(name);
     $('#category_id').val(id);
 
-    filter_settings.category.label = name;
-    filter_settings.category.value = id;
-
+    if($('sort-by').length) {
+        filter_settings.category.label = name;
+        filter_settings.category.value = id;
+    }
 
     $('#categories').hide();
 
@@ -1524,6 +1550,8 @@ function show_user(user_id, callback) {
 function linkedin_connect(access_token) {
     $('#preloader').show();
 
+    global_access_token = access_token;
+
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/linkedin_connect/?access_token=' + access_token,
         error: Response
@@ -1587,12 +1615,11 @@ function logout() {
 var map;
 
 function showUserInfo() {
-
-    if ('linkedin_token' in currentUser && currentUser.linkedin_token !== null) {
+    if ('linkedin_token' in currentUser && currentUser.linkedin_token !== null && global_access_token != null) {
 
         $.ajax({
             url: 'http://backend.liquidtalent.com/user/find_linkedin_connections',
-            data: 'access_token=' + currentUser.token + '&user_id=' + currentUser.linkedin_token
+            data: 'token=' + currentUser.token + '&access_token=' + global_access_token + '&user_id=' + currentUser.linkedin_token
         }).done(function (data) {
                     data = data[0] == '{' ? JSON.parse(data) : data;
                     linkedInConnections = data.response;
@@ -1698,7 +1725,7 @@ function loadMap(providers) {
 
         map.iW.description.attr('onclick', 'profileId=' + user.id + '; bookingId=null;   back="map"; loadPage("/profile");');
         map.iW.description.html(
-            user.description === null ? '' : user.description.substr(0, 24) + '...'
+            user.description ? user.description.substr(0, 24) + '...' : user.company_description.substr(0, 24) + '...'
         );
 
         if (user.video_url !== null) { map.iW.play.addClass('disabled'); }
@@ -1768,7 +1795,7 @@ function listSearch(providers) {
         else { $('#first-item .lt-drop').addClass(user.badge); }
 
         $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '') + user.state);
-        $('#first-item .description').html(user.description);
+        $('#first-item .description').html(user.description ? user.description : user.company_description);
 
         $('#first-item .distance').html(user.hourly_rate);
 
@@ -1781,7 +1808,11 @@ function listSearch(providers) {
     });
 
     //sortUsers('cost');
-
+    /*
+    if((elt = $('#background')).innerWidth() > elt[0].scrollWidth) {
+        alert('jo');
+    }
+    */
 }
 function filterUsers(callback) {
     $('#filter').hide();
@@ -1833,7 +1864,7 @@ function prepareFilter(filterType) {
     $('#schools').parent().mouseenter(function () { if (!$('#schools').is(':visible')) { hideSearchOption($('#schools')); } });
     $('#schools').parent().mouseleave(function () { hideSearchOption($('#schools')); });
 
-    $('.search-field').tagit({singleField: true});
+    $('.search-field').tagit({singleField: true, placeholderText: 'Keywords'});
 
     $($('.sort-by')[0]).parent().mouseenter(function () {
         $('.sort-by:not(.default)').each(function (i, e) { $(e).css('display', 'block'); });
@@ -1929,7 +1960,7 @@ function createFavorite(userID, button) {
                 error: Response
             }).done(function (data) {
                         data = data[0] == '{' ? JSON.parse(data) : data;
-                        if (data.status === 'ok') { favorites[data.provider_id] = data.id; }
+                        if (data.status === 'ok') { favorites[data.response.provider_id] = data.response.id; }
 
             });
 
@@ -2024,6 +2055,8 @@ function retrieveFavorites(sortBy) {
                     favoritedUsers.push(item['provider'])
                 });
 
+                favoritedUsers = favoritedUsers.reverse();
+
                 $('#content-preloader').hide();
 
                 if (sortBy === 'cost') {
@@ -2082,7 +2115,7 @@ function retrieveFavorites(sortBy) {
 //            else { $('#first-item .play').removeClass('disabled'); }
 
                     $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '')  + user.state);
-                    $('#first-item .description').html(user.description);
+                    $('#first-item .description').html(user.description ? user.description : user.company_description);
 
                     $('#first-item .distance').html(user.hourly_rate);
 
@@ -2124,6 +2157,7 @@ function removeFavorite(provider_id) {
 
         if (data.status === 'ok') {
             $('#' + provider_id).parents('.list-item').remove();
+            favorites[provider_id] = null;
         }
 
     });
@@ -2589,14 +2623,22 @@ function loadProfile() {
 
         //if (user.video_id === null) { $('#profilem .play').addClass('disabled'); }
 
-        $('#profile .play').attr('onclick', "playVideo(" + (user.video_id ? ("'" + user.video_id + "'") : null) + ");");
+        if(user.is_provider) {
+            $('#profile .play').show();
+            $('#profile .play').attr('onclick', "playVideo(" + (user.video_id ? ("'" + user.video_id + "'") : null) + ");");
+            $('#profile .description').css('margin-top', '35px');
+        }
+        else {
+            $('#profile .play').hide();
+            $('#profile .description').css('margin-top', '0px');
+        }
 
         $('#profile-buttons .message-button-profile').attr('onclick',
             'back=\'profile\'; loadChat(\'' + user.id + ':' + user.name + '\');'
         );
 
         $('#profile .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '')  + user.state);
-        $('#profile .description').html(user.description);
+        $('#profile .description').html(user.description ? user.description : user.company_description);
 
         if (typeof (favorites[user.id]) === 'number') { $('#profile .favorite').addClass('active'); }
         else { $('#profile .favorite').removeClass('active'); }
@@ -3298,7 +3340,7 @@ function loadApplicants() {
                         else { $('#first-item .lt-drop').addClass(user.badge); }
 
                         $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '')  + user.state);
-                        $('#first-item .description').html(user.description);
+                        $('#first-item .description').html(user.description ? user.description : user.company_description);
 
                         $('#first-item .distance').html(user.hourly_rate);
 
