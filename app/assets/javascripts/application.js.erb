@@ -30,7 +30,6 @@ var currentUser = null,
     favorites = {},
     messages = [],
     linkedInConnections = [];
-    global_access_token = null;
 
 var users = null;
 var global_info = null;
@@ -1550,7 +1549,7 @@ function show_user(user_id, callback) {
 function linkedin_connect(access_token) {
     $('#preloader').show();
 
-    global_access_token = access_token;
+    document.cookie = 'access_token=' + access_token;
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/linkedin_connect/?access_token=' + access_token,
@@ -1615,11 +1614,11 @@ function logout() {
 var map;
 
 function showUserInfo() {
-    if ('linkedin_token' in currentUser && currentUser.linkedin_token !== null && global_access_token != null) {
+    if ('linkedin_token' in currentUser && currentUser.linkedin_token !== null && getCookie('access_token') != null) {
 
         $.ajax({
             url: 'http://backend.liquidtalent.com/user/find_linkedin_connections',
-            data: 'token=' + currentUser.token + '&access_token=' + global_access_token + '&user_id=' + currentUser.linkedin_token
+            data: 'token=' + currentUser.token + '&access_token=' + global_access_token + '&user_id=' + currentUser.id
         }).done(function (data) {
                     data = data[0] == '{' ? JSON.parse(data) : data;
                     linkedInConnections = data.response;
