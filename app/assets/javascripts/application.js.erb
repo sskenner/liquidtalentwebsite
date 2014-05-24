@@ -1615,7 +1615,7 @@ function showUserInfo() {
 
         $.ajax({
             url: 'http://backend.liquidtalent.com/user/find_linkedin_connections',
-            data: 'token=' + currentUser.token + '&access_token=' + getCookie('access_token') + '&user_id=' + currentUser.id
+            data: 'token=' + currentUser.token + '&access_token=' + currentUser.linkedin_token + '&user_id=' + currentUser.id
         }).done(function (data) {
                     data = data[0] == '{' ? JSON.parse(data) : data;
                     linkedInConnections = data.response;
