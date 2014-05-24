@@ -42,6 +42,8 @@
 
                         var access_token = data['access_token'];
 
+                        document.cookie = 'access_token=' + access_token;
+
                         if (getURLParameter('state') == 0 || getURLParameter('state') == '0') {
                             linkedin_connect(access_token);
                         }

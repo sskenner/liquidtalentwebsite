@@ -1549,8 +1549,6 @@ function show_user(user_id, callback) {
 function linkedin_connect(access_token) {
     $('#preloader').show();
 
-    document.cookie = 'access_token=' + access_token;
-
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/linkedin_connect/?access_token=' + access_token,
         error: Response
@@ -1610,7 +1608,6 @@ function logout() {
 */
 
 /****** Search ******/
-
 var map;
 
 function showUserInfo() {
