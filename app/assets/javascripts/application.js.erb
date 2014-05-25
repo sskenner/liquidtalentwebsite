@@ -34,7 +34,7 @@ var currentUser = null,
 var users = null;
 var global_info = null;
 var filter_settings = {
-    query: '',
+    query: [],
     category: {label: 'Industry', value: null},
     subcategory: {label: 'Subcategories', value: null},
     city: {label: 'City', value: null},
@@ -1429,10 +1429,14 @@ function SubmitSignupSPForm(linkedin) {
 
 }
 
-function searchSchool(query) {
+function searchSchool(query, filterType) {
+    $('#schools').html('');
 
-    if (query === '') {
-        $('#schools').html('');
+    if(filterType) {
+        $('#schools').html('<div class="option" onclick="$(\'#school_id\').val(\'\'); filterUsers(' + filterType + ')">All colleges</div>');
+    }
+
+    if (query == '') {
         return;
     }
 
@@ -1441,23 +1445,16 @@ function searchSchool(query) {
         error: Response
     }).done(function (data) {
                 $('#schools').show();
-                $('#schools').html('');
 
                 data['response'].forEach(function (school) {
-                    $('#schools').append('<div class="option" onclick="setSchool(' + school['_source']['id'] + ', \'' + school['_source']['name'] + '\');filterUsers(listSearch);">' + school['_source']['name'] + '</div>')
+                    $('#schools').append('<div class="option" onclick="setSchool(' + school['_source']['id'] + ', \'' + school['_source']['name'] + '\', ' + (filterType ? true : false)  + ');' + (filterType == null ? '' : 'filterUsers(' + filterType + ')') + ';">' + school['_source']['name'] + '</div>')
                 })
             });
 }
 
 function setQuery(query) {
-
     $('.search-field').val(query);
     $('#query').val(query);
-
-    filter_settings.query = query;
-
-    filterUsers(listSearch);
-
 }
 
 function setCategory(id, name) {
@@ -1526,12 +1523,14 @@ function setState(id, name) {
     $('#states').html('');
 }
 
-function setSchool(id, name) {
+function setSchool(id, name, search) {
     $('.school').val(name);
     $('#school_id').val(id);
 
-    filter_settings.college.label = name;
-    filter_settings.college.value = id;
+    if(search) {
+        filter_settings.college.label = name;
+        filter_settings.college.value = id;
+    }
 
     $('#schools').html('');
 }
@@ -1708,6 +1707,10 @@ function loadMap(providers) {
 
     $('#content-preloader').hide();
 
+    if(!providers) {
+        return;
+    }
+
     providers.forEach(function (user) {
         if(!user.latitude || !user.longitude) {
             return false;
@@ -1781,8 +1784,11 @@ function loadMap(providers) {
 
 }
 function listSearch(providers) {
-
     $('#providers').html('');
+
+    if(!providers) {
+        return;
+    }
 
     providers.forEach(function (user) {
 
@@ -1837,6 +1843,7 @@ function listSearch(providers) {
         $('.list-item').css('width', '750px');
     }
 }
+
 function filterUsers(callback) {
     $('#filter').hide();
     $('#content-preloader').show();
@@ -1844,6 +1851,7 @@ function filterUsers(callback) {
     $.ajax({
         url: 'http://backend.liquidtalent.com/users/search_users',
         data: 'query=' + $('#query').val() +
+              '&user_id=' + currentUser.id +
               '&category_id=' + $('#category_id').val() +
               '&school_id=' + $('#school_id').val(),
         error: Response
@@ -1887,7 +1895,42 @@ function prepareFilter(filterType) {
     $('#schools').parent().mouseenter(function () { if (!$('#schools').is(':visible')) { hideSearchOption($('#schools')); } });
     $('#schools').parent().mouseleave(function () { hideSearchOption($('#schools')); });
 
-    $('.search-field').tagit({singleField: true, placeholderText: 'Keywords'});
+    filter_settings.query.forEach(function(tag) {
+        $('.search-field').html('<li>' + tag + '</li>');
+    });
+
+    $('.search-field').tagit({
+        singleField: true,
+        placeholderText: 'Keywords',
+        afterTagAdded: function(event, ui) {
+            if(!ui.duringInitialization) {
+                $('ul.tagit input[type="text"]').css('margin-top', '0px');
+                $('.search-field').tagit({ placeholderText: '' });
+
+                setQuery($(".search-field").tagit("assignedTags").join(' '));
+                filter_settings.query = $(".search-field").tagit("assignedTags");
+                filterUsers(filterType == 'loadMap' ? loadMap : listSearch);
+            }
+        },
+        afterTagRemoved: function(event, ui) {
+            setQuery($(".search-field").tagit("assignedTags").join(' '));
+            filter_settings.query = $(".search-field").tagit("assignedTags");
+            filterUsers(filterType == 'loadMap' ? loadMap : listSearch);
+
+            if(!$(".search-field").tagit("assignedTags").length) {
+                $('ul.tagit input[type="text"]').css('margin-top', '13px');
+                $('.search-field').tagit({ placeholderText: 'Keywords' });
+            }
+        }
+    });
+
+    if($(".search-field").tagit("assignedTags").length) {
+        $('ul.tagit input[type="text"]').css('margin-top', '0px');
+        $('.search-field').tagit({ placeholderText: false });
+    }
+    else {
+        $('ul.tagit input[type="text"]').css('margin-top', '13px');
+    }
 
     $($('.sort-by')[0]).parent().mouseenter(function () {
         $('.sort-by:not(.default)').each(function (i, e) { $(e).css('display', 'block'); });
@@ -1896,9 +1939,7 @@ function prepareFilter(filterType) {
         $('.sort-by').each(function (i, e) { $(e).removeAttr('style'); });
     });
     $('.sort-by').each(function (i, e) {
-
         $(e).mouseup(function () {
-
             $('.sort-by').each(function (i, e) { $(e).removeClass('active'); $(e).html(''); });
             $(this).parent().prepend($(this));
             $(this).addClass('active');
@@ -1906,9 +1947,7 @@ function prepareFilter(filterType) {
             $('.sort-by.default').hide();
 
             if ($('#providers')) { sortUsers(this.title); }
-
         });
-
     });
 
     /*
@@ -1922,7 +1961,7 @@ function prepareFilter(filterType) {
 
     $('#industries').parent().find('.text-field').val(filter_settings.category.label);
     $('#schools').parent().find('.text-field').val(filter_settings.college.label);
-    $('.search-field').val(filter_settings.query);
+    //$('.search-field').val(filter_settings.query);
     $('#query').val(filter_settings.query);
     $('#category_id').val(filter_settings.category.value);
 

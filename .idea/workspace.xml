@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/_filter.html.erb" afterPath="$PROJECT_DIR$/app/views/user/_filter.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" afterPath="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/update_provider.html.erb" afterPath="$PROJECT_DIR$/app/views/user/update_provider.html.erb" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401024107396" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401026943911" ignored="false" />
-    <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400799753890" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401035599877" ignored="false" />
+    <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034723990" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
     <file path="/routes.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400701938692" ignored="false" />
@@ -45,7 +48,7 @@
     <file path="/checks_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396440519929" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/models/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400586468313" ignored="false" />
     <file path="/settings.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400707668096" ignored="false" />
-    <file path="/_filter.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400799490964" ignored="false" />
+    <file path="/_filter.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401032600274" ignored="false" />
     <file path="/map.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400857718562" ignored="false" />
     <file path="/search.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399899533744" ignored="false" />
     <file path="$PROJECT_DIR$/../reltrek.com/app/assets/javascripts/users.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396517324416" ignored="false" />
@@ -62,7 +65,7 @@
     <file path="/contact_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396613133950" ignored="false" />
     <file path="/confirm.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399914519791" ignored="false" />
     <file path="/presentation.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400866724061" ignored="false" />
-    <file path="/signup_service_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400799726499" ignored="false" />
+    <file path="/signup_service_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034702100" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397464842107" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/views/layouts/application.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484592519" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/application.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397467161455" ignored="false" />
@@ -206,11 +209,20 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2172" column="50" selection-start="73870" selection-end="73870" vertical-scroll-proportion="0.5652174">
+            <state line="1948" column="59" selection-start="66018" selection-end="66018" vertical-scroll-proportion="1.2639751">
               <folding>
-                <marker date="1401028338548" expanded="true" signature="58387:58409" placeholder="..." />
-                <marker date="1401028338548" expanded="true" signature="81485:81501" placeholder="..." />
+                <marker date="1401036292815" expanded="true" signature="58622:58644" placeholder="..." />
+                <marker date="1401036292815" expanded="true" signature="83233:83249" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_filter.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user/_filter.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="163" selection-start="485" selection-end="485" vertical-scroll-proportion="-4.375">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -224,26 +236,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="linkedin-icon.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/images/new/main/linkedin-icon.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application.css.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="267" column="25" selection-start="8672" selection-end="8672" vertical-scroll-proportion="-12.469388">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/user/map.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="80" selection-start="190" selection-end="190" vertical-scroll-proportion="-1.875">
               <folding />
             </state>
           </provider>
@@ -261,7 +257,7 @@
       <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="23" selection-start="2634" selection-end="2634" vertical-scroll-proportion="-13.125">
+            <state line="31" column="4" selection-start="1125" selection-end="1125" vertical-scroll-proportion="-11.25">
               <folding />
             </state>
           </provider>
@@ -287,19 +283,19 @@
       <list>
         <option value="$PROJECT_DIR$/app/views/user/profile_old.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/favorites.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/_filter.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/signup_demander.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/update_demander.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/update_provider.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/tagit.js.erb.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/jquery-ui.js.erb" />
         <option value="$PROJECT_DIR$/app/views/user/profile.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/map.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/login.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/update_provider.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/_filter.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       </list>
     </option>
@@ -1065,42 +1061,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/user/_filter.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="73" selection-start="178" selection-end="198" vertical-scroll-proportion="0.042796005">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-buttons.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/map.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="80" selection-start="190" selection-end="190" vertical-scroll-proportion="-1.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-pin-toggle.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="18" selection-start="1702" selection-end="1702" vertical-scroll-proportion="-24.833334">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/login.html.erb">
@@ -1127,23 +1090,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-15.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/search.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="31" selection-start="764" selection-end="777" vertical-scroll-proportion="-15.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="267" column="25" selection-start="8672" selection-end="8672" vertical-scroll-proportion="-12.469388">
           <folding />
         </state>
       </provider>
@@ -1157,17 +1106,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="23" selection-start="2634" selection-end="2634" vertical-scroll-proportion="-13.125">
+        <state line="31" column="4" selection-start="1125" selection-end="1125" vertical-scroll-proportion="-11.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="18" selection-start="1706" selection-end="1706" vertical-scroll-proportion="-23.958334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/map.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="80" selection-start="190" selection-end="190" vertical-scroll-proportion="0.06419401">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="267" column="25" selection-start="8672" selection-end="8672" vertical-scroll-proportion="-12.469388">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-15.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="111" selection-start="932" selection-end="932" vertical-scroll-proportion="0.44117647">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/update_provider.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="111" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.66476464">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/_filter.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="163" selection-start="485" selection-end="485" vertical-scroll-proportion="-4.375">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2172" column="50" selection-start="73870" selection-end="73870" vertical-scroll-proportion="0.5652174">
+        <state line="1948" column="59" selection-start="66018" selection-end="66018" vertical-scroll-proportion="1.2639751">
           <folding>
-            <marker date="1401028338548" expanded="true" signature="58387:58409" placeholder="..." />
-            <marker date="1401028338548" expanded="true" signature="81485:81501" placeholder="..." />
+            <marker date="1401036292815" expanded="true" signature="58622:58644" placeholder="..." />
+            <marker date="1401036292815" expanded="true" signature="83233:83249" placeholder="..." />
           </folding>
         </state>
       </provider>
