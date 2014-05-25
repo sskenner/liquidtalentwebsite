@@ -1391,6 +1391,48 @@ function submitDemander(linkedin) {
 function SubmitSignupSPForm(linkedin) {
     $('#preloader').show();
 
+    //  Validate input
+    if($('.company_name').val().length < 2) {
+        alert('Enter your company name, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if($('.company_description').val().length < 2) {
+        alert('Enter your company description, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if($('.title').val().length < 2) {
+        alert('Enter your title, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if($('.description').val().length < 2) {
+        alert('Enter your tagline, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if($('.summary').val().length < 2) {
+        alert('Enter your summary, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if(!$('#category_id').val()) {
+        alert('Choose your industry, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if(!($('.hourly_rate').val() > 0)) {
+        alert('Enter correct hourly rate, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if(!($('.hourly_rate').val() >= 0)) {
+        alert('Enter correct number of years in industry, please.');
+        $('#preloader').hide();
+        return false;
+    }
+
     $.ajax({
         url: 'http://backend.liquidtalent.com' + sF.href,
         data: 'user_id=' + currentUser.id +
