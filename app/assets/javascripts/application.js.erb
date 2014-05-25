@@ -1247,7 +1247,22 @@ function reset_password() {
 function SubmitSignupForm(userType) {
     $('#preloader').show();
 
-    //  Validate password
+    //  Validate input data
+    if(sF.fn.val().length < 2) {
+        alert('Enter your first name, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if(sF.ln.val().length < 2) {
+        alert('Enter your last name, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if(sF.e.val().val().length < 5) {
+        alert('Enter your email address, please.');
+        $('#preloader').hide();
+        return false;
+    }
     if($('.password').val().length < 5) {
         alert('Password needs to have at least 5 chars.');
         $('#preloader').hide();
@@ -1259,7 +1274,7 @@ function SubmitSignupForm(userType) {
         return false;
     }
     if($('.zip').val().length < 4) {
-        alert('Please, set your ZIP code.');
+        alert('Set your ZIP code, please.');
         $('#preloader').hide();
         return false;
     }
