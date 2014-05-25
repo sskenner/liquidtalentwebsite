@@ -1444,6 +1444,8 @@ function searchSchool(query, filterType) {
         url: 'http://backend.liquidtalent.com/schools/search?search=' + query,
         error: Response
     }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
                 $('#schools').show();
 
                 data['response'].forEach(function (school) {
