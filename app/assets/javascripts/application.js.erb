@@ -1392,21 +1392,6 @@ function SubmitSignupSPForm(linkedin) {
     $('#preloader').show();
 
     //  Validate input
-    if($('.company_name').val().length < 2) {
-        alert('Enter your company name, please.');
-        $('#preloader').hide();
-        return false;
-    }
-    if($('.company_description').val().length < 2) {
-        alert('Enter your company description, please.');
-        $('#preloader').hide();
-        return false;
-    }
-    if($('.title').val().length < 2) {
-        alert('Enter your title, please.');
-        $('#preloader').hide();
-        return false;
-    }
     if($('.description').val().length < 2) {
         alert('Enter your tagline, please.');
         $('#preloader').hide();
@@ -1414,6 +1399,16 @@ function SubmitSignupSPForm(linkedin) {
     }
     if($('.summary').val().length < 2) {
         alert('Enter your summary, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if($('.skills').val().length < 2) {
+        alert('Enter your skills, please.');
+        $('#preloader').hide();
+        return false;
+    }
+    if($('.experience').val().length < 2) {
+        alert('Enter your experience, please.');
         $('#preloader').hide();
         return false;
     }
