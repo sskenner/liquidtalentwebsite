@@ -329,7 +329,7 @@ $(document).ready(function () {
                     $('#admin-panel').addClass('disabled');
                 }
                 if ($('#background')) {
-                    $('#background').addClass('disabled').css('overflow-y', 'scroll');;
+                    $('#background').addClass('disabled').css('overflow-y', 'auto');;
                 }
 
                 //  Prefill the fields
@@ -378,7 +378,7 @@ $(document).ready(function () {
             'href': '/search',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 prepareFilter('listSearch');
 
@@ -421,7 +421,7 @@ $(document).ready(function () {
             'load': function () {
 
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 loadFavorites();
 
@@ -443,7 +443,7 @@ $(document).ready(function () {
             'load': function () {
 
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 loadStats(7);
 
@@ -464,7 +464,7 @@ $(document).ready(function () {
             'href': '/profile',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 loadProfile()
             }
@@ -474,7 +474,7 @@ $(document).ready(function () {
             'href': '/video_upload',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
             }
         },
 
@@ -482,7 +482,7 @@ $(document).ready(function () {
             'href': '/statuses',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 loadProjectBadges();
             }
@@ -492,7 +492,7 @@ $(document).ready(function () {
             'href': '/create_project',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 $.ajax({
                     url: 'http://backend.liquidtalent.com/get_info',
@@ -531,7 +531,7 @@ $(document).ready(function () {
             'href': '/hire',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 loadHire();
 
@@ -544,7 +544,7 @@ $(document).ready(function () {
             'href': '/hire_confirm',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 $('#total-amount').html(booking.budget);
 
@@ -588,7 +588,7 @@ $(document).ready(function () {
             'href': '/hire_accept',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 $('#total-amount').html(bookings[bookingId].booking.budget);
 
@@ -607,7 +607,7 @@ $(document).ready(function () {
             'href': '/projects',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 loadProjects();
             }
@@ -617,7 +617,7 @@ $(document).ready(function () {
             'href': '/applicants',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 loadApplicants();
             }
@@ -627,7 +627,7 @@ $(document).ready(function () {
             'href': '/rate',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 loadRate();
             }
@@ -637,7 +637,7 @@ $(document).ready(function () {
             'href': '/settings',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 if(currentUser === null) {
                     showPlaceholder('Settings');
@@ -671,7 +671,7 @@ $(document).ready(function () {
             'href': '/update_demander',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 $.ajax({
                     url: 'http://backend.liquidtalent.com/get_info',
@@ -718,7 +718,7 @@ $(document).ready(function () {
             'href': '/update_provider',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 $.ajax({
                     url: 'http://backend.liquidtalent.com/get_info',
@@ -775,7 +775,7 @@ $(document).ready(function () {
             'href': '/terms',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
             }
         },
 
@@ -783,7 +783,7 @@ $(document).ready(function () {
             'href': '/terms',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
-                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'scroll'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
             }
         }
 
@@ -1720,6 +1720,14 @@ function loadMap(providers) {
         if (user.badge === 'no') { map.iW.LTDrop.addClass('hidden'); }
         else { map.iW.LTDrop.addClass(user.badge); }
 
+        //  Linkedin icon
+        if(linkedInConnections.indexOf(user.id) > -1) {
+            map.iW.linkedIn.show();
+        }
+        else {
+            map.iW.linkedIn.hide();
+        }
+
         map.iW.title.attr('onclick', 'profileId=' + user.id + ';  bookingId=null;  back="map"; loadPage("/profile");');
         map.iW.title.html(
             '<p class="name">' + user.name + '</p>' +
@@ -1819,11 +1827,15 @@ function listSearch(providers) {
     });
 
     //sortUsers('cost');
-    /*
-    if((elt = $('#background')).innerWidth() > elt[0].scrollWidth) {
-        alert('jo');
+
+    if($('#list-items').height() > 567) {
+        $('.search-option').css('width', '172px');
+        $('.list-item').css('width', '735px');
     }
-    */
+    else {
+        $('.search-option').css('width', '179px');
+        $('.list-item').css('width', '750px');
+    }
 }
 function filterUsers(callback) {
     $('#filter').hide();
@@ -2122,8 +2134,13 @@ function retrieveFavorites(sortBy) {
                     if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
                     else { $('#first-item .lt-drop').addClass(user.badge); }
 
-//            if (user.video_url === null) { $('#first-item .play').addClass('disabled'); }
-//            else { $('#first-item .play').removeClass('disabled'); }
+                    //  Linkedin icon
+                    if(linkedInConnections.indexOf(user.id) > -1) {
+                        $('#first-item .linkedin-icon').show();
+                    }
+                    else {
+                        $('#first-item .linkedin-icon').hide();
+                    }
 
                     $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '')  + user.state);
                     $('#first-item .description').html(user.description ? user.description : user.company_description);
@@ -2153,6 +2170,12 @@ function retrieveFavorites(sortBy) {
 
                 });
 
+                if($('#list-items').height() > 638) {
+                    $('.list-item').css('width', '735px');
+                }
+                else {
+                    $('.list-item').css('width', '750px');
+                }
             });
 }
 
@@ -3349,6 +3372,14 @@ function loadApplicants() {
 
                         if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
                         else { $('#first-item .lt-drop').addClass(user.badge); }
+
+                        //  Linkedin icon
+                        if(linkedInConnections.indexOf(user.id) > -1) {
+                            $('#first-item .linkedin-icon').show();
+                        }
+                        else {
+                            $('#first-item .linkedin-icon').hide();
+                        }
 
                         $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '')  + user.state);
                         $('#first-item .description').html(user.description ? user.description : user.company_description);
