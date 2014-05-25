@@ -17,19 +17,28 @@
 /**********************************************************************************************************************/
 
 @font-face {
-    font-family: 'main';
-    font-weight: 100;
-    src: url('<%= asset_url 'light.otf' %>');
+    font-family: 'ProximaNovaLight';
+    src: url('<%= asset_url 'light.eot' %>');
+    src: url('<%= asset_url 'light.eot' %>') format('embedded-opentype'),
+         url('<%= asset_url 'light.woff' %>') format('woff'),
+         url('<%= asset_url 'light.ttf' %>') format('truetype'),
+         url('<%= asset_url 'light.svg' %>#ProximaNovaLight') format('svg');
 }
 @font-face {
-    font-family: 'main';
-    font-weight: 400;
-    src: url('<%= asset_url 'regular.otf' %>');
+    font-family: 'ProximaNovaRegular';
+    src: url('<%= asset_url 'regular.eot' %>');
+    src: url('<%= asset_url 'regular.eot' %>') format('embedded-opentype'),
+         url('<%= asset_url 'regular.woff' %>') format('woff'),
+         url('<%= asset_url 'regular.ttf' %>') format('truetype'),
+         url('<%= asset_url 'regular.svg' %>#ProximaNovaRegular') format('svg');
 }
 @font-face {
-    font-family: 'main';
-    font-weight: 900;
-    src: url('<%= asset_url 'bold.otf' %>');
+    font-family: 'ProximaNovaBold';
+    src: url('<%= asset_url 'bold.eot' %>');
+    src: url('<%= asset_url 'bold.eot' %>') format('embedded-opentype'),
+         url('<%= asset_url 'bold.woff' %>') format('woff'),
+         url('<%= asset_url 'bold.ttf' %>') format('truetype'),
+         url('<%= asset_url 'bold.svg' %>#ProximaNovaBold') format('svg');
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
