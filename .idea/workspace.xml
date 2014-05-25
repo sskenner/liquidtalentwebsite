@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
-    </list>
+    <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="" />
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400962025079" ignored="false" />
@@ -203,12 +201,19 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1617" column="93" selection-start="53007" selection-end="53007" vertical-scroll-proportion="0.35595778">
+            <state line="3334" column="38" selection-start="118960" selection-end="118965" vertical-scroll-proportion="2.0155764">
               <folding>
                 <marker date="1401015776209" expanded="true" signature="58048:58070" placeholder="..." />
                 <marker date="1401015776209" expanded="true" signature="80399:80415" placeholder="..." />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linkedin-icon.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/images/new/main/linkedin-icon.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -656,41 +661,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="profile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="liquidtalentwebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="liquidtalentwebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tap" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1096,30 +1067,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/tagit.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="27" selection-start="7949" selection-end="7949" vertical-scroll-proportion="0.31601125">
-          <folding>
-            <marker date="1400839650076" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1400839650076" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/jquery-ui.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="36" selection-start="75149" selection-end="75149" vertical-scroll-proportion="0.13081396">
-          <folding>
-            <marker date="1400840296823" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1400840296823" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1400840296823" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1400840296823" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1400840296823" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1400840296823" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="0" selection-start="113" selection-end="1342" vertical-scroll-proportion="0.10699002">
@@ -1203,9 +1150,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/profile/icons.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/main/linkedin-icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1617" column="93" selection-start="53007" selection-end="53007" vertical-scroll-proportion="0.35595778">
+        <state line="3334" column="38" selection-start="118960" selection-end="118965" vertical-scroll-proportion="2.0155764">
           <folding>
             <marker date="1401015776209" expanded="true" signature="58048:58070" placeholder="..." />
             <marker date="1401015776209" expanded="true" signature="80399:80415" placeholder="..." />
