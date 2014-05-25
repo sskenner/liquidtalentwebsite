@@ -1790,6 +1790,14 @@ function listSearch(providers) {
         if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
         else { $('#first-item .lt-drop').addClass(user.badge); }
 
+        //  Linkedin icon
+        if(linkedInConnections.indexOf(user.id) > -1) {
+            $('#first-item .linkedin-icon').show();
+        }
+        else {
+            $('#first-item .linkedin-icon').hide();
+        }
+
         $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '') + user.state);
         $('#first-item .description').html(user.description ? user.description : user.company_description);
 

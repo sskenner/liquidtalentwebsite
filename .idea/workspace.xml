@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="" />
+    <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+    </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400962025079" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400971107139" ignored="false" />
+    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401024107396" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401024360031" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400799753890" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -201,11 +204,20 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3334" column="38" selection-start="118960" selection-end="118965" vertical-scroll-proportion="2.0155764">
+            <state line="1797" column="48" selection-start="60326" selection-end="60326" vertical-scroll-proportion="0.8310709">
               <folding>
-                <marker date="1401015776209" expanded="true" signature="58048:58070" placeholder="..." />
-                <marker date="1401015776209" expanded="true" signature="80399:80415" placeholder="..." />
+                <marker date="1401024360740" expanded="true" signature="58048:58070" placeholder="..." />
+                <marker date="1401024360740" expanded="true" signature="80621:80637" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user/search.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="31" selection-start="764" selection-end="777" vertical-scroll-proportion="-15.625">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -217,19 +229,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/user/login.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="178" selection-start="760" selection-end="760" vertical-scroll-proportion="-10.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application.css.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="786" column="10" selection-start="20587" selection-end="20587" vertical-scroll-proportion="-8.489796">
+            <state line="1430" column="52" selection-start="35113" selection-end="35113" vertical-scroll-proportion="-10.833333">
               <folding />
             </state>
           </provider>
@@ -244,26 +247,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map-pin-toggle.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-pin-toggle.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="profile.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="15.166667">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="73" selection-start="1647" selection-end="1647" vertical-scroll-proportion="-20.25">
+            <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-15.0">
               <folding />
             </state>
           </provider>
@@ -299,9 +286,9 @@
         <option value="$PROJECT_DIR$/app/views/user/profile.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/map.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/login.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       </list>
     </option>
@@ -1067,18 +1054,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="113" selection-end="1342" vertical-scroll-proportion="0.10699002">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-pin-green.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-pin-black.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1115,23 +1090,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="15.166667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="18" selection-start="1702" selection-end="1702" vertical-scroll-proportion="-24.833334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="786" column="10" selection-start="20587" selection-end="20587" vertical-scroll-proportion="-8.489796">
           <folding />
         </state>
       </provider>
@@ -1160,12 +1121,40 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/reset_password.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1430" column="52" selection-start="35113" selection-end="35113" vertical-scroll-proportion="-10.833333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-15.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/search.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="31" selection-start="764" selection-end="777" vertical-scroll-proportion="-15.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3334" column="38" selection-start="118960" selection-end="118965" vertical-scroll-proportion="2.0155764">
+        <state line="1797" column="48" selection-start="60326" selection-end="60326" vertical-scroll-proportion="0.8310709">
           <folding>
-            <marker date="1401015776209" expanded="true" signature="58048:58070" placeholder="..." />
-            <marker date="1401015776209" expanded="true" signature="80399:80415" placeholder="..." />
+            <marker date="1401024360740" expanded="true" signature="58048:58070" placeholder="..." />
+            <marker date="1401024360740" expanded="true" signature="80621:80637" placeholder="..." />
           </folding>
         </state>
       </provider>
