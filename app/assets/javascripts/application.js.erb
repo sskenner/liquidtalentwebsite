@@ -1433,7 +1433,7 @@ function searchSchool(query, filterType) {
     $('#schools').html('');
 
     if(filterType) {
-        $('#schools').html('<div class="option" onclick="$(\'#school_id\').val(\'\'); filterUsers(' + filterType + ')">All colleges</div>');
+        $('#schools').html('<div class="option" onclick="setSchool(\'\', \'\', true); filterUsers(' + filterType + ')">All colleges</div>');
     }
 
     if (query == '') {
