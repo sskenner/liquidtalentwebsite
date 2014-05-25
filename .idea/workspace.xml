@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/_filter.html.erb" afterPath="$PROJECT_DIR$/app/views/user/_filter.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" afterPath="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/update_provider.html.erb" afterPath="$PROJECT_DIR$/app/views/user/update_provider.html.erb" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401024107396" ignored="false" />
+    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401036901403" ignored="false" />
     <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401035599877" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034723990" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
@@ -206,14 +201,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1948" column="59" selection-start="66018" selection-end="66018" vertical-scroll-proportion="1.2639751">
+            <state line="1431" column="21" selection-start="48039" selection-end="48051" vertical-scroll-proportion="-2.485294">
               <folding>
                 <marker date="1401036292815" expanded="true" signature="58622:58644" placeholder="..." />
                 <marker date="1401036292815" expanded="true" signature="83233:83249" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_provider.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user/update_provider.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="111" selection-start="1663" selection-end="1663" vertical-scroll-proportion="-26.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup_service_provider.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="9" selection-start="118" selection-end="131" vertical-scroll-proportion="-3.125">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -236,10 +249,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.css.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="267" column="25" selection-start="8672" selection-end="8672" vertical-scroll-proportion="-12.469388">
+            <state line="585" column="58" selection-start="16016" selection-end="16016" vertical-scroll-proportion="0.63084114">
               <folding />
             </state>
           </provider>
@@ -290,13 +303,13 @@
         <option value="$PROJECT_DIR$/app/views/user/profile.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/map.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/login.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" />
         <option value="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/update_provider.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/_filter.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
       </list>
     </option>
   </component>
@@ -1125,30 +1138,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="267" column="25" selection-start="8672" selection-end="8672" vertical-scroll-proportion="-12.469388">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-15.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="111" selection-start="932" selection-end="932" vertical-scroll-proportion="0.44117647">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/update_provider.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="111" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.66476464">
           <folding />
         </state>
       </provider>
@@ -1162,11 +1154,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1948" column="59" selection-start="66018" selection-end="66018" vertical-scroll-proportion="1.2639751">
+        <state line="1431" column="21" selection-start="48039" selection-end="48051" vertical-scroll-proportion="-2.485294">
           <folding>
             <marker date="1401036292815" expanded="true" signature="58622:58644" placeholder="..." />
             <marker date="1401036292815" expanded="true" signature="83233:83249" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/update_provider.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="111" selection-start="1663" selection-end="1663" vertical-scroll-proportion="-26.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="9" selection-start="118" selection-end="131" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="585" column="58" selection-start="16016" selection-end="16016" vertical-scroll-proportion="0.63084114">
+          <folding />
         </state>
       </provider>
     </entry>
