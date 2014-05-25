@@ -400,6 +400,8 @@ $(document).ready(function () {
                 if ($('#background.disabled')) { $('#background').removeClass('disabled'); }
                 if ($('#admin-panel.disabled')) { $('#admin-panel').removeClass('disabled'); }
 
+                $('#background').css('overflow', 'hidden');
+
                 if(currentUser == null) {
                     showPlaceholder('Search');
                     return false;
