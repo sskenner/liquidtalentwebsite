@@ -1555,6 +1555,13 @@ function linkedin_connect(access_token) {
     }).done(function (data) {
                 data = data[0] == '{' ? JSON.parse(data) : data;
 
+                if(data['status'] == 'failed') {
+                    alert(data['errors'][0]);
+                    $('#preloader').hide();
+
+                    return;
+                }
+
                 if (data['response']['new_user']) {
                     currentUser = data['response']['user'];
 
