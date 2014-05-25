@@ -29,7 +29,7 @@
   -->
 
   <div id="provider-form-left">
-    <input type="text" placeholder="Industry" class="text-field category">
+    <input type="text" placeholder="Industry" class="text-field category" readonly="readonly" />
     <div id="categories"></div>
 
     <input type="text" placeholder="Skills" class="text-field skills">
@@ -40,7 +40,7 @@
   </div>
   <div id="provider-form-right">
     <input type="text" placeholder="Tagline" class="text-field description">
-    <input type="text" placeholder="Education" class="text-field school" onkeyup="searchSchool(this.value);">
+    <input type="text" placeholder="Education" class="text-field school" onkeyup="searchSchool(this.value, null);">
     <div id="schools"></div>
     <input type="text" placeholder="Portfolio link" class="text-field portfolio">
     <input type="text" placeholder="Summary" class="text-field summary">

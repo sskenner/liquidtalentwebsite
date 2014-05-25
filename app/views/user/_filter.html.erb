@@ -1,15 +1,15 @@
 <div id="search-options" title="<%= listing %>">
   <div class="search-option" style="margin-left: 0px;">
-    <input type="text" placeholder="Industry" class="text-field category">
+    <input type="text" placeholder="Industry" class="text-field category" readonly="readonly" />
     <div class="option-container" id="industries" style="display: none;"></div>
   </div>
 
   <div class="search-option">
-    <input type="text" class="text-field school" placeholder="College" onkeyup="searchSchool(this.value);" onclick="this.value='';">
+    <input type="text" class="text-field school" placeholder="College" onkeyup="searchSchool(this.value, '<%= listing %>');" onclick="this.value=''; searchSchool('', '<%= listing %>');">
     <div class="option-container" id="schools"></div>
   </div>
 
-  <input type="text" placeholder="Keywords" class="text-field search-option search-field" onkeyup="setQuery(this.value);">
+  <ul class="text-field search-option search-field"></ul>
 
   <div class="search-option" id="sort-by">
     <div class="sort-by  default active">Sort by <img src="/assets/main/arrow-drop-down.png" id="sort-by-arrow" /></div>

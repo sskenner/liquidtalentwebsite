@@ -2,24 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/new/search/map-pin-toggle.png" afterPath="$PROJECT_DIR$/app/assets/images/new/search/map-pin-toggle.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/website.iml" afterPath="$PROJECT_DIR$/.idea/website.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400703759306" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400756193488" ignored="false" />
-    <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400708486605" ignored="false" />
+    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401036901403" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401035599877" ignored="false" />
+    <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034723990" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
     <file path="/routes.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400701938692" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396257785192" ignored="false" />
     <file path="/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398410987424" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400757802525" ignored="false" />
-    <file path="/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400757784806" ignored="false" />
-    <file path="/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399446779966" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399446963435" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401025282564" ignored="false" />
+    <file path="/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401025272016" ignored="false" />
+    <file path="/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401024930722" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401025006534" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/user_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396263284220" ignored="false" />
     <file path="/user_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396263279337" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/public/api.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1398864745587" ignored="false" />
@@ -44,14 +49,14 @@
     <file path="/checks_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396440519929" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/models/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400586468313" ignored="false" />
     <file path="/settings.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400707668096" ignored="false" />
-    <file path="/_filter.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399896959910" ignored="false" />
-    <file path="/map.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399899517020" ignored="false" />
+    <file path="/_filter.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401032600274" ignored="false" />
+    <file path="/map.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400857718562" ignored="false" />
     <file path="/search.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399899533744" ignored="false" />
     <file path="$PROJECT_DIR$/../reltrek.com/app/assets/javascripts/users.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396517324416" ignored="false" />
     <file path="/users.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396517009793" ignored="false" />
     <file path="$PROJECT_DIR$/../reltrek.com/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396509108089" ignored="false" />
-    <file path="/signup_demander.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396873689774" ignored="false" />
-    <file path="/update_demander.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400708471440" ignored="false" />
+    <file path="/signup_demander.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400799717640" ignored="false" />
+    <file path="/update_demander.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400799738338" ignored="false" />
     <file path="/message.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396520464144" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/models/message.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396520469789" ignored="false" />
     <file path="/payments_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396530179772" ignored="false" />
@@ -60,8 +65,8 @@
     <file path="$PROJECT_DIR$/../reltrek.com/app/controllers/timeframes_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396629887343" ignored="false" />
     <file path="/contact_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396613133950" ignored="false" />
     <file path="/confirm.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399914519791" ignored="false" />
-    <file path="/presentation.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400755616914" ignored="false" />
-    <file path="/signup_service_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396878036374" ignored="false" />
+    <file path="/presentation.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400866724061" ignored="false" />
+    <file path="/signup_service_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034702100" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397464842107" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/views/layouts/application.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484592519" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/application.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397467161455" ignored="false" />
@@ -89,7 +94,11 @@
     <file path="$PROJECT_DIR$/../followcheck.com/lib/Twitter.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033056368" ignored="false" />
     <file path="/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
+<<<<<<< HEAD
     <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400874904572" ignored="false" />
+=======
+    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400842152747" ignored="false" />
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
     <file path="/a.dummy" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400257617696" ignored="false" />
     <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400509647484" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/landing.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484343602" ignored="false" />
@@ -162,8 +171,8 @@
     <file path="/presentation_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400034689908" ignored="false" />
     <file path="/hire.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459800926" ignored="false" />
     <file path="/accept.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459257799" ignored="false" />
-    <file path="/favorites.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400579186632" ignored="false" />
-    <file path="/profile.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400601074305" ignored="false" />
+    <file path="/favorites.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400797668138" ignored="false" />
+    <file path="/profile.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400844270144" ignored="false" />
     <file path="/signup.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399460158907" ignored="false" />
     <file path="/stats.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399460231629" ignored="false" />
     <file path="/user_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400757080054" ignored="false" />
@@ -173,11 +182,16 @@
     <file path="/forgotten_password.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400703660665" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/test/mailers/pswd_mailer.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400701401356" ignored="false" />
     <file path="/pswd_mailer.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400701401356" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/views/pswd_mailer/send_pswd.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400701550119" ignored="false" />
-    <file path="/send_pswd.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400701545750" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/views/pswd_mailer/send_pswd.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400776734686" ignored="false" />
+    <file path="/send_pswd.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400776734360" ignored="false" />
     <file path="$PROJECT_DIR$/../emailtosms/config/routes.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400701892339" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/config/initializers/setup_mail.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400702246705" ignored="false" />
     <file path="/reset_password.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400703654575" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/booking_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400759359534" ignored="false" />
+    <file path="/booking_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400759359534" ignored="false" />
+    <file path="/tagit.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400867936857" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/favourites_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401012730219" ignored="false" />
+    <file path="/favourites_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400964107461" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,15 +211,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="contact.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/mailers/contact.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="9" column="35" selection-start="225" selection-end="225" vertical-scroll-proportion="0.14531754">
+=======
+      <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1431" column="21" selection-start="48039" selection-end="48051" vertical-scroll-proportion="-2.485294">
+              <folding>
+                <marker date="1401036292815" expanded="true" signature="58622:58644" placeholder="..." />
+                <marker date="1401036292815" expanded="true" signature="83233:83249" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_provider.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user/update_provider.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="111" selection-start="1663" selection-end="1663" vertical-scroll-proportion="-26.25">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="signup_service_provider.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="9" selection-start="118" selection-end="131" vertical-scroll-proportion="-3.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_filter.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user/_filter.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="163" selection-start="485" selection-end="485" vertical-scroll-proportion="-4.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user/search.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="31" selection-start="764" selection-end="777" vertical-scroll-proportion="-15.625">
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+=======
+      <file leaf-file-name="application.css.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="585" column="58" selection-start="16016" selection-end="16016" vertical-scroll-proportion="0.63084114">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-15.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="4" selection-start="1125" selection-end="1125" vertical-scroll-proportion="-11.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
     </leaf>
   </component>
   <component name="FindManager">
@@ -224,29 +314,35 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/presentation/ipa_downloader.plist" />
-        <option value="$PROJECT_DIR$/app/views/presentation/app.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/profile_old.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/favorites.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/profile.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/user/reset_password.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/forgotten_password.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/login.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/user/settings.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/signup_demander.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/update_demander.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/tagit.js.erb.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/jquery-ui.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/profile.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/map.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/login.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb" />
+        <option value="$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/update_provider.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/_filter.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/user_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="y" value="22" />
     <option name="width" value="1342" />
     <option name="height" value="1054" />
+=======
+    <option name="y" value="24" />
+    <option name="width" value="1600" />
+    <option name="height" value="876" />
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -410,6 +506,149 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
+=======
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liquidtalentwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -671,6 +910,23 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="" />
@@ -680,7 +936,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="22" width="1342" height="1054" extended-state="0" />
+=======
+    <frame x="0" y="24" width="1600" height="876" extended-state="0" />
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -688,7 +948,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21219136" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2113402" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -765,59 +1029,111 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/views/user/update_demander.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="68" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.6387665" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/forgotten_password.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="29" selection-start="75" selection-end="75" vertical-scroll-proportion="-2.5" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/update_provider.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="64" selection-start="1997" selection-end="1997" vertical-scroll-proportion="-22.125" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/_filter.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="28" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="550" column="21" selection-start="15245" selection-end="15245" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/app-stores.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="40" selection-start="600" selection-end="600" vertical-scroll-proportion="0.43404254">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/new/presentation/app-stores-large.png">
+=======
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-pin-toggle.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/login.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="30" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0">
+        <state line="17" column="178" selection-start="760" selection-end="760" vertical-scroll-proportion="-10.625">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/profile/icons.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/new/main/linkedin-icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/reset_password.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/search.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="31" selection-start="764" selection-end="777" vertical-scroll-proportion="-15.625">
+          <folding />
+        </state>
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="4" column="29" selection-start="75" selection-end="75" vertical-scroll-proportion="-2.5" />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="50" column="64" selection-start="1997" selection-end="1997" vertical-scroll-proportion="-22.125" />
+=======
+        <state line="31" column="4" selection-start="1125" selection-end="1125" vertical-scroll-proportion="-11.25">
+          <folding />
+        </state>
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="6" column="28" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
+=======
+        <state line="79" column="18" selection-start="1706" selection-end="1706" vertical-scroll-proportion="-23.958334">
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/map.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="550" column="21" selection-start="15245" selection-end="15245" vertical-scroll-proportion="0.0">
+=======
+        <state line="3" column="80" selection-start="190" selection-end="190" vertical-scroll-proportion="0.06419401">
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-15.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/_filter.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="13" column="30" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0">
+=======
+        <state line="7" column="163" selection-start="485" selection-end="485" vertical-scroll-proportion="-4.375">
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/controllers/user_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="30" selection-start="505" selection-end="505" vertical-scroll-proportion="0.7659575">
@@ -828,10 +1144,26 @@
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="44" selection-start="1701" selection-end="1717" vertical-scroll-proportion="0.0">
+=======
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1431" column="21" selection-start="48039" selection-end="48051" vertical-scroll-proportion="-2.485294">
+          <folding>
+            <marker date="1401036292815" expanded="true" signature="58622:58644" placeholder="..." />
+            <marker date="1401036292815" expanded="true" signature="83233:83249" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/update_provider.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="111" selection-start="1663" selection-end="1663" vertical-scroll-proportion="-26.25">
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1536" column="26" selection-start="50704" selection-end="50704" vertical-scroll-proportion="-0.625">
@@ -854,6 +1186,19 @@
           <folding>
             <element signature="e#220#1447#0" expanded="false" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/app/views/user/signup_service_provider.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="9" selection-start="118" selection-end="131" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="585" column="58" selection-start="16016" selection-end="16016" vertical-scroll-proportion="0.63084114">
+          <folding />
+>>>>>>> 5e301d5193037e36f5f61f3c77b81e81c3f54487
         </state>
       </provider>
     </entry>
