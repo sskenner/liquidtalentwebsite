@@ -1316,10 +1316,15 @@ function SubmitSignupForm(userType) {
                                         currentUser = data['response']['user'];
                                         currentUser['avatar_url'] = avatar_data['response']['url'];
 
-                                        if (userType == 'provider') {
-                                            createUser(data, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
-                                        }
-                                        else { createUser(data, 'signup_demander'); }
+                                        getCurrentLocation(function(loc) {
+                                            currentUser['latitude'] = loc['lat'];
+                                            currentUser['longitude'] = loc['lng'];
+
+                                            if (userType == 'provider') {
+                                                createUser(data, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                                            }
+                                            else { createUser(data, 'signup_demander'); }
+                                        });
                                     }
                                 });
 
@@ -1369,6 +1374,8 @@ function submitDemander(linkedin) {
         url: 'http://backend.liquidtalent.com/user/set_details?' +
                 'user_id=' + currentUser.id +
                 '&token=' + currentUser.token +
+                '&latitude=' + currentUser.latitude +
+                '&longitude=' + currentUser.longitude +
                 '&attr[company_name]=' + $('.company_name').val() +
                 '&attr[company_description]=' + $('.company_description').val() +
                 '&attr[title]=' + $('.title').val() +
@@ -1447,6 +1454,8 @@ function SubmitSignupSPForm(linkedin) {
         url: 'http://backend.liquidtalent.com' + sF.href,
         data: 'user_id=' + currentUser.id +
                 '&token=' + currentUser.token +
+                '&latitude=' + currentUser.latitude +
+                '&longitude=' + currentUser.longitude +
                 '&attr[category_id]=' + $('#category_id').val() +
                 '&attr[school_id]=' + $('#school_id').val() +
                 '&attr[description]=' + $('.description').val() +
@@ -3827,7 +3836,7 @@ function getCurrentLocation(callback) {
     else {
         var lat = '';
         var lng = '';
-        var address = '10001';
+        var address = currentUser.zip;
 
         geocoder = new google.maps.Geocoder();
         geocoder.geocode( { 'address': address}, function(results, status) {

@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/website.iml" afterPath="$PROJECT_DIR$/.idea/website.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401036901403" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401038718150" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1402415240548" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034723990" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -87,7 +89,7 @@
     <file path="$PROJECT_DIR$/../followcheck.com/lib/Twitter.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033056368" ignored="false" />
     <file path="/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400842152747" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1402414227740" ignored="false" />
     <file path="/a.dummy" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400257617696" ignored="false" />
     <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400509647484" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/landing.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484343602" ignored="false" />
@@ -203,56 +205,11 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1260" column="11" selection-start="40589" selection-end="40589" vertical-scroll-proportion="0.35595778">
+            <state line="1457" column="55" selection-start="48407" selection-end="48407" vertical-scroll-proportion="0.6351706">
               <folding>
-                <marker date="1401038903112" expanded="true" signature="60266:60288" placeholder="..." />
-                <marker date="1401038903112" expanded="true" signature="84877:84893" placeholder="..." />
+                <marker date="1402415452000" expanded="false" signature="60787:60809" placeholder="..." />
+                <marker date="1402415452000" expanded="false" signature="85398:85414" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_filter.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/user/_filter.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="163" selection-start="485" selection-end="485" vertical-scroll-proportion="-4.375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/user/search.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="31" selection-start="764" selection-end="777" vertical-scroll-proportion="-15.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.css.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="594" column="58" selection-start="16826" selection-end="16826" vertical-scroll-proportion="-8.265306">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-15.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="4" selection-start="1125" selection-end="1125" vertical-scroll-proportion="-11.25">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -295,9 +252,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
+    <option name="x" value="2" />
+    <option name="y" value="22" />
     <option name="width" value="1600" />
-    <option name="height" value="876" />
+    <option name="height" value="1330" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -549,114 +507,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="liquidtalentwebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="liquidtalentwebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="liquidtalentwebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="liquidtalentwebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="liquidtalentwebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="liquidtalentwebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="liquidtalentwebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="liquidtalentwebsite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -667,37 +525,34 @@
   </component>
   <component name="PublishConfig">
     <servers>
-      <server id="024a7736-7a5f-46c0-919f-1c1489ef1a3a">
+      <server id="0926c948-3912-44a2-993e-de19c6f2975d">
         <serverdata />
       </server>
-      <server id="1b5956c2-4300-4ce5-8f3a-1cf1dde786d5">
+      <server id="132eed31-e1cc-4b61-a762-ae2052b48a91">
         <serverdata />
       </server>
-      <server id="63028fe1-023a-42ca-96a2-73e85a8bce96">
+      <server id="2206a832-d560-461b-bfed-a1ff17131572">
         <serverdata />
       </server>
-      <server id="725e25be-c680-4d56-a70e-00a85a339f75">
+      <server id="31af5306-6c0b-4ef4-9771-59c00627aec9">
         <serverdata />
       </server>
-      <server id="8792e51c-28e6-44b2-9b76-3d52647af008">
+      <server id="80034d86-4e23-4496-be65-909f496b0402">
         <serverdata />
       </server>
-      <server id="a0266bf3-f2c4-4449-92bb-586ef24b5089">
+      <server id="932550f8-238b-47df-8951-085adbfa2b53">
         <serverdata />
       </server>
-      <server id="cdb176ac-4f93-4857-9e53-b95f6004dee7">
+      <server id="a93f821e-9ffb-4bdb-b922-8f922235b8fb">
         <serverdata />
       </server>
-      <server id="d644b1ce-c12f-4b5d-ba82-7c0531570a97">
+      <server id="c42c2915-bee0-400c-ae52-fa2105695c8f">
         <serverdata />
       </server>
-      <server id="de6c616a-4bc7-4ef2-8fe1-4f57309c303f">
+      <server id="cdbecd83-df12-4dd3-9c23-f5c2a5c8a63d">
         <serverdata />
       </server>
-      <server id="e1adf350-7c43-4e11-804a-cafa4fad7222">
-        <serverdata />
-      </server>
-      <server id="e3d592db-3427-4499-bc93-a4dc090ab049">
+      <server id="d022c88c-4521-4b3c-a474-29907b7f83c4">
         <serverdata />
       </server>
     </servers>
@@ -924,10 +779,10 @@
       <method />
     </configuration>
     <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="1" class="java.lang.String" itemvalue="Rails.Production: liquidtalentwebsite" />
-      <item index="2" class="java.lang.String" itemvalue="Rails.Development: liquidtalentwebsite" />
-      <item index="3" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.All tests in: public" />
+      <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.All tests in: public" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="2" class="java.lang.String" itemvalue="Rails.Production: liquidtalentwebsite" />
+      <item index="3" class="java.lang.String" itemvalue="Rails.Development: liquidtalentwebsite" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -962,7 +817,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1600" height="876" extended-state="0" />
+    <frame x="2" y="22" width="1600" height="1330" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -970,7 +825,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2113402" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21428572" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1078,7 +933,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/search.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="31" selection-start="764" selection-end="777" vertical-scroll-proportion="-15.625">
+        <state line="25" column="31" selection-start="764" selection-end="777" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1092,16 +947,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="4" selection-start="1125" selection-end="1125" vertical-scroll-proportion="-11.25">
+        <state line="31" column="4" selection-start="1125" selection-end="1125" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tagit.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="18" selection-start="1706" selection-end="1706" vertical-scroll-proportion="-23.958334">
-          <folding />
-        </state>
+        <state line="79" column="18" selection-start="1706" selection-end="1706" vertical-scroll-proportion="-23.958334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/map.html.erb">
@@ -1113,14 +966,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/profile.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="-15.0">
+        <state line="24" column="107" selection-start="849" selection-end="849" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/_filter.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="163" selection-start="485" selection-end="485" vertical-scroll-proportion="-4.375">
+        <state line="7" column="163" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1141,17 +994,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="594" column="58" selection-start="16826" selection-end="16826" vertical-scroll-proportion="-8.265306">
+        <state line="594" column="58" selection-start="16826" selection-end="16826" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1260" column="11" selection-start="40589" selection-end="40589" vertical-scroll-proportion="0.35595778">
+        <state line="1457" column="55" selection-start="48407" selection-end="48407" vertical-scroll-proportion="0.6351706">
           <folding>
-            <marker date="1401038903112" expanded="true" signature="60266:60288" placeholder="..." />
-            <marker date="1401038903112" expanded="true" signature="84877:84893" placeholder="..." />
+            <marker date="1402415452000" expanded="false" signature="60787:60809" placeholder="..." />
+            <marker date="1402415452000" expanded="false" signature="85398:85414" placeholder="..." />
           </folding>
         </state>
       </provider>
