@@ -1700,7 +1700,7 @@ function showUserInfo() {
     }
 
     currentUser['state'] = checkState(currentUser['state']);
-    currentUser['city_name'] = (!currentUser['city_name'])? 'New York' : currentUser['city_name'];
+    currentUser['city_name'] = (!currentUser['city_name'])? '' : currentUser['city_name'];
 
     var avatar = currentUser['avatar_url'] ? currentUser['avatar_url'] : '<%= asset_path "new/main/avatar.png" %>';
 
@@ -1709,7 +1709,7 @@ function showUserInfo() {
 
     $('#user-info .avatar').attr('src', avatar);
     $('#user-info .name').html(currentUser['name']);
-    $('#user-info .location').html(currentUser['city_name'] + ', ' + currentUser['state']);
+    $('#user-info .location').html(currentUser['city_name'] + ((currentUser['city_name'] == '' || currentUser['state'] == '') ? '' : ', ') + currentUser['state']);
 
     //$('html, body').delay(2000).animate({ scrollTop: $('.page-segment.hiw').offset().top }, 300, 'linear', null);
 }
@@ -2614,7 +2614,7 @@ function time12Hour (time) {
 
 function checkState (state) {
     if (state) { state = (state.length > 2)? states[state] : state.toUpperCase(); }
-    else { state = 'NY'; }
+    else { state = ''; }
 
     return state;
 }
