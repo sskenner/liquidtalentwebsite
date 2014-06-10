@@ -1317,6 +1317,7 @@ function SubmitSignupForm(userType) {
                                         currentUser['avatar_url'] = avatar_data['response']['url'];
 
                                         getCurrentLocation(function(loc) {
+                                            console.log("Loc" + loc);
                                             currentUser['latitude'] = loc['lat'];
                                             currentUser['longitude'] = loc['lng'];
 
@@ -1369,6 +1370,8 @@ function submitDemander(linkedin) {
         $('#preloader').hide();
         return false;
     }
+
+    console.log('currentUser: ' + currentUser);
 
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/set_details?' +
