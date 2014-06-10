@@ -203,11 +203,20 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1373" column="47" selection-start="45271" selection-end="45271" vertical-scroll-proportion="0.51706034">
+            <state line="1333" column="39" selection-start="44102" selection-end="44102" vertical-scroll-proportion="0.81889766">
               <folding>
-                <marker date="1402416040000" expanded="false" signature="60906:60928" placeholder="..." />
-                <marker date="1402416040000" expanded="false" signature="85517:85533" placeholder="..." />
+                <marker date="1402416553000" expanded="false" signature="61197:61219" placeholder="..." />
+                <marker date="1402416553000" expanded="false" signature="85808:85824" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/user/signup.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -900,11 +909,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/images/new/search/map-pin-toggle.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/login.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="178" selection-start="760" selection-end="760" vertical-scroll-proportion="-10.625">
@@ -997,12 +1001,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/signup.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1373" column="47" selection-start="45271" selection-end="45271" vertical-scroll-proportion="0.51706034">
+        <state line="1333" column="39" selection-start="44102" selection-end="44102" vertical-scroll-proportion="0.81889766">
           <folding>
-            <marker date="1402416040000" expanded="false" signature="60906:60928" placeholder="..." />
-            <marker date="1402416040000" expanded="false" signature="85517:85533" placeholder="..." />
+            <marker date="1402416553000" expanded="false" signature="61197:61219" placeholder="..." />
+            <marker date="1402416553000" expanded="false" signature="85808:85824" placeholder="..." />
           </folding>
         </state>
       </provider>
