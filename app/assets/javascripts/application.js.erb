@@ -1317,7 +1317,6 @@ function SubmitSignupForm(userType) {
                                         currentUser['avatar_url'] = avatar_data['response']['url'];
 
                                         getCurrentLocation(function(loc) {
-                                            console.log(loc);
                                             currentUser['latitude'] = loc['lat'];
                                             currentUser['longitude'] = loc['lng'];
 
@@ -1334,7 +1333,6 @@ function SubmitSignupForm(userType) {
                         currentUser = data['response']['user'];
 
                         getCurrentLocation(function(loc) {
-                            console.log(loc);
                             currentUser['latitude'] = loc['lat'];
                             currentUser['longitude'] = loc['lng'];
 
@@ -1377,14 +1375,12 @@ function submitDemander(linkedin) {
         return false;
     }
 
-    console.log(currentUser);
-
     $.ajax({
         url: 'http://backend.liquidtalent.com/user/set_details?' +
                 'user_id=' + currentUser.id +
                 '&token=' + currentUser.token +
-                '&latitude=' + currentUser.latitude +
-                '&longitude=' + currentUser.longitude +
+                '&attr[latitude]=' + currentUser.latitude +
+                '&attr[longitude]=' + currentUser.longitude +
                 '&attr[company_name]=' + $('.company_name').val() +
                 '&attr[company_description]=' + $('.company_description').val() +
                 '&attr[title]=' + $('.title').val() +
@@ -1463,8 +1459,8 @@ function SubmitSignupSPForm(linkedin) {
         url: 'http://backend.liquidtalent.com' + sF.href,
         data: 'user_id=' + currentUser.id +
                 '&token=' + currentUser.token +
-                '&latitude=' + currentUser.latitude +
-                '&longitude=' + currentUser.longitude +
+                '&attr[latitude]=' + currentUser.latitude +
+                '&attr[longitude]=' + currentUser.longitude +
                 '&attr[category_id]=' + $('#category_id').val() +
                 '&attr[school_id]=' + $('#school_id').val() +
                 '&attr[description]=' + $('.description').val() +
