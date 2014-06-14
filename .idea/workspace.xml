@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,7 +88,7 @@
     <file path="$PROJECT_DIR$/../followcheck.com/lib/Twitter.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033056368" ignored="false" />
     <file path="/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1402414227740" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1402737417852" ignored="false" />
     <file path="/a.dummy" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400257617696" ignored="false" />
     <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400509647484" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/landing.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484343602" ignored="false" />
@@ -203,20 +204,11 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1711" column="138" selection-start="56569" selection-end="56569" vertical-scroll-proportion="0.6351706">
+            <state line="3849" column="61" selection-start="136006" selection-end="136006" vertical-scroll-proportion="0.38675022">
               <folding>
-                <marker date="1402417982000" expanded="false" signature="61112:61134" placeholder="..." />
-                <marker date="1402417982000" expanded="false" signature="85723:85739" placeholder="..." />
+                <marker date="1402737809131" expanded="true" signature="61112:61134" placeholder="..." />
+                <marker date="1402737809131" expanded="true" signature="85723:85739" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signup.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/user/signup.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -260,7 +252,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="2" />
-    <option name="y" value="22" />
+    <option name="y" value="24" />
     <option name="width" value="1600" />
     <option name="height" value="1330" />
   </component>
@@ -290,6 +282,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -520,7 +513,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -532,34 +524,37 @@
   </component>
   <component name="PublishConfig">
     <servers>
-      <server id="0926c948-3912-44a2-993e-de19c6f2975d">
+      <server id="024a7736-7a5f-46c0-919f-1c1489ef1a3a">
         <serverdata />
       </server>
-      <server id="132eed31-e1cc-4b61-a762-ae2052b48a91">
+      <server id="1b5956c2-4300-4ce5-8f3a-1cf1dde786d5">
         <serverdata />
       </server>
-      <server id="2206a832-d560-461b-bfed-a1ff17131572">
+      <server id="63028fe1-023a-42ca-96a2-73e85a8bce96">
         <serverdata />
       </server>
-      <server id="31af5306-6c0b-4ef4-9771-59c00627aec9">
+      <server id="725e25be-c680-4d56-a70e-00a85a339f75">
         <serverdata />
       </server>
-      <server id="80034d86-4e23-4496-be65-909f496b0402">
+      <server id="8792e51c-28e6-44b2-9b76-3d52647af008">
         <serverdata />
       </server>
-      <server id="932550f8-238b-47df-8951-085adbfa2b53">
+      <server id="a0266bf3-f2c4-4449-92bb-586ef24b5089">
         <serverdata />
       </server>
-      <server id="a93f821e-9ffb-4bdb-b922-8f922235b8fb">
+      <server id="cdb176ac-4f93-4857-9e53-b95f6004dee7">
         <serverdata />
       </server>
-      <server id="c42c2915-bee0-400c-ae52-fa2105695c8f">
+      <server id="d644b1ce-c12f-4b5d-ba82-7c0531570a97">
         <serverdata />
       </server>
-      <server id="cdbecd83-df12-4dd3-9c23-f5c2a5c8a63d">
+      <server id="de6c616a-4bc7-4ef2-8fe1-4f57309c303f">
         <serverdata />
       </server>
-      <server id="d022c88c-4521-4b3c-a474-29907b7f83c4">
+      <server id="e1adf350-7c43-4e11-804a-cafa4fad7222">
+        <serverdata />
+      </server>
+      <server id="e3d592db-3427-4499-bc93-a4dc090ab049">
         <serverdata />
       </server>
     </servers>
@@ -824,7 +819,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="22" width="1600" height="1330" extended-state="0" />
+    <frame x="2" y="24" width="1600" height="1330" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -832,7 +827,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21428572" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21713917" sideWeight="0.6707218" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -942,9 +937,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
@@ -1010,10 +1003,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1711" column="138" selection-start="56569" selection-end="56569" vertical-scroll-proportion="0.6351706">
+        <state line="3849" column="61" selection-start="136006" selection-end="136006" vertical-scroll-proportion="0.38675022">
           <folding>
-            <marker date="1402417982000" expanded="false" signature="61112:61134" placeholder="..." />
-            <marker date="1402417982000" expanded="false" signature="85723:85739" placeholder="..." />
+            <marker date="1402737809131" expanded="true" signature="61112:61134" placeholder="..." />
+            <marker date="1402737809131" expanded="true" signature="85723:85739" placeholder="..." />
           </folding>
         </state>
       </provider>
