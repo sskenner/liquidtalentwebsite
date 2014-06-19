@@ -834,12 +834,12 @@ $(document).ready(function () {
 
     });
 
-    $('#enterprise-button').click(function(e) {
+    $('#top-navigation-bar .enterprise, #enterprise-button').click(function(e) {
         e.preventDefault();
         showEnterprise();
     });
 
-    $('#marketplace-button').click(function(e) {
+    $('#top-navigation-bar .marketplace, #marketplace-button').click(function(e) {
         e.preventDefault();
         showMarketplace();
     });
@@ -1140,24 +1140,26 @@ var sF;
 /**********************************************************************************************************************/
 
 function login() {
+
     $('#preloader').show();
 
     $.ajax({
         url: 'http://backend.liquidtalent.com' + sF.href,
         data: 'email=' + sF.email.val() + '&password=' + sF.password.val()
     }).done(function (data) {
+
         data = data[0] == '{' ? JSON.parse(data) : data;
 
         if (data['status'] === 'failed') { alert(data['errors'][0]); }
         else {
             currentUser = data['response']['user'];
-
             createUser(data['response']['user'], 'search');
         }
 
         $('#preloader').hide();
 
         getFavorites();
+
     });
 
 }
@@ -1406,16 +1408,17 @@ function submitDemander(linkedin) {
                     else {
                         loadPage('/map');
 
-                        var container = $('#wrapper'), scrollTo = $('.hiw');
-                        container.animate({
-                            scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
-                        });
+//                        var container = $('#wrapper'), scrollTo = $('.hiw');
+//                        container.animate({
+//                            scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+//                        });
                     }
                 }
     });
 }
 
 function SubmitSignupSPForm(linkedin) {
+
     $('#preloader').show();
 
     //  Validate input
@@ -1487,10 +1490,10 @@ function SubmitSignupSPForm(linkedin) {
                     else {
                         loadPage('/map');
 
-                        var container = $('#wrapper'), scrollTo = $('.hiw');
-                        container.animate({
-                            scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
-                        });
+//                        var container = $('#wrapper'), scrollTo = $('.hiw');
+//                        container.animate({
+//                            scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+//                        });
                     }
                 }
             });
