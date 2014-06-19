@@ -1043,6 +1043,7 @@ function SubmitContactForm() {
 
 }
 function RevealPage(pageSegment) {
+
     pageSegments = {};
     $('.page-segment:not(.page-segment-three)').each(function (i, e) {
         pageSegments[$(e).prop('title')] = $(e);
@@ -1090,7 +1091,7 @@ function RevealPage(pageSegment) {
 
     }
 
-    $('html, body').delay(500).animate({ scrollbottom: $(pageSegments[pageSegment]).offset().bottom }, 300, 'linear', null);
+    $('html, body').delay(500).animate({ scrollTop: $(pageSegments[pageSegment]).offset().top - $('#top-navigation-bar').height() + 5 }, 300, 'linear', null);
 
     return false;
 }
