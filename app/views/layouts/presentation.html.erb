@@ -2,241 +2,1108 @@
 
 <html>
 
-<head>
+    <head>
 
-  <title>LiquidTalent</title>
-  <!--
-<base href="http://liquidtalent.com">
-<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
--->
+      <title>LiquidTalent</title>
+      <!--
+    <base href="http://liquidtalent.com">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    -->
 
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-  <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
-  <script src="http://jwpsrv.com/library/vbBtnp+1EeOzIyIACmOLpg.js"></script>
-  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <%= csrf_meta_tags %>
-  <link rel="icon" type="image/png" href="/favicon.png" />
-</head>
+      <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+      <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+      <script src="http://jwpsrv.com/library/vbBtnp+1EeOzIyIACmOLpg.js"></script>
+      <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+      <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <%= csrf_meta_tags %>
+      <link rel="icon" type="image/png" href="/favicon.png" />
+    </head>
 
-<body>
+    <body>
 
-<% if params[:code] %>
-    <style type="text/css">
-        body { background: none repeat scroll 0% 0% #239061; }
-        .enterprise-area { display: none; }
-    </style>
+        <% if params[:code] %>
+            <style type="text/css">
+                body { background: none repeat scroll 0% 0% #239061; }
+                .enterprise-area { display: none; }
+            </style>
 
-    <script>
-        $(document).ready(function () {
-            var code = getURLParameter('code');
+            <script>
+                $(document).ready(function () {
+                    var code = getURLParameter('code');
 
-            $('#preloader').show();
+                    $('#preloader').show();
 
-            $.ajax({
-                url: 'http://backend.liquidtalent.com/user/linkedin_token/?code=' + code,
-                error: function (error) {
-                    alert("Problem with connecting to the server.");
-                    console.log(error);
+                    $.ajax({
+                        url: 'http://backend.liquidtalent.com/user/linkedin_token/?code=' + code,
+                        error: function (error) {
+                            alert("Problem with connecting to the server.");
+                            console.log(error);
+                        }
+                    }).done(function (data) {
+                                data = data[0] == '{' ? JSON.parse(data) : data;
+
+                                var access_token = data['access_token'];
+
+                                document.cookie = 'access_token=' + access_token;
+
+                                if (getURLParameter('state') == 0 || getURLParameter('state') == '0') {
+                                    linkedin_connect(access_token);
+                                }
+                                else {
+                                    linkedin_synchro(access_token, getURLParameter('state'));
+                                }
+                            });
+                });
+            </script>
+        <% elsif params[:action] == 'enterprise' %>
+            <script>
+                $(document).load(function () {
+                    showEnterprise();
+                });
+            </script>
+            <style type="text/css">
+              body { background: none repeat scroll 0% 0% #000; }
+              .marketplace-area { display: none; }
+            </style>
+        <% else %>
+            <style type="text/css">
+              body { background: none repeat scroll 0% 0% #239061; }
+              .enterprise-area { display: none; }
+            </style>
+        <% end %>
+
+        <div id="top-navigation-bar">
+
+          <div class="fixed">
+
+            <div class="content">
+
+              <a class="top-navigation-bar-logo" href="/">
+                <span></span> LiquidTalent
+              </a>
+
+              <a href="#" onclick="RevealPage('about'); return false;" class="link">About</a>
+              <a href="#" class="link marketplace">Marketplace</a>
+              <a href="#" onclick="RevealPage('team'); return false;" class="link">Team</a>
+              <a href="#" onclick="RevealPage('contact'); return false;" class="link">Contact</a>
+              <a href="#" class="link enterprise">Enterprise</a>
+              <a href="http://liquidtalenttv.tumblr.com/" class="link" style="word-spacing: 0px;">LiquidTalent TV</a>
+              <a href="#" onclick="RevealPage('hiw'); return false;" class="link hiw" style="display: none;">How it Works</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div id="wrapper">
+          <div class="map-background" id="map-background">
+            <div id="preloader"></div>
+            <div id="background">
+              <div id="content-preloader"></div>
+              <%= yield %>
+            </div>
+            <div id="admin-panel">
+              <div class="header">
+                <a class="login" href="#" onclick="loadPage('/login');">Login</a>
+
+                <div id="user-info">
+                  <img src="#" class="avatar" alt="Avatar" onclick="if(currentUser != null) {profileId=currentUser.id; bookingId=null; back='search'; loadPage('/profile');}">
+
+                  <div class="name"></div>
+                  <div class="location"></div>
+                </div>
+              </div>
+              <div class="navigation">
+                <div class="search link" onclick="loadPage('/map'); return false;">
+                  <span class="icon"></span>
+                  Search
+                </div>
+                <div class="projects link" onclick="loadPage('/statuses');">
+                  <span class="icon"></span>
+                  Projects
+                  <div class="notification">0</div>
+                </div>
+                <div class="messages link" onclick="loadMessages('/messages');">
+                  <span class="icon"></span>
+                  Messages
+                  <div class="notification">0</div>
+                </div>
+                <div class="favorites link" onclick="loadPage('/favorites');">
+                  <span class="icon"></span>
+                  Favorites
+                </div>
+                <div class="stats link" onclick="loadPage('/stats');">
+                  <span class="icon"></span>
+                  Stats
+                </div>
+                <div class="settings link" onclick="loadPage('/settings');">
+                  <span class="icon"></span>
+                  Settings
+                </div>
+              </div>
+              <a class="logo-small" href="/"></a>
+            </div>
+          </div>
+        </div>
+
+        <div id="presentation">
+        <div id="newsletter-sign-up">
+          <div id="newsletter-sign-up-text">
+            <span class="enterprise-area">Request a quote</span>
+            <span class="marketplace-area">Subscribe to LiquidTalent</span>
+          </div>
+          <div id="newsletter-sign-up-form">
+            <input type="text" id="register-form-email" class="field" value="Enter your email" onmousedown="if ($(this).prop('value') === 'Enter your email') { $(this).prop('value', ''); } else { $(this).prop('value', 'Enter your email'); }">
+            <div onclick="SubmitRegisterForm()" id="register-form-send" class="green-button">Submit</div>
+          </div>
+        </div>
+
+        <div id="presentation-header" class="marketplace-area">
+
+          <div id="social-twitter-container">
+
+            <div class="appstore-buttons">
+              The LiquidTalent mobile app is coming soon
+              <div class="ios"></div>
+              <div class="android"></div>
+            </div>
+
+            <a class="twitter-timeline" href="https://twitter.com/LiquidTalent" data-widget-id="437662684415135745" target="_blank">Tweets
+              by @LiquidTalent</a>
+            <script>!function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + "://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
                 }
-            }).done(function (data) {
-                        data = data[0] == '{' ? JSON.parse(data) : data;
+            }(document, "script", "twitter-wjs");</script>
 
-                        var access_token = data['access_token'];
-
-                        document.cookie = 'access_token=' + access_token;
-
-                        if (getURLParameter('state') == 0 || getURLParameter('state') == '0') {
-                            linkedin_connect(access_token);
-                        }
-                        else {
-                            linkedin_synchro(access_token, getURLParameter('state'));
-                        }
-                    });
-        });
-    </script>
-<% elsif params[:action] == 'enterprise' %>
-    <script>
-        $(document).load(function () {
-            showEnterprise();
-        });
-    </script>
-    <style type="text/css">
-      body { background: none repeat scroll 0% 0% #000; }
-      .marketplace-area { display: none; }
-    </style>
-<% else %>
-    <style type="text/css">
-      body { background: none repeat scroll 0% 0% #239061; }
-      .enterprise-area { display: none; }
-    </style>
-<% end %>
-
-<div id="top-navigation-bar">
-
-  <div class="fixed">
-
-    <div class="content">
-
-      <a class="top-navigation-bar-logo" href="/">
-        <span></span> LiquidTalent
-      </a>
-
-      <a href="#" class="link enterprise">Enterprise</a>
-      <a href="#" class="link marketplace">Marketplace</a>
-      <a href="#" onclick="RevealPage('about'); return false;" class="link">About</a>
-      <a href="#" onclick="RevealPage('team'); return false;" class="link">Team</a>
-      <a href="#" onclick="RevealPage('hiw'); return false;" class="link hiw" style="display: none;">How it Works</a>
-
-    </div>
-
-  </div>
-
-</div>
-
-<div id="wrapper">
-  <div class="map-background" id="map-background">
-    <div id="preloader"></div>
-    <div id="background">
-      <div id="content-preloader"></div>
-      <%= yield %>
-    </div>
-    <div id="admin-panel">
-      <div class="header">
-        <a class="login" href="#" onclick="loadPage('/login');">Login</a>
-
-        <div id="user-info">
-          <img src="#" class="avatar" alt="Avatar" onclick="if(currentUser != null) {profileId=currentUser.id; bookingId=null; back='search'; loadPage('/profile');}">
-
-          <div class="name"></div>
-          <div class="location"></div>
-        </div>
-      </div>
-      <div class="navigation">
-        <div class="search link" onclick="loadPage('/map'); return false;">
-          <span class="icon"></span>
-          Search
-        </div>
-        <div class="projects link" onclick="loadPage('/statuses');">
-          <span class="icon"></span>
-          Projects
-          <div class="notification">0</div>
-        </div>
-        <div class="messages link" onclick="loadMessages('/messages');">
-          <span class="icon"></span>
-          Messages
-          <div class="notification">0</div>
-        </div>
-        <div class="favorites link" onclick="loadPage('/favorites');">
-          <span class="icon"></span>
-          Favorites
-        </div>
-        <div class="stats link" onclick="loadPage('/stats');">
-          <span class="icon"></span>
-          Stats
-        </div>
-        <div class="settings link" onclick="loadPage('/settings');">
-          <span class="icon"></span>
-          Settings
-        </div>
-      </div>
-      <a class="logo-small" href="/"></a>
-    </div>
-  </div>
-</div>
-
-<div id="presentation">
-<div id="newsletter-sign-up">
-  <div id="newsletter-sign-up-text">
-    <span class="enterprise-area">Request a quote</span>
-    <span class="marketplace-area">Subscribe to LiquidTalent</span>
-  </div>
-  <div id="newsletter-sign-up-form">
-    <input type="text" id="register-form-email" class="field" value="Enter your email" onmousedown="if ($(this).prop('value') === 'Enter your email') { $(this).prop('value', ''); } else { $(this).prop('value', 'Enter your email'); }">
-    <div onclick="SubmitRegisterForm()" id="register-form-send" class="green-button">Submit</div>
-  </div>
-</div>
-
-<div id="presentation-header" class="marketplace-area">
-
-  <div id="social-twitter-container">
-
-    <div class="appstore-buttons">
-      The LiquidTalent mobile app is coming soon
-      <div class="ios"></div>
-      <div class="android"></div>
-    </div>
-
-    <a class="twitter-timeline" href="https://twitter.com/LiquidTalent" data-widget-id="437662684415135745" target="_blank">Tweets
-      by @LiquidTalent</a>
-    <script>!function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = p + "://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-    }(document, "script", "twitter-wjs");</script>
-
-  </div>
-</div>
-
-<div class="page-segment t enterprise-area product-suite-page page-segment-three" title="Product Suite">
-  <h1><div>Product Suite</div></h1>
-
-  <img src="<%= asset_path "new/presentation/bundle.jpg" %>" width="960" height="490" alt="Product Suite"  />
-  <div class="devices">
-    <img class="lt-logo-small" src="<%= asset_path "new/presentation/logo-small-grey.png" %>" width="20" height="27" alt="LT Logo"  />
-    <div class="device">iOS</div>
-    <div class="device">Android</div>
-    <div class="device">Tablet</div>
-    <div class="device">Desktop</div>
-    <div class="device">Bundle</div>
-    <div class="clear"></div>
-  </div>
-
-  <div class="product-suite">
-    <p>
-      LiquidTalent is the future of human capital management (HCM) software for your workforce in the cloud. Find, hire, and manage talent anytime, anyplace - all with the touch of a button.
-    </p>
-    <p>
-      Our product suite includes iOS and Android applications for smartphones, tablet applications, and flexible SaaS desktop web app - all of which can be delivered a la carte or bundled together. Combined the LiquidTalent platform allows enterprise to find, hire, and manage talent through any device and ensure expedient access to internal and external human capital networks when you need them most.
-    </p>
-    <p>
-      Whether you need to tap into internal talent pools, manage external networks, or build out your human capital resources, LiquidTalent HCM location-based services software has you covered saving time and cost by up to 10X.
-    </p>
-    <img class="table" src="<%= asset_path "new/presentation/table.jpg" %>" width="862" height="373" alt="Table"  />
-
-    <p>Pricing available upon request. Contact us to learn more about LiquidTalent Human Capital Management Software Solutions.</p>
-  </div>
-</div>
-
-<div class="page-segment t about" title="about">
-
-  <h1>About</h1>
-
-  <div class="container">
-
-    <div class="presentation-description">
-
-      <div class="header">
-        <div class="header-image logo-image"></div>
-
-        <div class="header-text">
-          <div class="text-title">
-            LiquidTalent
-          </div>
-
-          <div class="text-tagline">
-            Human Capital Re-Imagined
           </div>
         </div>
 
-        <div class="header-icon">
+        <div class="page-segment t enterprise-area product-suite-page page-segment-three" title="Product Suite">
+          <h1><div>Product Suite</div></h1>
+
+          <img src="<%= asset_path "new/presentation/bundle.jpg" %>" width="960" height="490" alt="Product Suite"  />
+          <div class="devices">
+            <img class="lt-logo-small" src="<%= asset_path "new/presentation/logo-small-grey.png" %>" width="20" height="27" alt="LT Logo"  />
+            <div class="device">iOS</div>
+            <div class="device">Android</div>
+            <div class="device">Tablet</div>
+            <div class="device">Desktop</div>
+            <div class="device">Bundle</div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="product-suite">
+            <p>
+              LiquidTalent is the future of human capital management (HCM) software for your workforce in the cloud. Find, hire, and manage talent anytime, anyplace - all with the touch of a button.
+            </p>
+            <p>
+              Our product suite includes iOS and Android applications for smartphones, tablet applications, and flexible SaaS desktop web app - all of which can be delivered a la carte or bundled together. Combined the LiquidTalent platform allows enterprise to find, hire, and manage talent through any device and ensure expedient access to internal and external human capital networks when you need them most.
+            </p>
+            <p>
+              Whether you need to tap into internal talent pools, manage external networks, or build out your human capital resources, LiquidTalent HCM location-based services software has you covered saving time and cost by up to 10X.
+            </p>
+            <img class="table" src="<%= asset_path "new/presentation/table.jpg" %>" width="862" height="373" alt="Table"  />
+
+            <p>Pricing available upon request. Contact us to learn more about LiquidTalent Human Capital Management Software Solutions.</p>
+          </div>
+        </div>
+
+        <div class="page-segment t about" title="about">
+
+          <h1>About</h1>
+
+          <div class="container">
+
+            <div class="presentation-description">
+
+              <div class="header">
+                <div class="header-image logo-image"></div>
+
+                <div class="header-text">
+                  <div class="text-title">
+                    LiquidTalent
+                  </div>
+
+                  <div class="text-tagline">
+                    Human Capital Re-Imagined
+                  </div>
+                </div>
+
+                <div class="header-icon">
+                  <div class="social">
+                    <a href="http://www.linkedin.com/company/liquidtalent" target="_blank" class="button in"></a>
+                    <a href="https://twitter.com/LiquidTalent" target="_blank" class="button tw"></a>
+                    <a href="https://www.facebook.com/liquidtalent" target="_blank" class="button fb"></a>
+                    <a href="https://plus.google.com/111892577057930602448/posts" target="_blank" class="button gl"></a>
+                    <a href="http://statigr.am/liquidtalent" target="_blank" class="button gr"></a>
+                    <a href="https://medium.com/@LiquidTalent" target="_blank" class="button ma"></a>
+                  </div>
+                </div>
+
+                <div class="clear"></div>
+              </div>
+
+              <h2>Company Overview</h2>
+              <div class="marketplace-area">
+                <p>The LiquidTalent ("LT") marketplace provides a platform for professionals to connect in real-time, based on
+                  location. LiquidTalent users are encouraged to market their skills and abilities, interact with new professional
+                  contacts, engage with interested hiring sources, and earn financial capital. LT adds a new dimension to the
+                  economy by presenting users with real-time, income-earning opportunities based on skills, availability, and
+                  geographic location. Today, online reputations play an integral role in determining professional credibility.
+                  LiquidTalent actively demonstrates this credibility through authentic, comprehensive, and professionally-forward
+                  profiles.</p>
+
+                <p>Through a mobile application, LiquidTalent helps organizations, small-businesses, and individuals discover
+                  talent based on relevant search criteria including skills, experience, education, hourly rate, reviews and
+                  ratings. Talent is hired on a per project basis and search results are displayed in the format of both a List
+                  and a Map. The List showcases talent through a 22 second video and a personal presentation-description of up to
+                  160
+                  characters. The Map displays the physical location of talent in relation to the user. LiquidTalent is your
+                  career in your pocket, a never before seen on-the-go professional platform that increases earning potential.
+                  LiquidTalent is establishing a new paradigm of professional connection and project execution.</p>
+
+                <h2>The LiquidTalent Product</h2>
+
+                <p>LiquidTalent's product acts as a piece of professional digital real estate, creating a space to showcase talent
+                  and build a sales pipeline. LT's beta application will initially launch on the iOS7 mobile marketplace. †Future
+                  product releases include an Android app and a fully functioning website designed for desktop, tablet and mobile
+                  phones. During the account-creation process users can log-in with LinkedIn profiles, thus validating talent and
+                  making registration quick and easy. LiquidTalent profiles will display users' skills, experience, education,
+                  hourly rate, reviews and ratings. The platform offers internal messaging, a function to save favorite talent, a
+                  seamless process for billing and executing legal contracts. The product will also feature LiquidPitch, a
+                  22-second elevator pitch explaining the what and why behind each user. With the proliferation of online video,
+                  professionals are becoming increasingly accustomed to marketing themselves through this rich format.</p>
+              </div>
+
+              <div class="enterprise-area">
+                <p>
+                    LiquidTalent is a new technology firm that specializes in mobile phone and web applications with a focus on location-based services. The LiquidTalent proprietary software is built for organizations looking to optimize the process of finding, hiring, and managing internal human resources and external talent networks. LiquidTalent Enterprise is the future of Human Capital Management (HCM) software designed for your in-the-cloud workforce:
+                </p>
+
+                <ul>
+                  <li>Find, hire, and manage talent with a flexible and scalable model</li>
+                  <li>Synchronized mobile applications and desktop dashboard to an integrated backend</li>
+                  <li>Real-time, on-demand scheduling and availablity</li>
+                  <li>Responsive and beautiful design</li>
+                  <li>Secure, reliable and very fast</li>
+                  <li>Access internal and external human capital networks when you need them most</li>
+                </ul>
+
+                <p>
+                  LiquidTalent's HCM software is fully customizable to suit your enterprise needs. Through an integrated backend, the software seamlessly syncs to all devices and is very user friendly. Enterprise management teams can now handle all aspects of vetting, presenting, hiring, and retaining talent with payroll and tax reporting options. Ultimately, this cutting edge LiquidTalent software solution saves your company valuable time and money, so you can do more of what you do best.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+        <div class="page-segment green t team-page" title="team">
+
+        <h1>Team</h1>
+
+        <div class="title">Founders</div>
+        <div class="teams">
+
+          <div class="team-description">
+
+            <div class="header">
+
+              <div class="header-image alex-image"></div>
+
+              <div class="header-text">
+                <div class="text-title">Alex Abelin</div>
+                <div class="text-tagline">Co-Founder + CEO</div>
+              </div>
+
+              <div class="header-icon social team">
+                <a href="https://twitter.com/alexabelin" target="_blank" class="button tw"></a>
+              </div>
+
+              <div class="clear"></div>
+
+            </div>
+
+            <p>
+
+              Alex comes from a background rooted in internet policy, external relations, community affairs and digital
+              marketing. Prior to running LiquidTalent, Alex worked for Google from 2005 to 2013. His career at Google was
+              divided between the Sales and Policy departments. As External Affairs Manager, his duties included building
+              relationships with government officials, managing an investment fund for nonprofit entities, and serving as
+              the chief architect in developing eight Google sponsored outdoor WiFi networks; the most notable being the
+              Chelsea CIC WiFi network, the largest
+              contiguous NYC WiFi network ever created. He is a proud alumni of UC Berkeley and the Haas School of Business.
+              Alex was born in San Diego, and currently lives in New York City. Alex is a committed optimist, a global
+              citizen and a tough ping pong player.
+
+            </p>
+
+          </div>
+          <div class="team-description">
+
+            <div class="header">
+
+              <div class="header-image scott-image"></div>
+
+              <div class="header-text">
+                <div class="text-title">Scott Annan</div>
+                <div class="text-tagline">Co-Founder + COO</div>
+              </div>
+
+              <div class="header-icon team social">
+                <a href="https://twitter.com/AIMbitious" target="_blank" class="button tw"></a>
+
+              </div>
+
+              <div class="clear"></div>
+
+            </div>
+
+            <p>
+
+              Scott brings a strong background in finance and entrepreneurship to LiquidTalent. He began his career as an
+              analyst and has started and co-founded four businesses. In 2010 Scott published the book,
+              AIMbitious.com, a self-development book for young professionals. Scott has
+              a deep interest in mobile technology and the development of mobile applications to make professional and
+              social interactions more frequent and valuable. Scott grew up outside of Boston and graduated from Colgate
+              University in 2005 with a BA in History. He currently lives in New York City.
+
+            </p>
+          </div>
+        </div>
+
+        <div class="title">Developers</div>
+        <div class="teams">
+
+          <div class="team-description">
+
+            <div class="header">
+
+              <div class="header-image noel-image"></div>
+
+              <div class="header-text">
+                <div class="text-title">Noel Guinane</div>
+              </div>
+
+              <div class="header-icon social team">
+                <a href="https://twitter.com/bloodntreasure" target="_blank" class="button tw"></a>
+              </div>
+
+              <div class="clear"></div>
+
+            </div>
+
+            <p>
+
+              During almost a decade in software development, Noel has worked as web developer, mobile developer and project
+              manager. Noel currently manages the team responsible for building the LiquidTalent platform on iOS, Android and
+              Web.
+
+            </p>
+
+          </div>
+          <div class="team-description">
+
+            <div class="header">
+
+              <div class="header-image yao-image"></div>
+
+              <div class="header-text">
+                <div class="text-title">Yao Jhongjing</div>
+              </div>
+
+              <div class="header-icon team social">
+                <a href="https://twitter.com/YaoYaozhongjing" target="_blank" class="button tw"></a>
+
+              </div>
+
+              <div class="clear"></div>
+
+            </div>
+
+            <p>
+
+              Yao is a web developer, designer and business analyst. He is the Founder of yaosome.com and has worked for Estex
+              and MyCube Safe. Yao graduated with a near perfect academic record from NYU-Poly with a Masters of Science in
+              Electrical Engineering. He specializes in project management, backend development, site architecting, and is
+              proficient in a series of programming languages.
+
+            </p>
+          </div>
+
+        </div>
+
+        <div class="title">Advisors</div>
+        <div class="teams">
+
+          <div class="team-description">
+
+            <div class="header">
+
+              <div class="header-image paul-image"></div>
+
+              <div class="header-text">
+                <div class="text-title">Paul Pariser</div>
+              </div>
+
+              <div class="header-icon social team">
+                <a href="https://twitter.com/PaulPariser" target="_blank" class="button tw"></a>
+              </div>
+
+              <div class="clear"></div>
+
+            </div>
+
+            <p>
+
+              Paul is Co-Founder and Co-CEO of Taconic Investment Partners, an active developer and operator of commercial and
+              residential real estate property in New York City. He has been active in the Real Estate industry for over 36
+              years. He sits on various philanthropic and civic boards, and is the proud Founder of both the Meatpacking
+              District Improvement Associates and the Chelsea Improvement Company. Paul serves as a member of the Board of
+              Trustees of the Aspen Art Museum.
+
+            </p>
+
+          </div>
+          <div class="team-description">
+
+            <div class="header">
+
+              <div class="header-image jerry-image"></div>
+
+              <div class="header-text">
+                <div class="text-title">Jerry Colonna</div>
+              </div>
+
+              <div class="header-icon social team">
+                <a href="https://twitter.com/jerrycolonna" target="_blank" class="button tw"></a>
+              </div>
+
+              <div class="clear"></div>
+
+            </div>
+
+            <p>
+
+              Jerry is an executive coach who uses the skills he learned as a venture capitalist to help entrepreneurs. He draws
+              on his wide variety of experiences to help clients design a more conscious life and make needed changes to their
+              career to improve their performance and satisfaction. Previously he was a partner with JPMorgan Partners (JPMP),
+              the private­ equity arm of JP Morgan Chase. He joined JPMP from Flatiron Partners, which he launched 1996 with
+              partner, Fred Wilson. Flatiron became one of the most successful, early­ stage investment programs in the New York
+              City area. At Flatiron, Jerry was responsible for a wide range of the firm’s investments including Geocities Inc.,
+              Gamesville Inc., Vertical One Inc., and The New York Times Digital.
+
+            </p>
+
+          </div>
+          <div class="team-description">
+
+            <div class="header">
+
+              <div class="header-image barbara-image"></div>
+
+              <div class="header-text">
+                <div class="text-title">Barbara Chang</div>
+              </div>
+
+              <div class="header-icon social team">
+                <a href="https://twitter.com/barbchang" target="_blank" class="button tw"></a>
+              </div>
+
+              <div class="clear"></div>
+
+            </div>
+
+            <p>
+
+              Barbara is currently drawing upon her more than 25 years of nonprofit management experience to launch a new
+              venture involving skills-based assessment and training for non-degreed job candidates. Prior to this work, Barbara
+              served as Executive Vice President of Per Scholas, the largest IT workforce development organization in New York
+              City, where she managed the fundraising and training programs. She also has held executive positions in NPower
+              National and NPower New York, a federation of 12 nonprofits dedicated to helping other nonprofits use technology
+              effectively in their communities. Barbara holds a master’s degree in administration from the University of North
+              Carolina–Chapel Hill and a bachelor’s degree from Johns Hopkins University.
+
+            </p>
+
+          </div>
+          <div class="team-description">
+
+            <div class="header">
+
+              <div class="header-image michael-image"></div>
+
+              <div class="header-text">
+                <div class="text-title">Michael Skolnik</div>
+              </div>
+
+              <div class="header-icon social team">
+                <a href="https://twitter.com/michaelskolnik" target="_blank" class="button tw"></a>
+              </div>
+
+              <div class="clear"></div>
+
+            </div>
+
+            <p>
+
+              Michael is a 21st century civil rights leader. As the Political Director to hip-hop pioneer Russell Simmons and
+              President of GlobalGrind.com, an online destination founded by Simmons with over 6.5 million viewers per month,
+              Michael is a leading voice for young America. A trailblazer of social media with 120,000 followers on twitter,
+              Michael has led national conversations about the death of Trayvon Martin and the subsequent trial of George
+              Zimmerman, the Boston Marathon bombings, the rise of violence in Chicago, America’s relationship with race and the
+              Obama presidency, amongst many other topics. Michael regularly discusses the aforementioned topics, current
+              events, and how they affect his generation on CNN, MSNBC, Fox News, NPR and HLN, to name a few media outlets.
+              Michael serves on the Board of Directors for The Trayvon Martin Foundation and the Drug Policy Alliance. He is a
+              graduate of UCLA and the proud father of Mateo Ali.
+
+            </p>
+
+          </div>
+          <div class="team-description">
+
+            <div class="header">
+
+              <div class="header-image prem-image"></div>
+
+              <div class="header-text">
+                <div class="text-title">Prem Ramaswami</div>
+              </div>
+
+              <div class="header-icon social team">
+                <a href="https://twitter.com/premr" target="_blank" class="button tw"></a>
+              </div>
+
+              <div class="clear"></div>
+
+            </div>
+
+            <p>
+
+              Prem has been a Product Manager at Google since 2006 working on a wide array of projects from Google Checkout, the
+              Internet Bus Project in India, Network Infrastructure and the Make the Web Faster Project, Google.org's Crisis
+              Response team, and most recently, Google Search. Prior to Google, Prem was a system's engineer at MIT Lincoln
+              Laboratory. Prem is a graduate of Carnegie Mellon with a degree in Computer and Medical Engineering and
+              received an MBA from the Harvard Business School.
+
+            </p>
+
+          </div>
+          <div class="team-description">
+
+            <div class="header">
+
+              <div class="header-image jason-image"></div>
+
+              <div class="header-text">
+                <div class="text-title">Jason Pollock</div>
+              </div>
+
+              <div class="header-icon social team">
+                <a href="https://twitter.com/jason_pollock" target="_blank" class="button tw"></a>
+              </div>
+
+              <div class="clear"></div>
+
+            </div>
+
+            <p>
+
+              Jason is a filmmaker, writer and digital producer & consultant for brands and organizations. He is the
+              writer/producer/director of the award winning documentary, The Youngest Candidate, which follows four teens
+              running for public office in America. Pollock has built an online audience of 100,000 Twitter followers and was
+              recently listed as one of the top 140 most influential people on twitter in a report that was picked up by The New
+              York Times, the BBC, Newsweek, and The Guardian. PC Magazine also featured Pollock in their list of the ‘100
+              People To Follow On Twitter’. Prior to making The Youngest Candidate, Pollock was Michael Moore’s executive
+              assistant for three years. He worked with him from 2003-2006 and aided Moore with Dude Where’s My Country,
+              Fahrenheit 9/11, and Slacker Uprising. Pollock is now writing and developing film and television projects in Los
+              Angeles with his dog Rosa and consults a roster of major brands and clients on digital media strategy.
+
+            </p>
+
+          </div>
+
+        </div>
+        </div>
+        <!-- Team end -->
+
+        <div class="page-segment page-segment-two t hiw" title="hiw" style="opacity:0;display:none;">
+          <h1>How it Works</h1>
+
+          <div class="container">
+            <br><br>
+
+            <div class="video-container">
+              <iframe src="//player.vimeo.com/video/91860245?title=0&amp;byline=0&amp;portrait=0&amp;color=239061" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="page-segment t" title="privacy" style="opacity:0;display:none;">
+          <h1>Privacy</h1>
+
+          <div class="container">
+            <div class="presentation-description">
+              <p>
+                Your privacy is important to us, and maintaining your trust and confidence is one of our highest priorities. We
+                respect your right to keep your personal information confidential and understand your desire to avoid unwanted
+                solicitations. A recent law change requires us (along with banks, brokerage houses, and other financial
+                institutions) to disclose our Customer Privacy Policy to you which we are more than happy to do. We hope that
+                by
+                taking a few minutes to read it, you will have a better understanding of what we do with the information you
+                provide us and how we endeavor to keep it private and secure. To read our Privacy Policy click
+                <a href="#" onclick="$('#hidden-privacy').css('display', $('#hidden-privacy').css('display') === 'none' ? 'block' : 'none'); return false;">here</a>.
+              </p>
+
+              <div id="hidden-privacy" style="display: none;">
+
+                <p>
+                  Liquid Talent, Inc. ("LiquidTalent") operate websites and domains (LiquidTalent.com; mobile sites:
+                  twitter.com/liquidtalent) (collectively, the "Sites"). 1. Applicability and Acceptance of Privacy Policies on
+                  the
+                  Sites
+                </p>
+
+                <p>
+                  By viewing, accessing, browsing, responding to or submitting content to, or otherwise using the Sites, or
+                  viewing,
+                  accessing, browsing, responding to, purchasing or otherwise using any service or product provided by or
+                  referenced
+                  in the Sites, you (You, or the Customer) acknowledge, accept, consent and agree to the terms of the privacy
+                  policies on the Sites.
+                </p>
+
+                <p>
+                  If the Customer does not completely agree to the terms of the privacy policies on the Sites, LiquidTalent asks
+                  the
+                  Customer to please not access or use the Sites. Customer further acknowledges, accepts, consents and agrees
+                  that
+                  LiquidTalent may at its option, in its sole and absolute discretion, amend, modify or otherwise change the
+                  customer privacy policies on the Sites (collectively, Changes) at any time and from time to time, without
+                  prior
+                  notice or cause. All Changes, will become part of this Agreement effective immediately upon LiquidTalent
+                  posting
+                  of the Changes on the Sites, and the Customer hereby automatically and unconditionally acknowledges, accepts,
+                  consents and agrees to any and all Changes. The Customer hereby acknowledges, consents, accepts and agrees
+                  that
+                  the Customer will carefully review the customer privacy policies on the Sites from time to time on a regular
+                  basis, so that Customer is aware of Changes. If any such Changes are not entirely acceptable and agreeable to
+                  the
+                  Customer, the Customer should immediately discontinue, and no longer access, or use the Sites.
+                  <br><br>
+                  2. Information that LiquidTalent Collects on the Sites<br>
+                  LiquidTalent may collect the following type of information from the Customer: first name, last name, street
+                  address, city, state, zip code, cross streets, phone number, email address, location (e.g. via GPS), and
+                  credit
+                  card or other payment information. LiquidTalent may also collect information concerning the Customer's usage
+                  of
+                  the Sites, as well as preferences, inquiries and comments that the Customer may disclose or otherwise provide
+                  involving or relating to the products and services that LiquidTalent provides. This information is
+                  collectively
+                  called Personally Identifiable Information, or PII. Through the LiquidTalent Sites, third party merchants and
+                  others may collect PII that the Customer may from time to time provide.
+                </p>
+
+                <p>
+                  In addition to PII, LiquidTalent may collect aggregated information regarding access and usage that reflect
+                  but
+                  do
+                  not reveal either the Customer's or other persons' individual PII. This includes information of a demographic,
+                  computer profile or statistical nature. This information is collectively called Non Personally Identifiable
+                  Information, or Non PII
+                  The Customer may from time to time post or otherwise submit to the Sites, or to or through social sites that
+                  may
+                  be linked to the Sites, information, text, images, photographs, video, audio, graphics, branding, logos,
+                  content,
+                  material, software, code, interface, products or services (collectively, Customer Content) which may contain
+                  PII
+                  and other personally identifiable information about the Customer or others. By posting or otherwise submitting
+                  Customer Content with PII or other personally identifiable information, either to the Sites or to or through
+                  social sites that may be linked to the Sites, the Customer agrees to the publication and other disclosure of
+                  such
+                  PII and other personally identifiable information.
+                  The Sites are not intended for use by children under the age of 18. By viewing, accessing, browsing,
+                  responding
+                  to
+                  or submitting content to, or otherwise using the Sites, or viewing, accessing, browsing, responding to,
+                  purchasing
+                  or otherwise using any service or product provided by or referenced in the Sites, You certify that you are 18
+                  years of age or older. LiquidTalent does not knowingly collect information from children under the age of 18.
+                  <br><br>
+                  3. LiquidTalent's Use of Information it Collects on the Sites<br>
+                  LiquidTalent uses PII from time to time in a number of ways. LiquidTalent uses PII to communicate with the
+                  Customer concerning LiquidTalent policies and procedures and changes to LiquidTalent's policies and
+                  procedures;
+                  Customer's PII and Non PII; products and services that are offered by or through LiquidTalent; products and
+                  services that the Customer may express interest in or select; and to advise and bring to the Customer's
+                  attention
+                  products and services that may in the future be offered by or through LiquidTalent. This may also include
+                  enabling
+                  the Customer to create, edit, publish and distribute communications concerning the products and services
+                  offered
+                  by or through LiquidTalent. LiquidTalent also uses PII to permit the Customer to open accounts and enter into,
+                  and
+                  to assist with the completion and execution of, orders and other transactions.
+                </p>
+
+                <p>
+                  LiquidTalent uses Non-PII from time to time in a number of ways. LiquidTalent uses Non-PII to track and
+                  analyze
+                  access and usage of the Sites and to administer, improve and enhance the Sites, improve the Customer
+                  experience
+                  with the Sites, as well as the products and services offered by LiquidTalent by or through the Sites.
+                  <br><br>
+                  4. LiquidTalent's Disclosure of Information it Collects on the Sites: Routine<br>
+                  LiquidTalent discloses PII from time to time to its affiliates and third parties to accept, process and
+                  fulfill
+                  an
+                  order or other transaction; and to vendors and service providers who assist with the development, rollout,
+                  improvement, hosting and administration of the Sites.
+                </p>
+
+                <p>
+                  LiquidTalent discloses Non PII from time to time to its affiliates and third parties as it shall determine in
+                  its
+                  sole and absolute discretion.
+                  <br><br>
+                  5. LiquidTalent's Disclosure of Information it Collects on the Sites: Non Routine<br>
+                  LiquidTalent reserves the right in its sole and absolute discretion to disclose PII and Non PII (a) in
+                  connection
+                  with a merger or sale of LiquidTalent , or all or any portion of its assets or equity; (b) in connection with
+                  any
+                  bankruptcy, reorganization or similar proceeding involving LiquidTalent, (c) as may be required by applicable
+                  laws
+                  or regulations of any international, national, federal, or local government or governmental body; or (d) to
+                  comply
+                  with legal process including, without limitation, any order, requirement or request of any court or other
+                  judicial
+                  body; or (e) as LiquidTalent shall determine in its sole and absolute discretion to defend, protect and secure
+                  its
+                  property, rights, business, operations, or other rights.
+                </p>
+
+                <p>
+                  6. Linked Sites<br>
+                  The Sites may at any time and from time to time display, provide, refer to or contain links to other
+                  websites
+                  of third parties. This Privacy Policy does not extend to, cover or in any way address, and LiquidTalent bears
+                  no
+                  responsibility whatsoever for, the privacy practices of any third party including, without limitation, such
+                  websites. By providing access to such websites, LiquidTalent does not represent, warrant or guarantee the
+                  privacy
+                  of Customer PII and Non PII. The Customer's access and use of such links and website is and shall at all times
+                  remain entirely at the Customer's own risk, including, without limitation regarding the Customer's PII and Non
+                  PII.
+                </p>
+
+                <p>7. LiquidTalent's Protection of Customer PII
+                  <br>LiquidTalent has designed its Sites to achieve security and protection of PII consistent with prevailing
+                  industry standards. Notwithstanding, the internet and computers involve substantial risks that PII will not
+                  remain
+                  confidential. Accordingly, LiquidTalent can't ensure or guarantee that Customer PII will remain confidential.
+                </p>
+
+                <p>
+                  8. Accessing and Correcting Customer PII; Opt-Out
+                  <br>A Customer has the right to request a copy of the PII that LiquidTalent maintains concerning the Customer.
+                  To
+                  request a copy, the Customer should contact LiquidTalent at: privacy@LiquidTalent.Com. LiquidTalent may charge
+                  a
+                  reasonable fee for this service. The Customer may request LiquidTalent to correct or delete information which
+                  Customer believes is inaccurate. A Customer may change any of the Customer's profile information by using the
+                  Edit function in the profile settings page of the Site.
+                </p>
+
+                <p>
+                  A Customer may determine that the Customer no longer wishes to receive emails from LiquidTalent. A Customer
+                  may
+                  effect this by using the Edit button in the profile settings page of the Site.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-segment t" title="terms" style="opacity:0;display:none;">
+          <h1>Terms</h1>
+
+          <div class="container">
+            <div class="presentation-description">
+              <p>
+                These terms and conditions govern your use of the LiquidTalent sites including LiquidTalent.com, the
+                LiquidTalent mobile application, Facebook, Twitter, Instagram, Medium, and other website properties of the
+                LiquidTalent that may be implemented from time to time. By using this website, you accept these terms and
+                conditions in full. To read our full Terms and Conditions, click <a href="#" onclick="$('#hidden-terms').css('display', $('#hidden-terms').css('display') === 'none' ? 'block' : 'none'); return false;">here</a>.
+              </p>
+
+              <p id="hidden-terms" style="display: none;">
+
+                This website uses cookies. By using this website and agreeing to these terms and conditions, you consent to
+                LiquidTalent’s use of cookies in accordance with the terms of our privacy policy / cookies policy.<br><br>
+
+                General Use<br><br>
+
+                By creating an account on the LiquidTalent website and/or downloading the LiquidTalent app and creating an
+                account, you are agreeing to the general terms and conditions of the site; namely, that you will abide by the
+                rules of proper conduct of LiquidTalent.<br><br>
+
+                First, LiquidTalent is designed for use by professional people looking for and providing work that could
+                otherwise be performed in a professional work environment. At no time shall profiles be created for the purposes
+                of selling or performing illegal services or soliciting services that would otherwise be considered unlawful.
+
+                You also agree to conduct yourself in a professional manner that excludes the use of vulgar, discriminatory, or
+                hateful language that would harm the other members of the LiquidTalent community. Any one-time infraction shall
+                be treated with a warning and further reprimand shall result in the possible loss of membership to the
+                LiquidTalent sites. LiquidTalent reserves the right at any time to annul membership privileges to any individual
+                who causes deliberate harm to another member of the community and breaches the General Use policies of the
+                LiquidTalent sites.<br><br>
+
+                Receipt and Payment of Funds<br><br>
+
+                By using the LiquidTalent sites, you accept the payment terms of LiquidTalent and understand that LiquidTalent
+                may claim a fee, which may vary from time to time, that takes a percentage off the Total Transaction value of a
+                completed LiquidTalent project (to be communicated up front). You also acknowledge that funds that you may pay
+                or be entitled to receive shall be held in escrow by LiquidTalent until it is appropriate for those funds to be
+                released based upon the satisfactory completion of a project as determined by both Payer and Service Provider
+                parties and LiquidTalent. The receipt of any distribution of funds may take anywhere between 5-10 business days
+                and could take longer depending on LiquidTalent third-party payment providers. At no time shall you be entitled
+                to receive interest on any funds held in escrow nor will those funds be rehypothecated for the purposes of
+                extending business practices beyond the scope of LiquidTalent’s business purview.<br><br>
+
+                License to use website<br><br>
+
+                Unless otherwise stated, LiquidTalent and/or its licensors own the intellectual property rights in the website
+                and material on the website. Subject to the license below, all these intellectual property rights are reserved.<br><br>
+
+                You may view, download for caching purposes only, and print pages or other content from the website for your own
+                personal use, subject to the restrictions set out below and elsewhere in these terms and conditions.<br><br>
+
+                You must not:<br><br>
+
+                · sell, rent or sub-license material from the website;<br>
+                · reproduce, duplicate, copy or otherwise exploit material on this website for a commercial purpose;<br>
+                · edit or otherwise modify any LiquidTalent material on the website; or<br>
+                · redistribute material from this website (except for content specifically and expressly made available for
+                redistribution.)<br><br>
+
+                Acceptable use<br><br>
+
+                You must not use this website in any way that causes, or may cause, damage to the website or impairment of the
+                availability or accessibility of the website; or in any way which is unlawful, illegal, fraudulent or harmful,
+                or in connection with any unlawful, illegal, fraudulent or harmful purpose or activity. <br><br>
+
+                You must not use this website to copy, store, host, transmit, send, use, publish or distribute any material
+                which consists of (or is linked to) any spyware, computer virus, Trojan horse, worm, keystroke logger, rootkit
+                or other malicious computer software.<br><br>
+
+                You must not conduct any systematic or automated data collection activities (including without limitation
+                scraping, data mining, data extraction and data harvesting) on or in relation to this website without
+                LiquidTalent’s express written consent.<br><br>
+
+                You must not use this website to transmit or send unsolicited commercial communications to LiquidTalent or any
+                of its users without their prior consent. <br><br>
+
+                You must not use this website for any purposes related to marketing without LiquidTalent’s express written
+                consent.<br><br>
+
+                Restricted access <br><br>
+
+                Access to certain areas of this website is restricted. LiquidTalent reserves the right to restrict access to
+                other of this website, or indeed this entire website, at LiquidTalent’s discretion.<br><br>
+
+                If LiquidTalent provides you with a user ID and password to enable you to access restricted areas of this
+                website or other content or services, you must ensure that the user ID and password are kept confidential.<br><br>
+
+                LiquidTalent may disable your user ID and password in LiquidTalent’s sole discretion without notice or
+                explanation.<br><br>
+
+                User content<br><br>
+
+                In these terms and conditions, “your user content” means material (including without limitation text, images,
+                audio material, video material and audio-visual material) that you submit to this website, for whatever purpose.<br><br>
+
+                You grant to LiquidTalent a worldwide, irrevocable, non-exclusive, royalty-free license to use, reproduce,
+                adapt, publish, translate and distribute your user content in any existing or future media. You also grant to
+                LiquidTalent the right to sub-license these rights, and the right to bring an action for infringement of these
+                rights.<br><br>
+
+                Your user content must not be illegal or unlawful, must not infringe any third party's legal rights, and must
+                not be capable of giving rise to legal action whether against you or LiquidTalent or a third party (in each case
+                under any applicable law).<br><br>
+
+                You must not submit any user content to the website that is or has ever been the subject of any threatened or
+                actual legal proceedings or other similar complaint.<br><br>
+
+                LiquidTalent reserves the right to edit or remove any material submitted to this website, or stored on
+                LiquidTalent’s servers, or hosted or published upon this website.<br><br>
+
+                Notwithstanding LiquidTalent’s rights under these terms and conditions in relation to user content, LiquidTalent
+                does not undertake to monitor the submission of such content to, or the publication of such content on, this
+                website.<br><br>
+
+                No warranties<br><br>
+
+                This website is provided “as is” without any representations or warranties, express or implied. LiquidTalent
+                makes no representations or warranties in relation to this website or the information and materials provided on
+                this website.<br><br>
+
+                Without prejudice to the generality of the foregoing paragraph, LiquidTalent does not warrant that:<br><br>
+
+                - This website will be constantly available, or available at all; or<br>
+                - The information on this website is complete, true, accurate or non-misleading.<br>
+                - Nothing on this website constitutes, or is meant to constitute, advice of any kind. If you require advice in
+                relation to any legal, professional, financial or medical matter you should consult an appropriate professional.<br><br>
+
+                Limitations of liability<br><br>
+
+                LiquidTalent will not be liable to you (whether under the law of contact, the law of torts or otherwise) in
+                relation to the contents of, or use of, or otherwise in connection with, this website:<br><br>
+
+                - To the extent that the website is provided free-of-charge, for any direct loss;<br>
+                - For any indirect, special or consequential loss; or<br>
+                - For any business losses, loss of revenue, income, profits or anticipated savings, loss of contracts or
+                business relationships, loss of reputation or goodwill, or loss or corruption of information or data.<br><br>
+
+                These limitations of liability apply even if LiquidTalent has been expressly advised of the potential loss.<br><br>
+
+                Exceptions<br><br>
+
+                Nothing in this website disclaimer will exclude or limit any warranty implied by law that it would be unlawful
+                to exclude or limit; and nothing in this website disclaimer will exclude or limit LiquidTalent’s liability in
+                respect of any:<br><br>
+
+                - Death or personal injury caused by LiquidTalent’s negligence;<br>
+                - Fraud or fraudulent misrepresentation on the part of LiquidTalent’s; or<br>
+                - Matter which it would be illegal or unlawful for LiquidTalent to exclude or limit, or to attempt or purport to
+                exclude or limit, its liability.<br><br>
+
+                Reasonableness<br><br>
+
+                By using this website, you agree that the exclusions and limitations of liability set out in this website
+                disclaimer are reasonable.<br><br>
+
+                If you do not think they are reasonable, you must not use this website.<br><br>
+
+                Other parties<br><br>
+
+                You accept that, as a limited liability entity, LiquidTalent has an interest in limiting the personal liability
+                of its officers and employees. You agree that you will not bring any claim personally against LiquidTalent’s
+                officers or employees in respect of any losses you suffer in connection with the website.<br><br>
+
+                Without prejudice to the foregoing paragraph, you agree that the limitations of warranties and liability set out
+                in this website disclaimer will protect LiquidTalent’s officers, employees, agents, subsidiaries, successors,
+                assigns and sub-contractors as well as LiquidTalent.<br><br>
+
+                Unenforceable provisions<br><br>
+
+                If any provision of this website disclaimer is, or is found to be, unenforceable under applicable law, that will
+                not affect the enforceability of the other provisions of this website disclaimer.<br><br>
+
+                Indemnity<br><br>
+
+                You hereby indemnify LiquidTalent and undertake to keep LiquidTalent indemnified against any losses, damages,
+                costs, liabilities and expenses (including without limitation legal expenses and any amounts paid by
+                LiquidTalent to a third party in settlement of a claim or dispute on the advice of LiquidTalent’s legal
+                advisers) incurred or suffered by LiquidTalent arising out of any breach by you of any provision of these terms
+                and conditions, or arising out of any claim that you have breached any provision of these terms and conditions.<br><br>
+
+                Breaches of these terms and conditions<br><br>
+
+                Without prejudice to LiquidTalent’s other rights under these terms and conditions, if you breach these terms and
+                conditions in any way, LiquidTalent may take such action as LiquidTalent deems appropriate to deal with the
+                breach, including suspending your access to the website, prohibiting you from accessing the website, blocking
+                computers using your IP address from accessing the website, contacting your internet service provider to request
+                that they block your access to the website and/or bringing court proceedings against you.<br><br>
+
+                Variation<br><br>
+
+                LiquidTalent may revise these terms and conditions from time-to-time. Revised terms and conditions will apply to
+                the use of this website from the date of the publication of the revised terms and conditions on this website.
+                Please check this page regularly to ensure you are familiar with the current version.<br><br>
+
+                Assignment<br><br>
+
+                LiquidTalent may transfer, sub-contract or otherwise deal withLiquidTalent’s rights and/or obligations under
+                these terms and conditions without notifying you or obtaining your consent.<br><br>
+
+                You may not transfer, sub-contract or otherwise deal with your rights and/or obligations under these terms and
+                conditions.<br><br>
+
+                Severability<br><br>
+
+                If a provision of these terms and conditions is determined by any court or other competent authority to be
+                unlawful and/or unenforceable, the other provisions will continue in effect. If any unlawful and/or
+                unenforceable provision would be lawful or enforceable if part of it were deleted, that part will be deemed to
+                be deleted, and the rest of the provision will continue in effect.<br><br>
+
+                Entire agreement<br><br>
+
+                These terms and conditions, together with the LiquidTalent Privacy Policy constitute the entire agreement
+                between you and LiquidTalent in relation to your use of this website, and supersede all previous agreements in
+                respect of your use of this website.<br><br>
+
+                Law and jurisdiction<br><br>
+
+                These terms and conditions will be governed by and construed in accordance with the laws of the State of New
+                York, and any disputes relating to these terms and conditions will be subject to the non-exclusive jurisdiction
+                of the courts of New York.<br><br>
+
+                LiquidTalent’s details<br><br>
+
+                The full name of LiquidTalent is Liquid Talent, Inc.<br><br>
+
+                Liquid Talent, Inc. is registered in Delaware as a foreign entity in the state of New York.<br><br>
+
+                You can contact LiquidTalent by email to <a href="mailto:hello@liquidtalent.com">hello@liquidtalent.com</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-segment t contact-page" title="contact">
+          <h1>Contact</h1>
+
+          <div class="contact-container">
+            <div id="contact-form">
+              <div class="name-email">
+                <input type="text" class="name field" placeholder="Name">
+                <input type="text" class="email field" placeholder="Email">
+              </div>
+              <textarea class="message field" placeholder="Message"></textarea>
+              <a href="#" onclick="SubmitContactForm()" class="contact green-button">Contact</a>
+              <img src="<%= asset_path "main/loader.gif" %>" alt="contact" class="loader">
+            </div>
+            <p>
+              Call 800 590 1592 or email <a href="mailto:hello@liquidtalent.com">hello@liquidtalent.com</a> to get in touch
+            </p>
+          </div>
+
+        </div>
+        <!-- contact end -->
+
+
+        <div class="page-segment t marketplace-area community-members-page page-segment-three" title="Community Members">
+          <h1><div>Community Members</div></h1>
+          <img src="<%= asset_path "new/presentation/community-members.jpg" %>" width="960" height="" alt="Community Members"  />
+        </div>
+
+        <div id="footer">
+
+          <div class="appstore-buttons">
+            <div class="ios"></div>
+            <div class="android"></div>
+          </div>
+
           <div class="social">
             <a href="http://www.linkedin.com/company/liquidtalent" target="_blank" class="button in"></a>
             <a href="https://twitter.com/LiquidTalent" target="_blank" class="button tw"></a>
@@ -245,893 +1112,28 @@
             <a href="http://statigr.am/liquidtalent" target="_blank" class="button gr"></a>
             <a href="https://medium.com/@LiquidTalent" target="_blank" class="button ma"></a>
           </div>
+
+          <div class="copy">
+            &copy;2014 LiquidTalent -
+            <a href="#" onclick="RevealPage('privacy'); return false;" class="link" id="privacy-toggle">Privacy</a> |
+            <a href="#" onclick="RevealPage('terms'); return false;" class="link" id="terms-toggle">Terms</a>
+          </div>
+
         </div>
 
-        <div class="clear"></div>
-      </div>
+        </div>
 
-      <h2>Company Overview</h2>
-      <div class="marketplace-area">
-        <p>The LiquidTalent ("LT") marketplace provides a platform for professionals to connect in real-time, based on
-          location. LiquidTalent users are encouraged to market their skills and abilities, interact with new professional
-          contacts, engage with interested hiring sources, and earn financial capital. LT adds a new dimension to the
-          economy by presenting users with real-time, income-earning opportunities based on skills, availability, and
-          geographic location. Today, online reputations play an integral role in determining professional credibility.
-          LiquidTalent actively demonstrates this credibility through authentic, comprehensive, and professionally-forward
-          profiles.</p>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        <p>Through a mobile application, LiquidTalent helps organizations, small-businesses, and individuals discover
-          talent based on relevant search criteria including skills, experience, education, hourly rate, reviews and
-          ratings. Talent is hired on a per project basis and search results are displayed in the format of both a List
-          and a Map. The List showcases talent through a 22 second video and a personal presentation-description of up to
-          160
-          characters. The Map displays the physical location of talent in relation to the user. LiquidTalent is your
-          career in your pocket, a never before seen on-the-go professional platform that increases earning potential.
-          LiquidTalent is establishing a new paradigm of professional connection and project execution.</p>
+            ga('create', 'UA-45735806-1', 'liquidtalent.com');
+            ga('send', 'pageview');
 
-        <h2>The LiquidTalent Product</h2>
+        </script>
 
-        <p>LiquidTalent's product acts as a piece of professional digital real estate, creating a space to showcase talent
-          and build a sales pipeline. LT's beta application will initially launch on the iOS7 mobile marketplace. †Future
-          product releases include an Android app and a fully functioning website designed for desktop, tablet and mobile
-          phones. During the account-creation process users can log-in with LinkedIn profiles, thus validating talent and
-          making registration quick and easy. LiquidTalent profiles will display users' skills, experience, education,
-          hourly rate, reviews and ratings. The platform offers internal messaging, a function to save favorite talent, a
-          seamless process for billing and executing legal contracts. The product will also feature LiquidPitch, a
-          22-second elevator pitch explaining the what and why behind each user. With the proliferation of online video,
-          professionals are becoming increasingly accustomed to marketing themselves through this rich format.</p>
-      </div>
-
-      <div class="enterprise-area">
-        <p>
-            LiquidTalent is a new technology firm that specializes in mobile phone and web applications with a focus on location-based services. The LiquidTalent proprietary software is built for organizations looking to optimize the process of finding, hiring, and managing internal human resources and external talent networks. LiquidTalent Enterprise is the future of Human Capital Management (HCM) software designed for your in-the-cloud workforce:
-        </p>
-
-        <ul>
-          <li>Find, hire, and manage talent with a flexible and scalable model</li>
-          <li>Synchronized mobile applications and desktop dashboard to an integrated backend</li>
-          <li>Real-time, on-demand scheduling and availablity</li>
-          <li>Responsive and beautiful design</li>
-          <li>Secure, reliable and very fast</li>
-          <li>Access internal and external human capital networks when you need them most</li>
-        </ul>
-
-        <p>
-          LiquidTalent's HCM software is fully customizable to suit your enterprise needs. Through an integrated backend, the software seamlessly syncs to all devices and is very user friendly. Enterprise management teams can now handle all aspects of vetting, presenting, hiring, and retaining talent with payroll and tax reporting options. Ultimately, this cutting edge LiquidTalent software solution saves your company valuable time and money, so you can do more of what you do best.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-<div class="page-segment green t team-page" title="team">
-
-<h1>Team</h1>
-
-<div class="title">Founders</div>
-<div class="teams">
-
-  <div class="team-description">
-
-    <div class="header">
-
-      <div class="header-image alex-image"></div>
-
-      <div class="header-text">
-        <div class="text-title">Alex Abelin</div>
-        <div class="text-tagline">Co-Founder + CEO</div>
-      </div>
-
-      <div class="header-icon social team">
-        <a href="https://twitter.com/alexabelin" target="_blank" class="button tw"></a>
-      </div>
-
-      <div class="clear"></div>
-
-    </div>
-
-    <p>
-
-      Alex comes from a background rooted in internet policy, external relations, community affairs and digital
-      marketing. Prior to running LiquidTalent, Alex worked for Google from 2005 to 2013. His career at Google was
-      divided between the Sales and Policy departments. As External Affairs Manager, his duties included building
-      relationships with government officials, managing an investment fund for nonprofit entities, and serving as
-      the chief architect in developing eight Google sponsored outdoor WiFi networks; the most notable being the
-      Chelsea CIC WiFi network, the largest
-      contiguous NYC WiFi network ever created. He is a proud alumni of UC Berkeley and the Haas School of Business.
-      Alex was born in San Diego, and currently lives in New York City. Alex is a committed optimist, a global
-      citizen and a tough ping pong player.
-
-    </p>
-
-  </div>
-  <div class="team-description">
-
-    <div class="header">
-
-      <div class="header-image scott-image"></div>
-
-      <div class="header-text">
-        <div class="text-title">Scott Annan</div>
-        <div class="text-tagline">Co-Founder + COO</div>
-      </div>
-
-      <div class="header-icon team social">
-        <a href="https://twitter.com/AIMbitious" target="_blank" class="button tw"></a>
-
-      </div>
-
-      <div class="clear"></div>
-
-    </div>
-
-    <p>
-
-      Scott brings a strong background in finance and entrepreneurship to LiquidTalent. He began his career as an
-      analyst and has started and co-founded four businesses. In 2010 Scott published the book,
-      AIMbitious.com, a self-development book for young professionals. Scott has
-      a deep interest in mobile technology and the development of mobile applications to make professional and
-      social interactions more frequent and valuable. Scott grew up outside of Boston and graduated from Colgate
-      University in 2005 with a BA in History. He currently lives in New York City.
-
-    </p>
-  </div>
-</div>
-
-<div class="title">Developers</div>
-<div class="teams">
-
-  <div class="team-description">
-
-    <div class="header">
-
-      <div class="header-image noel-image"></div>
-
-      <div class="header-text">
-        <div class="text-title">Noel Guinane</div>
-      </div>
-
-      <div class="header-icon social team">
-        <a href="https://twitter.com/bloodntreasure" target="_blank" class="button tw"></a>
-      </div>
-
-      <div class="clear"></div>
-
-    </div>
-
-    <p>
-
-      During almost a decade in software development, Noel has worked as web developer, mobile developer and project
-      manager. Noel currently manages the team responsible for building the LiquidTalent platform on iOS, Android and
-      Web.
-
-    </p>
-
-  </div>
-  <div class="team-description">
-
-    <div class="header">
-
-      <div class="header-image yao-image"></div>
-
-      <div class="header-text">
-        <div class="text-title">Yao Jhongjing</div>
-      </div>
-
-      <div class="header-icon team social">
-        <a href="https://twitter.com/YaoYaozhongjing" target="_blank" class="button tw"></a>
-
-      </div>
-
-      <div class="clear"></div>
-
-    </div>
-
-    <p>
-
-      Yao is a web developer, designer and business analyst. He is the Founder of yaosome.com and has worked for Estex
-      and MyCube Safe. Yao graduated with a near perfect academic record from NYU-Poly with a Masters of Science in
-      Electrical Engineering. He specializes in project management, backend development, site architecting, and is
-      proficient in a series of programming languages.
-
-    </p>
-  </div>
-
-</div>
-
-<div class="title">Advisors</div>
-<div class="teams">
-
-  <div class="team-description">
-
-    <div class="header">
-
-      <div class="header-image paul-image"></div>
-
-      <div class="header-text">
-        <div class="text-title">Paul Pariser</div>
-      </div>
-
-      <div class="header-icon social team">
-        <a href="https://twitter.com/PaulPariser" target="_blank" class="button tw"></a>
-      </div>
-
-      <div class="clear"></div>
-
-    </div>
-
-    <p>
-
-      Paul is Co-Founder and Co-CEO of Taconic Investment Partners, an active developer and operator of commercial and
-      residential real estate property in New York City. He has been active in the Real Estate industry for over 36
-      years. He sits on various philanthropic and civic boards, and is the proud Founder of both the Meatpacking
-      District Improvement Associates and the Chelsea Improvement Company. Paul serves as a member of the Board of
-      Trustees of the Aspen Art Museum.
-
-    </p>
-
-  </div>
-  <div class="team-description">
-
-    <div class="header">
-
-      <div class="header-image jerry-image"></div>
-
-      <div class="header-text">
-        <div class="text-title">Jerry Colonna</div>
-      </div>
-
-      <div class="header-icon social team">
-        <a href="https://twitter.com/jerrycolonna" target="_blank" class="button tw"></a>
-      </div>
-
-      <div class="clear"></div>
-
-    </div>
-
-    <p>
-
-      Jerry is an executive coach who uses the skills he learned as a venture capitalist to help entrepreneurs. He draws
-      on his wide variety of experiences to help clients design a more conscious life and make needed changes to their
-      career to improve their performance and satisfaction. Previously he was a partner with JPMorgan Partners (JPMP),
-      the private­ equity arm of JP Morgan Chase. He joined JPMP from Flatiron Partners, which he launched 1996 with
-      partner, Fred Wilson. Flatiron became one of the most successful, early­ stage investment programs in the New York
-      City area. At Flatiron, Jerry was responsible for a wide range of the firm’s investments including Geocities Inc.,
-      Gamesville Inc., Vertical One Inc., and The New York Times Digital.
-
-    </p>
-
-  </div>
-  <div class="team-description">
-
-    <div class="header">
-
-      <div class="header-image barbara-image"></div>
-
-      <div class="header-text">
-        <div class="text-title">Barbara Chang</div>
-      </div>
-
-      <div class="header-icon social team">
-        <a href="https://twitter.com/barbchang" target="_blank" class="button tw"></a>
-      </div>
-
-      <div class="clear"></div>
-
-    </div>
-
-    <p>
-
-      Barbara is currently drawing upon her more than 25 years of nonprofit management experience to launch a new
-      venture involving skills-based assessment and training for non-degreed job candidates. Prior to this work, Barbara
-      served as Executive Vice President of Per Scholas, the largest IT workforce development organization in New York
-      City, where she managed the fundraising and training programs. She also has held executive positions in NPower
-      National and NPower New York, a federation of 12 nonprofits dedicated to helping other nonprofits use technology
-      effectively in their communities. Barbara holds a master’s degree in administration from the University of North
-      Carolina–Chapel Hill and a bachelor’s degree from Johns Hopkins University.
-
-    </p>
-
-  </div>
-  <div class="team-description">
-
-    <div class="header">
-
-      <div class="header-image michael-image"></div>
-
-      <div class="header-text">
-        <div class="text-title">Michael Skolnik</div>
-      </div>
-
-      <div class="header-icon social team">
-        <a href="https://twitter.com/michaelskolnik" target="_blank" class="button tw"></a>
-      </div>
-
-      <div class="clear"></div>
-
-    </div>
-
-    <p>
-
-      Michael is a 21st century civil rights leader. As the Political Director to hip-hop pioneer Russell Simmons and
-      President of GlobalGrind.com, an online destination founded by Simmons with over 6.5 million viewers per month,
-      Michael is a leading voice for young America. A trailblazer of social media with 120,000 followers on twitter,
-      Michael has led national conversations about the death of Trayvon Martin and the subsequent trial of George
-      Zimmerman, the Boston Marathon bombings, the rise of violence in Chicago, America’s relationship with race and the
-      Obama presidency, amongst many other topics. Michael regularly discusses the aforementioned topics, current
-      events, and how they affect his generation on CNN, MSNBC, Fox News, NPR and HLN, to name a few media outlets.
-      Michael serves on the Board of Directors for The Trayvon Martin Foundation and the Drug Policy Alliance. He is a
-      graduate of UCLA and the proud father of Mateo Ali.
-
-    </p>
-
-  </div>
-  <div class="team-description">
-
-    <div class="header">
-
-      <div class="header-image prem-image"></div>
-
-      <div class="header-text">
-        <div class="text-title">Prem Ramaswami</div>
-      </div>
-
-      <div class="header-icon social team">
-        <a href="https://twitter.com/premr" target="_blank" class="button tw"></a>
-      </div>
-
-      <div class="clear"></div>
-
-    </div>
-
-    <p>
-
-      Prem has been a Product Manager at Google since 2006 working on a wide array of projects from Google Checkout, the
-      Internet Bus Project in India, Network Infrastructure and the Make the Web Faster Project, Google.org's Crisis
-      Response team, and most recently, Google Search. Prior to Google, Prem was a system's engineer at MIT Lincoln
-      Laboratory. Prem is a graduate of Carnegie Mellon with a degree in Computer and Medical Engineering and
-      received an MBA from the Harvard Business School.
-
-    </p>
-
-  </div>
-  <div class="team-description">
-
-    <div class="header">
-
-      <div class="header-image jason-image"></div>
-
-      <div class="header-text">
-        <div class="text-title">Jason Pollock</div>
-      </div>
-
-      <div class="header-icon social team">
-        <a href="https://twitter.com/jason_pollock" target="_blank" class="button tw"></a>
-      </div>
-
-      <div class="clear"></div>
-
-    </div>
-
-    <p>
-
-      Jason is a filmmaker, writer and digital producer & consultant for brands and organizations. He is the
-      writer/producer/director of the award winning documentary, The Youngest Candidate, which follows four teens
-      running for public office in America. Pollock has built an online audience of 100,000 Twitter followers and was
-      recently listed as one of the top 140 most influential people on twitter in a report that was picked up by The New
-      York Times, the BBC, Newsweek, and The Guardian. PC Magazine also featured Pollock in their list of the ‘100
-      People To Follow On Twitter’. Prior to making The Youngest Candidate, Pollock was Michael Moore’s executive
-      assistant for three years. He worked with him from 2003-2006 and aided Moore with Dude Where’s My Country,
-      Fahrenheit 9/11, and Slacker Uprising. Pollock is now writing and developing film and television projects in Los
-      Angeles with his dog Rosa and consults a roster of major brands and clients on digital media strategy.
-
-    </p>
-
-  </div>
-
-</div>
-</div>
-<!-- Team end -->
-
-<div class="page-segment page-segment-two t hiw" title="hiw" style="opacity:0;display:none;">
-  <h1>How it Works</h1>
-
-  <div class="container">
-    <br><br>
-
-    <div class="video-container">
-      <iframe src="//player.vimeo.com/video/91860245?title=0&amp;byline=0&amp;portrait=0&amp;color=239061" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
-  </div>
-
-</div>
-
-<div class="page-segment t" title="privacy" style="opacity:0;display:none;">
-  <h1>Privacy</h1>
-
-  <div class="container">
-    <div class="presentation-description">
-      <p>
-        Your privacy is important to us, and maintaining your trust and confidence is one of our highest priorities. We
-        respect your right to keep your personal information confidential and understand your desire to avoid unwanted
-        solicitations. A recent law change requires us (along with banks, brokerage houses, and other financial
-        institutions) to disclose our Customer Privacy Policy to you which we are more than happy to do. We hope that
-        by
-        taking a few minutes to read it, you will have a better understanding of what we do with the information you
-        provide us and how we endeavor to keep it private and secure. To read our Privacy Policy click
-        <a href="#" onclick="$('#hidden-privacy').css('display', $('#hidden-privacy').css('display') === 'none' ? 'block' : 'none'); return false;">here</a>.
-      </p>
-
-      <div id="hidden-privacy" style="display: none;">
-
-        <p>
-          Liquid Talent, Inc. ("LiquidTalent") operate websites and domains (LiquidTalent.com; mobile sites:
-          twitter.com/liquidtalent) (collectively, the "Sites"). 1. Applicability and Acceptance of Privacy Policies on
-          the
-          Sites
-        </p>
-
-        <p>
-          By viewing, accessing, browsing, responding to or submitting content to, or otherwise using the Sites, or
-          viewing,
-          accessing, browsing, responding to, purchasing or otherwise using any service or product provided by or
-          referenced
-          in the Sites, you (You, or the Customer) acknowledge, accept, consent and agree to the terms of the privacy
-          policies on the Sites.
-        </p>
-
-        <p>
-          If the Customer does not completely agree to the terms of the privacy policies on the Sites, LiquidTalent asks
-          the
-          Customer to please not access or use the Sites. Customer further acknowledges, accepts, consents and agrees
-          that
-          LiquidTalent may at its option, in its sole and absolute discretion, amend, modify or otherwise change the
-          customer privacy policies on the Sites (collectively, Changes) at any time and from time to time, without
-          prior
-          notice or cause. All Changes, will become part of this Agreement effective immediately upon LiquidTalent
-          posting
-          of the Changes on the Sites, and the Customer hereby automatically and unconditionally acknowledges, accepts,
-          consents and agrees to any and all Changes. The Customer hereby acknowledges, consents, accepts and agrees
-          that
-          the Customer will carefully review the customer privacy policies on the Sites from time to time on a regular
-          basis, so that Customer is aware of Changes. If any such Changes are not entirely acceptable and agreeable to
-          the
-          Customer, the Customer should immediately discontinue, and no longer access, or use the Sites.
-          <br><br>
-          2. Information that LiquidTalent Collects on the Sites<br>
-          LiquidTalent may collect the following type of information from the Customer: first name, last name, street
-          address, city, state, zip code, cross streets, phone number, email address, location (e.g. via GPS), and
-          credit
-          card or other payment information. LiquidTalent may also collect information concerning the Customer's usage
-          of
-          the Sites, as well as preferences, inquiries and comments that the Customer may disclose or otherwise provide
-          involving or relating to the products and services that LiquidTalent provides. This information is
-          collectively
-          called Personally Identifiable Information, or PII. Through the LiquidTalent Sites, third party merchants and
-          others may collect PII that the Customer may from time to time provide.
-        </p>
-
-        <p>
-          In addition to PII, LiquidTalent may collect aggregated information regarding access and usage that reflect
-          but
-          do
-          not reveal either the Customer's or other persons' individual PII. This includes information of a demographic,
-          computer profile or statistical nature. This information is collectively called Non Personally Identifiable
-          Information, or Non PII
-          The Customer may from time to time post or otherwise submit to the Sites, or to or through social sites that
-          may
-          be linked to the Sites, information, text, images, photographs, video, audio, graphics, branding, logos,
-          content,
-          material, software, code, interface, products or services (collectively, Customer Content) which may contain
-          PII
-          and other personally identifiable information about the Customer or others. By posting or otherwise submitting
-          Customer Content with PII or other personally identifiable information, either to the Sites or to or through
-          social sites that may be linked to the Sites, the Customer agrees to the publication and other disclosure of
-          such
-          PII and other personally identifiable information.
-          The Sites are not intended for use by children under the age of 18. By viewing, accessing, browsing,
-          responding
-          to
-          or submitting content to, or otherwise using the Sites, or viewing, accessing, browsing, responding to,
-          purchasing
-          or otherwise using any service or product provided by or referenced in the Sites, You certify that you are 18
-          years of age or older. LiquidTalent does not knowingly collect information from children under the age of 18.
-          <br><br>
-          3. LiquidTalent's Use of Information it Collects on the Sites<br>
-          LiquidTalent uses PII from time to time in a number of ways. LiquidTalent uses PII to communicate with the
-          Customer concerning LiquidTalent policies and procedures and changes to LiquidTalent's policies and
-          procedures;
-          Customer's PII and Non PII; products and services that are offered by or through LiquidTalent; products and
-          services that the Customer may express interest in or select; and to advise and bring to the Customer's
-          attention
-          products and services that may in the future be offered by or through LiquidTalent. This may also include
-          enabling
-          the Customer to create, edit, publish and distribute communications concerning the products and services
-          offered
-          by or through LiquidTalent. LiquidTalent also uses PII to permit the Customer to open accounts and enter into,
-          and
-          to assist with the completion and execution of, orders and other transactions.
-        </p>
-
-        <p>
-          LiquidTalent uses Non-PII from time to time in a number of ways. LiquidTalent uses Non-PII to track and
-          analyze
-          access and usage of the Sites and to administer, improve and enhance the Sites, improve the Customer
-          experience
-          with the Sites, as well as the products and services offered by LiquidTalent by or through the Sites.
-          <br><br>
-          4. LiquidTalent's Disclosure of Information it Collects on the Sites: Routine<br>
-          LiquidTalent discloses PII from time to time to its affiliates and third parties to accept, process and
-          fulfill
-          an
-          order or other transaction; and to vendors and service providers who assist with the development, rollout,
-          improvement, hosting and administration of the Sites.
-        </p>
-
-        <p>
-          LiquidTalent discloses Non PII from time to time to its affiliates and third parties as it shall determine in
-          its
-          sole and absolute discretion.
-          <br><br>
-          5. LiquidTalent's Disclosure of Information it Collects on the Sites: Non Routine<br>
-          LiquidTalent reserves the right in its sole and absolute discretion to disclose PII and Non PII (a) in
-          connection
-          with a merger or sale of LiquidTalent , or all or any portion of its assets or equity; (b) in connection with
-          any
-          bankruptcy, reorganization or similar proceeding involving LiquidTalent, (c) as may be required by applicable
-          laws
-          or regulations of any international, national, federal, or local government or governmental body; or (d) to
-          comply
-          with legal process including, without limitation, any order, requirement or request of any court or other
-          judicial
-          body; or (e) as LiquidTalent shall determine in its sole and absolute discretion to defend, protect and secure
-          its
-          property, rights, business, operations, or other rights.
-        </p>
-
-        <p>
-          6. Linked Sites<br>
-          The Sites may at any time and from time to time display, provide, refer to or contain links to other
-          websites
-          of third parties. This Privacy Policy does not extend to, cover or in any way address, and LiquidTalent bears
-          no
-          responsibility whatsoever for, the privacy practices of any third party including, without limitation, such
-          websites. By providing access to such websites, LiquidTalent does not represent, warrant or guarantee the
-          privacy
-          of Customer PII and Non PII. The Customer's access and use of such links and website is and shall at all times
-          remain entirely at the Customer's own risk, including, without limitation regarding the Customer's PII and Non
-          PII.
-        </p>
-
-        <p>7. LiquidTalent's Protection of Customer PII
-          <br>LiquidTalent has designed its Sites to achieve security and protection of PII consistent with prevailing
-          industry standards. Notwithstanding, the internet and computers involve substantial risks that PII will not
-          remain
-          confidential. Accordingly, LiquidTalent can't ensure or guarantee that Customer PII will remain confidential.
-        </p>
-
-        <p>
-          8. Accessing and Correcting Customer PII; Opt-Out
-          <br>A Customer has the right to request a copy of the PII that LiquidTalent maintains concerning the Customer.
-          To
-          request a copy, the Customer should contact LiquidTalent at: privacy@LiquidTalent.Com. LiquidTalent may charge
-          a
-          reasonable fee for this service. The Customer may request LiquidTalent to correct or delete information which
-          Customer believes is inaccurate. A Customer may change any of the Customer's profile information by using the
-          Edit function in the profile settings page of the Site.
-        </p>
-
-        <p>
-          A Customer may determine that the Customer no longer wishes to receive emails from LiquidTalent. A Customer
-          may
-          effect this by using the Edit button in the profile settings page of the Site.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="page-segment t" title="terms" style="opacity:0;display:none;">
-  <h1>Terms</h1>
-
-  <div class="container">
-    <div class="presentation-description">
-      <p>
-        These terms and conditions govern your use of the LiquidTalent sites including LiquidTalent.com, the
-        LiquidTalent mobile application, Facebook, Twitter, Instagram, Medium, and other website properties of the
-        LiquidTalent that may be implemented from time to time. By using this website, you accept these terms and
-        conditions in full. To read our full Terms and Conditions, click <a href="#" onclick="$('#hidden-terms').css('display', $('#hidden-terms').css('display') === 'none' ? 'block' : 'none'); return false;">here</a>.
-      </p>
-
-      <p id="hidden-terms" style="display: none;">
-
-        This website uses cookies. By using this website and agreeing to these terms and conditions, you consent to
-        LiquidTalent’s use of cookies in accordance with the terms of our privacy policy / cookies policy.<br><br>
-
-        General Use<br><br>
-
-        By creating an account on the LiquidTalent website and/or downloading the LiquidTalent app and creating an
-        account, you are agreeing to the general terms and conditions of the site; namely, that you will abide by the
-        rules of proper conduct of LiquidTalent.<br><br>
-
-        First, LiquidTalent is designed for use by professional people looking for and providing work that could
-        otherwise be performed in a professional work environment. At no time shall profiles be created for the purposes
-        of selling or performing illegal services or soliciting services that would otherwise be considered unlawful.
-
-        You also agree to conduct yourself in a professional manner that excludes the use of vulgar, discriminatory, or
-        hateful language that would harm the other members of the LiquidTalent community. Any one-time infraction shall
-        be treated with a warning and further reprimand shall result in the possible loss of membership to the
-        LiquidTalent sites. LiquidTalent reserves the right at any time to annul membership privileges to any individual
-        who causes deliberate harm to another member of the community and breaches the General Use policies of the
-        LiquidTalent sites.<br><br>
-
-        Receipt and Payment of Funds<br><br>
-
-        By using the LiquidTalent sites, you accept the payment terms of LiquidTalent and understand that LiquidTalent
-        may claim a fee, which may vary from time to time, that takes a percentage off the Total Transaction value of a
-        completed LiquidTalent project (to be communicated up front). You also acknowledge that funds that you may pay
-        or be entitled to receive shall be held in escrow by LiquidTalent until it is appropriate for those funds to be
-        released based upon the satisfactory completion of a project as determined by both Payer and Service Provider
-        parties and LiquidTalent. The receipt of any distribution of funds may take anywhere between 5-10 business days
-        and could take longer depending on LiquidTalent third-party payment providers. At no time shall you be entitled
-        to receive interest on any funds held in escrow nor will those funds be rehypothecated for the purposes of
-        extending business practices beyond the scope of LiquidTalent’s business purview.<br><br>
-
-        License to use website<br><br>
-
-        Unless otherwise stated, LiquidTalent and/or its licensors own the intellectual property rights in the website
-        and material on the website. Subject to the license below, all these intellectual property rights are reserved.<br><br>
-
-        You may view, download for caching purposes only, and print pages or other content from the website for your own
-        personal use, subject to the restrictions set out below and elsewhere in these terms and conditions.<br><br>
-
-        You must not:<br><br>
-
-        · sell, rent or sub-license material from the website;<br>
-        · reproduce, duplicate, copy or otherwise exploit material on this website for a commercial purpose;<br>
-        · edit or otherwise modify any LiquidTalent material on the website; or<br>
-        · redistribute material from this website (except for content specifically and expressly made available for
-        redistribution.)<br><br>
-
-        Acceptable use<br><br>
-
-        You must not use this website in any way that causes, or may cause, damage to the website or impairment of the
-        availability or accessibility of the website; or in any way which is unlawful, illegal, fraudulent or harmful,
-        or in connection with any unlawful, illegal, fraudulent or harmful purpose or activity. <br><br>
-
-        You must not use this website to copy, store, host, transmit, send, use, publish or distribute any material
-        which consists of (or is linked to) any spyware, computer virus, Trojan horse, worm, keystroke logger, rootkit
-        or other malicious computer software.<br><br>
-
-        You must not conduct any systematic or automated data collection activities (including without limitation
-        scraping, data mining, data extraction and data harvesting) on or in relation to this website without
-        LiquidTalent’s express written consent.<br><br>
-
-        You must not use this website to transmit or send unsolicited commercial communications to LiquidTalent or any
-        of its users without their prior consent. <br><br>
-
-        You must not use this website for any purposes related to marketing without LiquidTalent’s express written
-        consent.<br><br>
-
-        Restricted access <br><br>
-
-        Access to certain areas of this website is restricted. LiquidTalent reserves the right to restrict access to
-        other of this website, or indeed this entire website, at LiquidTalent’s discretion.<br><br>
-
-        If LiquidTalent provides you with a user ID and password to enable you to access restricted areas of this
-        website or other content or services, you must ensure that the user ID and password are kept confidential.<br><br>
-
-        LiquidTalent may disable your user ID and password in LiquidTalent’s sole discretion without notice or
-        explanation.<br><br>
-
-        User content<br><br>
-
-        In these terms and conditions, “your user content” means material (including without limitation text, images,
-        audio material, video material and audio-visual material) that you submit to this website, for whatever purpose.<br><br>
-
-        You grant to LiquidTalent a worldwide, irrevocable, non-exclusive, royalty-free license to use, reproduce,
-        adapt, publish, translate and distribute your user content in any existing or future media. You also grant to
-        LiquidTalent the right to sub-license these rights, and the right to bring an action for infringement of these
-        rights.<br><br>
-
-        Your user content must not be illegal or unlawful, must not infringe any third party's legal rights, and must
-        not be capable of giving rise to legal action whether against you or LiquidTalent or a third party (in each case
-        under any applicable law).<br><br>
-
-        You must not submit any user content to the website that is or has ever been the subject of any threatened or
-        actual legal proceedings or other similar complaint.<br><br>
-
-        LiquidTalent reserves the right to edit or remove any material submitted to this website, or stored on
-        LiquidTalent’s servers, or hosted or published upon this website.<br><br>
-
-        Notwithstanding LiquidTalent’s rights under these terms and conditions in relation to user content, LiquidTalent
-        does not undertake to monitor the submission of such content to, or the publication of such content on, this
-        website.<br><br>
-
-        No warranties<br><br>
-
-        This website is provided “as is” without any representations or warranties, express or implied. LiquidTalent
-        makes no representations or warranties in relation to this website or the information and materials provided on
-        this website.<br><br>
-
-        Without prejudice to the generality of the foregoing paragraph, LiquidTalent does not warrant that:<br><br>
-
-        - This website will be constantly available, or available at all; or<br>
-        - The information on this website is complete, true, accurate or non-misleading.<br>
-        - Nothing on this website constitutes, or is meant to constitute, advice of any kind. If you require advice in
-        relation to any legal, professional, financial or medical matter you should consult an appropriate professional.<br><br>
-
-        Limitations of liability<br><br>
-
-        LiquidTalent will not be liable to you (whether under the law of contact, the law of torts or otherwise) in
-        relation to the contents of, or use of, or otherwise in connection with, this website:<br><br>
-
-        - To the extent that the website is provided free-of-charge, for any direct loss;<br>
-        - For any indirect, special or consequential loss; or<br>
-        - For any business losses, loss of revenue, income, profits or anticipated savings, loss of contracts or
-        business relationships, loss of reputation or goodwill, or loss or corruption of information or data.<br><br>
-
-        These limitations of liability apply even if LiquidTalent has been expressly advised of the potential loss.<br><br>
-
-        Exceptions<br><br>
-
-        Nothing in this website disclaimer will exclude or limit any warranty implied by law that it would be unlawful
-        to exclude or limit; and nothing in this website disclaimer will exclude or limit LiquidTalent’s liability in
-        respect of any:<br><br>
-
-        - Death or personal injury caused by LiquidTalent’s negligence;<br>
-        - Fraud or fraudulent misrepresentation on the part of LiquidTalent’s; or<br>
-        - Matter which it would be illegal or unlawful for LiquidTalent to exclude or limit, or to attempt or purport to
-        exclude or limit, its liability.<br><br>
-
-        Reasonableness<br><br>
-
-        By using this website, you agree that the exclusions and limitations of liability set out in this website
-        disclaimer are reasonable.<br><br>
-
-        If you do not think they are reasonable, you must not use this website.<br><br>
-
-        Other parties<br><br>
-
-        You accept that, as a limited liability entity, LiquidTalent has an interest in limiting the personal liability
-        of its officers and employees. You agree that you will not bring any claim personally against LiquidTalent’s
-        officers or employees in respect of any losses you suffer in connection with the website.<br><br>
-
-        Without prejudice to the foregoing paragraph, you agree that the limitations of warranties and liability set out
-        in this website disclaimer will protect LiquidTalent’s officers, employees, agents, subsidiaries, successors,
-        assigns and sub-contractors as well as LiquidTalent.<br><br>
-
-        Unenforceable provisions<br><br>
-
-        If any provision of this website disclaimer is, or is found to be, unenforceable under applicable law, that will
-        not affect the enforceability of the other provisions of this website disclaimer.<br><br>
-
-        Indemnity<br><br>
-
-        You hereby indemnify LiquidTalent and undertake to keep LiquidTalent indemnified against any losses, damages,
-        costs, liabilities and expenses (including without limitation legal expenses and any amounts paid by
-        LiquidTalent to a third party in settlement of a claim or dispute on the advice of LiquidTalent’s legal
-        advisers) incurred or suffered by LiquidTalent arising out of any breach by you of any provision of these terms
-        and conditions, or arising out of any claim that you have breached any provision of these terms and conditions.<br><br>
-
-        Breaches of these terms and conditions<br><br>
-
-        Without prejudice to LiquidTalent’s other rights under these terms and conditions, if you breach these terms and
-        conditions in any way, LiquidTalent may take such action as LiquidTalent deems appropriate to deal with the
-        breach, including suspending your access to the website, prohibiting you from accessing the website, blocking
-        computers using your IP address from accessing the website, contacting your internet service provider to request
-        that they block your access to the website and/or bringing court proceedings against you.<br><br>
-
-        Variation<br><br>
-
-        LiquidTalent may revise these terms and conditions from time-to-time. Revised terms and conditions will apply to
-        the use of this website from the date of the publication of the revised terms and conditions on this website.
-        Please check this page regularly to ensure you are familiar with the current version.<br><br>
-
-        Assignment<br><br>
-
-        LiquidTalent may transfer, sub-contract or otherwise deal withLiquidTalent’s rights and/or obligations under
-        these terms and conditions without notifying you or obtaining your consent.<br><br>
-
-        You may not transfer, sub-contract or otherwise deal with your rights and/or obligations under these terms and
-        conditions.<br><br>
-
-        Severability<br><br>
-
-        If a provision of these terms and conditions is determined by any court or other competent authority to be
-        unlawful and/or unenforceable, the other provisions will continue in effect. If any unlawful and/or
-        unenforceable provision would be lawful or enforceable if part of it were deleted, that part will be deemed to
-        be deleted, and the rest of the provision will continue in effect.<br><br>
-
-        Entire agreement<br><br>
-
-        These terms and conditions, together with the LiquidTalent Privacy Policy constitute the entire agreement
-        between you and LiquidTalent in relation to your use of this website, and supersede all previous agreements in
-        respect of your use of this website.<br><br>
-
-        Law and jurisdiction<br><br>
-
-        These terms and conditions will be governed by and construed in accordance with the laws of the State of New
-        York, and any disputes relating to these terms and conditions will be subject to the non-exclusive jurisdiction
-        of the courts of New York.<br><br>
-
-        LiquidTalent’s details<br><br>
-
-        The full name of LiquidTalent is Liquid Talent, Inc.<br><br>
-
-        Liquid Talent, Inc. is registered in Delaware as a foreign entity in the state of New York.<br><br>
-
-        You can contact LiquidTalent by email to <a href="mailto:hello@liquidtalent.com">hello@liquidtalent.com</a>.
-      </p>
-    </div>
-  </div>
-</div>
-
-<div class="page-segment t contact-page" title="contact">
-  <h1>Contact</h1>
-
-  <div class="contact-container">
-    <div id="contact-form">
-      <div class="name-email">
-        <input type="text" class="name field" placeholder="Name">
-        <input type="text" class="email field" placeholder="Email">
-      </div>
-      <textarea class="message field" placeholder="Message"></textarea>
-      <a href="#" onclick="SubmitContactForm()" class="contact green-button">Contact</a>
-      <img src="<%= asset_path "main/loader.gif" %>" alt="contact" class="loader">
-    </div>
-    <p>
-      Call 800 590 1592 or email <a href="mailto:hello@liquidtalent.com">hello@liquidtalent.com</a> to get in touch
-    </p>
-  </div>
-
-</div>
-<!-- contact end -->
-
-
-<div class="page-segment t marketplace-area community-members-page page-segment-three" title="Community Members">
-  <h1><div>Community Members</div></h1>
-  <img src="<%= asset_path "new/presentation/community-members.jpg" %>" width="960" height="" alt="Community Members"  />
-</div>
-
-<div id="footer">
-
-  <div class="appstore-buttons">
-    <div class="ios"></div>
-    <div class="android"></div>
-  </div>
-
-  <div class="social">
-    <a href="http://www.linkedin.com/company/liquidtalent" target="_blank" class="button in"></a>
-    <a href="https://twitter.com/LiquidTalent" target="_blank" class="button tw"></a>
-    <a href="https://www.facebook.com/liquidtalent" target="_blank" class="button fb"></a>
-    <a href="https://plus.google.com/111892577057930602448/posts" target="_blank" class="button gl"></a>
-    <a href="http://statigr.am/liquidtalent" target="_blank" class="button gr"></a>
-    <a href="https://medium.com/@LiquidTalent" target="_blank" class="button ma"></a>
-  </div>
-
-  <div class="copy">
-    &copy;2014 LiquidTalent -
-    <a href="#" onclick="RevealPage('privacy'); return false;" class="link" id="privacy-toggle">Privacy</a> |
-    <a href="#" onclick="RevealPage('terms'); return false;" class="link" id="terms-toggle">Terms</a>
-  </div>
-
-</div>
-
-</div>
-
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-45735806-1', 'liquidtalent.com');
-    ga('send', 'pageview');
-
-</script>
-
-</body>
+    </body>
 
 </html>
