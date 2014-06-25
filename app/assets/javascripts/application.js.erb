@@ -1649,6 +1649,7 @@ function linkedin_connect(access_token) {
                             if (confirm('Do you want to register as a Service Provider?')) {
                                 createUser(data, 'map');
                                 loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                                $('#preloader').hide();
                             }
                             else {
                                 $.ajax({
@@ -1656,6 +1657,7 @@ function linkedin_connect(access_token) {
                                     error: Response
                                 }).done(function (data) {
                                     createUser(data, 'map');
+                                    $('#preloader').hide();
                                 });
                             }
 

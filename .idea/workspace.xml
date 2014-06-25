@@ -203,10 +203,10 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1649" column="56" selection-start="54725" selection-end="54725" vertical-scroll-proportion="0.44594595">
+            <state line="1659" column="36" selection-start="55476" selection-end="55476" vertical-scroll-proportion="0.536036">
               <folding>
-                <marker date="1403732187415" expanded="true" signature="62840:62862" placeholder="..." />
-                <marker date="1403732187415" expanded="true" signature="87451:87467" placeholder="..." />
+                <marker date="1403732343124" expanded="true" signature="62956:62978" placeholder="..." />
+                <marker date="1403732343124" expanded="true" signature="87567:87583" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -786,10 +786,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1649" column="56" selection-start="54725" selection-end="54725" vertical-scroll-proportion="0.44594595">
+        <state line="1659" column="36" selection-start="55476" selection-end="55476" vertical-scroll-proportion="0.536036">
           <folding>
-            <marker date="1403732187415" expanded="true" signature="62840:62862" placeholder="..." />
-            <marker date="1403732187415" expanded="true" signature="87451:87467" placeholder="..." />
+            <marker date="1403732343124" expanded="true" signature="62956:62978" placeholder="..." />
+            <marker date="1403732343124" expanded="true" signature="87567:87583" placeholder="..." />
           </folding>
         </state>
       </provider>
