@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
@@ -201,10 +200,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="980" column="19" selection-start="32278" selection-end="32290" vertical-scroll-proportion="0.33293697">
+            <state line="971" column="123" selection-start="32048" selection-end="32048" vertical-scroll-proportion="-2.9591837">
               <folding>
                 <marker date="1403729895336" expanded="true" signature="61830:61852" placeholder="..." />
                 <marker date="1403729895336" expanded="true" signature="86441:86457" placeholder="..." />
@@ -213,11 +212,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="presentation.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="36" selection-start="2162" selection-end="2162" vertical-scroll-proportion="-8.469388">
-              <folding />
+            <state line="93" column="143" selection-start="3954" selection-end="3954" vertical-scroll-proportion="0.33293697">
+              <folding>
+                <element signature="n#style#0;n#a#7;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -773,19 +774,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="36" selection-start="2162" selection-end="2162" vertical-scroll-proportion="-8.469388">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="980" column="19" selection-start="32278" selection-end="32290" vertical-scroll-proportion="0.33293697">
+        <state line="971" column="123" selection-start="32048" selection-end="32048" vertical-scroll-proportion="-2.9591837">
           <folding>
             <marker date="1403729895336" expanded="true" signature="61830:61852" placeholder="..." />
             <marker date="1403729895336" expanded="true" signature="86441:86457" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="143" selection-start="3954" selection-end="3954" vertical-scroll-proportion="0.33293697">
+          <folding>
+            <element signature="n#style#0;n#a#7;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
