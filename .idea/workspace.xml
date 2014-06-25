@@ -7,7 +7,7 @@
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1403184290822" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1403734056388" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1403734590644" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034723990" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -203,10 +203,10 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1646" column="55" selection-start="54585" selection-end="54585" vertical-scroll-proportion="0.46846846">
+            <state line="1644" column="58" selection-start="54409" selection-end="54409" vertical-scroll-proportion="0.44594595">
               <folding>
-                <marker date="1403734327802" expanded="true" signature="62992:63014" placeholder="..." />
-                <marker date="1403734327802" expanded="true" signature="87603:87619" placeholder="..." />
+                <marker date="1403734598195" expanded="true" signature="62838:62860" placeholder="..." />
+                <marker date="1403734598195" expanded="true" signature="87449:87465" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -786,10 +786,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1646" column="55" selection-start="54585" selection-end="54585" vertical-scroll-proportion="0.46846846">
+        <state line="1644" column="58" selection-start="54409" selection-end="54409" vertical-scroll-proportion="0.44594595">
           <folding>
-            <marker date="1403734327802" expanded="true" signature="62992:63014" placeholder="..." />
-            <marker date="1403734327802" expanded="true" signature="87603:87619" placeholder="..." />
+            <marker date="1403734598195" expanded="true" signature="62838:62860" placeholder="..." />
+            <marker date="1403734598195" expanded="true" signature="87449:87465" placeholder="..." />
           </folding>
         </state>
       </provider>

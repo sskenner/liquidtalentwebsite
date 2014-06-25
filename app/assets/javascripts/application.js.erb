@@ -1635,12 +1635,14 @@ function linkedin_connect(access_token) {
                     return;
                 }
 
+                currentUser = data['response']['user'];
+
                 if (data['response']['new_user']) {
                     var zip = prompt('Please enter your ZIP code.', 'ZIP code');
-                    if(zip) {    console.log('jo');
-                        getCurrentLocation(function(loc) {
-                            currentUser = data['response']['user'];
+                    if(zip) {
+                        currentUser.zip = zip;
 
+                        getCurrentLocation(function(loc) {
                             currentUser['latitude'] = loc['lat'];
                             currentUser['longitude'] = loc['lng'];
 
@@ -1664,9 +1666,6 @@ function linkedin_connect(access_token) {
                         });
                     }
                     else {
-                        console.log('ne');
-                        currentUser = data['response']['user'];
-
                         if (confirm('Do you want to register as a Service Provider?')) {
                             createUser(data, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                             $('#preloader').hide();
@@ -1678,7 +1677,6 @@ function linkedin_connect(access_token) {
                     }
                 }
                 else {
-                    currentUser = data['response']['user'];
                     createUser(data, 'map');
                 }
             });
