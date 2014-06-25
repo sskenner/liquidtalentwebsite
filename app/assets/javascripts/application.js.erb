@@ -1319,7 +1319,7 @@ function SubmitSignupForm(userType) {
                                         currentUser = data['response']['user'];
                                         currentUser['avatar_url'] = avatar_data['response']['url'];
 
-                                        getCurrentLocation(function(loc) {
+                                        n (function(loc) {
                                             currentUser['latitude'] = loc['lat'];
                                             currentUser['longitude'] = loc['lng'];
 
@@ -1636,7 +1636,12 @@ function linkedin_connect(access_token) {
                 }
 
                 if (data['response']['new_user']) {
+                    lat = currentUser.latitude;
+                    lng = currentUser.longitude;
+
                     currentUser = data['response']['user'];
+                    currentUser.latitude = lat;
+                    currentUser.longitude = lng;
 
                     if (confirm('Do you want to register as a Service Provider?')) {
                         loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
