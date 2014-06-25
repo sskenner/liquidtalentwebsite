@@ -203,10 +203,10 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1670" column="47" selection-start="55951" selection-end="55951" vertical-scroll-proportion="0.6261261">
+            <state line="1649" column="56" selection-start="54725" selection-end="54725" vertical-scroll-proportion="0.44594595">
               <folding>
-                <marker date="1403731491872" expanded="true" signature="62674:62696" placeholder="..." />
-                <marker date="1403731491872" expanded="true" signature="87285:87301" placeholder="..." />
+                <marker date="1403732187415" expanded="true" signature="62840:62862" placeholder="..." />
+                <marker date="1403732187415" expanded="true" signature="87451:87467" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -215,7 +215,7 @@
       <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="143" selection-start="3954" selection-end="3954" vertical-scroll-proportion="-5.714286">
+            <state line="93" column="143" selection-start="3954" selection-end="3954" vertical-scroll-proportion="-22.244898">
               <folding>
                 <element signature="n#style#0;n#a#7;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -777,7 +777,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="143" selection-start="3954" selection-end="3954" vertical-scroll-proportion="-5.714286">
+        <state line="93" column="143" selection-start="3954" selection-end="3954" vertical-scroll-proportion="-22.244898">
           <folding>
             <element signature="n#style#0;n#a#7;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -786,10 +786,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1670" column="47" selection-start="55951" selection-end="55951" vertical-scroll-proportion="0.6261261">
+        <state line="1649" column="56" selection-start="54725" selection-end="54725" vertical-scroll-proportion="0.44594595">
           <folding>
-            <marker date="1403731491872" expanded="true" signature="62674:62696" placeholder="..." />
-            <marker date="1403731491872" expanded="true" signature="87285:87301" placeholder="..." />
+            <marker date="1403732187415" expanded="true" signature="62840:62862" placeholder="..." />
+            <marker date="1403732187415" expanded="true" signature="87451:87467" placeholder="..." />
           </folding>
         </state>
       </provider>
