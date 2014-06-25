@@ -1636,16 +1636,16 @@ function linkedin_connect(access_token) {
                 }
 
                 if (data['response']['new_user']) {
+                    currentUser = data['response']['user'];
+
                     var zip = prompt('Please enter your ZIP code.', 'ZIP code');
                     if(zip) {
                         getCurrentLocation(function(loc) {
-                            currentUser = data['response']['user'];
-
-                            currentUser['latitude'] = loc['lat'];
-                            currentUser['longitude'] = loc['lng'];
+                            currentUser.latitude = loc['lat'];
+                            currentUser.longitude = loc['lng'];
 
                             if (confirm('Do you want to register as a Service Provider?')) {
-                                createUser(data, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                                createUser(currentUser, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                                 $('#preloader').hide();
                             }
                             else {
@@ -1662,8 +1662,6 @@ function linkedin_connect(access_token) {
                         });
                     }
                     else {
-                        currentUser = data['response']['user'];
-
                         if (confirm('Do you want to register as a Service Provider?')) {
                             createUser(data, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                             $('#preloader').hide();
