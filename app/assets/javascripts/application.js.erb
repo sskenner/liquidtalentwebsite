@@ -1648,7 +1648,7 @@ function linkedin_connect(access_token) {
                                 $.ajax({
                                     url: 'http://backend.liquidtalent.com/user/set_details/?token=' + currentUser.token + '&user_id=' + currentUser.id + '&attr[latitude]=' + loc['lat'] + '&attr[longitude]=' + loc['lng'],
                                     error: Response
-                                }).done(function (data) {
+                                }).done(function () {
                                     createUser(currentUser, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                                     $('#preloader').hide();
                                 });
@@ -1657,7 +1657,7 @@ function linkedin_connect(access_token) {
                                 $.ajax({
                                     url: 'http://backend.liquidtalent.com/user/set_details/?token=' + currentUser.token + '&user_id=' + currentUser.id + '&attr[latitude]=' + loc['lat'] + '&attr[longitude]=' + loc['lng'],
                                     error: Response
-                                }).done(function (data) {
+                                }).done(function () {
                                     createUser(data, 'map');
                                     $('#preloader').hide();
                                 });
