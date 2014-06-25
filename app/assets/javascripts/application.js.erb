@@ -1645,7 +1645,7 @@ function linkedin_connect(access_token) {
                             currentUser['longitude'] = loc['lng'];
 
                             if (confirm('Do you want to register as a Service Provider?')) {
-                                createUser(data, '/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                                createUser(data, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                                 $('#preloader').hide();
                             }
                             else {
@@ -1665,7 +1665,7 @@ function linkedin_connect(access_token) {
                         currentUser = data['response']['user'];
 
                         if (confirm('Do you want to register as a Service Provider?')) {
-                            createUser(data, '/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                            createUser(data, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                             $('#preloader').hide();
                         }
                         else {
