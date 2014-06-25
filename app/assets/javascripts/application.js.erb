@@ -1636,21 +1636,29 @@ function linkedin_connect(access_token) {
                 }
 
                 if (data['response']['new_user']) {
-                    lat = currentUser.latitude;
-                    lng = currentUser.longitude;
+                    var zip = prompt('Please enter your ZIP code.', 'ZIP code');
+                    if(zip) {
+                        currentUser = {zip: zip, latitude: null, longitude: null};
 
-                    currentUser = data['response']['user'];
-                    currentUser.latitude = lat;
-                    currentUser.longitude = lng;
+                        getCurrentLocation(function(loc) {
+                            currentUser = data['response']['user'];
 
-                    if (confirm('Do you want to register as a Service Provider?')) {
-                        loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                            currentUser['latitude'] = loc['lat'];
+                            currentUser['longitude'] = loc['lng'];
+
+                            if (confirm('Do you want to register as a Service Provider?')) {
+                                loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                            }
+                            else {
+                                createUser(data, 'map');
+                            }
+
+                            $('#preloader').hide();
+                        });
                     }
                     else {
-                        createUser(data, 'map');
+                        alert('Please, enter your ZIP code.')
                     }
-
-                    $('#preloader').hide();
                 }
                 else {
                     currentUser = data['response']['user'];

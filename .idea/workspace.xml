@@ -4,7 +4,6 @@
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/website.iml" afterPath="$PROJECT_DIR$/.idea/website.iml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -205,10 +204,10 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1643" column="41" selection-start="54301" selection-end="54301" vertical-scroll-proportion="0.5112961">
+            <state line="980" column="19" selection-start="32278" selection-end="32290" vertical-scroll-proportion="0.33293697">
               <folding>
-                <marker date="1403729666279" expanded="true" signature="61412:61434" placeholder="..." />
-                <marker date="1403729666279" expanded="true" signature="86023:86039" placeholder="..." />
+                <marker date="1403729895336" expanded="true" signature="61830:61852" placeholder="..." />
+                <marker date="1403729895336" expanded="true" signature="86441:86457" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -217,7 +216,7 @@
       <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="98" selection-start="2368" selection-end="2368" vertical-scroll-proportion="-8.469388">
+            <state line="52" column="36" selection-start="2162" selection-end="2162" vertical-scroll-proportion="-8.469388">
               <folding />
             </state>
           </provider>
@@ -264,8 +263,8 @@
         <option value="$PROJECT_DIR$/app/views/user/update_provider.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/_filter.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
       </list>
     </option>
   </component>
@@ -776,17 +775,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="98" selection-start="2368" selection-end="2368" vertical-scroll-proportion="-8.469388">
+        <state line="52" column="36" selection-start="2162" selection-end="2162" vertical-scroll-proportion="-8.469388">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1643" column="41" selection-start="54301" selection-end="54301" vertical-scroll-proportion="0.5112961">
+        <state line="980" column="19" selection-start="32278" selection-end="32290" vertical-scroll-proportion="0.33293697">
           <folding>
-            <marker date="1403729666279" expanded="true" signature="61412:61434" placeholder="..." />
-            <marker date="1403729666279" expanded="true" signature="86023:86039" placeholder="..." />
+            <marker date="1403729895336" expanded="true" signature="61830:61852" placeholder="..." />
+            <marker date="1403729895336" expanded="true" signature="86441:86457" placeholder="..." />
           </folding>
         </state>
       </provider>
