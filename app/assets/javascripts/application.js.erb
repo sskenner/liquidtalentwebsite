@@ -1645,8 +1645,13 @@ function linkedin_connect(access_token) {
                             currentUser.longitude = loc['lng'];
 
                             if (confirm('Do you want to register as a Service Provider?')) {
-                                createUser(currentUser, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
-                                $('#preloader').hide();
+                                $.ajax({
+                                    url: 'http://backend.liquidtalent.com/user/set_details/?token=' + currentUser.token + '&user_id=' + currentUser.id + '&attr[latitude]=' + loc['lat'] + '&attr[longitude]=' + loc['lng'],
+                                    error: Response
+                                }).done(function (data) {
+                                    createUser(currentUser, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                                    $('#preloader').hide();
+                                });
                             }
                             else {
                                 $.ajax({
