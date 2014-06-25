@@ -1463,8 +1463,8 @@ function SubmitSignupSPForm(linkedin) {
         url: 'http://backend.liquidtalent.com' + sF.href,
         data: 'user_id=' + currentUser.id +
                 '&token=' + currentUser.token +
-                '&attr[latitude]=' + currentUser.latitude +
-                '&attr[longitude]=' + currentUser.longitude +
+                (currentUser.latitude ? ('&attr[latitude]=' + currentUser.latitude) : '') +
+                (currentUser.longitude ? ('&attr[longitude]=' + currentUser.longitude) : '') +
                 '&attr[category_id]=' + $('#category_id').val() +
                 '&attr[school_id]=' + $('#school_id').val() +
                 '&attr[description]=' + $('.description').val() +
@@ -1650,14 +1650,24 @@ function linkedin_connect(access_token) {
                                 loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
                             }
                             else {
-                                createUser(data, 'map');
+                                $.ajax({
+                                    url: 'http://backend.liquidtalent.com/user/set_details/?token=' + currentUser.token + '&user_id=' + currentUser.id + '&attr[latitude]=' + loc['lat'] + '&attr[longitude]=' + loc['lng'],
+                                    error: Response
+                                }).done(function (data) {
+                                    createUser(data, 'map');
+                                });
                             }
 
                             $('#preloader').hide();
                         });
                     }
                     else {
-                        alert('Please, enter your ZIP code.')
+                        if (confirm('Do you want to register as a Service Provider?')) {
+                            loadPage('/signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                        }
+                        else {
+                            createUser(data, 'map');
+                        }
                     }
                 }
                 else {
