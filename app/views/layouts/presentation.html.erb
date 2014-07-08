@@ -51,7 +51,7 @@
 
                                 if (getURLParameter('state') == 0 || getURLParameter('state') == '0') {
                                     linkedin_connect(access_token);
-                                    window.location = '/';
+                                    //window.location = '/';
                                 }
                                 else {
                                     linkedin_synchro(access_token, getURLParameter('state'));
