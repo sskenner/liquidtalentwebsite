@@ -36,6 +36,10 @@
 
                     $('#preloader').show();
 
+                    if(getCookie('userId') && (getURLParameter('state') == 0 || getURLParameter('state') == '0')) {
+                        return false;
+                    }
+
                     $.ajax({
                         url: 'http://backend.liquidtalent.com/user/linkedin_token/?code=' + code,
                         error: function (error) {
@@ -51,7 +55,6 @@
 
                                 if (getURLParameter('state') == 0 || getURLParameter('state') == '0') {
                                     linkedin_connect(access_token);
-                                    //window.location = '/';
                                 }
                                 else {
                                     linkedin_synchro(access_token, getURLParameter('state'));
