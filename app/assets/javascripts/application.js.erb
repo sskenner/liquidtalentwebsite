@@ -29,7 +29,9 @@ var currentUser = null,
     back = null,
     favorites = {},
     messages = [],
-    linkedInConnections = [];
+    linkedInConnections = [],
+    pageSegments = {};
+
 
 var users = null;
 var global_info = null;
@@ -847,6 +849,10 @@ $(document).ready(function () {
     loadPage('home');
 
     $('#preloader').hide();
+
+    $('.page-segment:not(.page-segment-three)').each(function (i, e) {
+        pageSegments[$(e).prop('title')] = $(e);
+    });
 });
 
 function showEnterprise() {
@@ -1042,13 +1048,10 @@ function SubmitContactForm() {
     });
 
 }
+
+
+
 function RevealPage(pageSegment) {
-
-    pageSegments = {};
-    $('.page-segment:not(.page-segment-three)').each(function (i, e) {
-        pageSegments[$(e).prop('title')] = $(e);
-    });
-
     if (pageSegment === 'privacy') {
 
         Object.keys(pageSegments).forEach(function (page) {
@@ -1105,7 +1108,7 @@ function RevealPage(pageSegment) {
         });
     }
 
-    $('html, body').delay(500).animate({ scrollTop: $(pageSegments[pageSegment]).offset().top - $('#top-navigation-bar').height() + 5 }, 300, 'linear', null);
+    $('html, body').delay(500).animate({ scrollTop: pageSegments[pageSegment].offset().top - $('#top-navigation-bar').height() + 5 }, 300, 'linear', null);
 
     return false;
 }
