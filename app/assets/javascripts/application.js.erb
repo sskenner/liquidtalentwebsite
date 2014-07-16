@@ -1366,6 +1366,8 @@ function SubmitSignupForm(userType) {
 
             });
 
+    ga('send', 'event', 'Signup', 'LiquidTalent Signup');
+
     return false;
 
 }
@@ -1516,6 +1518,7 @@ function SubmitSignupSPForm(linkedin) {
                 }
             });
 
+    ga('send', 'event', 'Signup', 'LiquidTalent Signup');
 }
 
 function searchSchool(query, filterType) {
@@ -1692,6 +1695,8 @@ function linkedin_connect(access_token) {
                             $('#preloader').hide();
                         }
                     }
+
+                    ga('send', 'event', 'Signup', 'LinkedIn Signup');
                 }
                 else {
                     createUser(data, 'map');
@@ -2145,6 +2150,7 @@ function createFavorite(userID, button) {
 
             });
 
+            ga('send', 'event', 'Favourite', 'Profile Favorite');
         }
 
     }
@@ -2156,7 +2162,6 @@ function createFavorite(userID, button) {
 
 }
 function destroyFavorite(userID, button) {
-
     button.removeClass('active');
 
     $.ajax({
@@ -2168,6 +2173,7 @@ function destroyFavorite(userID, button) {
 
     });
 
+    ga('send', 'event', 'Favourite', 'Delete Favorite');
 }
 function getFavorites() {
 
@@ -2180,7 +2186,6 @@ function getFavorites() {
             data.response.forEach(function (user) { favorites[user.provider.id] = user.favourite_id; });
 
         });
-
 }
 function loadFavorites() {
 
@@ -2214,6 +2219,8 @@ function loadFavorites() {
     });
 
     retrieveFavorites('cost');
+
+    ga('send', 'event', 'Favourite', 'List Favorite');
 
     return false;
 }
@@ -2353,6 +2360,8 @@ function removeFavorite(provider_id) {
         }
 
     });
+
+    ga('send', 'event', 'Favourite', 'Delete Favorite');
 }
 
 /***** Messages *****/
@@ -3080,6 +3089,8 @@ function uploadVideo() {
         //}
     });
 
+    ga('send', 'event', 'Other', 'Video Upload');
+
     //  Vimeo upload
     /*
     $.ajax({
@@ -3147,6 +3158,8 @@ function playVideo(video_url) {
 
         $('#preloader').hide();
     });
+
+    ga('send', 'event', 'Video View', 'Profile Video View');
 }
 
 /***** Hire *****/
@@ -3252,6 +3265,13 @@ function confirmBooking() {
 
 
             });
+
+    if(providerId) {
+        ga('send', 'event', 'Project', 'Direct Hire');
+    }
+    else {
+        ga('send', 'event', 'Project', 'Project Posting');
+    }
 }
 
 function deleteBooking(booking_id) {
@@ -3718,6 +3738,8 @@ function updateProvider() {
     uploadAvatar(function() {
         updateProviderData();
     });
+
+    ga('send', 'event', 'Other', 'Account Info Change');
 }
 
 function updateProviderData() {
@@ -3775,6 +3797,8 @@ function updateDemander() {
     uploadAvatar(function() {
         updateDemanderData();
     });
+
+    ga('send', 'event', 'Other', 'Account Info Change');
 }
 
 function updateDemanderData() {
