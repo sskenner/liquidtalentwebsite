@@ -46,16 +46,16 @@
                 $('#preloader').show();
 
                 $(document).ready(function () {
-                    searchUsers('<%= params[:user] %>', function(users) {
-                        if(!users[0]) {
+                    searchUsers('<%= params[:user] %>', function(search_users) {
+                        if(!search_users[0]) {
                             alert('Unfortunately, there is no user with this name');
                             //loadPage("/home");
                         }
-                        else if(users.length > 1) {
+                        else if(search_users.length > 1) {
                             loadPage("/users");
                         }
                         else {
-                            profileId = users[0]['id'];
+                            profileId = search_users[0]['id'];
                             bookingId=null;
                             back='search';
                             loadPage("/profile");
