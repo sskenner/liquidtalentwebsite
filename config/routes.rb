@@ -32,6 +32,7 @@ LiquidTalent::Application.routes.draw do
     get '/faq' => 'user#faq'
 
     #Search
+    get '/users' => 'user#users'
     get '/search' => 'user#search'
     get '/search/service_provider' => 'user#search_service_provider'
 
@@ -68,4 +69,6 @@ LiquidTalent::Application.routes.draw do
     get '/ipa_downloader.plist' => 'presentation#ipa_downloader'
     get '/ipa' => 'presentation#ipa'
 
+
+    get '/:user' => 'presentation#marketplace'
 end

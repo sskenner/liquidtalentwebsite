@@ -33,8 +33,28 @@
     </head>
 
     <body>
+        <% if params[:user] %>
+            <script>
+                $('#preloader').show();
 
-        <% if params[:code] %>
+                $(document).ready(function () {
+                    searchUsers('<%= params[:user] %>', function(users) {
+                        if(!users[0]) {
+                            alert('Unfortunately, there is no user with this name');
+                        }
+                        else if(users.length > 1) {
+                            loadPage("/users");
+                        }
+                        else {
+                            profileId = users[0]['id'];
+                            bookingId=null;
+                            back="map";
+                            loadPage("/profile");
+                        }
+                    });
+                });
+            </script>
+        <% elsif params[:code] %>
             <style type="text/css">
                 body { background: none repeat scroll 0% 0% #239061; }
                 .enterprise-area { display: none; }
@@ -82,12 +102,12 @@
               body { background: none repeat scroll 0% 0% #000; }
               .marketplace-area { display: none; }
             </style>
-        <% else %>
+        <% end %>
             <style type="text/css">
               body { background: none repeat scroll 0% 0% #239061; }
               .enterprise-area { display: none; }
             </style>
-        <% end %>
+
 
         <div id="top-navigation-bar">
 

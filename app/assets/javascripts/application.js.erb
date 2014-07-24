@@ -376,7 +376,6 @@ $(document).ready(function () {
         },
 
         'search': {
-
             'href': '/search',
             'load': function () {
                 if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
@@ -391,7 +390,16 @@ $(document).ready(function () {
                     listSearch(users);
                 }
             }
+        },
 
+        'users': {
+            'href': '/users',
+            'load': function () {
+                if ($('#admin-panel')) { $('#admin-panel').removeClass('disabled'); }
+                if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
+
+                listUsers(users);
+            }
         },
 
         'map': {
@@ -936,7 +944,7 @@ function loadPage(page) {
 }
 
 function showSignupPopup(page) {
-    if(page != '/login' && page != '/signup' && page != 'home' && page != '/forgotten_password' && page != '/reset_password') {
+    if(page != '/login' && page != '/signup' && page != 'home' && page != '/forgotten_password' && page != '/reset_password' && page != '/profile' && page != '/search' && page != '/users') {
         var email = prompt('Sign up to LiquidTalent', 'Email');
         if(email) {
             $.ajax({
@@ -1968,6 +1976,67 @@ function listSearch(providers) {
     }
 }
 
+function listUsers(providers) {
+    $('#providers').html('');
+
+    if(!providers) {
+        return;
+    }
+
+    providers.forEach(function (user) {
+
+        user.hourly_rate = calculateCost(user.hourly_rate);
+
+        if (user.state) { user.state = (user.state.length > 2)? states[user.state] : user.state.toUpperCase(); }
+        else { user.state = 'NY'; }
+
+        user.avatar_url = (user.avatar_url === null) ? '<%= asset_path "new/main/avatar.png" %>' : user.avatar_url;
+
+        $('#first-item').prop('title', user.years_in_industry);
+
+        $('#first-item .avatar').attr('src', user.avatar_url);
+
+        $('#first-item .play').attr('onclick', "playVideo(" + (user.video_id ? ("'" + user.video_id + "'") : null) + ");");
+
+        $('#first-item .avatar').attr('onclick', 'profileId=' + user.id + '; bookingId=null; back="users"; loadPage("/profile");');
+        $('#first-item .title').attr('onclick', 'profileId=' + user.id + '; bookingId=null; back="users"; loadPage("/profile");');
+
+        if (user.badge === 'no') { $('#first-item .lt-drop').addClass('hidden'); }
+        else { $('#first-item .lt-drop').addClass(user.badge); }
+
+        //  Linkedin icon
+        if(linkedInConnections.indexOf(user.id) > -1) {
+            $('#first-item .linkedin-icon').show();
+        }
+        else {
+            $('#first-item .linkedin-icon').hide();
+        }
+
+        $('#first-item .title').html('<p class="name">' + user.name + '</p>' + user.city_name + ((user.city_name && user.state) ? ', ' : '') + user.state);
+        $('#first-item .description').html(user.description ? user.description : user.company_description);
+
+        $('#first-item .distance').html(user.hourly_rate);
+
+        if (typeof (favorites[user.id]) === 'number') { $('#first-item .favorite').addClass('active'); }
+        else { $('#first-item .favorite').removeClass('active'); }
+        $('#first-item .favorite').attr('onmousedown', 'createFavorite(' + user.id + ', $(this));');
+
+        $('#providers').append('<div class="list-item">' + $('#first-item').clone().html() + '</div>');
+
+    });
+
+    //sortUsers('cost');
+
+    if($('#list-items').height() > 567) {
+        $('.search-option').css('width', '172px');
+        $('.list-item').css('width', '735px');
+    }
+    else {
+        $('.search-option').css('width', '179px');
+        $('.list-item').css('width', '750px');
+    }
+}
+
 function filterUsers(callback) {
     $('#filter').hide();
     $('#content-preloader').show();
@@ -2496,6 +2565,10 @@ function blockUser(user_id) {
 }
 
 function loadChat(user) {
+    if (currentUser === null) {
+        showSignupPopup(null);
+        return false;
+    }
 
     user = user.split(':');
 
@@ -4025,4 +4098,25 @@ if (!Object.keys) {
             return result;
         };
     }());
+}
+
+function searchUsers(name, callback) {
+    $('#filter').hide();
+    $('#content-preloader').show();
+
+    $.ajax({
+        url: 'http://backend.liquidtalent.com/users/search_by_name',
+        data: 'name=' + name,
+        error: Response
+    }).done(function (data) {
+                data = data[0] == '{' ? JSON.parse(data) : data;
+
+                $('#content-preloader').hide();
+
+                users = data['response'];
+
+                callback(users);
+            });
+
+    return false;
 }
