@@ -854,7 +854,9 @@ $(document).ready(function () {
         showMarketplace();
     });
 
-    loadPage('home');
+    if(!hideHomePage) {
+        loadPage('home');
+    }
 
     $('#preloader').hide();
 

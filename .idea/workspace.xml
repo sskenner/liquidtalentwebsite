@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user/users.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1404930245014" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406211673033" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406212066864" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034723990" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -63,7 +59,7 @@
     <file path="$PROJECT_DIR$/../reltrek.com/app/controllers/timeframes_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396629887343" ignored="false" />
     <file path="/contact_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396613133950" ignored="false" />
     <file path="/confirm.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399914519791" ignored="false" />
-    <file path="/presentation.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406208410606" ignored="false" />
+    <file path="/presentation.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406212044473" ignored="false" />
     <file path="/signup_service_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034702100" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397464842107" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/views/layouts/application.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484592519" ignored="false" />
@@ -189,6 +185,7 @@
     <file path="/*.regexp" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1405011486056" ignored="false" />
     <file path="$PROJECT_DIR$/../nichefinder.com/app/views/reports/index.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406210081000" ignored="false" />
     <file path="/users.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406211036930" ignored="false" />
+    <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406211920062" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +208,7 @@
       <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="78" selection-start="1505" selection-end="1505" vertical-scroll-proportion="-9.795918">
+            <state line="45" column="44" selection-start="1968" selection-end="1980" vertical-scroll-proportion="-13.77551">
               <folding />
             </state>
           </provider>
@@ -229,10 +226,10 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2001" column="103" selection-start="68272" selection-end="68272" vertical-scroll-proportion="0.5053476">
+            <state line="857" column="25" selection-start="28585" selection-end="28585" vertical-scroll-proportion="0.62566847">
               <folding>
-                <marker date="1406211683000" expanded="false" signature="63968:63990" placeholder="..." />
-                <marker date="1406211683000" expanded="false" signature="91273:91289" placeholder="..." />
+                <marker date="1406212075000" expanded="false" signature="64002:64024" placeholder="..." />
+                <marker date="1406212075000" expanded="false" signature="91307:91323" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -287,8 +284,8 @@
         <option value="$PROJECT_DIR$/app/views/presentation/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/users.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       </list>
     </option>
@@ -990,13 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="78" selection-start="1505" selection-end="1505" vertical-scroll-proportion="-9.795918">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/users.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="80" selection-start="400" selection-end="400" vertical-scroll-proportion="-11.25">
@@ -1004,12 +994,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="44" selection-start="1968" selection-end="1980" vertical-scroll-proportion="-13.77551">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2001" column="103" selection-start="68272" selection-end="68272" vertical-scroll-proportion="0.5053476">
+        <state line="857" column="25" selection-start="28585" selection-end="28585" vertical-scroll-proportion="0.62566847">
           <folding>
-            <marker date="1406211683000" expanded="false" signature="63968:63990" placeholder="..." />
-            <marker date="1406211683000" expanded="false" signature="91273:91289" placeholder="..." />
+            <marker date="1406212075000" expanded="false" signature="64002:64024" placeholder="..." />
+            <marker date="1406212075000" expanded="false" signature="91307:91323" placeholder="..." />
           </folding>
         </state>
       </provider>

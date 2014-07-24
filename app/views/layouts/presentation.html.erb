@@ -43,9 +43,13 @@
                             alert('Unfortunately, there is no user with this name');
                         }
                         else if(users.length > 1) {
+                            var hideHomePage = true;
+
                             loadPage("/users");
                         }
                         else {
+                            var hideHomePage = true;
+
                             profileId = users[0]['id'];
                             bookingId=null;
                             back="map";
