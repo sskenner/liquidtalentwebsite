@@ -49,7 +49,7 @@
                     searchUsers('<%= params[:user] %>', function(users) {
                         if(!users[0]) {
                             alert('Unfortunately, there is no user with this name');
-                            loadPage("/home");
+                            //loadPage("/home");
                         }
                         else if(users.length > 1) {
                             loadPage("/users");
@@ -57,7 +57,7 @@
                         else {
                             profileId = users[0]['id'];
                             bookingId=null;
-                            back="map";
+                            back="home";
                             loadPage("/profile");
                         }
                     });

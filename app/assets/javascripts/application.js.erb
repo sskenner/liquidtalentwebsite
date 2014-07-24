@@ -997,7 +997,10 @@ function getURLParameter(name) {
 function createUser(data, target) {
     showUserInfo();
     checkUnreadMessages();
-    loadPage('/' + target);
+
+    if(!hideHomePage) {
+        loadPage('/' + target);
+    }
 
     document.cookie = 'userId=' + currentUser.id;
     document.cookie = 'userToken=' + currentUser.token;
