@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1404930245014" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406213813158" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406214199722" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034723990" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -226,10 +225,10 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="400" column="38" selection-start="11657" selection-end="11657" vertical-scroll-proportion="0.55652934">
+            <state line="36" column="24" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.47326908">
               <folding>
-                <marker date="1406213925000" expanded="false" signature="64044:64066" placeholder="..." />
-                <marker date="1406213925000" expanded="false" signature="91349:91365" placeholder="..." />
+                <marker date="1406214199000" expanded="false" signature="64069:64091" placeholder="..." />
+                <marker date="1406214199000" expanded="false" signature="91374:91390" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1003,10 +1002,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="400" column="38" selection-start="11657" selection-end="11657" vertical-scroll-proportion="0.55652934">
+        <state line="36" column="24" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.47326908">
           <folding>
-            <marker date="1406213925000" expanded="false" signature="64044:64066" placeholder="..." />
-            <marker date="1406213925000" expanded="false" signature="91349:91365" placeholder="..." />
+            <marker date="1406214199000" expanded="false" signature="64069:64091" placeholder="..." />
+            <marker date="1406214199000" expanded="false" signature="91374:91390" placeholder="..." />
           </folding>
         </state>
       </provider>

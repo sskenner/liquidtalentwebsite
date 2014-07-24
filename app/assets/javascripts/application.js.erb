@@ -34,6 +34,7 @@ var currentUser = null,
 
 
 var users = null;
+var search_users = null;
 var global_info = null;
 var filter_settings = {
     query: [],
@@ -4121,9 +4122,9 @@ function searchUsers(name, callback) {
 
                 $('#content-preloader').hide();
 
-                users = data['response'];
+                search_users = data['response'];
 
-                callback(users);
+                callback(search_users);
             });
 
     return false;
