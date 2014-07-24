@@ -7,7 +7,7 @@
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1404930245014" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406214199722" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406214307136" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034723990" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -204,10 +204,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="presentation.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="52" selection-start="2342" selection-end="2342" vertical-scroll-proportion="-8.877551">
+            <state line="57" column="52" selection-start="2342" selection-end="2342" vertical-scroll-proportion="0.3549518">
               <folding />
             </state>
           </provider>
@@ -222,13 +222,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="24" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.47326908">
+            <state line="3070" column="37" selection-start="109672" selection-end="109672" vertical-scroll-proportion="-15.102041">
               <folding>
-                <marker date="1406214199000" expanded="false" signature="64069:64091" placeholder="..." />
-                <marker date="1406214199000" expanded="false" signature="91374:91390" placeholder="..." />
+                <marker date="1406214310000" expanded="false" signature="64069:64091" placeholder="..." />
+                <marker date="1406214310000" expanded="false" signature="91374:91390" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -993,20 +993,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="52" selection-start="2342" selection-end="2342" vertical-scroll-proportion="-8.877551">
-          <folding />
+        <state line="3070" column="37" selection-start="109672" selection-end="109672" vertical-scroll-proportion="-15.102041">
+          <folding>
+            <marker date="1406214310000" expanded="false" signature="64069:64091" placeholder="..." />
+            <marker date="1406214310000" expanded="false" signature="91374:91390" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="24" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.47326908">
-          <folding>
-            <marker date="1406214199000" expanded="false" signature="64069:64091" placeholder="..." />
-            <marker date="1406214199000" expanded="false" signature="91374:91390" placeholder="..." />
-          </folding>
+        <state line="57" column="52" selection-start="2342" selection-end="2342" vertical-scroll-proportion="0.3549518">
+          <folding />
         </state>
       </provider>
     </entry>
