@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookings/accept.html.erb" afterPath="$PROJECT_DIR$/app/views/bookings/accept.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookings/confirm.html.erb" afterPath="$PROJECT_DIR$/app/views/bookings/confirm.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -186,7 +184,6 @@
     <file path="/*.regexp" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1405011486056" ignored="false" />
     <file path="$PROJECT_DIR$/../nichefinder.com/app/views/reports/index.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406619966135" ignored="false" />
     <file path="/users.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406211036930" ignored="false" />
-    <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406211920062" ignored="false" />
     <file path="$PROJECT_DIR$/../nichefinder.com/script/ph.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406624803857" ignored="false" />
     <file path="/ph.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406623563400" ignored="false" />
     <file path="$PROJECT_DIR$/../nichefinder.com/app/views/layouts/application.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406550965827" ignored="false" />
@@ -204,6 +201,7 @@
     <file path="/analyzer.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406651820512" ignored="false" />
     <file path="$PROJECT_DIR$/../nichefinder.com/script/parser.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406637860175" ignored="false" />
     <file path="/parser.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406635958027" ignored="false" />
+    <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406729312485" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,13 +230,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3735" column="136" selection-start="133669" selection-end="133669" vertical-scroll-proportion="-11.734694">
+            <state line="3729" column="61" selection-start="133506" selection-end="133506" vertical-scroll-proportion="0.42506573">
               <folding>
-                <marker date="1406214310000" expanded="false" signature="64069:64091" placeholder="..." />
-                <marker date="1406214310000" expanded="false" signature="91374:91390" placeholder="..." />
+                <marker date="1406729396000" expanded="false" signature="64069:64091" placeholder="..." />
+                <marker date="1406729396000" expanded="false" signature="91374:91390" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -247,16 +245,16 @@
       <file leaf-file-name="confirm.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bookings/confirm.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="77" selection-start="840" selection-end="840" vertical-scroll-proportion="-16.875">
+            <state line="27" column="77" selection-start="826" selection-end="840" vertical-scroll-proportion="-16.875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="accept.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="accept.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bookings/accept.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="84" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.52744424">
+            <state line="62" column="112" selection-start="2004" selection-end="2004" vertical-scroll-proportion="-38.75">
               <folding />
             </state>
           </provider>
@@ -310,10 +308,10 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/user/users.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/views/bookings/confirm.html.erb" />
         <option value="$PROJECT_DIR$/app/views/bookings/accept.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
       </list>
     </option>
   </component>
@@ -1048,27 +1046,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/bookings/accept.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3735" column="136" selection-start="133669" selection-end="133669" vertical-scroll-proportion="-11.734694">
-          <folding>
-            <marker date="1406214310000" expanded="false" signature="64069:64091" placeholder="..." />
-            <marker date="1406214310000" expanded="false" signature="91374:91390" placeholder="..." />
-          </folding>
+        <state line="62" column="112" selection-start="2004" selection-end="2004" vertical-scroll-proportion="-38.75">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bookings/confirm.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="77" selection-start="840" selection-end="840" vertical-scroll-proportion="-16.875">
+        <state line="27" column="77" selection-start="826" selection-end="840" vertical-scroll-proportion="-16.875">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bookings/accept.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="84" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.52744424">
-          <folding />
+        <state line="3729" column="61" selection-start="133506" selection-end="133506" vertical-scroll-proportion="0.42506573">
+          <folding>
+            <marker date="1406729396000" expanded="false" signature="64069:64091" placeholder="..." />
+            <marker date="1406729396000" expanded="false" signature="91374:91390" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
