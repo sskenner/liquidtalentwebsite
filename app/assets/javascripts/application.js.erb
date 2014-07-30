@@ -3727,7 +3727,7 @@ function acceptBooking() {
         url: 'http://backend.liquidtalent.com/booking/accept?' +
                 'token=' + currentUser.token +
                 '&booking_id=' + bookingId +
-                '&stripe_token=' + $('#balanced_token').val()
+                '&stripe_token=' + $('#balanced_token').val(),
         error: Response
     }).done(function (data) {
         data = data[0] == '{' ? JSON.parse(data) : data;
