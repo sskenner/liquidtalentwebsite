@@ -3330,7 +3330,7 @@ function confirmBooking() {
                 '&skills=' + booking.skills +
                 '&zip=' + booking.zip +
                 '&description=' + booking.description +
-                '&stripe_token=' + $('#balanced_token').val() +
+                '&balanced_token=' + $('#balanced_token').val() +
                 '&ica_sent=0',
         error: Response
     }).done(function (data) {
@@ -3727,7 +3727,7 @@ function acceptBooking() {
         url: 'http://backend.liquidtalent.com/booking/accept?' +
                 'token=' + currentUser.token +
                 '&booking_id=' + bookingId +
-                '&stripe_token=' + $('#balanced_token').val(),
+                '&balanced_token=' + $('#balanced_token').val(),
         error: Response
     }).done(function (data) {
         data = data[0] == '{' ? JSON.parse(data) : data;
