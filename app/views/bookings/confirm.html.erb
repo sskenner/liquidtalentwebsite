@@ -30,7 +30,6 @@
             confirmBooking();
             return false;
         } else {
-            console.log(response);
             alert(response.errors[0]['description']);
             $('#cc-form').find('button').prop('disabled', false);
         }

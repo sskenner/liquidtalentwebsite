@@ -29,7 +29,7 @@
             acceptBooking();
             return false;
         } else {
-            console.log(response);
+            alert(response.errors[0]['description']);
             $('#bank-form').find('button').prop('disabled', false);
         }
     }
