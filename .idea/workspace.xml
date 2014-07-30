@@ -6,7 +6,7 @@
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406730752332" ignored="false" />
+    <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406730932301" ignored="false" />
     <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406214307136" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034723990" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
@@ -263,7 +263,7 @@
       <file leaf-file-name="application.css.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2028" column="18" selection-start="47836" selection-end="47843" vertical-scroll-proportion="0.3330412">
+            <state line="2040" column="101" selection-start="48305" selection-end="48305" vertical-scroll-proportion="0.49079755">
               <folding />
             </state>
           </provider>
@@ -1065,7 +1065,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2028" column="18" selection-start="47836" selection-end="47843" vertical-scroll-proportion="0.3330412">
+        <state line="2040" column="101" selection-start="48305" selection-end="48305" vertical-scroll-proportion="0.49079755">
           <folding />
         </state>
       </provider>
