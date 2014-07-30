@@ -1,49 +1,42 @@
 <script type="text/javascript">
-    Stripe.setPublishableKey('pk_live_lRd5ah7txjRCF2mMRMiTaRze');
+    $('#cc-form').submit(function (e) {
+        e.preventDefault();
 
-    jQuery(function($) {
-        $('#cc-form').submit(function(event) {
-            $('#preloader').show();
+        $('#preloader').show();
 
-            var $form = $(this);
+        $('.alert').remove();
 
-            $('.alert').remove();
+        $('#cc-form').find('button').prop('disabled', true);
 
-            // Disable the submit button to prevent repeated clicks
-            $form.find('button').prop('disabled', true);
+        var payload = {
+            number: $('.cc-number').val(),
+            expiration_month: $('.exp-month').val(),
+            expiration_year: $('.exp-year').val(),
+            cvv: $('.cvc').val()
+        };
 
-            Stripe.card.createToken($form, stripeResponseHandler);
-
-            // Prevent the form from submitting with the default action
-            return false;
-        });
+        // Create credit card
+        balanced.card.create(payload, handleResponse);
     });
 
-    var stripeResponseHandler = function(status, response) {
+    function handleResponse(response) {
         $('#preloader').hide();
 
-        var $form = $('#cc-form');
+        if (response.status_code === 201) {
+            var fundingInstrument = response.cards != null ? response.cards[0] : response.bank_accounts[0];
 
-        if (response.error) {
-            // Show the errors on the form
-            //$('form').before('<div class="alert alert-danger payment-errors" style="margin-top: 25px;">' + response.error.message + '</div>');
-            console.log('Error');
-            alert(response.error.message);
-
-            $form.find('button').prop('disabled', false);
-        } else {
-            // token contains id, last4, and card type
-            var token = response.id;
-            // Insert the token into the form so it gets submitted to the server
-            $form.append($('<input type="hidden" name="stripeToken" id="stripeToken" />').val(token));
-            // and submit
-            //$form.get(0).submit();
+            $('#cc-form').append($('<input type="hidden" name="balanced_token" id="balanced_token" />').val(fundingInstrument.href));
 
             confirmBooking();
             return false;
+        } else {
+            console.log(response);
+            alert(response.errors[0]['description']);
+            $('#cc-form').find('button').prop('disabled', false);
         }
-    };
+    }
 </script>
+
 
 <div id="title">
   Confirm Project
@@ -58,12 +51,12 @@
   </p>
 
   <form method="post" id="cc-form">
-    <input type="text" placeholder="CREDIT CARD NUMBER" class="text-field cc-number" data-stripe="number">
-    <input type="text" placeholder="CVC NUMBER" class="text-field cvc" data-stripe="cvc">
+    <input type="text" placeholder="CREDIT CARD NUMBER" class="text-field cc-number">
+    <input type="text" placeholder="CVC NUMBER" class="text-field cvc">
     <input type="text" placeholder="MM/YYYY" class="text-field exp">
 
-    <input type="hidden" placeholder="EXP MONTH" class="text-field exp-month" data-stripe="exp-month">
-    <input type="hidden" placeholder="EXP YEAR" class="text-field exp-year" data-stripe="exp-year">
+    <input type="hidden" placeholder="EXP MONTH" class="text-field exp-month">
+    <input type="hidden" placeholder="EXP YEAR" class="text-field exp-year">
 
     <div class="clear"></div>
 

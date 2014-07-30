@@ -1,3 +1,40 @@
+<script type="text/javascript">
+    $('#bank-form').submit(function (e) {
+        e.preventDefault();
+
+        $('#preloader').show();
+
+        $('.alert').remove();
+
+        $('#bank-form').find('button').prop('disabled', true);
+
+        var payload = {
+            name: $('.ba-name').val(),
+            routing_number: $('.ba-routing').val(),
+            account_number: $('.ba-number').val()
+        };
+
+        // Create credit card
+        balanced.bankAccount.create(payload, handleResponse);
+    });
+
+    function handleResponse(response) {
+        $('#preloader').hide();
+
+        if (response.status_code === 201) {
+            var fundingInstrument = response.cards != null ? response.cards[0] : response.bank_accounts[0];
+
+            $('#bank-form').append($('<input type="hidden" name="balanced_token" id="balanced_token" />').val(fundingInstrument.href));
+
+            acceptBooking();
+            return false;
+        } else {
+            console.log(response);
+            $('#bank-form').find('button').prop('disabled', false);
+        }
+    }
+</script>
+
 <div id="title">
   Accept Project
   <a class="black-button" href="#" onclick="loadPage('/projects');">Back</a>
@@ -11,9 +48,9 @@
   </p>
 
   <form method="post" id="bank-form">
-    <input type="text" placeholder="Bank Number *" class="text-field cc-number" data-stripe="number">
-    <input type="text" placeholder="Routing Number *" class="text-field exp-month" data-stripe="exp-month">
-    <input type="text" placeholder="Account Type *" class="text-field exp-year" data-stripe="exp-year">
+    <input type="text" placeholder="Account Holder's Number *" class="text-field ba-name">
+    <input type="text" placeholder="Routing Number *" class="text-field ba-routing">
+    <input type="text" placeholder="Account Number *" class="text-field ba-number">
 
     <div class="clear"></div>
 
