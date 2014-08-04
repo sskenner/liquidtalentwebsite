@@ -414,7 +414,7 @@ $(document).ready(function () {
                 $('#background').css('overflow', 'hidden');
 
                 if(currentUser == null) {
-                    showPlaceholder('Search');
+                    //showPlaceholder('Search');
                     return false;
                 }
 
@@ -653,7 +653,7 @@ $(document).ready(function () {
                 if ($('#background')) { $('#background').removeClass('disabled').css('overflow-y', 'auto'); }
 
                 if(currentUser === null) {
-                    showPlaceholder('Settings');
+                    //showPlaceholder('Settings');
                     return false;
                 }
 
@@ -912,10 +912,11 @@ function Response(response) {
 function loadPage(page) {
 
     if(currentUser === null) {
+        /*
         if(showSignupPopup(page)) {
             return false;
         }
-
+        */
         $('.hiw').css({ display: 'none', opacity: 0 });
     }
     else { $('.hiw').each(function (i, e) { $(e).removeAttr('style'); }); }
@@ -926,12 +927,12 @@ function loadPage(page) {
         }
     });
 
-    if (page === '/login') {
+    if (currentUser === null && page != '/signup' && page != 'home' && page != '/forgotten_password' && page != '/reset_password' && page != '/profile' && page != '/search' && page != '/users') {
         var inviteCode = prompt("Please enter your invitation code to proceed.\r\n\r\nTo get an invitation code, contact concierge@LiquidTalent.com.", 'Invitation code');
         if(inviteCode) {
             checkInviteCode(inviteCode, function(status) {
                 if(status) {
-                    loadPageAjax(page);
+                    loadPageAjax('/login');
                 }
             });
         }
@@ -1817,7 +1818,7 @@ function mapToggle(type) {
 
 function loadMap(providers) {
     if(currentUser == null) {
-        showPlaceholder('Search');
+        //showPlaceholder('Search');
         return false;
     }
 
@@ -2265,7 +2266,7 @@ function getFavorites() {
 function loadFavorites() {
 
     if(currentUser === null) {
-        showPlaceholder('Favorites');
+        //showPlaceholder('Favorites');
         return false;
     }
 
@@ -2480,7 +2481,8 @@ function checkUnreadMessages() {
 }
 function loadMessages() {
     if (currentUser === null) {
-        showSignupPopup(null);
+        //showSignupPopup(null);
+        loadPage('/login');
         return false;
     }
 
@@ -2572,7 +2574,8 @@ function blockUser(user_id) {
 
 function loadChat(user) {
     if (currentUser === null) {
-        showSignupPopup(null);
+        //showSignupPopup(null);
+        loadPage('/login');
         return false;
     }
 
@@ -2758,7 +2761,7 @@ function checkState (state) {
 
 function loadStats(term) {
     if(currentUser == null) {
-        showPlaceholder('Stats');
+        //showPlaceholder('Stats');
         return false;
     }
 
@@ -3248,7 +3251,7 @@ function playVideo(video_url) {
 
 function loadHire() {
     if(currentUser == null) {
-        showPlaceholder('Job');
+        //showPlaceholder('Job');
         return false;
     }
 
@@ -3385,6 +3388,11 @@ function deleteBooking(booking_id) {
 }
 
 function loadProjectBadges() {
+    if(currentUser == null) {
+        //showPlaceholder('Projects');
+        return false;
+    }
+
     $('#preloader').show();
 
     $.ajax({
@@ -3441,7 +3449,7 @@ function loadProjectBadges() {
 
 function loadProjects() {
     if(currentUser == null) {
-        showPlaceholder('Projects');
+        //showPlaceholder('Projects');
         return false;
     }
 
@@ -3558,7 +3566,7 @@ function loadProjects() {
 
 function loadApplicants() {
     if(currentUser == null) {
-        showPlaceholder('Projects');
+        //showPlaceholder('Projects');
         return false;
     }
 
