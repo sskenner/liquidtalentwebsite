@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookings/accept.html.erb" afterPath="$PROJECT_DIR$/app/views/bookings/accept.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,7 +88,7 @@
     <file path="$PROJECT_DIR$/../followcheck.com/lib/Twitter.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033056368" ignored="false" />
     <file path="/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407691248092" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407860745559" ignored="false" />
     <file path="/a.dummy" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400257617696" ignored="false" />
     <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400509647484" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/landing.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484343602" ignored="false" />
@@ -159,7 +160,7 @@
     <file path="/ss_insert.js" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399046758648" ignored="false" />
     <file path="/presentation_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400034689908" ignored="false" />
     <file path="/hire.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399459800926" ignored="false" />
-    <file path="/accept.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406727360696" ignored="false" />
+    <file path="/accept.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407860823896" ignored="false" />
     <file path="/favorites.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400797668138" ignored="false" />
     <file path="/profile.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1400844270144" ignored="false" />
     <file path="/signup.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1399460158907" ignored="false" />
@@ -228,7 +229,7 @@
       <file leaf-file-name="confirm.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bookings/confirm.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="16" selection-start="897" selection-end="897" vertical-scroll-proportion="-17.5">
+            <state line="28" column="16" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -237,7 +238,7 @@
       <file leaf-file-name="accept.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/bookings/accept.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="23" selection-start="254" selection-end="254" vertical-scroll-proportion="0.21770681">
+            <state line="50" column="84" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.64157397">
               <folding />
             </state>
           </provider>
@@ -281,10 +282,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
     <option name="y" value="24" />
     <option name="width" value="1442" />
-    <option name="height" value="877" />
+    <option name="height" value="1331" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -540,40 +540,40 @@
   </component>
   <component name="PublishConfig">
     <servers>
-      <server id="024a7736-7a5f-46c0-919f-1c1489ef1a3a">
+      <server id="0926c948-3912-44a2-993e-de19c6f2975d">
         <serverdata />
       </server>
-      <server id="1b5956c2-4300-4ce5-8f3a-1cf1dde786d5">
+      <server id="1101f8be-1239-4435-8d7b-78797f858617">
         <serverdata />
       </server>
-      <server id="63028fe1-023a-42ca-96a2-73e85a8bce96">
+      <server id="132eed31-e1cc-4b61-a762-ae2052b48a91">
         <serverdata />
       </server>
-      <server id="725e25be-c680-4d56-a70e-00a85a339f75">
+      <server id="14758d0e-3da7-44ad-8283-e7d74bd67f77">
         <serverdata />
       </server>
-      <server id="8792e51c-28e6-44b2-9b76-3d52647af008">
+      <server id="2206a832-d560-461b-bfed-a1ff17131572">
         <serverdata />
       </server>
-      <server id="a0266bf3-f2c4-4449-92bb-586ef24b5089">
+      <server id="31af5306-6c0b-4ef4-9771-59c00627aec9">
         <serverdata />
       </server>
-      <server id="cdb176ac-4f93-4857-9e53-b95f6004dee7">
+      <server id="80034d86-4e23-4496-be65-909f496b0402">
         <serverdata />
       </server>
-      <server id="d644b1ce-c12f-4b5d-ba82-7c0531570a97">
+      <server id="932550f8-238b-47df-8951-085adbfa2b53">
         <serverdata />
       </server>
-      <server id="de6c616a-4bc7-4ef2-8fe1-4f57309c303f">
+      <server id="a93f821e-9ffb-4bdb-b922-8f922235b8fb">
         <serverdata />
       </server>
-      <server id="e1adf350-7c43-4e11-804a-cafa4fad7222">
+      <server id="c42c2915-bee0-400c-ae52-fa2105695c8f">
         <serverdata />
       </server>
-      <server id="e3d592db-3427-4499-bc93-a4dc090ab049">
+      <server id="cdbecd83-df12-4dd3-9c23-f5c2a5c8a63d">
         <serverdata />
       </server>
-      <server id="f443ffdb-6fc4-4adf-9174-07e31f6d392c">
+      <server id="d022c88c-4521-4b3c-a474-29907b7f83c4">
         <serverdata />
       </server>
     </servers>
@@ -838,7 +838,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1442" height="877" extended-state="4" />
+    <frame x="0" y="24" width="1442" height="1331" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -846,7 +846,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2482066" sideWeight="0.6715425" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.252149" sideWeight="0.6715425" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1005,14 +1005,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bookings/confirm.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="16" selection-start="897" selection-end="897" vertical-scroll-proportion="-17.5">
+        <state line="28" column="16" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bookings/accept.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="23" selection-start="254" selection-end="254" vertical-scroll-proportion="0.21770681">
+        <state line="50" column="84" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.64157397">
           <folding />
         </state>
       </provider>

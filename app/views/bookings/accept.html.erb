@@ -9,6 +9,7 @@
         $('#bank-form').find('button').prop('disabled', true);
 
         var payload = {
+            name: $('.ba-name').val(),
             routing_number: $('.ba-routing').val(),
             account_number: $('.ba-number').val()
         };
@@ -47,6 +48,7 @@
   </p>
 
   <form method="post" id="bank-form">
+    <input type="text" placeholder="Account Holder's Name" class="text-field ba-name">
     <input type="text" placeholder="Routing Number *" class="text-field ba-routing">
     <input type="text" placeholder="Account Number *" class="text-field ba-number">
 
