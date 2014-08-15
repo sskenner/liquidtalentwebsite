@@ -1878,7 +1878,7 @@ function loadMap(providers) {
 
         map.iW.description.attr('onclick', 'profileId=' + user.id + '; bookingId=null;   back="map"; loadPage("/profile");');
         map.iW.description.html(
-            user.description ? user.description.substr(0, 24) + '...' : user.company_description.substr(0, 24) + '...'
+            user.description ? user.description.substr(0, 24) + '...' : (user.company_description ? user.company_description.substr(0, 24) + '...' : '')
         );
 
         if (user.video_url !== null) { map.iW.play.addClass('disabled'); }
