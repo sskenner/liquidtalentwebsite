@@ -927,22 +927,7 @@ function loadPage(page) {
         }
     });
 
-    if (currentUser === null && page != '/signup' && page != 'home' && page != '/forgotten_password' && page != '/reset_password' && page != '/profile' && page != '/search' && page != '/users') {
-        var inviteCode = prompt("Please enter your invitation code to proceed.\r\n\r\nTo get an invitation code, contact concierge@LiquidTalent.com.", 'Invitation code');
-        if(inviteCode) {
-            checkInviteCode(inviteCode, function(status) {
-                if(status) {
-                    loadPageAjax('/login');
-                }
-            });
-        }
-        else {
-            return;
-        }
-    }
-    else {
-        loadPageAjax(page)
-    }
+    loadPageAjax(page)
 
     return false;
 }
