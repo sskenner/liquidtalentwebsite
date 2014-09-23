@@ -1299,6 +1299,21 @@ function SubmitSignupForm(userType) {
         return false;
     }
 
+    var lat = lon = null;
+
+    currentUser = { zip: $('.zip').val() };
+
+    getCurrentLocation(function(loc) {
+        if(loc) {
+            lat = loc['lat'];
+            lon = loc['lng'];
+        }
+        else {
+            alert('We did not reconize this ZIP.');
+            $('#preloader').hide();
+            return false;
+        }
+
     $.ajax({
         url: 'http://backend.liquidtalent.com' + sF.href,
         data: 'name=' + sF.fn.val() + ' ' + sF.ln.val() + '&email=' + sF.e.val() + '&zip=' + sF.z.val() + '&password=' + sF.p.val() + '&password_confirmation=' + sF.pc.val(),
@@ -1336,15 +1351,13 @@ function SubmitSignupForm(userType) {
                                         currentUser = data['response']['user'];
                                         currentUser['avatar_url'] = avatar_data['response']['url'];
 
-                                        getCurrentLocation(function(loc) {
-                                            currentUser['latitude'] = loc['lat'];
-                                            currentUser['longitude'] = loc['lng'];
+                                        currentUser['latitude'] = lat;
+                                        currentUser['longitude'] = lon;
 
-                                            if (userType == 'provider') {
-                                                createUser(data, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
-                                            }
-                                            else { createUser(data, 'signup_demander'); }
-                                        });
+                                        if (userType == 'provider') {
+                                            createUser(data, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                                        }
+                                        else { createUser(data, 'signup_demander'); }
                                     }
                                 });
 
@@ -1352,19 +1365,19 @@ function SubmitSignupForm(userType) {
                     else {
                         currentUser = data['response']['user'];
 
-                        getCurrentLocation(function(loc) {
-                            currentUser['latitude'] = loc['lat'];
-                            currentUser['longitude'] = loc['lng'];
+                        currentUser['latitude'] = lat;
+                        currentUser['longitude'] = lon;
 
-                            if (userType == 'provider') {
-                                createUser(data, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
-                            }
-                            else { createUser(data, 'signup_demander'); }
-                        });
+                        if (userType == 'provider') {
+                            createUser(data, 'signup_service_provider?user_id=' + data['response']['user']['id'] + '&token=' + data['response']['user']['token']);
+                        }
+                        else { createUser(data, 'signup_demander'); }
+
                     }
                 }
 
             });
+    });
 
     ga('send', 'event', 'Signup', 'LiquidTalent Signup');
 
@@ -1663,8 +1676,10 @@ function linkedin_connect(access_token) {
                         currentUser.zip = zip;
 
                         getCurrentLocation(function(loc) {
-                            currentUser['latitude'] = loc['lat'];
-                            currentUser['longitude'] = loc['lng'];
+                            if(loc) {
+                                currentUser['latitude'] = loc['lat'];
+                                currentUser['longitude'] = loc['lng'];
+                            }
 
                             console.log(loc['lat'] + ' fgf');
 
