@@ -88,7 +88,7 @@
     <file path="$PROJECT_DIR$/../followcheck.com/lib/Twitter.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033056368" ignored="false" />
     <file path="/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1408096558479" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411456286723" ignored="false" />
     <file path="/a.dummy" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407864150550" ignored="false" />
     <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407864842645" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/landing.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484343602" ignored="false" />
@@ -239,10 +239,10 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1883" column="57" selection-start="63341" selection-end="63341" vertical-scroll-proportion="0.3727034">
+            <state line="1908" column="41" selection-start="64628" selection-end="64628" vertical-scroll-proportion="0.33390412">
               <folding>
-                <marker date="1408096926000" expanded="false" signature="64301:64323" placeholder="..." />
-                <marker date="1408096926000" expanded="false" signature="91668:91684" placeholder="..." />
+                <marker date="1411456295000" expanded="false" signature="63661:63683" placeholder="..." />
+                <marker date="1411456295000" expanded="false" signature="91051:91067" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -251,7 +251,7 @@
       <file leaf-file-name="accept.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bookings/accept.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="25" selection-start="1081" selection-end="1081" vertical-scroll-proportion="-21.25">
+            <state line="34" column="25" selection-start="1081" selection-end="1081" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -325,7 +325,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -542,7 +542,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -859,7 +859,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25573066" sideWeight="0.6715425" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25931233" sideWeight="0.6715425" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1018,17 +1018,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bookings/accept.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="25" selection-start="1081" selection-end="1081" vertical-scroll-proportion="-21.25">
+        <state line="34" column="25" selection-start="1081" selection-end="1081" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1883" column="57" selection-start="63341" selection-end="63341" vertical-scroll-proportion="0.3727034">
+        <state line="1908" column="41" selection-start="64628" selection-end="64628" vertical-scroll-proportion="0.33390412">
           <folding>
-            <marker date="1408096926000" expanded="false" signature="64301:64323" placeholder="..." />
-            <marker date="1408096926000" expanded="false" signature="91668:91684" placeholder="..." />
+            <marker date="1411456295000" expanded="false" signature="63661:63683" placeholder="..." />
+            <marker date="1411456295000" expanded="false" signature="91051:91067" placeholder="..." />
           </folding>
         </state>
       </provider>

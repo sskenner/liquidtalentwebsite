@@ -1936,7 +1936,7 @@ function listSearch(providers) {
         else { $('#first-item .lt-drop').addClass(user.badge); }
 
         //  Linkedin icon
-        if(linkedInConnections.indexOf(user.id) > -1) {
+        if(linkedInConnections && linkedInConnections.indexOf(user.id) > -1) {
             $('#first-item .linkedin-icon').show();
         }
         else {
