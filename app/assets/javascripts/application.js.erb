@@ -1309,7 +1309,7 @@ function SubmitSignupForm(userType) {
             lon = loc['lng'];
         }
         else {
-            alert('We did not reconize this ZIP.');
+            alert($('.zip').val() + ' is not recognised as a valid zip code.');
             $('#preloader').hide();
             return false;
         }
