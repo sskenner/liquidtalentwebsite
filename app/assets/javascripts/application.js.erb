@@ -1321,7 +1321,7 @@ function SubmitSignupForm(userType) {
 
     $.ajax({
         url: 'http://backend.liquidtalent.com' + sF.href,
-        data: 'name=' + sF.fn.val() + ' ' + sF.ln.val() + '&email=' + sF.e.val() + '&zip=' + sF.z.val() + '&password=' + sF.p.val() + '&password_confirmation=' + sF.pc.val(),
+        data: 'name=' + sF.fn.val() + ' ' + sF.ln.val() + '&email=' + sF.e.val() + '&zip=' + sF.z.val() + '&password=' + sF.p.val() + '&password_confirmation=' + sF.pc.val() + '&latitude=' + lat + '&longitude=' + lon,
         error: Response
     }).done(function (data) {
                 data = data[0] == '{' ? JSON.parse(data) : data;
@@ -1698,7 +1698,7 @@ function linkedin_connect(access_token) {
                             }
                             else {
                                 $.ajax({
-                                    url: 'http://backend.liquidtalent.com/user/set_details/?token=' + currentUser.token + '&user_id=' + currentUser.id + '&attr[latitude]=' + currentUser['latitude'] + '&attr[longitude]=' + currentUser['longitude'],
+                                    url: 'http://backend.liquidtalent.com/user/set_details/?token=' + currentUser.token + '&user_id=' + currentUser.id + '&attr[latitude]=' + currentUser['latitude'] + '&attr[longitude]=' + currentUser['longitude'] + '&attr[zip]=' + currentUser['zip'],
                                     error: Response
                                 }).done(function (data) {
                                     createUser(data, 'map');

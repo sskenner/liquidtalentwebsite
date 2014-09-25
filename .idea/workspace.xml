@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="" />
+    <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+    </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406730932301" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411663669614" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411665224835" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034723990" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
     <file path="/routes.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406211174817" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406741884394" ignored="false" />
     <file path="/Gemfile" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406741884394" ignored="false" />
-    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406210724087" ignored="false" />
-    <file path="/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406210467466" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411664857900" ignored="false" />
+    <file path="/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411664678292" ignored="false" />
     <file path="/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401024930722" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/controllers/application_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1403730211383" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/user_details.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396263284220" ignored="false" />
@@ -85,7 +87,7 @@
     <file path="$PROJECT_DIR$/../followcheck.com/lib/Twitter.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033056368" ignored="false" />
     <file path="/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411661405277" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411664116432" ignored="false" />
     <file path="/a.dummy" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407864150550" ignored="false" />
     <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407864842645" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/landing.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484343602" ignored="false" />
@@ -208,6 +210,7 @@
     <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411660461691" ignored="false" />
     <file path="$PROJECT_DIR$/../mytwocents_backend/app/controllers/user_polls_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411661908406" ignored="false" />
     <file path="/user_polls_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411661154932" ignored="false" />
+    <file path="$PROJECT_DIR$/../liquidtalent/db/schema.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411664857900" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,10 +242,10 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1700" column="246" selection-start="56651" selection-end="56651" vertical-scroll-proportion="0.7197509">
+            <state line="1323" column="216" selection-start="42835" selection-end="42835" vertical-scroll-proportion="0.62633455">
               <folding>
-                <marker date="1411663886000" expanded="false" signature="64341:64363" placeholder="..." />
-                <marker date="1411663886000" expanded="false" signature="91731:91747" placeholder="..." />
+                <marker date="1411665233000" expanded="false" signature="64421:64443" placeholder="..." />
+                <marker date="1411665233000" expanded="false" signature="91811:91827" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -861,14 +864,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1442" height="1330" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26719198" sideWeight="0.6715425" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26719198" sideWeight="0.6715425" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1036,10 +1039,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1700" column="246" selection-start="56651" selection-end="56651" vertical-scroll-proportion="0.7197509">
+        <state line="1323" column="216" selection-start="42835" selection-end="42835" vertical-scroll-proportion="0.62633455">
           <folding>
-            <marker date="1411663886000" expanded="false" signature="64341:64363" placeholder="..." />
-            <marker date="1411663886000" expanded="false" signature="91731:91747" placeholder="..." />
+            <marker date="1411665233000" expanded="false" signature="64421:64443" placeholder="..." />
+            <marker date="1411665233000" expanded="false" signature="91811:91827" placeholder="..." />
           </folding>
         </state>
       </provider>
