@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -242,10 +241,10 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1682" column="34" selection-start="55463" selection-end="55473" vertical-scroll-proportion="0.33274022">
+            <state line="1700" column="246" selection-start="56651" selection-end="56651" vertical-scroll-proportion="0.86654806">
               <folding>
-                <marker date="1411663694000" expanded="false" signature="64314:64336" placeholder="..." />
-                <marker date="1411663694000" expanded="false" signature="91704:91720" placeholder="..." />
+                <marker date="1411663886000" expanded="false" signature="64341:64363" placeholder="..." />
+                <marker date="1411663886000" expanded="false" signature="91731:91747" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1039,10 +1038,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1682" column="34" selection-start="55463" selection-end="55473" vertical-scroll-proportion="0.33274022">
+        <state line="1700" column="246" selection-start="56651" selection-end="56651" vertical-scroll-proportion="0.86654806">
           <folding>
-            <marker date="1411663694000" expanded="false" signature="64314:64336" placeholder="..." />
-            <marker date="1411663694000" expanded="false" signature="91704:91720" placeholder="..." />
+            <marker date="1411663886000" expanded="false" signature="64341:64363" placeholder="..." />
+            <marker date="1411663886000" expanded="false" signature="91731:91747" placeholder="..." />
           </folding>
         </state>
       </provider>
