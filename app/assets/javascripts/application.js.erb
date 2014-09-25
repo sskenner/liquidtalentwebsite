@@ -909,14 +909,18 @@ function Response(response) {
     console.log(response);
 
 }
-function loadPage(page) {
+function loadPage(page) {   console.log(page);
 
-    if(currentUser === null) {
+    if(currentUser === null && (page != '/login' && page != '/signup' && page != 'home' && page != '/forgotten_password' && page != '/reset_password' && page != '/profile' && page != '/search' && page != '/users')) {
         /*
         if(showSignupPopup(page)) {
             return false;
         }
         */
+
+        loadPage('/login');
+        return;
+
         $('.hiw').css({ display: 'none', opacity: 0 });
     }
     else { $('.hiw').each(function (i, e) { $(e).removeAttr('style'); }); }
