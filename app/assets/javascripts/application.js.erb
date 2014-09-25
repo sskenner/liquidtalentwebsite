@@ -1303,7 +1303,8 @@ function SubmitSignupForm(userType) {
         return false;
     }
 
-    var lat = lon = null;
+    var lat = 40.756841;
+    var lon = -73.974107;
 
     currentUser = { zip: $('.zip').val() };
 
@@ -1683,6 +1684,10 @@ function linkedin_connect(access_token) {
                             if(loc) {
                                 currentUser['latitude'] = loc['lat'];
                                 currentUser['longitude'] = loc['lng'];
+                            }
+                            else {
+                                currentUser['latitude'] = 40.756841;
+                                currentUser['longitude'] = -73.974107;
                             }
 
                             console.log(loc['lat'] + ' fgf');

@@ -163,25 +163,25 @@
                   <span class="icon"></span>
                   Search
                 </div>
-                <div class="projects link" onclick="loadPage('/statuses');">
+                <div class="projects link" onclick="if(currentUser == null) alert('To access projects, please log in'); loadPage('/statuses');">
                   <span class="icon"></span>
                   Projects
                   <div class="notification">0</div>
                 </div>
-                <div class="messages link" onclick="loadMessages('/messages');">
+                <div class="messages link" onclick="if(currentUser == null) alert('To access messages, please log in'); loadMessages('/messages');">
                   <span class="icon"></span>
                   Messages
                   <div class="notification">0</div>
                 </div>
-                <div class="favorites link" onclick="loadPage('/favorites');">
+                <div class="favorites link" onclick="if(currentUser == null) alert('To access favorites, please log in'); loadPage('/favorites');">
                   <span class="icon"></span>
                   Favorites
                 </div>
-                <div class="stats link" onclick="loadPage('/stats');">
+                <div class="stats link" onclick="if(currentUser == null) alert('To access stats, please log in'); loadPage('/stats');">
                   <span class="icon"></span>
                   Stats
                 </div>
-                <div class="settings link" onclick="loadPage('/settings');">
+                <div class="settings link" onclick="if(currentUser == null) alert('To access settings, please log in'); loadPage('/settings');">
                   <span class="icon"></span>
                   Settings
                 </div>

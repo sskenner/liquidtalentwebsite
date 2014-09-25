@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/application.css.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406730932301" ignored="false" />
-    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411660310830" ignored="false" />
+    <file path="/application.js.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411663669614" ignored="false" />
     <file path="/update_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034723990" ignored="false" />
     <file path="/video.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396259916159" ignored="false" />
     <file path="/videos_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396256029817" ignored="false" />
@@ -87,7 +88,7 @@
     <file path="$PROJECT_DIR$/../followcheck.com/lib/Twitter.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033056368" ignored="false" />
     <file path="/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411659646747" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411661405277" ignored="false" />
     <file path="/a.dummy" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407864150550" ignored="false" />
     <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407864842645" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/landing.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484343602" ignored="false" />
@@ -207,7 +208,9 @@
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/payments.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406824416307" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/payouts.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406824419057" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/models/payment.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407862516632" ignored="false" />
-    <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411473659397" ignored="false" />
+    <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411660461691" ignored="false" />
+    <file path="$PROJECT_DIR$/../mytwocents_backend/app/controllers/user_polls_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411661908406" ignored="false" />
+    <file path="/user_polls_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411661154932" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,10 +242,10 @@
       <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="922" column="8" selection-start="30887" selection-end="30887" vertical-scroll-proportion="0.3460854">
+            <state line="1682" column="34" selection-start="55463" selection-end="55473" vertical-scroll-proportion="0.33274022">
               <folding>
-                <marker date="1411660312000" expanded="false" signature="64084:64106" placeholder="..." />
-                <marker date="1411660312000" expanded="false" signature="91474:91490" placeholder="..." />
+                <marker date="1411663694000" expanded="false" signature="64314:64336" placeholder="..." />
+                <marker date="1411663694000" expanded="false" signature="91704:91720" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -251,7 +254,7 @@
       <file leaf-file-name="presentation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="161" column="66" selection-start="6476" selection-end="6476" vertical-scroll-proportion="-26.25">
+            <state line="15" column="45" selection-start="332" selection-end="332" vertical-scroll-proportion="-9.375">
               <folding />
             </state>
           </provider>
@@ -1029,17 +1032,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="66" selection-start="6476" selection-end="6476" vertical-scroll-proportion="-26.25">
+        <state line="15" column="45" selection-start="332" selection-end="332" vertical-scroll-proportion="-9.375">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="922" column="8" selection-start="30887" selection-end="30887" vertical-scroll-proportion="0.3460854">
+        <state line="1682" column="34" selection-start="55463" selection-end="55473" vertical-scroll-proportion="0.33274022">
           <folding>
-            <marker date="1411660312000" expanded="false" signature="64084:64106" placeholder="..." />
-            <marker date="1411660312000" expanded="false" signature="91474:91490" placeholder="..." />
+            <marker date="1411663694000" expanded="false" signature="64314:64336" placeholder="..." />
+            <marker date="1411663694000" expanded="false" signature="91704:91720" placeholder="..." />
           </folding>
         </state>
       </provider>
