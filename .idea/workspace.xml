@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f784bb5-a5c5-4dc4-b208-bf64561f3626" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liquidtalentwebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,7 +59,7 @@
     <file path="$PROJECT_DIR$/../reltrek.com/app/controllers/timeframes_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396629887343" ignored="false" />
     <file path="/contact_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1396613133950" ignored="false" />
     <file path="/confirm.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406726754283" ignored="false" />
-    <file path="/presentation.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406213888324" ignored="false" />
+    <file path="/presentation.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411659752067" ignored="false" />
     <file path="/signup_service_provider.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1401034702100" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/users_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397464842107" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/views/layouts/application.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484592519" ignored="false" />
@@ -87,7 +88,7 @@
     <file path="$PROJECT_DIR$/../followcheck.com/lib/Twitter.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033056368" ignored="false" />
     <file path="/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/controllers/twitter_controller.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397033369447" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411460656378" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411659646747" ignored="false" />
     <file path="/a.dummy" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407864150550" ignored="false" />
     <file path="/user.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407864842645" ignored="false" />
     <file path="$PROJECT_DIR$/../followcheck.com/app/assets/stylesheets/landing.css" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1397484343602" ignored="false" />
@@ -207,7 +208,7 @@
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/payments.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406824416307" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/views/admin/payouts.html.erb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1406824419057" ignored="false" />
     <file path="$PROJECT_DIR$/../liquidtalent/app/models/payment.rb" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1407862516632" ignored="false" />
-    <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411464774629" ignored="false" />
+    <file path="$PROJECT_DIR$/log/development.log" changelist="0f784bb5-a5c5-4dc4-b208-bf64561f3626" time="1411473659397" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,20 +231,29 @@
       <file leaf-file-name="confirm.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bookings/confirm.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="16" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
+            <state line="28" column="16" selection-start="897" selection-end="897" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1311" column="36" selection-start="42153" selection-end="42153" vertical-scroll-proportion="0.4120735">
+            <state line="1362" column="14" selection-start="44856" selection-end="44856" vertical-scroll-proportion="-32.5">
               <folding>
                 <marker date="1411464876000" expanded="false" signature="63831:63853" placeholder="..." />
                 <marker date="1411464876000" expanded="false" signature="91221:91237" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="presentation.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="161" column="66" selection-start="6476" selection-end="6476" vertical-scroll-proportion="0.5393836">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -286,11 +296,11 @@
         <option value="$PROJECT_DIR$/app/views/presentation/index.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/user/users.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
         <option value="$PROJECT_DIR$/app/views/bookings/confirm.html.erb" />
         <option value="$PROJECT_DIR$/app/views/bookings/accept.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/presentation.html.erb" />
       </list>
     </option>
   </component>
@@ -325,8 +335,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
       <pane id="Scope" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -859,7 +869,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26289397" sideWeight="0.6715425" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26719198" sideWeight="0.6715425" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -936,18 +946,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2040" column="101" selection-start="48174" selection-end="48174" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="154" selection-end="154" vertical-scroll-proportion="0.08708273" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/faq.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="46" selection-start="255" selection-end="255" vertical-scroll-proportion="0.021770682" />
@@ -983,13 +981,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="100" selection-start="2944" selection-end="2944" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="31" selection-start="1107" selection-end="1107" vertical-scroll-proportion="-20.4" />
@@ -1011,7 +1002,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bookings/confirm.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="16" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
+        <state line="28" column="16" selection-start="897" selection-end="897" vertical-scroll-proportion="-0.625">
           <folding />
         </state>
       </provider>
@@ -1023,13 +1014,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/presentation/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="24" selection-start="154" selection-end="154" vertical-scroll-proportion="0.051369864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1311" column="36" selection-start="42153" selection-end="42153" vertical-scroll-proportion="0.4120735">
+        <state line="1362" column="14" selection-start="44856" selection-end="44856" vertical-scroll-proportion="-32.5">
           <folding>
             <marker date="1411464876000" expanded="false" signature="63831:63853" placeholder="..." />
             <marker date="1411464876000" expanded="false" signature="91221:91237" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/presentation.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="66" selection-start="6476" selection-end="6476" vertical-scroll-proportion="0.5393836">
+          <folding />
         </state>
       </provider>
     </entry>

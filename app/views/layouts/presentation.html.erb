@@ -159,7 +159,7 @@
                 </div>
               </div>
               <div class="navigation">
-                <div class="search link" onclick="loadPage('/map'); return false;">
+                <div class="search link" onclick="if(currentUser == null) alert('To search LiquidTalent, please log in'); loadPage('/map'); return false;">
                   <span class="icon"></span>
                   Search
                 </div>
