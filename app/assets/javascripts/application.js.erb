@@ -1872,7 +1872,7 @@ function loadMap(providers) {
         else { map.iW.LTDrop.addClass(user.badge); }
 
         //  Linkedin icon
-        if(linkedInConnections.indexOf(user.id) > -1) {
+        if(linkedInConnections && linkedInConnections.indexOf(user.id) > -1) {
             map.iW.linkedIn.show();
         }
         else {
